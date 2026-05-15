@@ -1,0 +1,157 @@
+<div class="tab chakra" data-group="primary" data-tab="chakra">
+    <!-- Chakra Resources -->
+    <div class="attributes flexrow">
+        <!-- Chakra Pool -->
+        <div class="info-box-header health-details flexcol" style="flex: 1.5; margin-right: 5px;">
+            <h3>Chakra Pool</h3>
+            <div class="info-box-joined tooltip">
+                <div class="info-box current">
+                    <h5>Current</h5>
+                    <input class="value text-box direct allow-relative" type="text" name="flags.naruto-d20.chakra.pool.value" value="{{flags.naruto-d20.chakra.pool.value}}" data-dtype="Number" placeholder="0">
+                </div>
+                <div class="info-box maximum">
+                    <h5>Max</h5>
+                    <span class="value text-box readonly" title="Base + ((2 + Con Mod) * Level) + Buffs">{{flags.naruto-d20.chakra.pool.max}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chakra Reserve -->
+        <div class="info-box-header health-details flexcol" style="flex: 1.5; margin-right: 5px; margin-left: 5px;">
+            <h3>Chakra Reserve</h3>
+            <div class="info-box-joined tooltip">
+                <div class="info-box current">
+                    <h5>Current</h5>
+                    <input class="value text-box direct allow-relative" type="text" name="flags.naruto-d20.chakra.reserve.value" value="{{flags.naruto-d20.chakra.reserve.value}}" data-dtype="Number" placeholder="0">
+                </div>
+                <div class="info-box maximum">
+                    <h5>Max</h5>
+                    <span class="value text-box readonly" title="(2 * Level) + Buffs">{{flags.naruto-d20.chakra.reserve.max}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elemental Affinities -->
+        <div class="info-box-header speed-details flexcol" style="flex: 2; margin-left: 5px;">
+            <h3>Elemental Affinities</h3>
+            <div class="info-box-joined">
+                <div class="info-box maneuverability-details">
+                    <h5>Primary</h5>
+                    <div class="value">
+                        <select name="flags.naruto-d20.chakra.nature.primary" class="live chakra-nature-select">
+                            <option value="">None</option>
+                            <option value="Fire" {{#if (eq flags.naruto-d20.chakra.nature.primary "Fire")}}selected{{/if}}>Fire</option>
+                            <option value="Wind" {{#if (eq flags.naruto-d20.chakra.nature.primary "Wind")}}selected{{/if}}>Wind</option>
+                            <option value="Lightning" {{#if (eq flags.naruto-d20.chakra.nature.primary "Lightning")}}selected{{/if}}>Lightning</option>
+                            <option value="Earth" {{#if (eq flags.naruto-d20.chakra.nature.primary "Earth")}}selected{{/if}}>Earth</option>
+                            <option value="Water" {{#if (eq flags.naruto-d20.chakra.nature.primary "Water")}}selected{{/if}}>Water</option>
+                        </select>
+                    </div>
+                </div>
+
+                {{#if (gte system.details.level.value 10)}}
+                <div class="info-box maneuverability-details">
+                    <h5>Secondary</h5>
+                    <div class="value">
+                        <select name="flags.naruto-d20.chakra.nature.secondary.0" class="live chakra-nature-select">
+                            <option value="">None</option>
+                            <option value="Fire" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Fire")}}selected{{/if}}>Fire</option>
+                            <option value="Wind" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Wind")}}selected{{/if}}>Wind</option>
+                            <option value="Lightning" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Lightning")}}selected{{/if}}>Lightning</option>
+                            <option value="Earth" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Earth")}}selected{{/if}}>Earth</option>
+                            <option value="Water" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Water")}}selected{{/if}}>Water</option>
+                        </select>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Shinobi Learn Bonuses -->
+    <div class="defenses flexcol">
+        <h3>Shinobi Learn Checks</h3>
+        <div class="combat-stats">
+            
+            <!-- Chakra Control -->
+            <div class="info-box attribute attack cmb learn-check-box">
+                <h5 class="rollable shinobi-roll learn-check-header" data-roll="{{flags.naruto-d20.learn.ckc.total}}" data-label="Chakra Control">
+                    <i class="fas fa-dice-d20"></i> Chakra Control
+                </h5>
+                <span class="value learn-check-content">
+                    <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.ckc.total sign=true}}</span>
+                    <span class="learn-check-subtext">Lvl: {{flags.naruto-d20.learn.ckc.base}} | Wis: {{numberFormat flags.naruto-d20.learn.ckc.abilityMod sign=true}}{{#if flags.naruto-d20.learn.ckc.buffBonus}} | Buff: {{numberFormat flags.naruto-d20.learn.ckc.buffBonus sign=true}}{{/if}}</span>
+                    <div class="learn-check-misc">
+                        <label>Misc:</label>
+                        <input class="text-box direct allow-relative" type="text" name="flags.naruto-d20.learn.ckc.miscBonus" value="{{flags.naruto-d20.learn.ckc.miscBonus}}" data-dtype="Number" placeholder="0">
+                    </div>
+                </span>
+            </div>
+
+            <!-- Genjutsu -->
+            <div class="info-box attribute attack cmb learn-check-box">
+                <h5 class="rollable shinobi-roll learn-check-header" data-roll="{{flags.naruto-d20.learn.gnj.total}}" data-label="Genjutsu">
+                    <i class="fas fa-dice-d20"></i> Genjutsu
+                </h5>
+                <span class="value learn-check-content">
+                    <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.gnj.total sign=true}}</span>
+                    <span class="learn-check-subtext">Lvl: {{flags.naruto-d20.learn.gnj.base}} | Cha: {{numberFormat flags.naruto-d20.learn.gnj.abilityMod sign=true}}{{#if flags.naruto-d20.learn.gnj.buffBonus}} | Buff: {{numberFormat flags.naruto-d20.learn.gnj.buffBonus sign=true}}{{/if}}</span>
+                    <div class="learn-check-misc">
+                        <label>Misc:</label>
+                        <input class="text-box direct allow-relative" type="text" name="flags.naruto-d20.learn.gnj.miscBonus" value="{{flags.naruto-d20.learn.gnj.miscBonus}}" data-dtype="Number" placeholder="0">
+                    </div>
+                </span>
+            </div>
+
+            <!-- Ninjutsu -->
+            <div class="info-box attribute attack cmb learn-check-box">
+                <h5 class="rollable shinobi-roll learn-check-header" data-roll="{{flags.naruto-d20.learn.nin.total}}" data-label="Ninjutsu">
+                    <i class="fas fa-dice-d20"></i> Ninjutsu
+                </h5>
+                <span class="value learn-check-content">
+                    <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.nin.total sign=true}}</span>
+                    <span class="learn-check-subtext">Lvl: {{flags.naruto-d20.learn.nin.base}} | Int: {{numberFormat flags.naruto-d20.learn.nin.abilityMod sign=true}}{{#if flags.naruto-d20.learn.nin.buffBonus}} | Buff: {{numberFormat flags.naruto-d20.learn.nin.buffBonus sign=true}}{{/if}}</span>
+                    <div class="learn-check-misc">
+                        <label>Misc:</label>
+                        <input class="text-box direct allow-relative" type="text" name="flags.naruto-d20.learn.nin.miscBonus" value="{{flags.naruto-d20.learn.nin.miscBonus}}" data-dtype="Number" placeholder="0">
+                    </div>
+                    {{#if flags.naruto-d20.learn.nin.conditional}}
+                        <span class="learn-check-conditional">+{{flags.naruto-d20.learn.nin.conditional}} to {{flags.naruto-d20.chakra.nature.primary}}</span>
+                    {{/if}}
+                </span>
+            </div>
+
+            <!-- Taijutsu -->
+            <div class="info-box attribute attack cmb learn-check-box">
+                <h5 class="rollable shinobi-roll learn-check-header" data-roll="{{flags.naruto-d20.learn.tai.total}}" data-label="Taijutsu">
+                    <i class="fas fa-dice-d20"></i> Taijutsu
+                </h5>
+                <span class="value learn-check-content">
+                    <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.tai.total sign=true}}</span>
+                    <span class="learn-check-subtext">Lvl: {{flags.naruto-d20.learn.tai.base}} | Str: {{numberFormat flags.naruto-d20.learn.tai.abilityMod sign=true}}{{#if flags.naruto-d20.learn.tai.buffBonus}} | Buff: {{numberFormat flags.naruto-d20.learn.tai.buffBonus sign=true}}{{/if}}</span>
+                    <div class="learn-check-misc">
+                        <label>Misc:</label>
+                        <input class="text-box direct allow-relative" type="text" name="flags.naruto-d20.learn.tai.miscBonus" value="{{flags.naruto-d20.learn.tai.miscBonus}}" data-dtype="Number" placeholder="0">
+                    </div>
+                </span>
+            </div>
+
+            <!-- Fuinjutsu -->
+            <div class="info-box attribute attack cmb learn-check-box">
+                <h5 class="rollable shinobi-roll learn-check-header" data-roll="{{flags.naruto-d20.learn.fui.total}}" data-label="Fuinjutsu">
+                    <i class="fas fa-dice-d20"></i> Fuinjutsu
+                </h5>
+                <span class="value learn-check-content">
+                    <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.fui.total sign=true}}</span>
+                    <span class="learn-check-subtext">Lvl: {{flags.naruto-d20.learn.fui.base}} | Int: {{numberFormat flags.naruto-d20.learn.fui.abilityMod sign=true}}{{#if flags.naruto-d20.learn.fui.buffBonus}} | Buff: {{numberFormat flags.naruto-d20.learn.fui.buffBonus sign=true}}{{/if}}</span>
+                    <div class="learn-check-misc">
+                        <label>Misc:</label>
+                        <input class="text-box direct allow-relative" type="text" name="flags.naruto-d20.learn.fui.miscBonus" value="{{flags.naruto-d20.learn.fui.miscBonus}}" data-dtype="Number" placeholder="0">
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

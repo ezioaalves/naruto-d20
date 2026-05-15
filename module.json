@@ -1,0 +1,45 @@
+{
+  "id": "naruto-d20",
+  "title": "Naruto D20",
+  "description": "Pathfinder 1e Naruto D20 Expansion",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Ezio Alves"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf1",
+        "type": "system",
+        "manifest": "https://gitlab.com/foundryvtt_pathfinder1e/foundryvtt-pathfinder1/-/releases/permalink/latest/downloads/system.json",
+        "compatibility": {
+          "minimum": "11.11"
+        }
+      }
+    ]
+  },
+  "documentTypes": {
+    "Item": {
+      "technique": {}
+    }
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/naruto-d20.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ]
+}

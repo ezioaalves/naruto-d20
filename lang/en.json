@@ -1,0 +1,102 @@
+{
+  "TYPES": {
+    "Item": {
+      "naruto-d20.technique": "Technique"
+    }
+  },
+  "NarutoD20": {
+    "Item": {
+      "TypeTechnique": "Technique"
+    },
+    "Technique": {
+      "Type": {
+        "Label": "Discipline"
+      },
+      "Complexity": {
+        "Label": "Complexity"
+      },
+      "Rank": {
+        "Label": "Rank"
+      },
+      "PerformDC": {
+        "Label": "Perform DC"
+      },
+      "SkillThreshold": {
+        "Label": "Skill Threshold"
+      },
+      "MasteryStep": {
+        "Label": "Mastery"
+      },
+      "ChakraCost": {
+        "Label": "Chakra Cost"
+      },
+      "ChakraResistance": {
+        "Label": "Chakra Resistance"
+      },
+      "Subtype": {
+        "Label": "Subtype(s)",
+        "Hint": "Hold Ctrl / Cmd to select multiple subtypes."
+      },
+      "Components": {
+        "Legend": "Components",
+        "HandSeals": {
+          "Label": "Hand Seals",
+          "Hint": "Requires forming hand seals. Blocked while grappled or pinned."
+        },
+        "HalfSeals": {
+          "Label": "Half Seals",
+          "Hint": "Requires partial hand seals. Blocked while grappled or pinned."
+        },
+        "Concentration": {
+          "Label": "Concentration",
+          "Hint": "Requires sustained concentration."
+        },
+        "Mobility": {
+          "Label": "Mobility",
+          "Hint": "Requires freedom of movement. Armor may cause failure."
+        },
+        "MaterialFocus": {
+          "Label": "Material Focus",
+          "Hint": "Requires a material component or focus item."
+        },
+        "Empower": {
+          "Label": "Empower",
+          "Hint": "Can spend additional chakra to enhance effect."
+        },
+        "Mastery": {
+          "Label": "Mastery",
+          "Hint": "Tracks practitioner mastery level (0–5)."
+        },
+        "Expendable": {
+          "Label": "Expendable",
+          "Hint": "Single-use technique; consumed on use."
+        },
+        "PhysicalHealth": {
+          "Label": "Physical Health",
+          "Hint": "Requires the user to be in good physical condition."
+        },
+        "XpCost": {
+          "Label": "XP Cost",
+          "Hint": "Costs experience points to perform."
+        }
+      },
+      "Blocked": {
+        "Grappled": "You cannot perform hand seals while grappled or pinned.",
+        "Health": "Your physical condition prevents the use of this technique."
+      },
+      "Perform": {
+        "RollFlavor": "Perform Check — {name} (DC {dc})",
+        "Failed": "Perform check failed. Your action is wasted but no chakra is spent."
+      },
+      "Empower": {
+        "Title": "Empower Technique",
+        "Hint": "Spend additional chakra to enhance this technique's effect.",
+        "Label": "Extra Chakra",
+        "Confirm": "Confirm"
+      },
+      "Chakra": {
+        "Insufficient": "Insufficient chakra to perform this technique."
+      }
+    }
+  }
+}
