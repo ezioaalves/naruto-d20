@@ -28,12 +28,21 @@ export function registerChakraTab() {
 
         $html.find(".shinobi-roll").off("click").on("click", async (ev) => {
             ev.preventDefault();
-            const { bonus, label } = ev.currentTarget.dataset;
-            const roll = new Roll(`1d20 + ${bonus}`);
-            await roll.evaluate({ async: true });
-            roll.toMessage({
-                speaker: ChatMessage.getSpeaker({ actor: app.actor }),
-                flavor: `<h3 style="margin-bottom: 0;">${label} Learn Check</h3>`
+            const { key, label } = ev.currentTarget.dataset;
+            const learnData = app.actor.flags?.["naruto-d20"]?.learn?.[key];
+            if (!learnData) return;
+
+            const parts = [];
+            parts.push(`${learnData.base}[Character Level]`);
+            if (learnData.abilityMod) parts.push(`${learnData.abilityMod}[${learnData.abilityLabel}]`);
+            if (learnData.buffBonus)  parts.push(`${learnData.buffBonus}[Buff Bonus]`);
+            if (learnData.miscBonus)  parts.push(`${learnData.miscBonus}[Misc Bonus]`);
+
+            await pf1.dice.d20Roll({
+                flavor:   `${label} Learn Check`,
+                parts,
+                rollData: app.actor.getRollData?.() ?? {},
+                speaker:  ChatMessage.implementation.getSpeaker({ actor: app.actor }),
             });
         });
 
