@@ -42,7 +42,8 @@ export function registerChakraTab() {
             } else if (learnData.buffBonus) {
                 parts.push(`${learnData.buffBonus}[Buff Bonus]`);
             }
-            if (learnData.miscBonus)  parts.push(`${learnData.miscBonus}[Misc Bonus]`);
+            if (learnData.synergyBonus) parts.push(`${learnData.synergyBonus}[Skill Synergy]`);
+            if (learnData.miscBonus)    parts.push(`${learnData.miscBonus}[Misc Bonus]`);
 
             await pf1.dice.d20Roll({
                 flavor:   `${label} Learn Check`,
@@ -69,6 +70,7 @@ export function registerChakraTab() {
                 } else if (learnData.buffBonus) {
                     sources.push({ name: "Buff Bonus", value: learnData.buffBonus, builtIn: false });
                 }
+                if (learnData.synergyBonus) sources.push({ name: "Skill Synergy", value: learnData.synergyBonus, builtIn: true });
                 if (learnData.miscBonus) sources.push({ name: "Misc Bonus", value: learnData.miscBonus, builtIn: false });
 
                 const context = {

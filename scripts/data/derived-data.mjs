@@ -44,6 +44,7 @@ export function prepareBaseActorData(actor) {
         s.base = 0;
         s.abilityMod = 0;
         s.buffBonus = 0;    // changes engine overwrites this in step [2]
+        s.synergyBonus = 0;
         s.total = 0;
         s.conditional = 0;
     }
@@ -74,8 +75,9 @@ export function prepareDerivedActorData(actor) {
         s.abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
         s.base = charLevel;
         s.abilityMod = actor.system.abilities?.[abilityKey]?.mod || 0;
+        s.synergyBonus = (actor.system.skills[key]?.rank ?? 0) >= 2 ? 2 : 0;
         // buffBonus was written by the changes engine between the two hooks
-        s.total = s.base + s.abilityMod + (Number(s.miscBonus) || 0) + (Number(s.buffBonus) || 0);
+        s.total = s.base + s.abilityMod + (Number(s.miscBonus) || 0) + (Number(s.buffBonus) || 0) + s.synergyBonus;
     }
 
     // Chakra maximums — conMod allowed to go negative (reduces pool)
