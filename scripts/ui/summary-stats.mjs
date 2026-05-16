@@ -12,11 +12,11 @@ export function registerSummaryStats() {
             data
         );
 
-        // Try stable PF1e class selectors before falling back to prepend
-        const anchor = summary.find(".quick-actions, .quick-actions-header, [data-tab-section='quick-actions']").first();
-        if (anchor.length) {
-            const hr = anchor.prev("hr");
-            $(templateHtml).insertBefore(hr.length ? hr : anchor);
+        // Insert before the Quick Actions h3, which precedes ol.quick-actions
+        const quickActionsOl = summary.find("ol.quick-actions").first();
+        if (quickActionsOl.length) {
+            const h3 = quickActionsOl.prev("h3");
+            $(templateHtml).insertBefore(h3.length ? h3 : quickActionsOl);
         } else {
             summary.prepend(templateHtml);
         }
