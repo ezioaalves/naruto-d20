@@ -9,7 +9,7 @@ trap that the chakra-tab bug fell into three times, and the working approach.
 - **Foundry source of truth:** `~/Documents/Foundry13/public/scripts/foundry.mjs`
 - **Installed pf1 system:** `Data/systems/pf1/system.json` — currently **11.11**, which is **V1 ApplicationV1**, not ApplicationV2.
   - Sheet class chain at runtime: `ActorSheetPFCharacter → ActorSheetPF → ActorSheet → DocumentSheet → FormApplication → Application` (all V1).
-  - Class names visible on `globalThis.pf1.applications.*` — e.g. `pf1.applications.ActorSheetPF`.
+  - Actor sheet classes are under `pf1.applications.actor.*` — e.g. `pf1.applications.actor.ActorSheetPF`. **Not** `pf1.applications.ActorSheetPF` (that key does not exist).
 - **Reference repo:** `Data/modules/foundryvtt-pathfinder1/` is the **upstream dev tip migrated to V2**. Its API does **not** match what is loaded at runtime. Use only for cross-checking that a method exists by name; never for reasoning about behavior.
 
 If you ever see `new Application (foundry.mjs:...)` / `new FormApplication (foundry.mjs:...)` / `new ActorSheet (foundry.mjs:...)` deprecation traces in the console, that confirms V1 is in use.
@@ -60,8 +60,8 @@ Inject the chakra nav and content **inside `_renderInner`**, so the framework's 
 Reference implementation: `scripts/ui/chakra-tab.mjs`. Shape of the patch:
 
 ```javascript
-const original = pf1.applications.ActorSheetPF.prototype._renderInner;
-pf1.applications.ActorSheetPF.prototype._renderInner = async function (...args) {
+const original = pf1.applications.actor.ActorSheetPF.prototype._renderInner;
+pf1.applications.actor.ActorSheetPF.prototype._renderInner = async function (...args) {
     const $html = await original.apply(this, args);
     if (!["character", "npc"].includes(this.actor.type)) return $html;
 
@@ -86,7 +86,7 @@ pf1.applications.ActorSheetPF.prototype._renderInner = async function (...args) 
 
 Key details:
 
-- Patch `ActorSheetPF.prototype`, **not** the concrete subclasses (Character, NPC, NPCLite). Subclasses' `_renderInner` calls `super._renderInner(...e)`, so wrapping the parent covers them all.
+- Patch `pf1.applications.actor.ActorSheetPF.prototype`, **not** the concrete subclasses (Character, NPC, NPCLite). Subclasses' `_renderInner` calls `super._renderInner(...e)`, so wrapping the parent covers them all.
 - Install the patch **once** during `Hooks.once("setup", …)` — `pf1.applications.ActorSheetPF` is set by then. Track installation with a module-level boolean to be idempotent against hot reloads.
 - Don't add `data-action="tab"` on the nav `<a>`. That's V2 attribute syntax. V1's `Tabs._onClickNav` (`foundry.mjs:36929`) finds the click target via `closest("[data-tab]")` — `data-tab` alone is sufficient.
 - Don't add `.active` to your nav `<a>` or content `<div>` manually. The framework's `Tabs.activate` (step 5 above) toggles `.active` based on `this.active`. Just provide valid DOM and let it work.

@@ -35,7 +35,7 @@ export function registerChakraTab() {
 
 function _installRenderInnerPatch() {
     if (installed) return;
-    const ActorSheetPF = pf1?.applications?.ActorSheetPF;
+    const ActorSheetPF = pf1?.applications?.actor?.ActorSheetPF;
     if (!ActorSheetPF?.prototype?._renderInner) {
         console.error("Naruto D20 | pf1.applications.ActorSheetPF._renderInner not found — chakra tab cannot patch");
         return;
