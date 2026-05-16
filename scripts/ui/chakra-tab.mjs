@@ -1,3 +1,5 @@
+const chakraActiveApps = new WeakSet();
+
 export function registerChakraTab() {
     Hooks.on("renderActorSheetPF", async (app, html, data) => {
         if (!["character", "npc"].includes(app.actor.type)) return;
@@ -11,6 +13,11 @@ export function registerChakraTab() {
             nav.append('<a class="item" data-tab="chakra" data-group="primary">Chakra</a>');
         }
 
+        // Track which tab is active across re-renders (DOM is fresh each render, so
+        // app._tabs[0].active gets overwritten before our hook fires — WeakSet survives).
+        nav.find('[data-tab="chakra"]').on("click", () => chakraActiveApps.add(app));
+        nav.find('.item:not([data-tab="chakra"])').on("click", () => chakraActiveApps.delete(app));
+
         const body = $html.find("section.primary-body");
         if (!body.length) return;
 
@@ -21,15 +28,17 @@ export function registerChakraTab() {
                 "modules/naruto-d20/templates/actor/chakra-tab.hbs",
                 data
             );
-            const $tab = $(templateHtml);
+            body.append($(templateHtml));
+        }
 
-            // Match active state to whichever tab PF1e currently shows
-            if (app._tabs?.[0]?.active === "chakra") {
-                $tab.addClass("active");
-                body.find(".tab:not(.chakra)").removeClass("active");
-            }
-
-            body.append($tab);
+        // Restore active state — must happen after tab div is in the DOM
+        if (chakraActiveApps.has(app) || app._tabs?.[0]?.active === "chakra") {
+            if (app._tabs?.[0]) app._tabs[0].active = "chakra";
+            nav.find('.item').removeClass("active");
+            nav.find('[data-tab="chakra"]').addClass("active");
+            body.find(".tab").removeClass("active");
+            body.find('[data-tab="chakra"]').addClass("active");
+            chakraActiveApps.add(app);
         }
 
         // Roll listeners for Learn checks
