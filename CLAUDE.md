@@ -74,7 +74,11 @@ The item sheet (`TechniqueItemSheet`) extends Foundry's base `ItemSheet` directl
 
 The tab is injected by patching `ActorSheetPF.prototype._renderInner` (in `scripts/ui/chakra-tab.mjs`). This is intentional: if the nav `<a>` is injected via the later `renderActorSheetPF` hook, Foundry's V1 Tabs system has already bound and activated tabs, causing it to fall back to the Summary tab and corrupt `_tabs[0].active`. The patch runs before `_activateCoreListeners`, guaranteeing the chakra tab is present when tabs are bound.
 
-Roll listeners (`.shinobi-roll`) are still wired in `renderActorSheetPF` since they depend on live DOM.
+Roll listeners (`.shinobi-roll`) and tooltip listeners (`[data-naruto-tooltip]`) are still wired in `renderActorSheetPF` since they depend on live DOM.
+
+**Learn check rolls** use `pf1.dice.d20Roll()` (not a bare `Roll`) so the native PF1e skill check dialog appears (situational bonus, DC, roll mode, Take 10/20). Parts are labeled strings — `"5[Character Level]"`, `"3[Wis]"`, `"2[Iron Will Buff]"` — which produce the PF1e-style chat card breakdown. Buff source names come from `actor.sourceInfo[flagPath].positive`, falling back to a generic `"Buff Bonus"` label if sourceInfo has no entries for that path.
+
+**Learn check tooltips** use `data-naruto-tooltip="learn.<key>"` (not `data-tooltip`) to avoid colliding with PF1e's own tooltip handler. On `pointerenter`, they render `systems/pf1/templates/extended-tooltip.hbs` via `game.tooltip.activate()`.
 
 ### Summary tab injection (`summary-stats.mjs`)
 

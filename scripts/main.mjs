@@ -73,16 +73,16 @@ Hooks.on("pf1PrepareDerivedActorData", (actor) => {
 // ── [6] pf1RegisterDamageTypes ────────────────────────────────────────────
 Hooks.once("pf1RegisterDamageTypes", (registry) => {
     const damageTypes = [
-        { id: "earth", name: "Earth", category: "energy", resist: true, color: "brown", icon: "pf-icon pf-stone-block" },
-        { id: "water", name: "Water", category: "energy", resist: true, color: "blue",  icon: "pf-icon pf-water-drop" },
-        { id: "wind",  name: "Wind",  category: "energy", resist: true, color: "gray",  icon: "pf-icon pf-wind-hole"  },
-        { id: "holy",  name: "Holy",  category: "energy", resist: true, color: "gold",  icon: "pf-icon pf-sunbeams"   }
+        { id: "earth", name: "Earth", category: "energy", resist: true, color: "brown", img: "modules/naruto-d20/icons/earth.svg" },
+        { id: "water", name: "Water", category: "energy", resist: true, color: "blue",  img: "modules/naruto-d20/icons/water.svg" },
+        { id: "wind",  name: "Wind",  category: "energy", resist: true, color: "gray",  img: "modules/naruto-d20/icons/wind.svg"  },
+        { id: "holy",  name: "Holy",  category: "energy", resist: true, color: "gold",  img: "modules/naruto-d20/icons/holy.svg"  }
     ];
     for (const dt of damageTypes) {
         try {
             registry.register("naruto-d20", dt.id, {
                 name: dt.name, category: dt.category,
-                resist: dt.resist, color: dt.color, icon: dt.icon
+                resist: dt.resist, color: dt.color, img: dt.img
             });
         } catch (err) {
             console.error(`Naruto D20 | Failed to register damage type "${dt.id}":`, err);
