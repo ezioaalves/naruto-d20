@@ -35,7 +35,13 @@ export function registerChakraTab() {
             const parts = [];
             parts.push(`${learnData.base}[Character Level]`);
             if (learnData.abilityMod) parts.push(`${learnData.abilityMod}[${learnData.abilityLabel}]`);
-            if (learnData.buffBonus)  parts.push(`${learnData.buffBonus}[Buff Bonus]`);
+            const buffFlagPath = `flags.naruto-d20.learn.${key}.buffBonus`;
+            const buffSources = app.actor.sourceInfo?.[buffFlagPath]?.positive ?? [];
+            if (buffSources.length > 0) {
+                for (const src of buffSources) parts.push(`${src.value}[${src.name}]`);
+            } else if (learnData.buffBonus) {
+                parts.push(`${learnData.buffBonus}[Buff Bonus]`);
+            }
             if (learnData.miscBonus)  parts.push(`${learnData.miscBonus}[Misc Bonus]`);
 
             await pf1.dice.d20Roll({
@@ -56,7 +62,13 @@ export function registerChakraTab() {
                     { name: "Character Level", value: learnData.base, builtIn: true },
                     { name: learnData.abilityLabel, value: learnData.abilityMod, builtIn: true },
                 ];
-                if (learnData.buffBonus) sources.push({ name: "Buff Bonus", value: learnData.buffBonus, builtIn: false });
+                const buffFlagPath = `flags.naruto-d20.learn.${key}.buffBonus`;
+                const buffSources = app.actor.sourceInfo?.[buffFlagPath]?.positive ?? [];
+                if (buffSources.length > 0) {
+                    for (const src of buffSources) sources.push({ name: src.name, value: src.value, builtIn: false });
+                } else if (learnData.buffBonus) {
+                    sources.push({ name: "Buff Bonus", value: learnData.buffBonus, builtIn: false });
+                }
                 if (learnData.miscBonus) sources.push({ name: "Misc Bonus", value: learnData.miscBonus, builtIn: false });
 
                 const context = {
