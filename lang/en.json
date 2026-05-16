@@ -37,6 +37,24 @@
         "Label": "Subtype(s)",
         "Hint": "Hold Ctrl / Cmd to select multiple subtypes."
       },
+      "Discipline": {
+        "none": "— None —",
+        "ChakraControl": "Chakra Control",
+        "Fuinjutsu": "Fuinjutsu",
+        "Genjutsu": "Genjutsu",
+        "HachimonTonkou": "Hachimon Tonkou",
+        "Ninjutsu": "Ninjutsu",
+        "Taijutsu": "Taijutsu",
+        "Training": "Training"
+      },
+      "Activation": {
+        "standard": "Standard Action",
+        "full": "Full-Round Action",
+        "swift": "Swift Action",
+        "immediate": "Immediate Action",
+        "free": "Free Action",
+        "ritual": "Ritual (extended)"
+      },
       "Components": {
         "Legend": "Components",
         "HandSeals": {

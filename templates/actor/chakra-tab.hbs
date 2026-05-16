@@ -11,7 +11,7 @@
                 </div>
                 <div class="info-box maximum">
                     <h5>Max</h5>
-                    <span class="value text-box readonly" title="Base + ((2 + Con Mod) * Level) + Buffs">{{flags.naruto-d20.chakra.pool.max}}</span>
+                    <span class="value text-box readonly" title="2 + ((2 + Con Mod) × Level) + Buffs">{{flags.naruto-d20.chakra.pool.max}}</span>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="info-box maximum">
                     <h5>Max</h5>
-                    <span class="value text-box readonly" title="(2 * Level) + Buffs">{{flags.naruto-d20.chakra.reserve.max}}</span>
+                    <span class="value text-box readonly" title="(2 × Level) + Buffs">{{flags.naruto-d20.chakra.reserve.max}}</span>
                 </div>
             </div>
         </div>
@@ -40,11 +40,11 @@
                     <div class="value">
                         <select name="flags.naruto-d20.chakra.nature.primary" class="live chakra-nature-select">
                             <option value="">None</option>
-                            <option value="Fire" {{#if (eq flags.naruto-d20.chakra.nature.primary "Fire")}}selected{{/if}}>Fire</option>
-                            <option value="Wind" {{#if (eq flags.naruto-d20.chakra.nature.primary "Wind")}}selected{{/if}}>Wind</option>
+                            <option value="Fire"      {{#if (eq flags.naruto-d20.chakra.nature.primary "Fire")}}selected{{/if}}>Fire</option>
+                            <option value="Wind"      {{#if (eq flags.naruto-d20.chakra.nature.primary "Wind")}}selected{{/if}}>Wind</option>
                             <option value="Lightning" {{#if (eq flags.naruto-d20.chakra.nature.primary "Lightning")}}selected{{/if}}>Lightning</option>
-                            <option value="Earth" {{#if (eq flags.naruto-d20.chakra.nature.primary "Earth")}}selected{{/if}}>Earth</option>
-                            <option value="Water" {{#if (eq flags.naruto-d20.chakra.nature.primary "Water")}}selected{{/if}}>Water</option>
+                            <option value="Earth"     {{#if (eq flags.naruto-d20.chakra.nature.primary "Earth")}}selected{{/if}}>Earth</option>
+                            <option value="Water"     {{#if (eq flags.naruto-d20.chakra.nature.primary "Water")}}selected{{/if}}>Water</option>
                         </select>
                     </div>
                 </div>
@@ -55,11 +55,11 @@
                     <div class="value">
                         <select name="flags.naruto-d20.chakra.nature.secondary.0" class="live chakra-nature-select">
                             <option value="">None</option>
-                            <option value="Fire" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Fire")}}selected{{/if}}>Fire</option>
-                            <option value="Wind" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Wind")}}selected{{/if}}>Wind</option>
+                            <option value="Fire"      {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Fire")}}selected{{/if}}>Fire</option>
+                            <option value="Wind"      {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Wind")}}selected{{/if}}>Wind</option>
                             <option value="Lightning" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Lightning")}}selected{{/if}}>Lightning</option>
-                            <option value="Earth" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Earth")}}selected{{/if}}>Earth</option>
-                            <option value="Water" {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Water")}}selected{{/if}}>Water</option>
+                            <option value="Earth"     {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Earth")}}selected{{/if}}>Earth</option>
+                            <option value="Water"     {{#if (eq flags.naruto-d20.chakra.nature.secondary.[0] "Water")}}selected{{/if}}>Water</option>
                         </select>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
     <div class="defenses flexcol">
         <h3>Shinobi Learn Checks</h3>
         <div class="combat-stats">
-            
+
             <!-- Chakra Control -->
             <div class="info-box attribute attack cmb learn-check-box">
                 <h5 class="rollable shinobi-roll learn-check-header" data-bonus="{{flags.naruto-d20.learn.ckc.total}}" data-label="Chakra Control">
@@ -130,7 +130,11 @@
                 </h5>
                 <span class="value learn-check-content">
                     <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.tai.total sign=true}}</span>
-                    <span class="learn-check-subtext">Lvl: {{flags.naruto-d20.learn.tai.base}} | Str: {{numberFormat flags.naruto-d20.learn.tai.abilityMod sign=true}}{{#if flags.naruto-d20.learn.tai.buffBonus}} | Buff: {{numberFormat flags.naruto-d20.learn.tai.buffBonus sign=true}}{{/if}}</span>
+                    <span class="learn-check-subtext">
+                        Lvl: {{flags.naruto-d20.learn.tai.base}} |
+                        {{#if (eq flags.naruto-d20.learn.tai.ability "dex")}}Dex{{else}}Str{{/if}}: {{numberFormat flags.naruto-d20.learn.tai.abilityMod sign=true}}
+                        {{#if flags.naruto-d20.learn.tai.buffBonus}} | Buff: {{numberFormat flags.naruto-d20.learn.tai.buffBonus sign=true}}{{/if}}
+                    </span>
                     <div class="learn-check-misc">
                         <label>Misc:</label>
                         <input class="text-box direct allow-relative" type="text" name="flags.naruto-d20.learn.tai.miscBonus" value="{{flags.naruto-d20.learn.tai.miscBonus}}" data-dtype="Number" placeholder="0">
@@ -152,6 +156,7 @@
                     </div>
                 </span>
             </div>
+
         </div>
     </div>
 </div>

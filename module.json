@@ -30,7 +30,7 @@
     }
   },
   "esmodules": [
-    "scripts/main.js"
+    "scripts/main.mjs"
   ],
   "styles": [
     "styles/naruto-d20.css"

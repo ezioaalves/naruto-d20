@@ -1,5 +1,14 @@
 /* Naruto D20 Module Styles */
 
+/* Settings tab — Taijutsu ability selector */
+div.naruto-tai-setting {
+    flex: 0;
+}
+
+div.naruto-tai-setting .form-group {
+    margin: 0;
+}
+
 /* Summary Tab - Hero Statistics */
 #naruto-hero-statistics {
     margin-bottom: 10px;

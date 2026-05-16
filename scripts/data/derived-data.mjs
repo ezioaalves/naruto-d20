@@ -1,139 +1,133 @@
 /**
- * Naruto D20 - Derived Data Calculations
- * Wraps the base Pathfinder 1e prepareDerivedData to calculate Shinobi statistics.
+ * Naruto D20 — Derived Data Calculations
+ *
+ * Two functions registered as PF1e hooks in main.mjs:
+ *   prepareBaseActorData   → pf1PrepareBaseActorData  (resets computed fields so the
+ *                            changes engine writes buff bonuses onto a clean slate)
+ *   prepareDerivedActorData → pf1PrepareDerivedActorData (reads buff values after the
+ *                            changes engine ran and computes all totals)
+ *
+ * Hook sequence guaranteed by PF1e:
+ *   [1] pf1PrepareBaseActorData  — our schema init, buff values reset to 0
+ *   [2] PF1e changes engine      — writes buffBonus values via pf1GetChangeFlat paths
+ *   [3] pf1PrepareDerivedActorData — our calculations read the committed buff values
  */
 
-export function registerDerivedDataWrapper() {
-    const originalPrepareDerivedData = CONFIG.Actor.documentClass.prototype.prepareDerivedData;
+/**
+ * Ensure the naruto-d20 flag schema exists and reset all computed fields.
+ * Called during pf1PrepareBaseActorData — before the changes engine runs.
+ * @param {Actor} actor
+ */
+export function prepareBaseActorData(actor) {
+    if (!["character", "npc"].includes(actor.type)) return;
 
-    CONFIG.Actor.documentClass.prototype.prepareDerivedData = function() {
-        // Run standard PF1e derived data preparation first
-        originalPrepareDerivedData.call(this);
+    actor.flags["naruto-d20"] ??= {};
+    const nData = actor.flags["naruto-d20"];
 
-        // Only apply to characters and NPCs
-        if (!["character", "npc"].includes(this.type)) return;
+    // Chakra resources — keep stored values, reset computed bonus (changes engine will write it)
+    nData.chakra ??= {};
+    nData.chakra.pool ??= {};
+    nData.chakra.reserve ??= {};
+    nData.chakra.nature ??= { primary: "", secondary: [] };
+    nData.chakra.pool.value ??= 0;
+    nData.chakra.reserve.value ??= 0;
+    nData.chakra.pool.maxBonus = 0;
+    nData.chakra.reserve.maxBonus = 0;
 
-        // Ensure the flag structure exists in memory even if not saved to the DB yet
-        this.flags["naruto-d20"] = this.flags["naruto-d20"] || {};
-        const nData = this.flags["naruto-d20"];
+    // Learn skills
+    nData.learn ??= {};
+    for (const key of ["ckc", "gnj", "nin", "tai", "fui"]) {
+        nData.learn[key] ??= {};
+        const s = nData.learn[key];
+        s.miscBonus ??= 0;  // user-entered, preserve
+        if (key === "tai") s.ability ??= "str";  // configurable per-actor
+        // Reset computed fields — will be filled in prepareDerivedActorData
+        s.base = 0;
+        s.abilityMod = 0;
+        s.buffBonus = 0;    // changes engine overwrites this in step [2]
+        s.total = 0;
+        s.conditional = 0;
+    }
+}
 
-        // 1. Initialize Default Chakra Resource Schema
-        nData.chakra = foundry.utils.mergeObject({
-            pool: { value: 0, maxBonus: 0 },
-            reserve: { value: 0, maxBonus: 0 },
-            nature: { primary: "", secondary: [] }
-        }, nData.chakra || {});
+/**
+ * Compute all derived Shinobi statistics after the PF1e changes engine has run.
+ * Called during pf1PrepareDerivedActorData — buff bonuses are already committed.
+ * @param {Actor} actor
+ */
+export function prepareDerivedActorData(actor) {
+    if (!["character", "npc"].includes(actor.type)) return;
 
-        // 2. Initialize Learn Schema
-        nData.learn = foundry.utils.mergeObject({
-            ckc: { base: 0, abilityMod: 0, miscBonus: 0, total: 0, conditional: 0 },
-            gnj: { base: 0, abilityMod: 0, miscBonus: 0, total: 0, conditional: 0 },
-            nin: { base: 0, abilityMod: 0, miscBonus: 0, total: 0, conditional: 0 },
-            tai: { base: 0, abilityMod: 0, miscBonus: 0, total: 0, conditional: 0 },
-            fui: { base: 0, abilityMod: 0, miscBonus: 0, total: 0, conditional: 0 }
-        }, nData.learn || {});
+    const nData = actor.flags["naruto-d20"];
+    if (!nData) return;
 
-        // 3. Derived Calculations: Character Level Base
-        const charLevel = this.system.details?.level?.value || this.system.details?.cr?.total || 0;
-        
-        // Map of skills to their relevant abilities
-        const abilityMap = {
-            ckc: "wis",
-            gnj: "cha",
-            nin: "int",
-            tai: "str",
-            fui: "int"
-        };
+    const charLevel = actor.system.details?.level?.value || actor.system.details?.cr?.total || 0;
+    const conMod = actor.system.abilities?.con?.mod || 0;
 
-        // Calculate Learn totals
-        for (const [skillKey, abilityKey] of Object.entries(abilityMap)) {
-            const learnData = nData.learn[skillKey];
-            learnData.base = charLevel;
-            
-            // Get ability modifier from standard PF1e actor data
-            const abilityMod = this.system.abilities?.[abilityKey]?.mod || 0;
-            learnData.abilityMod = abilityMod;
-
-            // Get buff bonus from the changes engine
-            const buffBonus = foundry.utils.getProperty(this, `flags.naruto-d20.learn.${skillKey}.buffBonus`) || 0;
-            learnData.buffBonus = buffBonus;
-
-            // Compute total (Base + Ability Mod + Misc + Buffs)
-            const miscBonus = Number(learnData.miscBonus) || 0;
-            const buffBonusNum = Number(buffBonus) || 0;
-            learnData.total = learnData.base + learnData.abilityMod + miscBonus + buffBonusNum;
-        }
-
-        // 3.5 Dynamic Chakra Pool and Reserve Maximums
-        const conMod = this.system.abilities?.con?.mod || 0;
-        
-        // Pool Max: 2 + ((2 + CON Mod) * Level) + Misc Max Bonus + Buffs
-        const poolBuffBonus = foundry.utils.getProperty(this, "flags.naruto-d20.chakra.pool.maxBonus") || 0;
-        nData.chakra.pool.max = 2 + ((2 + conMod) * charLevel) + poolBuffBonus;
-        
-        // Reserve Max: (2 * Level) + Misc Max Bonus + Buffs
-        const reserveBuffBonus = foundry.utils.getProperty(this, "flags.naruto-d20.chakra.reserve.maxBonus") || 0;
-        nData.chakra.reserve.max = (2 * charLevel) + reserveBuffBonus;
-
-        // 4. Elemental Affinity Conditional Bonus
-        // Progression: +1 at 1st, +2 at 6th, +3 at 11th, +4 at 16th, +5 at 21st
-        // Formula is 1 + floor((Level - 1) / 5)
-        let affinityBonus = 0;
-        if (charLevel >= 1) {
-            affinityBonus = 1 + Math.floor((charLevel - 1) / 5);
-        }
-        nData.learn.nin.conditional = affinityBonus;
-
-        // 5. Energy Resistance Calculation
-        if (nData.chakra.nature.primary) {
-            // Resistance value: 5 at 10th, 10 at 15th, 15 at 20th
-            let resValue = 0;
-            if (charLevel >= 20) resValue = 15;
-            else if (charLevel >= 15) resValue = 10;
-            else if (charLevel >= 10) resValue = 5;
-
-            if (resValue > 0) {
-                // Determine the resistance type based on primary affinity (strong against)
-                // Assuming traditional elemental cycle: Fire > Wind > Lightning > Earth > Water > Fire
-                const strongAgainstMap = {
-                    "fire": "wind",
-                    "wind": "lightning",
-                    "lightning": "earth",
-                    "earth": "water",
-                    "water": "fire"
-                };
-
-                const resElement = strongAgainstMap[nData.chakra.nature.primary.toLowerCase()];
-                if (resElement) {
-                    // Inject into the standard PF1e traits array
-                    this.system.traits = this.system.traits || {};
-                    let eres = this.system.traits.eres;
-                    
-                    if (Array.isArray(eres)) {
-                        // PF1e v11+ uses an array of objects
-                        const existingRes = eres.find(e => e.types && e.types.includes(resElement));
-                        if (!existingRes) {
-                            eres.push({
-                                amount: resValue,
-                                types: [resElement],
-                                operator: true
-                            });
-                        }
-                    } else if (typeof eres === "string") {
-                        // Older PF1e versions used a flat string
-                        if (!eres.toLowerCase().includes(resElement.toLowerCase())) {
-                            this.system.traits.eres = eres ? `${eres}; ${resElement} ${resValue}` : `${resElement} ${resValue}`;
-                        }
-                    } else {
-                        // If it's undefined or some other type, initialize it as an array
-                        this.system.traits.eres = [{
-                            amount: resValue,
-                            types: [resElement],
-                            operator: true
-                        }];
-                    }
-                }
-            }
-        }
+    // Taijutsu governing ability is configurable; all others are fixed
+    const abilityMap = {
+        ckc: "wis",
+        gnj: "cha",
+        nin: "int",
+        tai: nData.learn.tai?.ability || "str",
+        fui: "int"
     };
+
+    for (const [key, abilityKey] of Object.entries(abilityMap)) {
+        const s = nData.learn[key];
+        if (!s) continue;
+        s.base = charLevel;
+        s.abilityMod = actor.system.abilities?.[abilityKey]?.mod || 0;
+        // buffBonus was written by the changes engine between the two hooks
+        s.total = s.base + s.abilityMod + (Number(s.miscBonus) || 0) + (Number(s.buffBonus) || 0);
+    }
+
+    // Chakra maximums — conMod allowed to go negative (reduces pool)
+    nData.chakra.pool.max = 2 + ((2 + conMod) * charLevel) + (Number(nData.chakra.pool.maxBonus) || 0);
+    nData.chakra.reserve.max = (2 * charLevel) + (Number(nData.chakra.reserve.maxBonus) || 0);
+
+    // Elemental affinity: +1 Ninjutsu conditional per 5 levels starting at 1st
+    nData.learn.nin.conditional = charLevel >= 1 ? 1 + Math.floor((charLevel - 1) / 5) : 0;
+
+    // Energy resistance from primary elemental affinity (5 at 10th, 10 at 15th, 15 at 20th)
+    _applyElementalResistance(actor, nData, charLevel);
+}
+
+// ── Private helpers ───────────────────────────────────────────────────────
+
+const ELEMENTAL_STRONG_AGAINST = {
+    fire:      "wind",
+    wind:      "lightning",
+    lightning: "earth",
+    earth:     "water",
+    water:     "fire"
+};
+
+function _applyElementalResistance(actor, nData, charLevel) {
+    const primary = nData.chakra.nature?.primary?.toLowerCase();
+    if (!primary) return;
+
+    let resValue = 0;
+    if (charLevel >= 20)      resValue = 15;
+    else if (charLevel >= 15) resValue = 10;
+    else if (charLevel >= 10) resValue = 5;
+    if (!resValue) return;
+
+    const resElement = ELEMENTAL_STRONG_AGAINST[primary];
+    if (!resElement) return;
+
+    actor.system.traits ??= {};
+    const eres = actor.system.traits.eres;
+
+    if (Array.isArray(eres)) {
+        if (!eres.find(e => e.types?.includes(resElement))) {
+            eres.push({ amount: resValue, types: [resElement], operator: true });
+        }
+    } else if (typeof eres === "string") {
+        if (!eres.toLowerCase().includes(resElement)) {
+            actor.system.traits.eres = eres ? `${eres}; ${resElement} ${resValue}` : `${resElement} ${resValue}`;
+        }
+    } else {
+        actor.system.traits.eres = [{ amount: resValue, types: [resElement], operator: true }];
+    }
 }

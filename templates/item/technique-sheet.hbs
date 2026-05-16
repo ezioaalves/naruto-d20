@@ -1,0 +1,229 @@
+{{!-- templates/item/technique-sheet.hbs --}}
+{{!-- Naruto D20: Technique Item Sheet --}}
+
+<form class="naruto-technique-sheet flexcol" autocomplete="off">
+
+    {{!-- ── Header ─────────────────────────────────────────────── --}}
+    <header class="sheet-header flexrow">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" width="56" height="56">
+        <div class="header-fields flexcol">
+            <input class="title-field" type="text" name="name" value="{{item.name}}" placeholder="Technique Name">
+            <div class="technique-row">
+                {{!-- Discipline --}}
+                <div class="form-group">
+                    <label>{{localize "NarutoD20.Technique.Type.Label"}}</label>
+                    <select name="system.discipline">
+                        {{#each disciplineChoices as |label key|}}
+                            <option value="{{key}}" {{#if (eq ../system.discipline key)}}selected{{/if}}>{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{!-- Rank --}}
+                <div class="form-group technique-rank-group">
+                    <label>{{localize "NarutoD20.Technique.Rank.Label"}}</label>
+                    <input type="number" name="system.rank" value="{{system.rank}}" min="1" max="15" placeholder="1">
+                </div>
+                {{!-- Complexity --}}
+                <div class="form-group">
+                    <label>{{localize "NarutoD20.Technique.Complexity.Label"}}</label>
+                    <select name="system.complexity">
+                        {{#each complexityChoices as |label key|}}
+                            <option value="{{key}}" {{#if (eq ../system.complexity key)}}selected{{/if}}>{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- ── Tabs ──────────────────────────────────────────────── --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item active" data-tab="details">Details</a>
+        <a class="item" data-tab="description">Description</a>
+    </nav>
+
+    <section class="sheet-body">
+
+        {{!-- ══ DETAILS TAB ════════════════════════════════════ --}}
+        <div class="tab details naruto-technique-details active" data-tab="details">
+
+            {{!-- Derived stats bar (read-only) --}}
+            <div class="technique-derived-stats">
+                <div class="derived-stat">
+                    <span class="derived-label">{{localize "NarutoD20.Technique.PerformDC.Label"}}</span>
+                    <span class="derived-value">{{derived.performDC}}</span>
+                </div>
+                <div class="derived-stat">
+                    <span class="derived-label">{{localize "NarutoD20.Technique.SkillThreshold.Label"}}</span>
+                    <span class="derived-value">{{derived.skillThreshold}}</span>
+                </div>
+                <div class="derived-stat">
+                    <span class="derived-label">Successes</span>
+                    <span class="derived-value">{{derived.successes}}</span>
+                </div>
+                <div class="derived-stat">
+                    <span class="derived-label">Learn DC</span>
+                    <span class="derived-value">{{derived.learnDC}}</span>
+                </div>
+                <div class="derived-stat">
+                    <span class="derived-label">{{localize "NarutoD20.Technique.ChakraCost.Label"}}</span>
+                    <input class="derived-input" type="number" name="system.chakraCost" value="{{system.chakraCost}}" min="0">
+                </div>
+            </div>
+
+            {{!-- Row 1: Subtype + Activation --}}
+            <div class="technique-row">
+                <div class="form-group">
+                    <label>{{localize "NarutoD20.Technique.Subtype.Label"}}</label>
+                    <input type="text" name="system.subtype" value="{{system.subtype}}" placeholder="e.g. Katon, Strike">
+                </div>
+                <div class="form-group">
+                    <label>Activation</label>
+                    <select name="system.activation">
+                        {{#each activationChoices as |label key|}}
+                            <option value="{{key}}" {{#if (eq ../system.activation key)}}selected{{/if}}>{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group technique-rank-group">
+                    <label>Perform Misc</label>
+                    <input type="number" name="system.performMiscBonus" value="{{system.performMiscBonus}}" placeholder="0">
+                </div>
+            </div>
+
+            {{!-- Row 2: Range + Target --}}
+            <div class="technique-row">
+                <div class="form-group">
+                    <label>Range</label>
+                    <input type="text" name="system.range" value="{{system.range}}" placeholder="Touch / Close / Medium…">
+                </div>
+                <div class="form-group">
+                    <label>Target</label>
+                    <input type="text" name="system.target" value="{{system.target}}" placeholder="One creature…">
+                </div>
+            </div>
+
+            {{!-- Row 3: Area + Duration --}}
+            <div class="technique-row">
+                <div class="form-group">
+                    <label>Area</label>
+                    <input type="text" name="system.area" value="{{system.area}}" placeholder="10ft burst…">
+                </div>
+                <div class="form-group">
+                    <label>Duration</label>
+                    <input type="text" name="system.duration" value="{{system.duration}}" placeholder="Instant / Concentration…">
+                </div>
+            </div>
+
+            {{!-- Row 4: Save --}}
+            <div class="technique-row">
+                <div class="form-group">
+                    <label>Save</label>
+                    <input type="text" name="system.save" value="{{system.save}}" placeholder="Reflex halves…">
+                </div>
+            </div>
+
+            {{!-- Special type flags --}}
+            <div class="technique-row">
+                <div class="form-group form-group--checkbox">
+                    <input type="checkbox" name="system.isHijutsu" {{#if system.isHijutsu}}checked{{/if}}>
+                    <label>Hijutsu</label>
+                </div>
+                <div class="form-group form-group--checkbox">
+                    <input type="checkbox" name="system.isKinjutsu" {{#if system.isKinjutsu}}checked{{/if}}>
+                    <label>Kinjutsu</label>
+                </div>
+                <div class="form-group form-group--checkbox">
+                    <input type="checkbox" name="system.isCombination" {{#if system.isCombination}}checked{{/if}}>
+                    <label>Combination</label>
+                </div>
+            </div>
+
+            {{!-- Components fieldset --}}
+            <fieldset class="technique-components-fieldset">
+                <legend>{{localize "NarutoD20.Technique.Components.Legend"}}</legend>
+                <div class="technique-components-grid">
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compHandSeals" id="comp-hand-seals" {{#if system.compHandSeals}}checked{{/if}}>
+                        <label for="comp-hand-seals" title="{{localize 'NarutoD20.Technique.Components.HandSeals.Hint'}}">
+                            <span class="comp-abbrev">H</span> {{localize "NarutoD20.Technique.Components.HandSeals.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compHalfSeals" id="comp-half-seals" {{#if system.compHalfSeals}}checked{{/if}}>
+                        <label for="comp-half-seals" title="{{localize 'NarutoD20.Technique.Components.HalfSeals.Hint'}}">
+                            <span class="comp-abbrev">HS</span> {{localize "NarutoD20.Technique.Components.HalfSeals.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compConcentration" id="comp-concentration" {{#if system.compConcentration}}checked{{/if}}>
+                        <label for="comp-concentration" title="{{localize 'NarutoD20.Technique.Components.Concentration.Hint'}}">
+                            <span class="comp-abbrev">C</span> {{localize "NarutoD20.Technique.Components.Concentration.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compMobility" id="comp-mobility" {{#if system.compMobility}}checked{{/if}}>
+                        <label for="comp-mobility" title="{{localize 'NarutoD20.Technique.Components.Mobility.Hint'}}">
+                            <span class="comp-abbrev">M</span> {{localize "NarutoD20.Technique.Components.Mobility.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compFocus" id="comp-focus" {{#if system.compFocus}}checked{{/if}}>
+                        <label for="comp-focus" title="{{localize 'NarutoD20.Technique.Components.MaterialFocus.Hint'}}">
+                            <span class="comp-abbrev">F</span> {{localize "NarutoD20.Technique.Components.MaterialFocus.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compEmpower" id="comp-empower" {{#if system.compEmpower}}checked{{/if}}>
+                        <label for="comp-empower" title="{{localize 'NarutoD20.Technique.Components.Empower.Hint'}}">
+                            <span class="comp-abbrev">E</span> {{localize "NarutoD20.Technique.Components.Empower.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compMastery" id="comp-mastery" {{#if system.compMastery}}checked{{/if}}>
+                        <label for="comp-mastery" title="{{localize 'NarutoD20.Technique.Components.Mastery.Hint'}}">
+                            <span class="comp-abbrev">Mas</span> {{localize "NarutoD20.Technique.Components.Mastery.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compExpendable" id="comp-expendable" {{#if system.compExpendable}}checked{{/if}}>
+                        <label for="comp-expendable" title="{{localize 'NarutoD20.Technique.Components.Expendable.Hint'}}">
+                            <span class="comp-abbrev">X</span> {{localize "NarutoD20.Technique.Components.Expendable.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compPhysical" id="comp-physical" {{#if system.compPhysical}}checked{{/if}}>
+                        <label for="comp-physical" title="{{localize 'NarutoD20.Technique.Components.PhysicalHealth.Hint'}}">
+                            <span class="comp-abbrev">Ph</span> {{localize "NarutoD20.Technique.Components.PhysicalHealth.Label"}}
+                        </label>
+                    </div>
+
+                    <div class="component-entry">
+                        <input type="checkbox" name="system.compXpCost" id="comp-xp-cost" {{#if system.compXpCost}}checked{{/if}}>
+                        <label for="comp-xp-cost" title="{{localize 'NarutoD20.Technique.Components.XpCost.Hint'}}">
+                            <span class="comp-abbrev">XP</span> {{localize "NarutoD20.Technique.Components.XpCost.Label"}}
+                        </label>
+                    </div>
+
+                </div>
+            </fieldset>
+
+        </div>{{!-- end .tab.details --}}
+
+        {{!-- ══ DESCRIPTION TAB ════════════════════════════════ --}}
+        <div class="tab description" data-tab="description">
+            {{editor enrichedDescription target="system.description" engine="prosemirror" editable=editable}}
+        </div>
+
+    </section>{{!-- end .sheet-body --}}
+
+</form>
