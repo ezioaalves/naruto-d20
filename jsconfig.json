@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "checkJs": true,
+    "allowJs": true,
+    "noEmit": true,
+    "moduleResolution": "bundler"
+  },
+  "references": [{ "path": "./pf1" }],
+  "include": [
+    "scripts/**/*.mjs",
+    "pf1/**/*.mjs",
+    "pf1/**/*.d.ts"
+  ],
+  "exclude": [
+    "pf1/dist/",
+    "pf1/foundry/",
+    "pf1/node_modules/"
+  ]
+}
