@@ -40,7 +40,6 @@ export function prepareBaseActorData(actor) {
         nData.learn[key] ??= {};
         const s = nData.learn[key];
         s.miscBonus ??= 0;  // user-entered, preserve
-        if (key === "tai") s.ability ??= "str";  // configurable per-actor
         // Reset computed fields — will be filled in prepareDerivedActorData
         s.base = 0;
         s.abilityMod = 0;
@@ -64,12 +63,15 @@ export function prepareDerivedActorData(actor) {
     const charLevel = actor.system.details?.level?.value || actor.system.details?.cr?.total || 0;
     const conMod = actor.system.abilities?.con?.mod || 0;
 
-    // Taijutsu governing ability is configurable; all others are fixed
+    // Taijutsu governing ability comes from the skill-tab selector (actor.system.skills.tai.ability)
+    const taiAbility = actor.system.skills.tai?.ability || "str";
+    nData.learn.tai.ability = taiAbility;  // mirror for template label
+
     const abilityMap = {
         ckc: "wis",
         gnj: "cha",
         nin: "int",
-        tai: nData.learn.tai?.ability || "str",
+        tai: taiAbility,
         fui: "int"
     };
 

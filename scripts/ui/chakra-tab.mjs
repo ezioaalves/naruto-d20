@@ -11,24 +11,6 @@ export function registerChakraTab() {
             nav.append('<a class="item" data-tab="chakra" data-group="primary">Chakra</a>');
         }
 
-        // Inject Taijutsu ability selector into the PF1e Settings tab
-        const settingsTab = $html.find('div.tab.settings[data-tab="settings"]');
-        if (settingsTab.length && !settingsTab.find(".naruto-tai-setting").length) {
-            const taiAbility = app.actor.flags?.["naruto-d20"]?.learn?.tai?.ability ?? "str";
-            settingsTab.prepend(`
-                <div class="naruto-tai-setting">
-                    <h2>Naruto D20</h2>
-                    <div class="form-group">
-                        <label>Taijutsu Governing Ability</label>
-                        <select class="naruto-tai-ability-select">
-                            <option value="str" ${taiAbility === "str" ? "selected" : ""}>STR (Strength)</option>
-                            <option value="dex" ${taiAbility === "dex" ? "selected" : ""}>DEX (Dexterity)</option>
-                        </select>
-                    </div>
-                </div>
-            `);
-        }
-
         const body = $html.find("section.primary-body");
         if (!body.length) return;
 
@@ -62,9 +44,5 @@ export function registerChakraTab() {
             });
         });
 
-        // Save Taijutsu ability on change
-        $html.find(".naruto-tai-ability-select").off("change").on("change", async (ev) => {
-            await app.actor.setFlag("naruto-d20", "learn.tai.ability", ev.target.value);
-        });
     });
 }
