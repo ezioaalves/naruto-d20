@@ -73,10 +73,10 @@ Hooks.on("pf1PrepareDerivedActorData", (actor) => {
 // ── [6] pf1RegisterDamageTypes ────────────────────────────────────────────
 Hooks.once("pf1RegisterDamageTypes", (registry) => {
     const damageTypes = [
-        { id: "earth", name: "Earth", category: "energy", resist: true, color: "brown", img: "modules/naruto-d20/icons/earth.svg" },
-        { id: "water", name: "Water", category: "energy", resist: true, color: "blue",  img: "modules/naruto-d20/icons/water.svg" },
-        { id: "wind",  name: "Wind",  category: "energy", resist: true, color: "gray",  img: "modules/naruto-d20/icons/wind.svg"  },
-        { id: "holy",  name: "Holy",  category: "energy", resist: true, color: "gold",  img: "modules/naruto-d20/icons/holy.svg"  }
+        { id: "earth", name: "Earth", category: "energy", resist: true, color: "#8B5A2B", img: "modules/naruto-d20/icons/earth.svg" },
+        { id: "water", name: "Water", category: "energy", resist: true, color: "#1E90FF", img: "modules/naruto-d20/icons/water.svg" },
+        { id: "wind",  name: "Wind",  category: "energy", resist: true, color: "#87CEEB", img: "modules/naruto-d20/icons/wind.svg"  },
+        { id: "holy",  name: "Holy",  category: "energy", resist: true, color: "#FFD700", img: "modules/naruto-d20/icons/holy.svg"  }
     ];
     for (const dt of damageTypes) {
         try {
