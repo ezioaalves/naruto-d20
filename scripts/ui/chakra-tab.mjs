@@ -14,6 +14,28 @@ import { performTechnique } from "../use-technique.mjs";
 
 const MAIN_DISCIPLINES = ["Chakra Control", "Fuinjutsu", "Genjutsu", "Ninjutsu", "Taijutsu"];
 
+const ACTIVATION_ABBREV = {
+    "standard":  "Std",
+    "full":      "Full",
+    "swift":     "Swf",
+    "immediate": "Imm",
+    "free":      "Free",
+    "ritual":    "Ritual",
+};
+
+const COMP_MAP = [
+    ["compHandSeals",     "H"],
+    ["compHalfSeals",     "HS"],
+    ["compConcentration", "C"],
+    ["compMobility",      "Mob"],
+    ["compFocus",         "F"],
+    ["compEmpower",       "E"],
+    ["compMastery",       "Mas"],
+    ["compExpendable",    "Exp"],
+    ["compPhysical",      "P"],
+    ["compXpCost",        "XP"],
+];
+
 function _prepareTechniques(actor) {
     const items = actor.items
         .filter(i => i.type === "naruto-d20.technique")
@@ -32,6 +54,9 @@ function _prepareTechniques(actor) {
                 chakraCost: item.system.chakraCost,
                 performDC:  item.system.derived.performDC,
                 hasActions: (item.actions?.size ?? 0) > 0,
+                activation: ACTIVATION_ABBREV[item.system.activation] ?? item.system.activation ?? "",
+                components: COMP_MAP.filter(([k]) => item.system[k]).map(([, a]) => a).join(", "),
+                discipline: item.system.discipline ?? "",
             });
         }
         return [...map.entries()]

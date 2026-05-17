@@ -166,21 +166,38 @@
             {{#each techniques.tabs}}
             <div class="technique-disc-group" data-disc="{{key}}">
                 {{#each groups}}
-                <div class="rank-header">Rank {{rank}}</div>
                 <ol class="item-list technique-list">
+                    <li class="flexrow item-list-header rank-header">
+                        <div class="item-name"><h3>Rank {{rank}}</h3></div>
+                        <div class="item-detail technique-cost"><i class="fa-solid fa-fire" data-tooltip="Chakra Cost"></i></div>
+                        <div class="item-detail item-actions"><i class="icon-pf icon-gears" data-tooltip="Actions"></i></div>
+                        <div class="item-detail spell-activation"><i class="icon-pf icon-hand" data-tooltip="Activation"></i></div>
+                        <div class="item-detail spell-components"><i class="icon-pf icon-expense" data-tooltip="Components"></i></div>
+                        <div class="item-detail spell-school"><i class="icon-pf icon-spell-book" data-tooltip="Type"></i></div>
+                        <div class="item-controls"></div>
+                    </li>
                     {{#each rows}}
-                    <li class="item technique-row flexrow" data-item-id="{{id}}">
-                        <div class="item-image" style='background-image: url("{{img}}")'></div>
-                        <div class="item-name flexcol">
+                    <li class="item flexrow technique-row" data-item-id="{{id}}">
+                        <div class="item-name">
+                            <div class="item-image" style='background-image: url("{{img}}")'></div>
                             <h4>{{name}}</h4>
-                            <span class="technique-meta">{{complexity}} · {{chakraCost}} chakra · Perform DC {{performDC}}</span>
                         </div>
-                        <div class="item-controls">
+                        <div class="item-detail technique-cost"><span>{{chakraCost}}</span></div>
+                        <div class="item-detail item-actions">
                             {{#if hasActions}}
-                            <a class="shinobi-technique-use"    data-tooltip="Use Technique"><i class="fa-solid fa-dice-d20"></i></a>
+                            <div class="item-action">
+                                <a class="shinobi-technique-use item-control action roll" data-tooltip="Use Technique">
+                                    <i class="fa-solid fa-dice-d20" inert></i>
+                                </a>
+                            </div>
                             {{/if}}
-                            <a class="shinobi-technique-open"   data-tooltip="Open Sheet"><i class="fa-solid fa-edit"></i></a>
-                            <a class="shinobi-technique-delete" data-tooltip="Remove"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                        <div class="item-detail spell-activation"><span>{{activation}}</span></div>
+                        <div class="item-detail spell-components"><span>{{components}}</span></div>
+                        <div class="item-detail spell-school"><span>{{discipline}}</span></div>
+                        <div class="item-controls">
+                            <a class="shinobi-technique-open item-control" data-tooltip="Open Sheet"><i class="fa-solid fa-edit" inert></i></a>
+                            <a class="shinobi-technique-delete item-control" data-tooltip="Remove"><i class="fa-solid fa-trash" inert></i></a>
                         </div>
                     </li>
                     {{/each}}

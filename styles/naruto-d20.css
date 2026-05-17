@@ -231,7 +231,7 @@ div.naruto-tai-setting .form-group {
     font-weight: 600;
 }
 
-/* Rank sub-header */
+/* Rank sub-header — <li class="item-list-header rank-header"> */
 .chakra .rank-header {
     font-size: 0.8em;
     font-weight: 600;
@@ -239,20 +239,44 @@ div.naruto-tai-setting .form-group {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 2px 4px;
-    margin: 4px 0 0;
     border-bottom: 1px solid #c0b89a;
+}
+
+/* Grid layout — overrides flexrow's display:flex to guarantee column alignment
+   between rank header rows and technique data rows.
+   Columns: name | cost | actions | activation | components | school | controls */
+.chakra .technique-list li {
+    display: grid;
+    grid-template-columns: 1fr 44px 32px 80px 80px 96px 120px;
+    align-items: center;
+    min-height: 24px;
+}
+
+.chakra .technique-list .item-name {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
 }
 
 /* Individual technique row */
 .chakra .technique-row {
     align-items: center;
-    gap: 6px;
-    padding: 3px 4px;
+    padding: 2px 4px;
     border-bottom: 1px solid rgba(192, 184, 154, 0.4);
 }
 
 .chakra .technique-row:last-child {
     border-bottom: none;
+}
+
+.chakra .technique-row .item-name {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .chakra .technique-row .item-image {
@@ -264,22 +288,12 @@ div.naruto-tai-setting .form-group {
     border: 1px solid #c0b89a;
 }
 
-.chakra .technique-row .item-name {
-    flex: 1;
-    overflow: hidden;
-}
-
 .chakra .technique-row .item-name h4 {
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 0.9em;
-}
-
-.chakra .technique-row .technique-meta {
-    font-size: 0.72em;
-    color: #888;
 }
 
 .chakra .technique-row .item-controls {
