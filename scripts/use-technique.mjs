@@ -43,14 +43,9 @@ export async function performTechnique(item, actionId) {
             ? `Ranks ${skillRanks} ≥ threshold ${threshold} — auto-perform.`
             : `No perform check required.`;
     } else {
-        // pf1.dice.d20Roll posts its own chat card; just read the total.
-        // `skill:` tells PF1e to apply the standard skill formula (ranks +
-        // ability + class-skill bonus). `parts` adds only technique-specific
-        // extras on top.
         const roll = await pf1.dice.d20Roll({
-            flavor:   `${item.name} — Perform Check (DC ${performDC})`,
-            skill:    skillKey,
-            parts:    _buildPerformParts(sys),
+            flavor:   `${sys.discipline} Perform Check`,
+            parts:    _buildPerformParts(actor, skillKey, sys),
             rollData: actor.getRollData?.() ?? {},
             speaker:  ChatMessage.implementation?.getSpeaker({ actor }) ?? ChatMessage.getSpeaker({ actor }),
         });
@@ -104,9 +99,30 @@ export async function performTechnique(item, actionId) {
     await action.use();
 }
 
-// Only technique-specific extras — PF1e's d20Roll handles the base skill formula.
-function _buildPerformParts(sys) {
+const ABILITY_LABELS = { str: "Str", dex: "Dex", con: "Con", int: "Int", wis: "Wis", cha: "Cha" };
+
+function _buildPerformParts(actor, skillKey, sys) {
     const parts = [];
+    const skill = actor.system.skills?.[skillKey] ?? {};
+    const rank = skill.rank ?? 0;
+    const abilityKey = skill.ability ?? "str";
+    const abilityMod = actor.system.abilities?.[abilityKey]?.mod ?? 0;
+    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+
+    if (rank)                 parts.push(`${rank}[Ranks]`);
+    if (abilityMod)           parts.push(`${abilityMod}[${abilityLabel}]`);
+    if (skill.cs && rank > 0) parts.push(`3[Class Skill]`);
+
+    const changeBonus = skill.changeBonus ?? 0;
+    if (changeBonus) {
+        const buffSources = actor.sourceInfo?.[`system.skills.${skillKey}.changeBonus`]?.positive ?? [];
+        if (buffSources.length > 0) {
+            for (const src of buffSources) parts.push(`${src.value}[${src.name}]`);
+        } else {
+            parts.push(`${changeBonus}[Skill Bonus]`);
+        }
+    }
+
     if (sys.performMiscBonus) parts.push(`${sys.performMiscBonus}[Perform Misc]`);
     return parts;
 }
