@@ -1,3 +1,14 @@
+export const DISCIPLINE_SKILL_MAP = Object.freeze({
+    "Chakra Control":  "ckc",
+    "Fuinjutsu":       "fui",
+    "Genjutsu":        "gnj",
+    "Ninjutsu":        "nin",
+    "Taijutsu":        "tai",
+    "Hachimon Tonkou": undefined,
+    "Training":        undefined,
+    "":                undefined,
+});
+
 const NARUTO_SKILLS = {
     ckc: { label: "NarutoD20.Skills.ckc", ability: "wis" },
     fui: { label: "NarutoD20.Skills.fui", ability: "int" },

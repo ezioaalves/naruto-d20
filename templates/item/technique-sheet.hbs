@@ -1,229 +1,484 @@
 {{!-- templates/item/technique-sheet.hbs --}}
-{{!-- Naruto D20: Technique Item Sheet --}}
+{{!-- Naruto D20 Technique — V1 ItemSheet, spell-sheet grid layout --}}
+<form class="{{cssClass}} flexcol" autocomplete="off" data-tooltip-class="pf1">
 
-<form class="naruto-technique-sheet flexcol" autocomplete="off">
+  {{!-- ── Header ─────────────────────────────────────────────────────── --}}
+  <header class="sheet-header flexrow">
+    <img class="profile" src="{{item.img}}" data-edit="img" title="{{item.name}}">
 
-    {{!-- ── Header ─────────────────────────────────────────────── --}}
-    <header class="sheet-header flexrow">
-        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" width="56" height="56">
-        <div class="header-fields flexcol">
-            <input class="title-field" type="text" name="name" value="{{item.name}}" placeholder="Technique Name">
-            <div class="technique-row">
-                {{!-- Discipline --}}
-                <div class="form-group">
-                    <label>{{localize "NarutoD20.Technique.Type.Label"}}</label>
-                    <select name="system.discipline">
-                        {{#each disciplineChoices as |label key|}}
-                            <option value="{{key}}" {{#if (eq ../system.discipline key)}}selected{{/if}}>{{label}}</option>
-                        {{/each}}
-                    </select>
-                </div>
-                {{!-- Rank --}}
-                <div class="form-group technique-rank-group">
-                    <label>{{localize "NarutoD20.Technique.Rank.Label"}}</label>
-                    <input type="number" name="system.rank" value="{{system.rank}}" min="1" max="15" placeholder="1">
-                </div>
-                {{!-- Complexity --}}
-                <div class="form-group">
-                    <label>{{localize "NarutoD20.Technique.Complexity.Label"}}</label>
-                    <select name="system.complexity">
-                        {{#each complexityChoices as |label key|}}
-                            <option value="{{key}}" {{#if (eq ../system.complexity key)}}selected{{/if}}>{{label}}</option>
-                        {{/each}}
-                    </select>
-                </div>
-            </div>
-        </div>
+    <div class="flexcol header-details">
+      <h1 class="item-name">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'PF1.Name'}}">
+      </h1>
+
+      <ul class="summary flexrow">
+        <li>
+          <select name="system.discipline">
+            {{selectOptions disciplineChoices selected=system.discipline}}
+          </select>
+        </li>
+        <li>
+          <label>{{localize "NarutoD20.Technique.Rank.Label"}}</label>
+          <input type="number" name="system.rank" value="{{system.rank}}" min="1" max="15" style="width:3.5em">
+        </li>
+        <li>
+          <select name="system.complexity">
+            {{selectOptions complexityChoices selected=system.complexity}}
+          </select>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  {{!-- ── Sidebar ─────────────────────────────────────────────────────── --}}
+  <section class="sidebar">
+    <header>
+      <h3 class="item-type">{{itemType}}</h3>
+      <h4 class="discipline">{{system.discipline}}</h4>
+      <h4 class="rank-line">{{localize "NarutoD20.Technique.Rank.Label"}} {{system.rank}} · {{system.complexity}}</h4>
     </header>
 
-    {{!-- ── Tabs ──────────────────────────────────────────────── --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item active" data-tab="details">Details</a>
-        <a class="item" data-tab="description">Description</a>
-    </nav>
+    <ul class="property-list stats tags">
+      <h5>{{localize "NarutoD20.Technique.Type.Label"}}</h5>
+      <li class="property generic-tag">Learn DC {{derived.learnDC}}</li>
+      <li class="property generic-tag">Perform DC {{derived.performDC}}</li>
+      <li class="property generic-tag">Threshold {{derived.skillThreshold}}</li>
+      <li class="property generic-tag">Successes {{derived.successes}}</li>
+    </ul>
 
-    <section class="sheet-body">
+    <label class="descriptor number">
+      <span>{{localize "NarutoD20.Technique.ChakraCost.Label"}}</span>
+      <input type="number" name="system.chakraCost" value="{{system.chakraCost}}" min="0">
+    </label>
 
-        {{!-- ══ DETAILS TAB ════════════════════════════════════ --}}
-        <div class="tab details naruto-technique-details active" data-tab="details">
+    {{#if hasComponents}}
+    <ul class="property-list components tags">
+      <h5>{{localize "NarutoD20.Technique.Components.Legend"}}</h5>
+      {{#if system.compHandSeals}}    <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.HandSeals.Label"}}</li>{{/if}}
+      {{#if system.compHalfSeals}}    <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.HalfSeals.Label"}}</li>{{/if}}
+      {{#if system.compConcentration}}<li class="property generic-tag">{{localize "NarutoD20.Technique.Components.Concentration.Label"}}</li>{{/if}}
+      {{#if system.compMobility}}     <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.Mobility.Label"}}</li>{{/if}}
+      {{#if system.compFocus}}        <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.MaterialFocus.Label"}}</li>{{/if}}
+      {{#if system.compEmpower}}      <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.Empower.Label"}}</li>{{/if}}
+      {{#if system.compMastery}}      <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.Mastery.Label"}}</li>{{/if}}
+      {{#if system.compExpendable}}   <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.Expendable.Label"}}</li>{{/if}}
+      {{#if system.compPhysical}}     <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.PhysicalHealth.Label"}}</li>{{/if}}
+      {{#if system.compXpCost}}       <li class="property generic-tag">{{localize "NarutoD20.Technique.Components.XpCost.Label"}}</li>{{/if}}
+    </ul>
+    {{/if}}
 
-            {{!-- Derived stats bar (read-only) --}}
-            <div class="technique-derived-stats">
-                <div class="derived-stat">
-                    <span class="derived-label">{{localize "NarutoD20.Technique.PerformDC.Label"}}</span>
-                    <span class="derived-value">{{derived.performDC}}</span>
-                </div>
-                <div class="derived-stat">
-                    <span class="derived-label">{{localize "NarutoD20.Technique.SkillThreshold.Label"}}</span>
-                    <span class="derived-value">{{derived.skillThreshold}}</span>
-                </div>
-                <div class="derived-stat">
-                    <span class="derived-label">Successes</span>
-                    <span class="derived-value">{{derived.successes}}</span>
-                </div>
-                <div class="derived-stat">
-                    <span class="derived-label">Learn DC</span>
-                    <span class="derived-value">{{derived.learnDC}}</span>
-                </div>
-                <div class="derived-stat">
-                    <span class="derived-label">{{localize "NarutoD20.Technique.ChakraCost.Label"}}</span>
-                    <input class="derived-input" type="number" name="system.chakraCost" value="{{system.chakraCost}}" min="0">
-                </div>
+    <div class="form-group stacked sidebar-flags">
+      <label class="checkbox">
+        <input type="checkbox" name="system.showInQuickbar" {{checked system.showInQuickbar}}>
+        {{localize "PF1.Quickbar"}}
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" name="system.showInCombat" {{checked system.showInCombat}}>
+        {{localize "PF1.QuickCombat"}}
+      </label>
+    </div>
+  </section>
+
+  {{!-- ── Nav ────────────────────────────────────────────────────────── --}}
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="description" data-group="primary">{{localize "PF1.Description"}}</a>
+    <a class="item"        data-tab="details"     data-group="primary">{{localize "PF1.Details"}}</a>
+    <a class="item"        data-tab="links"       data-group="primary">{{localize "PF1.Links"}}</a>
+    <a class="item"        data-tab="advanced"    data-group="primary">{{localize "PF1.Advanced"}}</a>
+  </nav>
+
+  {{!-- ── Body ───────────────────────────────────────────────────────── --}}
+  <section class="primary-body">
+
+    {{!-- ══════════════════════════ Description ══════════════════════════ --}}
+    <div class="tab description active" data-tab="description" data-group="primary">
+
+      <div class="technique-meta flexrow" style="gap:8px; padding:4px 0 8px; font-size:0.9em; color:#5a4830;">
+        <span><strong>{{system.discipline}}</strong></span>
+        <span>·</span>
+        <span>{{localize "NarutoD20.Technique.Rank.Label"}} {{system.rank}}</span>
+        <span>·</span>
+        <span>{{system.complexity}}</span>
+      </div>
+
+      <h2>{{localize "PF1.Description"}}</h2>
+      <div class="editor">
+        {{editor system.description.value target="system.description.value" button=false engine="prosemirror" editable=editable}}
+      </div>
+
+      <fieldset class="instructions{{#unless system.description.instructions}} placeholder{{/unless}}">
+        <legend><i class="icon fa-solid fa-circle-info fa-fw"></i> {{localize "PF1.Instructions"}}</legend>
+        <div class="instruction-content">
+          {{editor system.description.instructions target="system.description.instructions" button=false engine="prosemirror" editable=editable}}
+        </div>
+      </fieldset>
+    </div>
+
+    {{!-- ══════════════════════════ Details ══════════════════════════════ --}}
+    <div class="tab details" data-tab="details" data-group="primary">
+
+      {{!-- Actions list — matches PF1e's item-actions.hbs exactly --}}
+      <div class="actions">
+        <ol class="item-list action-parts">
+          <li class="item-list-header flexrow">
+            <div class="item-name">
+              <h3>{{localize "PF1.ActionPlural"}} <span class="perform-hint">{{performHint}}</span></h3>
+            </div>
+            <div class="item-detail item-uses">
+              <i class="icon-pf icon-battery-pack" data-tooltip="PF1.ChargePlural"></i>
+            </div>
+            <div class="action-controls item-controls">
+              <a class="action-control add-action" data-tooltip="PF1.Add">
+                <i class="fa-solid fa-plus" inert></i>
+              </a>
+            </div>
+          </li>
+          <ol class="item-list">
+            {{#each actions}}
+            <li class="action-part item flexrow" data-action-id="{{_id}}">
+              <div class="item-name">
+                <div class="item-image no-hover" style='background-image: url("{{img}}")'></div>
+                <h4>{{name}}</h4>
+              </div>
+              <div class="item-detail item-uses flexrow"></div>
+              <div class="action-controls item-controls">
+                <a class="use-action{{#unless @root.canUse}} disabled{{/unless}}" data-tooltip="Use"><i class="fa-solid fa-dice-d20" inert></i></a>
+                <a class="edit-action"      data-tooltip="PF1.EditAction">     <i class="fa-solid fa-edit"  inert></i></a>
+                <a class="duplicate-action" data-tooltip="PF1.DuplicateAction"><i class="fa-solid fa-copy"  inert></i></a>
+                <a class="delete-action"    data-tooltip="PF1.DeleteAction">   <i class="fa-solid fa-trash" inert></i></a>
+              </div>
+            </li>
+            {{/each}}
+          </ol>
+        </ol>
+      </div>
+
+      <hr>
+
+      {{!-- Configuration --}}
+      <h3 class="form-header">Configuration</h3>
+
+      <div class="form-group select">
+        <label>Activation</label>
+        <div class="form-fields">
+          <select name="system.activation">
+            {{selectOptions activationChoices selected=system.activation}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Technique.Subtype.Label"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.subtype" value="{{system.subtype}}" placeholder="e.g. Katon, Strike">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Perform Misc Bonus</label>
+        <div class="form-fields">
+          <input type="number" name="system.performMiscBonus" value="{{system.performMiscBonus}}" placeholder="0">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Range</label>
+        <div class="form-fields">
+          <input type="text" name="system.range" value="{{system.range}}" placeholder="Touch / Close / Medium…">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Target</label>
+        <div class="form-fields">
+          <input type="text" name="system.target" value="{{system.target}}" placeholder="One creature…">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Area</label>
+        <div class="form-fields">
+          <input type="text" name="system.area" value="{{system.area}}" placeholder="10 ft. burst…">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Duration</label>
+        <div class="form-fields">
+          <input type="text" name="system.duration" value="{{system.duration}}" placeholder="Instant / Concentration…">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Save</label>
+        <div class="form-fields">
+          <input type="text" name="system.save" value="{{system.save}}" placeholder="Reflex halves…">
+        </div>
+      </div>
+
+      <div class="form-group stacked">
+        <label>Special</label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.isHijutsu"     {{checked system.isHijutsu}}>     Hijutsu
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.isKinjutsu"    {{checked system.isKinjutsu}}>    Kinjutsu
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.isCombination" {{checked system.isCombination}}> Combination
+        </label>
+      </div>
+
+      {{!-- Components --}}
+      <h3 class="form-header">{{localize "NarutoD20.Technique.Components.Legend"}}</h3>
+
+      <div class="form-group stacked">
+        <label class="checkbox">
+          <input type="checkbox" name="system.compHandSeals" {{checked system.compHandSeals}}>
+          {{localize "NarutoD20.Technique.Components.HandSeals.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compHalfSeals" {{checked system.compHalfSeals}}>
+          {{localize "NarutoD20.Technique.Components.HalfSeals.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compConcentration" {{checked system.compConcentration}}>
+          {{localize "NarutoD20.Technique.Components.Concentration.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compMobility" {{checked system.compMobility}}>
+          {{localize "NarutoD20.Technique.Components.Mobility.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compFocus" {{checked system.compFocus}}>
+          {{localize "NarutoD20.Technique.Components.MaterialFocus.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compEmpower" {{checked system.compEmpower}}>
+          {{localize "NarutoD20.Technique.Components.Empower.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compMastery" {{checked system.compMastery}}>
+          {{localize "NarutoD20.Technique.Components.Mastery.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compExpendable" {{checked system.compExpendable}}>
+          {{localize "NarutoD20.Technique.Components.Expendable.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compPhysical" {{checked system.compPhysical}}>
+          {{localize "NarutoD20.Technique.Components.PhysicalHealth.Label"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.compXpCost" {{checked system.compXpCost}}>
+          {{localize "NarutoD20.Technique.Components.XpCost.Label"}}
+        </label>
+      </div>
+    </div>
+
+    {{!-- ══════════════════════════ Links ════════════════════════════════ --}}
+    {{!-- Matches PF1e's item-links.hbs partial structure exactly --}}
+    <div class="tab links" data-tab="links" data-group="primary">
+
+      <nav class="sheet-navigation tabs" data-group="links" data-tabs-type="list">
+        {{#each links.list}}
+        <a class="item" data-tab="{{id}}" data-group="links">{{label}}</a>
+        {{/each}}
+      </nav>
+
+      <section class="links-body">
+        {{#each links.list}}
+        <div class="tab" data-group="links" data-tab="{{id}}" data-drop-category="{{id}}">
+
+          <div class="help-text">
+            <i class="help-icon fa-solid fa-info-circle"></i> {{help}}
+          </div>
+
+          <table class="item-links">
+            <tr>
+              <th>{{localize "PF1.Item"}}</th>
+              <th class="controls"></th>
+            </tr>
+            {{#each items}}
+            <tr class="links-item{{#if broken}} broken-link{{/if}}" data-uuid="{{uuid}}" data-index="{{@index}}">
+              <td class="item-name">
+                <img src="{{img}}" width="24" height="24">
+                <span class="name">{{#if name}}{{name}}{{else}}{{uuid}}{{/if}}</span>
+                {{#if uuid}}
+                <a class="source-item" data-uuid="{{uuid}}" data-tooltip="{{uuid}}">
+                  <i class="fa-solid fa-book compendium-icon" inert></i>
+                </a>
+                {{/if}}
+              </td>
+              <td class="controls">
+                {{#if @root.owner}}
+                <a class="link-control delete-link" data-uuid="{{uuid}}" data-index="{{@index}}" data-type="{{../id}}"
+                   data-tooltip="PF1.DeleteItem">
+                  <i class="fa-solid fa-trash" inert></i>
+                </a>
+                {{/if}}
+              </td>
+            </tr>
+            {{/each}}
+          </table>
+        </div>
+        {{/each}}
+      </section>
+    </div>
+
+    {{!-- ══════════════════════════ Advanced ═════════════════════════════ --}}
+    {{!-- Matches PF1e's item-advanced.hbs structure --}}
+    <div class="tab advanced" data-tab="advanced" data-group="primary">
+
+      <div class="form-group">
+        <label>{{localize "PF1.Identifier"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.tag" value="{{system.tag}}"
+                 placeholder="{{localize 'NarutoD20.Technique.IdentifierPlaceholder'}}"
+                 pattern="[a-zA-Z0-9_-]+">
+        </div>
+      </div>
+
+      <div class="flexcol">
+        <div class="flags">
+          <h3 class="form-header">{{localize "PF1.Flags"}}</h3>
+
+          {{!-- Boolean Flags — entry-selector opens PF1e's modal --}}
+          <div class="form-group">
+            <div class="form-fields boolean-flags">
+              <div class="data-selector">
+                <a class="entry-selector"
+                   data-for="system.flags.boolean"
+                   data-flag="true"
+                   data-boolean="true"
+                   data-fields="PF1.Name"
+                   data-dtypes="String"
+                   data-title="PF1.FlagsBoolean">
+                  <i class="fa-solid fa-edit" inert></i>
+                </a>
+                <label>{{localize "PF1.FlagsBoolean"}}</label>
+              </div>
+              <div class="tag-list flexrow">
+                {{#each flags.boolean as |value key|}}
+                <span class="tag">{{key}}</span>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+
+          {{!-- Dictionary Flags — entry-selector opens PF1e's modal --}}
+          <div class="form-group">
+            <div class="form-fields dictionary-flags">
+              <div class="data-selector">
+                <a class="entry-selector"
+                   data-for="system.flags.dictionary"
+                   data-flag="true"
+                   data-fields="PF1.Name;PF1.Value"
+                   data-dtypes="String;String"
+                   data-title="PF1.FlagsDictionary">
+                  <i class="fa-solid fa-edit" inert></i>
+                </a>
+                <label>{{localize "PF1.FlagsDictionary"}}</label>
+              </div>
             </div>
 
-            {{!-- Row 1: Subtype + Activation --}}
-            <div class="technique-row">
-                <div class="form-group">
-                    <label>{{localize "NarutoD20.Technique.Subtype.Label"}}</label>
-                    <input type="text" name="system.subtype" value="{{system.subtype}}" placeholder="e.g. Katon, Strike">
-                </div>
-                <div class="form-group">
-                    <label>Activation</label>
-                    <select name="system.activation">
-                        {{#each activationChoices as |label key|}}
-                            <option value="{{key}}" {{#if (eq ../system.activation key)}}selected{{/if}}>{{label}}</option>
-                        {{/each}}
-                    </select>
-                </div>
-                <div class="form-group technique-rank-group">
-                    <label>Perform Misc</label>
-                    <input type="number" name="system.performMiscBonus" value="{{system.performMiscBonus}}" placeholder="0">
-                </div>
-            </div>
-
-            {{!-- Row 2: Range + Target --}}
-            <div class="technique-row">
-                <div class="form-group">
-                    <label>Range</label>
-                    <input type="text" name="system.range" value="{{system.range}}" placeholder="Touch / Close / Medium…">
-                </div>
-                <div class="form-group">
-                    <label>Target</label>
-                    <input type="text" name="system.target" value="{{system.target}}" placeholder="One creature…">
-                </div>
-            </div>
-
-            {{!-- Row 3: Area + Duration --}}
-            <div class="technique-row">
-                <div class="form-group">
-                    <label>Area</label>
-                    <input type="text" name="system.area" value="{{system.area}}" placeholder="10ft burst…">
-                </div>
-                <div class="form-group">
-                    <label>Duration</label>
-                    <input type="text" name="system.duration" value="{{system.duration}}" placeholder="Instant / Concentration…">
-                </div>
-            </div>
-
-            {{!-- Row 4: Save --}}
-            <div class="technique-row">
-                <div class="form-group">
-                    <label>Save</label>
-                    <input type="text" name="system.save" value="{{system.save}}" placeholder="Reflex halves…">
-                </div>
-            </div>
-
-            {{!-- Special type flags --}}
-            <div class="technique-row">
-                <div class="form-group form-group--checkbox">
-                    <input type="checkbox" name="system.isHijutsu" {{#if system.isHijutsu}}checked{{/if}}>
-                    <label>Hijutsu</label>
-                </div>
-                <div class="form-group form-group--checkbox">
-                    <input type="checkbox" name="system.isKinjutsu" {{#if system.isKinjutsu}}checked{{/if}}>
-                    <label>Kinjutsu</label>
-                </div>
-                <div class="form-group form-group--checkbox">
-                    <input type="checkbox" name="system.isCombination" {{#if system.isCombination}}checked{{/if}}>
-                    <label>Combination</label>
-                </div>
-            </div>
-
-            {{!-- Components fieldset --}}
-            <fieldset class="technique-components-fieldset">
-                <legend>{{localize "NarutoD20.Technique.Components.Legend"}}</legend>
-                <div class="technique-components-grid">
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compHandSeals" id="comp-hand-seals" {{#if system.compHandSeals}}checked{{/if}}>
-                        <label for="comp-hand-seals" title="{{localize 'NarutoD20.Technique.Components.HandSeals.Hint'}}">
-                            <span class="comp-abbrev">H</span> {{localize "NarutoD20.Technique.Components.HandSeals.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compHalfSeals" id="comp-half-seals" {{#if system.compHalfSeals}}checked{{/if}}>
-                        <label for="comp-half-seals" title="{{localize 'NarutoD20.Technique.Components.HalfSeals.Hint'}}">
-                            <span class="comp-abbrev">HS</span> {{localize "NarutoD20.Technique.Components.HalfSeals.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compConcentration" id="comp-concentration" {{#if system.compConcentration}}checked{{/if}}>
-                        <label for="comp-concentration" title="{{localize 'NarutoD20.Technique.Components.Concentration.Hint'}}">
-                            <span class="comp-abbrev">C</span> {{localize "NarutoD20.Technique.Components.Concentration.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compMobility" id="comp-mobility" {{#if system.compMobility}}checked{{/if}}>
-                        <label for="comp-mobility" title="{{localize 'NarutoD20.Technique.Components.Mobility.Hint'}}">
-                            <span class="comp-abbrev">M</span> {{localize "NarutoD20.Technique.Components.Mobility.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compFocus" id="comp-focus" {{#if system.compFocus}}checked{{/if}}>
-                        <label for="comp-focus" title="{{localize 'NarutoD20.Technique.Components.MaterialFocus.Hint'}}">
-                            <span class="comp-abbrev">F</span> {{localize "NarutoD20.Technique.Components.MaterialFocus.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compEmpower" id="comp-empower" {{#if system.compEmpower}}checked{{/if}}>
-                        <label for="comp-empower" title="{{localize 'NarutoD20.Technique.Components.Empower.Hint'}}">
-                            <span class="comp-abbrev">E</span> {{localize "NarutoD20.Technique.Components.Empower.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compMastery" id="comp-mastery" {{#if system.compMastery}}checked{{/if}}>
-                        <label for="comp-mastery" title="{{localize 'NarutoD20.Technique.Components.Mastery.Hint'}}">
-                            <span class="comp-abbrev">Mas</span> {{localize "NarutoD20.Technique.Components.Mastery.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compExpendable" id="comp-expendable" {{#if system.compExpendable}}checked{{/if}}>
-                        <label for="comp-expendable" title="{{localize 'NarutoD20.Technique.Components.Expendable.Hint'}}">
-                            <span class="comp-abbrev">X</span> {{localize "NarutoD20.Technique.Components.Expendable.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compPhysical" id="comp-physical" {{#if system.compPhysical}}checked{{/if}}>
-                        <label for="comp-physical" title="{{localize 'NarutoD20.Technique.Components.PhysicalHealth.Hint'}}">
-                            <span class="comp-abbrev">Ph</span> {{localize "NarutoD20.Technique.Components.PhysicalHealth.Label"}}
-                        </label>
-                    </div>
-
-                    <div class="component-entry">
-                        <input type="checkbox" name="system.compXpCost" id="comp-xp-cost" {{#if system.compXpCost}}checked{{/if}}>
-                        <label for="comp-xp-cost" title="{{localize 'NarutoD20.Technique.Components.XpCost.Hint'}}">
-                            <span class="comp-abbrev">XP</span> {{localize "NarutoD20.Technique.Components.XpCost.Label"}}
-                        </label>
-                    </div>
-
-                </div>
-            </fieldset>
-
-        </div>{{!-- end .tab.details --}}
-
-        {{!-- ══ DESCRIPTION TAB ════════════════════════════════ --}}
-        <div class="tab description" data-tab="description">
-            {{editor enrichedDescription target="system.description" engine="prosemirror" editable=editable}}
+            {{#if flags.dictionary}}
+            <table>
+              <thead>
+                <tr>
+                  <th>{{localize "PF1.Name"}}</th>
+                  <th>{{localize "PF1.Value"}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each flags.dictionary as |value key|}}
+                <tr data-tooltip="@dFlags.{{@root.system.tag}}.{{key}}">
+                  <td>{{key}}</td>
+                  <td>{{value}}</td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+            {{/if}}
+          </div>
         </div>
 
-    </section>{{!-- end .sheet-body --}}
+        {{!-- Script Calls --}}
+        {{#if scriptCalls}}
+        <div class="script-calls">
+          <h3 class="form-header">{{localize "PF1.ScriptCalls.Name"}}</h3>
 
+          {{#each scriptCalls}}
+          <ol class="item-list" {{#each dataset as |value|}}data-{{@key}}="{{value}}"{{/each}}>
+            <li class="item-list-header flexrow">
+              <div class="item-name">
+                {{#if tooltip}}
+                <i class="fa-solid fa-info fa-fw item-info" data-tooltip="{{tooltip}}"></i>
+                {{/if}}
+                <h3>{{name}}</h3>
+              </div>
+
+              {{#if @root.isGM}}
+              <div class="item-detail item-hidden">
+                <i class="fa-solid fa-eye-slash" data-tooltip="PF1.Hidden"></i>
+              </div>
+              {{/if}}
+
+              <div class="item-controls">
+                {{#if @root.owner}}
+                <a class="item-control item-create" data-tooltip="PF1.ScriptCalls.Create">
+                  <i class="fa-solid fa-plus" inert></i>
+                </a>
+                {{/if}}
+              </div>
+            </li>
+
+            <ol class="item-list">
+              {{#each items}}
+              <li class="item flexrow" data-item-id="{{id}}">
+                <div class="item-name">
+                  <div class="item-image no-hover" style='background-image: url("{{img}}")'></div>
+                  <h4>{{name}}</h4>
+                </div>
+
+                {{#if @root.isGM}}
+                <div class="item-detail item-hidden">
+                  <a class="item-control item-hide">
+                    <span class="hidden-icon">
+                      <i class="fa-solid {{#if hidden}}fa-check is-visible{{else}}fa-times is-hidden{{/if}} fa-fw" inert></i>
+                    </span>
+                  </a>
+                </div>
+                {{/if}}
+
+                <div class="item-controls">
+                  <a class="item-control item-edit" data-tooltip="PF1.EditItem"><i class="fa-solid fa-edit" inert></i></a>
+                  {{#if @root.owner}}
+                  <a class="item-control item-delete" data-tooltip="PF1.DeleteItem"><i class="fa-solid fa-trash" inert></i></a>
+                  {{/if}}
+                </div>
+              </li>
+              {{/each}}
+            </ol>
+          </ol>
+          {{/each}}
+        </div>
+        {{/if}}
+
+        {{!-- Tags --}}
+        <h3 class="form-header">{{localize "PF1.Tags"}}</h3>
+        <div class="form-group">
+          <div class="tag-list flexrow">
+            {{#each tagList}}
+            <span class="tag" data-tag="{{this}}">
+              {{this}}<a class="delete-tag" data-tag="{{this}}">×</a>
+            </span>
+            {{/each}}
+            <input type="text" class="add-tag-input" placeholder="{{localize 'NarutoD20.Technique.AddTagPlaceholder'}}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
 </form>

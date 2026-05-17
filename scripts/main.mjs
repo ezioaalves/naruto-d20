@@ -13,26 +13,42 @@
  *  [9] Foundry "ready"             → One-time flag migration for existing actors (GM only)
  */
 
-import { TechniqueDataModel } from "./data/technique-model.mjs";
+import { createTechniqueDataModel } from "./data/technique-model.mjs";
+import { createTechniqueItemSheet } from "./ui/technique-sheet.mjs";
 import { prepareBaseActorData, prepareDerivedActorData } from "./data/derived-data.mjs";
 import { registerNarutoSkills, ensureActorSkillEntries } from "./data/skills.mjs";
-import { TechniqueItemSheet } from "./ui/technique-sheet.mjs";
 import { registerChakraTab } from "./ui/chakra-tab.mjs";
 import { registerSummaryStats } from "./ui/summary-stats.mjs";
 
 const MODULE_ID = "naruto-d20";
-const FLAG_MIGRATION_VERSION = 1;
+const FLAG_MIGRATION_VERSION = 2;
 
 // ── [1] init ──────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
+    const TechniqueDataModel  = createTechniqueDataModel();
+    const TechniqueItemSheet  = createTechniqueItemSheet();
+
     CONFIG.Item.dataModels["naruto-d20.technique"] = TechniqueDataModel;
 
-    Items.registerSheet("naruto-d20", TechniqueItemSheet, {
+    // Route technique items through ItemPF (not the ItemBasePF fallback) so
+    // they get item.actions, item.scriptCalls, _prepareActions(), etc.
+    if (pf1?.documents?.item?.ItemPF) {
+        CONFIG.Item.documentClasses ??= {};
+        CONFIG.Item.documentClasses["naruto-d20.technique"] = pf1.documents.item.ItemPF;
+    }
+
+    Items.registerSheet(MODULE_ID, TechniqueItemSheet, {
         types: ["naruto-d20.technique"],
         makeDefault: true,
-        canConfigure: false,
-        label: "Naruto D20 Technique Sheet"
+        label: "Naruto D20 Technique Sheet",
     });
+
+    foundry.applications.handlebars.loadTemplates([
+        "modules/naruto-d20/templates/item/technique-sheet.hbs",
+    ]);
+
+    // Generic equality helper for the technique sheet templates.
+    if (!Handlebars.helpers.eq) Handlebars.registerHelper("eq", (a, b) => a === b);
 
     game.settings.register(MODULE_ID, "flagMigrationVersion", {
         scope: "world",
@@ -46,6 +62,7 @@ Hooks.once("init", () => {
 Hooks.once("pf1PostInit", () => {
     _registerBuffTargets();
     registerNarutoSkills();
+    _registerScriptCallCategories();
 });
 
 // ── [3] pf1PrepareBaseActorData ───────────────────────────────────────────
@@ -92,23 +109,6 @@ Hooks.once("pf1RegisterDamageTypes", (registry) => {
 
 // ── [7] setup ─────────────────────────────────────────────────────────────
 Hooks.once("setup", () => {
-    try {
-        const sheetClasses = [
-            pf1.applications.actor.abstract?.BaseCharacterSheetPF,
-            pf1.applications.actor.CharacterSheetPF,
-            pf1.applications.actor.NPCSheetPF,
-            pf1.applications.actor.NPCSheetLitePF
-        ].filter(Boolean);
-
-        for (const cls of sheetClasses) {
-            if (cls.TABS?.primary?.tabs && !cls.TABS.primary.tabs.find(t => t.id === "chakra")) {
-                cls.TABS.primary.tabs.push({ id: "chakra", label: "Chakra" });
-            }
-        }
-    } catch (err) {
-        console.error("Naruto D20 | Error during Chakra tab registration:", err);
-    }
-
     registerChakraTab();
     registerSummaryStats();
 });
@@ -137,6 +137,16 @@ Hooks.once("ready", async () => {
 // ─────────────────────────────────────────────────────────────────────────
 // Private helpers
 // ─────────────────────────────────────────────────────────────────────────
+
+function _registerScriptCallCategories() {
+    if (!pf1.registry?.scriptCalls) return;
+    for (const catId of ["use", "postUse"]) {
+        const cat = pf1.registry.scriptCalls.get(catId);
+        if (cat && !cat.itemTypes.includes("naruto-d20.technique")) {
+            cat.itemTypes.push("naruto-d20.technique");
+        }
+    }
+}
 
 function _registerBuffTargets() {
     if (!CONFIG.PF1) return;
@@ -172,3 +182,4 @@ async function _migrateActorFlags() {
         }
     }
 }
+
