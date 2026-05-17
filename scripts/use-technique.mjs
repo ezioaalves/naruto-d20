@@ -55,7 +55,7 @@ export async function performTechnique(item, actionId) {
             speaker:  ChatMessage.implementation?.getSpeaker({ actor }) ?? ChatMessage.getSpeaker({ actor }),
         });
         if (!roll) return;  // user cancelled dialog
-        succeeded = roll.total >= performDC;
+        succeeded = roll.rolls[0].total >= performDC;
     }
 
     if (!succeeded) {
