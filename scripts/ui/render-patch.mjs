@@ -63,6 +63,7 @@ function _prepareTechniques(actor) {
     };
 
     return {
+        allGroups: groupByRank(items),
         tabs: [
             ...MAIN_DISCIPLINES.map(disc => ({
                 key:    disc.toLowerCase().replace(/\s+/g, "-"),

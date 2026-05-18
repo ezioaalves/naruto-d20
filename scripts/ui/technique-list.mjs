@@ -16,13 +16,16 @@ export function registerTechniqueListListeners() {
         if (!chakraTab.length) return;
 
         // Discipline filter chips
+        const groups = chakraTab.find(".technique-disc-group");
+        groups.not('[data-disc="all"]').hide();
+
         chakraTab.find(".technique-filter").off("click").on("click", function () {
             const disc = this.dataset.disc;
             chakraTab.find(".technique-filter").removeClass("active");
             $(this).addClass("active");
-            const groups = chakraTab.find(".technique-disc-group");
             if (disc === "all") {
-                groups.show();
+                groups.hide();
+                groups.filter('[data-disc="all"]').show();
             } else {
                 groups.hide();
                 groups.filter(`[data-disc="${disc}"]`).show();
