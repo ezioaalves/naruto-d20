@@ -1,3 +1,5 @@
+import { MODULE_ID } from "../constants.mjs";
+
 export function registerSummaryStats() {
     Hooks.on("renderActorSheetPF", async (app, html, data) => {
         if (!["character", "npc"].includes(app.actor.type)) return;
@@ -8,7 +10,7 @@ export function registerSummaryStats() {
 
         data.flags = app.actor.flags || {};
         const templateHtml = await foundry.applications.handlebars.renderTemplate(
-            "modules/naruto-d20/templates/actor/summary-stats.hbs",
+            `modules/${MODULE_ID}/templates/actor/summary-stats.hbs`,
             data
         );
 

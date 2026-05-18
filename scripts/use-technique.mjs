@@ -1,6 +1,6 @@
+import { MODULE_ID } from "./constants.mjs";
+import { chakraPoolValuePath, chakraReserveValuePath } from "./flag-paths.mjs";
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
-
-const MODULE_ID = "naruto-d20";
 
 export function canAffordTechnique(actor, item) {
     if (!actor) return false;
@@ -67,8 +67,8 @@ export async function performTechnique(item, actionId) {
     const fromPool     = Math.min(cost, poolValue);
     const fromReserve  = cost - fromPool;
     await actor.update({
-        [`flags.${MODULE_ID}.chakra.pool.value`]:    poolValue    - fromPool,
-        [`flags.${MODULE_ID}.chakra.reserve.value`]: reserveValue - fromReserve,
+        [chakraPoolValuePath]:    poolValue    - fromPool,
+        [chakraReserveValuePath]: reserveValue - fromReserve,
     });
 
     // Post outcome card when there was an auto-bypass (roll card covers the roll path)

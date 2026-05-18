@@ -7,8 +7,11 @@
  * (grid: sidebar + sheet-navigation + primary-body).
  */
 
-import { DISCIPLINE_SKILL_MAP }               from "../data/skills.mjs";
+import { MODULE_ID }                            from "../constants.mjs";
+import { DISCIPLINE_SKILL_MAP }                 from "../data/skills.mjs";
+import { COMPLEXITY_TABLE }                     from "../data/technique-model.mjs";
 import { canAffordTechnique, performTechnique } from "../use-technique.mjs";
+import { resolveDroppedItem }                   from "../utils/drag-drop.mjs";
 
 export function createTechniqueItemSheet() {
 
@@ -40,7 +43,7 @@ export function createTechniqueItemSheet() {
         }
 
         get template() {
-            return "modules/naruto-d20/templates/item/technique-sheet.hbs";
+            return `modules/${MODULE_ID}/templates/item/technique-sheet.hbs`;
         }
 
         async getData(options) {
@@ -99,9 +102,7 @@ export function createTechniqueItemSheet() {
             };
 
             context.complexityChoices = Object.fromEntries(
-                Object.keys(
-                    (await import("../data/technique-model.mjs")).COMPLEXITY_TABLE
-                ).map((k) => [k, k])
+                Object.keys(COMPLEXITY_TABLE).map((k) => [k, k])
             );
 
             context.activationChoices = {
@@ -256,15 +257,8 @@ export function createTechniqueItemSheet() {
             const category = event.target.closest?.("[data-drop-category]")?.dataset.dropCategory;
             if (!category) return;
 
-            const TE = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
-            let data;
-            try { data = TE.getDragEventData(event); }
-            catch { return; }
-            if (!data?.uuid) return;
-
-            const doc = await fromUuid(data.uuid);
-            if (!doc) return;
-            if (!(doc instanceof Item)) {
+            const doc = await resolveDroppedItem(event);
+            if (!doc) {
                 ui.notifications.warn(game.i18n.localize("NarutoD20.Links.OnlyItems"));
                 return;
             }

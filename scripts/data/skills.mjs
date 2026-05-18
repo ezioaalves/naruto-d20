@@ -9,13 +9,16 @@ export const DISCIPLINE_SKILL_MAP = Object.freeze({
     "":                undefined,
 });
 
-const NARUTO_SKILLS = {
-    ckc: { label: "NarutoD20.Skills.ckc", ability: "wis" },
-    fui: { label: "NarutoD20.Skills.fui", ability: "int" },
-    gnj: { label: "NarutoD20.Skills.gnj", ability: "cha" },
-    tai: { label: "NarutoD20.Skills.tai", ability: "str" },
-    nin: { label: "NarutoD20.Skills.nin", ability: "int" },
-};
+export const NARUTO_SKILLS = Object.freeze({
+    ckc: { label: "NarutoD20.Skills.ckc", ability: "wis", discipline: "Chakra Control" },
+    fui: { label: "NarutoD20.Skills.fui", ability: "int", discipline: "Fuinjutsu" },
+    gnj: { label: "NarutoD20.Skills.gnj", ability: "cha", discipline: "Genjutsu" },
+    tai: { label: "NarutoD20.Skills.tai", ability: "str", discipline: "Taijutsu" },
+    nin: { label: "NarutoD20.Skills.nin", ability: "int", discipline: "Ninjutsu" },
+});
+
+/** Stable order matches NARUTO_SKILLS insertion order. Used by all reset/iter loops. */
+export const LEARN_KEYS = Object.freeze(Object.keys(NARUTO_SKILLS));
 
 /**
  * Register the 5 Naruto disciplines as PF1e-native skills.

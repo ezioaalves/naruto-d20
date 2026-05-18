@@ -1,3 +1,6 @@
+import { MODULE_ID } from "../constants.mjs";
+import { LEARN_KEYS, NARUTO_SKILLS } from "./skills.mjs";
+
 /**
  * Naruto D20 — Derived Data Calculations
  *
@@ -21,8 +24,8 @@
 export function prepareBaseActorData(actor) {
     if (!["character", "npc"].includes(actor.type)) return;
 
-    actor.flags["naruto-d20"] ??= {};
-    const nData = actor.flags["naruto-d20"];
+    actor.flags[MODULE_ID] ??= {};
+    const nData = actor.flags[MODULE_ID];
 
     // Chakra resources — keep stored values, reset computed bonus (changes engine will write it)
     nData.chakra ??= {};
@@ -36,7 +39,7 @@ export function prepareBaseActorData(actor) {
 
     // Learn skills
     nData.learn ??= {};
-    for (const key of ["ckc", "gnj", "nin", "tai", "fui"]) {
+    for (const key of LEARN_KEYS) {
         nData.learn[key] ??= {};
         const s = nData.learn[key];
         s.miscBonus ??= 0;  // user-entered, preserve
@@ -58,21 +61,22 @@ export function prepareBaseActorData(actor) {
 export function prepareDerivedActorData(actor) {
     if (!["character", "npc"].includes(actor.type)) return;
 
-    const nData = actor.flags["naruto-d20"];
+    const nData = actor.flags[MODULE_ID];
     if (!nData) return;
 
     const charLevel = actor.system.details?.level?.value || actor.system.details?.cr?.total || 0;
     const conMod = actor.system.abilities?.con?.mod || 0;
 
-    // All governing abilities come from the skills-tab selector for each discipline
-    const abilityDefaults = { ckc: "wis", gnj: "cha", nin: "int", tai: "str", fui: "int" };
-    const ABILITY_LABELS = { str: "Str", dex: "Dex", con: "Con", int: "Int", wis: "Wis", cha: "Cha" };
+    // Governing ability per discipline: read from the Skills-tab selector,
+    // fall back to the canonical mapping in NARUTO_SKILLS. abilitiesShort
+    // gives us localized 3-letter labels (Str/Des/Con/...) for the chat card.
+    const abilityLabels = pf1.config?.abilitiesShort ?? {};
 
     for (const [key, s] of Object.entries(nData.learn)) {
         if (!s) continue;
-        const abilityKey = actor.system.skills[key]?.ability || abilityDefaults[key] || "int";
+        const abilityKey = actor.system.skills[key]?.ability || NARUTO_SKILLS[key]?.ability || "int";
         s.ability = abilityKey;
-        s.abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+        s.abilityLabel = abilityLabels[abilityKey] ?? abilityKey;
         s.base = charLevel;
         s.abilityMod = actor.system.abilities?.[abilityKey]?.mod || 0;
         s.synergyBonus = (actor.system.skills[key]?.rank ?? 0) >= 2 ? 2 : 0;

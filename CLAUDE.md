@@ -71,6 +71,39 @@ The numbered comments in `scripts/main.mjs` are authoritative. The sequence matt
 
 ## Architecture
 
+### Source tree
+
+```
+scripts/
+  main.mjs                    # Hook orchestrator
+  constants.mjs               # MODULE_ID, TECHNIQUE_ITEM_TYPE, MAIN_DISCIPLINES
+  flag-paths.mjs              # Flag-path builders + BUFF_TARGETS (single source of truth
+                              # for pf1GetChangeFlat / CONFIG.PF1.buffTargets)
+  use-technique.mjs           # Chakra deduction + perform-check flow
+  data/
+    skills.mjs                # NARUTO_SKILLS (canonical), LEARN_KEYS, DISCIPLINE_SKILL_MAP
+    derived-data.mjs          # prepareBase/Derived actor data
+    technique-model.mjs       # TypeDataModel + COMPLEXITY_TABLE
+    damage-types.mjs          # Earth/Water/Wind/Holy registration
+    bonus-sources.mjs         # buildLearnCheckBreakdown — shared by roll + tooltip
+  ui/
+    render-patch.mjs          # _renderInner wrap that injects the Chakra tab
+    learn-checks.mjs          # .shinobi-roll + learn-tooltip listeners
+    technique-list.mjs        # Chakra-tab filter/drop-zone/CRUD listeners
+    technique-sheet.mjs       # Custom ItemSheet for technique items
+    summary-stats.mjs         # Hero Statistics block on Summary tab
+  utils/
+    drag-drop.mjs             # resolveDroppedItem — v12/v13 TextEditor shim
+templates/
+  actor/{chakra-tab,summary-stats}.hbs
+  item/technique-sheet.hbs
+```
+
+Anchor invariants:
+- `NARUTO_SKILLS` (in `data/skills.mjs`) is the canonical map of discipline keys → `{label, ability, discipline}`. `LEARN_KEYS`, the Skills-tab fallback abilities, and the Buff Target labels all derive from it.
+- `BUFF_TARGETS` (in `flag-paths.mjs`) is the canonical mapping `targetName → {label, path, sort}`. Adding a new buff-targetable resource means adding one entry there.
+- Flag-path strings are only built in `flag-paths.mjs` — call sites import the builders/constants, never concatenate `"naruto-d20"` themselves.
+
 ### Data storage
 
 All module data lives exclusively in actor flags under `flags["naruto-d20"].*`. Never in core document fields (`system.*`), except for `TechniqueDataModel` fields which live in `item.system.*` (Foundry's TypeDataModel mechanism).
@@ -94,9 +127,13 @@ The item sheet (`TechniqueItemSheet`) extends Foundry's base `ItemSheet` directl
 
 ### Chakra tab UI injection
 
-The tab is injected by patching `ActorSheetPF.prototype._renderInner` (in `scripts/ui/chakra-tab.mjs`). This is intentional: if the nav `<a>` is injected via the later `renderActorSheetPF` hook, Foundry's V1 Tabs system has already bound and activated tabs, causing it to fall back to the Summary tab and corrupt `_tabs[0].active`. The patch runs before `_activateCoreListeners`, guaranteeing the chakra tab is present when tabs are bound.
+The tab is injected by patching `ActorSheetPF.prototype._renderInner` (in `scripts/ui/render-patch.mjs`). This is intentional: if the nav `<a>` is injected via the later `renderActorSheetPF` hook, Foundry's V1 Tabs system has already bound and activated tabs, causing it to fall back to the Summary tab and corrupt `_tabs[0].active`. The patch runs before `_activateCoreListeners`, guaranteeing the chakra tab is present when tabs are bound.
 
-Roll listeners (`.shinobi-roll`) and tooltip listeners (`[data-naruto-tooltip]`) are still wired in `renderActorSheetPF` since they depend on live DOM.
+Listeners are wired separately because they depend on the live DOM:
+- `scripts/ui/learn-checks.mjs` — `.shinobi-roll` click + `[data-naruto-tooltip="learn.X"]` hover
+- `scripts/ui/technique-list.mjs` — discipline filter chips, drop zone, open/use/delete
+
+Both consume `buildLearnCheckBreakdown` (from `data/bonus-sources.mjs`) so a single edit changes what the chat card and the tooltip show.
 
 **Learn check rolls** use `pf1.dice.d20Roll()` (not a bare `Roll`) so the native PF1e skill check dialog appears (situational bonus, DC, roll mode, Take 10/20). Parts are labeled strings — `"5[Character Level]"`, `"3[Wis]"`, `"2[Iron Will Buff]"` — which produce the PF1e-style chat card breakdown. Buff source names come from `actor.sourceInfo[flagPath].positive`, falling back to a generic `"Buff Bonus"` label if sourceInfo has no entries for that path.
 
