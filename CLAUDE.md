@@ -11,6 +11,7 @@ Foundry VTT module for a Naruto D20 homebrew expansion on top of Pathfinder 1e (
 - A Chakra tab on the actor sheet, and Hero Statistics injected into the Summary tab
 - 4 elemental damage types (Earth, Water, Wind, Holy)
 - Buff targets for chakra resources and learn checks that plug into PF1e's changes engine
+- Buff automation: on a successful technique perform, look up a same-named buff in the `naruto-d20.technique-buffs` compendium and apply it to the selected targets (caster as fallback), inheriting the triggering action's duration
 
 ## Development cycle
 
@@ -92,6 +93,8 @@ scripts/
     technique-list.mjs        # Chakra-tab filter/drop-zone/CRUD listeners
     technique-sheet.mjs       # Custom ItemSheet for technique items
     summary-stats.mjs         # Hero Statistics block on Summary tab
+  automation/
+    buff-application.mjs      # Compendium lookup + buff create/refresh on perform success
   utils/
     drag-drop.mjs             # resolveDroppedItem — v12/v13 TextEditor shim
 templates/
@@ -142,6 +145,25 @@ Both consume `buildLearnCheckBreakdown` (from `data/bonus-sources.mjs`) so a sin
 ### Summary tab injection (`summary-stats.mjs`)
 
 Rendered via `renderActorSheetPF`. Inserts the `#naruto-hero-statistics` block before PF1e's quick-actions section (or prepends to `.tab.summary` as a fallback).
+
+### Buff automation (`automation/buff-application.mjs`)
+
+Triggered at the tail of `performTechnique()` (`scripts/use-technique.mjs`) **only after** the perform check succeeds and chakra has been deducted — failures and cancellations never trigger a buff. The flow is:
+
+1. Gate: skip unless the world setting `automaticBuffs` is on **and** the technique's `item.system.automation.enabled` flag is true. The `buffTargetFiltering = "off"` setting also short-circuits the whole pipeline.
+2. Lookup: `findBuffByName(item.name)` scans `naruto-d20.technique-buffs` plus any pack IDs listed in the `customBuffCompendia` setting (comma-separated). It returns `{ exact, variants }` — exact name matches win; otherwise the first `"Name (..."` variant is used. If nothing matches, it logs a warning and exits silently.
+3. Targets: `[...game.user.targets]` selected on the canvas, falling back to the caster if none. Each target must be owned by the current user — un-owned targets show a `NarutoD20.Automation.NoPermission` warning and are skipped.
+4. Duration: copied from the triggering `ItemAction`'s `duration` (`{ units, value }`). `inst` / `perm` / `seeText` / missing → leave the compendium buff's own duration untouched.
+5. Apply: `applyBuffToTarget` matches by `flags["naruto-d20"].sourceId === buffDoc.uuid`. Existing buff → `update({ "system.active": true, "system.duration.*": ... })`. New buff → `toObject()` + strip `_id`, stamp the `sourceId` flag, write duration if provided, set `system.active = true`, then `createEmbeddedDocuments("Item", [...])`.
+
+The `sourceId` flag is the identity key — a target may carry one instance per source UUID. Re-perform refreshes the existing buff in place (resets duration) rather than stacking duplicates.
+
+Related world settings (registered in `init`):
+- `automaticBuffs` (Boolean, default `true`) — global on/off.
+- `buffTargetFiltering` (`respectTechnique` | `manualAlways` | `off`) — `off` disables the pipeline entirely; the other modes are reserved for the targeting prompt UI.
+- `customBuffCompendia` (String) — extra pack IDs to search.
+
+And on the technique itself: `item.system.automation.enabled` (default `true`), defined in `TechniqueDataModel.defineSchema` and exposed on the technique sheet's Automation tab.
 
 ### Skills
 
