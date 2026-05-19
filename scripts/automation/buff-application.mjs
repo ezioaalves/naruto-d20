@@ -22,9 +22,14 @@ export async function applyTechniqueBuff(item, actor, action) {
 
     const selectedEntry = exact[0] ?? variants[0];
 
-    const pack = game.packs.get(selectedEntry.packId);
-    if (!pack) return;
-    const buffDoc = await pack.getDocument(selectedEntry._id);
+    let buffDoc;
+    if (selectedEntry.packId === null) {
+        buffDoc = selectedEntry.worldItem ?? game.items.get(selectedEntry._id);
+    } else {
+        const pack = game.packs.get(selectedEntry.packId);
+        if (!pack) return;
+        buffDoc = await pack.getDocument(selectedEntry._id);
+    }
     if (!buffDoc) return;
 
     // Apply to user's selected targets; fall back to the caster if none
@@ -56,6 +61,7 @@ function _durationFromAction(action) {
 
 /**
  * Search naruto-d20.technique-buffs (and custom compendia) for a buff by name.
+ * Also searches world items (game.items) of type "buff" — compendia take priority.
  * Returns { exact: [...], variants: [...] } where variants match "Name (X)" pattern.
  */
 export async function findBuffByName(name) {
@@ -81,6 +87,15 @@ export async function findBuffByName(name) {
             } else if (entry.name.startsWith(variantPrefix)) {
                 variants.push({ ...entry, packId });
             }
+        }
+    }
+
+    // Search world items after compendia (lower priority)
+    for (const item of game.items.filter(i => i.type === "buff")) {
+        if (item.name === name) {
+            exact.push({ name: item.name, _id: item.id, packId: null, worldItem: item });
+        } else if (item.name.startsWith(variantPrefix)) {
+            variants.push({ name: item.name, _id: item.id, packId: null, worldItem: item });
         }
     }
 
