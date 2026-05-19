@@ -1,0 +1,219 @@
+{
+  "TYPES": {
+    "Item": {
+      "naruto-d20.technique": "Técnica"
+    }
+  },
+  "NarutoD20": {
+    "Skills": {
+      "ckc": "Controle de Chakra",
+      "fui": "Fuinjutsu",
+      "gnj": "Genjutsu",
+      "tai": "Taijutsu",
+      "nin": "Ninjutsu"
+    },
+    "Item": {
+      "TypeTechnique": "Técnica"
+    },
+    "Technique": {
+      "Type": {
+        "Label": "Disciplina"
+      },
+      "Complexity": {
+        "Label": "Complexidade"
+      },
+      "Rank": {
+        "Label": "Nível"
+      },
+      "PerformDC": {
+        "Label": "DC de Execução"
+      },
+      "SkillThreshold": {
+        "Label": "Limiar de Perícia"
+      },
+      "MasteryStep": {
+        "Label": "Maestria"
+      },
+      "ChakraCost": {
+        "Label": "Custo de Chakra"
+      },
+      "ChakraResistance": {
+        "Label": "Resistência a Chakra"
+      },
+      "Subtype": {
+        "Label": "Subtipo(s)",
+        "Hint": "Segure Ctrl / Cmd para selecionar múltiplos subtipos."
+      },
+      "Discipline": {
+        "none": "— Nenhum —",
+        "ChakraControl": "Controle de Chakra",
+        "Fuinjutsu": "Fuinjutsu",
+        "Genjutsu": "Genjutsu",
+        "HachimonTonkou": "Hachimon Tonkou",
+        "Ninjutsu": "Ninjutsu",
+        "Taijutsu": "Taijutsu",
+        "Training": "Treinamento"
+      },
+      "Activation": {
+        "standard": "Ação Padrão",
+        "full": "Ação de Rodada Completa",
+        "swift": "Ação Rápida",
+        "immediate": "Ação Imediata",
+        "free": "Ação Gratuita",
+        "ritual": "Ritual (estendido)"
+      },
+      "Components": {
+        "Legend": "Componentes",
+        "HandSeals": {
+          "Label": "Selos de Mão",
+          "Hint": "Requer formação de selos. Bloqueado enquanto agarrado ou imobilizado."
+        },
+        "HalfSeals": {
+          "Label": "Meios Selos",
+          "Hint": "Requer selos parciais. Bloqueado enquanto agarrado ou imobilizado."
+        },
+        "Concentration": {
+          "Label": "Concentração",
+          "Hint": "Requer concentração sustentada."
+        },
+        "Mobility": {
+          "Label": "Mobilidade",
+          "Hint": "Requer liberdade de movimento. Armadura pode causar falha."
+        },
+        "MaterialFocus": {
+          "Label": "Foco Material",
+          "Hint": "Requer um componente material ou item de foco."
+        },
+        "Empower": {
+          "Label": "Empoderar",
+          "Hint": "Pode gastar chakra adicional para aumentar o efeito."
+        },
+        "Mastery": {
+          "Label": "Maestria",
+          "Hint": "Rastreia o nível de maestria do praticante (0–5)."
+        },
+        "Expendable": {
+          "Label": "Descartável",
+          "Hint": "Técnica de uso único; consumida ao ser usada."
+        },
+        "PhysicalHealth": {
+          "Label": "Saúde Física",
+          "Hint": "Requer que o usuário esteja em boas condições físicas."
+        },
+        "XpCost": {
+          "Label": "Custo em XP",
+          "Hint": "Custa pontos de experiência para executar."
+        }
+      },
+      "Blocked": {
+        "Grappled": "Você não pode formar selos enquanto agarrado ou imobilizado.",
+        "Health": "Sua condição física impede o uso desta técnica."
+      },
+      "Perform": {
+        "RollFlavor": "Teste de Execução — {name} (DC {dc})",
+        "Failed": "Teste de execução falhou. Sua ação é desperdiçada mas nenhum chakra é gasto."
+      },
+      "Empower": {
+        "Title": "Empoderar Técnica",
+        "Hint": "Gaste chakra adicional para aumentar o efeito desta técnica.",
+        "Label": "Chakra Extra",
+        "Confirm": "Confirmar"
+      },
+      "Chakra": {
+        "Insufficient": "Chakra insuficiente para executar esta técnica."
+      },
+      "Active": "Ativo",
+      "ActiveHint": "As mudanças abaixo se aplicam ao portador somente enquanto esta técnica estiver Ativa.",
+      "AddChange": "Adicionar Mudança",
+      "AddTagPlaceholder": "adicionar tag, pressione enter",
+      "AddFlagPlaceholder": "adicionar flag, pressione enter",
+      "AddDictFlag": "Adicionar Flag de Dicionário",
+      "IdentifierPlaceholder": "derivado automaticamente do nome",
+      "DuplicateDictKey": "Já existe uma flag de dicionário com essa chave.",
+      "SummaryPlaceholder": "Breve descrição de uma linha…"
+    },
+    "Links": {
+      "DropHint": "Solte um documento de item aqui.",
+      "OnlyItems": "Apenas itens podem ser vinculados.",
+      "Prerequisites": {
+        "Label": "Pré-requisitos",
+        "Hint": "Outras técnicas ou talentos que devem ser aprendidos primeiro."
+      },
+      "Supplements": {
+        "Label": "Complementos",
+        "Hint": "Itens relacionados que acompanham esta técnica."
+      },
+      "Children": {
+        "Label": "Filhos",
+        "Hint": "Itens concedidos por esta técnica ao ser aprendida."
+      }
+    },
+    "Settings": {
+      "AutomaticBuffs": {
+        "Name": "Buffs Automáticos de Técnica",
+        "Hint": "Aplica automaticamente itens de buff nos alvos quando uma técnica é executada com sucesso."
+      },
+      "BuffTargetFiltering": {
+        "Name": "Filtragem de Alvo de Buff"
+      },
+      "CustomBuffCompendia": {
+        "Name": "Compêndios de Buff Customizados",
+        "Hint": "IDs de compêndio separados por vírgula para pesquisar além de naruto-d20.technique-buffs (ex: meu-modulo.buffs-extras)."
+      }
+    },
+    "Automation": {
+      "Tab": "Automação",
+      "Header": "Automação de Buff",
+      "Enabled": {
+        "Label": "Ativar aplicação automática de buff"
+      },
+      "BuffName": {
+        "Label": "Nome do Item de Buff",
+        "Placeholder": "Mesmo nome da técnica"
+      },
+      "TargetMode": {
+        "Label": "Modo de Alvo",
+        "Selected": "Tokens selecionados",
+        "Self": "Somente o próprio",
+        "Allies": "Todos os aliados",
+        "Enemies": "Todos os inimigos",
+        "Manual": "Escolher manualmente"
+      },
+      "PromptVariant": {
+        "Label": "Perguntar seleção de variante quando existirem múltiplas variantes"
+      },
+      "DurationOverride": {
+        "Header": "Substituição de Duração"
+      },
+      "Duration": {
+        "Units": {
+          "Label": "Unidades",
+          "BuffDefault": "— Usar duração própria do buff —",
+          "Inst": "Instantâneo",
+          "Round": "Rodada(s)",
+          "Minute": "Minuto(s)",
+          "Hour": "Hora(s)",
+          "Day": "Dia(s)",
+          "Perm": "Permanente",
+          "SeeText": "Ver texto"
+        },
+        "Value": {
+          "Label": "Valor (fórmula)",
+          "Placeholder": "ex: 3, @rank, 1d4+1"
+        },
+        "PerRank": {
+          "Label": "Multiplicar valor pelo nível da técnica"
+        }
+      },
+      "VariantDialog": {
+        "Title": "Selecionar Variante de Buff",
+        "Hint": "Múltiplas variantes encontradas. Escolha qual buff aplicar."
+      },
+      "ManualTargetDialog": {
+        "Title": "Selecionar Alvos do Buff"
+      },
+      "NoTargets": "Nenhum alvo selecionado para aplicação de buff.",
+      "NoPermission": "Sem permissão para modificar {name}. Buff não aplicado."
+    }
+  }
+}

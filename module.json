@@ -40,6 +40,11 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
     }
   ],
   "packs": [
@@ -47,6 +52,13 @@
       "name":   "techniques",
       "label":  "Naruto Techniques",
       "path":   "packs/techniques",
+      "type":   "Item",
+      "system": "pf1"
+    },
+    {
+      "name":   "technique-buffs",
+      "label":  "Technique Buffs",
+      "path":   "packs/technique-buffs",
       "type":   "Item",
       "system": "pf1"
     }

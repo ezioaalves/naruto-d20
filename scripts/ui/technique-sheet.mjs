@@ -61,6 +61,10 @@ export function createTechniqueItemSheet() {
             context.derived  = system.derived;
             context.isGM     = game.user.isGM;
 
+            const rollData = item.getRollData?.() ?? {};
+            context.descriptionHTML  = await TextEditor.enrichHTML(system.description?.value        ?? "", { async: true, rollData });
+            context.instructionsHTML = await TextEditor.enrichHTML(system.description?.instructions ?? "", { async: true, rollData });
+
             // Actions — use PF1e's ItemAction collection when available
             context.actions  = Array.from(item.actions ?? []);
 
@@ -134,6 +138,25 @@ export function createTechniqueItemSheet() {
                     linkCat("supplements",   "NarutoD20.Links.Supplements.Label",   "NarutoD20.Links.Supplements.Hint"),
                     linkCat("children",      "NarutoD20.Links.Children.Label",      "NarutoD20.Links.Children.Hint"),
                 ],
+            };
+
+            // ── Automation tab ─────────────────────────────────────────
+            context.targetModeChoices = {
+                selected: loc("NarutoD20.Automation.TargetMode.Selected"),
+                self:     loc("NarutoD20.Automation.TargetMode.Self"),
+                allies:   loc("NarutoD20.Automation.TargetMode.Allies"),
+                enemies:  loc("NarutoD20.Automation.TargetMode.Enemies"),
+                manual:   loc("NarutoD20.Automation.TargetMode.Manual"),
+            };
+            context.durationUnitsChoices = {
+                "":      loc("NarutoD20.Automation.Duration.Units.BuffDefault"),
+                inst:    loc("NarutoD20.Automation.Duration.Units.Inst"),
+                round:   loc("NarutoD20.Automation.Duration.Units.Round"),
+                minute:  loc("NarutoD20.Automation.Duration.Units.Minute"),
+                hour:    loc("NarutoD20.Automation.Duration.Units.Hour"),
+                day:     loc("NarutoD20.Automation.Duration.Units.Day"),
+                perm:    loc("NarutoD20.Automation.Duration.Units.Perm"),
+                seeText: loc("NarutoD20.Automation.Duration.Units.SeeText"),
             };
 
             // ── Advanced tab ───────────────────────────────────────────

@@ -147,6 +147,73 @@
         "Label": "Children",
         "Hint": "Items granted by this technique when learned."
       }
+    },
+    "Settings": {
+      "AutomaticBuffs": {
+        "Name": "Automatic Technique Buffs",
+        "Hint": "Automatically apply buff items to targets when a technique is successfully performed."
+      },
+      "BuffTargetFiltering": {
+        "Name": "Buff Target Filtering"
+      },
+      "CustomBuffCompendia": {
+        "Name": "Custom Buff Compendia",
+        "Hint": "Comma-separated compendium pack IDs to search in addition to naruto-d20.technique-buffs (e.g. my-module.extra-buffs)."
+      }
+    },
+    "Automation": {
+      "Tab": "Automation",
+      "Header": "Buff Automation",
+      "Enabled": {
+        "Label": "Enable automatic buff application"
+      },
+      "BuffName": {
+        "Label": "Buff Item Name",
+        "Placeholder": "Same as technique name"
+      },
+      "TargetMode": {
+        "Label": "Target Mode",
+        "Selected": "Selected tokens",
+        "Self": "Self only",
+        "Allies": "All allies",
+        "Enemies": "All enemies",
+        "Manual": "Choose manually"
+      },
+      "PromptVariant": {
+        "Label": "Prompt variant selection when multiple variants exist"
+      },
+      "DurationOverride": {
+        "Header": "Duration Override"
+      },
+      "Duration": {
+        "Units": {
+          "Label": "Units",
+          "BuffDefault": "— Use buff's own duration —",
+          "Inst": "Instantaneous",
+          "Round": "Round(s)",
+          "Minute": "Minute(s)",
+          "Hour": "Hour(s)",
+          "Day": "Day(s)",
+          "Perm": "Permanent",
+          "SeeText": "See text"
+        },
+        "Value": {
+          "Label": "Value (formula)",
+          "Placeholder": "e.g. 3, @rank, 1d4+1"
+        },
+        "PerRank": {
+          "Label": "Multiply value by technique rank"
+        }
+      },
+      "VariantDialog": {
+        "Title": "Select Buff Variant",
+        "Hint": "Multiple variants found. Choose which buff to apply."
+      },
+      "ManualTargetDialog": {
+        "Title": "Select Buff Targets"
+      },
+      "NoTargets": "No targets selected for buff application.",
+      "NoPermission": "No permission to modify {name}. Buff not applied."
     }
   }
 }

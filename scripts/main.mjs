@@ -63,6 +63,37 @@ Hooks.once("init", () => {
         type: Number,
         default: 0
     });
+
+    game.settings.register(MODULE_ID, "automaticBuffs", {
+        scope: "world",
+        config: true,
+        type: Boolean,
+        default: true,
+        name: "NarutoD20.Settings.AutomaticBuffs.Name",
+        hint: "NarutoD20.Settings.AutomaticBuffs.Hint",
+    });
+
+    game.settings.register(MODULE_ID, "buffTargetFiltering", {
+        scope: "world",
+        config: true,
+        type: String,
+        default: "respectTechnique",
+        choices: {
+            respectTechnique: "Respect technique setting",
+            manualAlways:     "Always prompt manually",
+            off:              "Off",
+        },
+        name: "NarutoD20.Settings.BuffTargetFiltering.Name",
+    });
+
+    game.settings.register(MODULE_ID, "customBuffCompendia", {
+        scope: "world",
+        config: true,
+        type: String,
+        default: "",
+        name: "NarutoD20.Settings.CustomBuffCompendia.Name",
+        hint: "NarutoD20.Settings.CustomBuffCompendia.Hint",
+    });
 });
 
 // ── [2] pf1PostInit ───────────────────────────────────────────────────────

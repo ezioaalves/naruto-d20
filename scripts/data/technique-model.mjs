@@ -137,6 +137,20 @@ export function createTechniqueDataModel() {
                     new fields.ObjectField(),
                     { ...opt, initial: [] }
                 ),
+
+                // ── Buff Automation ────────────────────────────────────
+                automation: new fields.SchemaField({
+                    enabled:       new fields.BooleanField({ ...opt, initial: false }),
+                    buffName:      new fields.StringField({  ...opt, blank: true, initial: "" }),
+                    targetMode:    new fields.StringField({  ...opt, blank: false, initial: "selected" }),
+                    promptVariant: new fields.BooleanField({ ...opt, initial: false }),
+                }, opt),
+
+                durationAutomation: new fields.SchemaField({
+                    units:   new fields.StringField({ ...opt, blank: true, initial: "" }),
+                    value:   new fields.StringField({ ...opt, blank: true, initial: "" }),
+                    perRank: new fields.BooleanField({ ...opt, initial: false }),
+                }, opt),
             };
         }
 
@@ -182,6 +196,17 @@ export function createTechniqueDataModel() {
 
             this.tags ??= new Set();
             this.changes ??= [];
+
+            this.automation ??= {};
+            this.automation.enabled       ??= false;
+            this.automation.buffName      ??= "";
+            this.automation.targetMode    ??= "selected";
+            this.automation.promptVariant ??= false;
+
+            this.durationAutomation ??= {};
+            this.durationAutomation.units   ??= "";
+            this.durationAutomation.value   ??= "";
+            this.durationAutomation.perRank ??= false;
 
             if (!this.tag && this.parent?.name) {
                 try { this.tag = pf1.utils.createTag(this.parent.name); }

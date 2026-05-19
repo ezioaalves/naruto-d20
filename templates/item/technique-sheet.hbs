@@ -85,6 +85,7 @@
     <a class="item"        data-tab="details"     data-group="primary">{{localize "PF1.Details"}}</a>
     <a class="item"        data-tab="links"       data-group="primary">{{localize "PF1.Links"}}</a>
     <a class="item"        data-tab="advanced"    data-group="primary">{{localize "PF1.Advanced"}}</a>
+    <a class="item"        data-tab="automation"  data-group="primary">{{localize "NarutoD20.Automation.Tab"}}</a>
   </nav>
 
   {{!-- ── Body ───────────────────────────────────────────────────────── --}}
@@ -102,14 +103,14 @@
       </div>
 
       <h2>{{localize "PF1.Description"}}</h2>
-      <div class="editor">
-        {{editor system.description.value target="system.description.value" button=false engine="prosemirror" editable=editable}}
+      <div class="description-content">
+        {{editor descriptionHTML target="system.description.value" button=editable engine="prosemirror" editable=editable}}
       </div>
 
       <fieldset class="instructions{{#unless system.description.instructions}} placeholder{{/unless}}">
         <legend><i class="icon fa-solid fa-circle-info fa-fw"></i> {{localize "PF1.Instructions"}}</legend>
         <div class="instruction-content">
-          {{editor system.description.instructions target="system.description.instructions" button=false engine="prosemirror" editable=editable}}
+          {{editor instructionsHTML target="system.description.instructions" button=editable engine="prosemirror" editable=editable}}
         </div>
       </fieldset>
     </div>
@@ -478,6 +479,70 @@
           </div>
         </div>
       </div>
+    </div>
+
+    {{!-- ══════════════════════════ Automation ══════════════════════════ --}}
+    <div class="tab automation" data-tab="automation" data-group="primary">
+
+      <h3 class="form-header">{{localize "NarutoD20.Automation.Header"}}</h3>
+
+      <div class="form-group">
+        <label class="checkbox">
+          <input type="checkbox" name="system.automation.enabled" {{checked system.automation.enabled}}>
+          {{localize "NarutoD20.Automation.Enabled.Label"}}
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Automation.BuffName.Label"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.automation.buffName" value="{{system.automation.buffName}}"
+                 placeholder="{{localize 'NarutoD20.Automation.BuffName.Placeholder'}}">
+        </div>
+      </div>
+
+      <div class="form-group select">
+        <label>{{localize "NarutoD20.Automation.TargetMode.Label"}}</label>
+        <div class="form-fields">
+          <select name="system.automation.targetMode">
+            {{selectOptions targetModeChoices selected=system.automation.targetMode}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox">
+          <input type="checkbox" name="system.automation.promptVariant" {{checked system.automation.promptVariant}}>
+          {{localize "NarutoD20.Automation.PromptVariant.Label"}}
+        </label>
+      </div>
+
+      <h3 class="form-header">{{localize "NarutoD20.Automation.DurationOverride.Header"}}</h3>
+
+      <div class="form-group select">
+        <label>{{localize "NarutoD20.Automation.Duration.Units.Label"}}</label>
+        <div class="form-fields">
+          <select name="system.durationAutomation.units">
+            {{selectOptions durationUnitsChoices selected=system.durationAutomation.units}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Automation.Duration.Value.Label"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.durationAutomation.value" value="{{system.durationAutomation.value}}"
+                 placeholder="{{localize 'NarutoD20.Automation.Duration.Value.Placeholder'}}">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox">
+          <input type="checkbox" name="system.durationAutomation.perRank" {{checked system.durationAutomation.perRank}}>
+          {{localize "NarutoD20.Automation.Duration.PerRank.Label"}}
+        </label>
+      </div>
+
     </div>
 
   </section>
