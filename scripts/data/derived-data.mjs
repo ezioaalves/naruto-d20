@@ -28,6 +28,8 @@ export function prepareBaseActorData(actor) {
     const nData = actor.flags[MODULE_ID];
 
     // Chakra resources — keep stored values, reset computed bonus (changes engine will write it)
+    nData.eps ??= 0;
+
     nData.chakra ??= {};
     nData.chakra.pool ??= {};
     nData.chakra.reserve ??= {};

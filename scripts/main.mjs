@@ -25,7 +25,7 @@ import { registerLearnCheckListeners } from "./ui/learn-checks.mjs";
 import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
 import { registerSummaryStats } from "./ui/summary-stats.mjs";
 
-const FLAG_MIGRATION_VERSION = 2;
+const FLAG_MIGRATION_VERSION = 3;
 
 // ── [1] init ──────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -136,7 +136,7 @@ Hooks.on("preCreateActor", (doc, data) => {
     if (!["character", "npc"].includes(data.type)) return;
     const existing = data.flags?.[MODULE_ID] ?? {};
     const patch = {};
-    for (const key of ["actionPoints", "reputation", "wealth"]) {
+    for (const key of ["actionPoints", "reputation", "wealth", "eps"]) {
         if (existing[key] === undefined) patch[key] = 0;
     }
     if (!foundry.utils.isEmpty(patch)) {
@@ -179,7 +179,7 @@ async function _migrateActorFlags() {
     const migrate = async (actor) => {
         if (!["character", "npc"].includes(actor.type)) return;
         const updates = {};
-        for (const key of ["actionPoints", "reputation", "wealth"]) {
+        for (const key of ["actionPoints", "reputation", "wealth", "eps"]) {
             if (foundry.utils.getProperty(actor, `flags.${MODULE_ID}.${key}`) === undefined) {
                 updates[`flags.${MODULE_ID}.${key}`] = 0;
             }
