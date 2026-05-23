@@ -169,6 +169,20 @@ And on the technique itself: `item.system.automation.enabled` (default `true`), 
 
 `registerNarutoSkills()` writes labels into `pf1.config.skills` during `pf1PostInit`. `ensureActorSkillEntries()` seeds `actor.system.skills[key]` with `{ ability, rank: 0 }` during `pf1PrepareBaseActorData` using `??=` so existing ranks are never overwritten. The governing ability per discipline can be changed on the PF1e Skills tab and is read back via `actor.system.skills[key].ability`.
 
+## Feature docs (`docs/`)
+
+Per-feature implementation notes live in `docs/` (English, kebab-case filenames). Each documents
+the goal, how it mirrors PF1e where relevant, the files touched, and manual verification steps.
+Read the matching doc before changing a feature.
+
+| Doc | Feature |
+|---|---|
+| [`docs/technique-header-buttons.md`](docs/technique-header-buttons.md) | Create / Browse buttons on each Rank header of the Chakra tab |
+| [`docs/technique-compendium-browser.md`](docs/technique-compendium-browser.md) | Custom AppV2 Compendium Browser for techniques (replaces the native pack window) |
+| [`docs/technique-dc-buffs.md`](docs/technique-dc-buffs.md) | Technique save-DC buff targets (global + per-discipline), mirroring spell DC |
+| [`docs/technique-mastery.md`](docs/technique-mastery.md) | `mastery` field — caster-level offset (`@cl`) + perform bonus |
+| [`docs/technique-implementation-plan.md`](docs/technique-implementation-plan.md) | Technique actions & perform-flow implementation plan (`ItemPF` routing, perform pipeline) |
+
 ## Key references
 
 - [Foundry API Docs](https://foundryvtt.com/api/)

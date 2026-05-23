@@ -1,46 +1,51 @@
-# Botões de Criar e Browse no cabeçalho de Rank das técnicas
+# Create and Browse buttons on technique Rank headers
 
-## Objetivo
+> **Update:** the **Browse** button described here (which used to open the native
+> pack window via `pack.render(true)`) was replaced by a custom Compendium Browser.
+> See [`technique-compendium-browser.md`](./technique-compendium-browser.md). The rest
+> of this document (Create button, placement, empty-state) is still accurate.
 
-Replicar, na aba **Chakra** (lista de técnicas), o comportamento dos dois botões que o pf1
-exibe no cabeçalho de cada nível da aba de **Spells**:
+## Goal
 
-- **`+` (Criar)** — cria um item direto na ficha do ator e abre a ficha dele para edição.
-- **Pasta/livro (Browse)** — abre um compêndio de onde o item pode ser adicionado.
+Replicate, on the **Chakra** tab (technique list), the two buttons pf1 shows on each
+level header of the **Spells** tab:
 
-Antes desta mudança, técnicas só podiam ser adicionadas por drag-and-drop.
+- **`+` (Create)** — creates an item directly on the actor's sheet and opens its sheet for editing.
+- **Folder/book (Browse)** — opens a compendium the item can be added from.
 
-## Como o pf1 faz (referência)
+Before this change, techniques could only be added via drag-and-drop.
 
-Em `pf1/templates/actors/parts/actor-spellbook.hbs`, o cabeçalho de nível tem em `.item-controls`:
+## How pf1 does it (reference)
 
-- `<a class="item-control item-create" data-create=… data-level=… data-book=…>` → handler
-  `_onItemCreate` faz `Item.create` no ator e abre a ficha.
-- `<a data-action="browse" data-source="spells.spell" data-level=…>` → abre
+In `pf1/templates/actors/parts/actor-spellbook.hbs`, the level header has, inside `.item-controls`:
+
+- `<a class="item-control item-create" data-create=… data-level=… data-book=…>` → the
+  `_onItemCreate` handler runs `Item.create` on the actor and opens the sheet.
+- `<a data-action="browse" data-source="spells.spell" data-level=…>` → opens
   `pf1.applications.compendiums.spells`.
 
-**Limitação:** o Compendium Browser do pf1 seleciona packs/entradas por `handledTypes` (derivado
-dos filtros de cada browser nativo). O tipo customizado `naruto-d20.technique` não é reconhecido
-por nenhum browser nativo, então não é possível reusar `pf1.applications.compendiums.*` para
-técnicas sem escrever um browser customizado.
+**Limitation:** pf1's Compendium Browser selects packs/entries by `handledTypes` (derived
+from each native browser's filters). The custom `naruto-d20.technique` type is not recognized
+by any native browser, so `pf1.applications.compendiums.*` cannot be reused for techniques
+without writing a custom browser.
 
-## Decisões de design
+## Design decisions
 
-- **Browse** → abre a **janela nativa do pack** `naruto-d20.techniques`
-  (`game.packs.get(...).render(true)`). O usuário busca por nome e arrasta a técnica para a aba
-  (a drop zone já existia em `technique-list.mjs`). Escolhido por ser simples e confiável, sem
-  depender de internals compilados do pf1.
-- **Posição dos botões** → no cabeçalho de **cada Rank**, espelhando a aba de Spells (que põe os
-  botões na linha de cada nível).
-  - Como uma aba vazia não tem cabeçalho de rank, o bloco de *empty-state* também recebe o par de
-    botões, para que um ator novo consiga criar a primeira técnica / abrir o compêndio.
+- **Browse** → opens the **native pack window** for `naruto-d20.techniques`
+  (`game.packs.get(...).render(true)`). The user searches by name and drags the technique onto
+  the tab (the drop zone already existed in `technique-list.mjs`). Chosen for being simple and
+  reliable, with no dependency on pf1's compiled internals. *(Superseded — see the update note above.)*
+- **Button placement** → on **each Rank** header, mirroring the Spells tab (which puts the
+  buttons on each level's row).
+  - Since an empty tab has no rank header, the *empty-state* block also gets the button pair so
+    a fresh actor can create the first technique / open the compendium.
 
-## Implementação
+## Implementation
 
 ### `templates/actor/chakra-tab.hbs`
 
-Os dois cabeçalhos de rank (grupo "All" e grupos por disciplina) tinham
-`<div class="item-controls"></div>` vazio. Cada um agora contém:
+Both rank headers (the "All" group and the per-discipline groups) had an empty
+`<div class="item-controls"></div>`. Each one now contains:
 
 ```hbs
 <div class="item-controls">
@@ -49,19 +54,20 @@ Os dois cabeçalhos de rank (grupo "All" e grupos por disciplina) tinham
 </div>
 ```
 
-- `data-rank="{{rank}}"` — rank do grupo, usado como valor inicial da técnica criada.
-- No cabeçalho dos grupos por disciplina, o botão de criar inclui `data-disc="{{../label}}"`
-  (o `label` do tab é a disciplina, ex. "Ninjutsu"). No grupo "All" e no tab "Other" o handler
-  valida o valor contra `MAIN_DISCIPLINES` e cai no default do modelo (`"Ninjutsu"`) se inválido.
+- `data-rank="{{rank}}"` — the group's rank, used as the initial value of the created technique.
+- On the per-discipline group headers, the create button also carries `data-disc="{{../label}}"`
+  (the tab `label` is the discipline, e.g. "Ninjutsu"). In the "All" group and the "Other" tab the
+  handler validates the value against `MAIN_DISCIPLINES` and falls back to the model default
+  (`"Ninjutsu"`) if it is invalid.
 
-O bloco de empty-state recebeu o mesmo par de botões, sem `data-rank` (→ rank 1 por default).
+The empty-state block got the same button pair, without `data-rank` (→ rank 1 by default).
 
 ### `scripts/ui/technique-list.mjs`
 
-Dois handlers novos em `registerTechniqueListListeners()`, escopados a `.tab.chakra` e seguindo o
-padrão `.off("click").on("click", …)` já usado pelos demais botões da aba.
+Two handlers in `registerTechniqueListListeners()`, scoped to `.tab.chakra` and following the
+`.off("click").on("click", …)` pattern already used by the tab's other buttons.
 
-**Criar** — espelha o `_onItemCreate` do pf1:
+**Create** — mirrors pf1's `_onItemCreate`:
 
 ```js
 chakraTab.find(".technique-create").off("click").on("click", async (ev) => {
@@ -79,38 +85,22 @@ chakraTab.find(".technique-create").off("click").on("click", async (ev) => {
 });
 ```
 
-**Browse** — abre a janela do pack:
+**Browse** — *(originally)* opened the pack window. It now opens the custom browser; see
+[`technique-compendium-browser.md`](./technique-compendium-browser.md).
 
-```js
-chakraTab.find(".technique-browse").off("click").on("click", (ev) => {
-    ev.preventDefault();
-    const pack = game.packs.get(`${MODULE_ID}.techniques`);
-    if (!pack) {
-        ui.notifications.warn("Technique compendium not found.");
-        return;
-    }
-    pack.render(true);
-});
-```
+## Notes
 
-Import ajustado para trazer `MAIN_DISCIPLINES` e `MODULE_ID` de `../constants.mjs`.
+- Tooltips are hardcoded in English, like the rest of `chakra-tab.hbs` ("Open Sheet", "Remove").
+  No `lang/` changes.
+- No change to `TechniqueDataModel`: `rank` (min 1) and `discipline` (default "Ninjutsu") already existed.
 
-## Notas
+## Manual verification
 
-- O botão de browse usa a janela nativa do pack (sem filtro por rank), então todos os botões de
-  browse abrem a mesma janela — `data-rank` não é usado no browse. Fiel o suficiente à intenção.
-- Tooltips ficam hardcoded em inglês, igual ao restante de `chakra-tab.hbs` ("Open Sheet",
-  "Remove"). Sem mudanças em `lang/`.
-- Nenhuma mudança no `TechniqueDataModel`: `rank` (min 1) e `discipline` (default "Ninjutsu") já
-  existiam.
+No build step (ESM loaded directly by Foundry). Reload with `Ctrl+R` in-world or `F5`.
 
-## Verificação
-
-Não há build (ESM carregado direto pelo Foundry). Recarregar com `Ctrl+R` no mundo ou `F5`.
-
-1. Ficha **com** técnicas → cada cabeçalho de Rank mostra `+` e o ícone de pasta.
-2. `+` no Rank 3 → cria "New Technique" rank 3 e abre a ficha. Em um grupo de disciplina
-   (ex. Taijutsu), a técnica nasce com `discipline = Taijutsu`.
-3. Botão de pasta → abre o compêndio "Naruto Techniques"; arrastar para a aba ainda funciona.
-4. Ficha **sem** técnicas → empty-state mostra o par de botões; `+` cria rank 1 e abre.
-5. Filtros de disciplina e use/open/delete por linha continuam funcionando (sem regressão).
+1. Sheet **with** techniques → each Rank header shows `+` and the folder icon.
+2. `+` on Rank 3 → creates a "New Technique" rank 3 and opens its sheet. In a discipline group
+   (e.g. Taijutsu) the technique is born with `discipline = Taijutsu`.
+3. Folder button → opens the technique compendium; dragging onto the tab still works.
+4. Sheet **without** techniques → the empty-state shows the button pair; `+` creates rank 1 and opens.
+5. Discipline filters and per-row use/open/delete still work (no regression).
