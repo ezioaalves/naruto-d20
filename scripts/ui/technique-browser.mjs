@@ -1,8 +1,6 @@
 import { MAIN_DISCIPLINES, MODULE_ID } from "../constants.mjs";
 import { COMPLEXITY_TABLE } from "../data/technique-model.mjs";
 
-const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
-
 const PACK_ID = `${MODULE_ID}.techniques`;
 
 // system.* fields the index must carry so we can filter without loading full docs.
@@ -36,28 +34,25 @@ const COMPONENT_FLAGS = {
 const RANKS = Array.from({ length: 15 }, (_, i) => String(i + 1));
 
 /**
- * Custom compendium browser for technique items. The pf1 compendium browser
- * can't list `naruto-d20.technique` items (handledTypes don't include it), so
- * this mirrors its layout (sidebar filters + entry list) over our own pack.
+ * Custom compendium browser for technique items. Extends Application (V1) to
+ * match PF1e's own CompendiumBrowser architecture — same window chrome, checkbox
+ * styles, and button appearance as the native Spell Browser.
  *
  * Rows are draggable with `{ type: "Item", uuid }` drag data, which the Chakra
  * tab drop zone (technique-list.mjs → resolveDroppedItem) already accepts.
  */
-export class TechniqueCompendiumBrowser extends HandlebarsApplicationMixin(ApplicationV2) {
-    static DEFAULT_OPTIONS = {
-        id: "naruto-technique-browser",
-        classes: ["pf1", "app", "compendium-browser", "naruto-technique-browser"],
-        position: { width: 800, height: 600 },
-        window: { resizable: true, title: "Browse Techniques" },
-        actions: {
-            clearFilters: TechniqueCompendiumBrowser._onClearFilters,
-            reload:       TechniqueCompendiumBrowser._onReload,
-        },
-    };
-
-    static PARTS = {
-        main: { template: `modules/${MODULE_ID}/templates/apps/technique-browser.hbs` },
-    };
+export class TechniqueCompendiumBrowser extends Application {
+    static get defaultOptions() {
+        return foundry.utils.mergeObject(super.defaultOptions, {
+            id:       "naruto-technique-browser",
+            template: `modules/${MODULE_ID}/templates/apps/technique-browser.hbs`,
+            classes:  ["pf1", "app", "compendium-browser", "naruto-technique-browser"],
+            width:    800,
+            height:   600,
+            resizable: true,
+            title:    "Browse Techniques",
+        });
+    }
 
     /** @type {string} */
     #query = "";
@@ -69,9 +64,20 @@ export class TechniqueCompendiumBrowser extends HandlebarsApplicationMixin(Appli
         special:    new Set(),
         components: new Set(),
     };
+    /** @type {Set<string>} filter group IDs that are currently collapsed */
+    #collapsed = new Set();
     /** @type {Array|null} cached, mapped index entries */
     #entries = null;
     #loading = true;
+    /** Restore search focus after re-render when true */
+    #focusSearch = false;
+
+    constructor(options = {}) {
+        super(options);
+        // All groups start collapsed except Rank, which shows immediately.
+        this.#collapsed = new Set(["discipline", "complexity", "special", "components"]);
+        if (options.rank) this.#filters.rank.add(String(options.rank));
+    }
 
     /** Load the pack index (once) and map it to display entries. */
     async #loadEntries({ force = false } = {}) {
@@ -112,27 +118,34 @@ export class TechniqueCompendiumBrowser extends HandlebarsApplicationMixin(Appli
     #buildFilterGroup(id, label, choiceMap, activeSet) {
         const choices = Object.entries(choiceMap).map(([key, choiceLabel]) => ({
             key,
-            label: choiceLabel,
+            label:  choiceLabel,
             active: activeSet.has(key),
         }));
-        return { id, label, choices, active: activeSet.size > 0, activeCount: activeSet.size };
+        return {
+            id,
+            label,
+            choices,
+            active:      activeSet.size > 0,
+            activeCount: activeSet.size,
+            collapsed:   this.#collapsed.has(id) ? "collapsed" : "",
+        };
     }
 
-    async _prepareContext() {
+    async getData() {
         await this.#loadEntries();
         const all = this.#entries ?? [];
         const filtered = all.filter((e) => this.#matches(e));
 
         const disciplineChoices = Object.fromEntries(MAIN_DISCIPLINES.map((d) => [d, d]));
-        const rankChoices = Object.fromEntries(RANKS.map((r) => [r, `Rank ${r}`]));
+        const rankChoices       = Object.fromEntries(RANKS.map((r) => [r, `Rank ${r}`]));
         const complexityChoices = Object.fromEntries(Object.keys(COMPLEXITY_TABLE).map((c) => [c, c]));
 
         const filters = [
             this.#buildFilterGroup("discipline", "Discipline", disciplineChoices, this.#filters.discipline),
-            this.#buildFilterGroup("rank", "Rank", rankChoices, this.#filters.rank),
+            this.#buildFilterGroup("rank",       "Rank",       rankChoices,       this.#filters.rank),
             this.#buildFilterGroup("complexity", "Complexity", complexityChoices, this.#filters.complexity),
-            this.#buildFilterGroup("special", "Special", SPECIAL_FLAGS, this.#filters.special),
-            this.#buildFilterGroup("components", "Components", COMPONENT_FLAGS, this.#filters.components),
+            this.#buildFilterGroup("special",    "Special",    SPECIAL_FLAGS,     this.#filters.special),
+            this.#buildFilterGroup("components", "Components", COMPONENT_FLAGS,   this.#filters.components),
         ];
 
         return {
@@ -145,8 +158,19 @@ export class TechniqueCompendiumBrowser extends HandlebarsApplicationMixin(Appli
         };
     }
 
-    _onRender(_context, _options) {
-        const root = this.element;
+    activateListeners(html) {
+        super.activateListeners(html);
+        const root = html[0];
+
+        if (this.#focusSearch) {
+            const inp = root.querySelector('input[name="filter"]');
+            if (inp) {
+                inp.focus();
+                const len = inp.value.length;
+                inp.setSelectionRange(len, len);
+            }
+            this.#focusSearch = false;
+        }
 
         const search = root.querySelector('input[name="filter"]');
         if (search) {
@@ -156,6 +180,7 @@ export class TechniqueCompendiumBrowser extends HandlebarsApplicationMixin(Appli
                 const value = ev.target.value.toLowerCase().trim();
                 timer = setTimeout(() => {
                     this.#query = value;
+                    this.#focusSearch = true;
                     this.render();
                 }, 200);
             });
@@ -170,6 +195,21 @@ export class TechniqueCompendiumBrowser extends HandlebarsApplicationMixin(Appli
                 if (ev.target.checked) set.add(key);
                 else set.delete(key);
                 this.render();
+            });
+        });
+
+        root.querySelectorAll(".filter h3").forEach((h3) => {
+            h3.style.cursor = "pointer";
+            h3.addEventListener("click", (ev) => {
+                if (ev.target.closest(".filter-count")) return;
+                const filterEl = h3.closest("[data-filter-id]");
+                const id = filterEl?.dataset.filterId;
+                if (!id) return;
+                if (this.#collapsed.has(id)) this.#collapsed.delete(id);
+                else this.#collapsed.add(id);
+                // Toggle class directly — no re-render keeps scroll position intact.
+                filterEl.querySelector(".filter-content")
+                    ?.classList.toggle("collapsed", this.#collapsed.has(id));
             });
         });
 
@@ -189,16 +229,16 @@ export class TechniqueCompendiumBrowser extends HandlebarsApplicationMixin(Appli
                 ev.dataTransfer.setData("text/plain", JSON.stringify({ type: "Item", uuid }));
             });
         });
-    }
 
-    static _onClearFilters() {
-        this.#query = "";
-        for (const set of Object.values(this.#filters)) set.clear();
-        this.render();
-    }
+        root.querySelector(".reload")?.addEventListener("click", async () => {
+            await this.#loadEntries({ force: true });
+            this.render();
+        });
 
-    static async _onReload() {
-        await this.#loadEntries({ force: true });
-        this.render();
+        root.querySelector(".clear-filters")?.addEventListener("click", () => {
+            this.#query = "";
+            for (const set of Object.values(this.#filters)) set.clear();
+            this.render();
+        });
     }
 }

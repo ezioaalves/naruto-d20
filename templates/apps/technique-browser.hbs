@@ -13,7 +13,7 @@
             {{label}}
             {{#if active}}<span class="filter-count"><i class="fa-solid fa-filter" inert></i>×{{activeCount}}</span>{{/if}}
           </h3>
-          <div class="filter-content flexcol">
+          <div class="filter-content flexcol {{collapsed}}">
             <ul class="filter-choices">
               {{#each choices as |choice|}}
                 <li class="filter-choice flexrow" data-choice="{{choice.key}}">

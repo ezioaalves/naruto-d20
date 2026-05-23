@@ -66,7 +66,8 @@ export function registerTechniqueListListeners() {
         // Open the custom technique compendium browser
         chakraTab.find(".technique-browse").off("click").on("click", (ev) => {
             ev.preventDefault();
-            new TechniqueCompendiumBrowser().render(true);
+            const rank = ev.currentTarget.dataset.rank;
+            new TechniqueCompendiumBrowser({ rank }).render(true);
         });
 
         // Open technique sheet
