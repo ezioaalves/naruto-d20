@@ -53,9 +53,25 @@ function _durationFromAction(action) {
     if (!dur?.units || dur.units === "inst" || dur.units === "perm" || dur.units === "seeText") {
         return null;
     }
+
+    const raw = dur.value;
+    let value = "";
+    if (raw != null && String(raw).trim() !== "") {
+        const actor = action?.item?.actor;
+        const rollData = action?.getRollData?.() ?? actor?.getRollData?.() ?? {};
+        // Techniques have no caster level — make "cl" resolve to character level.
+        if (!Number.isFinite(rollData.cl)) {
+            rollData.cl = actor?.system?.details?.level?.value
+                ?? actor?.system?.attributes?.hd?.total
+                ?? 0;
+        }
+        const total = RollPF.safeRollSync(String(raw), rollData)?.total;
+        value = Number.isFinite(total) ? total : 0;
+    }
+
     return {
         units: String(dur.units),
-        value: String(dur.value ?? ""),
+        value: String(value),
     };
 }
 
