@@ -197,6 +197,7 @@ Read the matching doc before changing a feature.
 | [`docs/technique-dc-buffs.md`](docs/technique-dc-buffs.md) | Technique save-DC buff targets (global + per-discipline), mirroring spell DC |
 | [`docs/technique-mastery.md`](docs/technique-mastery.md) | `mastery` field — caster-level offset (`@cl`) + perform bonus |
 | [`docs/technique-implementation-plan.md`](docs/technique-implementation-plan.md) | Technique actions & perform-flow implementation plan (`ItemPF` routing, perform pipeline) |
+| [`docs/technique-drop-duplication-fix.md`](docs/technique-drop-duplication-fix.md) | Fix for techniques being added twice on drop (`stopPropagation` vs pf1's native sheet drop) |
 
 ## Key references
 

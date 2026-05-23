@@ -39,6 +39,9 @@ export function registerTechniqueListListeners() {
             .on("dragover", (ev) => ev.preventDefault())
             .on("drop", async (ev) => {
                 ev.preventDefault();
+                // Stop the event reaching pf1's native sheet drop handler (bound on the
+                // sheet root with dropSelector:null), which would add a second copy.
+                ev.stopPropagation();
                 const srcItem = await resolveDroppedItem(ev.originalEvent, { type: TECHNIQUE_ITEM_TYPE });
                 if (!srcItem) {
                     ui.notifications.warn("Only Technique items can be dropped here.");
