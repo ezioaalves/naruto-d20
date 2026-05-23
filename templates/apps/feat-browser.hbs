@@ -1,0 +1,73 @@
+<div class="compendium-browser-content" data-type="feat">
+  {{! Sidebar }}
+  <aside class="sidebar flexcol">
+    <div class="entry-filter search-form formgroup flexrow">
+      <input type="search" name="filter" value="{{query}}" placeholder="Search..." autocomplete="off" autofocus>
+      <i class="fa-solid fa-search" inert></i>
+    </div>
+
+    <div class="filter-container">
+      {{#each filters}}
+        <div class="filter" data-filter-id="{{id}}">
+          <h3>
+            {{label}}
+            {{#if active}}<span class="filter-count"><i class="fa-solid fa-filter" inert></i>×{{activeCount}}</span>{{/if}}
+          </h3>
+          <div class="filter-content flexcol {{collapsed}}">
+            <ul class="filter-choices">
+              {{#each choices as |choice|}}
+                <li class="filter-choice flexrow" data-choice="{{choice.key}}">
+                  <input type="checkbox"
+                         name="filter.{{../id}}.choice.{{choice.key}}"
+                         id="nfb-{{../id}}-{{choice.key}}"
+                         {{#if choice.active}}checked{{/if}}>
+                  <label for="nfb-{{../id}}-{{choice.key}}">{{choice.label}}</label>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="buttons flexrow">
+      <button type="button" class="reload refresh" data-action="reload">
+        <i class="fa-solid fa-rotate" inert></i> Reload Packs
+      </button>
+      <button type="button" class="reset clear-filters" data-action="clearFilters">
+        <i class="fa-solid fa-filter-circle-xmark" inert></i> Clear Filters
+      </button>
+    </div>
+  </aside>
+
+  {{! Entries }}
+  <div class="directory-container flexcol">
+    {{#unless loading}}
+    <div class="top flexrow">
+      <span>{{itemCount}} Total Items</span>
+      <span>{{filteredItemCount}} Filtered Items</span>
+    </div>
+    {{/unless}}
+    <ol class="directory-list">
+      {{#if loading}}
+        <li class="compendium-loading flexcol">
+          <i class="fa-solid fa-spinner fa-spin" inert></i> Loading…
+        </li>
+      {{else}}
+        {{#each entries as |entry|}}
+          <li class="directory-item flexrow" draggable="true" data-uuid="{{entry.__uuid}}">
+            <img class="profile" src="{{entry.img}}" data-tooltip="{{entry.name}}" loading="lazy">
+            <div class="flexcol">
+              <h4 class="entry-name"><a>{{entry.name}}</a></h4>
+              <span class="entry-source">
+                {{entry.system.subType}}{{#if entry.narutoFlags.discipline}} · {{entry.narutoFlags.discipline}}{{/if}}
+                {{#if entry.system.description.summary}}<em> — {{entry.system.description.summary}}</em>{{/if}}
+              </span>
+            </div>
+          </li>
+        {{/each}}
+        <li class="directory-bottom"></li>
+      {{/if}}
+    </ol>
+  </div>
+</div>
