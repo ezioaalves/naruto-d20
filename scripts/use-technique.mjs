@@ -29,24 +29,26 @@ export async function performTechnique(item, actionId) {
         return;
     }
 
-    const skillKey   = DISCIPLINE_SKILL_MAP[sys.discipline];
-    const skillRanks = skillKey ? (actor.system.skills?.[skillKey]?.rank ?? 0) : Infinity;
-    const threshold  = sys.derived.skillThreshold;
-    const performDC  = sys.derived.performDC;
+    const skillKey       = DISCIPLINE_SKILL_MAP[sys.discipline];
+    const skillRanks     = skillKey ? (actor.system.skills?.[skillKey]?.rank ?? 0) : Infinity;
+    const threshold      = sys.derived.skillThreshold;
+    const performDC      = sys.derived.performDC;
+    const masteryPerform = sys.derived.masteryPerform ?? 0;
+    const masteryNote    = masteryPerform > 0 ? ` (+${masteryPerform} mastery)` : "";
 
     let succeeded;
     let bypassNote = null;
 
-    if (!skillKey || skillRanks >= threshold) {
+    if (!skillKey || (skillRanks + masteryPerform) >= threshold) {
         succeeded  = true;
         bypassNote = skillKey
-            ? `Ranks ${skillRanks} ≥ threshold ${threshold} — auto-perform.`
+            ? `Ranks ${skillRanks}${masteryNote} ≥ threshold ${threshold} — auto-perform.`
             : `No perform check required.`;
     } else {
         const result = await actor.rollSkill(skillKey);
         if (!result) return;                               // user cancelled dialog
         const lastMsg = game.messages.contents.at(-1);
-        succeeded = (lastMsg?.rolls?.[0]?.total ?? 0) >= performDC;
+        succeeded = ((lastMsg?.rolls?.[0]?.total ?? 0) + masteryPerform) >= performDC;
     }
 
     if (!succeeded) {
@@ -54,7 +56,7 @@ export async function performTechnique(item, actionId) {
             speaker: ChatMessage.getSpeaker({ actor }),
             content: `<div class="naruto-technique-card failed">
                         <header><h3>${item.name}</h3></header>
-                        <p>Perform check failed (DC ${performDC}). No chakra spent.</p>
+                        <p>Perform check failed (DC ${performDC}${masteryNote}). No chakra spent.</p>
                       </div>`,
         });
         return;

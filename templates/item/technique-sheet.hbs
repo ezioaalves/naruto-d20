@@ -154,6 +154,16 @@
         </ol>
       </div>
 
+      {{!-- Mastery — acts like a spell's caster level offset (see derived.masteryLevel) --}}
+      <h3 class="form-header">{{localize "NarutoD20.Technique.MasteryStep.Label"}}</h3>
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Technique.MasteryStep.Label"}}</label>
+        <div class="form-fields">
+          <input type="number" name="system.mastery" value="{{system.mastery}}" min="0" max="5" step="1">
+        </div>
+        <p class="hint">{{localize "NarutoD20.Technique.MasteryStep.Hint"}}</p>
+      </div>
+
       {{!-- Components --}}
       <h3 class="form-header">{{localize "NarutoD20.Technique.Components.Legend"}}</h3>
 

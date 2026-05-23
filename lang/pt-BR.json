@@ -43,7 +43,8 @@
         "Label": "Limiar de Perícia"
       },
       "MasteryStep": {
-        "Label": "Maestria"
+        "Label": "Maestria",
+        "Hint": "Degrau de maestria 0–5. Degrau 1+ soma bônus de Perform (à rolagem e ao limiar); degrau 2+ também soma um offset de nível efetivo ao @cl (duração, alcance, dano…)."
       },
       "ChakraCost": {
         "Label": "Custo de Chakra"

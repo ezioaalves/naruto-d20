@@ -22,6 +22,7 @@ import { prepareBaseActorData, prepareDerivedActorData } from "./data/derived-da
 import { registerNarutoSkills, ensureActorSkillEntries } from "./data/skills.mjs";
 import { installChakraTabPatch } from "./ui/render-patch.mjs";
 import { installTechniqueSaveDCPatch } from "./data/technique-save-dc.mjs";
+import { installTechniqueRollDataPatch } from "./data/technique-rolldata.mjs";
 import { registerLearnCheckListeners } from "./ui/learn-checks.mjs";
 import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
 import { registerSummaryStats } from "./ui/summary-stats.mjs";
@@ -103,6 +104,7 @@ Hooks.once("pf1PostInit", () => {
     registerNarutoSkills();
     _registerScriptCallCategories();
     installTechniqueSaveDCPatch();
+    installTechniqueRollDataPatch();
 });
 
 // ── [3] pf1PrepareBaseActorData ───────────────────────────────────────────

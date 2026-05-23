@@ -43,7 +43,8 @@
         "Label": "Skill Threshold"
       },
       "MasteryStep": {
-        "Label": "Mastery"
+        "Label": "Mastery",
+        "Hint": "Mastery step 0–5. Step 1+ adds a Perform bonus (to the perform roll and threshold); step 2+ also adds an effective-level offset to @cl (duration, range, damage…)."
       },
       "ChakraCost": {
         "Label": "Chakra Cost"

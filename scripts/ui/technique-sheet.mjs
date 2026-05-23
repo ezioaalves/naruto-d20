@@ -72,8 +72,11 @@ export function createTechniqueItemSheet() {
             const actor      = item.actor;
             const skillKey   = DISCIPLINE_SKILL_MAP[system.discipline];
             const skillRanks = (skillKey && actor) ? (actor.system.skills?.[skillKey]?.rank ?? 0) : 0;
-            const threshold  = system.derived.skillThreshold;
-            const bypasses   = !skillKey || skillRanks >= threshold;
+            const threshold      = system.derived.skillThreshold;
+            const masteryPerform = system.derived.masteryPerform ?? 0;
+            const effRanks       = skillRanks + masteryPerform;
+            const bypasses       = !skillKey || effRanks >= threshold;
+            const ranksLabel     = masteryPerform > 0 ? `${skillRanks}+${masteryPerform}` : `${skillRanks}`;
 
             context.canUse         = !!actor && canAffordTechnique(actor, item);
             context.skillKey       = skillKey;
@@ -84,8 +87,8 @@ export function createTechniqueItemSheet() {
                 : (!skillKey
                     ? "No perform check required for this discipline."
                     : (bypasses
-                        ? `Ranks ${skillRanks}/${threshold} — auto-perform.`
-                        : `Ranks ${skillRanks}/${threshold} — must roll vs DC ${system.derived.performDC}.`));
+                        ? `Ranks ${ranksLabel}/${threshold} — auto-perform.`
+                        : `Ranks ${ranksLabel}/${threshold} — must roll vs DC ${system.derived.performDC}.`));
 
             context.hasComponents = (
                 system.compHandSeals || system.compHalfSeals || system.compConcentration ||

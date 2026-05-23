@@ -25,6 +25,10 @@ export const COMPLEXITY_TABLE = {
     "Epic":           { learnMod: 15, successes: 8, skillMod: 8, performMod: 20  }
 };
 
+/** Mastery bonuses by step (0–5). Index = mastery step. See transcricao_tecnicas.md. */
+export const MASTERY_PERFORM = [0, 1, 2, 3, 4, 6]; // bonus to Perform roll + threshold ranks
+export const MASTERY_LEVEL   = [0, 0, 1, 2, 3, 5]; // effective-level offset (acts as cl offset)
+
 export function createTechniqueDataModel() {
 
     class TechniqueDataModel extends foundry.abstract.TypeDataModel {
@@ -104,6 +108,7 @@ export function createTechniqueDataModel() {
                 subtype:       new fields.StringField({  ...opt, blank: true, initial: "" }),
                 rank:          new fields.NumberField({  required: true, integer: true, initial: 1, min: 1, max: 15 }),
                 complexity:    new fields.StringField({  ...opt, blank: true, initial: "E-Class" }),
+                mastery:       new fields.NumberField({  required: true, integer: true, initial: 0, min: 0, max: 5 }),
 
                 isHijutsu:     new fields.BooleanField({ ...opt, initial: false }),
                 isKinjutsu:    new fields.BooleanField({ ...opt, initial: false }),
@@ -230,11 +235,15 @@ export function createTechniqueDataModel() {
             if (this.isKinjutsu)    successes += 2;
             if (this.isCombination) { learnMod += 5; successes = Math.max(1, successes - 2); }
 
+            const m = Math.max(0, Math.min(5, this.mastery ?? 0));
+
             return {
                 learnDC:        10 + this.rank + learnMod,
                 performDC:      10 + this.rank + performMod,
                 successes,
                 skillThreshold: Math.max(1, this.rank + skillMod - 3),
+                masteryPerform: MASTERY_PERFORM[m],
+                masteryLevel:   MASTERY_LEVEL[m],
             };
         }
     }
