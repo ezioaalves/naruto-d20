@@ -1,6 +1,7 @@
-import { MAIN_DISCIPLINES, MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
+import { MAIN_DISCIPLINES, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
 import { performTechnique } from "../use-technique.mjs";
 import { resolveDroppedItem } from "../utils/drag-drop.mjs";
+import { TechniqueCompendiumBrowser } from "./technique-browser.mjs";
 
 /**
  * Wire the technique list inside the Chakra tab: discipline filter chips,
@@ -62,15 +63,10 @@ export function registerTechniqueListListeners() {
             item?.sheet?.render(true);
         });
 
-        // Open the techniques compendium pack window
+        // Open the custom technique compendium browser
         chakraTab.find(".technique-browse").off("click").on("click", (ev) => {
             ev.preventDefault();
-            const pack = game.packs.get(`${MODULE_ID}.techniques`);
-            if (!pack) {
-                ui.notifications.warn("Technique compendium not found.");
-                return;
-            }
-            pack.render(true);
+            new TechniqueCompendiumBrowser().render(true);
         });
 
         // Open technique sheet

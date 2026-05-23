@@ -53,6 +53,7 @@ Hooks.once("init", () => {
         `modules/${MODULE_ID}/templates/actor/chakra-tab.hbs`,
         `modules/${MODULE_ID}/templates/actor/summary-stats.hbs`,
         `modules/${MODULE_ID}/templates/item/technique-sheet.hbs`,
+        `modules/${MODULE_ID}/templates/apps/technique-browser.hbs`,
     ]);
 
     // Namespaced equality helper for this module's templates — avoids colliding
