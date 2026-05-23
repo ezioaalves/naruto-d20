@@ -1,0 +1,732 @@
+{
+  "_meta": {
+    "format": "naruto-d20-classes-db",
+    "version": "1.0.0",
+    "description": "Database template for Naruto D20 classes and class features. Each entry maps directly to a PF1e Item document. Import via Foundry's compendium JSON import or the naruto-d20 import script.",
+    "fieldNotes": {
+      "class._key":           "Local slug used by classFeatures._classes[] to link features before UUIDs are known",
+      "class.progression":    "Level → feature keys table; used by an import script to write system.links.classAssociations on the created class item",
+      "classFeature._key":    "Local slug referenced by class.progression[].features[]",
+      "classFeature._classes":"Array of class _key values this feature belongs to (resolved to UUIDs on import)",
+      "classFeature._level":  "The class level at which this feature is granted (used to build classAssociations)",
+      "abilityType":          "na=none, ex=extraordinary, su=supernatural, sp=spell-like",
+      "bab":                  "low=½ lvl, med=¾ lvl, high=1× lvl",
+      "savingThrows.*.value": "low or high",
+      "changes[].operator":   "add, set, script",
+      "changes[].target":     "buff target key, e.g. 'chakraPool', 'learnCkc', or PF1e standard keys",
+      "changes[].type":       "untyped, base, enh, dodge, morale, insight, sacred, profane, luck, competence, circumstance, size, trait"
+    }
+  },
+
+  "classes": [
+    {
+      "_key": "shinobi",
+      "name": "Shinobi",
+      "type": "class",
+      "img": "modules/naruto-d20/icons/class-shinobi.webp",
+      "system": {
+        "description": {
+          "value": "<p>Shinobi are trained warriors who channel chakra — the fusion of physical and spiritual energy — to perform extraordinary feats called techniques. A shinobi masters one or more of the five great disciplines: Ninjutsu, Taijutsu, Genjutsu, Fuinjutsu, and Chakra Control.</p>"
+        },
+        "subType": "base",
+        "hd": 8,
+        "hp": 8,
+        "bab": "med",
+        "skillsPerLevel": 4,
+        "savingThrows": {
+          "fort": { "value": "low" },
+          "ref":  { "value": "high" },
+          "will": { "value": "high" }
+        },
+        "fc": {
+          "hp":   { "value": 1 },
+          "skill": { "value": 0 },
+          "alt":  { "value": 0, "notes": "" }
+        },
+        "wealth": "3d6 × 10 gp",
+        "alignment": "",
+        "classSkills": {
+          "acr": true,
+          "blf": true,
+          "clm": true,
+          "dip": true,
+          "dis": true,
+          "esc": true,
+          "int": true,
+          "kna": true,
+          "per": true,
+          "sen": true,
+          "ste": true,
+          "swm": true,
+          "ckc": true,
+          "fui": true,
+          "gnj": true,
+          "nin": true,
+          "tai": true
+        },
+        "armorProf": [],
+        "weaponProf": ["simple", "martial"],
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["shinobi"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "classAssociations": []
+        }
+      },
+      "progression": [
+        { "level": 1,  "features": ["chakra-pool", "learn-techniques", "bonus-feat"] },
+        { "level": 2,  "features": ["chakra-reserve", "evasion"] },
+        { "level": 3,  "features": ["bonus-feat"] },
+        { "level": 4,  "features": ["chakra-nature"] },
+        { "level": 5,  "features": ["bonus-feat", "chakra-mastery-1"] },
+        { "level": 6,  "features": ["improved-evasion"] },
+        { "level": 7,  "features": ["bonus-feat"] },
+        { "level": 8,  "features": ["chakra-mastery-2"] },
+        { "level": 9,  "features": ["bonus-feat"] },
+        { "level": 10, "features": ["chakra-mastery-3", "second-nature"] },
+        { "level": 11, "features": ["bonus-feat"] },
+        { "level": 12, "features": ["chakra-mastery-4"] },
+        { "level": 13, "features": ["bonus-feat"] },
+        { "level": 14, "features": ["chakra-mastery-5"] },
+        { "level": 15, "features": ["bonus-feat", "perfect-chakra"] },
+        { "level": 16, "features": ["chakra-mastery-6"] },
+        { "level": 17, "features": ["bonus-feat"] },
+        { "level": 18, "features": ["chakra-mastery-7"] },
+        { "level": 19, "features": ["bonus-feat"] },
+        { "level": 20, "features": ["chakra-mastery-8", "grand-master"] }
+      ]
+    },
+
+    {
+      "_key": "genin",
+      "name": "Genin",
+      "type": "class",
+      "img": "modules/naruto-d20/icons/class-genin.webp",
+      "system": {
+        "description": {
+          "value": "<p>A Genin is a low-ranked shinobi who has recently graduated from the Academy. Genin are assigned to three-person cells led by Jōnin and take on minor missions to build experience.</p>"
+        },
+        "subType": "npc",
+        "hd": 8,
+        "hp": 8,
+        "bab": "med",
+        "skillsPerLevel": 4,
+        "savingThrows": {
+          "fort": { "value": "low" },
+          "ref":  { "value": "high" },
+          "will": { "value": "low" }
+        },
+        "fc": {
+          "hp":   { "value": 1 },
+          "skill": { "value": 0 },
+          "alt":  { "value": 0, "notes": "" }
+        },
+        "wealth": "",
+        "alignment": "",
+        "classSkills": {
+          "acr": true,
+          "per": true,
+          "ste": true,
+          "ckc": true,
+          "nin": true,
+          "tai": true
+        },
+        "armorProf": [],
+        "weaponProf": ["simple"],
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["genin"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "classAssociations": []
+        }
+      },
+      "progression": [
+        { "level": 1, "features": ["chakra-pool", "learn-techniques"] },
+        { "level": 2, "features": ["evasion"] },
+        { "level": 3, "features": ["chakra-reserve"] }
+      ]
+    }
+  ],
+
+  "classFeatures": [
+    {
+      "_key": "chakra-pool",
+      "_classes": ["shinobi", "genin"],
+      "_level": 1,
+      "name": "Chakra Pool",
+      "type": "feat",
+      "img": "modules/naruto-d20/icons/feat-chakra-pool.webp",
+      "system": {
+        "description": {
+          "value": "<p>At 1st level, a shinobi gains a <b>Chakra Pool</b> equal to their character level + Wisdom modifier (minimum 1). The Chakra Pool is spent to perform techniques and recovers after 8 hours of rest.</p><p>The shinobi can also expend 1 Chakra as a swift action to gain a +1 bonus on their next technique perform check.</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "chakra",
+        "abilityType": "su",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [
+          {
+            "formula": "@details.level.value + @abilities.wis.mod",
+            "operator": "add",
+            "target": "chakraPool",
+            "type": "base",
+            "priority": 0,
+            "continuous": false
+          }
+        ],
+        "contextNotes": [],
+        "tags": ["chakra", "chakra-pool"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "chakra-reserve",
+      "_classes": ["shinobi", "genin"],
+      "_level": 2,
+      "name": "Chakra Reserve",
+      "type": "feat",
+      "img": "modules/naruto-d20/icons/feat-chakra-reserve.webp",
+      "system": {
+        "description": {
+          "value": "<p>At 2nd level, a shinobi develops a <b>Chakra Reserve</b> — a deeper well of spiritual energy equal to their character level + Constitution modifier (minimum 1). The Reserve cannot be spent directly; instead, a shinobi can transfer chakra from the Reserve to the Pool as a standard action (1 point per action) or as a full-round action to transfer all remaining Reserve points at once.</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "chakra",
+        "abilityType": "su",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [
+          {
+            "formula": "@details.level.value + @abilities.con.mod",
+            "operator": "add",
+            "target": "chakraReserve",
+            "type": "base",
+            "priority": 0,
+            "continuous": false
+          }
+        ],
+        "contextNotes": [],
+        "tags": ["chakra", "chakra-reserve"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "learn-techniques",
+      "_classes": ["shinobi", "genin"],
+      "_level": 1,
+      "name": "Learn Techniques",
+      "type": "feat",
+      "img": "modules/naruto-d20/icons/feat-learn-techniques.webp",
+      "system": {
+        "description": {
+          "value": "<p>A shinobi learns techniques (jutsus) through dedicated training and study. To learn a technique, the shinobi must succeed on a <b>Learn Check</b> using the skill associated with the technique's discipline (Chakra Control, Ninjutsu, Taijutsu, Genjutsu, or Fuinjutsu) against a DC equal to the technique's Rank × 2 + 10.</p><p>Techniques are stored in the shinobi's chakra tab and can be performed during combat or exploration.</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "techniques",
+        "abilityType": "na",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["techniques", "learn-check"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "bonus-feat",
+      "_classes": ["shinobi"],
+      "_level": 1,
+      "name": "Bonus Feat",
+      "type": "feat",
+      "img": "systems/pf1/icons/skills/yellow_30.jpg",
+      "system": {
+        "description": {
+          "value": "<p>At 1st level and every 2 levels thereafter (3rd, 5th, 7th, ...), a shinobi gains a bonus feat from the shinobi feat list. The shinobi must still meet all prerequisites for the feat.</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "general",
+        "abilityType": "na",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["bonus-feat"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "evasion",
+      "_classes": ["shinobi", "genin"],
+      "_level": 2,
+      "name": "Evasion",
+      "type": "feat",
+      "img": "systems/pf1/icons/skills/blue_27.jpg",
+      "system": {
+        "description": {
+          "value": "<p>At 2nd level, a shinobi can avoid even magical and unusual attacks with great agility. If the shinobi succeeds on a Reflex saving throw against an attack that normally deals half damage on a successful save, the shinobi instead takes no damage. Evasion can be used only if the shinobi is wearing light armor or no armor.</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "defensive",
+        "abilityType": "ex",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [],
+        "contextNotes": [
+          {
+            "text": "Evasion: take no damage on successful Reflex save (half damage attacks)",
+            "target": "savingThrow",
+            "subTarget": "ref",
+            "type": ""
+          }
+        ],
+        "tags": ["evasion", "reflex"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "chakra-nature",
+      "_classes": ["shinobi"],
+      "_level": 4,
+      "name": "Chakra Nature",
+      "type": "feat",
+      "img": "modules/naruto-d20/icons/feat-chakra-nature.webp",
+      "system": {
+        "description": {
+          "value": "<p>At 4th level, a shinobi attunes to one elemental chakra nature: <b>Fire, Water, Wind, Earth, or Lightning</b>. Techniques of the shinobi's primary nature cost 1 less chakra to perform (minimum 1). At 10th level, the shinobi may attune to a second nature (see <i>Second Nature</i>).</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "chakra",
+        "abilityType": "su",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["chakra-nature", "elemental"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "chakra-mastery-1",
+      "_classes": ["shinobi"],
+      "_level": 5,
+      "name": "Chakra Mastery (Step 1)",
+      "type": "feat",
+      "img": "modules/naruto-d20/icons/feat-chakra-mastery.webp",
+      "system": {
+        "description": {
+          "value": "<p>Starting at 5th level, a shinobi's mastery of chakra increases. The shinobi gains a +1 bonus to all perform checks for techniques they already know. This bonus increases by +1 at every 3 shinobi levels thereafter (8th, 11th, 14th, ...).</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "techniques",
+        "abilityType": "ex",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["chakra-mastery", "perform"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "improved-evasion",
+      "_classes": ["shinobi"],
+      "_level": 6,
+      "name": "Improved Evasion",
+      "type": "feat",
+      "img": "systems/pf1/icons/skills/blue_26.jpg",
+      "system": {
+        "description": {
+          "value": "<p>At 6th level, a shinobi's evasion improves. When subject to an attack that normally allows a Reflex save for half damage, the shinobi takes no damage on a successful save and only half damage on a failed save.</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "defensive",
+        "abilityType": "ex",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["evasion", "improved-evasion", "reflex"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "second-nature",
+      "_classes": ["shinobi"],
+      "_level": 10,
+      "name": "Second Nature",
+      "type": "feat",
+      "img": "modules/naruto-d20/icons/feat-second-nature.webp",
+      "system": {
+        "description": {
+          "value": "<p>At 10th level, a shinobi may attune to a second chakra nature. Techniques that combine both natures (kekkei genkai style) may be created at the GM's discretion. The shinobi does not gain the chakra cost reduction for the secondary nature, but suffers no penalty for using techniques of either type.</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "chakra",
+        "abilityType": "su",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": false,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["chakra-nature", "second-nature"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": null,
+          "per": "",
+          "autoDeductChargesCost": "",
+          "maxFormula": "",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "perfect-chakra",
+      "_classes": ["shinobi"],
+      "_level": 15,
+      "name": "Perfect Chakra",
+      "type": "feat",
+      "img": "modules/naruto-d20/icons/feat-perfect-chakra.webp",
+      "system": {
+        "description": {
+          "value": "<p>At 15th level, the shinobi achieves near-perfect chakra control. The shinobi gains the following benefits:</p><ul><li>Chakra Pool and Reserve maximums increase by +5 each.</li><li>Once per day, the shinobi may perform any technique they know without spending chakra.</li><li>All perform check DCs for the shinobi's techniques are reduced by 2.</li></ul>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "chakra",
+        "abilityType": "su",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": true,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [
+          {
+            "formula": "5",
+            "operator": "add",
+            "target": "chakraPool",
+            "type": "untyped",
+            "priority": 0,
+            "continuous": false
+          },
+          {
+            "formula": "5",
+            "operator": "add",
+            "target": "chakraReserve",
+            "type": "untyped",
+            "priority": 0,
+            "continuous": false
+          }
+        ],
+        "contextNotes": [],
+        "tags": ["perfect-chakra", "capstone"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": 1,
+          "per": "day",
+          "autoDeductChargesCost": "1",
+          "maxFormula": "1",
+          "rechargeFormula": ""
+        }
+      }
+    },
+
+    {
+      "_key": "grand-master",
+      "_classes": ["shinobi"],
+      "_level": 20,
+      "name": "Grand Master",
+      "type": "feat",
+      "img": "modules/naruto-d20/icons/feat-grand-master.webp",
+      "system": {
+        "description": {
+          "value": "<p>At 20th level, the shinobi transcends ordinary limitations. The shinobi is treated as having mastery step 5 on all techniques they know. Additionally, once per day as a free action, the shinobi may enter a state of <b>Sage-Like Calm</b> for 1 minute: during this time all techniques cost 0 chakra and the shinobi gains a +4 bonus to all ability scores.</p>"
+        },
+        "subType": "classFeature",
+        "traitType": "class feature",
+        "traitCategory": "chakra",
+        "abilityType": "su",
+        "associations": {
+          "classes": []
+        },
+        "showInQuickbar": true,
+        "crOffset": "",
+        "inherited": false,
+        "acquired": false,
+        "simple": false,
+        "summons": false,
+        "disabled": false,
+        "classSkills": {},
+        "changes": [],
+        "contextNotes": [],
+        "tags": ["grand-master", "capstone"],
+        "flags": {
+          "boolean": {},
+          "dictionary": {}
+        },
+        "scriptCalls": [],
+        "links": {
+          "charges": [],
+          "children": []
+        },
+        "uses": {
+          "value": 1,
+          "per": "day",
+          "autoDeductChargesCost": "1",
+          "maxFormula": "1",
+          "rechargeFormula": ""
+        }
+      }
+    }
+  ]
+}

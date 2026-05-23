@@ -26,6 +26,8 @@ import { installTechniqueRollDataPatch } from "./data/technique-rolldata.mjs";
 import { registerLearnCheckListeners } from "./ui/learn-checks.mjs";
 import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
 import { registerSummaryStats } from "./ui/summary-stats.mjs";
+import { registerFeatListListeners } from "./ui/feat-list.mjs";
+import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 
 const FLAG_MIGRATION_VERSION = 3;
 
@@ -54,6 +56,7 @@ Hooks.once("init", () => {
         `modules/${MODULE_ID}/templates/actor/summary-stats.hbs`,
         `modules/${MODULE_ID}/templates/item/technique-sheet.hbs`,
         `modules/${MODULE_ID}/templates/apps/technique-browser.hbs`,
+        `modules/${MODULE_ID}/templates/apps/feat-browser.hbs`,
     ]);
 
     // Namespaced equality helper for this module's templates — avoids colliding
@@ -134,6 +137,8 @@ Hooks.once("setup", () => {
     registerLearnCheckListeners();     // .shinobi-roll + learn-check tooltips
     registerTechniqueListListeners();  // chakra tab: filter, drop zone, CRUD
     registerSummaryStats();            // Hero Statistics block on the Summary tab
+    registerFeatListListeners();       // Naruto Browse button on the Features tab
+    registerFeatGrantDeletion();       // cascade-delete feat supplements on feat removal
 });
 
 // ── [8] preCreateActor ────────────────────────────────────────────────────

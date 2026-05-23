@@ -61,6 +61,27 @@
       "path":   "packs/technique-buffs",
       "type":   "Item",
       "system": "pf1"
+    },
+    {
+      "name":   "feats",
+      "label":  "Naruto Feats",
+      "path":   "packs/feats",
+      "type":   "Item",
+      "system": "pf1"
+    },
+    {
+      "name":   "classes",
+      "label":  "Naruto Classes",
+      "path":   "packs/classes",
+      "type":   "Item",
+      "system": "pf1"
+    },
+    {
+      "name":   "class-abilities",
+      "label":  "Naruto Class Abilities",
+      "path":   "packs/class-abilities",
+      "type":   "Item",
+      "system": "pf1"
     }
   ]
 }
