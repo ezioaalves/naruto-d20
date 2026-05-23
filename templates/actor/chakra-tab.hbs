@@ -184,7 +184,10 @@
                         <div class="item-detail spell-activation"><i class="icon-pf icon-hand" data-tooltip="Activation"></i></div>
                         <div class="item-detail spell-components"><i class="icon-pf icon-expense" data-tooltip="Components"></i></div>
                         <div class="item-detail spell-school"><i class="icon-pf icon-spell-book" data-tooltip="Type"></i></div>
-                        <div class="item-controls"></div>
+                        <div class="item-controls">
+                            <a class="technique-create item-control" data-tooltip="Create Technique" data-rank="{{rank}}"><i class="fa-solid fa-plus" inert></i></a>
+                            <a class="technique-browse item-control" data-tooltip="Browse Techniques"><i class="fa-solid fa-folder-plus" inert></i></a>
+                        </div>
                     </li>
                     {{#each rows}}
                     <li class="item flexrow technique-row" data-item-id="{{id}}">
@@ -225,7 +228,10 @@
                         <div class="item-detail spell-activation"><i class="icon-pf icon-hand" data-tooltip="Activation"></i></div>
                         <div class="item-detail spell-components"><i class="icon-pf icon-expense" data-tooltip="Components"></i></div>
                         <div class="item-detail spell-school"><i class="icon-pf icon-spell-book" data-tooltip="Type"></i></div>
-                        <div class="item-controls"></div>
+                        <div class="item-controls">
+                            <a class="technique-create item-control" data-tooltip="Create Technique" data-rank="{{rank}}" data-disc="{{../label}}"><i class="fa-solid fa-plus" inert></i></a>
+                            <a class="technique-browse item-control" data-tooltip="Browse Techniques"><i class="fa-solid fa-folder-plus" inert></i></a>
+                        </div>
                     </li>
                     {{#each rows}}
                     <li class="item flexrow technique-row" data-item-id="{{id}}">
@@ -259,6 +265,10 @@
             {{else}}
             <div class="techniques-empty">
                 <p>Drag &amp; drop Technique items here to add them.</p>
+                <div class="item-controls">
+                    <a class="technique-create item-control" data-tooltip="Create Technique"><i class="fa-solid fa-plus" inert></i></a>
+                    <a class="technique-browse item-control" data-tooltip="Browse Techniques"><i class="fa-solid fa-folder-plus" inert></i></a>
+                </div>
             </div>
             {{/if}}
         </div>

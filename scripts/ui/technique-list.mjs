@@ -1,4 +1,4 @@
-import { TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
+import { MAIN_DISCIPLINES, MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
 import { performTechnique } from "../use-technique.mjs";
 import { resolveDroppedItem } from "../utils/drag-drop.mjs";
 
@@ -46,6 +46,32 @@ export function registerTechniqueListListeners() {
                 if (srcItem.parent === app.actor) return; // already owned
                 await app.actor.createEmbeddedDocuments("Item", [srcItem.toObject()]);
             });
+
+        // Create a technique directly on the actor and open its sheet
+        chakraTab.find(".technique-create").off("click").on("click", async (ev) => {
+            ev.preventDefault();
+            const ds = ev.currentTarget.dataset;
+            const rank = Number(ds.rank) || 1;
+            const system = { rank };
+            if (ds.disc && MAIN_DISCIPLINES.includes(ds.disc)) system.discipline = ds.disc;
+            const [item] = await app.actor.createEmbeddedDocuments("Item", [{
+                type: TECHNIQUE_ITEM_TYPE,
+                name: "New Technique",
+                system,
+            }]);
+            item?.sheet?.render(true);
+        });
+
+        // Open the techniques compendium pack window
+        chakraTab.find(".technique-browse").off("click").on("click", (ev) => {
+            ev.preventDefault();
+            const pack = game.packs.get(`${MODULE_ID}.techniques`);
+            if (!pack) {
+                ui.notifications.warn("Technique compendium not found.");
+                return;
+            }
+            pack.render(true);
+        });
 
         // Open technique sheet
         chakraTab.find(".shinobi-technique-open").off("click").on("click", (ev) => {
