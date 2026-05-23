@@ -47,6 +47,21 @@ Known divergences are documented in the skill file. A few to keep in mind:
 - i18n keys are mostly flat in v11.11 (e.g. `PF1.Changes`, not `PF1.Changes.many`)
 - Actor sheet classes are `pf1.applications.ActorSheetPFCharacter` etc., not `pf1.applications.actor.CharacterSheetPF`
 
+## Application class — V1 vs V2
+
+**Default to `Application` (V1)** for any new Foundry application class.
+PF1e's own apps (`CompendiumBrowser`, actor sheets, item sheets) all extend `Application` (V1).
+Using `ApplicationV2` when the parent system uses V1 causes visual mismatches: different window
+chrome HTML (title bar colour/font, close button, resize handle), Foundry v13's V2 base CSS
+overrides checkbox `appearance` producing solid black checkboxes instead of OS-default white,
+and V2 button colour resets produce unreadable white text on dark backgrounds.
+
+**Before reaching for `HandlebarsApplicationMixin(ApplicationV2)`**, grep `pf1.js` for the
+equivalent native PF1e class and confirm it uses V2. Only use V2 if:
+- The equivalent pf1 class explicitly extends V2 (confirmed by grepping
+  `/Users/joelfmjr/foundrydata/Data/modules/pf1/pf1.js`), **or**
+- There is a concrete requirement (e.g. named PARTS partial re-rendering) that V1 cannot meet.
+
 ## Context7 docs
 
 Library IDs (all v11.11-aligned unless noted):
