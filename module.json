@@ -61,6 +61,13 @@
       "path":   "packs/technique-buffs",
       "type":   "Item",
       "system": "pf1"
+    },
+    {
+      "name":   "feats",
+      "label":  "Naruto Feats",
+      "path":   "packs/feats",
+      "type":   "Item",
+      "system": "pf1"
     }
   ]
 }
