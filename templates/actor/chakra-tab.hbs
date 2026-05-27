@@ -9,16 +9,22 @@
                     <h5>Current</h5>
                     <input class="value text-box direct allow-relative" type="text" name="flags.naruto-d20.chakra.pool.value" value="{{flags.naruto-d20.chakra.pool.value}}" data-dtype="Number" placeholder="0">
                 </div>
+                <div class="info-box temp">
+                    <h5>Temp</h5>
+                    <input class="value text-box direct allow-relative" type="text" name="flags.naruto-d20.chakra.pool.temp" value="{{flags.naruto-d20.chakra.pool.temp}}" data-dtype="Number" placeholder="0">
+                </div>
                 <div class="info-box maximum">
                     <h5>Max</h5>
-                    <span class="value text-box readonly" title="2 + ((2 + Con Mod) × Level) + Buffs">{{flags.naruto-d20.chakra.pool.max}}</span>
+                    <span class="value text-box readonly" data-naruto-tooltip="chakra.pool.max" style="cursor: default;">{{flags.naruto-d20.chakra.pool.max}}</span>
                 </div>
             </div>
         </div>
 
         <!-- Chakra Reserve -->
         <div class="info-box-header health-details flexcol" style="flex: 1.5; margin-right: 5px; margin-left: 5px;">
-            <h3>Chakra Reserve</h3>
+            <h3 class="rollable tap-reserve-roll" style="cursor: pointer;" data-tooltip="Roll Tap Reserves">
+                <i class="fas fa-dice-d20"></i> Chakra Reserve
+            </h3>
             <div class="info-box-joined tooltip">
                 <div class="info-box current">
                     <h5>Current</h5>
@@ -26,7 +32,7 @@
                 </div>
                 <div class="info-box maximum">
                     <h5>Max</h5>
-                    <span class="value text-box readonly" title="(2 × Level) + Buffs">{{flags.naruto-d20.chakra.reserve.max}}</span>
+                    <span class="value text-box readonly" data-naruto-tooltip="chakra.reserve.max" style="cursor: default;">{{flags.naruto-d20.chakra.reserve.max}}</span>
                 </div>
             </div>
         </div>

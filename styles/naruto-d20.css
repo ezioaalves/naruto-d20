@@ -1,5 +1,50 @@
 /* Naruto D20 Module Styles */
 
+/* ══════════════════════════════════════════════════════
+   Tap Reserves Dialog
+══════════════════════════════════════════════════════ */
+
+/* DC value — large, centred, bold */
+#tap-reserves-dialog .tap-dc-value {
+    font-size: 1.6em;
+    font-weight: bold;
+    min-width: 2em;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Seal hint "(DC −2)" dimmed label */
+#tap-reserves-dialog .seal-hint {
+    font-size: 0.85em;
+    color: #666;
+    margin-left: 4px;
+}
+
+/* Seal radio rows: tighter spacing */
+#tap-reserves-dialog .seal-options label.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 2px 0;
+}
+
+/* Button row */
+#tap-reserves-dialog .dialog-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    justify-content: flex-end;
+}
+
+#tap-reserves-dialog .dialog-buttons button {
+    flex: 1;
+}
+
+/* Chakra Reserve header — hover hint for clickability */
+.chakra .tap-reserve-roll:hover {
+    text-shadow: 0 0 4px rgba(200, 80, 80, 0.6);
+}
+
 /* Settings tab — Taijutsu ability selector */
 div.naruto-tai-setting {
     flex: 0;

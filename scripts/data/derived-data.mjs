@@ -35,6 +35,7 @@ export function prepareBaseActorData(actor) {
     nData.chakra.reserve ??= {};
     nData.chakra.nature ??= { primary: "", secondary: [] };
     nData.chakra.pool.value ??= 0;
+    nData.chakra.pool.temp  ??= 0;   // temporary chakra (from Tap Reserves) — preserved, never reset
     nData.chakra.reserve.value ??= 0;
     nData.chakra.pool.maxBonus = 0;
     nData.chakra.reserve.maxBonus = 0;

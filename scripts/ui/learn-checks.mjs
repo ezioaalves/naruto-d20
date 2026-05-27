@@ -1,4 +1,8 @@
-import { buildLearnCheckBreakdown } from "../data/bonus-sources.mjs";
+import {
+    buildLearnCheckBreakdown,
+    buildChakraPoolBreakdown,
+    buildChakraReserveBreakdown,
+} from "../data/bonus-sources.mjs";
 
 const LEARN_LABELS = {
     ckc: "Chakra Control",
@@ -44,6 +48,42 @@ export function registerLearnCheckListeners() {
                     "systems/pf1/templates/extended-tooltip.hbs",
                     {
                         header:  LEARN_LABELS[key] ?? key,
+                        sources: [{ untyped: true, sources: breakdown.sources }],
+                    }
+                );
+                game.tooltip.activate(this, { html: content, cssClass: "pf1 extended" });
+            })
+            .on("pointerleave", function () {
+                game.tooltip.deactivate();
+            });
+
+        // ── Chakra Pool Max tooltip ───────────────────────────────────────
+        $html.find("[data-naruto-tooltip='chakra.pool.max']")
+            .on("pointerenter", async function () {
+                const breakdown = buildChakraPoolBreakdown(app.actor);
+                if (!breakdown) return;
+                const content = await foundry.applications.handlebars.renderTemplate(
+                    "systems/pf1/templates/extended-tooltip.hbs",
+                    {
+                        header:  "Chakra Pool Max",
+                        sources: [{ untyped: true, sources: breakdown.sources }],
+                    }
+                );
+                game.tooltip.activate(this, { html: content, cssClass: "pf1 extended" });
+            })
+            .on("pointerleave", function () {
+                game.tooltip.deactivate();
+            });
+
+        // ── Chakra Reserve Max tooltip ────────────────────────────────────
+        $html.find("[data-naruto-tooltip='chakra.reserve.max']")
+            .on("pointerenter", async function () {
+                const breakdown = buildChakraReserveBreakdown(app.actor);
+                if (!breakdown) return;
+                const content = await foundry.applications.handlebars.renderTemplate(
+                    "systems/pf1/templates/extended-tooltip.hbs",
+                    {
+                        header:  "Chakra Reserve Max",
                         sources: [{ untyped: true, sources: breakdown.sources }],
                     }
                 );

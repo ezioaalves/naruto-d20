@@ -1,0 +1,71 @@
+<form class="flexcol">
+
+    <!-- Chakra amount ─────────────────────────────────────────────────── -->
+    <div class="form-group">
+        <label>Chakra to Tap</label>
+        <div class="form-fields">
+            <input class="tap-amount" type="number" value="{{defaultAmount}}"
+                   min="1" max="{{reserveAvailable}}" step="1" autofocus>
+        </div>
+        <p class="hint">Reserve available: {{reserveAvailable}}</p>
+    </div>
+
+    <!-- Seals ─────────────────────────────────────────────────────────── -->
+    <div class="form-group">
+        <label>Seals</label>
+        <div class="form-fields flexcol">
+            <label class="checkbox">
+                <input type="radio" name="seal-type" class="seal-type" value="none" checked>
+                None
+            </label>
+            <label class="checkbox">
+                <input type="radio" name="seal-type" class="seal-type" value="half">
+                Half-seal <span class="seal-hint">(DC −2)</span>
+            </label>
+            <label class="checkbox">
+                <input type="radio" name="seal-type" class="seal-type" value="hand">
+                Hand seal <span class="seal-hint">(DC −5)</span>
+            </label>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- DC (read-only, computed live) ─────────────────────────────────── -->
+    <div class="form-group tap-dc-row">
+        <label>DC</label>
+        <div class="form-fields">
+            <span class="tap-dc-value">10</span>
+        </div>
+        <p class="hint">Base 10 + 1 per chakra tapped</p>
+    </div>
+
+    <!-- Situational bonus ─────────────────────────────────────────────── -->
+    <div class="form-group">
+        <label>Situational Bonus</label>
+        <div class="form-fields">
+            <input class="situational-bonus" type="text" placeholder="+0">
+        </div>
+    </div>
+
+    <!-- Roll mode ─────────────────────────────────────────────────────── -->
+    <div class="form-group">
+        <label>Roll Mode</label>
+        <div class="form-fields">
+            <select class="roll-mode">
+                {{selectOptions rollModes selected=currentRollMode localize=true}}
+            </select>
+        </div>
+    </div>
+
+    <!-- Buttons ───────────────────────────────────────────────────────── -->
+    <div class="form-group dialog-buttons">
+        <button type="button" class="roll-btn default">
+            <i class="fas fa-dice-d20"></i> Roll
+        </button>
+        <button type="button" class="cancel-btn">
+            <i class="fas fa-times"></i> Cancel
+        </button>
+    </div>
+
+</form>

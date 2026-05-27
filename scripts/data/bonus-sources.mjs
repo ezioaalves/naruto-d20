@@ -1,5 +1,5 @@
 import { MODULE_ID } from "../constants.mjs";
-import { learnBuffPath } from "../flag-paths.mjs";
+import { learnBuffPath, chakraPoolMaxBonusPath, chakraReserveMaxBonusPath } from "../flag-paths.mjs";
 
 /**
  * Build the breakdown of a learn check for both the d20Roll parts array and
@@ -52,4 +52,78 @@ export function buildLearnCheckBreakdown(actor, key) {
     }
 
     return { parts, sources };
+}
+
+/**
+ * Build the "from sources" breakdown for Chakra Pool Max.
+ * Used only for tooltips (no roll parts needed).
+ *
+ * Formula: 2 + ((2 + conMod) × charLevel) + maxBonus
+ *
+ * @param {Actor} actor
+ * @returns {{ sources: object[] }|null}
+ */
+export function buildChakraPoolBreakdown(actor) {
+    const nData = actor.flags?.[MODULE_ID]?.chakra?.pool;
+    if (!nData) return null;
+
+    const charLevel = actor.system.details?.level?.value
+        || actor.system.details?.cr?.total || 0;
+    const conMod = actor.system.abilities?.con?.mod || 0;
+
+    const sources = [];
+
+    // Base portion: 2 + (2 × Level)
+    const base = 2 + (2 * charLevel);
+    sources.push({ name: "Base (2 + 2×Lv)", value: base, builtIn: true });
+
+    // Constitution contribution: conMod × Level (may be negative)
+    const conContrib = conMod * charLevel;
+    if (conContrib !== 0) {
+        sources.push({ name: "Con × Level", value: conContrib, builtIn: true });
+    }
+
+    // Buff bonuses — use named per-source entries when available
+    const buffSources = actor.sourceInfo?.[chakraPoolMaxBonusPath]?.positive ?? [];
+    if (buffSources.length > 0) {
+        for (const src of buffSources) {
+            sources.push({ name: src.name, value: src.value, builtIn: false });
+        }
+    } else if (nData.maxBonus) {
+        sources.push({ name: "Buff Bonus", value: nData.maxBonus, builtIn: false });
+    }
+
+    return { sources };
+}
+
+/**
+ * Build the "from sources" breakdown for Chakra Reserve Max.
+ * Used only for tooltips (no roll parts needed).
+ *
+ * Formula: (2 × charLevel) + maxBonus
+ *
+ * @param {Actor} actor
+ * @returns {{ sources: object[] }|null}
+ */
+export function buildChakraReserveBreakdown(actor) {
+    const nData = actor.flags?.[MODULE_ID]?.chakra?.reserve;
+    if (!nData) return null;
+
+    const charLevel = actor.system.details?.level?.value
+        || actor.system.details?.cr?.total || 0;
+
+    const sources = [];
+
+    sources.push({ name: "2 × Level", value: 2 * charLevel, builtIn: true });
+
+    const buffSources = actor.sourceInfo?.[chakraReserveMaxBonusPath]?.positive ?? [];
+    if (buffSources.length > 0) {
+        for (const src of buffSources) {
+            sources.push({ name: src.name, value: src.value, builtIn: false });
+        }
+    } else if (nData.maxBonus) {
+        sources.push({ name: "Buff Bonus", value: nData.maxBonus, builtIn: false });
+    }
+
+    return { sources };
 }

@@ -28,6 +28,7 @@ import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
 import { registerSummaryStats } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
+import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 
 const FLAG_MIGRATION_VERSION = 3;
 
@@ -54,6 +55,7 @@ Hooks.once("init", () => {
     foundry.applications.handlebars.loadTemplates([
         `modules/${MODULE_ID}/templates/actor/chakra-tab.hbs`,
         `modules/${MODULE_ID}/templates/actor/summary-stats.hbs`,
+        `modules/${MODULE_ID}/templates/actor/tap-reserves-dialog.hbs`,
         `modules/${MODULE_ID}/templates/item/technique-sheet.hbs`,
         `modules/${MODULE_ID}/templates/apps/technique-browser.hbs`,
         `modules/${MODULE_ID}/templates/apps/feat-browser.hbs`,
@@ -134,11 +136,12 @@ Hooks.once("pf1RegisterDamageTypes", registerDamageTypes);
 // ── [7] setup ─────────────────────────────────────────────────────────────
 Hooks.once("setup", () => {
     installChakraTabPatch();           // _renderInner wrap — must run before first render
-    registerLearnCheckListeners();     // .shinobi-roll + learn-check tooltips
+    registerLearnCheckListeners();     // .shinobi-roll + learn-check tooltips + chakra max tooltips
     registerTechniqueListListeners();  // chakra tab: filter, drop zone, CRUD
     registerSummaryStats();            // Hero Statistics block on the Summary tab
     registerFeatListListeners();       // Naruto Browse button on the Features tab
     registerFeatGrantDeletion();       // cascade-delete feat supplements on feat removal
+    registerTapReservesListener();     // Chakra Reserve header → Tap Reserves dialog
 });
 
 // ── [8] preCreateActor ────────────────────────────────────────────────────
