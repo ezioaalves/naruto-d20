@@ -11,6 +11,7 @@
  *  [7] Foundry "setup"             → Push Chakra tab, register UI hooks
  *  [8] "preCreateActor"            → Seed default flags on new actors
  *  [9] Foundry "ready"             → One-time flag migration for existing actors (GM only)
+ * [10] "pf1ActorRest"              → Restore chakra pool, clear temp, recover reserve
  */
 
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
@@ -29,6 +30,7 @@ import { registerSummaryStats } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
+import { onActorRest } from "./data/rest-recovery.mjs";
 
 const FLAG_MIGRATION_VERSION = 3;
 
@@ -163,6 +165,11 @@ Hooks.once("ready", async () => {
     if (game.settings.get(MODULE_ID, "flagMigrationVersion") >= FLAG_MIGRATION_VERSION) return;
     await _migrateActorFlags();
     await game.settings.set(MODULE_ID, "flagMigrationVersion", FLAG_MIGRATION_VERSION);
+});
+
+// ── [10] pf1ActorRest — chakra recovery on rest ──────────────────────────
+Hooks.on("pf1ActorRest", (actor, options) => {
+    onActorRest(actor, options);
 });
 
 // ─────────────────────────────────────────────────────────────────────────
