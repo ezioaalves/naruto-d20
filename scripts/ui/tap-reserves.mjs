@@ -44,7 +44,6 @@ export class TapReservesDialog extends Application {
 
         return {
             reserveAvailable,
-            defaultAmount:   Math.max(1, Math.min(1, reserveAvailable)),
             // Pass the raw object — the template uses {{selectOptions ... localize=true}}
             // which handles localization the same way PF1's own roll-dialog.hbs does.
             rollModes:       CONFIG.Dice.rollModes,
