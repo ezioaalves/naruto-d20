@@ -1,12 +1,14 @@
-# Chakra Pool/Reserve Tooltips & Tap Reserves
+# Chakra Pool/Reserve Tooltips, Tap Reserves & Temp Absorption
 
-Three related improvements to the Chakra tab:
+Four related improvements to the Chakra tab:
 
 1. **Chakra Pool Max** and **Chakra Reserve Max** display hover tooltips with a
    per-source breakdown, identical in style to the learn check tooltips.
 2. **Chakra Pool** has a new **Temp** column for temporary chakra.
 3. **Chakra Reserve header** is clickable and opens a custom **Tap Reserves**
    roll dialog.
+4. **Temporary chakra is consumed before the regular pool** when a technique is
+   used — mirroring PF1e's temporary hit point absorption pattern.
 
 ---
 
@@ -149,6 +151,44 @@ via `renderActorSheetPF`. It is called once in the `[7] setup` hook in
 
 ---
 
+## Temporary chakra absorption
+
+When a technique is used, chakra is consumed in priority order:
+
+```
+temp → pool.value → reserve.value
+```
+
+This mirrors PF1e's `applyDamage` pattern for temporary hit points.
+
+### Algorithm (`scripts/use-technique.mjs`)
+
+```js
+const fromTemp    = Math.min(cost, tempValue);   // temp absorbs what it can
+const remaining   = cost - fromTemp;
+const fromPool    = Math.min(remaining, poolValue);
+const fromReserve = remaining - fromPool;
+
+await actor.update({
+    [chakraPoolTempPath]:     tempValue    - fromTemp,
+    [chakraPoolValuePath]:    poolValue    - fromPool,
+    [chakraReserveValuePath]: reserveValue - fromReserve,
+});
+```
+
+`canAffordTechnique` also counts temp in the total available:
+```js
+const available = (chakra.pool?.temp ?? 0) + (chakra.pool?.value ?? 0) + (chakra.reserve?.value ?? 0);
+```
+
+The chat card spend summary omits zero-value sources
+(e.g. "Spent 7 chakra (3 temp, 4 pool)" instead of showing "0 reserve").
+
+`chakraPoolTempPath` is exported from `scripts/flag-paths.mjs` alongside the
+other chakra flag-path constants.
+
+---
+
 ## Files changed
 
 | File | Change |
@@ -161,6 +201,8 @@ via `renderActorSheetPF`. It is called once in the `[7] setup` hook in
 | `templates/actor/tap-reserves-dialog.hbs` | **new** — dialog template |
 | `scripts/main.mjs` | Import tap-reserves; add template to preload; call listener in setup |
 | `styles/naruto-d20.css` | Styles for dialog DC display, seal hints, buttons, Reserve header hover |
+| `scripts/flag-paths.mjs` | `chakraPoolTempPath` export |
+| `scripts/use-technique.mjs` | Temp absorption logic in `canAffordTechnique` + `performTechnique` |
 
 No actor migration is needed: `prepareBaseActorData` seeds `chakra.pool.temp`
 with `??=` on every data prep.
@@ -190,3 +232,9 @@ with `??=` on every data prep.
 7. **Buff integration** — apply a "Chakra Pool Max" buff to the actor:
    - Pool Max increases; tooltip shows the buff's name as a separate row.
    - Apply a "Chakra Reserve Max" buff → same for Reserve tooltip.
+8. **Temp absorption** — use Tap Reserves to gain temp chakra, then use a technique:
+   - Cost ≤ temp: only Temp field decreases; pool unchanged.
+   - Cost > temp (e.g. temp=3, cost=7): Temp → 0, pool loses 4.
+   - Cost > temp + pool: reserve absorbs the overflow.
+   - Chat card footer shows only the sources that contributed (e.g.
+     "Spent 7 chakra (3 temp, 4 pool)" — no "0 reserve" noise).
