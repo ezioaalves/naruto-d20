@@ -82,7 +82,13 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[Iaido]",
+        "weaponAttack.damageBonus": "2[Iaido]",
+        "weaponAttack.held": "twohanded"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

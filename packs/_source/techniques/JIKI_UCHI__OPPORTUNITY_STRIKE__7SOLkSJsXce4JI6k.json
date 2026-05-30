@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeOrUnarmed",
+        "weaponAttack.attackBonus": "2[Jiki-Uchi]",
+        "weaponAttack.damageBonus": "2[Jiki-Uchi]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

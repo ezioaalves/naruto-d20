@@ -2,6 +2,7 @@ import { MODULE_ID } from "./constants.mjs";
 import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from "./flag-paths.mjs";
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
 import { checkAndUpdateConditions } from "./data/chakra-conditions.mjs";
+import { getTechniqueWeaponAttackConfig, rollSelectedWeaponAttackWithTechnique } from "./ui/technique-weapon-attack.mjs";
 
 export function canAffordTechnique(actor, item) {
     if (!actor) return false;
@@ -71,11 +72,19 @@ export async function performTechnique(item, actionId, event = null) {
         return;
     }
 
-    const useResult = await currentItem.use({
-        actionId: action.id,
-        skipDialog: !(action.hasAttack || action.hasDamage),
-        ev: event,
-    });
+    const weaponAttackConfig = getTechniqueWeaponAttackConfig(currentItem);
+    const useResult = weaponAttackConfig
+        ? await rollSelectedWeaponAttackWithTechnique({
+            technique: currentItem,
+            actor,
+            config: weaponAttackConfig,
+            event,
+        })
+        : await currentItem.use({
+            actionId: action.id,
+            skipDialog: !(action.hasAttack || action.hasDamage),
+            ev: event,
+        });
     if (!useResult || useResult.err) return;
 
     if (!canAffordTechnique(actor, currentItem)) {
