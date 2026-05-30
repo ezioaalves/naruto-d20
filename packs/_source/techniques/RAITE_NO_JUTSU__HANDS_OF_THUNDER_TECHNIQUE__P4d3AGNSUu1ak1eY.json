@@ -67,7 +67,7 @@
         "damage": {
           "parts": [
             {
-              "formula": "2d6 + 5",
+              "formula": "2d6 + max(@cl, 5)",
               "types": [
                 "electric"
               ]
