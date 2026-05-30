@@ -5,9 +5,10 @@
   "scripts": {
     "convert": "node tools/convert-jutsus.mjs",
     "convert:feats": "node tools/convert-feats.mjs",
-    "pack": "node tools/pack-techniques.mjs",
+    "pack": "node_modules/.bin/fvtt package pack --id naruto-d20 --type Module --compendiumName techniques --in packs/_source --out packs",
     "pack:feats": "node tools/pack-feats.mjs",
-    "unpack": "fvtt package unpack --id naruto-d20 --type Module --compendiumName techniques --in packs/techniques --out packs/_source",
+    "unpack": "node_modules/.bin/fvtt package unpack --id naruto-d20 --type Module --compendiumName techniques --in packs --out packs/_source",
+    "add-actions": "node tools/add-actions.mjs",
     "expand:blood-pact": "node tools/expand-blood-pact.mjs",
     "extract:feat-changes": "node tools/extract-feat-changes.mjs",
     "apply:feat-changes": "node tools/apply-feat-changes.mjs",
