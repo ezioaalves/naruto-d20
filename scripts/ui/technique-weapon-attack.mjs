@@ -118,12 +118,12 @@ function renderWeaponAttackSelectorContent(choices) {
         const actionName = action.name && action.name !== item.name ? ` - ${escapeHTML(action.name)}` : "";
         const kindLabel = kind === "weapon" ? "Weapon" : "Attack";
         return `
-            <label class="flexrow" style="align-items:center; gap:8px; margin:4px 0;">
-                <input type="radio" name="weapon-attack-choice" value="${index}" ${checked}>
-                <img src="${escapeHTML(item.img)}" width="32" height="32" style="border:0;">
-                <span>
-                    <strong>${escapeHTML(item.name)}${actionName}</strong>
-                    <small style="display:block;">${kindLabel}</small>
+            <label style="display:flex; align-items:center; gap:6px; margin:3px 0; cursor:pointer;">
+                <input type="radio" name="weapon-attack-choice" value="${index}" ${checked} style="flex-shrink:0; margin:0;">
+                <img src="${escapeHTML(item.img)}" width="28" height="28" style="border:0; flex-shrink:0; object-fit:contain;">
+                <span style="line-height:1.2;">
+                    <strong style="display:block; font-size:0.85em;">${escapeHTML(item.name)}${actionName}</strong>
+                    <small style="color:#888;">${kindLabel}</small>
                 </span>
             </label>
         `;
