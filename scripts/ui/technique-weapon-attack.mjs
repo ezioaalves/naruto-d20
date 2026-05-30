@@ -14,6 +14,7 @@ export function getTechniqueWeaponAttackConfig(item) {
         attackBonus: String(read("attackBonus") ?? "").trim(),
         damageBonus: String(read("damageBonus") ?? "").trim(),
         held:        String(read("held") ?? "").trim(),
+        charge:      String(read("charge") ?? "").trim().toLowerCase() === "true",
     };
 }
 
@@ -34,6 +35,7 @@ export async function rollSelectedWeaponAttackWithTechnique({ technique, actor, 
     try {
         const options = {};
         if (config.held) options.held = config.held;
+        if (config.charge) options.charge = true;
 
         return await selection.item.use({
             actionId: selection.action.id,

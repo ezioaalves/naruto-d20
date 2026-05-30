@@ -85,7 +85,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "1[Ryuutsuki]"
+        "weaponAttack.attackBonus": "1[Ryuutsuki]",
+        "weaponAttack.charge": "true"
       }
     },
     "showInQuickbar": false,
