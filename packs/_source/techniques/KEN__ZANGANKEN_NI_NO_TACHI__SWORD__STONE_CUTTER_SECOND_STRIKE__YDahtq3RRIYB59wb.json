@@ -79,7 +79,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[ZANGANKEN NI NO TACHI]",
+        "weaponAttack.damageBonus": "2[ZANGANKEN NI NO TACHI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

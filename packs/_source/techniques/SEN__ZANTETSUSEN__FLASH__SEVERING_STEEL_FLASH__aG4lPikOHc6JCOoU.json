@@ -85,7 +85,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[ZANTETSUSEN]",
+        "weaponAttack.damageBonus": "2[ZANTETSUSEN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[BUTSUKARI]",
+        "weaponAttack.damageBonus": "2[BUTSUKARI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

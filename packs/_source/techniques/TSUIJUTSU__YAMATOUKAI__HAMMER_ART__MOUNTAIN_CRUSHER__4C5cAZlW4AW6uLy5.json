@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[YAMATOUKAI]",
+        "weaponAttack.damageBonus": "2[YAMATOUKAI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

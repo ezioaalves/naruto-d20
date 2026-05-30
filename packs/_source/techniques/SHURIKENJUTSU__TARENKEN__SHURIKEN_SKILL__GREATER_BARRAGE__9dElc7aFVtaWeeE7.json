@@ -76,7 +76,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "rangedWeapon",
+        "weaponAttack.attackBonus": "2[TARENKEN]",
+        "weaponAttack.damageBonus": "2[TARENKEN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "rangedWeapon",
+        "weaponAttack.attackBonus": "2[KISSHI]",
+        "weaponAttack.damageBonus": "2[KISSHI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

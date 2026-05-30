@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "rangedWeapon",
+        "weaponAttack.attackBonus": "2[SASSHI]",
+        "weaponAttack.damageBonus": "2[SASSHI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

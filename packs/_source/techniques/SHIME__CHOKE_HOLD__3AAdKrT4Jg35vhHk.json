@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[SHIME]",
+        "weaponAttack.damageBonus": "2[SHIME]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

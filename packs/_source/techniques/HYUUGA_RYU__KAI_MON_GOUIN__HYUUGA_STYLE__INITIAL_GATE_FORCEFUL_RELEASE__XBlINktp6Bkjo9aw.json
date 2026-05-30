@@ -87,7 +87,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[KAI-MON GOUIN]",
+        "weaponAttack.damageBonus": "2[KAI-MON GOUIN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

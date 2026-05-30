@@ -80,7 +80,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[MIKAZUKI NO MAI]",
+        "weaponAttack.damageBonus": "2[MIKAZUKI NO MAI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

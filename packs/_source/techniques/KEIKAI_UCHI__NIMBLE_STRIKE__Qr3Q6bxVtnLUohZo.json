@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[KEIKAI-UCHI]",
+        "weaponAttack.damageBonus": "2[KEIKAI-UCHI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

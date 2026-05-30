@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[OSAENAGE]",
+        "weaponAttack.damageBonus": "2[OSAENAGE]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

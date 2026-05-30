@@ -76,7 +76,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[RYU TSUI SEN ZAN]",
+        "weaponAttack.damageBonus": "2[RYU TSUI SEN ZAN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

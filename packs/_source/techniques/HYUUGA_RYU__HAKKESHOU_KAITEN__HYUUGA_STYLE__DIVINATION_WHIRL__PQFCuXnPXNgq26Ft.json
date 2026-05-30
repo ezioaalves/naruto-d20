@@ -81,7 +81,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[HAKKESHOU KAITEN]",
+        "weaponAttack.damageBonus": "2[HAKKESHOU KAITEN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

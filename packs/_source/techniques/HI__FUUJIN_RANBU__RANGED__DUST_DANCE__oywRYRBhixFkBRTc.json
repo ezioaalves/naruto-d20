@@ -79,7 +79,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[FUUJIN RANBU]",
+        "weaponAttack.damageBonus": "2[FUUJIN RANBU]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

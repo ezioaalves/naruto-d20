@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[HIENBATTOU KASUMIKIRI]",
+        "weaponAttack.damageBonus": "2[HIENBATTOU KASUMIKIRI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

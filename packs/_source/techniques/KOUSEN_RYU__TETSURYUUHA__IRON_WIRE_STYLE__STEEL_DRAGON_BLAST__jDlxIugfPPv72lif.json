@@ -84,7 +84,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[TETSURYUUHA]",
+        "weaponAttack.damageBonus": "2[TETSURYUUHA]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

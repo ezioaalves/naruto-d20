@@ -86,7 +86,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[KODACHI NITTOURYU - GOUKU JUUJI]",
+        "weaponAttack.damageBonus": "2[KODACHI NITTOURYU - GOUKU JUUJI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

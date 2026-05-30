@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[RYUUHAZAN]",
+        "weaponAttack.damageBonus": "2[RYUUHAZAN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

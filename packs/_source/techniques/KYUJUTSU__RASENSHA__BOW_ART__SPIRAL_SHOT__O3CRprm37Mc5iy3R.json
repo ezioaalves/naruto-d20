@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "rangedWeapon",
+        "weaponAttack.attackBonus": "2[RASENSHA]",
+        "weaponAttack.damageBonus": "2[RASENSHA]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

@@ -87,7 +87,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[HI RYU SEN]",
+        "weaponAttack.damageBonus": "2[HI RYU SEN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

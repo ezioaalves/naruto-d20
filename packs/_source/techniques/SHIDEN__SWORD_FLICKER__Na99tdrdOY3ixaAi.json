@@ -83,7 +83,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[SHIDEN]",
+        "weaponAttack.damageBonus": "2[SHIDEN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

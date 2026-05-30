@@ -87,27 +87,46 @@ async function selectTechniqueWeaponAttack(actor, technique, config) {
 
 function collectTechniqueWeaponAttackChoices(actor, filter) {
     const choices = [];
-    const includeUnarmed = filter === "meleeOrUnarmed";
 
+    if (filter === "unarmedOnly") {
+        const attackItems = actor.itemTypes?.attack ?? actor.items.filter((i) => i.type === "attack");
+        for (const item of attackItems) {
+            addItemAttackChoices(choices, item, "attack", false);
+        }
+        return choices;
+    }
+
+    if (filter === "rangedWeapon") {
+        const weaponItems = actor.itemTypes?.weapon ?? actor.items.filter((i) => i.type === "weapon");
+        for (const item of weaponItems) {
+            if (item.system?.equipped !== true) continue;
+            addItemAttackChoices(choices, item, "weapon", true);
+        }
+        return choices;
+    }
+
+    // meleeWeapon (default) and meleeOrUnarmed
     const weaponItems = actor.itemTypes?.weapon ?? actor.items.filter((i) => i.type === "weapon");
     for (const item of weaponItems) {
         if (item.system?.equipped !== true) continue;
-        addItemAttackChoices(choices, item, "weapon");
+        addItemAttackChoices(choices, item, "weapon", false);
     }
 
-    if (includeUnarmed) {
+    if (filter === "meleeOrUnarmed") {
         const attackItems = actor.itemTypes?.attack ?? actor.items.filter((i) => i.type === "attack");
         for (const item of attackItems) {
-            addItemAttackChoices(choices, item, "attack");
+            addItemAttackChoices(choices, item, "attack", false);
         }
     }
 
     return choices;
 }
 
-function addItemAttackChoices(choices, item, kind) {
+function addItemAttackChoices(choices, item, kind, rangedOnly) {
     for (const action of item.actions ?? []) {
-        if (!action.hasAttack || action.isRanged) continue;
+        if (!action.hasAttack) continue;
+        if (rangedOnly && !action.isRanged) continue;
+        if (!rangedOnly && action.isRanged) continue;
         choices.push({ item, action, kind });
     }
 }

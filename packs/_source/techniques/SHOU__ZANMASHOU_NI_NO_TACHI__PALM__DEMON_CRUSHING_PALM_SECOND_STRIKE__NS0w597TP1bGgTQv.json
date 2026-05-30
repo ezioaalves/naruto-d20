@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[ZANMASHOU NI NO TACHI]",
+        "weaponAttack.damageBonus": "2[ZANMASHOU NI NO TACHI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

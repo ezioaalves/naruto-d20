@@ -76,7 +76,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[GOKUSHOU TSURIOTOSHI]",
+        "weaponAttack.damageBonus": "2[GOKUSHOU TSURIOTOSHI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

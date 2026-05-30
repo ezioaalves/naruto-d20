@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[ISSHIKI]",
+        "weaponAttack.damageBonus": "2[ISSHIKI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

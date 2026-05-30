@@ -76,7 +76,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "rangedWeapon",
+        "weaponAttack.attackBonus": "2[TSUKEME HAKAI]",
+        "weaponAttack.damageBonus": "2[TSUKEME HAKAI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[KONOHA REPPUU]",
+        "weaponAttack.damageBonus": "2[KONOHA REPPUU]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

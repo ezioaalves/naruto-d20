@@ -76,7 +76,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[RYU KAN SEN KOGARASHI]",
+        "weaponAttack.damageBonus": "2[RYU KAN SEN KOGARASHI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

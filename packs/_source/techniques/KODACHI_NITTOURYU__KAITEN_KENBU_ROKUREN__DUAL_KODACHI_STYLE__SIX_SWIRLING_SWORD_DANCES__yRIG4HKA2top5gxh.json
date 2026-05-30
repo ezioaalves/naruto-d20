@@ -79,7 +79,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[KAITEN KENBU ROKUREN]",
+        "weaponAttack.damageBonus": "2[KAITEN KENBU ROKUREN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

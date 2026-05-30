@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[UKE RENDAN]",
+        "weaponAttack.damageBonus": "2[UKE RENDAN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

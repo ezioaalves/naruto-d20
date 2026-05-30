@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "rangedWeapon",
+        "weaponAttack.attackBonus": "2[KAGE SHURIKEN]",
+        "weaponAttack.damageBonus": "2[KAGE SHURIKEN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

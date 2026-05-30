@@ -80,7 +80,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[RAIGA HANGEKI]",
+        "weaponAttack.damageBonus": "2[RAIGA HANGEKI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

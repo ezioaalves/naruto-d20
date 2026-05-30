@@ -86,7 +86,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.attackBonus": "2[NODOWA OTOSHI]",
+        "weaponAttack.damageBonus": "2[NODOWA OTOSHI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

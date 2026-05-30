@@ -86,7 +86,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[RYU SOU SEN]",
+        "weaponAttack.damageBonus": "2[RYU SOU SEN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

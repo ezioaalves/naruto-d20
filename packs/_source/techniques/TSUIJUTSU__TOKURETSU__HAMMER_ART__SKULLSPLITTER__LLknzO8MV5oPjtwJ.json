@@ -86,7 +86,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[TOKURETSU]",
+        "weaponAttack.damageBonus": "2[TOKURETSU]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

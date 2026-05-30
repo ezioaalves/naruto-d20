@@ -83,7 +83,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.attackBonus": "2[RYUUSEI MASAI]",
+        "weaponAttack.damageBonus": "2[RYUUSEI MASAI]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

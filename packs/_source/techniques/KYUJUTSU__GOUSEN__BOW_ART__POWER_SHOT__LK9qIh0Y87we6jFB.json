@@ -82,7 +82,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "rangedWeapon",
+        "weaponAttack.attackBonus": "2[GOUSEN]",
+        "weaponAttack.damageBonus": "2[GOUSEN]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false
