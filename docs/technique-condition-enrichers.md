@@ -42,7 +42,7 @@ Examples:
 ```
 @Condition[dazed]                          → button "Dazed", adds Dazed
 @Condition[dazed]{dazed}                    → lower-case label, adds Dazed
-@Condition[shaken;duration=1 round]{shaken} → adds Shaken for 1 round
+@Condition[shaken;duration=1]{shaken}       → adds Shaken for 1 round
 @Condition[confused;info]{Confused}         → links the Confused compendium entry (no apply)
 @Condition[stunned;toggle]                  → toggles Stunned on the selected/targeted token
 ```
@@ -50,8 +50,8 @@ Examples:
 Clicking the button applies the condition to the player's selected/targeted token(s) via
 PF1e's own condition handling — no module code is involved in the click.
 
-> `duration` value format: validate in-app. The option-less form is the safe default; add
-> `duration=...` only after confirming the parsed result on a live token.
+> `duration=<number>` defaults to rounds in PF1e, so `duration=1` means 1 round. Do not include
+> `round` / `rounds` unless a different PF1e parser behavior is verified in-app.
 
 ## Condition keys
 
@@ -76,28 +76,18 @@ stunned      unconscious
 - **Item sheet** — appears automatically. `ui/technique-sheet.mjs` already runs the description
   through `TextEditor.enrichHTML` (its `getData`), so the button is live on the *Description* tab
   with no extra work.
-- **Perform chat card** — surfaced by `use-technique.mjs`. After a successful perform it enriches
-  `currentItem.system.description.value` and injects it into the success card inside a collapsible
-  `<details class="naruto-technique-effect"><summary>Effect</summary>…</details>`. This runs only
-  on success — a failed perform never causes the effect, so its card omits the block.
 
 ## Files
 
 - `packs/_source/techniques/SHITSUKENTOU_NO_JUTSU__…2qcPnzRtPZbkAOVv.json` — reference example
   (`@Condition[dazed]{dazed}` in the effect line).
-- `scripts/use-technique.mjs` — enriches the description and adds the `Effect` block to both
-  success-card branches (auto-bypass and roll path).
 - `scripts/ui/technique-sheet.mjs` — pre-existing description enrichment for the sheet.
 
 ## Manual verification
 
 1. Reload the world (`F5`) after editing.
 2. Open the technique → *Description* tab: "dazed" is a clickable PF1e condition button.
-3. Equip the technique on an actor, select a target token, perform it successfully.
-4. In the success chat card, expand **Effect**: the `@Condition` button is present and clickable;
-   clicking it applies *Dazed* to the selected/targeted token (status icon on the token + entry in
-   the actor's conditions).
-5. Force a failed perform: the failure card shows **no** Effect block.
-6. If a pre-enriched button does not respond to clicks in chat, fall back to placing the raw
-   `@Condition[...]` text directly in the chat `content` (Foundry auto-enriches message content on
-   render) and re-verify.
+3. Select or target a token, then click the `@Condition` button; it applies *Dazed* to the
+   selected/targeted token (status icon on the token + entry in the actor's conditions).
+4. For timed conditions, verify `duration=<number>` on a live token and confirm the duration is
+   interpreted as rounds.
