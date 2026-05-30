@@ -84,9 +84,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[KESSEN OUGI - HIRYUUSAI]",
-        "weaponAttack.damageBonus": "2[KESSEN OUGI - HIRYUUSAI]"
+        "weaponAttack.filter": "meleeWeapon"
       }
     },
     "showInQuickbar": false,

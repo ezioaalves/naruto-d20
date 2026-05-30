@@ -88,9 +88,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[ONMYOU KOUSA]",
-        "weaponAttack.damageBonus": "2[ONMYOU KOUSA]"
+        "weaponAttack.filter": "meleeWeapon"
       }
     },
     "showInQuickbar": false,

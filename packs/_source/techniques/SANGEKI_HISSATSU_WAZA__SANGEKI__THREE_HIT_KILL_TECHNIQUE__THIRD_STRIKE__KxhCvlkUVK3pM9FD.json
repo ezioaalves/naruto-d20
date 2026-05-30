@@ -78,9 +78,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[SANGEKI]",
-        "weaponAttack.damageBonus": "2[SANGEKI]"
+        "weaponAttack.filter": "unarmedOnly"
       }
     },
     "showInQuickbar": false,

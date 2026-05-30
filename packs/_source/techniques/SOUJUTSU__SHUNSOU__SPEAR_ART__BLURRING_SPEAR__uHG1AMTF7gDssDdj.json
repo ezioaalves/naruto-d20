@@ -85,8 +85,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[SHUNSOU]",
-        "weaponAttack.damageBonus": "2[SHUNSOU]"
+        "weaponAttack.damageBonus": "1d6[Shunsou]"
       }
     },
     "showInQuickbar": false,

@@ -79,8 +79,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[IAINUKI]",
-        "weaponAttack.damageBonus": "2[IAINUKI]"
+        "weaponAttack.attackBonus": "2[Iainuki]",
+        "weaponAttack.damageBonus": "2[Iainuki]"
       }
     },
     "showInQuickbar": false,

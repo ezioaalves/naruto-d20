@@ -84,9 +84,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[OSAENAGE]",
-        "weaponAttack.damageBonus": "2[OSAENAGE]"
+        "weaponAttack.filter": "unarmedOnly"
       }
     },
     "showInQuickbar": false,

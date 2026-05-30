@@ -84,9 +84,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "rangedWeapon",
-        "weaponAttack.attackBonus": "2[KESSEN OUGI - SOUGEKI]",
-        "weaponAttack.damageBonus": "2[KESSEN OUGI - SOUGEKI]"
+        "weaponAttack.filter": "rangedWeapon"
       }
     },
     "showInQuickbar": false,

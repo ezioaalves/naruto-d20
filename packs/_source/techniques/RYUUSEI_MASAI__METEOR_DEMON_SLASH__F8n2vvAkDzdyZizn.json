@@ -85,9 +85,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[RYUUSEI MASAI]",
-        "weaponAttack.damageBonus": "2[RYUUSEI MASAI]"
+        "weaponAttack.filter": "meleeWeapon"
       }
     },
     "showInQuickbar": false,

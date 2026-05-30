@@ -85,8 +85,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[KEIKAI-UCHI]",
-        "weaponAttack.damageBonus": "2[KEIKAI-UCHI]"
+        "weaponAttack.attackBonus": "1[Keikai Uchi]"
       }
     },
     "showInQuickbar": false,

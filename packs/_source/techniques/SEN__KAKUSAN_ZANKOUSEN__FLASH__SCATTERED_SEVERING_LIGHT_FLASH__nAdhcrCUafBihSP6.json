@@ -89,9 +89,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[KAKUSAN ZANKOUSEN]",
-        "weaponAttack.damageBonus": "2[KAKUSAN ZANKOUSEN]"
+        "weaponAttack.filter": "meleeWeapon"
       }
     },
     "showInQuickbar": false,

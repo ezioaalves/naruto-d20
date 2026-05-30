@@ -88,9 +88,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[YAMAGERI RENDAN]",
-        "weaponAttack.damageBonus": "2[YAMAGERI RENDAN]"
+        "weaponAttack.filter": "unarmedOnly"
       }
     },
     "showInQuickbar": false,

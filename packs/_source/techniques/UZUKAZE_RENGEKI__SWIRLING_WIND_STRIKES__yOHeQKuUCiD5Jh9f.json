@@ -81,9 +81,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[UZUKAZE RENGEKI]",
-        "weaponAttack.damageBonus": "2[UZUKAZE RENGEKI]"
+        "weaponAttack.filter": "unarmedOnly"
       }
     },
     "showInQuickbar": false,

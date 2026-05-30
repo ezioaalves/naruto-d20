@@ -78,9 +78,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[KONOHA GOURIKI SENPUU]",
-        "weaponAttack.damageBonus": "2[KONOHA GOURIKI SENPUU]"
+        "weaponAttack.filter": "unarmedOnly"
       }
     },
     "showInQuickbar": false,

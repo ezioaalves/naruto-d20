@@ -84,9 +84,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "rangedWeapon",
-        "weaponAttack.attackBonus": "2[SASSHI]",
-        "weaponAttack.damageBonus": "2[SASSHI]"
+        "weaponAttack.filter": "rangedWeapon"
       }
     },
     "showInQuickbar": false,

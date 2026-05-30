@@ -84,9 +84,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "rangedWeapon",
-        "weaponAttack.attackBonus": "2[RENKEN]",
-        "weaponAttack.damageBonus": "2[RENKEN]"
+        "weaponAttack.filter": "rangedWeapon"
       }
     },
     "showInQuickbar": false,

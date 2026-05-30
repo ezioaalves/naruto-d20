@@ -78,9 +78,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[RYU SOU SEN GARAMI]",
-        "weaponAttack.damageBonus": "2[RYU SOU SEN GARAMI]"
+        "weaponAttack.filter": "meleeWeapon"
       }
     },
     "showInQuickbar": false,

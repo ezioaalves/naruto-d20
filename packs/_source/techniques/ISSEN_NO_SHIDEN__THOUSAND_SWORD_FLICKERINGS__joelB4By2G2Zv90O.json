@@ -83,9 +83,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[ISSEN NO SHIDEN]",
-        "weaponAttack.damageBonus": "2[ISSEN NO SHIDEN]"
+        "weaponAttack.filter": "meleeWeapon"
       }
     },
     "showInQuickbar": false,

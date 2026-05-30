@@ -82,8 +82,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[RENZUKI]",
-        "weaponAttack.damageBonus": "2[RENZUKI]"
+        "weaponAttack.attackBonus": "-3[Renzuki]"
       }
     },
     "showInQuickbar": false,

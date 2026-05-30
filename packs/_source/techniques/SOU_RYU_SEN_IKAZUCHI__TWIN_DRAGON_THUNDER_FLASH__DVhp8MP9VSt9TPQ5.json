@@ -79,8 +79,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[SOU RYU SEN IKAZUCHI]",
-        "weaponAttack.damageBonus": "2[SOU RYU SEN IKAZUCHI]"
+        "weaponAttack.attackBonus": "2[Iaido]",
+        "weaponAttack.damageBonus": "2[Iaido]"
       }
     },
     "showInQuickbar": false,

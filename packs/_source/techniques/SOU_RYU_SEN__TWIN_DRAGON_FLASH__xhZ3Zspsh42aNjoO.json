@@ -85,8 +85,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[SOU RYU SEN]",
-        "weaponAttack.damageBonus": "2[SOU RYU SEN]"
+        "weaponAttack.attackBonus": "2[Iaido]",
+        "weaponAttack.damageBonus": "2[Iaido]"
       }
     },
     "showInQuickbar": false,

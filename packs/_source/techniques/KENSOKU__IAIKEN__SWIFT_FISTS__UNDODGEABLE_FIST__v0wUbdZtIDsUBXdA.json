@@ -89,8 +89,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[IAIKEN]",
-        "weaponAttack.damageBonus": "2[IAIKEN]"
+        "weaponAttack.attackBonus": "2[Iaiken]"
       }
     },
     "showInQuickbar": false,

@@ -89,8 +89,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[RYU SOU SEN]",
-        "weaponAttack.damageBonus": "2[RYU SOU SEN]"
+        "weaponAttack.attackBonus": "-2[Ryu Sou Sen]"
       }
     },
     "showInQuickbar": false,

@@ -89,9 +89,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[ONMYOU HASSHI]",
-        "weaponAttack.damageBonus": "2[ONMYOU HASSHI]"
+        "weaponAttack.filter": "meleeWeapon"
       }
     },
     "showInQuickbar": false,

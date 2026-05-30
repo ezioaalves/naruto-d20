@@ -85,8 +85,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "rangedWeapon",
-        "weaponAttack.attackBonus": "2[RASENSHA]",
-        "weaponAttack.damageBonus": "2[RASENSHA]"
+        "weaponAttack.damageBonus": "1d6[Rasensha]"
       }
     },
     "showInQuickbar": false,

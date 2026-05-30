@@ -82,9 +82,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[RAIGA HANGEKI]",
-        "weaponAttack.damageBonus": "2[RAIGA HANGEKI]"
+        "weaponAttack.filter": "unarmedOnly"
       }
     },
     "showInQuickbar": false,

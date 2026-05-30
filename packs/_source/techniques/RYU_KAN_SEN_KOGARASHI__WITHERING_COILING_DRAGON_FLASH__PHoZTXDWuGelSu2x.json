@@ -79,8 +79,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[RYU KAN SEN KOGARASHI]",
-        "weaponAttack.damageBonus": "2[RYU KAN SEN KOGARASHI]"
+        "weaponAttack.attackBonus": "-2[Kogarashi]",
+        "weaponAttack.damageBonus": "1d6[Kogarashi]"
       }
     },
     "showInQuickbar": false,

@@ -85,8 +85,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[URASHAMEN-UCHI]",
-        "weaponAttack.damageBonus": "2[URASHAMEN-UCHI]"
+        "weaponAttack.attackBonus": "-1[Urashamen Uchi]",
+        "weaponAttack.damageBonus": "1[Urashamen Uchi]"
       }
     },
     "showInQuickbar": false,

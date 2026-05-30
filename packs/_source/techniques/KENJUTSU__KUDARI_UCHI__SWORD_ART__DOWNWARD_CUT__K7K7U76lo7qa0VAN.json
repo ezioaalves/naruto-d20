@@ -85,8 +85,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[KUDARI-UCHI]",
-        "weaponAttack.damageBonus": "2[KUDARI-UCHI]"
+        "weaponAttack.attackBonus": "1[Kudari Uchi]"
       }
     },
     "showInQuickbar": false,

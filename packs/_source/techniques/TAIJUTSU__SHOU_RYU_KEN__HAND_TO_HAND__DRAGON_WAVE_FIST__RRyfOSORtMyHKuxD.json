@@ -89,8 +89,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "unarmedOnly",
-        "weaponAttack.attackBonus": "2[SHOU RYU KEN]",
-        "weaponAttack.damageBonus": "2[SHOU RYU KEN]"
+        "weaponAttack.damageBonus": "4d4[Shou Ryu Ken]"
       }
     },
     "showInQuickbar": false,

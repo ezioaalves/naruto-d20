@@ -84,9 +84,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "rangedWeapon",
-        "weaponAttack.attackBonus": "2[TSUKEME]",
-        "weaponAttack.damageBonus": "2[TSUKEME]"
+        "weaponAttack.filter": "rangedWeapon"
       }
     },
     "showInQuickbar": false,

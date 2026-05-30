@@ -82,8 +82,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[HAMETSU KATA]",
-        "weaponAttack.damageBonus": "2[HAMETSU KATA]"
+        "weaponAttack.damageBonus": "12d6[Hametsu Kata]"
       }
     },
     "showInQuickbar": false,

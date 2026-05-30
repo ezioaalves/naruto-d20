@@ -85,8 +85,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[SHAMEN-UCHI]",
-        "weaponAttack.damageBonus": "2[SHAMEN-UCHI]"
+        "weaponAttack.attackBonus": "1[Shamen Uchi]",
+        "weaponAttack.damageBonus": "-1[Shamen Uchi]"
       }
     },
     "showInQuickbar": false,

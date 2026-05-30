@@ -85,8 +85,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[YAMATOUKAI]",
-        "weaponAttack.damageBonus": "2[YAMATOUKAI]"
+        "weaponAttack.damageBonus": "1d6[Yamatoukai]"
       }
     },
     "showInQuickbar": false,

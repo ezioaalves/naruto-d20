@@ -85,8 +85,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[RYU KAN SEN]",
-        "weaponAttack.damageBonus": "2[RYU KAN SEN]"
+        "weaponAttack.attackBonus": "-4[Ryu Kan Sen]",
+        "weaponAttack.damageBonus": "-4[Ryu Kan Sen]"
       }
     },
     "showInQuickbar": false,

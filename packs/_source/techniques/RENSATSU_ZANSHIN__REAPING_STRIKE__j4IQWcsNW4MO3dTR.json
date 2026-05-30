@@ -85,8 +85,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[RENSATSU ZANSHIN]",
-        "weaponAttack.damageBonus": "2[RENSATSU ZANSHIN]"
+        "weaponAttack.damageBonus": "4d6[Rensatsu Zanshin]"
       }
     },
     "showInQuickbar": false,

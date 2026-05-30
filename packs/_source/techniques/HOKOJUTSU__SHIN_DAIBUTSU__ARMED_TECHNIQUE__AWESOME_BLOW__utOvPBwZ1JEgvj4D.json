@@ -78,9 +78,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[SHIN DAIBUTSU]",
-        "weaponAttack.damageBonus": "2[SHIN DAIBUTSU]"
+        "weaponAttack.filter": "meleeWeapon"
       }
     },
     "showInQuickbar": false,

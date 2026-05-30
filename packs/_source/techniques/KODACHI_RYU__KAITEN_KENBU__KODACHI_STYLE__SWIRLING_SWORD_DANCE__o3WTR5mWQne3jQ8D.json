@@ -85,8 +85,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[KAITEN KENBU]",
-        "weaponAttack.damageBonus": "2[KAITEN KENBU]"
+        "weaponAttack.attackBonus": "2[Kaiten Kenbu]",
+        "weaponAttack.damageBonus": "2[Kaiten Kenbu]"
       }
     },
     "showInQuickbar": false,

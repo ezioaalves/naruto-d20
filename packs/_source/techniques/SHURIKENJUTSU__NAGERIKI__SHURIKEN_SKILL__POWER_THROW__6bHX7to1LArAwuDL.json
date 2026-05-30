@@ -85,8 +85,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "rangedWeapon",
-        "weaponAttack.attackBonus": "2[NAGERIKI]",
-        "weaponAttack.damageBonus": "2[NAGERIKI]"
+        "weaponAttack.damageBonus": "1[Nageriki]"
       }
     },
     "showInQuickbar": false,

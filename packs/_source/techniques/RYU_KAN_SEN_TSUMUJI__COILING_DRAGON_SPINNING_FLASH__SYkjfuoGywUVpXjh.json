@@ -85,8 +85,8 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[RYU KAN SEN TSUMUJI]",
-        "weaponAttack.damageBonus": "2[RYU KAN SEN TSUMUJI]"
+        "weaponAttack.attackBonus": "2[Iaido]",
+        "weaponAttack.damageBonus": "2[Iaido]"
       }
     },
     "showInQuickbar": false,

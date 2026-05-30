@@ -84,9 +84,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeOrUnarmed",
-        "weaponAttack.attackBonus": "2[KENSEI NO WAZA]",
-        "weaponAttack.damageBonus": "2[KENSEI NO WAZA]"
+        "weaponAttack.filter": "meleeOrUnarmed"
       }
     },
     "showInQuickbar": false,

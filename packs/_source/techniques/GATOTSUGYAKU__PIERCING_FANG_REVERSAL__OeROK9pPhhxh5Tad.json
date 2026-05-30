@@ -85,8 +85,7 @@
       "dictionary": {
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeWeapon",
-        "weaponAttack.attackBonus": "2[GATOTSUGYAKU]",
-        "weaponAttack.damageBonus": "2[GATOTSUGYAKU]"
+        "weaponAttack.attackBonus": "-5[Gatotsugyaku]"
       }
     },
     "showInQuickbar": false,
