@@ -130,17 +130,6 @@ export async function performTechnique(item, actionId, event = null) {
     if (actualFromReserve > 0) spendParts.push(`${actualFromReserve} reserve`);
     const spendSummary = spendParts.join(", ") || "0";
 
-    // Surface the (enriched) technique effect so PF1e enricher buttons embedded in the
-    // description — e.g. @Condition[dazed] — are clickable in the success chat card.
-    // Only on success: a failed perform never causes the technique's effect.
-    const effectHTML = await TextEditor.enrichHTML(
-        currentItem.system.description?.value ?? "",
-        { async: true, rollData: currentItem.getRollData?.() ?? {}, relativeTo: currentItem }
-    );
-    const effectBlock = effectHTML.trim()
-        ? `<details class="naruto-technique-effect"><summary>Effect</summary>${effectHTML}</details>`
-        : "";
-
     // Post outcome card when there was an auto-bypass (roll card covers the roll path)
     if (bypassNote) {
         await ChatMessage.create({
