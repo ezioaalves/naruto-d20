@@ -297,7 +297,7 @@ div.naruto-tai-setting .form-group {
    Columns: name | cost | actions | activation | components | school | controls */
 .chakra .technique-list li {
     display: grid;
-    grid-template-columns: 1fr 44px 32px 80px 80px 96px 120px;
+    grid-template-columns: 1fr 44px 52px 80px 80px 96px 120px;
     align-items: center;
     min-height: 24px;
 }
@@ -343,6 +343,25 @@ div.naruto-tai-setting .form-group {
     font-size: 0.9em;
 }
 
+.chakra .technique-name-stack {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.chakra .technique-learning-badge {
+    color: #6b6050;
+    font-size: 0.72em;
+    line-height: 1.1;
+}
+
+.chakra .technique-row .item-actions {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
 .chakra .technique-list .item-controls {
     display: flex;
     gap: 4px;
@@ -359,6 +378,11 @@ div.naruto-tai-setting .form-group {
 
 .chakra .technique-row .item-controls a:hover {
     opacity: 1;
+}
+
+.chakra .shinobi-technique-use.disabled {
+    pointer-events: none;
+    opacity: 0.35;
 }
 
 /* Drop zone / empty state */
@@ -430,6 +454,16 @@ div.naruto-tai-setting .form-group {
     margin-top: 8px;
     padding-top: 6px;
     border-top: 1px solid #c0b89a;
+}
+
+.pf1.sheet.item .technique-learning-controls {
+    gap: 4px;
+}
+
+.pf1.sheet.item .learning-progress-line {
+    color: #6b6050;
+    font-size: 0.8em;
+    line-height: 1.2;
 }
 
 /* ── Technique Medkit ─────────────────────────────────────────────────── */

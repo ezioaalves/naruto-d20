@@ -3,6 +3,7 @@ import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from 
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
 import { checkAndUpdateConditions } from "./data/chakra-conditions.mjs";
 import { getTechniqueWeaponAttackConfig, rollSelectedWeaponAttackWithTechnique } from "./ui/technique-weapon-attack.mjs";
+import { isTechniqueEffectivelyLearned } from "./learn-technique.mjs";
 
 export function canAffordTechnique(actor, item) {
     if (!actor) return false;
@@ -15,6 +16,10 @@ export async function performTechnique(item, actionId, event = null) {
     const actor = item.actor;
     if (!actor) {
         ui.notifications.warn("Equip this technique on an actor to use it.");
+        return;
+    }
+    if (game.settings.get(MODULE_ID, "enforceLearning") && !isTechniqueEffectivelyLearned(item)) {
+        ui.notifications.warn(`${item.name}: not learned yet.`);
         return;
     }
     let action = item.actions?.get(actionId);

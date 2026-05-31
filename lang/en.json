@@ -171,6 +171,24 @@
       "CustomBuffCompendia": {
         "Name": "Custom Buff Compendia",
         "Hint": "Comma-separated compendium pack IDs to search in addition to naruto-d20.technique-buffs (e.g. my-module.extra-buffs)."
+      },
+      "EnforceLearning": {
+        "Name": "Enforce Technique Learning",
+        "Hint": "When enabled, unlearned techniques cannot be performed until learned."
+      },
+      "LearningProgressionMode": {
+        "Name": "Technique Learning Progression",
+        "Hint": "Choose whether learning uses book-style attempts or one roll per 4-hour training block.",
+        "Standard": "Standard rules",
+        "FourHourBlocks": "4-hour training blocks"
+      },
+      "LearnMarginInclusive": {
+        "Name": "Inclusive Learn Margin",
+        "Hint": "When enabled, a success margin of exactly 5 counts for the better learning result. The margin 15 boundary is always inclusive."
+      },
+      "DeductLearningChakra": {
+        "Name": "Deduct Training Chakra",
+        "Hint": "When enabled, technique learning deducts training chakra from Pool then Reserve. Conditions are not updated automatically because training ignores depletion penalties."
       }
     },
     "Conditions": {

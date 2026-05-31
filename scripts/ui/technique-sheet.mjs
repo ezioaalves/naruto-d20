@@ -10,6 +10,7 @@
 import { MODULE_ID }                            from "../constants.mjs";
 import { DISCIPLINE_SKILL_MAP }                 from "../data/skills.mjs";
 import { COMPLEXITY_TABLE }                     from "../data/technique-model.mjs";
+import { attemptLearnTechnique, buildLearningView } from "../learn-technique.mjs";
 import { canAffordTechnique, performTechnique } from "../use-technique.mjs";
 import { resolveDroppedItem }                   from "../utils/drag-drop.mjs";
 
@@ -70,6 +71,7 @@ export function createTechniqueItemSheet() {
 
             // Perform flow
             const actor      = item.actor;
+            const learning   = buildLearningView(item, actor);
             const skillKey   = DISCIPLINE_SKILL_MAP[system.discipline];
             const skillRanks = (skillKey && actor) ? (actor.system.skills?.[skillKey]?.rank ?? 0) : 0;
             const threshold      = system.derived.skillThreshold;
@@ -78,7 +80,9 @@ export function createTechniqueItemSheet() {
             const bypasses       = !skillKey || effRanks >= threshold;
             const ranksLabel     = masteryPerform > 0 ? `${skillRanks}+${masteryPerform}` : `${skillRanks}`;
 
-            context.canUse         = !!actor && canAffordTechnique(actor, item);
+            context.learning       = learning;
+            context.enforceLearning = game.settings.get(MODULE_ID, "enforceLearning");
+            context.canUse         = !!actor && canAffordTechnique(actor, item) && (!context.enforceLearning || learning.effectivelyLearned);
             context.skillKey       = skillKey;
             context.skillRanks     = skillRanks;
             context.bypassesPerform = bypasses;
@@ -181,6 +185,8 @@ export function createTechniqueItemSheet() {
 
             // Details — actions (wired to PF1e's action system)
             html.on("click", ".use-action",       this._onUseAction.bind(this));
+            html.on("click", ".learn-technique",  this._onLearnTechnique.bind(this));
+            html.on("click", ".reset-learning",   this._onResetLearning.bind(this));
             html.on("click", ".add-action",       this._onAddAction.bind(this));
             html.on("click", ".edit-action",      this._onEditAction.bind(this));
             html.on("click", ".delete-action",    this._onDeleteAction.bind(this));
@@ -209,9 +215,31 @@ export function createTechniqueItemSheet() {
         async _onUseAction(event) {
             event.preventDefault();
             event.stopPropagation();
+            if (event.currentTarget.classList.contains("disabled")) return;
             const row = event.currentTarget.closest(".item[data-action-id]");
             const id  = row?.dataset.actionId;
             if (id) await performTechnique(this.item, id, event);
+        }
+
+        async _onLearnTechnique(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            await attemptLearnTechnique(this.item);
+        }
+
+        async _onResetLearning(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            await this.item.update({
+                "system.learning.learned": false,
+                "system.learning.progress": 0,
+                "system.learning.attemptsUsed": 0,
+                "system.learning.failureInsight": 0,
+                "system.learning.trainingBlocks": 0,
+                "system.learning.chakraSpent": 0,
+                "system.learning.lastTrainingAt": 0,
+                "system.learning.actionPointBonus": 0,
+            });
         }
 
         async _onAddAction(event) {

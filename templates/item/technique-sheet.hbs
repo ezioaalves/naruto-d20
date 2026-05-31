@@ -44,7 +44,42 @@
       <li class="property generic-tag">Perform DC {{derived.performDC}}</li>
       <li class="property generic-tag">Threshold {{derived.skillThreshold}}</li>
       <li class="property generic-tag">Successes {{derived.successes}}</li>
+      {{#if learning.effectivelyLearned}}
+      <li class="property generic-tag learning learned">Learned</li>
+      {{else}}
+      <li class="property generic-tag learning">Learning {{learning.progress}}/{{learning.targetProgress}}</li>
+      {{/if}}
     </ul>
+
+    {{#unless learning.effectivelyLearned}}
+    {{#if item.actor}}
+    <button type="button" class="learn-technique">
+      <i class="fa-solid fa-graduation-cap" inert></i> Learn
+    </button>
+    {{/if}}
+    {{/unless}}
+
+    {{#if isGM}}
+    <div class="form-group stacked sidebar-flags technique-learning-controls">
+      <label class="checkbox">
+        <input type="checkbox" name="system.learning.learned" {{checked system.learning.learned}}>
+        Learned
+      </label>
+      <div class="learning-progress-line">
+        {{learning.progress}}/{{learning.targetProgress}}
+        {{#if learning.isFourHourBlocks}}
+        &middot; {{learning.attemptsUsed}} blocks
+        {{else}}
+        &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} attempts
+        {{/if}}
+        {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} insight{{/if}}
+        {{#if learning.trainingBlocks}} &middot; {{learning.trainingBlocks}} training blocks{{/if}}
+        {{#if learning.chakraSpent}} &middot; {{learning.chakraSpent}} training chakra{{/if}}
+        {{#if learning.actionPointBonus}} &middot; ⚡ +{{learning.actionPointBonus}} AP{{/if}}
+      </div>
+      <button type="button" class="reset-learning">Reset Learning</button>
+    </div>
+    {{/if}}
 
     <label class="descriptor number">
       <span>{{localize "NarutoD20.Technique.ChakraCost.Label"}}</span>

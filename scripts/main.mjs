@@ -26,6 +26,7 @@ import { installChakraTabPatch, installMedkitHeaderButton } from "./ui/render-pa
 import { installTechniqueSaveDCPatch } from "./data/technique-save-dc.mjs";
 import { installTechniqueRollDataPatch } from "./data/technique-rolldata.mjs";
 import { registerLearnCheckListeners } from "./ui/learn-checks.mjs";
+import { registerLearnCardContextMenu } from "./learn-technique.mjs";
 import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
 import { registerSummaryStats } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
@@ -36,7 +37,7 @@ import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
 
-const FLAG_MIGRATION_VERSION = 4;
+const FLAG_MIGRATION_VERSION = 5;
 
 // ── [1] init ──────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -109,6 +110,46 @@ Hooks.once("init", () => {
         name: "NarutoD20.Settings.CustomBuffCompendia.Name",
         hint: "NarutoD20.Settings.CustomBuffCompendia.Hint",
     });
+
+    game.settings.register(MODULE_ID, "enforceLearning", {
+        scope: "world",
+        config: true,
+        type: Boolean,
+        default: true,
+        name: "NarutoD20.Settings.EnforceLearning.Name",
+        hint: "NarutoD20.Settings.EnforceLearning.Hint",
+    });
+
+    game.settings.register(MODULE_ID, "learningProgressionMode", {
+        scope: "world",
+        config: true,
+        type: String,
+        default: "standard",
+        choices: {
+            standard:       "NarutoD20.Settings.LearningProgressionMode.Standard",
+            fourHourBlocks: "NarutoD20.Settings.LearningProgressionMode.FourHourBlocks",
+        },
+        name: "NarutoD20.Settings.LearningProgressionMode.Name",
+        hint: "NarutoD20.Settings.LearningProgressionMode.Hint",
+    });
+
+    game.settings.register(MODULE_ID, "learnMarginInclusive", {
+        scope: "world",
+        config: true,
+        type: Boolean,
+        default: true,
+        name: "NarutoD20.Settings.LearnMarginInclusive.Name",
+        hint: "NarutoD20.Settings.LearnMarginInclusive.Hint",
+    });
+
+    game.settings.register(MODULE_ID, "deductLearningChakra", {
+        scope: "world",
+        config: true,
+        type: Boolean,
+        default: false,
+        name: "NarutoD20.Settings.DeductLearningChakra.Name",
+        hint: "NarutoD20.Settings.DeductLearningChakra.Hint",
+    });
 });
 
 // ── [2] pf1PostInit ───────────────────────────────────────────────────────
@@ -146,6 +187,7 @@ Hooks.once("setup", () => {
     installChakraTabPatch();           // _renderInner wrap — must run before first render
     installMedkitHeaderButton();       // _getHeaderButtons wrap — "Sync Techniques" title-bar button
     registerLearnCheckListeners();     // .shinobi-roll + learn-check tooltips + chakra max tooltips
+    registerLearnCardContextMenu();    // learn chat card → right-click "Add Action Point"
     registerTechniqueListListeners();  // chakra tab: filter, drop zone, CRUD
     registerSummaryStats();            // Hero Statistics block on the Summary tab
     registerFeatListListeners();       // Naruto Browse button on the Features tab
@@ -174,6 +216,7 @@ Hooks.once("ready", async () => {
     if (game.settings.get(MODULE_ID, "flagMigrationVersion") >= FLAG_MIGRATION_VERSION) return;
     await _migrateActorFlags();
     await _migrateTechniqueActionIds();
+    await _migrateExistingTechniquesLearned();
     await game.settings.set(MODULE_ID, "flagMigrationVersion", FLAG_MIGRATION_VERSION);
 });
 
@@ -245,6 +288,34 @@ async function _migrateTechniqueActionIds() {
     };
 
     for (const item of game.items) await migrateItem(item);
+    for (const actor of game.actors) await migrateActorItems(actor);
+    for (const scene of game.scenes) {
+        for (const token of scene.tokens) {
+            if (token.actor && !token.actorLink) await migrateActorItems(token.actor);
+        }
+    }
+}
+
+async function _migrateExistingTechniquesLearned() {
+    const migrateActorItems = async (actor) => {
+        if (!["character", "npc"].includes(actor.type)) return;
+        const updates = [];
+        for (const item of actor.items) {
+            if (item.type !== TECHNIQUE_ITEM_TYPE) continue;
+            updates.push({
+                _id: item.id,
+                "system.learning.learned": true,
+                "system.learning.progress": Math.max(1, item.system?.derived?.successes ?? 1),
+                "system.learning.attemptsUsed": item.system?.learning?.attemptsUsed ?? 0,
+                "system.learning.failureInsight": 0,
+                "system.learning.trainingBlocks": item.system?.learning?.trainingBlocks ?? 0,
+                "system.learning.chakraSpent": item.system?.learning?.chakraSpent ?? 0,
+                "system.learning.lastTrainingAt": item.system?.learning?.lastTrainingAt ?? 0,
+            });
+        }
+        if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
+    };
+
     for (const actor of game.actors) await migrateActorItems(actor);
     for (const scene of game.scenes) {
         for (const token of scene.tokens) {
