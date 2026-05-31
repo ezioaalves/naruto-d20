@@ -3,6 +3,7 @@ import { MODULE_ID } from "./constants.mjs";
 // ── Learn check flag paths ───────────────────────────────────────────────
 export const learnBuffPath = (k) => `flags.${MODULE_ID}.learn.${k}.buffBonus`;
 export const learnMiscPath = (k) => `flags.${MODULE_ID}.learn.${k}.miscBonus`;
+export const learningCurrentTechniqueIdPath = `flags.${MODULE_ID}.learning.currentTechniqueId`;
 
 // ── Technique DC flag paths ──────────────────────────────────────────────
 // k ∈ {"all","ckc","fui","gnj","nin","tai"}; "all" is the global bonus,

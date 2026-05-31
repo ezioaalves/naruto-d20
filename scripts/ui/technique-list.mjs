@@ -1,5 +1,6 @@
 import { MAIN_DISCIPLINES, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
 import { normalizeActionIds } from "../data/action-ids.mjs";
+import { attemptLearnTechnique } from "../learn-technique.mjs";
 import { performTechnique } from "../use-technique.mjs";
 import { resolveDroppedItem } from "../utils/drag-drop.mjs";
 import { TechniqueCompendiumBrowser } from "./technique-browser.mjs";
@@ -103,6 +104,7 @@ export function registerTechniqueListListeners() {
         // Use technique (fires first action)
         chakraTab.find(".shinobi-technique-use").off("click").on("click", async (ev) => {
             ev.preventDefault();
+            if (ev.currentTarget.classList.contains("disabled")) return;
             const id = ev.currentTarget.closest(".technique-row")?.dataset.itemId;
             const item = app.actor.items.get(id);
             if (!item) return;
@@ -112,6 +114,14 @@ export function registerTechniqueListListeners() {
                 return;
             }
             await performTechnique(item, firstAction.id, ev);
+        });
+
+        // Learn technique
+        chakraTab.find(".shinobi-technique-learn").off("click").on("click", async (ev) => {
+            ev.preventDefault();
+            const id = ev.currentTarget.closest(".technique-row")?.dataset.itemId;
+            const item = app.actor.items.get(id);
+            if (item) await attemptLearnTechnique(item);
         });
 
         // Delete technique from actor

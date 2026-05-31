@@ -199,13 +199,33 @@
                     <li class="item flexrow technique-row" data-item-id="{{id}}">
                         <div class="item-name">
                             <div class="item-image" style='background-image: url("{{img}}")'></div>
-                            <h4>{{name}}</h4>
+                            <div class="technique-name-stack">
+                                <h4>{{name}}</h4>
+                                {{#unless learning.effectivelyLearned}}
+                                <span class="technique-learning-badge">
+                                    {{learning.progress}}/{{learning.targetProgress}}
+                                    {{#if learning.isFourHourBlocks}}
+                                    &middot; {{learning.attemptsUsed}} blocks
+                                    {{else}}
+                                    &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} attempts
+                                    {{/if}}
+                                    {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} insight{{/if}}
+                                </span>
+                                {{/unless}}
+                            </div>
                         </div>
                         <div class="item-detail technique-cost"><span>{{chakraCost}}</span></div>
                         <div class="item-detail item-actions">
+                            {{#unless learning.effectivelyLearned}}
+                            <div class="item-action">
+                                <a class="shinobi-technique-learn item-control action roll" data-tooltip="Learn Technique">
+                                    <i class="fa-solid fa-graduation-cap" inert></i>
+                                </a>
+                            </div>
+                            {{/unless}}
                             {{#if hasActions}}
                             <div class="item-action">
-                                <a class="shinobi-technique-use item-control action roll" data-tooltip="Use Technique">
+                                <a class="shinobi-technique-use item-control action roll{{#unless canUse}} disabled{{/unless}}" data-tooltip="Use Technique">
                                     <i class="fa-solid fa-dice-d20" inert></i>
                                 </a>
                             </div>
@@ -244,13 +264,33 @@
                     <li class="item flexrow technique-row" data-item-id="{{id}}">
                         <div class="item-name">
                             <div class="item-image" style='background-image: url("{{img}}")'></div>
-                            <h4>{{name}}</h4>
+                            <div class="technique-name-stack">
+                                <h4>{{name}}</h4>
+                                {{#unless learning.effectivelyLearned}}
+                                <span class="technique-learning-badge">
+                                    {{learning.progress}}/{{learning.targetProgress}}
+                                    {{#if learning.isFourHourBlocks}}
+                                    &middot; {{learning.attemptsUsed}} blocks
+                                    {{else}}
+                                    &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} attempts
+                                    {{/if}}
+                                    {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} insight{{/if}}
+                                </span>
+                                {{/unless}}
+                            </div>
                         </div>
                         <div class="item-detail technique-cost"><span>{{chakraCost}}</span></div>
                         <div class="item-detail item-actions">
+                            {{#unless learning.effectivelyLearned}}
+                            <div class="item-action">
+                                <a class="shinobi-technique-learn item-control action roll" data-tooltip="Learn Technique">
+                                    <i class="fa-solid fa-graduation-cap" inert></i>
+                                </a>
+                            </div>
+                            {{/unless}}
                             {{#if hasActions}}
                             <div class="item-action">
-                                <a class="shinobi-technique-use item-control action roll" data-tooltip="Use Technique">
+                                <a class="shinobi-technique-use item-control action roll{{#unless canUse}} disabled{{/unless}}" data-tooltip="Use Technique">
                                     <i class="fa-solid fa-dice-d20" inert></i>
                                 </a>
                             </div>

@@ -1,5 +1,6 @@
 import { MAIN_DISCIPLINES, MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
 import { TechniqueMedkitApp } from "./technique-medkit-app.mjs";
+import { buildLearningView } from "../learn-technique.mjs";
 
 // pf1 11.11 uses V1 ApplicationV1. Its render flow is (foundry.mjs:37369–37406):
 //   1. _renderInner(data) → returns the full new inner HTML
@@ -39,11 +40,14 @@ function _prepareTechniques(actor) {
     const items = actor.items
         .filter(i => i.type === TECHNIQUE_ITEM_TYPE)
         .sort((a, b) => (a.system.rank - b.system.rank) || a.name.localeCompare(b.name));
+    const enforceLearning = game.settings.get(MODULE_ID, "enforceLearning");
+    const learningMode = game.settings.get(MODULE_ID, "learningProgressionMode");
 
     const groupByRank = (list) => {
         const map = new Map();
         for (const item of list) {
             const rank = item.system.rank ?? 1;
+            const learning = buildLearningView(item, actor, learningMode);
             if (!map.has(rank)) map.set(rank, []);
             map.get(rank).push({
                 id:         item.id,
@@ -56,6 +60,8 @@ function _prepareTechniques(actor) {
                 activation: ACTIVATION_ABBREV[item.system.activation] ?? item.system.activation ?? "",
                 components: COMP_MAP.filter(([k]) => item.system[k]).map(([, a]) => a).join(", "),
                 discipline: item.system.discipline ?? "",
+                learning,
+                canUse: !enforceLearning || learning.effectivelyLearned,
             });
         }
         return [...map.entries()]

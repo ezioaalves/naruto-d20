@@ -148,6 +148,11 @@ function applyTechniqueDefaults(s) {
     s.tags ??= [];
     s.changes ??= [];
     s.actions ??= [];
+    s.learning ??= {};
+    s.learning.learned ??= false;
+    s.learning.progress ??= 0;
+    s.learning.attemptsUsed ??= 0;
+    s.learning.failureInsight ??= 0;
     s.automation ??= {};
     s.automation.enabled ??= true;
     s.automation.targetMode ??= "auto";
@@ -167,6 +172,7 @@ function applyTechniqueDefaults(s) {
 export function normalizeSystem(system) {
     const out = applyTechniqueDefaults(foundry.utils.deepClone(system));
     delete out.tag;
+    delete out.learning;
     out.description.value = canonicalizeHtml(out.description.value);
     out.description.instructions = canonicalizeHtml(out.description.instructions);
     return stripIds(out);
@@ -223,6 +229,7 @@ export async function syncTechnique(item, sourceDoc) {
     const src = sourceDoc.toObject();
     const { actions, changed } = normalizeActionIds(src.system?.actions);
     if (changed) src.system.actions = actions;
+    src.system.learning = foundry.utils.deepClone(item.toObject().system?.learning ?? item.system?.learning ?? {});
     await item.update(
         { name: src.name, img: src.img, system: src.system },
         { diff: false, recursive: false },

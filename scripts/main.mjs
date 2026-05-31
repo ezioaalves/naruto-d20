@@ -35,7 +35,7 @@ import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
 
-const FLAG_MIGRATION_VERSION = 4;
+const FLAG_MIGRATION_VERSION = 5;
 
 // ── [1] init ──────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -108,6 +108,37 @@ Hooks.once("init", () => {
         name: "NarutoD20.Settings.CustomBuffCompendia.Name",
         hint: "NarutoD20.Settings.CustomBuffCompendia.Hint",
     });
+
+    game.settings.register(MODULE_ID, "enforceLearning", {
+        scope: "world",
+        config: true,
+        type: Boolean,
+        default: true,
+        name: "NarutoD20.Settings.EnforceLearning.Name",
+        hint: "NarutoD20.Settings.EnforceLearning.Hint",
+    });
+
+    game.settings.register(MODULE_ID, "learningProgressionMode", {
+        scope: "world",
+        config: true,
+        type: String,
+        default: "standard",
+        choices: {
+            standard:       "NarutoD20.Settings.LearningProgressionMode.Standard",
+            fourHourBlocks: "NarutoD20.Settings.LearningProgressionMode.FourHourBlocks",
+        },
+        name: "NarutoD20.Settings.LearningProgressionMode.Name",
+        hint: "NarutoD20.Settings.LearningProgressionMode.Hint",
+    });
+
+    game.settings.register(MODULE_ID, "learnMarginInclusive", {
+        scope: "world",
+        config: true,
+        type: Boolean,
+        default: true,
+        name: "NarutoD20.Settings.LearnMarginInclusive.Name",
+        hint: "NarutoD20.Settings.LearnMarginInclusive.Hint",
+    });
 });
 
 // ── [2] pf1PostInit ───────────────────────────────────────────────────────
@@ -172,6 +203,7 @@ Hooks.once("ready", async () => {
     if (game.settings.get(MODULE_ID, "flagMigrationVersion") >= FLAG_MIGRATION_VERSION) return;
     await _migrateActorFlags();
     await _migrateTechniqueActionIds();
+    await _migrateExistingTechniquesLearned();
     await game.settings.set(MODULE_ID, "flagMigrationVersion", FLAG_MIGRATION_VERSION);
 });
 
@@ -243,6 +275,31 @@ async function _migrateTechniqueActionIds() {
     };
 
     for (const item of game.items) await migrateItem(item);
+    for (const actor of game.actors) await migrateActorItems(actor);
+    for (const scene of game.scenes) {
+        for (const token of scene.tokens) {
+            if (token.actor && !token.actorLink) await migrateActorItems(token.actor);
+        }
+    }
+}
+
+async function _migrateExistingTechniquesLearned() {
+    const migrateActorItems = async (actor) => {
+        if (!["character", "npc"].includes(actor.type)) return;
+        const updates = [];
+        for (const item of actor.items) {
+            if (item.type !== TECHNIQUE_ITEM_TYPE) continue;
+            updates.push({
+                _id: item.id,
+                "system.learning.learned": true,
+                "system.learning.progress": Math.max(1, item.system?.derived?.successes ?? 1),
+                "system.learning.attemptsUsed": item.system?.learning?.attemptsUsed ?? 0,
+                "system.learning.failureInsight": 0,
+            });
+        }
+        if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
+    };
+
     for (const actor of game.actors) await migrateActorItems(actor);
     for (const scene of game.scenes) {
         for (const token of scene.tokens) {

@@ -171,6 +171,20 @@
       "CustomBuffCompendia": {
         "Name": "Compêndios de Buff Customizados",
         "Hint": "IDs de compêndio separados por vírgula para pesquisar além de naruto-d20.technique-buffs (ex: meu-modulo.buffs-extras)."
+      },
+      "EnforceLearning": {
+        "Name": "Exigir Aprendizado de Técnicas",
+        "Hint": "Quando ativado, técnicas não aprendidas não podem ser executadas até serem aprendidas."
+      },
+      "LearningProgressionMode": {
+        "Name": "Progressão de Aprendizado de Técnicas",
+        "Hint": "Escolha se o aprendizado usa as tentativas das regras padrão ou uma rolagem por bloco de treino de 4 horas.",
+        "Standard": "Regras padrão",
+        "FourHourBlocks": "Blocos de treino de 4 horas"
+      },
+      "LearnMarginInclusive": {
+        "Name": "Margem de Aprendizado Inclusiva",
+        "Hint": "Quando ativado, uma margem de sucesso exatamente 5 conta para o melhor resultado de aprendizado. A margem 15 é sempre inclusiva."
       }
     },
     "Conditions": {

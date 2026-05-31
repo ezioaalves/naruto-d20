@@ -112,6 +112,13 @@ export function createTechniqueDataModel() {
                 complexity:    new fields.StringField({  ...opt, blank: true, initial: "E-Class" }),
                 mastery:       new fields.NumberField({  required: true, integer: true, initial: 0, min: 0, max: 5 }),
 
+                learning: new fields.SchemaField({
+                    learned:        new fields.BooleanField({ ...opt, initial: false }),
+                    progress:       new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+                    attemptsUsed:   new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+                    failureInsight: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0, max: 5 }),
+                }, opt),
+
                 isHijutsu:     new fields.BooleanField({ ...opt, initial: false }),
                 isKinjutsu:    new fields.BooleanField({ ...opt, initial: false }),
                 isCombination: new fields.BooleanField({ ...opt, initial: false }),
@@ -200,6 +207,12 @@ export function createTechniqueDataModel() {
 
             this.tags ??= new Set();
             this.changes ??= [];
+
+            this.learning ??= {};
+            this.learning.learned ??= false;
+            this.learning.progress ??= 0;
+            this.learning.attemptsUsed ??= 0;
+            this.learning.failureInsight ??= 0;
 
             this.automation ??= {};
             this.automation.enabled ??= true;
