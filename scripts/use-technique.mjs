@@ -137,7 +137,6 @@ export async function performTechnique(item, actionId, event = null) {
             content: `<div class="naruto-technique-card success">
                         <header><h3>${item.name}</h3></header>
                         <p class="naruto-perform-bypass">${bypassNote}</p>
-                        ${effectBlock}
                         <footer>Spent ${cost} chakra (${spendSummary}).</footer>
                       </div>`,
         });
@@ -147,7 +146,6 @@ export async function performTechnique(item, actionId, event = null) {
             speaker: ChatMessage.getSpeaker({ actor }),
             content: `<div class="naruto-technique-card success">
                         <header><h3>${item.name}</h3></header>
-                        ${effectBlock}
                         <footer>Spent ${cost} chakra (${spendSummary}).</footer>
                       </div>`,
         });

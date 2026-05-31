@@ -6,8 +6,8 @@ import { MODULE_ID, LOW_RESERVES_CONDITION_ID, CHAKRA_DEPLETION_CONDITION_ID } f
  * Two custom conditions are registered with PF1e's condition registry and applied
  * automatically based on the actor's Chakra Reserve level:
  *
- *   naruto-d20.lowReserves    → reserve > 0 AND reserve / max < 0.50 → implies fatigued
- *   naruto-d20.chakraDepletion → reserve == 0                         → implies exhausted
+ *   lowReserves     → reserve > 0 AND reserve / max < 0.50 → implies fatigued
+ *   chakraDepletion → reserve == 0                         → implies exhausted
  *
  * Conditions are mutually exclusive (depletion supersedes low reserves).
  *
@@ -34,10 +34,7 @@ export function registerChakraConditions() {
         return;
     }
 
-    const [ns, lowId]       = LOW_RESERVES_CONDITION_ID.split(".");
-    const [,    depletionId] = CHAKRA_DEPLETION_CONDITION_ID.split(".");
-
-    pf1.registry.conditions.register(ns, lowId, {
+    pf1.registry.conditions.register(MODULE_ID, LOW_RESERVES_CONDITION_ID, {
         name:          game.i18n.localize("NarutoD20.Conditions.LowReserves.Name"),
         texture:       "icons/svg/daze.svg",
         hud:           { show: true },
@@ -45,7 +42,7 @@ export function registerChakraConditions() {
         showInDefense: false,
     });
 
-    pf1.registry.conditions.register(ns, depletionId, {
+    pf1.registry.conditions.register(MODULE_ID, CHAKRA_DEPLETION_CONDITION_ID, {
         name:          game.i18n.localize("NarutoD20.Conditions.ChakraDepletion.Name"),
         texture:       "icons/svg/skull.svg",
         hud:           { show: true },
@@ -96,6 +93,8 @@ export async function checkAndUpdateConditions(actor) {
     let newAppliedFatigued  = hadFatigued;
     let newAppliedExhausted = hadExhausted;
 
+    await _removeLegacyNamespacedConditions(actor);
+
     if (wantsDepletion) {
         // Apply exhausted — track it only if it was not already active from another source
         const exhaustedAlreadyActive = actor.statuses?.has("exhausted") ?? false;
@@ -135,6 +134,22 @@ export async function checkAndUpdateConditions(actor) {
         await actor.update({
             [`flags.${MODULE_ID}.conditions.appliedFatigued`]:  newAppliedFatigued,
             [`flags.${MODULE_ID}.conditions.appliedExhausted`]: newAppliedExhausted,
+        });
+    }
+}
+
+async function _removeLegacyNamespacedConditions(actor) {
+    const legacyIds = new Set([
+        `${MODULE_ID}.lowReserves`,
+        `${MODULE_ID}.chakraDepletion`,
+    ]);
+    const effectIds = actor.effects
+        .filter(effect => [...(effect.statuses ?? [])].some(status => legacyIds.has(status)))
+        .map(effect => effect.id);
+
+    if (effectIds.length) {
+        await actor.deleteEmbeddedDocuments("ActiveEffect", effectIds, {
+            pf1: { updateConditionTracks: false },
         });
     }
 }
