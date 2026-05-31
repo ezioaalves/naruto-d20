@@ -6,16 +6,7 @@
       "instructions": ""
     },
     "tags": [],
-    "changes": [
-      {
-        "type": "untyped",
-        "_id": "ooUKxKkV",
-        "operator": "add",
-        "priority": 0,
-        "formula": "1",
-        "target": "nac"
-      }
-    ],
+    "changes": [],
     "changeFlags": {
       "immuneToMorale": false,
       "loseDexToAC": false,
@@ -49,25 +40,23 @@
     "scriptCalls": [],
     "subType": "temp",
     "active": false,
-    "level": 4,
+    "level": 1,
     "duration": {
       "value": "",
       "units": "minute",
-      "end": "turnEnd",
-      "start": 2469240
+      "end": "turnStart",
+      "start": 0
     },
     "conditions": [],
     "hideFromToken": false,
     "showInQuickbar": false
   },
-  "name": "KAWA NO YOROI (SKIN ARMOR)",
-  "img": "icons/magic/defensive/armor-stone-skin.webp",
+  "name": "KINOBORI (TREE CLIMBING TECHNIQUE)",
+  "img": "systems/pf1/icons/spells/light-jade-2.jpg",
   "effects": [],
   "folder": null,
   "ownership": {
-    "default": 0,
-    "gvxnSdRZKSX8B66p": 3,
-    "mIZLV3aRVXSMGsYi": 3
+    "default": 0
   },
   "flags": {},
   "_stats": {
@@ -77,11 +66,11 @@
     "coreVersion": "13.351",
     "systemId": "pf1",
     "systemVersion": "11.11",
-    "createdTime": 1779167284107,
-    "modifiedTime": 1780187594892,
-    "lastModifiedBy": "mIZLV3aRVXSMGsYi"
+    "createdTime": 1780187594854,
+    "modifiedTime": 1780187594854,
+    "lastModifiedBy": null
   },
-  "_id": "smBhv0BFhBpdelw6",
+  "_id": "bqQ4kK7SW5Iky1bp",
   "sort": 0,
-  "_key": "!items!smBhv0BFhBpdelw6"
+  "_key": "!items!bqQ4kK7SW5Iky1bp"
 }
