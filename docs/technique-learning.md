@@ -4,11 +4,12 @@
 > shipped code. File/line references describe the intended changes.
 
 A **learning loop** for techniques. A technique dragged onto an actor starts
-**unlearned**. The practitioner spends *attempts*, each one a learn check for the
-technique's discipline against the technique's `learnDC`; accumulated successes
-build toward the technique's required `successes`. Reaching the required
-successes **before running out of attempts** marks the technique **learned** and
-unlocks its **Perform** action. Running out of attempts first resets all progress.
+**unlearned**. The practitioner rolls learn checks for the technique's discipline
+against the technique's `learnDC`; accumulated progress builds toward the
+technique's required target. In standard mode this is the book's attempts and
+successes loop. In 4-hour-block mode, each roll represents one training block and
+margin of success controls how much progress is gained. Reaching the target
+marks the technique **learned** and unlocks its **Perform** action.
 
 This completes a loop that is already half-built: `TechniqueDataModel.derived`
 already computes `learnDC` and `successes` (successful learn checks required,
@@ -59,7 +60,10 @@ ruleset, summarized faithfully:
 - Training may be interrupted for up to **1 month** before accrued progress is
   lost; one 4-hour block within that window refreshes the timer.
 - **Exceptional roll → time change** (round up to the nearest 4-hour block):
-  beat DC by 15+ → −75% time; beat by >=5 → −50%; fail by >=5 → +50%.
+  beat DC by 15+ → −75% time; beat by more than 5 → −50%; fail by more than 5
+  → +50%. (The book wording is *more than 5* at the lower boundary; the
+  `learnMarginInclusive` setting can switch that boundary to *5 or more* —
+  see "Learning progression modes". The 15 boundary is *15 or more* either way.)
 
 ### Methods of learning (one at a time, narrative / manual)
 
@@ -98,13 +102,42 @@ ruleset, summarized faithfully:
   but automating Mastery acquisition is **out of scope here**; this feature only
   handles the initial learn (`learned: false → true`).
 
+## Learning progression modes
+
+The module exposes a world setting `learningProgressionMode` so tables can choose
+how a successful learn roll advances progress:
+
+| Mode | Setting value | Roll unit | Target progress | Success award |
+|---|---|---|---|---|
+| Standard rules | `standard` | One learn attempt | `derived.successes` | `1` on any success |
+| 4-hour blocks | `fourHourBlocks` | One 4-hour training block | `rank × derived.successes × 2` | `1`; `2` if margin clears the 5 boundary*; `4` if margin ≥ 15 |
+
+\* The **5 boundary** operator (`≥ 5` vs `> 5`) is governed by the
+`learnMarginInclusive` setting and applies to **both** modes — see "Settings and
+migration". The **15 boundary** is always `≥ 15`.
+
+The **standard** mode follows the book loop: `attemptsUsed / maxAttempts`
+matters, a failed run resets progress, and each attempt narratively consumes the
+normal training time.
+
+The **4-hour block** mode is the table variant currently used by this group.
+Each click/roll represents one 4-hour block instead of one full learn attempt.
+It inflates the target progress to preserve the original time scale (`1 day =
+two 4-hour blocks`, multiplied by technique rank and required successes) and
+uses margin-based progress awards instead of exceptional-roll time reduction.
+In this mode the standard attempts budget and "run out of attempts" reset do not
+apply; progress is block-based and continues until the target is reached or the
+GM resets it manually. Failure Insight still applies to failed block rolls and
+still clears when the actor attempts to learn a different technique.
+
 ## Scope split
 
-**Phase 1 — automated core (this feature):** unlearned state, attempts budget,
-learn-check roll vs `learnDC`, success accumulation, Failure Insight bonus,
-out-of-attempts reset, the Perform gate, eligibility checks (rank ≤ level and
-≥1 skill rank), unmapped-discipline handling, and take-10/no-take-20 on the
-roll dialog.
+**Phase 1 — automated core (this feature):** unlearned state, progress tracking,
+learn-check roll vs `learnDC`, standard-mode attempts budget and out-of-attempts
+reset, 4-hour-block mode target/award calculation, Failure Insight bonus, the
+Perform gate, eligibility checks (rank ≤ level and ≥1 skill rank),
+unmapped-discipline handling, the `learningProgressionMode` setting, and
+take-10/no-take-20 on the roll dialog.
 
 **Phase 2 — manual / future:** learning time & chakra drain, interruption timer,
 exceptional-roll time changes, the four learning Methods, Action Point
@@ -118,7 +151,7 @@ documented above so GMs adjudicate them by hand; automation can follow later.
 ```js
 learning: new fields.SchemaField({
     learned:        new fields.BooleanField({ ...opt, initial: false }),
-    successes:      new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+    progress:       new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
     attemptsUsed:   new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
     failureInsight: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0, max: 5 }),
 }, opt),
@@ -141,10 +174,15 @@ learning: new fields.SchemaField({
   the calculation respects the PF1e Skills-tab ability selector. Clamp to at
   least `1` attempt so an eligible character with a negative ability modifier
   does not enter an impossible `0 / 0` run.
-- The `derived` getter still exposes a UI remainder for required successes:
+- The UI/helper layer computes target and remaining progress where settings are
+  available:
   ```js
-  learnRemaining: Math.max(0, successes - (this.learning?.successes ?? 0)),
+  targetProgress = getLearningTargetProgress(item, learningProgressionMode);
+  learnRemaining = Math.max(0, targetProgress - (item.system.learning?.progress ?? 0));
   ```
+  Keep `TechniqueDataModel.derived` focused on pure technique-derived values
+  (`learnDC`, `successes`, `performDC`, etc.); `targetProgress` depends on a
+  world setting and belongs in `learn-technique.mjs` / the Chakra-tab view-model.
 
 ### Medkit and sync preservation
 
@@ -156,7 +194,7 @@ content. The Technique Medkit must preserve it.
   embedded technique appear out-of-date relative to its compendium source.
 - `syncTechnique()` must copy the current embedded `system.learning` block onto
   the source data before overwriting the embedded item. Otherwise a compendium
-  sync can erase `learned`, `successes`, `attemptsUsed`, and `failureInsight`.
+  sync can erase `learned`, `progress`, `attemptsUsed`, and `failureInsight`.
 - If a source technique later gains a changed default `learning` shape, the
   embedded copy still wins; schema migration/default seeding handles missing
   keys on the actor copy.
@@ -194,14 +232,25 @@ content. The Technique Medkit must preserve it.
    Configure the dialog to allow Take 10 but **disallow Take 20** if the dialog
    options permit it; otherwise note the limitation (see open questions).
 4. **Resolve the attempt** — increment `attemptsUsed` regardless of outcome:
-   - **Success** (`total ≥ derived.learnDC`): increment `learning.successes`. If
-     it reaches `derived.successes` → set `learned: true`, clear the
+   - Compute `targetProgress` from `learningProgressionMode`:
+     - `standard`: `derived.successes`
+     - `fourHourBlocks`: `item.system.rank × derived.successes × 2`
+   - **Success** (`total ≥ derived.learnDC`): increment `learning.progress`.
+     The award is mode-dependent:
+     - `standard`: always `+1`
+     - `fourHourBlocks`: with `margin = total - learnDC`, `+4` if
+       `margin >= 15`, else `+2` if the margin clears the 5 boundary
+       (`margin >= 5` when `learnMarginInclusive`, else `margin > 5`),
+       otherwise `+1`
+     If progress reaches `targetProgress` → set `learned: true`, clear the
      training flag, post a "Technique learned!" card.
    - **Failure:** increment `failureInsight` (capped at 5); post a progress card.
-   - After incrementing attempts, if **not yet learned** and
-     `attemptsUsed ≥ maxAttempts` → **reset the run**: `successes = 0`,
+   - In `standard` mode only, after incrementing attempts, if **not yet learned**
+     and `attemptsUsed ≥ maxAttempts` → **reset the run**: `progress = 0`,
      `attemptsUsed = 0`, `failureInsight = 0`, and post a "failed to learn —
      start over" card.
+   - In `fourHourBlocks` mode, `attemptsUsed` counts completed 4-hour training
+     blocks for display/audit only; it does not create a failure threshold.
 5. All mutations via a single `item.update({...})` so the sheet re-renders once.
 
 ## Perform gate
@@ -230,20 +279,23 @@ is the authoritative enforcement point.
 `templates/actor/chakra-tab.hbs` + `scripts/ui/technique-list.mjs`:
 
 - **Unlearned** row: a **Learn** button plus a progress badge
-  `{{learning.successes}} / {{derived.successes}}` and an attempts readout
-  `{{learning.attemptsUsed}} / {{maxAttempts}}` (with the Failure Insight bonus,
-  if any, e.g. `+2`). The **Use** button is disabled / dimmed.
+  `{{learning.progress}} / {{targetProgress}}`. In `standard` mode, also show
+  an attempts readout `{{learning.attemptsUsed}} / {{maxAttempts}}`; in
+  `fourHourBlocks` mode, show blocks completed instead (e.g. `6 blocks`) because
+  there is no out-of-attempts failure threshold. Show the Failure Insight bonus
+  if any (e.g. `+2`). The **Use** button is disabled / dimmed.
 - **Learned** row: normal Use button, no badge (or a small ✓).
 - New listener `.shinobi-technique-learn` → `attemptLearnTechnique(item)`, scoped
   to `.tab.chakra` like the existing open/use/delete handlers.
-- The row view-model passes `learning`, `derived.successes`, and the computed
-  `maxAttempts` through to each row.
+- The row view-model passes `learning`, `targetProgress`, `learningMode`, and
+  the computed `maxAttempts` through to each row.
 
 ## UI — technique sheet (polish)
 
 `scripts/ui/technique-sheet.mjs` + `templates/item/technique-sheet.hbs`:
 
-- A "Learned" / "X of Y successes — A of B attempts" badge near rank/complexity.
+- A "Learned" / "X of Y progress" badge near rank/complexity. In standard mode,
+  include "A of B attempts"; in 4-hour-block mode, include completed block count.
 - GM-only manual toggle to force `learned` true/false and to reset the run
   (covers retraining, imports, the four Methods, and adjudication).
 
@@ -252,6 +304,19 @@ is the authoritative enforcement point.
 `scripts/main.mjs`:
 
 - Register `enforceLearning` (Boolean, default `true`) in `init`.
+- Register `learningProgressionMode` (String, default `standard`) in `init`:
+  - `standard` — book-style attempts and required successes.
+  - `fourHourBlocks` — table variant: one roll per 4-hour block, target progress
+    `rank × derived.successes × 2`, margin-based awards `1 / 2 / 4`.
+- Register `learnMarginInclusive` (Boolean, default `true`) in `init`. Controls
+  the **5** success-margin boundary, applied to **both** progression modes
+  (the `fourHourBlocks` `+2` award, and the standard mode's exceptional-time rule
+  when that Phase 2 piece is automated):
+  - `true` (`≥ 5`) — a margin of exactly 5 counts toward the better result; this
+    group's house rule ("5 ou mais"). This is why the default is `true`.
+  - `false` (`> 5`) — only a margin strictly greater than 5 counts; book-faithful
+    ("more than 5"). Book-strict standard play should use this.
+  The **15** boundary is always `≥ 15` — the rulebook and the house rule agree.
 - **One-time `ready` migration (GM only)**, following the existing flag-backfill
   pattern: set `system.learning.learned = true` on every embedded technique that
   predates this feature, so existing games are not suddenly locked out. Guard it
@@ -265,17 +330,17 @@ default (`learned: false`) applies to newly created embedded items.
 
 | File | Change |
 |---|---|
-| `scripts/data/technique-model.mjs` | `learning` schema (`learned`, `successes`, `attemptsUsed`, `failureInsight`); `prepareBaseData` defaults; `derived.learnRemaining` |
-| `scripts/learn-technique.mjs` | New — eligibility gate, attempts budget, roll vs `learnDC`, success/failure resolution, Failure Insight, out-of-attempts reset, chat cards |
+| `scripts/data/technique-model.mjs` | `learning` schema (`learned`, `progress`, `attemptsUsed`, `failureInsight`); `prepareBaseData` defaults |
+| `scripts/learn-technique.mjs` | New — eligibility gate, progression-mode target/award calculation, attempts budget, roll vs `learnDC`, success/failure resolution, Failure Insight, out-of-attempts reset, chat cards |
 | `scripts/use-technique.mjs` | Gate `performTechnique` on `learning.learned` (respects `enforceLearning`) |
 | `scripts/flag-paths.mjs` | Export the actor flag path for `learning.currentTechniqueId` |
-| `scripts/ui/technique-list.mjs` | `.shinobi-technique-learn` listener; disable Use when unlearned; pass `maxAttempts` to view-model |
-| `templates/actor/chakra-tab.hbs` | Learn button + successes/attempts badges per row; lock Use when unlearned |
+| `scripts/ui/technique-list.mjs` | `.shinobi-technique-learn` listener; disable Use when unlearned; pass `targetProgress`, `learningMode`, and `maxAttempts` to view-model |
+| `templates/actor/chakra-tab.hbs` | Learn button + progress/attempts-or-blocks badges per row; lock Use when unlearned |
 | `scripts/ui/technique-sheet.mjs` | Learned/progress badge; GM force-learn + reset toggle |
 | `templates/item/technique-sheet.hbs` | Learned/progress badge markup |
 | `scripts/automation/technique-sync.mjs` | Preserve and ignore actor-owned `system.learning` during medkit diff/sync |
-| `scripts/main.mjs` | Register `enforceLearning`; one-time `ready` learned-backfill migration |
-| `lang/en.json`, `lang/pt-BR.json` | `NarutoD20.Learning.*` (Learn, Learned, Progress, Attempts, FailureInsight, NotLearned, RankTooHigh, NoSkillRank, LearnedCard, ProgressCard, FailedRunCard) |
+| `scripts/main.mjs` | Register `enforceLearning`, `learningProgressionMode`, and `learnMarginInclusive`; one-time `ready` learned-backfill migration |
+| `lang/en.json`, `lang/pt-BR.json` | `NarutoD20.Learning.*`, `NarutoD20.Settings.LearningProgressionMode.*`, and `NarutoD20.Settings.LearnMarginInclusive.*` labels |
 
 ## Open questions
 
@@ -294,16 +359,18 @@ default (`learned: false`) applies to newly created embedded items.
 ## Manual verification
 
 1. Drag a technique from the compendium onto an actor → **unlearned**: Use is
-   disabled, a **Learn** button, `0 / N` successes and `0 / M` attempts show.
+   disabled, a **Learn** button, `0 / N` progress and the mode-appropriate
+   attempts/blocks readout show.
 2. With rank > character level (or 0 ranks in the discipline skill), **Learn**
    warns and does nothing.
 3. Click **Learn**: the discipline learn-check dialog appears; the total is
-   compared to the technique's `learnDC`. A success bumps successes; the `N`-th
-   success flips the technique to **learned**, posts a card, and unlocks **Use**.
+   compared to the technique's `learnDC`. A success bumps progress; reaching
+   target progress flips the technique to **learned**, posts a card, and unlocks
+   **Use**.
 4. A failed attempt bumps the attempts counter and adds **+1 Failure Insight**
    (visible on the next roll's breakdown, capped at +5).
-5. Running out of attempts before learning resets successes, attempts, and
-   Failure Insight to 0 and posts a "start over" card.
+5. In standard mode, running out of attempts before learning resets progress,
+   attempts, and Failure Insight to 0 and posts a "start over" card.
 6. Attempting to learn a *different* technique clears the previous technique's
    Failure Insight.
 7. With `enforceLearning` on, Using an unlearned technique warns and spends no
@@ -312,9 +379,20 @@ default (`learned: false`) applies to newly created embedded items.
    **learned** after the one-time `ready` migration; newly dropped techniques
    start unlearned.
 9. **Complexity coupling:** a Kinjutsu/Combination technique requires the
-   adjusted `successes`; the badge denominator matches `derived.successes`.
+   adjusted `successes`; in standard mode the badge denominator matches
+   `derived.successes`.
 10. **Medkit preservation:** learn progress on an embedded technique does not
     make the medkit mark it out-of-date; syncing an out-of-date technique
     preserves its `system.learning` state.
 11. **Unmapped disciplines:** `Hachimon Tonkou` / `Training` techniques remain
     usable under `enforceLearning` according to the phase-1 policy above.
+12. **4-hour-block mode:** set `learningProgressionMode = fourHourBlocks`.
+    A rank 3 technique with `derived.successes = 2` shows target progress `12`.
+    With `learnMarginInclusive = true`, a success by margin 0-4 grants `+1`,
+    margin 5-14 grants `+2`, and margin 15+ grants `+4`; failed rolls grant no
+    progress but can increase Failure Insight. The blocks counter increases
+    without resetting progress at `maxAttempts`.
+13. **Margin boundary setting:** with `learnMarginInclusive = false`, a success
+    by exactly margin 5 drops to the `+1` award (book-strict `> 5`); flipping the
+    setting back to `true` restores the `+2` award at margin 5. The 15 boundary
+    is unaffected.
