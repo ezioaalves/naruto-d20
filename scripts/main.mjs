@@ -31,6 +31,7 @@ import { registerSummaryStats } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
+import { registerExpiredBuffCleanup } from "./automation/buff-expiry.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
@@ -150,6 +151,7 @@ Hooks.once("setup", () => {
     registerFeatListListeners();       // Naruto Browse button on the Features tab
     registerFeatGrantDeletion();       // cascade-delete feat supplements on feat removal
     registerChargeDefensePenalty();     // PF1e charge attack AC penalty until next turn
+    registerExpiredBuffCleanup();       // delete module automation buffs when their duration expires
     registerTapReservesListener();     // Chakra Reserve header → Tap Reserves dialog
 });
 
