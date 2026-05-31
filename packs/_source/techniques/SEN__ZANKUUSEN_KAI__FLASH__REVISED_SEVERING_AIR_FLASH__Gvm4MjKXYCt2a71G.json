@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>This technique functions as Zankuusen, except as above. The maximum number of rays is 1 per 3 levels, and each ray deals 1d6+1 force damage. The knockback increases to 10 ft, and the DC to avoid being stunned increases to 12.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>This technique functions as Zankuusen, except as above. The maximum number of rays is 1 per 3 levels, and each ray deals 1d6+1 force damage. The knockback increases to 10 ft, and the DC to avoid being @Condition[stunned]{stunned} increases to 12.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

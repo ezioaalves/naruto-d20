@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> E, S</p>\n\n<hr>\n\n<p>You touch a target that has taken piercing damage in the last hour and aggravate their wounds, dealing 2d6 damage. If the damage would bring the target below -1 HP, it is instead reduced to -1 HP, and there is a 20% chance each round for it to be denied a check to stabilize, until they become stable.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 8d6 (whichever is lower).</p>\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> E, S</p>\n\n<hr>\n\n<p>You touch a target that has taken piercing damage in the last hour and aggravate their wounds, dealing 2d6 damage. If the damage would bring the target below -1 HP, it is instead reduced to -1 HP, and there is a 20% chance each round for it to be denied a check to stabilize, until they become @Condition[stable]{stable}.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 8d6 (whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

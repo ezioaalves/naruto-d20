@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9 (Spell Level 5)</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>A barrier of translucent energy surrounds you and moves with you. To any evil creature, the barrier is like a solid wall of force, but to objects or other creatures, it does not interfere with their movement. If an evil outsider touches the barrier, it suffers 1d4 holy damage, plus 1d4 holy damage each round it continues to touch the barrier.<br><br>Once the technique ends, you become fatigued. If used while already fatigued or exhausted, you take 1d4 or 1d6 damage per round while concentrating on it, respectively.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9 (Spell Level 5)</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>A barrier of translucent energy surrounds you and moves with you. To any evil creature, the barrier is like a solid wall of force, but to objects or other creatures, it does not interfere with their movement. If an evil outsider touches the barrier, it suffers 1d4 holy damage, plus 1d4 holy damage each round it continues to touch the barrier.<br><br>Once the technique ends, you become @Condition[fatigued]{fatigued}. If used while already fatigued or exhausted, you take 1d4 or 1d6 damage per round while concentrating on it, respectively.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

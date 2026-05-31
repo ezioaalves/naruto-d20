@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 7 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> C, F, S</p>\n\n<hr>\n\n<p>You send an advanced seal towards the target, which expands and wraps itself around them, paralyzing and blinding them, as well as causing them to suffer a -4 penalty to Listen checks. They can still speak. Removing the advanced seal is simple and can be done by anyone (the target, being paralyzed, cannot do so).</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 7 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> C, F, S</p>\n\n<hr>\n\n<p>You send an advanced seal towards the target, which expands and wraps itself around them, leaving them @Condition[paralyzed]{paralyzed} and @Condition[blind]{blinded}, as well as causing them to suffer a -4 penalty to Listen checks. They can still speak. Removing the advanced seal is simple and can be done by anyone (the target, being paralyzed, cannot do so).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

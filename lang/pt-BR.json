@@ -195,6 +195,7 @@
       },
       "TargetMode": {
         "Label": "Modo de Alvo",
+        "Auto": "Automático",
         "Selected": "Tokens selecionados",
         "Self": "Somente o próprio",
         "Allies": "Todos os aliados",

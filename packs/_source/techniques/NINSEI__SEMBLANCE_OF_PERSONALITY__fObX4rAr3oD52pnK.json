@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create the illusion that you are exhausted, sick or suffer from some kind of debilitation or condition, or one that hides such effects. This illusion affects sight and hearing, cannot be dispelled, and it cannot be seen through. Anyone interacting with you can identify and disbelieve the illusion as normal.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create the illusion that you are @Condition[exhausted]{exhausted}, sick or suffer from some kind of debilitation or condition, or one that hides such effects. This illusion affects sight and hearing, cannot be dispelled, and it cannot be seen through. Anyone interacting with you can identify and disbelieve the illusion as normal.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

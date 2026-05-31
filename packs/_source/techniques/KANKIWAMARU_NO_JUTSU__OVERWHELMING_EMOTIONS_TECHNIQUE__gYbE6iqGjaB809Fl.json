@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>If the subject is free thinking or at peace with itself, it will fall prone and laugh continuously. It is not helpless, but cannot take any actions. A brooding or remorseful subject will instead be panicked.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>If the subject is free thinking or at peace with itself, it will fall @Condition[prone]{prone} and laugh continuously. It is not helpless, but cannot take any actions. A brooding or remorseful subject will instead be panicked.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

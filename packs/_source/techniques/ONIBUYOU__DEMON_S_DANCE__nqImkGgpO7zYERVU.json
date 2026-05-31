@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You animate your shadow, which grasps the object and will attack with it, using your attack bonus(es), though the shadow does not add any damage bonuses (except those that belong to the weapon itself). The shadow will not stray further than 5 ft from you, but will deanimate if you die or become unconscious. While the shadow is animated, you can grab the weapon it holds as a free action, though doing so will immediately deanimate the shadow. You cannot control more than one shadow created by this technique at the same time.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You animate your shadow, which grasps the object and will attack with it, using your attack bonus(es), though the shadow does not add any damage bonuses (except those that belong to the weapon itself). The shadow will not stray further than 5 ft from you, but will deanimate if you die or become @Condition[unconscious]{unconscious}. While the shadow is animated, you can grab the weapon it holds as a free action, though doing so will immediately deanimate the shadow. You cannot control more than one shadow created by this technique at the same time.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

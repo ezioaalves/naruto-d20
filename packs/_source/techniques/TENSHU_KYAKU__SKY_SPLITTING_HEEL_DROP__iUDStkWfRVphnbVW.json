@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control </p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You focus Chakra into a part of your body, which you use to strike the ground below you to create a powerful shockwave. Any creature finding itself underground and within 30 ft of the surface is thrown upwards 1d6 x 5 ft and takes 2d6 bludgeoning damage. Creatures standing on the ground are instead knocked prone (Reflex negates). You are unaffected by this technique.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Chakra Control </p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You focus Chakra into a part of your body, which you use to strike the ground below you to create a powerful shockwave. Any creature finding itself underground and within 30 ft of the surface is thrown upwards 1d6 x 5 ft and takes 2d6 bludgeoning damage. Creatures standing on the ground are instead knocked @Condition[prone]{prone} (Reflex negates). You are unaffected by this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

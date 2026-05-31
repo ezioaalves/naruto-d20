@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You make the subject hear an extremely loud, highpitched scream, which stuns them for 1d4 rounds. While stunned this way, the subject takes a -20 penalty to Listen checks.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You make the subject hear an extremely loud, highpitched scream, which leaves them @Condition[stunned]{stunned} for 1d4 rounds. While stunned this way, the subject takes a -20 penalty to Listen checks.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

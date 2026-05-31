@@ -167,7 +167,7 @@ Triggered at the tail of `performTechnique()` (`scripts/use-technique.mjs`) **on
 
 1. Gate: skip unless the world setting `automaticBuffs` is on **and** the technique's `item.system.automation.enabled` flag is true. The `buffTargetFiltering = "off"` setting also short-circuits the whole pipeline.
 2. Lookup: `findBuffByName(item.name)` scans `naruto-d20.technique-buffs` plus any pack IDs listed in the `customBuffCompendia` setting (comma-separated). It returns `{ exact, variants }` — exact name matches win; otherwise the first `"Name (..."` variant is used. If nothing matches, it logs a warning and exits silently.
-3. Targets: personal/you/stance techniques apply to the caster. Other techniques apply to `[...game.user.targets]`; if none are selected, the automation warns with `NarutoD20.Automation.NoTargets` and does not apply the buff. Each target must be owned by the current user — un-owned targets show a `NarutoD20.Automation.NoPermission` warning and are skipped.
+3. Targets: `item.system.automation.targetMode` can override targeting. `"self"` applies to the caster and `"selected"` applies to `[...game.user.targets]`. The default `"auto"` keeps the existing heuristic: personal/you/stance techniques apply to the caster; other techniques apply to selected canvas targets. If selected targets are required but none are selected, the automation warns with `NarutoD20.Automation.NoTargets` and does not apply the buff. Each target must be owned by the current user — un-owned targets show a `NarutoD20.Automation.NoPermission` warning and are skipped.
 4. Duration: copied from the triggering `ItemAction`'s `duration` (`{ units, value }`). `inst` / `perm` / `seeText` / missing → leave the compendium buff's own duration untouched.
 5. Apply: `applyBuffToTarget` matches by `flags["naruto-d20"].sourceId === buffDoc.uuid`. Existing buff → `update({ "system.active": true, "system.duration.*": ... })`. New buff → `toObject()` + strip `_id`, stamp the `sourceId` flag, write duration if provided, set `system.active = true`, then `createEmbeddedDocuments("Item", [...])`.
 
@@ -178,7 +178,7 @@ Related world settings (registered in `init`):
 - `buffTargetFiltering` (`respectTechnique` | `manualAlways` | `off`) — `off` disables the pipeline entirely; the other modes are reserved for the targeting prompt UI.
 - `customBuffCompendia` (String) — extra pack IDs to search.
 
-And on the technique itself: `item.system.automation.enabled` (default `true`), defined in `TechniqueDataModel.defineSchema` and exposed on the technique sheet's Automation tab.
+And on the technique itself: `item.system.automation.enabled` (default `true`) and `item.system.automation.targetMode` (`"auto"` | `"self"` | `"selected"`), defined in `TechniqueDataModel.defineSchema` and exposed on the technique sheet's Automation tab.
 
 ### Skills
 

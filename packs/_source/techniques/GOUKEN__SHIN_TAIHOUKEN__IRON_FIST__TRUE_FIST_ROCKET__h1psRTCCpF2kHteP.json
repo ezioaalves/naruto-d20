@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions as Gouken: Taihouken, except as above, and the bonus damage becomes 3d6, plus 1d6 per 4 levels (up to 8d6 total bonus damage). On a failed save, the target is knocked back 20 ft and falls prone. You suffer a -4 penalty to Learn checks when learning this technique if you do not have the Gouken feat.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions as Gouken: Taihouken, except as above, and the bonus damage becomes 3d6, plus 1d6 per 4 levels (up to 8d6 total bonus damage). On a failed save, the target is knocked back 20 ft and falls @Condition[prone]{prone}. You suffer a -4 penalty to Learn checks when learning this technique if you do not have the Gouken feat.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

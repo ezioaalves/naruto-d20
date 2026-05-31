@@ -47,8 +47,16 @@ export async function applyTechniqueBuff(item, actor, action) {
  * require an explicit canvas target so debuffs are not accidentally self-applied.
  */
 function _resolveBuffTargets(item, actor) {
+    const targetMode = item.system?.automation?.targetMode ?? "auto";
+    if (targetMode === "self") return [actor];
+    if (targetMode === "selected") return _selectedTargetActors();
+
     if (_isSelfTargetingTechnique(item)) return [actor];
 
+    return _selectedTargetActors();
+}
+
+function _selectedTargetActors() {
     const targets = [...(game.user.targets ?? [])].map(t => t.actor).filter(Boolean);
     if (targets.length) return targets;
 

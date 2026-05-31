@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, P, Mas</p>\n\n<hr>\n\n<p>You can control sand and make it float through the Sand Manipulation technique without needing to make Concentration checks, and reduce the cost to do so to 3 Chakra per 2 rounds. You will be fatigued once this technique expires. You cannot use this technique if you are controlled by Shukaku or under the effects of Shukaku Metamorphosis.</p>\n\n\n<p><b>Mastery:</b> The fifth step of Mastery allows you to make a Fortitude save (DC 15) to negate the fatigue.</p>\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, P, Mas</p>\n\n<hr>\n\n<p>You can control sand and make it float through the Sand Manipulation technique without needing to make Concentration checks, and reduce the cost to do so to 3 Chakra per 2 rounds. You will be @Condition[fatigued]{fatigued} once this technique expires. You cannot use this technique if you are controlled by Shukaku or under the effects of Shukaku Metamorphosis.</p>\n\n\n<p><b>Mastery:</b> The fifth step of Mastery allows you to make a Fortitude save (DC 15) to negate the fatigue.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You temporarily increase the size of your arm or leg to deliver a powerful strike against any creature, gaining 15 ft bonus reach while doing so. The attack is a Slam attack, dealing damage as though you were two sizes larger (a Medium-size human's normal Slam attack deals 1d3 damage, becoming 1d6 with this technique). If you do not have the Akimichi Toughness feat, you become fatigued.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You temporarily increase the size of your arm or leg to deliver a powerful strike against any creature, gaining 15 ft bonus reach while doing so. The attack is a Slam attack, dealing damage as though you were two sizes larger (a Medium-size human's normal Slam attack deals 1d3 damage, becoming 1d6 with this technique). If you do not have the Akimichi Toughness feat, you become @Condition[fatigued]{fatigued}.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

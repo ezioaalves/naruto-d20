@@ -3,6 +3,7 @@ import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from 
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
 import { checkAndUpdateConditions } from "./data/chakra-conditions.mjs";
 import { getTechniqueWeaponAttackConfig, rollSelectedWeaponAttackWithTechnique } from "./ui/technique-weapon-attack.mjs";
+import { applyChargeDefensePenalty } from "./automation/charge-defense.mjs";
 
 export function canAffordTechnique(actor, item) {
     if (!actor) return false;
@@ -86,6 +87,9 @@ export async function performTechnique(item, actionId, event = null) {
             ev: event,
         });
     if (!useResult || useResult.err) return;
+
+    const usedCharge = useResult.shared?.charge === true;
+    if (usedCharge) await applyChargeDefensePenalty(actor);
 
     if (!canAffordTechnique(actor, currentItem)) {
         ui.notifications.warn(`${actor.name}: not enough chakra to perform ${currentItem.name}.`);

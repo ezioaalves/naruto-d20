@@ -91,7 +91,10 @@
       }
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "automation": {
+      "targetMode": "self"
+    }
   },
   "effects": [],
   "folder": "yUI8Y6kUaMCw0mQw",

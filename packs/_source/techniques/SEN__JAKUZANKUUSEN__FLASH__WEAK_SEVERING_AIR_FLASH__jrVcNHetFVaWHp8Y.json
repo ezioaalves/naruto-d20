@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You make a (ranged) touch attack against the target. If it hits, the target is thrown back 1d6 x 5 ft if you used a melee touch attack or 1d4 x 5 ft if you made a ray attack. If the target collides with an object larger than it, it suffers 1d4 bludgeoning damage per 10 ft travelled, and falls prone in front of the object, not travelling further.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You make a (ranged) touch attack against the target. If it hits, the target is thrown back 1d6 x 5 ft if you used a melee touch attack or 1d4 x 5 ft if you made a ray attack. If the target collides with an object larger than it, it suffers 1d4 bludgeoning damage per 10 ft travelled, and falls @Condition[prone]{prone} in front of the object, not travelling further.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

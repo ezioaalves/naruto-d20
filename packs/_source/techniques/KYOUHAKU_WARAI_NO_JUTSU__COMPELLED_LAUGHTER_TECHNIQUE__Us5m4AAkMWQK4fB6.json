@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 7 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You look the target in the eye and attempt to send it such horrifying visions that it suffers a short mental breakdown. The subject falls prone and starts laughing in a manic, humorlous manner for 1d4 rounds, unable to take any action or think about anything. A creature incapable of laughter will simply make random sounds or speak gibberish.<br><br>For 2 rounds after this behavior fades, the subject becomes shaken.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 7 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You look the target in the eye and attempt to send it such horrifying visions that it suffers a short mental breakdown. The subject falls @Condition[prone]{prone} and starts laughing in a manic, humorlous manner for 1d4 rounds, unable to take any action or think about anything. A creature incapable of laughter will simply make random sounds or speak gibberish.<br><br>For 2 rounds after this behavior fades, the subject becomes @Condition[shaken]{shaken}.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 11 (Spell Level 6)</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C, H, X</p>\n\n<hr>\n\n<p>You scribe a tattoo-like seal onto your body using your blood as ink. Once complete, the seal starts draining your Chakra until it has absorbed 100 Chakra. You control the rate of absorption, and the seal cannot reduce you below 0 Chakra. Once full, you can activate the seal as a swift action to gain a +2 bonus to attack and damage rolls, Defense, saving throws and skill checks, as well as increasing your current and maximum Chakra by 5. The bonuses last for 10 minutes, after which the seal fades and you become fatigued.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 11 (Spell Level 6)</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C, H, X</p>\n\n<hr>\n\n<p>You scribe a tattoo-like seal onto your body using your blood as ink. Once complete, the seal starts draining your Chakra until it has absorbed 100 Chakra. You control the rate of absorption, and the seal cannot reduce you below 0 Chakra. Once full, you can activate the seal as a swift action to gain a +2 bonus to attack and damage rolls, Defense, saving throws and skill checks, as well as increasing your current and maximum Chakra by 5. The bonuses last for 10 minutes, after which the seal fades and you become @Condition[fatigued]{fatigued}.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

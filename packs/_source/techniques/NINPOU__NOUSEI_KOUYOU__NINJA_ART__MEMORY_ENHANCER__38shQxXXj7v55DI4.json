@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You increase your brain activity, stimulating your memory and allowing you to explore your memory thoroughly. You gain a +4 insight bonus to all saves and checks that relate to events you have experienced in the past (for example, to help gather clues or form a conclusion based on reviewing memories of the investigation) (GM's discretion).<br><br>This technique can only be used once per day, and once it ends you become fatigued. You also take 1d6 temporary Intelligence damage (Fortitude DC 18 negates).</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You increase your brain activity, stimulating your memory and allowing you to explore your memory thoroughly. You gain a +4 insight bonus to all saves and checks that relate to events you have experienced in the past (for example, to help gather clues or form a conclusion based on reviewing memories of the investigation) (GM's discretion).<br><br>This technique can only be used once per day, and once it ends you become @Condition[fatigued]{fatigued}. You also take 1d6 temporary Intelligence damage (Fortitude DC 18 negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

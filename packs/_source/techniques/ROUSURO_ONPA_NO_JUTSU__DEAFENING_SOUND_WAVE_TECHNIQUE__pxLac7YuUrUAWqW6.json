@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You manipulate sound waves in the area, creating a blast of sound that deals 2d6 sonic damage. Any creature in the area is also deafened for 1d6+1 rounds (Fortitude negates).</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You manipulate sound waves in the area, creating a blast of sound that deals 2d6 sonic damage. Any creature in the area is also @Condition[deaf]{deafened} for 1d6+1 rounds (Fortitude negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

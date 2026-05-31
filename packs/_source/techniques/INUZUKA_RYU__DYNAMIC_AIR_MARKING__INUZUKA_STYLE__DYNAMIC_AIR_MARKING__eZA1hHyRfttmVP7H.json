@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>This technique can only be used by a Medium-sized or smaller animal. The animal jumps into the air and sprays the target with a scent marker (such as urine). The target is blinded for 1d4 rounds and is marked.<br><br>A marked target can be tracked by smell, even by creatures who are not normally capable of doing so. The mark counts as an overpowering scent, and any creature with the Scent ability can instantly pinpoint its location if they can smell it. The mark's scent cannot be hidden by any means.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>This technique can only be used by a Medium-sized or smaller animal. The animal jumps into the air and sprays the target with a scent marker (such as urine). The target is @Condition[blind]{blinded} for 1d4 rounds and is marked.<br><br>A marked target can be tracked by smell, even by creatures who are not normally capable of doing so. The mark counts as an overpowering scent, and any creature with the Scent ability can instantly pinpoint its location if they can smell it. The mark's scent cannot be hidden by any means.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

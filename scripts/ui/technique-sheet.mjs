@@ -112,6 +112,12 @@ export function createTechniqueItemSheet() {
                 Object.keys(COMPLEXITY_TABLE).map((k) => [k, k])
             );
 
+            context.buffTargetModeChoices = {
+                auto:     loc("NarutoD20.Automation.TargetMode.Auto"),
+                self:     loc("NarutoD20.Automation.TargetMode.Self"),
+                selected: loc("NarutoD20.Automation.TargetMode.Selected"),
+            };
+
             // ── Links tab — structured for PF1e's table/sub-nav layout ──
             const linkCat = (id, labelKey, helpKey) => ({
                 id,

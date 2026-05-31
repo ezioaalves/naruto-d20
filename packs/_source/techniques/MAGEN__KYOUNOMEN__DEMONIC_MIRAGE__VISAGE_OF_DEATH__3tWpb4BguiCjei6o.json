@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 8</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 33</p>\n\n<p><b>Components:</b> C, Mob, S</p>\n\n<hr>\n\n<p>You pour a powerful surge of killing intent into a melee attack you make against the target. If the attack hits, the subject suffers such a powerful surge of fear that it is immediately reduced to -1 HP and starts dying. If the target succeeds at their save, they are instead cowering for 1 round.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 8</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 33</p>\n\n<p><b>Components:</b> C, Mob, S</p>\n\n<hr>\n\n<p>You pour a powerful surge of killing intent into a melee attack you make against the target. If the attack hits, the subject suffers such a powerful surge of fear that it is immediately reduced to -1 HP and starts @Condition[dying]{dying}. If the target succeeds at their save, they are instead @Condition[cowering;duration=1]{cowering} for 1 round.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

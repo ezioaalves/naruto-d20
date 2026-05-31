@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 3 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You bring yourself into a kind of artificial hibernation. Your pulse slows to an imperceptibly low pace, your body temperature starts to go down and you are paralyzed while the technique lasts. In effect, you appear to be dead, though a Treat Injury check (DC 35) can reveal that you are merely pretending. You can dismiss the technique as a move action.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 3 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You bring yourself into a kind of artificial hibernation. Your pulse slows to an imperceptibly low pace, your body temperature starts to go down and you are @Condition[paralyzed]{paralyzed} while the technique lasts. In effect, you appear to be dead, though a Treat Injury check (DC 35) can reveal that you are merely pretending. You can dismiss the technique as a move action.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

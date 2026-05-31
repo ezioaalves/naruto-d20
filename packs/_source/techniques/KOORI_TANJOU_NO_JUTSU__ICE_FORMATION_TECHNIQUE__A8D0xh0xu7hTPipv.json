@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You freeze water, covering its surface with a thick sheet of ice. Each 5 ft square of ice has 15 HP and can support up to 500 lbs. Creatures on the ice must make a Balance check (DC 12) at the start of each of their turns to avoid falling prone.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You freeze water, covering its surface with a thick sheet of ice. Each 5 ft square of ice has 15 HP and can support up to 500 lbs. Creatures on the ice must make a Balance check (DC 12) at the start of each of their turns to avoid falling @Condition[prone]{prone}.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

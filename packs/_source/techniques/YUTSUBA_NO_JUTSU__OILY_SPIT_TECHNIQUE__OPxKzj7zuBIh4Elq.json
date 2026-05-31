@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You gather Chakra in your mouth, generating a huge amount of saliva that you spit out as an oily substance. The subject will be covered by the oily saliva. If they come into contact with fire, they will catch fire for<br><br>1d6+1 rounds.<br><br>Alternatively, you can spit onto a 10 ft square, creating a slippery surface. Any creature that is in the area or steps on it must make a Reflex save to avoid becoming prone and suffering 1d4 nonlethal damage.<br><br>The saliva will dry after 1 hour, losing any of its special effects.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You gather Chakra in your mouth, generating a huge amount of saliva that you spit out as an oily substance. The subject will be covered by the oily saliva. If they come into contact with fire, they will catch fire for<br><br>1d6+1 rounds.<br><br>Alternatively, you can spit onto a 10 ft square, creating a slippery surface. Any creature that is in the area or steps on it must make a Reflex save to avoid becoming @Condition[prone]{prone} and suffering 1d4 nonlethal damage.<br><br>The saliva will dry after 1 hour, losing any of its special effects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

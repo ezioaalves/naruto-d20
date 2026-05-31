@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2 (Spell Level 1)</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You focus your energy into a limb and strike the ground, sending a shockwave through it. Creatures above ground fall prone and take 1d6 nonlethal damage (Reflex negates). Creatures underground suffer 3d6 nonlethal damage and are stunned for 1 round (Fortitude negates the stun). Creatures with the Tremorsense ability gain a +2 bonus to saves against this technique.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2 (Spell Level 1)</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You focus your energy into a limb and strike the ground, sending a shockwave through it. Creatures above ground fall @Condition[prone]{prone} and take 1d6 nonlethal damage (Reflex negates). Creatures underground suffer 3d6 nonlethal damage and are @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates the stun). Creatures with the Tremorsense ability gain a +2 bonus to saves against this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

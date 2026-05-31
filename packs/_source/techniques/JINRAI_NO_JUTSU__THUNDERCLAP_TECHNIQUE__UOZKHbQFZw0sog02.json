@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>6 You focus Chakra into your hands, generating one charge per 10 levels (minimum 1).<br><br>As an attack action that does not provoke attacks of opportunity, you can release a charge by clapping your hands together, creating a loud shockwave that deafens all creatures in a 30 ft Cone-shaped Spread for 1d4+1 minutes (Fortitude negates, CR applies).<br><br>If you wear a sound amplifier, the range of the Cone increases to 40 ft, and the duration of the deafening effect increases by 1 minute.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>6 You focus Chakra into your hands, generating one charge per 10 levels (minimum 1).<br><br>As an attack action that does not provoke attacks of opportunity, you can release a charge by clapping your hands together, creating a loud shockwave that leaves all creatures in a 30 ft Cone-shaped Spread @Condition[deaf]{deafened} for 1d4+1 minutes (Fortitude negates, CR applies).<br><br>If you wear a sound amplifier, the range of the Cone increases to 40 ft, and the duration of the deafening effect increases by 1 minute.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

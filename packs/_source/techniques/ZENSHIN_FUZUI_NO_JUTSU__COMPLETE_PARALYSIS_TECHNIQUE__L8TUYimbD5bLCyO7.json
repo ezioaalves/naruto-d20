@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>The target is completely paralyzed. This technique immediately ends once the target has taken 1 damage per level or more.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>The target is completely @Condition[paralyzed]{paralyzed}. This technique immediately ends once the target has taken 1 damage per level or more.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

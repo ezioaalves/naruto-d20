@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>If hit, the subject becomes paralyzed for the duration of this technique. Each round, the subject can make an Intelligence check (DC 15) to take either a move or attack action normally, or take its full turn as normal if it beat the DC by 5 or more. Two consecutive successful checks will end the effect. Creatures without a discernible anatomy (such as oozes) and those immune to sneak attacks or critical hits are immune to this effect.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>If hit, the subject becomes @Condition[paralyzed]{paralyzed} for the duration of this technique. Each round, the subject can make an Intelligence check (DC 15) to take either a move or attack action normally, or take its full turn as normal if it beat the DC by 5 or more. Two consecutive successful checks will end the effect. Creatures without a discernible anatomy (such as oozes) and those immune to sneak attacks or critical hits are immune to this effect.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

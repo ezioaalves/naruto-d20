@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 1 (Spell Level 1)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You touch the target and temporarily shortcircuit it's optic nerve, causing it to be blinded for 1 round.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 1 (Spell Level 1)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You touch the target and temporarily shortcircuit it's optic nerve, causing it to be @Condition[blind;duration=1]{blinded} for 1 round.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>This complex technique deals 2d4+2 sonic damage to the target, and if it fails a Fortitude save it becomes deafened for 1d4+1 rounds, as well as becoming nauseated for 1d3 rounds.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>This complex technique deals 2d4+2 sonic damage to the target, and if it fails a Fortitude save it becomes @Condition[deaf]{deafened} for 1d4+1 rounds, as well as becoming @Condition[nauseated]{nauseated} for 1d3 rounds.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You focus Chakra into your hand, turning it into a blade of lightning, with which you are proficient. The blade has the same statistics as a katana, deals 1d4 bonus electric damage and counts as Chakra-enhanced for the purpose of bypassing damage reductions. If you score a critical hit with the blade, the target is paralyzed for 1 round (Fortitude negates).<br><br>When the blade is destroyed or leaves your grasp, it disappears immediately.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You focus Chakra into your hand, turning it into a blade of lightning, with which you are proficient. The blade has the same statistics as a katana, deals 1d4 bonus electric damage and counts as Chakra-enhanced for the purpose of bypassing damage reductions. If you score a critical hit with the blade, the target is @Condition[paralyzed;duration=1]{paralyzed} for 1 round (Fortitude negates).<br><br>When the blade is destroyed or leaves your grasp, it disappears immediately.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

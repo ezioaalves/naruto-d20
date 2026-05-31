@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> Mob, E</p>\n\n<hr>\n\n<p>You charge a creature that failed its save against Nigeki Rendan - Hana on your previous turn. If you are not under the effects of the Kairiki technique or are unable to charge the target, you cannot use this technique. This technique can be used once per encounter.<br><br>Make an unarmed charge attack against the target. On hit, the attack deals an additional 5d6 damage and knocks the target prone.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to increase the damage by 2d6, up to 1d6 per level or 11d6 total.</p>\n\n",
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> Mob, E</p>\n\n<hr>\n\n<p>You charge a creature that failed its save against Nigeki Rendan - Hana on your previous turn. If you are not under the effects of the Kairiki technique or are unable to charge the target, you cannot use this technique. This technique can be used once per encounter.<br><br>Make an unarmed charge attack against the target. On hit, the attack deals an additional 5d6 damage and knocks the target @Condition[prone]{prone}.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to increase the damage by 2d6, up to 1d6 per level or 11d6 total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

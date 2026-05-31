@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 2 (Spell Level 1)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>You manipulate sound waves and send them into the target's ears, triggering a mechanism in the brain that leaves the target stunned for 1 round.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 2 (Spell Level 1)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>You manipulate sound waves and send them into the target's ears, triggering a mechanism in the brain that leaves the target @Condition[stunned;duration=1]{stunned} for 1 round.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

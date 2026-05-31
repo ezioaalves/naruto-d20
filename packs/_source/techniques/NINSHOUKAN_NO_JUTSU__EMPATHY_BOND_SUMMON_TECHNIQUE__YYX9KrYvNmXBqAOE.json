@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 18</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>This technique summons the target, which must be bonded to you by the Fuinjutsu: Ninjou Kan technique. If the target is grappled, pinned or otherwise physically restrained in a way that makes them unable to move normally (thus, being paralyzed does not prevent them from being summoned, as it is not physically restraining them).<br><br>The target appears in a square adjacent to you, and must then make a Fortitude save (DC 13) to avoid becoming dazed for 1 round.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 6 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 18</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>This technique summons the target, which must be bonded to you by the Fuinjutsu: Ninjou Kan technique. If the target is @Condition[grappled]{grappled}, pinned or otherwise physically restrained in a way that makes them unable to move normally (thus, being paralyzed does not prevent them from being summoned, as it is not physically restraining them).<br><br>The target appears in a square adjacent to you, and must then make a Fortitude save (DC 13) to avoid becoming @Condition[dazed;duration=1]{dazed} for 1 round.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

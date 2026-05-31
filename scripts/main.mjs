@@ -30,6 +30,7 @@ import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
 import { registerSummaryStats } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
+import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
@@ -146,6 +147,7 @@ Hooks.once("setup", () => {
     registerSummaryStats();            // Hero Statistics block on the Summary tab
     registerFeatListListeners();       // Naruto Browse button on the Features tab
     registerFeatGrantDeletion();       // cascade-delete feat supplements on feat removal
+    registerChargeDefensePenalty();     // PF1e charge attack AC penalty until next turn
     registerTapReservesListener();     // Chakra Reserve header → Tap Reserves dialog
 });
 

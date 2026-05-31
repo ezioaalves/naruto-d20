@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You damage the mind of a creature you currently possess with Shintenshin no Jutsu, dealing 3d6 damage and having it make a Will save to avoid 1d10 Charisma damage. This damage does not affect your own body and mind. The second time this technique is used within a 24 hour period, you are fatigued for the rest of the encounter. The third time leaves you exhausted for the rest of the encounter, and the possession ends immediately after using this technique. While exhausted, this technique cannot be used.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 8 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You damage the mind of a creature you currently possess with Shintenshin no Jutsu, dealing 3d6 damage and having it make a Will save to avoid 1d10 Charisma damage. This damage does not affect your own body and mind. The second time this technique is used within a 24 hour period, you are @Condition[fatigued]{fatigued} for the rest of the encounter. The third time leaves you exhausted for the rest of the encounter, and the possession ends immediately after using this technique. While exhausted, this technique cannot be used.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

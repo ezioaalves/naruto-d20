@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>Make a melee attack against all creatures in the area, which will deal half damage and knock back targets hit for 1d3 x 5 ft. Targets hit are also knocked prone (Fortitude negates). You may use this technique against inanimate, unattended objects of Medium-size or smaller.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5 (Spell Level 3)</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>Make a melee attack against all creatures in the area, which will deal half damage and knock back targets hit for 1d3 x 5 ft. Targets hit are also knocked @Condition[prone]{prone} (Fortitude negates). You may use this technique against inanimate, unattended objects of Medium-size or smaller.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 7 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>Creatures caught in the area take 3d6 bludgeoning damage, increased to 5d6 if the creature occupies more than one square within the area. Objects and structures take twice as much damage. If an affected creature is of Medium size or smaller, it is knocked up 1d6 x 5 ft and will be prone when they land. A Large or larger creature will simply fall prone. A second Reflex save will negate this effect.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 7 (Spell Level 4)</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>Creatures caught in the area take 3d6 bludgeoning damage, increased to 5d6 if the creature occupies more than one square within the area. Objects and structures take twice as much damage. If an affected creature is of Medium size or smaller, it is knocked up 1d6 x 5 ft and will be @Condition[prone]{prone} when they land. A Large or larger creature will simply fall @Condition[prone]{prone}. A second Reflex save will negate this effect.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },
