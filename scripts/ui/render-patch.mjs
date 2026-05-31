@@ -102,6 +102,19 @@ export function installChakraTabPatch() {
     }
     installed = true;
 
+    const originalDefaultOptions = Object.getOwnPropertyDescriptor(ActorSheetPF, "defaultOptions")?.get;
+    if (originalDefaultOptions) {
+        Object.defineProperty(ActorSheetPF, "defaultOptions", {
+            get() {
+                const options = originalDefaultOptions.call(this);
+                const scrollY = new Set(options.scrollY ?? []);
+                scrollY.add(".techniques-body");
+                return { ...options, scrollY: [...scrollY] };
+            },
+            configurable: true,
+        });
+    }
+
     const original = ActorSheetPF.prototype._renderInner;
     ActorSheetPF.prototype._renderInner = async function (...args) {
         const $html = await original.apply(this, args);
