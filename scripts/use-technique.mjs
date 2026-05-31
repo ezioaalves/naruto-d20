@@ -3,6 +3,7 @@ import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from 
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
 import { checkAndUpdateConditions } from "./data/chakra-conditions.mjs";
 import { getTechniqueWeaponAttackConfig, rollSelectedWeaponAttackWithTechnique } from "./ui/technique-weapon-attack.mjs";
+import { applyChargeDefensePenalty } from "./automation/charge-defense.mjs";
 
 export function canAffordTechnique(actor, item) {
     if (!actor) return false;
@@ -87,6 +88,9 @@ export async function performTechnique(item, actionId, event = null) {
         });
     if (!useResult || useResult.err) return;
 
+    const usedCharge = useResult.shared?.charge === true;
+    if (usedCharge) await applyChargeDefensePenalty(actor);
+
     if (!canAffordTechnique(actor, currentItem)) {
         ui.notifications.warn(`${actor.name}: not enough chakra to perform ${currentItem.name}.`);
         return;
@@ -161,7 +165,7 @@ export async function performTechnique(item, actionId, event = null) {
     if (game.settings.get(MODULE_ID, "automaticBuffs") && updatedItem.system.automation?.enabled) {
         const { applyTechniqueBuff } = await import("./automation/buff-application.mjs");
         try {
-            await applyTechniqueBuff(updatedItem, actor, action);
+            await applyTechniqueBuff(updatedItem, actor, action, { skipChargeDefensePenalty: usedCharge });
         } catch (err) {
             console.error(`naruto-d20 | buff automation failed for "${updatedItem.name}":`, err);
             ui.notifications.warn(`Buff automation failed for ${updatedItem.name}. See console.`);
