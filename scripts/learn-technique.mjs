@@ -1,5 +1,5 @@
 import { MODULE_ID } from "./constants.mjs";
-import { chakraPoolValuePath, chakraReserveValuePath, learningCurrentTechniqueIdPath } from "./flag-paths.mjs";
+import { actionPointsPath, chakraPoolValuePath, chakraReserveValuePath, learningCurrentTechniqueIdPath } from "./flag-paths.mjs";
 import { buildLearnCheckBreakdown } from "./data/bonus-sources.mjs";
 import { DISCIPLINE_SKILL_MAP, resolveSkillAbility } from "./data/skills.mjs";
 
@@ -72,6 +72,7 @@ export function buildLearningView(item, actor, mode = getLearningMode()) {
         trainingBlocks,
         chakraSpent,
         lastTrainingAt,
+        actionPointBonus: Number(learning.actionPointBonus ?? 0) || 0,
         expiresAt: lastTrainingAt ? lastTrainingAt + TRAINING_INTERRUPTION_SECONDS : 0,
         targetProgress,
         maxAttempts: getLearningMaxAttempts(actor, skillKey),
@@ -167,14 +168,16 @@ function rollTotal(result) {
     return result?.rolls?.[0]?.total ?? result?.roll?.total ?? result?.total ?? null;
 }
 
-async function postLearningCard(actor, item, { title, body, cssClass = "" }) {
-    await ChatMessage.create({
+async function postLearningCard(actor, item, { title, body, cssClass = "", flags = null }) {
+    const data = {
         speaker: ChatMessage.implementation.getSpeaker({ actor }),
         content: `<div class="naruto-technique-card learning ${cssClass}">
                     <header><h3>${escapeHTML(title)}</h3></header>
                     ${body}
                   </div>`,
-    });
+    };
+    if (flags) data.flags = { [MODULE_ID]: { learn: flags } };
+    await ChatMessage.create(data);
 }
 
 async function resetFailureInsightForDifferentTechnique(actor, item, learning) {
@@ -209,6 +212,7 @@ async function expireInterruptedTraining(item, learning) {
         "system.learning.trainingBlocks": 0,
         "system.learning.chakraSpent": 0,
         "system.learning.lastTrainingAt": 0,
+        "system.learning.actionPointBonus": 0,
     });
 
     await postLearningCard(item.actor, item, {
@@ -225,6 +229,7 @@ async function expireInterruptedTraining(item, learning) {
         trainingBlocks: 0,
         chakraSpent: 0,
         lastTrainingAt: 0,
+        actionPointBonus: 0,
     };
 }
 
@@ -285,6 +290,7 @@ export async function attemptLearnTechnique(item) {
     const switchedLearning = await resetFailureInsightForDifferentTechnique(actor, item, learning);
     const activeLearning = await expireInterruptedTraining(item, switchedLearning);
     const failureInsight = Math.min(5, Math.max(0, Number(activeLearning.failureInsight ?? 0) || 0));
+    const apBonus = Math.max(0, Number(activeLearning.actionPointBonus ?? 0) || 0);
 
     const breakdown = buildLearnCheckBreakdown(actor, skillKey);
     if (!breakdown) {
@@ -294,6 +300,8 @@ export async function attemptLearnTechnique(item) {
 
     const parts = [...breakdown.parts];
     if (failureInsight > 0) parts.push(`${failureInsight}[Failure Insight]`);
+    // A committed Action Point reuses the same rolled value on every attempt of the run.
+    if (apBonus > 0) parts.push(`${apBonus}[Action Point]`);
 
     const learnDC = Number(item.system.derived?.learnDC ?? 10) || 10;
     // PF1e v11.11's d20Roll dialog exposes Take 10/20 together and does not
@@ -314,10 +322,23 @@ export async function attemptLearnTechnique(item) {
         return;
     }
 
+    await resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning: activeLearning, total, apBonus });
+}
+
+/**
+ * Resolve one learn attempt from a *pre-attempt* learning snapshot and a total.
+ * Extracted so the post-roll "Add Action Point" flow can replay the same attempt
+ * with a boosted total. `apBonus` is the committed Action Point value (0 = none),
+ * persisted to `actionPointBonus` so later rolls of the run reuse it. `supersedes`
+ * is the chat card being replaced on re-evaluation.
+ */
+async function resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning, total, apBonus = 0, supersedes = null, apRollText = "" }) {
+    const learnDC = Number(item.system.derived?.learnDC ?? 10) || 10;
     const targetProgress = getLearningTargetProgress(item, mode);
     const maxAttempts = getLearningMaxAttempts(actor, skillKey);
-    const oldProgress = Number(activeLearning.progress ?? 0) || 0;
-    const oldAttempts = Number(activeLearning.attemptsUsed ?? 0) || 0;
+    const oldProgress = Number(baseLearning.progress ?? 0) || 0;
+    const oldAttempts = Number(baseLearning.attemptsUsed ?? 0) || 0;
+    const baseFailureInsight = Math.min(5, Math.max(0, Number(baseLearning.failureInsight ?? 0) || 0));
     const attemptsUsed = oldAttempts + 1;
     const success = total >= learnDC;
     const margin = total - learnDC;
@@ -326,23 +347,23 @@ export async function attemptLearnTechnique(item) {
     const chakraDeduction = await applyTrainingChakraDeduction(actor, chakraCost);
     if (!chakraDeduction.paid) return;
 
-    const totalTrainingBlocks = (Number(activeLearning.trainingBlocks ?? 0) || 0) + trainingBlocks;
-    const totalChakraSpent = (Number(activeLearning.chakraSpent ?? 0) || 0) + chakraCost;
+    const totalTrainingBlocks = (Number(baseLearning.trainingBlocks ?? 0) || 0) + trainingBlocks;
+    const totalChakraSpent = (Number(baseLearning.chakraSpent ?? 0) || 0) + chakraCost;
     const now = trainingTimestamp();
 
     let progress = oldProgress;
-    let nextFailureInsight = failureInsight;
+    let nextFailureInsight = baseFailureInsight;
     let learned = false;
     let resetRun = false;
     let award = 0;
 
     if (success) {
-        award = marginAward(total - learnDC, mode);
+        award = marginAward(margin, mode);
         progress = Math.min(targetProgress, oldProgress + award);
         learned = progress >= targetProgress;
-        nextFailureInsight = learned ? 0 : failureInsight;
+        nextFailureInsight = learned ? 0 : baseFailureInsight;
     } else {
-        nextFailureInsight = Math.min(5, failureInsight + 1);
+        nextFailureInsight = Math.min(5, baseFailureInsight + 1);
     }
 
     if (!learned && mode === LEARNING_MODES.STANDARD && attemptsUsed >= maxAttempts) {
@@ -351,23 +372,47 @@ export async function attemptLearnTechnique(item) {
         nextFailureInsight = 0;
     }
 
+    const runEnded = learned || resetRun;
+    const nextApBonus = runEnded ? 0 : apBonus;   // AP persists through the run, clears at run end (no refund)
+    const finalAttemptsUsed = resetRun ? 0 : attemptsUsed;
+
     await item.update({
         "system.learning.learned": learned,
         "system.learning.progress": progress,
-        "system.learning.attemptsUsed": resetRun ? 0 : attemptsUsed,
+        "system.learning.attemptsUsed": finalAttemptsUsed,
         "system.learning.failureInsight": nextFailureInsight,
         "system.learning.trainingBlocks": totalTrainingBlocks,
         "system.learning.chakraSpent": totalChakraSpent,
         "system.learning.lastTrainingAt": now,
+        "system.learning.actionPointBonus": nextApBonus,
     });
 
+    if (learned) await actor.update({ [learningCurrentTechniqueIdPath]: null });
+
+    if (supersedes) { try { await supersedes.delete(); } catch (_e) { /* card already gone */ } }
+
+    // Re-eval flags: only offer "Add Action Point" while the run is open and no AP is committed yet.
+    const cardFlags = (!runEnded && apBonus === 0)
+        ? {
+            itemId: item.id,
+            actorUuid: actor.uuid,
+            skillKey, mode,
+            baseLearning: foundry.utils.deepClone(baseLearning),
+            baseTotalNoAp: total,
+            deducted: { fromPool: chakraDeduction.fromPool, fromReserve: chakraDeduction.fromReserve },
+            result: { progress, attemptsUsed: finalAttemptsUsed, failureInsight: nextFailureInsight, lastTrainingAt: now },
+        }
+        : null;
+
+    const apLine = apRollText ? `${escapeHTML(apRollText)} → ` : "";
+    const chakraLine = `${chakraCost}${chakraDeduction.deducted ? ` (${chakraDeduction.deducted} deducted)` : ""}`;
+
     if (learned) {
-        await actor.update({ [learningCurrentTechniqueIdPath]: null });
         await postLearningCard(actor, item, {
             title: `${item.name} learned`,
             cssClass: "success",
-            body: `<p>Learn check ${total} vs DC ${learnDC}. Progress ${progress}/${targetProgress}.</p>
-                   <footer>Training time: +${trainingBlocks} block${trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraCost}${chakraDeduction.deducted ? ` (${chakraDeduction.deducted} deducted)` : ""}.</footer>`,
+            body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. Progress ${progress}/${targetProgress}.</p>
+                   <footer>Training time: +${trainingBlocks} block${trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.</footer>`,
         });
         return;
     }
@@ -376,8 +421,8 @@ export async function attemptLearnTechnique(item) {
         await postLearningCard(actor, item, {
             title: `${item.name} learning failed`,
             cssClass: "failed",
-            body: `<p>Learn check ${total} vs DC ${learnDC}. Attempts ${attemptsUsed}/${maxAttempts}; progress is lost and the run starts over.</p>
-                   <footer>Training time: +${trainingBlocks} block${trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraCost}${chakraDeduction.deducted ? ` (${chakraDeduction.deducted} deducted)` : ""}.</footer>`,
+            body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. Attempts ${attemptsUsed}/${maxAttempts}; progress is lost and the run starts over.</p>
+                   <footer>Training time: +${trainingBlocks} block${trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.</footer>`,
         });
         return;
     }
@@ -392,7 +437,116 @@ export async function attemptLearnTechnique(item) {
     await postLearningCard(actor, item, {
         title: `Learning ${item.name}`,
         cssClass: success ? "success" : "failed",
-        body: `<p>Learn check ${total} vs DC ${learnDC}. ${resultText}</p>
-               <footer>Progress ${progress}/${targetProgress}; ${attemptText}; +${trainingBlocks} training block${trainingBlocks === 1 ? "" : "s"}; training chakra ${chakraCost}${chakraDeduction.deducted ? ` (${chakraDeduction.deducted} deducted)` : ""}.</footer>`,
+        body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. ${resultText}</p>
+               <footer>Progress ${progress}/${targetProgress}; ${attemptText}; +${trainingBlocks} training block${trainingBlocks === 1 ? "" : "s"}; training chakra ${chakraLine}.</footer>`,
+        flags: cardFlags,
     });
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Action Point — post-roll commitment via the learn chat card context menu
+// ─────────────────────────────────────────────────────────────────────────
+
+function resolveMessageFromElement(li) {
+    const el = li instanceof HTMLElement ? li : li?.[0];
+    const id = el?.closest?.("[data-message-id]")?.dataset?.messageId;
+    return id ? game.messages.get(id) : null;
+}
+
+function getLearnCardContext(message) {
+    const flags = message?.getFlag?.(MODULE_ID, "learn");
+    if (!flags) return null;
+    const actor = fromUuidSync(flags.actorUuid);
+    if (!(actor instanceof Actor)) return null;
+    const item = actor.items.get(flags.itemId);
+    if (!item) return null;
+    return { flags, actor, item };
+}
+
+/** A learn card may offer "Add Action Point" only while it reflects the current,
+ *  still-open run, no AP is committed yet, and the owner has an Action Point. */
+function learnCardCanAddAp(message) {
+    const ctx = getLearnCardContext(message);
+    if (!ctx) return false;
+    const { flags, actor, item } = ctx;
+    if (!actor.isOwner) return false;
+
+    const learning = item.system.learning ?? {};
+    if (learning.learned) return false;
+    if ((Number(learning.actionPointBonus ?? 0) || 0) > 0) return false;
+
+    // Freshness: a newer learn roll would have moved these on — don't clobber it.
+    const res = flags.result ?? {};
+    if ((Number(learning.progress ?? 0) || 0) !== (Number(res.progress ?? 0) || 0)) return false;
+    if ((Number(learning.attemptsUsed ?? 0) || 0) !== (Number(res.attemptsUsed ?? 0) || 0)) return false;
+    if ((Number(learning.failureInsight ?? 0) || 0) !== (Number(res.failureInsight ?? 0) || 0)) return false;
+    if ((Number(learning.lastTrainingAt ?? 0) || 0) !== (Number(res.lastTrainingAt ?? 0) || 0)) return false;
+
+    return (Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0) || 0) >= 1;
+}
+
+/** Spend one Action Point: roll 1d6 once, re-evaluate the carded attempt with the
+ *  boosted total, and persist the value so the rest of the run reuses it. */
+export async function addActionPointToLearnCard(message) {
+    const ctx = getLearnCardContext(message);
+    if (!ctx) return;
+    const { flags, actor, item } = ctx;
+
+    if (!learnCardCanAddAp(message)) {
+        ui.notifications.warn(`${item.name}: cannot add an Action Point to this learn roll (already spent, learned, or superseded by a newer roll).`);
+        return;
+    }
+
+    const currentAp = Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0) || 0;
+    if (currentAp < 1) {
+        ui.notifications.warn(`${actor.name} has no Action Points remaining.`);
+        return;
+    }
+
+    const apRoll = new Roll("1d6");
+    await apRoll.evaluate();
+    const apBonus = Math.max(0, Number(apRoll.total) || 0);
+    await apRoll.toMessage({
+        speaker: ChatMessage.implementation.getSpeaker({ actor }),
+        flavor: `Action Point — Learn: ${item.name} (${currentAp} → ${currentAp - 1} remaining)`,
+        rollMode: game.settings.get("core", "rollMode"),
+    });
+
+    // Refund the superseded attempt's training chakra (no-op when none was deducted),
+    // then spend the Action Point — all in one actor update.
+    const update = { [actionPointsPath]: currentAp - 1 };
+    const fromPool = Number(flags.deducted?.fromPool ?? 0) || 0;
+    const fromReserve = Number(flags.deducted?.fromReserve ?? 0) || 0;
+    if (fromPool) {
+        update[chakraPoolValuePath] = (Number(foundry.utils.getProperty(actor, chakraPoolValuePath) ?? 0) || 0) + fromPool;
+    }
+    if (fromReserve) {
+        update[chakraReserveValuePath] = (Number(foundry.utils.getProperty(actor, chakraReserveValuePath) ?? 0) || 0) + fromReserve;
+    }
+    await actor.update(update);
+
+    await resolveLearnAttempt(item, actor, {
+        skillKey: flags.skillKey,
+        mode: flags.mode,
+        baseLearning: flags.baseLearning,
+        total: (Number(flags.baseTotalNoAp) || 0) + apBonus,
+        apBonus,
+        supersedes: message,
+        apRollText: `Action Point 1d6 = ${apBonus}`,
+    });
+}
+
+/** Register the "Add Action Point" entry on the learn chat card's right-click menu.
+ *  Mirrors PF1e by binding both the v12 and v13 hook names. */
+export function registerLearnCardContextMenu() {
+    const addOption = (_html, options) => {
+        options.push({
+            name: "Add Action Point",
+            icon: '<i class="fa-solid fa-bolt"></i>',
+            condition: (li) => learnCardCanAddAp(resolveMessageFromElement(li)),
+            callback: (li) => addActionPointToLearnCard(resolveMessageFromElement(li)),
+        });
+    };
+    Hooks.on("getChatLogEntryContext", addOption);
+    Hooks.on("getChatMessageContextOptions", addOption);
 }

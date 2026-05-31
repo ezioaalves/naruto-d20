@@ -150,9 +150,35 @@ the no-Take-20 rule until a custom learn-roll dialog replaces it.
 
 **Phase 2 — automation in progress:** learning time, chakra drain,
 interruption timer, exceptional-roll time changes, the four learning Methods,
-Action Point persistence, and the `(t)/(f)/(a)/(1-5)` structured requirements.
-The first shipped Phase 2 slice tracks training blocks/chakra, expires progress
-after long interruption, and can optionally deduct training chakra.
+and the `(t)/(f)/(a)/(1-5)` structured requirements. The first shipped Phase 2
+slice tracks training blocks/chakra, expires progress after long interruption,
+and can optionally deduct training chakra. **Action Point persistence is now
+shipped** (see below).
+
+### Phase 2 Action Point persistence
+
+A practitioner may spend **one** Action Point per learn run, decided **after**
+seeing the learn roll — the moment the player knows how far the roll fell from a
+success / exceptional success.
+
+- Each learn chat card carries a right-click context-menu entry **"Add Action
+  Point"** (registered on both `getChatLogEntryContext` and
+  `getChatMessageContextOptions`). It is offered only while the run is open, no AP
+  is committed yet, the card still reflects the current run (freshness guard), the
+  user owns the actor, and the actor has at least 1 Action Point.
+- Choosing it rolls `1d6` **once**, spends 1 Action Point, and **re-evaluates the
+  same attempt** with `total = originalRoll + 1d6` via `resolveLearnAttempt(...)`
+  replayed from the card's pre-attempt snapshot. A failure can become a success or
+  exceptional success; the attempt counter is not increased beyond the original.
+  Any training chakra the superseded attempt deducted is refunded before the
+  re-deduction (the boosted margin never costs more).
+- The rolled value is stored in `system.learning.actionPointBonus` and
+  **auto-applied** as a `N[Action Point]` part on every subsequent learn roll of
+  that technique. While it is active the menu entry no longer appears (one AP per
+  run, per the rule).
+- It clears at run end — learned, standard-mode out-of-attempts reset, or 30-day
+  interruption expiry — with **no refund** (that consumption is the spend). The GM
+  "Reset Learning" control also clears it.
 
 ## Implementation status
 
@@ -173,7 +199,7 @@ after long interruption, and can optionally deduct training chakra.
 | Phase 2: chakra drain | Started | Training chakra is computed from max pool; optional `deductLearningChakra` setting deducts Pool then Reserve and blocks learn rolls when the actor cannot pay. |
 | Phase 2: interruption timer | Started | Progress expires if more than 30 days pass since the last training block. |
 | Phase 2: learning Methods | Pending | Being Taught, Self-Teaching, Developing, Creating. |
-| Phase 2: Action Point persistence | Pending | Needs per-technique action-point state through a run. |
+| Phase 2: Action Point persistence | Done | `1d6` rolled once and reused for the run, committed post-roll via the learn chat card's right-click "Add Action Point", which re-evaluates the same attempt. Stored in `system.learning.actionPointBonus`, auto-applied to later rolls, cleared at run end (no refund). |
 | Phase 2: structured requirements | Pending | `(t)`, `(f)`, `(a)`, mastery-step and max Chakra requirements. |
 
 ## Data model
@@ -438,8 +464,8 @@ default (`learned: false`) applies to newly created embedded items.
    chakra, the current behavior aborts resolution after the roll instead of
    spending partial chakra or applying progress.
 3. **Phase 2 ordering** — which manual rule to automate next: the four Methods,
-   Action Point persistence, or structured `(t)/(f)/(a)/(1-5)` requirements tied
-   into the existing `links.prerequisites`.
+   or structured `(t)/(f)/(a)/(1-5)` requirements tied into the existing
+   `links.prerequisites`. (Action Point persistence is now shipped.)
 
 ## Manual verification
 
@@ -491,3 +517,16 @@ default (`learned: false`) applies to newly created embedded items.
 16. **Chakra tab scroll:** scroll the technique list, then trigger a learn roll,
     edit a learn misc bonus, or use a technique. The sheet may re-render, but the
     `.techniques-body` scroll position should remain where it was.
+17. **Action Point — add after roll:** with ≥1 Action Point, make a learn roll that
+    falls short, right-click the card → **Add Action Point**. One `d6` is rolled,
+    1 AP is spent, and the same attempt is re-evaluated with `roll + d6` (a near
+    miss can flip to a success/exceptional). The attempt counter does not jump.
+18. **Action Point — reuse + cap:** after committing an AP, the row shows
+    `⚡ +N AP`; the next learn roll auto-includes `N[Action Point]` (same value, no
+    new d6, no extra AP), and its card no longer offers **Add Action Point**.
+19. **Action Point — clear at run end:** learning the technique (or a standard-mode
+    out-of-attempts reset / 30-day expiry) clears `actionPointBonus`; Action Points
+    are not refunded. GM **Reset Learning** also clears it.
+20. **Action Point — guards:** with 0 Action Points the menu entry is hidden; on an
+    older (superseded) card after a newer roll, it is hidden / warns and does not
+    clobber the newer progress.

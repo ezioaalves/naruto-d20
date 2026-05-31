@@ -120,6 +120,7 @@ export function createTechniqueDataModel() {
                     trainingBlocks: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
                     chakraSpent:    new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
                     lastTrainingAt: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+                    actionPointBonus: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0, max: 6 }),
                 }, opt),
 
                 isHijutsu:     new fields.BooleanField({ ...opt, initial: false }),
@@ -219,6 +220,7 @@ export function createTechniqueDataModel() {
             this.learning.trainingBlocks ??= 0;
             this.learning.chakraSpent ??= 0;
             this.learning.lastTrainingAt ??= 0;
+            this.learning.actionPointBonus ??= 0;
 
             this.automation ??= {};
             this.automation.enabled ??= true;

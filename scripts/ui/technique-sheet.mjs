@@ -238,6 +238,7 @@ export function createTechniqueItemSheet() {
                 "system.learning.trainingBlocks": 0,
                 "system.learning.chakraSpent": 0,
                 "system.learning.lastTrainingAt": 0,
+                "system.learning.actionPointBonus": 0,
             });
         }
 
