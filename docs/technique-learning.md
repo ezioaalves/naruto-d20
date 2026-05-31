@@ -59,7 +59,7 @@ ruleset, summarized faithfully:
 - Training may be interrupted for up to **1 month** before accrued progress is
   lost; one 4-hour block within that window refreshes the timer.
 - **Exceptional roll → time change** (round up to the nearest 4-hour block):
-  beat DC by 15+ → −75% time; beat by >5 → −50%; fail by >5 → +50%.
+  beat DC by 15+ → −75% time; beat by >=5 → −50%; fail by >=5 → +50%.
 
 ### Methods of learning (one at a time, narrative / manual)
 
