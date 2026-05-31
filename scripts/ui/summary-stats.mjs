@@ -1,4 +1,5 @@
 import { MODULE_ID } from "../constants.mjs";
+import { actionPointsPath } from "../flag-paths.mjs";
 
 export function registerSummaryStats() {
     Hooks.on("renderActorSheetPF", async (app, html, data) => {
@@ -22,5 +23,29 @@ export function registerSummaryStats() {
         } else {
             summary.prepend(templateHtml);
         }
+
+        $html.find(".naruto-action-point-roll").off("click").on("click", async (event) => {
+            event.preventDefault();
+            await rollActionPoint(app.actor);
+        });
+    });
+}
+
+async function rollActionPoint(actor) {
+    const current = Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0);
+    if (!Number.isFinite(current) || current <= 0) {
+        ui.notifications.warn(`${actor.name} has no Action Points remaining.`);
+        return;
+    }
+
+    const remaining = current - 1;
+    await actor.update({ [actionPointsPath]: remaining });
+
+    const roll = new Roll("1d6");
+    await roll.evaluate();
+    await roll.toMessage({
+        speaker: ChatMessage.implementation.getSpeaker({ actor }),
+        flavor: `Action Point (${current} -> ${remaining} remaining)`,
+        rollMode: game.settings.get("core", "rollMode"),
     });
 }

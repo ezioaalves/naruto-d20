@@ -1,5 +1,8 @@
 import { MODULE_ID } from "./constants.mjs";
 
+// ── Hero statistics flag paths ──────────────────────────────────────────
+export const actionPointsPath = `flags.${MODULE_ID}.actionPoints`;
+
 // ── Learn check flag paths ───────────────────────────────────────────────
 export const learnBuffPath = (k) => `flags.${MODULE_ID}.learn.${k}.buffBonus`;
 export const learnMiscPath = (k) => `flags.${MODULE_ID}.learn.${k}.miscBonus`;
