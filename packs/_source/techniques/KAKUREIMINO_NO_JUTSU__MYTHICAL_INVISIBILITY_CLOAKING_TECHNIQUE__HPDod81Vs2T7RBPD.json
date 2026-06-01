@@ -22,7 +22,7 @@
     "rank": 1,
     "complexity": "E-Class",
     "chakraCost": 1,
-    "activation": "standard",
+    "activation": "full",
     "range": "Personal",
     "target": "",
     "area": "",
@@ -49,7 +49,7 @@
         "name": "Use",
         "actionType": "other",
         "activation": {
-          "type": "standard",
+          "type": "full",
           "unchained": {
             "type": "action",
             "cost": 2
