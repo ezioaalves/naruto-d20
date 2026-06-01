@@ -36,6 +36,8 @@ const COMP_MAP = [
     ["compXpCost",        "XP"],
 ];
 
+const UNSUPPORTED_EXPANDED_TABS = new Set(["", "chakra", "null", "undefined"]);
+
 function _prepareTechniques(actor) {
     const items = actor.items
         .filter(i => i.type === TECHNIQUE_ITEM_TYPE)
@@ -117,6 +119,16 @@ export function installChakraTabPatch() {
 
     const original = ActorSheetPF.prototype._renderInner;
     ActorSheetPF.prototype._renderInner = async function (...args) {
+        // PF1 reopens expanded item summaries inside its own _renderInner, before
+        // this wrapper can inject the Chakra tab. Drop entries from injected or
+        // malformed tabs so PF1 never dereferences a missing `.tab[data-tab=...]`.
+        for (const expandedId of [...(this._expandedItems ?? [])]) {
+            const tab = String(expandedId).split(".")[0];
+            if (UNSUPPORTED_EXPANDED_TABS.has(tab)) {
+                this._expandedItems.delete(expandedId);
+            }
+        }
+
         const $html = await original.apply(this, args);
         if (!["character", "npc"].includes(this.actor.type)) return $html;
 

@@ -19,6 +19,12 @@ export function registerTechniqueListListeners() {
         const chakraTab = $html.find(".tab.chakra");
         if (!chakraTab.length) return;
 
+        chakraTab[0].addEventListener("click", (ev) => {
+            if (!(ev.target instanceof Element)) return;
+            if (!ev.target.closest(".technique-row .item-name")) return;
+            ev.stopPropagation();
+        }, { capture: true });
+
         // Medkit button in the Techniques header (mirror of the window-title button)
         const techHeader = chakraTab.find(".techniques-header")[0];
         if (techHeader && !techHeader.querySelector(".naruto-technique-medkit-btn")) {
