@@ -6,7 +6,16 @@
       "instructions": ""
     },
     "tags": [],
-    "changes": [],
+    "changes": [
+      {
+        "type": "competence",
+        "_id": "HngeDs001",
+        "operator": "add",
+        "priority": 0,
+        "formula": "@attributes.hd.total",
+        "target": "skill.dis"
+      }
+    ],
     "changeFlags": {
       "immuneToMorale": false,
       "loseDexToAC": false,
