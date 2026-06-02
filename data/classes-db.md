@@ -352,4 +352,6 @@ Context notes appear as reminders in the PF1e roll dialog (e.g. "Evasion active 
 4. **Run the macro as GM**. It upserts documents — safe to run multiple times.
 5. Check the **Naruto Classes** and **Naruto Class Abilities** compendium packs.
 
-> **Note:** The `packs/classes/` and `packs/class-abilities/` directories and the two pack entries in `module.json` already exist. Do not remove them.
+> **Note:** These packs are not currently shipped in the public release manifest. If you want
+> to run this import flow locally, first add `classes` and `class-abilities` back to
+> `module.json` and create the corresponding `packs/` directories in your working copy.

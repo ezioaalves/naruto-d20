@@ -4,21 +4,22 @@
  * Reads JSON sources from packs/_source/technique-buffs/ and
  * packs/_source/techniques/, validates change targets against
  * pf1-buff-changes-reference.md and BUFF_TARGETS, and writes a
- * structured markdown report to tools/buff-analysis-report.md.
+ * structured markdown report to dev-notes/buff-analysis-report.md.
  *
  * Usage: node tools/analyze-technique-buffs.mjs
  */
 
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
+const DEV_NOTES_DIR = join(ROOT, "dev-notes");
 const BUFFS_DIR = join(ROOT, "packs/_source/technique-buffs");
 const TECHNIQUES_DIR = join(ROOT, "packs/_source/techniques");
-const OUTPUT = join(__dirname, "buff-analysis-report.md");
-const REVIEWED_FILE = join(__dirname, "buff-analysis-reviewed.json");
+const OUTPUT = join(DEV_NOTES_DIR, "buff-analysis-report.md");
+const REVIEWED_FILE = join(DEV_NOTES_DIR, "buff-analysis-reviewed.json");
 
 // ---------------------------------------------------------------------------
 // Valid PF1e change targets — from docs/pf1-buff-changes-reference.md
@@ -233,6 +234,8 @@ function validateBuff(buffDoc) {
 // ---------------------------------------------------------------------------
 
 async function main() {
+  await mkdir(DEV_NOTES_DIR, { recursive: true });
+
   console.log("Loading buffs…");
   const buffEntries = await loadJsonDir(BUFFS_DIR);
 
@@ -326,7 +329,7 @@ async function main() {
     `| \`tools/analyze-technique-buffs.mjs\` | Gera este relatório. Lê os JSON-fonte de \`packs/_source/techniques/\` e \`packs/_source/technique-buffs/\`, casa técnica↔buff por nome, valida os \`system.changes[].target\` contra os targets do PF1e + módulo, e agrupa as pendências por disciplina. |`,
   );
   h(
-    `| \`tools/buff-analysis-reviewed.json\` | Rastreio de progresso. Lista disciplinas/técnicas já analisadas e deixadas sem buff (ou com buff vazio) de propósito, para não voltarem como pendência. |`,
+    `| \`dev-notes/buff-analysis-reviewed.json\` | Rastreio de progresso. Lista disciplinas/técnicas já analisadas e deixadas sem buff (ou com buff vazio) de propósito, para não voltarem como pendência. |`,
   );
   h(
     `| _gerador ad-hoc_ | Os itens de buff novos são criados por um script gerador pontual por batch (ex.: o usado no batch Taijutsu), modelado no buff de stance \`KOUSEN RYU\` (\`subType: temp\`, \`duration: perm\`, \`_id\` de 16 hex). |`,
@@ -356,7 +359,7 @@ async function main() {
     `4. Criar os buffs (nome idêntico ao da técnica, para a automação casar) com os \`changes\` mapeados; deixar \`changes: []\` nos casos sem alvo limpo.`,
   );
   h(
-    `5. Registrar a varredura em \`buff-analysis-reviewed.json\` (disciplina inteira ou nomes avulsos) com uma nota da decisão.`,
+    `5. Registrar a varredura em \`dev-notes/buff-analysis-reviewed.json\` (disciplina inteira ou nomes avulsos) com uma nota da decisão.`,
   );
   h(
     `6. Re-rodar o script: a Seção C deve seguir vazia (0 targets inválidos) e o batch aparece como revisado.`,

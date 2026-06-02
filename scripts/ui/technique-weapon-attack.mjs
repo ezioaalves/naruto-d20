@@ -5,6 +5,24 @@ const DEFAULT_FILTER = "meleeWeapon";
 const SUPPORTED_MODES = new Set(["selected"]);
 const SUPPORTED_FILTERS = new Set(["meleeWeapon", "rangedWeapon", "unarmedOnly", "meleeOrUnarmed"]);
 const KNOWN_KEYS = new Set(["mode", "filter", "attackBonus", "damageBonus", "held", "charge"]);
+const ISSUE_TEMPLATES = {
+  Malformed: '"{prefix}" must be an object or use dotted "{prefix}.*" keys',
+  UnknownField: 'unknown field "{field}"',
+  MissingMode: 'missing "{field}" (expected "{expected}")',
+  UnsupportedMode: 'unsupported "{field}" = "{value}" (expected "{expected}")',
+  UnsupportedFilter: 'unsupported "{field}" = "{value}"; using "{fallback}"',
+  InvalidBoolean: '"{field}" should be "true" or "false" (got "{value}")',
+};
+
+function formatIssueTemplate(template, data) {
+  return template.replace(/\{(\w+)\}/g, (_, key) => String(data[key] ?? `{${key}}`));
+}
+
+function formatWeaponAttackIssue(key, data = {}) {
+  const i18nKey = `NarutoD20.WeaponAttackIssues.${key}`;
+  if (globalThis.game?.i18n?.format) return globalThis.game.i18n.format(i18nKey, data);
+  return formatIssueTemplate(ISSUE_TEMPLATES[key] ?? key, data);
+}
 
 /**
  * Read the `system.flags.dictionary.weaponAttack` config in both supported
@@ -42,12 +60,12 @@ export function readWeaponAttackRaw(item) {
 export function parseWeaponAttackConfig({ values, keys, malformed }) {
   const warnings = [];
   const str = (key) => String(values[key] ?? "").trim();
-  const issue = (key, data = {}) => game.i18n.format(`NarutoD20.WeaponAttackIssues.${key}`, data);
+  const issue = (key, data = {}) => formatWeaponAttackIssue(key, data);
 
-  if (malformed)
-    warnings.push(issue("Malformed", { prefix: CONFIG_PREFIX }));
+  if (malformed) warnings.push(issue("Malformed", { prefix: CONFIG_PREFIX }));
   for (const k of keys) {
-    if (!KNOWN_KEYS.has(k)) warnings.push(issue("UnknownField", { field: `${CONFIG_PREFIX}.${k}` }));
+    if (!KNOWN_KEYS.has(k))
+      warnings.push(issue("UnknownField", { field: `${CONFIG_PREFIX}.${k}` }));
   }
 
   const mode = str("mode");

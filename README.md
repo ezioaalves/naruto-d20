@@ -150,8 +150,8 @@ duplicatas em re-execuções. Controlável por configurações de mundo e por t�
 
 ### 11. Compêndios incluídos
 
-O módulo já vem com compêndios de **Técnicas**, **Buffs de Técnica**, **Feats**, **Classes** e
-**Class Abilities** prontos para arrastar para a ficha.
+O módulo já vem com compêndios de **Técnicas**, **Buffs de Técnica** e **Feats** prontos para
+arrastar para a ficha.
 
 ### 12. Migração automática
 
