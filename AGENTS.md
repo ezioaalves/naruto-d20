@@ -13,6 +13,7 @@ Compendium source JSON is under `packs/_source/{techniques,feats,technique-buffs
 - `npm run unpack` exports `packs/techniques/` into source JSON; use only when resyncing from in-app edits because it overwrites source files.
 - `npm run add-actions -- --dry-run` previews generated technique actions; omit `--dry-run` to apply.
 - `npm run fix-spell-attacks -- --dry-run` previews attack-type cleanup.
+- `npm run validate:compendia` validates technique, feat, and technique-buff source JSON.
 
 There is no build step. Edit `.mjs`, `.hbs`, `.css`, or JSON source files, then reload Foundry with `F5` or in-world `Ctrl+R`.
 
@@ -24,7 +25,7 @@ Technique item data belongs in `item.system.*`. Actor module state belongs in `f
 
 ## Testing Guidelines
 
-No automated test suite is configured. Verify manually in Foundry VTT 13 with PF1e v11.11+: reload the world, open an actor sheet, exercise the Chakra tab, technique sheets, rolls, and affected compendium entries. Use `docs/manual-qa.md` for release or large-PR validation. For compendium transforms, run dry-run first, review `git diff`, then `npm run pack` and confirm the packed data loads.
+No automated test suite is configured. Verify manually in Foundry VTT 13 with PF1e v11.11+: reload the world, open an actor sheet, exercise the Chakra tab, technique sheets, rolls, and affected compendium entries. Use `docs/manual-qa.md` for release or large-PR validation. For compendium transforms, run dry-run first, review `git diff`, run `npm run validate:compendia`, then `npm run pack` and confirm the packed data loads.
 
 ## Commit & Pull Request Guidelines
 

@@ -13,6 +13,7 @@
     "add-actions": "node tools/add-actions.mjs",
     "fix-action-ids": "node tools/fix-action-ids.mjs",
     "fix-spell-attacks": "node tools/fix-spell-attacks.mjs",
+    "validate:compendia": "node tools/validate-compendia.mjs",
     "expand:blood-pact": "node tools/expand-blood-pact.mjs",
     "extract:feat-changes": "node tools/extract-feat-changes.mjs",
     "apply:feat-changes": "node tools/apply-feat-changes.mjs",
