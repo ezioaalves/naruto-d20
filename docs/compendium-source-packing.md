@@ -62,11 +62,14 @@ entry). Relevant fields:
 }
 ```
 
-**Attack types in Naruto d20:** only weapon attacks are used —
-`mwak` (melee) and `rwak` (ranged) — and they roll attacks on **DEX** with
-**STR** for damage (`ability.attack = "dex"`, `ability.damage = "str"`). PF1e's *spell* attack types
-(`msak`/`rsak`) are **not** used: they key off a spellcasting class ability that
-techniques don't have. Non-attack actions use `spellsave`/`save`/`heal`/`other`.
+**Attack types in Naruto d20:** only weapon attack action types are used —
+`mwak` (melee) and `rwak` (ranged). They roll attacks on **DEX**
+(`ability.attack = "dex"`). If the action deals damage, that damage uses
+**STR** (`ability.damage = "str"`). Some melee touch techniques only roll an
+attack to apply a save/effect and have no damage block. PF1e's *spell* attack
+types (`msak`/`rsak`) are **not** used: they key off a spellcasting class
+ability that techniques don't have. Non-attack actions use
+`spellsave`/`save`/`heal`/`other`.
 
 ## Transform scripts (`tools/`)
 
@@ -75,6 +78,7 @@ techniques don't have. Non-attack actions use `spellsave`/`save`/`heal`/`other`.
 | `add-actions.mjs` | `npm run add-actions` | Generates `system.actions[0]` for techniques from their flat fields (range, save, damage in description, …). **Skips** any technique that already has actions (use `--force` to override, `--dry-run` to preview). |
 | `fix-action-ids.mjs` | `npm run fix-action-ids` | Rewrites invalid/non-alphanumeric `system.actions[*]._id` values so PF1e can resolve the action reliably. `--dry-run` to preview. |
 | `fix-spell-attacks.mjs` | `npm run fix-spell-attacks` | One-off cleanup: rewrites any `actionType: "rsak" → "rwak"` and `"msak" → "mwak"`, attaching the DEX/STR `ability` block. Idempotent — only touches matching action types. `--dry-run` to preview. |
+| `validate-compendia.mjs` | `npm run validate:compendia` | Validates source JSON structure for techniques, feats and technique buffs: item types, IDs, action/change/link shape, technique rank/complexity/discipline, `weaponAttack` config and automation buff matches. Use `-- --strict-warnings` to fail on warnings too. |
 
 Convention for new transforms: scan `packs/_source/techniques/`, only rewrite a
 file when something actually changed, support `--dry-run`, and print a summary.
@@ -87,6 +91,7 @@ npm run unpack                    # only if you must resync source from the DB f
 node tools/<your-transform>.mjs --dry-run   # preview
 node tools/<your-transform>.mjs             # apply to source JSON
 # review `git diff` on packs/_source/techniques/
+npm run validate:compendia
 npm run pack                      # rebuild packs/techniques/ (LevelDB)
 # F5 in Foundry to load the new pack
 ```
@@ -94,6 +99,7 @@ npm run pack                      # rebuild packs/techniques/ (LevelDB)
 ## Verification
 
 - `git diff --stat packs/_source/techniques/` shows the expected file count changed.
+- `npm run validate:compendia` exits with 0 errors before packing.
 - Grep the source to confirm the change, e.g.
   `grep -rl '"actionType": "rsak"' packs/_source/techniques/ | wc -l` → `0`.
 - After `npm run pack`, the LevelDB files under `packs/techniques/` are updated
