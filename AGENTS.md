@@ -4,7 +4,7 @@
 
 This is a Foundry VTT module for Pathfinder 1e. Runtime code lives in `scripts/` as ESM loaded directly by Foundry. Core hook wiring is in `scripts/main.mjs`; data models and calculations are in `scripts/data/`; UI listeners and sheet patches are in `scripts/ui/`; automation helpers are in `scripts/automation/`. Handlebars templates are under `templates/`, styles are split by UI area under `styles/`, localization in `lang/`, and icons in `icons/`.
 
-Compendium source JSON is under `packs/_source/{techniques,feats,technique-buffs}/`. Packed LevelDB data under `packs/` is runtime output; do not hand-edit it. Architecture notes and feature docs are in `README.md`, `CLAUDE.md`, and `docs/`.
+Compendium source JSON is under `packs/_source/{techniques,feats,technique-buffs}/`. Packed LevelDB data under `packs/` is runtime output; do not hand-edit it. `README.md` is product-facing (features, install, no code paths). Contributor reference (manual QA, compendium packing, buff-changes reference) lives in `docs/`, architectural invariants in `CLAUDE.md`. Per-feature implementation/refactor notes live in the gitignored, local-only `dev-notes/` directory.
 
 ## Build, Test, and Development Commands
 

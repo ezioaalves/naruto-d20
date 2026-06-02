@@ -209,27 +209,21 @@ And on the technique itself: `item.system.automation.enabled` (default `true`) a
 
 `registerNarutoSkills()` writes labels into `pf1.config.skills` during `pf1PostInit`. `ensureActorSkillEntries()` seeds `actor.system.skills[key]` with `{ ability, rank: 0 }` during `pf1PrepareBaseActorData` using `??=` so existing ranks are never overwritten. The governing ability per discipline can be changed on the PF1e Skills tab and is read back via `actor.system.skills[key].ability`.
 
-## Feature docs (`docs/`)
+## Docs
 
-Per-feature implementation notes live in `docs/` (English, kebab-case filenames). Each documents
-the goal, how it mirrors PF1e where relevant, the files touched, and manual verification steps.
-Read the matching doc before changing a feature. Use `docs/manual-qa.md` as the release/large-PR
-manual QA checklist, and `docs/refactor-tasks.md` for the completed refactor backlog/history.
+`docs/` holds contributor/dev reference only (English, kebab-case filenames):
 
-| Doc | Feature |
+| Doc | Purpose |
 |---|---|
-| [`docs/technique-header-buttons.md`](docs/technique-header-buttons.md) | Create / Browse buttons on each Rank header of the Chakra tab |
-| [`docs/technique-compendium-browser.md`](docs/technique-compendium-browser.md) | Custom Application V1 Compendium Browser for techniques (replaces the native pack window) |
-| [`docs/technique-medkit.md`](docs/technique-medkit.md) | Per-actor "medkit": detect out-of-date embedded techniques (content diff) and re-sync from the compendium |
-| [`docs/technique-dc-buffs.md`](docs/technique-dc-buffs.md) | Technique save-DC buff targets (global + per-discipline), mirroring spell DC |
-| [`docs/technique-mastery.md`](docs/technique-mastery.md) | `mastery` field — caster-level offset (`@cl`) + perform bonus |
-| [`docs/technique-learning.md`](docs/technique-learning.md) | Learning progression, Failure Insight, training blocks, and Action Point flow |
-| [`docs/technique-drop-duplication-fix.md`](docs/technique-drop-duplication-fix.md) | Fix for techniques being added twice on drop (`stopPropagation` vs pf1's native sheet drop) |
-| [`docs/chakra-tooltips-tap-reserves.md`](docs/chakra-tooltips-tap-reserves.md) | Chakra Pool/Reserve max tooltips (from sources), Temp chakra field, Tap Reserves roll dialog |
-| [`docs/chakra-conditions.md`](docs/chakra-conditions.md) | Low Reserves, Chakra Depletion, Emergency Transfer, and rest recovery behavior |
-| [`docs/auto-add-buffs-performance.md`](docs/auto-add-buffs-performance.md) | Auto-add-buffs performance diagnosis and cache strategy |
-| [`docs/compendium-source-packing.md`](docs/compendium-source-packing.md) | Source JSON ↔ packed LevelDB workflow |
-| [`docs/manual-qa.md`](docs/manual-qa.md) | Manual QA checklist by feature |
+| [`docs/manual-qa.md`](docs/manual-qa.md) | Manual QA checklist by feature — run before a release or large PR |
+| [`docs/compendium-source-packing.md`](docs/compendium-source-packing.md) | Source JSON ↔ packed LevelDB workflow (`npm run pack` / `unpack`) |
+| [`docs/pf1-buff-changes-reference.md`](docs/pf1-buff-changes-reference.md) | PF1e buff *changes* reference for authoring technique automation |
+
+Per-feature **implementation notes** (how each feature/refactor was built — technique header
+buttons, compendium browser, medkit, DC buffs, mastery, learning, drop-dup fix, chakra
+tooltips/conditions, auto-add-buffs performance, refactor backlog, etc.) now live in
+`dev-notes/` at the repo root. That directory is **gitignored / local-only** — it is not in
+fresh clones. Read the matching note there before changing a feature if you have it locally.
 
 ## Key references
 

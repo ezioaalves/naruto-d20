@@ -8,3 +8,9 @@ public/packs/
 
 # One-time pack migration backup (safe to delete after verifying in Foundry)
 .pack-ldb-backup/
+
+# Local implementation/refactor notes (per-feature build history; not part of the repo)
+dev-notes/
+
+# Claude Code memory (does not belong in the module repo)
+memory/

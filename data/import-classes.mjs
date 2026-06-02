@@ -1,7 +1,8 @@
 /**
  * Import Classes DB macro — paste this into a Foundry Macro (script type) and run as GM.
  *
- * Prerequisites: the following packs must already be declared in module.json:
+ * Prerequisites: this is a local-only workflow. The following packs must exist in your
+ * working copy and be declared in module.json before you run the macro:
  *   { "name": "classes",         "label": "Naruto Classes",          "type": "Item", "system": "pf1" }
  *   { "name": "class-abilities", "label": "Naruto Class Abilities",  "type": "Item", "system": "pf1" }
  *
