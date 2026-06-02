@@ -19,7 +19,6 @@ export function registerTechniqueListListeners() {
     const chakraTab = $html.find(".tab.chakra");
     if (!chakraTab.length) return;
 
-    registerRowNameCapture(chakraTab);
     registerMedkitListeners(chakraTab, app.actor);
     registerFilterListeners(chakraTab);
     registerDropListeners(chakraTab, app.actor);
@@ -27,18 +26,6 @@ export function registerTechniqueListListeners() {
     registerUseLearnOpenListeners(chakraTab, app.actor);
     registerBrowserListeners(chakraTab);
   });
-}
-
-function registerRowNameCapture(chakraTab) {
-  chakraTab[0].addEventListener(
-    "click",
-    (ev) => {
-      if (!(ev.target instanceof Element)) return;
-      if (!ev.target.closest(".technique-row .item-name")) return;
-      ev.stopPropagation();
-    },
-    { capture: true },
-  );
 }
 
 function registerMedkitListeners(chakraTab, actor) {
