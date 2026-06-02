@@ -1,6 +1,22 @@
 import { MODULE_ID } from "../constants.mjs";
 import { learnBuffPath, chakraPoolMaxBonusPath, chakraReserveMaxBonusPath } from "../flag-paths.mjs";
 
+const AFFINITY_DESCRIPTOR_ALIASES = {
+    Earth: ["Earth"],
+    Fire: ["Fire"],
+    Lightning: ["Electric", "Lightning"],
+    Water: ["Water"],
+    Wind: ["Air", "Wind"],
+};
+
+const AFFINITY_SUBTYPE_ALIASES = {
+    Earth: ["Doton", "Earth"],
+    Fire: ["Katon", "Fire"],
+    Lightning: ["Raiton", "Lightning"],
+    Water: ["Suiton", "Water"],
+    Wind: ["Fuuton", "Futon", "Wind"],
+};
+
 /**
  * Build the breakdown of a learn check for both the d20Roll parts array and
  * pf1's extended-tooltip sources list.
@@ -14,9 +30,13 @@ import { learnBuffPath, chakraPoolMaxBonusPath, chakraReserveMaxBonusPath } from
  *
  * @param {Actor}  actor
  * @param {string} key   Learn discipline key (ckc | fui | gnj | nin | tai).
+ * @param {object} [options]
+ * @param {Item}   [options.item] Technique being learned. When provided,
+ * conditional affinity bonuses can be resolved against its descriptors.
+ * @param {boolean} [options.includeConditional=false]
  * @returns {{parts: string[], sources: object[]}|null}
  */
-export function buildLearnCheckBreakdown(actor, key) {
+export function buildLearnCheckBreakdown(actor, key, { item = null, includeConditional = false } = {}) {
     const data = actor.flags?.[MODULE_ID]?.learn?.[key];
     if (!data) return null;
 
@@ -51,7 +71,53 @@ export function buildLearnCheckBreakdown(actor, key) {
         sources.push({ name: "Misc Bonus", value: data.miscBonus, builtIn: false });
     }
 
+    const affinity = includeConditional ? resolveNinjutsuAffinityBonus(actor, key, item) : null;
+    if (affinity) {
+        parts.push(`${affinity.value}[${affinity.label}]`);
+        sources.push({ name: affinity.label, value: affinity.value, builtIn: true });
+    }
+
     return { parts, sources };
+}
+
+function resolveNinjutsuAffinityBonus(actor, key, item) {
+    if (key !== "nin") return null;
+
+    const bonus = Number(actor.flags?.[MODULE_ID]?.learn?.nin?.conditional ?? 0) || 0;
+    if (!bonus) return null;
+
+    const primary = String(actor.flags?.[MODULE_ID]?.chakra?.nature?.primary ?? "").trim();
+    if (!primary) return null;
+
+    if (item && !techniqueMatchesPrimaryAffinity(item, primary)) return null;
+
+    return {
+        value: bonus,
+        label: `Primary Affinity (${primary})`,
+    };
+}
+
+function techniqueMatchesPrimaryAffinity(item, primary) {
+    if (item.system?.discipline !== "Ninjutsu") return false;
+
+    const descriptorAliases = AFFINITY_DESCRIPTOR_ALIASES[primary] ?? [primary];
+    const descriptors = normalizeStringCollection(item.system?.descriptors);
+    if (descriptorAliases.some(alias => descriptors.has(alias.toLowerCase()))) return true;
+
+    const subtype = String(item.system?.subtype ?? "").trim().toLowerCase();
+    if (!subtype) return false;
+
+    const subtypeAliases = AFFINITY_SUBTYPE_ALIASES[primary] ?? [primary];
+    return subtypeAliases.some(alias => subtype === alias.toLowerCase());
+}
+
+function normalizeStringCollection(value) {
+    const values = value instanceof Set
+        ? Array.from(value)
+        : Array.isArray(value)
+            ? value
+            : Object.values(value ?? {});
+    return new Set(values.map(v => String(v ?? "").trim().toLowerCase()).filter(Boolean));
 }
 
 /**

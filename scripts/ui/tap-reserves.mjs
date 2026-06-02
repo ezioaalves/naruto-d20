@@ -1,4 +1,5 @@
 import { MODULE_ID } from "../constants.mjs";
+import { chakraPoolTempPath, chakraReserveValuePath } from "../flag-paths.mjs";
 import { buildLearnCheckBreakdown } from "../data/bonus-sources.mjs";
 import { checkAndUpdateConditions } from "../data/chakra-conditions.mjs";
 
@@ -32,7 +33,7 @@ export class TapReservesDialog extends Application {
             id:       "tap-reserves-dialog",
             classes:  ["pf1", "dialog"],
             template: `modules/${MODULE_ID}/templates/actor/tap-reserves-dialog.hbs`,
-            title:    "Tap Reserves",
+            title:    game.i18n.localize("NarutoD20.App.TapReserves"),
             width:    380,
             height:   "auto",
         });
@@ -98,12 +99,12 @@ export class TapReservesDialog extends Application {
         // ── Validation ─────────────────────────────────────────────────
         const reserveAvailable = this.actor.flags?.[MODULE_ID]?.chakra?.reserve?.value ?? 0;
         if (amount < 1) {
-            ui.notifications.warn("Amount to tap must be at least 1.");
+            ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.TapMinimum"));
             return;
         }
         if (amount > reserveAvailable) {
             ui.notifications.warn(
-                `Not enough Chakra Reserve (have ${reserveAvailable}, requested ${amount}).`
+                game.i18n.format("NarutoD20.Notifications.TapNotEnoughReserve", { have: reserveAvailable, requested: amount })
             );
             return;
         }
@@ -123,7 +124,7 @@ export class TapReservesDialog extends Application {
 
         // ── Flavor (card title) ────────────────────────────────────────
         const sealText = seal !== "none" ? `, ${SEAL_LABEL[seal]}` : "";
-        const flavor = `Tap Reserves — ${amount} chakra${sealText}`;
+        const flavor = game.i18n.format("NarutoD20.Cards.TapReservesFlavor", { amount, seal: sealText });
 
         // ── Roll via pf1's d20Roll (skipDialog so our dialog is the only one)
         // pf1.dice.d20Roll returns a ChatMessage when chatMessage:true (default).
@@ -153,8 +154,8 @@ export class TapReservesDialog extends Application {
             const newTemp    = (nData.pool?.temp ?? 0) + amount;
 
             await this.actor.update({
-                [`flags.${MODULE_ID}.chakra.reserve.value`]: newReserve,
-                [`flags.${MODULE_ID}.chakra.pool.temp`]:     newTemp,
+                [chakraReserveValuePath]: newReserve,
+                [chakraPoolTempPath]:     newTemp,
             });
 
             // Re-evaluate chakra conditions — draining the reserve may trigger

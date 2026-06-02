@@ -15,10 +15,8 @@ function characterLevel(actor) {
     return Number(actor.system.details?.level?.value ?? actor.system.details?.cr?.total ?? 0) || 0;
 }
 
-function escapeHTML(value) {
-    const div = document.createElement("div");
-    div.textContent = String(value ?? "");
-    return div.innerHTML;
+function blockUnit(count) {
+    return game.i18n.localize(count === 1 ? "NarutoD20.Cards.Block" : "NarutoD20.Cards.Blocks");
 }
 
 function getLearningMode() {
@@ -130,7 +128,7 @@ function availableTrainingChakra(actor) {
 }
 
 function warnInsufficientTrainingChakra(actor, amount, available = availableTrainingChakra(actor)) {
-    ui.notifications.warn(`${actor.name}: learning requires ${amount} training chakra, but only ${available} is available.`);
+    ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.TrainingChakraRequired", { actor: actor.name, amount, available }));
 }
 
 function canPayTrainingChakra(actor, amount) {
@@ -168,13 +166,14 @@ function rollTotal(result) {
     return result?.rolls?.[0]?.total ?? result?.roll?.total ?? result?.total ?? null;
 }
 
-async function postLearningCard(actor, item, { title, body, cssClass = "", flags = null }) {
+async function postLearningCard(actor, item, { title, lead = "", footer = "", cssClass = "", flags = null }) {
+    const content = await foundry.applications.handlebars.renderTemplate(
+        `modules/${MODULE_ID}/templates/chat/learning-result.hbs`,
+        { title, lead, footer, cssClass },
+    );
     const data = {
         speaker: ChatMessage.implementation.getSpeaker({ actor }),
-        content: `<div class="naruto-technique-card learning ${cssClass}">
-                    <header><h3>${escapeHTML(title)}</h3></header>
-                    ${body}
-                  </div>`,
+        content,
     };
     if (flags) data.flags = { [MODULE_ID]: { learn: flags } };
     await ChatMessage.create(data);
@@ -216,9 +215,9 @@ async function expireInterruptedTraining(item, learning) {
     });
 
     await postLearningCard(item.actor, item, {
-        title: `${item.name} training interrupted`,
+        title: game.i18n.format("NarutoD20.Cards.Learn.TrainingInterruptedTitle", { name: item.name }),
         cssClass: "failed",
-        body: `<p>More than 30 days passed since the last training block. Learning progress is lost before the new attempt.</p>`,
+        lead: game.i18n.localize("NarutoD20.Cards.Learn.TrainingInterruptedLead"),
     });
 
     return {
@@ -234,68 +233,108 @@ async function expireInterruptedTraining(item, learning) {
 }
 
 export async function attemptLearnTechnique(item) {
-    const actor = item.actor;
-    if (!actor) {
-        ui.notifications.warn("Equip this technique on an actor to learn it.");
-        return;
-    }
-    if (!actor.isOwner) {
-        ui.notifications.warn(`${actor.name}: you do not have permission to update this actor.`);
+    const actor = validateLearningActor(item);
+    if (!actor) return;
+
+    const learning = item.system.learning ?? {};
+    if (!validateLearningState(item, actor, learning)) return;
+
+    const skillKey = DISCIPLINE_SKILL_MAP[item.system.discipline];
+    if (!skillKey) {
+        await learnUnmappedTechnique(item, actor, learning);
         return;
     }
 
-    const learning = item.system.learning ?? {};
+    const mode = getLearningMode();
+    if (!validateLearningSkillAndChakra(item, actor, skillKey, mode)) return;
+
+    const activeLearning = await prepareActiveLearning(actor, item, learning);
+    const roll = await rollLearnCheck(item, actor, skillKey, activeLearning);
+    if (!roll) return;
+
+    await resolveLearnAttempt(item, actor, {
+        skillKey,
+        mode,
+        baseLearning: activeLearning,
+        total: roll.total,
+        apBonus: roll.apBonus,
+    });
+}
+
+function validateLearningActor(item) {
+    const actor = item.actor;
+    if (!actor) {
+        ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.EquipToLearn"));
+        return null;
+    }
+    if (!actor.isOwner) {
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NoPermissionUpdate", { actor: actor.name }));
+        return null;
+    }
+    return actor;
+}
+
+function validateLearningState(item, actor, learning) {
     if (learning.learned) {
-        ui.notifications.info(`${item.name}: already learned.`);
-        return;
+        ui.notifications.info(game.i18n.format("NarutoD20.Notifications.AlreadyLearned", { name: item.name }));
+        return false;
     }
 
     const rank = Number(item.system.rank ?? 1) || 1;
     const level = characterLevel(actor);
     if (rank > level) {
-        ui.notifications.warn(`${item.name}: rank ${rank} is higher than ${actor.name}'s level ${level}.`);
-        return;
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.RankTooHigh", { name: item.name, rank, actor: actor.name, level }));
+        return false;
     }
 
-    const skillKey = DISCIPLINE_SKILL_MAP[item.system.discipline];
-    if (!skillKey) {
-        await item.update({
-            "system.learning.learned": true,
-            "system.learning.progress": getLearningTargetProgress(item),
-            "system.learning.attemptsUsed": learning.attemptsUsed ?? 0,
-            "system.learning.failureInsight": 0,
-        });
-        await actor.update({ [learningCurrentTechniqueIdPath]: null });
-        await postLearningCard(actor, item, {
-            title: `${item.name} learned`,
-            cssClass: "success",
-            body: `<p>${escapeHTML(item.system.discipline || "Unmapped discipline")} has no mapped learn skill yet, so this technique is treated as learned for phase 1.</p>`,
-        });
-        return;
-    }
+    return true;
+}
 
+async function learnUnmappedTechnique(item, actor, learning) {
+    await item.update({
+        "system.learning.learned": true,
+        "system.learning.progress": getLearningTargetProgress(item),
+        "system.learning.attemptsUsed": learning.attemptsUsed ?? 0,
+        "system.learning.failureInsight": 0,
+    });
+    await actor.update({ [learningCurrentTechniqueIdPath]: null });
+    await postLearningCard(actor, item, {
+        title: game.i18n.format("NarutoD20.Cards.Learn.LearnedTitle", { name: item.name }),
+        cssClass: "success",
+        lead: game.i18n.format("NarutoD20.Cards.Learn.NoSkillLead", {
+            discipline: item.system.discipline || game.i18n.localize("NarutoD20.Cards.Learn.UnmappedDiscipline"),
+        }),
+    });
+}
+
+function validateLearningSkillAndChakra(item, actor, skillKey, mode) {
     const ranks = Number(actor.system.skills?.[skillKey]?.rank ?? 0) || 0;
     if (ranks < 1) {
-        ui.notifications.warn(`${actor.name}: at least 1 rank in ${pf1.config.skills?.[skillKey] ?? skillKey} is required to learn ${item.name}.`);
-        return;
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.SkillRankRequired", { actor: actor.name, skill: pf1.config.skills?.[skillKey] ?? skillKey, name: item.name }));
+        return false;
     }
 
-    const mode = getLearningMode();
     const minimumChakraCost = trainingChakraCost(actor, minimumTrainingBlocksForRoll(item, mode));
     if (!canPayTrainingChakra(actor, minimumChakraCost)) {
         warnInsufficientTrainingChakra(actor, minimumChakraCost);
-        return;
+        return false;
     }
 
+    return true;
+}
+
+async function prepareActiveLearning(actor, item, learning) {
     const switchedLearning = await resetFailureInsightForDifferentTechnique(actor, item, learning);
-    const activeLearning = await expireInterruptedTraining(item, switchedLearning);
+    return expireInterruptedTraining(item, switchedLearning);
+}
+
+async function rollLearnCheck(item, actor, skillKey, activeLearning) {
     const failureInsight = Math.min(5, Math.max(0, Number(activeLearning.failureInsight ?? 0) || 0));
     const apBonus = Math.max(0, Number(activeLearning.actionPointBonus ?? 0) || 0);
-
-    const breakdown = buildLearnCheckBreakdown(actor, skillKey);
+    const breakdown = buildLearnCheckBreakdown(actor, skillKey, { item, includeConditional: true });
     if (!breakdown) {
-        ui.notifications.warn(`${actor.name}: learn check data for ${skillKey} is not ready.`);
-        return;
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.LearnDataNotReady", { actor: actor.name, skill: skillKey }));
+        return null;
     }
 
     const parts = [...breakdown.parts];
@@ -308,21 +347,21 @@ export async function attemptLearnTechnique(item) {
     // pass through a button override. Rules disallow Take 20; GMs must enforce
     // that table rule until we replace this with a custom dialog.
     const result = await pf1.dice.d20Roll({
-        flavor: `Learn: ${item.name}`,
+        flavor: game.i18n.format("NarutoD20.Cards.Learn.Flavor", { name: item.name }),
         parts,
         rollData: actor.getRollData?.() ?? {},
         speaker: ChatMessage.implementation.getSpeaker({ actor }),
         dc: learnDC,
     });
-    if (!result) return;
+    if (!result) return null;
 
     const total = rollTotal(result);
     if (!Number.isFinite(total)) {
-        ui.notifications.warn(`${item.name}: could not read learn roll total.`);
-        return;
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.CouldNotReadRoll", { name: item.name }));
+        return null;
     }
 
-    await resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning: activeLearning, total, apBonus });
+    return { total, apBonus };
 }
 
 /**
@@ -333,6 +372,25 @@ export async function attemptLearnTechnique(item) {
  * is the chat card being replaced on re-evaluation.
  */
 async function resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning, total, apBonus = 0, supersedes = null, apRollText = "" }) {
+    const result = buildLearnAttemptResult(item, actor, { skillKey, mode, baseLearning, total, apBonus });
+    const chakraDeduction = await applyTrainingChakraDeduction(actor, result.chakraCost);
+    if (!chakraDeduction.paid) return;
+
+    const now = trainingTimestamp();
+    await persistLearnAttemptResult(item, actor, result, now);
+
+    if (supersedes) { try { await supersedes.delete(); } catch (_e) { /* card already gone */ } }
+
+    await postLearnAttemptResultCard(actor, item, {
+        result,
+        baseLearning,
+        chakraDeduction,
+        now,
+        apRollText,
+    });
+}
+
+function buildLearnAttemptResult(item, actor, { skillKey, mode, baseLearning, total, apBonus }) {
     const learnDC = Number(item.system.derived?.learnDC ?? 10) || 10;
     const targetProgress = getLearningTargetProgress(item, mode);
     const maxAttempts = getLearningMaxAttempts(actor, skillKey);
@@ -344,12 +402,6 @@ async function resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning, 
     const margin = total - learnDC;
     const trainingBlocks = trainingBlocksForRoll(item, mode, margin);
     const chakraCost = trainingChakraCost(actor, trainingBlocks);
-    const chakraDeduction = await applyTrainingChakraDeduction(actor, chakraCost);
-    if (!chakraDeduction.paid) return;
-
-    const totalTrainingBlocks = (Number(baseLearning.trainingBlocks ?? 0) || 0) + trainingBlocks;
-    const totalChakraSpent = (Number(baseLearning.chakraSpent ?? 0) || 0) + chakraCost;
-    const now = trainingTimestamp();
 
     let progress = oldProgress;
     let nextFailureInsight = baseFailureInsight;
@@ -373,73 +425,122 @@ async function resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning, 
     }
 
     const runEnded = learned || resetRun;
-    const nextApBonus = runEnded ? 0 : apBonus;   // AP persists through the run, clears at run end (no refund)
-    const finalAttemptsUsed = resetRun ? 0 : attemptsUsed;
 
+    return {
+        skillKey,
+        mode,
+        total,
+        apBonus,
+        learnDC,
+        targetProgress,
+        maxAttempts,
+        attemptsUsed,
+        success,
+        trainingBlocks,
+        chakraCost,
+        totalTrainingBlocks: (Number(baseLearning.trainingBlocks ?? 0) || 0) + trainingBlocks,
+        totalChakraSpent: (Number(baseLearning.chakraSpent ?? 0) || 0) + chakraCost,
+        progress,
+        nextFailureInsight,
+        learned,
+        resetRun,
+        runEnded,
+        award,
+        // AP persists through the run, clears at run end (no refund).
+        nextApBonus: runEnded ? 0 : apBonus,
+        finalAttemptsUsed: resetRun ? 0 : attemptsUsed,
+    };
+}
+
+async function persistLearnAttemptResult(item, actor, result, now) {
     await item.update({
-        "system.learning.learned": learned,
-        "system.learning.progress": progress,
-        "system.learning.attemptsUsed": finalAttemptsUsed,
-        "system.learning.failureInsight": nextFailureInsight,
-        "system.learning.trainingBlocks": totalTrainingBlocks,
-        "system.learning.chakraSpent": totalChakraSpent,
+        "system.learning.learned": result.learned,
+        "system.learning.progress": result.progress,
+        "system.learning.attemptsUsed": result.finalAttemptsUsed,
+        "system.learning.failureInsight": result.nextFailureInsight,
+        "system.learning.trainingBlocks": result.totalTrainingBlocks,
+        "system.learning.chakraSpent": result.totalChakraSpent,
         "system.learning.lastTrainingAt": now,
-        "system.learning.actionPointBonus": nextApBonus,
+        "system.learning.actionPointBonus": result.nextApBonus,
     });
 
-    if (learned) await actor.update({ [learningCurrentTechniqueIdPath]: null });
+    if (result.learned) await actor.update({ [learningCurrentTechniqueIdPath]: null });
+}
 
-    if (supersedes) { try { await supersedes.delete(); } catch (_e) { /* card already gone */ } }
-
+function buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraDeduction, now }) {
     // Re-eval flags: only offer "Add Action Point" while the run is open and no AP is committed yet.
-    const cardFlags = (!runEnded && apBonus === 0)
-        ? {
-            itemId: item.id,
-            actorUuid: actor.uuid,
-            skillKey, mode,
-            baseLearning: foundry.utils.deepClone(baseLearning),
-            baseTotalNoAp: total,
-            deducted: { fromPool: chakraDeduction.fromPool, fromReserve: chakraDeduction.fromReserve },
-            result: { progress, attemptsUsed: finalAttemptsUsed, failureInsight: nextFailureInsight, lastTrainingAt: now },
-        }
-        : null;
+    if (result.runEnded || result.apBonus !== 0) return null;
 
-    const apLine = apRollText ? `${escapeHTML(apRollText)} → ` : "";
-    const chakraLine = `${chakraCost}${chakraDeduction.deducted ? ` (${chakraDeduction.deducted} deducted)` : ""}`;
+    return {
+        itemId: item.id,
+        actorUuid: actor.uuid,
+        skillKey: result.skillKey,
+        mode: result.mode,
+        baseLearning: foundry.utils.deepClone(baseLearning),
+        baseTotalNoAp: result.total,
+        deducted: { fromPool: chakraDeduction.fromPool, fromReserve: chakraDeduction.fromReserve },
+        result: {
+            progress: result.progress,
+            attemptsUsed: result.finalAttemptsUsed,
+            failureInsight: result.nextFailureInsight,
+            lastTrainingAt: now,
+        },
+    };
+}
 
-    if (learned) {
+async function postLearnAttemptResultCard(actor, item, { result, baseLearning, chakraDeduction, now, apRollText }) {
+    const apLine = apRollText ? `${apRollText} → ` : "";
+    const chakraLine = chakraDeduction.deducted
+        ? game.i18n.format("NarutoD20.Cards.Learn.ChakraDeducted", { cost: result.chakraCost, deducted: chakraDeduction.deducted })
+        : `${result.chakraCost}`;
+    const blocksUnit = blockUnit(result.trainingBlocks);
+
+    const trainingFooter = game.i18n.format("NarutoD20.Cards.Learn.TrainingFooter", {
+        blocks: result.trainingBlocks, unit: blocksUnit, chakra: chakraLine,
+    });
+
+    if (result.learned) {
         await postLearningCard(actor, item, {
-            title: `${item.name} learned`,
+            title: game.i18n.format("NarutoD20.Cards.Learn.LearnedTitle", { name: item.name }),
             cssClass: "success",
-            body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. Progress ${progress}/${targetProgress}.</p>
-                   <footer>Training time: +${trainingBlocks} block${trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.</footer>`,
+            lead: game.i18n.format("NarutoD20.Cards.Learn.CheckProgress", {
+                ap: apLine, total: result.total, dc: result.learnDC, progress: result.progress, target: result.targetProgress,
+            }),
+            footer: trainingFooter,
         });
         return;
     }
 
-    if (resetRun) {
+    if (result.resetRun) {
         await postLearningCard(actor, item, {
-            title: `${item.name} learning failed`,
+            title: game.i18n.format("NarutoD20.Cards.Learn.LearningFailedTitle", { name: item.name }),
             cssClass: "failed",
-            body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. Attempts ${attemptsUsed}/${maxAttempts}; progress is lost and the run starts over.</p>
-                   <footer>Training time: +${trainingBlocks} block${trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.</footer>`,
+            lead: game.i18n.format("NarutoD20.Cards.Learn.CheckReset", {
+                ap: apLine, total: result.total, dc: result.learnDC, used: result.attemptsUsed, max: result.maxAttempts,
+            }),
+            footer: trainingFooter,
         });
         return;
     }
 
-    const attemptText = mode === LEARNING_MODES.FOUR_HOUR_BLOCKS
-        ? `${attemptsUsed} block${attemptsUsed === 1 ? "" : "s"}`
-        : `${attemptsUsed}/${maxAttempts} attempts`;
-    const resultText = success
-        ? `Success, +${award} progress.`
-        : `Failure, Failure Insight is now +${nextFailureInsight}.`;
+    const attemptText = result.mode === LEARNING_MODES.FOUR_HOUR_BLOCKS
+        ? game.i18n.format("NarutoD20.Cards.Learn.BlocksCount", { count: result.attemptsUsed, unit: blockUnit(result.attemptsUsed) })
+        : game.i18n.format("NarutoD20.Cards.Learn.AttemptsCount", { used: result.attemptsUsed, max: result.maxAttempts });
+    const resultText = result.success
+        ? game.i18n.format("NarutoD20.Cards.Learn.ResultSuccess", { award: result.award })
+        : game.i18n.format("NarutoD20.Cards.Learn.ResultFailure", { insight: result.nextFailureInsight });
 
     await postLearningCard(actor, item, {
-        title: `Learning ${item.name}`,
-        cssClass: success ? "success" : "failed",
-        body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. ${resultText}</p>
-               <footer>Progress ${progress}/${targetProgress}; ${attemptText}; +${trainingBlocks} training block${trainingBlocks === 1 ? "" : "s"}; training chakra ${chakraLine}.</footer>`,
-        flags: cardFlags,
+        title: game.i18n.format("NarutoD20.Cards.Learn.LearningTitle", { name: item.name }),
+        cssClass: result.success ? "success" : "failed",
+        lead: game.i18n.format("NarutoD20.Cards.Learn.CheckResult", {
+            ap: apLine, total: result.total, dc: result.learnDC, result: resultText,
+        }),
+        footer: game.i18n.format("NarutoD20.Cards.Learn.AttemptFooter", {
+            progress: result.progress, target: result.targetProgress, attempts: attemptText,
+            blocks: result.trainingBlocks, unit: blockUnit(result.trainingBlocks), chakra: chakraLine,
+        }),
+        flags: buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraDeduction, now }),
     });
 }
 
@@ -493,13 +594,13 @@ export async function addActionPointToLearnCard(message) {
     const { flags, actor, item } = ctx;
 
     if (!learnCardCanAddAp(message)) {
-        ui.notifications.warn(`${item.name}: cannot add an Action Point to this learn roll (already spent, learned, or superseded by a newer roll).`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.CannotAddActionPoint", { name: item.name }));
         return;
     }
 
     const currentAp = Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0) || 0;
     if (currentAp < 1) {
-        ui.notifications.warn(`${actor.name} has no Action Points remaining.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NoActionPoints", { actor: actor.name }));
         return;
     }
 
@@ -508,7 +609,7 @@ export async function addActionPointToLearnCard(message) {
     const apBonus = Math.max(0, Number(apRoll.total) || 0);
     await apRoll.toMessage({
         speaker: ChatMessage.implementation.getSpeaker({ actor }),
-        flavor: `Action Point — Learn: ${item.name} (${currentAp} → ${currentAp - 1} remaining)`,
+        flavor: game.i18n.format("NarutoD20.Cards.Learn.ActionPointFlavor", { name: item.name, from: currentAp, to: currentAp - 1 }),
         rollMode: game.settings.get("core", "rollMode"),
     });
 
@@ -532,7 +633,7 @@ export async function addActionPointToLearnCard(message) {
         total: (Number(flags.baseTotalNoAp) || 0) + apBonus,
         apBonus,
         supersedes: message,
-        apRollText: `Action Point 1d6 = ${apBonus}`,
+        apRollText: game.i18n.format("NarutoD20.Cards.Learn.ActionPointRollText", { value: apBonus }),
     });
 }
 

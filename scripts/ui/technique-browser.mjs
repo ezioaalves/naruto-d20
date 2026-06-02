@@ -1,5 +1,17 @@
 import { MAIN_DISCIPLINES, MODULE_ID } from "../constants.mjs";
 import { COMPLEXITY_TABLE } from "../data/technique-model.mjs";
+import {
+    buildFilterGroup,
+    clearFilterSets,
+    registerBrowserSearch,
+    registerCheckboxFilterListeners,
+    registerClearFiltersListener,
+    registerEntryOpenListeners,
+    registerFilterCollapseListeners,
+    registerReloadListener,
+    registerUuidDragStartListeners,
+    restoreSearchFocus,
+} from "./browser-shared.mjs";
 
 const PACK_ID = `${MODULE_ID}.techniques`;
 
@@ -52,7 +64,7 @@ export class TechniqueCompendiumBrowser extends Application {
             top:      30,
             left:     40,
             resizable: true,
-            title:    "Browse Techniques",
+            title:    game.i18n.localize("NarutoD20.App.BrowseTechniques"),
         });
     }
 
@@ -73,6 +85,7 @@ export class TechniqueCompendiumBrowser extends Application {
     #loading = true;
     /** Restore search focus after re-render when true */
     #focusSearch = false;
+    #searchSelection = null;
 
     constructor(options = {}) {
         super(options);
@@ -86,7 +99,7 @@ export class TechniqueCompendiumBrowser extends Application {
         if (this.#entries && !force) return;
         const pack = game.packs.get(PACK_ID);
         if (!pack) {
-            ui.notifications.warn("Technique compendium not found.");
+            ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.TechniqueCompendiumNotFound"));
             this.#entries = [];
             this.#loading = false;
             return;
@@ -105,7 +118,8 @@ export class TechniqueCompendiumBrowser extends Application {
     /** True if `entry` passes the current search + every active filter group. */
     #matches(entry) {
         const s = entry.system;
-        if (this.#query && !entry.name.toLowerCase().includes(this.#query)) return false;
+        const query = this.#query.toLowerCase().trim();
+        if (query && !entry.name.toLowerCase().includes(query)) return false;
 
         const { discipline, rank, complexity, special, components } = this.#filters;
         if (discipline.size && !discipline.has(s.discipline)) return false;
@@ -115,22 +129,6 @@ export class TechniqueCompendiumBrowser extends Application {
         if (special.size && ![...special].some((k) => s[k])) return false;
         if (components.size && ![...components].some((k) => s[k])) return false;
         return true;
-    }
-
-    #buildFilterGroup(id, label, choiceMap, activeSet) {
-        const choices = Object.entries(choiceMap).map(([key, choiceLabel]) => ({
-            key,
-            label:  choiceLabel,
-            active: activeSet.has(key),
-        }));
-        return {
-            id,
-            label,
-            choices,
-            active:      activeSet.size > 0,
-            activeCount: activeSet.size,
-            collapsed:   this.#collapsed.has(id) ? "collapsed" : "",
-        };
     }
 
     async getData() {
@@ -143,11 +141,11 @@ export class TechniqueCompendiumBrowser extends Application {
         const complexityChoices = Object.fromEntries(Object.keys(COMPLEXITY_TABLE).map((c) => [c, c]));
 
         const filters = [
-            this.#buildFilterGroup("discipline", "Discipline", disciplineChoices, this.#filters.discipline),
-            this.#buildFilterGroup("rank",       "Rank",       rankChoices,       this.#filters.rank),
-            this.#buildFilterGroup("complexity", "Complexity", complexityChoices, this.#filters.complexity),
-            this.#buildFilterGroup("special",    "Special",    SPECIAL_FLAGS,     this.#filters.special),
-            this.#buildFilterGroup("components", "Components", COMPONENT_FLAGS,   this.#filters.components),
+            buildFilterGroup("discipline", "Discipline", disciplineChoices, this.#filters.discipline, this.#collapsed),
+            buildFilterGroup("rank",       "Rank",       rankChoices,       this.#filters.rank,       this.#collapsed),
+            buildFilterGroup("complexity", "Complexity", complexityChoices, this.#filters.complexity, this.#collapsed),
+            buildFilterGroup("special",    "Special",    SPECIAL_FLAGS,     this.#filters.special,    this.#collapsed),
+            buildFilterGroup("components", "Components", COMPONENT_FLAGS,   this.#filters.components, this.#collapsed),
         ];
 
         return {
@@ -165,81 +163,31 @@ export class TechniqueCompendiumBrowser extends Application {
         const root = html[0];
 
         if (this.#focusSearch) {
-            const inp = root.querySelector('input[name="filter"]');
-            if (inp) {
-                inp.focus();
-                const len = inp.value.length;
-                inp.setSelectionRange(len, len);
-            }
+            restoreSearchFocus(root, this.#searchSelection);
             this.#focusSearch = false;
+            this.#searchSelection = null;
         }
 
-        const search = root.querySelector('input[name="filter"]');
-        if (search) {
-            let timer;
-            search.addEventListener("input", (ev) => {
-                clearTimeout(timer);
-                const value = ev.target.value.toLowerCase().trim();
-                timer = setTimeout(() => {
-                    this.#query = value;
-                    this.#focusSearch = true;
-                    this.render();
-                }, 200);
-            });
-        }
-
-        root.querySelectorAll('input[type="checkbox"][name^="filter."]').forEach((cb) => {
-            cb.addEventListener("change", (ev) => {
-                // name = "filter.<groupId>.choice.<key>"
-                const [, groupId, , key] = ev.target.name.split(".");
-                const set = this.#filters[groupId];
-                if (!set) return;
-                if (ev.target.checked) set.add(key);
-                else set.delete(key);
-                this.render();
-            });
+        registerBrowserSearch(root, ({ value, selection }) => {
+            this.#query = value;
+            this.#searchSelection = selection;
+            this.#focusSearch = true;
+            this.render();
         });
+        registerCheckboxFilterListeners(root, this.#filters, () => this.render());
+        registerFilterCollapseListeners(root, this.#collapsed);
+        registerEntryOpenListeners(root);
+        registerUuidDragStartListeners(root);
 
-        root.querySelectorAll(".filter h3").forEach((h3) => {
-            h3.style.cursor = "pointer";
-            h3.addEventListener("click", (ev) => {
-                if (ev.target.closest(".filter-count")) return;
-                const filterEl = h3.closest("[data-filter-id]");
-                const id = filterEl?.dataset.filterId;
-                if (!id) return;
-                if (this.#collapsed.has(id)) this.#collapsed.delete(id);
-                else this.#collapsed.add(id);
-                // Toggle class directly — no re-render keeps scroll position intact.
-                filterEl.querySelector(".filter-content")
-                    ?.classList.toggle("collapsed", this.#collapsed.has(id));
-            });
-        });
-
-        root.querySelectorAll(".entry-name a").forEach((a) => {
-            a.addEventListener("click", async (ev) => {
-                ev.preventDefault();
-                const uuid = ev.currentTarget.closest("[data-uuid]")?.dataset.uuid;
-                const doc = uuid ? await fromUuid(uuid) : null;
-                doc?.sheet?.render(true);
-            });
-        });
-
-        root.querySelectorAll("[data-uuid]").forEach((li) => {
-            li.addEventListener("dragstart", (ev) => {
-                const uuid = li.dataset.uuid;
-                if (!uuid) return;
-                ev.dataTransfer.setData("text/plain", JSON.stringify({ type: "Item", uuid }));
-            });
-        });
-
-        root.querySelector(".reload")?.addEventListener("click", async () => {
+        registerReloadListener(root, async () => {
             await this.#loadEntries({ force: true });
             this.render();
         });
 
-        root.querySelector(".clear-filters")?.addEventListener("click", () => {
+        registerClearFiltersListener(root, () => {
             this.#query = "";
-            for (const set of Object.values(this.#filters)) set.clear();
+            this.#searchSelection = null;
+            clearFilterSets(this.#filters);
             this.render();
         });
     }

@@ -99,8 +99,14 @@ export function prepareDerivedActorData(actor) {
     nData.chakra.pool.max = 2 + ((2 + conMod) * charLevel) + (Number(nData.chakra.pool.maxBonus) || 0);
     nData.chakra.reserve.max = (2 * charLevel) + (Number(nData.chakra.reserve.maxBonus) || 0);
 
-    // Elemental affinity: +1 Ninjutsu conditional per 5 levels starting at 1st
-    nData.learn.nin.conditional = charLevel >= 1 ? 1 + Math.floor((charLevel - 1) / 5) : 0;
+    // Elemental affinity: +1 Ninjutsu conditional per 5 levels starting at 1st.
+    // The bonus is situational and applies only when learning a Ninjutsu
+    // technique matching the actor's primary affinity, so it is kept out of
+    // learn.nin.total.
+    const primaryAffinity = String(nData.chakra.nature?.primary ?? "").trim();
+    nData.learn.nin.conditional = primaryAffinity && charLevel >= 1
+        ? 1 + Math.floor((charLevel - 1) / 5)
+        : 0;
 
     // Energy resistance from primary elemental affinity (5 at 10th, 10 at 15th, 15 at 20th)
     _applyElementalResistance(actor, nData, charLevel);

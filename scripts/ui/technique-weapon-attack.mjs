@@ -1,23 +1,98 @@
 import { getTechniqueCasterLevel } from "../data/technique-rolldata.mjs";
 
 const CONFIG_PREFIX = "weaponAttack";
+const DEFAULT_FILTER = "meleeWeapon";
+const SUPPORTED_MODES = new Set(["selected"]);
+const SUPPORTED_FILTERS = new Set(["meleeWeapon", "rangedWeapon", "unarmedOnly", "meleeOrUnarmed"]);
+const KNOWN_KEYS = new Set(["mode", "filter", "attackBonus", "damageBonus", "held", "charge"]);
 
-export function getTechniqueWeaponAttackConfig(item) {
+/**
+ * Read the `system.flags.dictionary.weaponAttack` config in both supported
+ * shapes — a nested object (`weaponAttack: { mode, filter, … }`) and dotted
+ * keys (`"weaponAttack.mode"`, …) — with the nested object taking precedence.
+ * Returns `{ present, values, keys, malformed }` so callers can validate.
+ */
+function readWeaponAttackRaw(item) {
     const dict = item.system?.flags?.dictionary ?? {};
-    const nested = dict[CONFIG_PREFIX] && typeof dict[CONFIG_PREFIX] === "object" ? dict[CONFIG_PREFIX] : {};
-    const read = (key) => nested[key] ?? dict[`${CONFIG_PREFIX}.${key}`];
+    const rawNested = dict[CONFIG_PREFIX];
+    const nested = rawNested && typeof rawNested === "object" ? rawNested : null;
+    const malformed = rawNested !== undefined && nested === null;
 
-    const mode = String(read("mode") ?? "").trim();
-    if (mode !== "selected") return null;
+    const dottedKeys = Object.keys(dict).filter((k) => k.startsWith(`${CONFIG_PREFIX}.`));
+    const present = malformed || nested !== null || dottedKeys.length > 0;
+
+    const keys = new Set();
+    const values = {};
+    if (nested) {
+        for (const k of Object.keys(nested)) { keys.add(k); values[k] = nested[k]; }
+    }
+    for (const dk of dottedKeys) {
+        const k = dk.slice(CONFIG_PREFIX.length + 1);
+        keys.add(k);
+        values[k] ??= dict[dk]; // nested wins (matches the original read() precedence)
+    }
+    return { present, values, keys, malformed };
+}
+
+/** Validate raw weaponAttack values, returning a usable config (or null) plus
+ *  human-readable warnings naming the offending field. */
+function parseWeaponAttackConfig({ values, keys, malformed }) {
+    const warnings = [];
+    const str = (key) => String(values[key] ?? "").trim();
+
+    if (malformed) warnings.push(`"${CONFIG_PREFIX}" must be an object or use dotted "${CONFIG_PREFIX}.*" keys`);
+    for (const k of keys) {
+        if (!KNOWN_KEYS.has(k)) warnings.push(`unknown field "${CONFIG_PREFIX}.${k}"`);
+    }
+
+    const mode = str("mode");
+    if (!mode) {
+        if (!malformed) warnings.push(`missing "${CONFIG_PREFIX}.mode" (expected "selected")`);
+        return { config: null, warnings };
+    }
+    if (!SUPPORTED_MODES.has(mode)) {
+        warnings.push(`unsupported "${CONFIG_PREFIX}.mode" = "${mode}" (expected "selected")`);
+        return { config: null, warnings };
+    }
+
+    let filter = str("filter") || DEFAULT_FILTER;
+    if (!SUPPORTED_FILTERS.has(filter)) {
+        warnings.push(`unsupported "${CONFIG_PREFIX}.filter" = "${filter}"; using "${DEFAULT_FILTER}"`);
+        filter = DEFAULT_FILTER;
+    }
+
+    const chargeRaw = str("charge").toLowerCase();
+    if (chargeRaw && chargeRaw !== "true" && chargeRaw !== "false") {
+        warnings.push(`"${CONFIG_PREFIX}.charge" should be "true" or "false" (got "${chargeRaw}")`);
+    }
 
     return {
-        mode,
-        filter:      String(read("filter") ?? "meleeWeapon").trim(),
-        attackBonus: String(read("attackBonus") ?? "").trim(),
-        damageBonus: String(read("damageBonus") ?? "").trim(),
-        held:        String(read("held") ?? "").trim(),
-        charge:      String(read("charge") ?? "").trim().toLowerCase() === "true",
+        config: {
+            mode,
+            filter,
+            attackBonus: str("attackBonus"),
+            damageBonus: str("damageBonus"),
+            held:        str("held"),
+            charge:      chargeRaw === "true",
+        },
+        warnings,
     };
+}
+
+function reportWeaponAttackWarnings(item, warnings) {
+    if (!warnings.length) return;
+    const issues = warnings.join("; ");
+    console.warn(`naruto-d20 | weaponAttack config on "${item.name}": ${issues}`);
+    ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.WeaponAttackConfig", { name: item.name, issues }));
+}
+
+export function getTechniqueWeaponAttackConfig(item) {
+    const raw = readWeaponAttackRaw(item);
+    if (!raw.present) return null; // no weaponAttack config → normal technique flow
+
+    const { config, warnings } = parseWeaponAttackConfig(raw);
+    reportWeaponAttackWarnings(item, warnings);
+    return config;
 }
 
 export async function rollSelectedWeaponAttackWithTechnique({ technique, actor, config, event }) {
@@ -54,7 +129,7 @@ export async function rollSelectedWeaponAttackWithTechnique({ technique, actor, 
 async function selectTechniqueWeaponAttack(actor, technique, config) {
     const choices = collectTechniqueWeaponAttackChoices(actor, config.filter);
     if (!choices.length) {
-        ui.notifications.warn(`${actor.name}: no valid weapon or attack found for ${technique.name}.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NoWeaponAttack", { actor: actor.name, name: technique.name }));
         return null;
     }
 
@@ -68,7 +143,7 @@ async function selectTechniqueWeaponAttack(actor, technique, config) {
 
         const content = renderWeaponAttackSelectorContent(choices);
         const dialog = new Dialog({
-            title: `Choose Attack - ${technique.name}`,
+            title: game.i18n.format("NarutoD20.App.ChooseAttack", { name: technique.name }),
             content,
             buttons: {
                 roll: {
@@ -140,7 +215,7 @@ function renderWeaponAttackSelectorContent(choices) {
     const rows = choices.map(({ item, action, kind }, index) => {
         const checked = index === 0 ? "checked" : "";
         const actionName = action.name && action.name !== item.name ? ` - ${escapeHTML(action.name)}` : "";
-        const kindLabel = kind === "weapon" ? "Weapon" : "Attack";
+        const kindLabel = game.i18n.localize(kind === "weapon" ? "NarutoD20.App.KindWeapon" : "NarutoD20.App.KindAttack");
         return `
             <label style="display:flex; align-items:center; gap:6px; margin:3px 0; cursor:pointer;">
                 <input type="radio" name="weapon-attack-choice" value="${index}" ${checked} style="flex-shrink:0; margin:0;">

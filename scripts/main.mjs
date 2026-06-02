@@ -15,7 +15,7 @@
  */
 
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
-import { BUFF_TARGETS } from "./flag-paths.mjs";
+import { BUFF_TARGETS, HERO_STAT_DEFAULTS, moduleFlagsPath } from "./flag-paths.mjs";
 import { createTechniqueDataModel } from "./data/technique-model.mjs";
 import { createTechniqueItemSheet } from "./ui/technique-sheet.mjs";
 import { registerDamageTypes } from "./data/damage-types.mjs";
@@ -67,6 +67,8 @@ Hooks.once("init", () => {
         `modules/${MODULE_ID}/templates/actor/technique-medkit.hbs`,
         `modules/${MODULE_ID}/templates/apps/technique-browser.hbs`,
         `modules/${MODULE_ID}/templates/apps/feat-browser.hbs`,
+        `modules/${MODULE_ID}/templates/chat/technique-perform.hbs`,
+        `modules/${MODULE_ID}/templates/chat/learning-result.hbs`,
     ]);
 
     // Namespaced equality helper for this module's templates — avoids colliding
@@ -202,11 +204,11 @@ Hooks.on("preCreateActor", (doc, data) => {
     if (!["character", "npc"].includes(data.type)) return;
     const existing = data.flags?.[MODULE_ID] ?? {};
     const patch = {};
-    for (const key of ["actionPoints", "reputation", "wealth", "eps"]) {
+    for (const { key } of HERO_STAT_DEFAULTS) {
         if (existing[key] === undefined) patch[key] = 0;
     }
     if (!foundry.utils.isEmpty(patch)) {
-        doc.updateSource({ [`flags.${MODULE_ID}`]: patch });
+        doc.updateSource({ [moduleFlagsPath]: patch });
     }
 });
 
@@ -253,9 +255,9 @@ async function _migrateActorFlags() {
     const migrate = async (actor) => {
         if (!["character", "npc"].includes(actor.type)) return;
         const updates = {};
-        for (const key of ["actionPoints", "reputation", "wealth", "eps"]) {
-            if (foundry.utils.getProperty(actor, `flags.${MODULE_ID}.${key}`) === undefined) {
-                updates[`flags.${MODULE_ID}.${key}`] = 0;
+        for (const { path } of HERO_STAT_DEFAULTS) {
+            if (foundry.utils.getProperty(actor, path) === undefined) {
+                updates[path] = 0;
             }
         }
         if (!foundry.utils.isEmpty(updates)) await actor.update(updates);

@@ -11,6 +11,7 @@
  */
 
 import { createActionId, isValidActionId } from "./action-ids.mjs";
+import { applyTechniqueSystemDefaults } from "./technique-defaults.mjs";
 
 /** Complexity lookup — Appendix B, Table B-1. */
 export const COMPLEXITY_TABLE = {
@@ -242,41 +243,7 @@ export function createTechniqueDataModel() {
         }
 
         prepareBaseData() {
-            this.description ??= {};
-            this.description.value ??= "";
-            this.description.summary ??= "";
-            this.description.instructions ??= "";
-
-            this.flags ??= {};
-            this.flags.boolean ??= {};
-            this.flags.dictionary ??= {};
-
-            this.links ??= {};
-            this.links.prerequisites ??= [];
-            this.links.supplements ??= [];
-            this.links.children ??= [];
-
-            this.tags ??= new Set();
-            this.descriptors ??= new Set();
-            this.changes ??= [];
-
-            if (this.isHijutsu) this.descriptors.add("Hijutsu");
-            if (this.isKinjutsu) this.descriptors.add("Kinjutsu");
-            if (this.isCombination) this.descriptors.add("Combination");
-
-            this.learning ??= {};
-            this.learning.learned ??= false;
-            this.learning.progress ??= 0;
-            this.learning.attemptsUsed ??= 0;
-            this.learning.failureInsight ??= 0;
-            this.learning.trainingBlocks ??= 0;
-            this.learning.chakraSpent ??= 0;
-            this.learning.lastTrainingAt ??= 0;
-            this.learning.actionPointBonus ??= 0;
-
-            this.automation ??= {};
-            this.automation.enabled ??= true;
-            this.automation.targetMode ??= "auto";
+            applyTechniqueSystemDefaults(this, { collectionType: "set" });
 
             if (!this.tag && this.parent?.name) {
                 try { this.tag = pf1.utils.createTag(this.parent.name); }

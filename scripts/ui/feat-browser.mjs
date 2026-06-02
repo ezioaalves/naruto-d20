@@ -1,4 +1,16 @@
 import { MAIN_DISCIPLINES, MODULE_ID } from "../constants.mjs";
+import {
+    buildFilterGroup,
+    clearFilterSets,
+    registerBrowserSearch,
+    registerCheckboxFilterListeners,
+    registerClearFiltersListener,
+    registerEntryOpenListeners,
+    registerFilterCollapseListeners,
+    registerReloadListener,
+    registerUuidDragStartListeners,
+    restoreSearchFocus,
+} from "./browser-shared.mjs";
 
 const PACK_ID = `${MODULE_ID}.feats`;
 
@@ -33,7 +45,7 @@ export class NarutoFeatBrowser extends Application {
             top:       30,
             left:      40,
             resizable: true,
-            title:     "Browse Naruto Feats",
+            title:     game.i18n.localize("NarutoD20.App.BrowseFeats"),
         });
     }
 
@@ -52,6 +64,7 @@ export class NarutoFeatBrowser extends Application {
     #loading = true;
     /** Restore search focus after re-render when true */
     #focusSearch = false;
+    #searchSelection = null;
 
     constructor(options = {}) {
         super(options);
@@ -65,7 +78,7 @@ export class NarutoFeatBrowser extends Application {
         if (this.#entries && !force) return;
         const pack = game.packs.get(PACK_ID);
         if (!pack) {
-            ui.notifications.warn("Naruto feats compendium not found.");
+            ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.FeatsCompendiumNotFound"));
             this.#entries = [];
             this.#loading = false;
             return;
@@ -88,7 +101,8 @@ export class NarutoFeatBrowser extends Application {
     #matches(entry) {
         const s = entry.system;
         const nf = entry.flags?.[MODULE_ID] ?? {};
-        if (this.#query && !entry.name.toLowerCase().includes(this.#query)) return false;
+        const query = this.#query.toLowerCase().trim();
+        if (query && !entry.name.toLowerCase().includes(query)) return false;
 
         const { subType, discipline, abilityType } = this.#filters;
         if (subType.size && !subType.has(s.subType)) return false;
@@ -96,22 +110,6 @@ export class NarutoFeatBrowser extends Application {
         if (discipline.size && !discipline.has(nf.discipline)) return false;
         if (abilityType.size && !abilityType.has(s.abilityType)) return false;
         return true;
-    }
-
-    #buildFilterGroup(id, label, choiceMap, activeSet) {
-        const choices = Object.entries(choiceMap).map(([key, choiceLabel]) => ({
-            key,
-            label:  choiceLabel,
-            active: activeSet.has(key),
-        }));
-        return {
-            id,
-            label,
-            choices,
-            active:      activeSet.size > 0,
-            activeCount: activeSet.size,
-            collapsed:   this.#collapsed.has(id) ? "collapsed" : "",
-        };
     }
 
     async getData() {
@@ -146,9 +144,9 @@ export class NarutoFeatBrowser extends Application {
             : { ex: "Ex", su: "Su", sp: "Sp" };
 
         const filters = [
-            this.#buildFilterGroup("subType",     "Type",         subTypeChoices,    this.#filters.subType),
-            this.#buildFilterGroup("discipline",  "Discipline",   disciplineChoices, this.#filters.discipline),
-            this.#buildFilterGroup("abilityType", "Ability Type", abilityChoices,    this.#filters.abilityType),
+            buildFilterGroup("subType",     "Type",         subTypeChoices,    this.#filters.subType,     this.#collapsed),
+            buildFilterGroup("discipline",  "Discipline",   disciplineChoices, this.#filters.discipline,  this.#collapsed),
+            buildFilterGroup("abilityType", "Ability Type", abilityChoices,    this.#filters.abilityType, this.#collapsed),
         ];
 
         return {
@@ -166,84 +164,31 @@ export class NarutoFeatBrowser extends Application {
         const root = html[0];
 
         if (this.#focusSearch) {
-            const inp = root.querySelector('input[name="filter"]');
-            if (inp) {
-                inp.focus();
-                const len = inp.value.length;
-                inp.setSelectionRange(len, len);
-            }
+            restoreSearchFocus(root, this.#searchSelection);
             this.#focusSearch = false;
+            this.#searchSelection = null;
         }
 
-        // Search — 200 ms debounce, restores focus after re-render
-        const search = root.querySelector('input[name="filter"]');
-        if (search) {
-            let timer;
-            search.addEventListener("input", (ev) => {
-                clearTimeout(timer);
-                const value = ev.target.value.toLowerCase().trim();
-                timer = setTimeout(() => {
-                    this.#query = value;
-                    this.#focusSearch = true;
-                    this.render();
-                }, 200);
-            });
-        }
-
-        // Checkbox filters — name="filter.<groupId>.choice.<key>"
-        root.querySelectorAll('input[type="checkbox"][name^="filter."]').forEach((cb) => {
-            cb.addEventListener("change", (ev) => {
-                const [, groupId, , key] = ev.target.name.split(".");
-                const set = this.#filters[groupId];
-                if (!set) return;
-                if (ev.target.checked) set.add(key);
-                else set.delete(key);
-                this.render();
-            });
+        registerBrowserSearch(root, ({ value, selection }) => {
+            this.#query = value;
+            this.#searchSelection = selection;
+            this.#focusSearch = true;
+            this.render();
         });
+        registerCheckboxFilterListeners(root, this.#filters, () => this.render());
+        registerFilterCollapseListeners(root, this.#collapsed);
+        registerEntryOpenListeners(root);
+        registerUuidDragStartListeners(root);
 
-        // Collapsible filter headers — toggle class directly, no full re-render
-        root.querySelectorAll(".filter h3").forEach((h3) => {
-            h3.style.cursor = "pointer";
-            h3.addEventListener("click", (ev) => {
-                if (ev.target.closest(".filter-count")) return;
-                const filterEl = h3.closest("[data-filter-id]");
-                const id = filterEl?.dataset.filterId;
-                if (!id) return;
-                if (this.#collapsed.has(id)) this.#collapsed.delete(id);
-                else this.#collapsed.add(id);
-                filterEl.querySelector(".filter-content")
-                    ?.classList.toggle("collapsed", this.#collapsed.has(id));
-            });
-        });
-
-        // Name click → open compendium sheet (read-only)
-        root.querySelectorAll(".entry-name a").forEach((a) => {
-            a.addEventListener("click", async (ev) => {
-                ev.preventDefault();
-                const uuid = ev.currentTarget.closest("[data-uuid]")?.dataset.uuid;
-                const doc = uuid ? await fromUuid(uuid) : null;
-                doc?.sheet?.render(true);
-            });
-        });
-
-        // Drag-and-drop — PF1 features tab accepts { type: "Item", uuid } natively
-        root.querySelectorAll("[data-uuid]").forEach((li) => {
-            li.addEventListener("dragstart", (ev) => {
-                const uuid = li.dataset.uuid;
-                if (!uuid) return;
-                ev.dataTransfer.setData("text/plain", JSON.stringify({ type: "Item", uuid }));
-            });
-        });
-
-        root.querySelector(".reload")?.addEventListener("click", async () => {
+        registerReloadListener(root, async () => {
             await this.#loadEntries({ force: true });
             this.render();
         });
 
-        root.querySelector(".clear-filters")?.addEventListener("click", () => {
+        registerClearFiltersListener(root, () => {
             this.#query = "";
-            for (const set of Object.values(this.#filters)) set.clear();
+            this.#searchSelection = null;
+            clearFilterSets(this.#filters);
             this.render();
         });
     }

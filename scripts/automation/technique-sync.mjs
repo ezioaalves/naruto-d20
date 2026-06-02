@@ -1,5 +1,6 @@
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
 import { normalizeActionIds } from "../data/action-ids.mjs";
+import { applyTechniqueSystemDefaults } from "../data/technique-defaults.mjs";
 
 /**
  * Technique "medkit" core — detection & sync (no UI).
@@ -126,47 +127,6 @@ function canonicalizeHtml(s) {
 }
 
 /**
- * Fill the same defaults that TechniqueDataModel.prepareBaseData applies on the
- * live model. `toObject()` returns `_source`, which omits these when absent — so
- * a freshly-authored compendium item (no `automation`/`tag`/empty arrays in its
- * source) would otherwise never match an embedded copy whose model filled them.
- * Mutates `s` in place (callers pass a clone). Mirror of prepareBaseData; keep
- * the two in sync if the schema's defaults change.
- */
-function applyTechniqueDefaults(s) {
-    s.description ??= {};
-    s.description.value ??= "";
-    s.description.summary ??= "";
-    s.description.instructions ??= "";
-    s.flags ??= {};
-    s.flags.boolean ??= {};
-    s.flags.dictionary ??= {};
-    s.links ??= {};
-    s.links.prerequisites ??= [];
-    s.links.supplements ??= [];
-    s.links.children ??= [];
-    s.tags ??= [];
-    s.descriptors ??= [];
-    if (s.isHijutsu && !s.descriptors.includes("Hijutsu")) s.descriptors.push("Hijutsu");
-    if (s.isKinjutsu && !s.descriptors.includes("Kinjutsu")) s.descriptors.push("Kinjutsu");
-    if (s.isCombination && !s.descriptors.includes("Combination")) s.descriptors.push("Combination");
-    s.changes ??= [];
-    s.actions ??= [];
-    s.learning ??= {};
-    s.learning.learned ??= false;
-    s.learning.progress ??= 0;
-    s.learning.attemptsUsed ??= 0;
-    s.learning.failureInsight ??= 0;
-    s.learning.trainingBlocks ??= 0;
-    s.learning.chakraSpent ??= 0;
-    s.learning.lastTrainingAt ??= 0;
-    s.automation ??= {};
-    s.automation.enabled ??= true;
-    s.automation.targetMode ??= "auto";
-    return s;
-}
-
-/**
  * Normalize a `system` object for comparison. Callers pass `doc.toObject().system`
  * (always available — `item.system.toObject()` can throw on a mistyped item).
  * Removes the noise that the system introduces but the user never edits:
@@ -177,7 +137,7 @@ function applyTechniqueDefaults(s) {
  * Real content edits (cost, rank, description text, …) still survive and diff.
  */
 export function normalizeSystem(system) {
-    const out = applyTechniqueDefaults(foundry.utils.deepClone(system));
+    const out = applyTechniqueSystemDefaults(foundry.utils.deepClone(system), { collectionType: "array" });
     delete out.tag;
     delete out.learning;
     out.descriptors = Array.from(new Set(out.descriptors ?? [])).sort();

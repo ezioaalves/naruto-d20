@@ -1,4 +1,5 @@
 import { MODULE_ID, LOW_RESERVES_CONDITION_ID, CHAKRA_DEPLETION_CONDITION_ID } from "../constants.mjs";
+import { conditionAppliedExhaustedPath, conditionAppliedFatiguedPath } from "../flag-paths.mjs";
 
 /**
  * Naruto D20 — Chakra Condition System
@@ -132,8 +133,8 @@ export async function checkAndUpdateConditions(actor) {
     // Persist tracking flags — only if something changed to avoid an extra round-trip
     if (newAppliedFatigued !== hadFatigued || newAppliedExhausted !== hadExhausted) {
         await actor.update({
-            [`flags.${MODULE_ID}.conditions.appliedFatigued`]:  newAppliedFatigued,
-            [`flags.${MODULE_ID}.conditions.appliedExhausted`]: newAppliedExhausted,
+            [conditionAppliedFatiguedPath]:  newAppliedFatigued,
+            [conditionAppliedExhaustedPath]: newAppliedExhausted,
         });
     }
 }

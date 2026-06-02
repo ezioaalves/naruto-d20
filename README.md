@@ -72,7 +72,7 @@ Cinco disciplinas viram skills nativas do pf1e:
 | nin | Ninjutsu          | Intelligence      |
 | tai | Taijutsu          | Strength          |
 
-Fórmula do learn check: `CharLevel + AbilityMod + miscBonus + buffBonus + synergyBonus`. Quando o jogador tem rank ≥ 2, ganha +2 de synergy. Buffs do pf1e podem alvejar `learnCkc`, `learnGnj`, `learnNin`, `learnTai`, `learnFui`.
+Fórmula base do learn check: `CharLevel + AbilityMod + miscBonus + buffBonus + synergyBonus`. Quando o jogador tem rank ≥ 2, ganha +2 de synergy. Buffs do pf1e podem alvejar `learnCkc`, `learnGnj`, `learnNin`, `learnTai`, `learnFui`.
 
 O roll usa `pf1.dice.d20Roll()` com parts rotulados (`5[Character Level]`, `3[Int]`, `2[Iron Will Buff]`…) — o chat card mostra cada fonte como linha separada. Os nomes individuais de buffs vêm de `actor.sourceInfo`.
 
@@ -159,7 +159,7 @@ Quando o actor tem natureza primária definida (Fire / Wind / Lightning / Earth 
 
 A resistência escala com nível: **5 no nível 10, 10 no 15, 15 no 20**. É escrita direto em `actor.system.traits.eres` para que o pf1e a aplique como qualquer outra resistência.
 
-Ninjutsu também ganha um bônus condicional de `+1 por 5 níveis a partir do 1` (`learn.nin.conditional`) quando há afinidade primária.
+Ninjutsu também ganha um bônus condicional de `+1 por 5 níveis a partir do 1` (`learn.nin.conditional`) quando há afinidade primária. Esse bônus não entra no total base da ficha; ele é aplicado ao aprender uma técnica de Ninjutsu cujo `system.descriptors` ou `system.subtype` corresponde à natureza primária. `Lightning` também reconhece descritor `Electric`, e `Wind` reconhece descritor `Air`.
 
 **Arquivos**: [`scripts/data/derived-data.mjs`](scripts/data/derived-data.mjs) (função `_applyElementalResistance`).
 
@@ -250,6 +250,9 @@ Sem build step. Edite os `.mjs` / `.hbs` / `.css` e recarregue:
 Se rodar Foundry em Docker com `foundrydata` bind-mounted, **não** reinicie o container — o bind-mount já pega as alterações de disco.
 
 Para autocomplete de APIs do pf1e, mantenha o symlink `pf1/` → `../pf1-source` (referenciado por `jsconfig.json`).
+
+Para validação antes de release ou PR grande, use o checklist em
+[`docs/manual-qa.md`](docs/manual-qa.md).
 
 ---
 
