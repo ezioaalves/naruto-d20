@@ -11,6 +11,7 @@
     "add-actions": "node tools/add-actions.mjs",
     "fix-action-ids": "node tools/fix-action-ids.mjs",
     "fix-spell-attacks": "node tools/fix-spell-attacks.mjs",
+    "release:local": "node tools/release-local.mjs",
     "validate:compendia": "node tools/validate-compendia.mjs",
     "validate:manifest": "node tools/validate-manifest.mjs",
     "test": "node --test tests/*.test.mjs",
