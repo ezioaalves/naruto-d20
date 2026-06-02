@@ -234,68 +234,106 @@ async function expireInterruptedTraining(item, learning) {
 }
 
 export async function attemptLearnTechnique(item) {
-    const actor = item.actor;
-    if (!actor) {
-        ui.notifications.warn("Equip this technique on an actor to learn it.");
-        return;
-    }
-    if (!actor.isOwner) {
-        ui.notifications.warn(`${actor.name}: you do not have permission to update this actor.`);
+    const actor = validateLearningActor(item);
+    if (!actor) return;
+
+    const learning = item.system.learning ?? {};
+    if (!validateLearningState(item, actor, learning)) return;
+
+    const skillKey = DISCIPLINE_SKILL_MAP[item.system.discipline];
+    if (!skillKey) {
+        await learnUnmappedTechnique(item, actor, learning);
         return;
     }
 
-    const learning = item.system.learning ?? {};
+    const mode = getLearningMode();
+    if (!validateLearningSkillAndChakra(item, actor, skillKey, mode)) return;
+
+    const activeLearning = await prepareActiveLearning(actor, item, learning);
+    const roll = await rollLearnCheck(item, actor, skillKey, activeLearning);
+    if (!roll) return;
+
+    await resolveLearnAttempt(item, actor, {
+        skillKey,
+        mode,
+        baseLearning: activeLearning,
+        total: roll.total,
+        apBonus: roll.apBonus,
+    });
+}
+
+function validateLearningActor(item) {
+    const actor = item.actor;
+    if (!actor) {
+        ui.notifications.warn("Equip this technique on an actor to learn it.");
+        return null;
+    }
+    if (!actor.isOwner) {
+        ui.notifications.warn(`${actor.name}: you do not have permission to update this actor.`);
+        return null;
+    }
+    return actor;
+}
+
+function validateLearningState(item, actor, learning) {
     if (learning.learned) {
         ui.notifications.info(`${item.name}: already learned.`);
-        return;
+        return false;
     }
 
     const rank = Number(item.system.rank ?? 1) || 1;
     const level = characterLevel(actor);
     if (rank > level) {
         ui.notifications.warn(`${item.name}: rank ${rank} is higher than ${actor.name}'s level ${level}.`);
-        return;
+        return false;
     }
 
-    const skillKey = DISCIPLINE_SKILL_MAP[item.system.discipline];
-    if (!skillKey) {
-        await item.update({
-            "system.learning.learned": true,
-            "system.learning.progress": getLearningTargetProgress(item),
-            "system.learning.attemptsUsed": learning.attemptsUsed ?? 0,
-            "system.learning.failureInsight": 0,
-        });
-        await actor.update({ [learningCurrentTechniqueIdPath]: null });
-        await postLearningCard(actor, item, {
-            title: `${item.name} learned`,
-            cssClass: "success",
-            body: `<p>${escapeHTML(item.system.discipline || "Unmapped discipline")} has no mapped learn skill yet, so this technique is treated as learned for phase 1.</p>`,
-        });
-        return;
-    }
+    return true;
+}
 
+async function learnUnmappedTechnique(item, actor, learning) {
+    await item.update({
+        "system.learning.learned": true,
+        "system.learning.progress": getLearningTargetProgress(item),
+        "system.learning.attemptsUsed": learning.attemptsUsed ?? 0,
+        "system.learning.failureInsight": 0,
+    });
+    await actor.update({ [learningCurrentTechniqueIdPath]: null });
+    await postLearningCard(actor, item, {
+        title: `${item.name} learned`,
+        cssClass: "success",
+        body: `<p>${escapeHTML(item.system.discipline || "Unmapped discipline")} has no mapped learn skill yet, so this technique is treated as learned for phase 1.</p>`,
+    });
+}
+
+function validateLearningSkillAndChakra(item, actor, skillKey, mode) {
     const ranks = Number(actor.system.skills?.[skillKey]?.rank ?? 0) || 0;
     if (ranks < 1) {
         ui.notifications.warn(`${actor.name}: at least 1 rank in ${pf1.config.skills?.[skillKey] ?? skillKey} is required to learn ${item.name}.`);
-        return;
+        return false;
     }
 
-    const mode = getLearningMode();
     const minimumChakraCost = trainingChakraCost(actor, minimumTrainingBlocksForRoll(item, mode));
     if (!canPayTrainingChakra(actor, minimumChakraCost)) {
         warnInsufficientTrainingChakra(actor, minimumChakraCost);
-        return;
+        return false;
     }
 
+    return true;
+}
+
+async function prepareActiveLearning(actor, item, learning) {
     const switchedLearning = await resetFailureInsightForDifferentTechnique(actor, item, learning);
-    const activeLearning = await expireInterruptedTraining(item, switchedLearning);
+    return expireInterruptedTraining(item, switchedLearning);
+}
+
+async function rollLearnCheck(item, actor, skillKey, activeLearning) {
     const failureInsight = Math.min(5, Math.max(0, Number(activeLearning.failureInsight ?? 0) || 0));
     const apBonus = Math.max(0, Number(activeLearning.actionPointBonus ?? 0) || 0);
-
     const breakdown = buildLearnCheckBreakdown(actor, skillKey, { item, includeConditional: true });
     if (!breakdown) {
         ui.notifications.warn(`${actor.name}: learn check data for ${skillKey} is not ready.`);
-        return;
+        return null;
     }
 
     const parts = [...breakdown.parts];
@@ -314,15 +352,15 @@ export async function attemptLearnTechnique(item) {
         speaker: ChatMessage.implementation.getSpeaker({ actor }),
         dc: learnDC,
     });
-    if (!result) return;
+    if (!result) return null;
 
     const total = rollTotal(result);
     if (!Number.isFinite(total)) {
         ui.notifications.warn(`${item.name}: could not read learn roll total.`);
-        return;
+        return null;
     }
 
-    await resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning: activeLearning, total, apBonus });
+    return { total, apBonus };
 }
 
 /**
@@ -333,6 +371,25 @@ export async function attemptLearnTechnique(item) {
  * is the chat card being replaced on re-evaluation.
  */
 async function resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning, total, apBonus = 0, supersedes = null, apRollText = "" }) {
+    const result = buildLearnAttemptResult(item, actor, { skillKey, mode, baseLearning, total, apBonus });
+    const chakraDeduction = await applyTrainingChakraDeduction(actor, result.chakraCost);
+    if (!chakraDeduction.paid) return;
+
+    const now = trainingTimestamp();
+    await persistLearnAttemptResult(item, actor, result, now);
+
+    if (supersedes) { try { await supersedes.delete(); } catch (_e) { /* card already gone */ } }
+
+    await postLearnAttemptResultCard(actor, item, {
+        result,
+        baseLearning,
+        chakraDeduction,
+        now,
+        apRollText,
+    });
+}
+
+function buildLearnAttemptResult(item, actor, { skillKey, mode, baseLearning, total, apBonus }) {
     const learnDC = Number(item.system.derived?.learnDC ?? 10) || 10;
     const targetProgress = getLearningTargetProgress(item, mode);
     const maxAttempts = getLearningMaxAttempts(actor, skillKey);
@@ -344,12 +401,6 @@ async function resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning, 
     const margin = total - learnDC;
     const trainingBlocks = trainingBlocksForRoll(item, mode, margin);
     const chakraCost = trainingChakraCost(actor, trainingBlocks);
-    const chakraDeduction = await applyTrainingChakraDeduction(actor, chakraCost);
-    if (!chakraDeduction.paid) return;
-
-    const totalTrainingBlocks = (Number(baseLearning.trainingBlocks ?? 0) || 0) + trainingBlocks;
-    const totalChakraSpent = (Number(baseLearning.chakraSpent ?? 0) || 0) + chakraCost;
-    const now = trainingTimestamp();
 
     let progress = oldProgress;
     let nextFailureInsight = baseFailureInsight;
@@ -373,73 +424,106 @@ async function resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning, 
     }
 
     const runEnded = learned || resetRun;
-    const nextApBonus = runEnded ? 0 : apBonus;   // AP persists through the run, clears at run end (no refund)
-    const finalAttemptsUsed = resetRun ? 0 : attemptsUsed;
 
+    return {
+        skillKey,
+        mode,
+        total,
+        apBonus,
+        learnDC,
+        targetProgress,
+        maxAttempts,
+        attemptsUsed,
+        success,
+        trainingBlocks,
+        chakraCost,
+        totalTrainingBlocks: (Number(baseLearning.trainingBlocks ?? 0) || 0) + trainingBlocks,
+        totalChakraSpent: (Number(baseLearning.chakraSpent ?? 0) || 0) + chakraCost,
+        progress,
+        nextFailureInsight,
+        learned,
+        resetRun,
+        runEnded,
+        award,
+        // AP persists through the run, clears at run end (no refund).
+        nextApBonus: runEnded ? 0 : apBonus,
+        finalAttemptsUsed: resetRun ? 0 : attemptsUsed,
+    };
+}
+
+async function persistLearnAttemptResult(item, actor, result, now) {
     await item.update({
-        "system.learning.learned": learned,
-        "system.learning.progress": progress,
-        "system.learning.attemptsUsed": finalAttemptsUsed,
-        "system.learning.failureInsight": nextFailureInsight,
-        "system.learning.trainingBlocks": totalTrainingBlocks,
-        "system.learning.chakraSpent": totalChakraSpent,
+        "system.learning.learned": result.learned,
+        "system.learning.progress": result.progress,
+        "system.learning.attemptsUsed": result.finalAttemptsUsed,
+        "system.learning.failureInsight": result.nextFailureInsight,
+        "system.learning.trainingBlocks": result.totalTrainingBlocks,
+        "system.learning.chakraSpent": result.totalChakraSpent,
         "system.learning.lastTrainingAt": now,
-        "system.learning.actionPointBonus": nextApBonus,
+        "system.learning.actionPointBonus": result.nextApBonus,
     });
 
-    if (learned) await actor.update({ [learningCurrentTechniqueIdPath]: null });
+    if (result.learned) await actor.update({ [learningCurrentTechniqueIdPath]: null });
+}
 
-    if (supersedes) { try { await supersedes.delete(); } catch (_e) { /* card already gone */ } }
-
+function buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraDeduction, now }) {
     // Re-eval flags: only offer "Add Action Point" while the run is open and no AP is committed yet.
-    const cardFlags = (!runEnded && apBonus === 0)
-        ? {
-            itemId: item.id,
-            actorUuid: actor.uuid,
-            skillKey, mode,
-            baseLearning: foundry.utils.deepClone(baseLearning),
-            baseTotalNoAp: total,
-            deducted: { fromPool: chakraDeduction.fromPool, fromReserve: chakraDeduction.fromReserve },
-            result: { progress, attemptsUsed: finalAttemptsUsed, failureInsight: nextFailureInsight, lastTrainingAt: now },
-        }
-        : null;
+    if (result.runEnded || result.apBonus !== 0) return null;
 
+    return {
+        itemId: item.id,
+        actorUuid: actor.uuid,
+        skillKey: result.skillKey,
+        mode: result.mode,
+        baseLearning: foundry.utils.deepClone(baseLearning),
+        baseTotalNoAp: result.total,
+        deducted: { fromPool: chakraDeduction.fromPool, fromReserve: chakraDeduction.fromReserve },
+        result: {
+            progress: result.progress,
+            attemptsUsed: result.finalAttemptsUsed,
+            failureInsight: result.nextFailureInsight,
+            lastTrainingAt: now,
+        },
+    };
+}
+
+async function postLearnAttemptResultCard(actor, item, { result, baseLearning, chakraDeduction, now, apRollText }) {
     const apLine = apRollText ? `${escapeHTML(apRollText)} → ` : "";
-    const chakraLine = `${chakraCost}${chakraDeduction.deducted ? ` (${chakraDeduction.deducted} deducted)` : ""}`;
+    const chakraLine = `${result.chakraCost}${chakraDeduction.deducted ? ` (${chakraDeduction.deducted} deducted)` : ""}`;
 
-    if (learned) {
+    if (result.learned) {
         await postLearningCard(actor, item, {
             title: `${item.name} learned`,
             cssClass: "success",
-            body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. Progress ${progress}/${targetProgress}.</p>
-                   <footer>Training time: +${trainingBlocks} block${trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.</footer>`,
+            body: `<p>${apLine}Learn check ${result.total} vs DC ${result.learnDC}. Progress ${result.progress}/${result.targetProgress}.</p>
+                   <footer>Training time: +${result.trainingBlocks} block${result.trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.</footer>`,
         });
         return;
     }
 
-    if (resetRun) {
+    if (result.resetRun) {
         await postLearningCard(actor, item, {
             title: `${item.name} learning failed`,
             cssClass: "failed",
-            body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. Attempts ${attemptsUsed}/${maxAttempts}; progress is lost and the run starts over.</p>
-                   <footer>Training time: +${trainingBlocks} block${trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.</footer>`,
+            body: `<p>${apLine}Learn check ${result.total} vs DC ${result.learnDC}. Attempts ${result.attemptsUsed}/${result.maxAttempts}; progress is lost and the run starts over.</p>
+                   <footer>Training time: +${result.trainingBlocks} block${result.trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.</footer>`,
         });
         return;
     }
 
-    const attemptText = mode === LEARNING_MODES.FOUR_HOUR_BLOCKS
-        ? `${attemptsUsed} block${attemptsUsed === 1 ? "" : "s"}`
-        : `${attemptsUsed}/${maxAttempts} attempts`;
-    const resultText = success
-        ? `Success, +${award} progress.`
-        : `Failure, Failure Insight is now +${nextFailureInsight}.`;
+    const attemptText = result.mode === LEARNING_MODES.FOUR_HOUR_BLOCKS
+        ? `${result.attemptsUsed} block${result.attemptsUsed === 1 ? "" : "s"}`
+        : `${result.attemptsUsed}/${result.maxAttempts} attempts`;
+    const resultText = result.success
+        ? `Success, +${result.award} progress.`
+        : `Failure, Failure Insight is now +${result.nextFailureInsight}.`;
 
     await postLearningCard(actor, item, {
         title: `Learning ${item.name}`,
-        cssClass: success ? "success" : "failed",
-        body: `<p>${apLine}Learn check ${total} vs DC ${learnDC}. ${resultText}</p>
-               <footer>Progress ${progress}/${targetProgress}; ${attemptText}; +${trainingBlocks} training block${trainingBlocks === 1 ? "" : "s"}; training chakra ${chakraLine}.</footer>`,
-        flags: cardFlags,
+        cssClass: result.success ? "success" : "failed",
+        body: `<p>${apLine}Learn check ${result.total} vs DC ${result.learnDC}. ${resultText}</p>
+               <footer>Progress ${result.progress}/${result.targetProgress}; ${attemptText}; +${result.trainingBlocks} training block${result.trainingBlocks === 1 ? "" : "s"}; training chakra ${chakraLine}.</footer>`,
+        flags: buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraDeduction, now }),
     });
 }
 
