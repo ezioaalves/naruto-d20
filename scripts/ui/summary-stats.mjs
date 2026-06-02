@@ -37,7 +37,9 @@ export function registerSummaryStats() {
 async function rollActionPoint(actor) {
   const current = Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0);
   if (!Number.isFinite(current) || current <= 0) {
-    ui.notifications.warn(`${actor.name} has no Action Points remaining.`);
+    ui.notifications.warn(
+      game.i18n.format("NarutoD20.Notifications.NoActionPoints", { actor: actor.name }),
+    );
     return;
   }
 
@@ -48,7 +50,10 @@ async function rollActionPoint(actor) {
   await roll.evaluate();
   await roll.toMessage({
     speaker: ChatMessage.implementation.getSpeaker({ actor }),
-    flavor: `Action Point (${current} -> ${remaining} remaining)`,
+    flavor: game.i18n.format("NarutoD20.Cards.ActionPointFlavor", {
+      from: current,
+      to: remaining,
+    }),
     rollMode: game.settings.get("core", "rollMode"),
   });
 }

@@ -15,8 +15,64 @@
     "Item": {
       "TypeTechnique": "Técnica"
     },
+    "Common": {
+      "Current": "Atual",
+      "Temp": "Temp",
+      "Max": "Máx",
+      "Total": "Total"
+    },
+    "ChakraNature": {
+      "None": "Nenhum",
+      "Fire": "Fogo",
+      "Wind": "Vento",
+      "Lightning": "Relâmpago",
+      "Earth": "Terra",
+      "Water": "Água"
+    },
+    "SummaryStats": {
+      "Header": "Estatísticas do Herói",
+      "ActionPoints": "Pontos de Ação",
+      "RollActionPoint": "Rolar Ponto de Ação",
+      "Reputation": "Reputação",
+      "Wealth": "Riqueza"
+    },
+    "ChakraTab": {
+      "ChakraPool": "Chakra",
+      "ChakraReserve": "Reserva de Chakra",
+      "RollTapReserves": "Rolar Drenar Reservas",
+      "EmpathyPoints": "Pontos de Empatia",
+      "ElementalAffinities": "Afinidades Elementais",
+      "Primary": "Primária",
+      "Secondary": "Secundária",
+      "ShinobiLearnChecks": "Testes de Aprendizado Shinobi",
+      "LearnCheckFlavor": "Teste de aprendizado de {label}",
+      "NinjutsuConditionalTo": "em",
+      "Techniques": "Técnicas",
+      "All": "Todas",
+      "Activation": "Ativação",
+      "CreateTechnique": "Criar Técnica",
+      "LearnTechnique": "Aprender Técnica",
+      "UseTechnique": "Usar Técnica",
+      "OpenSheet": "Abrir Ficha",
+      "DuplicateTechnique": "Duplicar Técnica",
+      "Remove": "Remover",
+      "Attempts": "tentativas",
+      "Insight": "insight",
+      "TrainBlocks": "blocos de treino",
+      "ChakraUnit": "chakra",
+      "EmptyTechniques": "Arraste e solte itens de Técnica aqui para adicioná-los."
+    },
     "BuffTargets": {
       "Category": "Técnica",
+      "ChakraPool": "Máximo de Chakra",
+      "ChakraReserve": "Máximo de Reserva de Chakra",
+      "Learn": {
+        "ckc": "Aprender: Controle de Chakra",
+        "fui": "Aprender: Fuinjutsu",
+        "gnj": "Aprender: Genjutsu",
+        "nin": "Aprender: Ninjutsu",
+        "tai": "Aprender: Taijutsu"
+      },
       "TechDc": {
         "All": "CD de Técnica (Global)",
         "ckc": "CD de Técnica: Controle de Chakra",
@@ -25,6 +81,24 @@
         "nin": "CD de Técnica: Ninjutsu",
         "tai": "CD de Técnica: Taijutsu"
       }
+    },
+    "Breakdown": {
+      "CharacterLevel": "Nível de Personagem",
+      "BuffBonus": "Bônus de Buff",
+      "SkillSynergy": "Sinergia de Perícia",
+      "MiscBonus": "Bônus Diverso",
+      "PrimaryAffinity": "Afinidade Primária ({affinity})",
+      "ChakraPoolBase": "Base (2 + 2×Nv)",
+      "ConTimesLevel": "Con × Nível",
+      "TwoTimesLevel": "2 × Nível"
+    },
+    "WeaponAttackIssues": {
+      "Malformed": "\"{prefix}\" deve ser um objeto ou usar chaves pontilhadas \"{prefix}.*\"",
+      "UnknownField": "campo desconhecido \"{field}\"",
+      "MissingMode": "faltando \"{field}\" (esperado \"{expected}\")",
+      "UnsupportedMode": "\"{field}\" não suporta \"{value}\" (esperado \"{expected}\")",
+      "UnsupportedFilter": "\"{field}\" não suporta \"{value}\"; usando \"{fallback}\"",
+      "InvalidBoolean": "\"{field}\" deve ser \"true\" ou \"false\" (recebido \"{value}\")"
     },
     "Technique": {
       "Type": {
@@ -307,11 +381,13 @@
       "TapMinimum": "A quantidade a drenar deve ser pelo menos 1.",
       "TapNotEnoughReserve": "Reserva de Chakra insuficiente (tem {have}, solicitado {requested}).",
       "NoWeaponAttack": "{actor}: nenhuma arma ou ataque válido encontrado para {name}.",
-      "WeaponAttackConfig": "{name}: problema na config weaponAttack — {issues}"
+      "WeaponAttackConfig": "{name}: problema na config weaponAttack — {issues}",
+      "ChargeDefenseFailed": "A automação da penalidade de defesa por charge falhou. Veja o console."
     },
     "Cards": {
       "Block": "bloco",
       "Blocks": "blocos",
+      "ActionPointFlavor": "Ponto de Ação ({from} -> {to} restantes)",
       "Perform": {
         "Failed": "Teste de execução falhou (DC {dc}). Nenhum chakra gasto.",
         "Spent": "Gastou {cost} de chakra ({summary}).",

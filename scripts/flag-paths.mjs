@@ -45,13 +45,21 @@ export const conditionAppliedExhaustedPath = `${moduleFlagsPath}.conditions.appl
  * Adding a new buff target = adding one entry here.
  */
 export const BUFF_TARGETS = {
-  chakraPool: { label: "Chakra Pool Max", path: chakraPoolMaxBonusPath, sort: 90000 },
-  chakraReserve: { label: "Chakra Reserve Max", path: chakraReserveMaxBonusPath, sort: 90001 },
-  learnCkc: { label: "Learn: Chakra Control", path: learnBuffPath("ckc"), sort: 90002 },
-  learnGnj: { label: "Learn: Genjutsu", path: learnBuffPath("gnj"), sort: 90003 },
-  learnNin: { label: "Learn: Ninjutsu", path: learnBuffPath("nin"), sort: 90004 },
-  learnTai: { label: "Learn: Taijutsu", path: learnBuffPath("tai"), sort: 90005 },
-  learnFui: { label: "Learn: Fuinjutsu", path: learnBuffPath("fui"), sort: 90006 },
+  chakraPool: {
+    label: "NarutoD20.BuffTargets.ChakraPool",
+    path: chakraPoolMaxBonusPath,
+    sort: 90000,
+  },
+  chakraReserve: {
+    label: "NarutoD20.BuffTargets.ChakraReserve",
+    path: chakraReserveMaxBonusPath,
+    sort: 90001,
+  },
+  learnCkc: { label: "NarutoD20.BuffTargets.Learn.ckc", path: learnBuffPath("ckc"), sort: 90002 },
+  learnGnj: { label: "NarutoD20.BuffTargets.Learn.gnj", path: learnBuffPath("gnj"), sort: 90003 },
+  learnNin: { label: "NarutoD20.BuffTargets.Learn.nin", path: learnBuffPath("nin"), sort: 90004 },
+  learnTai: { label: "NarutoD20.BuffTargets.Learn.tai", path: learnBuffPath("tai"), sort: 90005 },
+  learnFui: { label: "NarutoD20.BuffTargets.Learn.fui", path: learnBuffPath("fui"), sort: 90006 },
 
   techDcAll: {
     label: "NarutoD20.BuffTargets.TechDc.All",

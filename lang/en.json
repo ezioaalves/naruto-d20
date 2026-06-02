@@ -15,8 +15,64 @@
     "Item": {
       "TypeTechnique": "Technique"
     },
+    "Common": {
+      "Current": "Current",
+      "Temp": "Temp",
+      "Max": "Max",
+      "Total": "Total"
+    },
+    "ChakraNature": {
+      "None": "None",
+      "Fire": "Fire",
+      "Wind": "Wind",
+      "Lightning": "Lightning",
+      "Earth": "Earth",
+      "Water": "Water"
+    },
+    "SummaryStats": {
+      "Header": "Hero Statistics",
+      "ActionPoints": "Action Points",
+      "RollActionPoint": "Roll Action Point",
+      "Reputation": "Reputation",
+      "Wealth": "Wealth"
+    },
+    "ChakraTab": {
+      "ChakraPool": "Chakra Pool",
+      "ChakraReserve": "Chakra Reserve",
+      "RollTapReserves": "Roll Tap Reserves",
+      "EmpathyPoints": "Empathy Points",
+      "ElementalAffinities": "Elemental Affinities",
+      "Primary": "Primary",
+      "Secondary": "Secondary",
+      "ShinobiLearnChecks": "Shinobi Learn Checks",
+      "LearnCheckFlavor": "{label} Learn Check",
+      "NinjutsuConditionalTo": "to",
+      "Techniques": "Techniques",
+      "All": "All",
+      "Activation": "Activation",
+      "CreateTechnique": "Create Technique",
+      "LearnTechnique": "Learn Technique",
+      "UseTechnique": "Use Technique",
+      "OpenSheet": "Open Sheet",
+      "DuplicateTechnique": "Duplicate Technique",
+      "Remove": "Remove",
+      "Attempts": "attempts",
+      "Insight": "insight",
+      "TrainBlocks": "train blocks",
+      "ChakraUnit": "chakra",
+      "EmptyTechniques": "Drag & drop Technique items here to add them."
+    },
     "BuffTargets": {
       "Category": "Technique",
+      "ChakraPool": "Chakra Pool Max",
+      "ChakraReserve": "Chakra Reserve Max",
+      "Learn": {
+        "ckc": "Learn: Chakra Control",
+        "fui": "Learn: Fuinjutsu",
+        "gnj": "Learn: Genjutsu",
+        "nin": "Learn: Ninjutsu",
+        "tai": "Learn: Taijutsu"
+      },
       "TechDc": {
         "All": "Technique DC (All)",
         "ckc": "Technique DC: Chakra Control",
@@ -25,6 +81,24 @@
         "nin": "Technique DC: Ninjutsu",
         "tai": "Technique DC: Taijutsu"
       }
+    },
+    "Breakdown": {
+      "CharacterLevel": "Character Level",
+      "BuffBonus": "Buff Bonus",
+      "SkillSynergy": "Skill Synergy",
+      "MiscBonus": "Misc Bonus",
+      "PrimaryAffinity": "Primary Affinity ({affinity})",
+      "ChakraPoolBase": "Base (2 + 2×Lv)",
+      "ConTimesLevel": "Con × Level",
+      "TwoTimesLevel": "2 × Level"
+    },
+    "WeaponAttackIssues": {
+      "Malformed": "\"{prefix}\" must be an object or use dotted \"{prefix}.*\" keys",
+      "UnknownField": "unknown field \"{field}\"",
+      "MissingMode": "missing \"{field}\" (expected \"{expected}\")",
+      "UnsupportedMode": "unsupported \"{field}\" = \"{value}\" (expected \"{expected}\")",
+      "UnsupportedFilter": "unsupported \"{field}\" = \"{value}\"; using \"{fallback}\"",
+      "InvalidBoolean": "\"{field}\" should be \"true\" or \"false\" (got \"{value}\")"
     },
     "Technique": {
       "Type": {
@@ -307,11 +381,13 @@
       "TapMinimum": "Amount to tap must be at least 1.",
       "TapNotEnoughReserve": "Not enough Chakra Reserve (have {have}, requested {requested}).",
       "NoWeaponAttack": "{actor}: no valid weapon or attack found for {name}.",
-      "WeaponAttackConfig": "{name}: weaponAttack config issue — {issues}"
+      "WeaponAttackConfig": "{name}: weaponAttack config issue — {issues}",
+      "ChargeDefenseFailed": "Charge defense penalty automation failed. See console."
     },
     "Cards": {
       "Block": "block",
       "Blocks": "blocks",
+      "ActionPointFlavor": "Action Point ({from} -> {to} remaining)",
       "Perform": {
         "Failed": "Perform check failed (DC {dc}). No chakra spent.",
         "Spent": "Spent {cost} chakra ({summary}).",

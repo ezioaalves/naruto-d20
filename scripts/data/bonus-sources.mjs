@@ -50,9 +50,13 @@ export function buildLearnCheckBreakdown(
 
   const parts = []; // labeled formula parts for pf1.dice.d20Roll
   const sources = []; // {name, value, builtIn} rows for extended-tooltip.hbs
+  const characterLevelLabel = game.i18n.localize("NarutoD20.Breakdown.CharacterLevel");
+  const buffBonusLabel = game.i18n.localize("NarutoD20.Breakdown.BuffBonus");
+  const skillSynergyLabel = game.i18n.localize("NarutoD20.Breakdown.SkillSynergy");
+  const miscBonusLabel = game.i18n.localize("NarutoD20.Breakdown.MiscBonus");
 
-  parts.push(`${data.base}[Character Level]`);
-  sources.push({ name: "Character Level", value: data.base, builtIn: true });
+  parts.push(`${data.base}[${characterLevelLabel}]`);
+  sources.push({ name: characterLevelLabel, value: data.base, builtIn: true });
 
   if (data.abilityMod) {
     parts.push(`${data.abilityMod}[${data.abilityLabel}]`);
@@ -66,17 +70,17 @@ export function buildLearnCheckBreakdown(
       sources.push({ name: src.name, value: src.value, builtIn: false });
     }
   } else if (data.buffBonus) {
-    parts.push(`${data.buffBonus}[Buff Bonus]`);
-    sources.push({ name: "Buff Bonus", value: data.buffBonus, builtIn: false });
+    parts.push(`${data.buffBonus}[${buffBonusLabel}]`);
+    sources.push({ name: buffBonusLabel, value: data.buffBonus, builtIn: false });
   }
 
   if (data.synergyBonus) {
-    parts.push(`${data.synergyBonus}[Skill Synergy]`);
-    sources.push({ name: "Skill Synergy", value: data.synergyBonus, builtIn: true });
+    parts.push(`${data.synergyBonus}[${skillSynergyLabel}]`);
+    sources.push({ name: skillSynergyLabel, value: data.synergyBonus, builtIn: true });
   }
   if (data.miscBonus) {
-    parts.push(`${data.miscBonus}[Misc Bonus]`);
-    sources.push({ name: "Misc Bonus", value: data.miscBonus, builtIn: false });
+    parts.push(`${data.miscBonus}[${miscBonusLabel}]`);
+    sources.push({ name: miscBonusLabel, value: data.miscBonus, builtIn: false });
   }
 
   const affinity = includeConditional ? resolveNinjutsuAffinityBonus(actor, key, item) : null;
@@ -101,7 +105,7 @@ function resolveNinjutsuAffinityBonus(actor, key, item) {
 
   return {
     value: bonus,
-    label: `Primary Affinity (${primary})`,
+    label: game.i18n.format("NarutoD20.Breakdown.PrimaryAffinity", { affinity: primary }),
   };
 }
 
@@ -159,12 +163,20 @@ export function buildChakraPoolBreakdown(actor) {
 
   // Base portion: 2 + (2 × Level)
   const base = 2 + 2 * charLevel;
-  sources.push({ name: "Base (2 + 2×Lv)", value: base, builtIn: true });
+  sources.push({
+    name: game.i18n.localize("NarutoD20.Breakdown.ChakraPoolBase"),
+    value: base,
+    builtIn: true,
+  });
 
   // Constitution contribution: conMod × Level (may be negative)
   const conContrib = conMod * charLevel;
   if (conContrib !== 0) {
-    sources.push({ name: "Con × Level", value: conContrib, builtIn: true });
+    sources.push({
+      name: game.i18n.localize("NarutoD20.Breakdown.ConTimesLevel"),
+      value: conContrib,
+      builtIn: true,
+    });
   }
 
   // Buff bonuses — use named per-source entries when available
@@ -174,7 +186,11 @@ export function buildChakraPoolBreakdown(actor) {
       sources.push({ name: src.name, value: src.value, builtIn: false });
     }
   } else if (nData.maxBonus) {
-    sources.push({ name: "Buff Bonus", value: nData.maxBonus, builtIn: false });
+    sources.push({
+      name: game.i18n.localize("NarutoD20.Breakdown.BuffBonus"),
+      value: nData.maxBonus,
+      builtIn: false,
+    });
   }
 
   return { sources };
@@ -197,7 +213,11 @@ export function buildChakraReserveBreakdown(actor) {
 
   const sources = [];
 
-  sources.push({ name: "2 × Level", value: 2 * charLevel, builtIn: true });
+  sources.push({
+    name: game.i18n.localize("NarutoD20.Breakdown.TwoTimesLevel"),
+    value: 2 * charLevel,
+    builtIn: true,
+  });
 
   const buffSources = actor.sourceInfo?.[chakraReserveMaxBonusPath]?.positive ?? [];
   if (buffSources.length > 0) {
@@ -205,7 +225,11 @@ export function buildChakraReserveBreakdown(actor) {
       sources.push({ name: src.name, value: src.value, builtIn: false });
     }
   } else if (nData.maxBonus) {
-    sources.push({ name: "Buff Bonus", value: nData.maxBonus, builtIn: false });
+    sources.push({
+      name: game.i18n.localize("NarutoD20.Breakdown.BuffBonus"),
+      value: nData.maxBonus,
+      builtIn: false,
+    });
   }
 
   return { sources };

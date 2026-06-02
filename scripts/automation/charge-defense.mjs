@@ -10,7 +10,7 @@ export function registerChargeDefensePenalty() {
       await applyChargeDefensePenalty(actionUse.actor);
     } catch (err) {
       console.error("naruto-d20 | failed to apply charge defense penalty:", err);
-      ui.notifications.warn("Charge defense penalty automation failed. See console.");
+      ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.ChargeDefenseFailed"));
     }
   });
 }

@@ -42,32 +42,51 @@ export function readWeaponAttackRaw(item) {
 export function parseWeaponAttackConfig({ values, keys, malformed }) {
   const warnings = [];
   const str = (key) => String(values[key] ?? "").trim();
+  const issue = (key, data = {}) => game.i18n.format(`NarutoD20.WeaponAttackIssues.${key}`, data);
 
   if (malformed)
-    warnings.push(`"${CONFIG_PREFIX}" must be an object or use dotted "${CONFIG_PREFIX}.*" keys`);
+    warnings.push(issue("Malformed", { prefix: CONFIG_PREFIX }));
   for (const k of keys) {
-    if (!KNOWN_KEYS.has(k)) warnings.push(`unknown field "${CONFIG_PREFIX}.${k}"`);
+    if (!KNOWN_KEYS.has(k)) warnings.push(issue("UnknownField", { field: `${CONFIG_PREFIX}.${k}` }));
   }
 
   const mode = str("mode");
   if (!mode) {
-    if (!malformed) warnings.push(`missing "${CONFIG_PREFIX}.mode" (expected "selected")`);
+    if (!malformed)
+      warnings.push(issue("MissingMode", { field: `${CONFIG_PREFIX}.mode`, expected: "selected" }));
     return { config: null, warnings };
   }
   if (!SUPPORTED_MODES.has(mode)) {
-    warnings.push(`unsupported "${CONFIG_PREFIX}.mode" = "${mode}" (expected "selected")`);
+    warnings.push(
+      issue("UnsupportedMode", {
+        field: `${CONFIG_PREFIX}.mode`,
+        value: mode,
+        expected: "selected",
+      }),
+    );
     return { config: null, warnings };
   }
 
   let filter = str("filter") || DEFAULT_FILTER;
   if (!SUPPORTED_FILTERS.has(filter)) {
-    warnings.push(`unsupported "${CONFIG_PREFIX}.filter" = "${filter}"; using "${DEFAULT_FILTER}"`);
+    warnings.push(
+      issue("UnsupportedFilter", {
+        field: `${CONFIG_PREFIX}.filter`,
+        value: filter,
+        fallback: DEFAULT_FILTER,
+      }),
+    );
     filter = DEFAULT_FILTER;
   }
 
   const chargeRaw = str("charge").toLowerCase();
   if (chargeRaw && chargeRaw !== "true" && chargeRaw !== "false") {
-    warnings.push(`"${CONFIG_PREFIX}.charge" should be "true" or "false" (got "${chargeRaw}")`);
+    warnings.push(
+      issue("InvalidBoolean", {
+        field: `${CONFIG_PREFIX}.charge`,
+        value: chargeRaw,
+      }),
+    );
   }
 
   return {
