@@ -556,6 +556,7 @@ QA manual:
 Prioridade: media  
 Tipo: robustez/documentacao  
 Area: tecnicas com ataque de arma
+Status: concluida
 
 Problema:
 

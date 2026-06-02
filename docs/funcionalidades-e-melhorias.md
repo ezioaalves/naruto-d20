@@ -383,19 +383,50 @@ Arquivos principais:
 ### Técnicas que disparam ataque de arma
 
 Uma técnica pode configurar, via `system.flags.dictionary.weaponAttack`, o uso
-de um ataque de arma ou attack item selecionado no momento do uso.
+de um ataque de arma ou attack item selecionado no momento do uso. Quando a
+config está presente e válida (`mode = selected`), o módulo ignora a action
+própria da técnica, abre um seletor de ataque, injeta `@cl` e bônus temporários
+no `ActionUse`, e chama `item.use()` do item de arma/ataque escolhido.
 
-Campos suportados:
+#### Formatos aceitos
 
-- `mode`: atualmente `selected`.
-- `filter`: `meleeWeapon`, `rangedWeapon`, `meleeOrUnarmed` ou `unarmedOnly`.
-- `attackBonus`
-- `damageBonus`
-- `held`
-- `charge`
+A config é lida em dois formatos, com o objeto aninhado tendo precedência sobre
+as chaves pontilhadas:
 
-Durante o uso, o módulo abre um seletor de ataque, injeta `@cl` e bônus
-temporários no `ActionUse`, e então chama `item.use()` do item de arma/ataque.
+- Aninhado: `weaponAttack: { mode: "selected", filter: "meleeWeapon", ... }`
+- Pontilhado: `"weaponAttack.mode": "selected"`, `"weaponAttack.filter": "meleeWeapon"`, ...
+
+#### Campos suportados
+
+| Campo | Valores | Default | Observação |
+|---|---|---|---|
+| `mode` | `selected` | — | Obrigatório. Único modo suportado hoje. Sem ele a config é ignorada. |
+| `filter` | `meleeWeapon`, `rangedWeapon`, `meleeOrUnarmed`, `unarmedOnly` | `meleeWeapon` | Define quais armas/ataques entram no seletor. |
+| `attackBonus` | fórmula de roll (string) | `""` | Empurrado em `actionUse.shared.attackBonus`. Ex.: `2[Nome da Técnica]`. |
+| `damageBonus` | fórmula de roll (string) | `""` | Empurrado em `actionUse.shared.damageBonus`. |
+| `held` | valor de `held` do pf1 | `""` | Passado como `options.held` para `item.use()`. |
+| `charge` | `true` / `false` | `false` | `true` passa `options.charge = true` (investida). |
+
+`filter`:
+- `meleeWeapon` — armas equipadas, ações corpo a corpo.
+- `rangedWeapon` — armas equipadas, ações à distância.
+- `meleeOrUnarmed` — armas equipadas corpo a corpo **mais** attack items.
+- `unarmedOnly` — apenas attack items (ataque desarmado, naturais).
+
+#### Validação
+
+`getTechniqueWeaponAttackConfig` valida a config de forma leve e nunca quebra o
+uso da técnica — no pior caso ela é ignorada e a técnica usa sua própria action.
+Um aviso (`ui.notifications.warn` + `console.warn`) aponta o campo problemático
+quando:
+
+- `weaponAttack` existe mas não é objeto nem usa chaves `weaponAttack.*`.
+- há um campo desconhecido (ex.: `weaponAttack.filterr`).
+- falta `mode`, ou `mode` não é `selected` (config ignorada).
+- `filter` é inválido (cai para `meleeWeapon`).
+- `charge` não é `"true"` nem `"false"`.
+
+Técnicas sem nenhuma config `weaponAttack` seguem o fluxo normal, sem avisos.
 
 Arquivo principal:
 

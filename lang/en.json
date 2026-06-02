@@ -278,7 +278,10 @@
       "BrowseTechniques": "Browse Techniques",
       "BrowseFeats": "Browse Naruto Feats",
       "RemoveTechnique": "Remove Technique",
-      "RemoveTechniqueConfirm": "Remove <strong>{name}</strong> from this actor?"
+      "RemoveTechniqueConfirm": "Remove <strong>{name}</strong> from this actor?",
+      "ChooseAttack": "Choose Attack - {name}",
+      "KindWeapon": "Weapon",
+      "KindAttack": "Attack"
     },
     "Notifications": {
       "NotEnoughChakra": "{actor}: not enough chakra to perform {name}.",
@@ -302,7 +305,9 @@
       "CannotAddActionPoint": "{name}: cannot add an Action Point to this learn roll (already spent, learned, or superseded by a newer roll).",
       "NoActionPoints": "{actor} has no Action Points remaining.",
       "TapMinimum": "Amount to tap must be at least 1.",
-      "TapNotEnoughReserve": "Not enough Chakra Reserve (have {have}, requested {requested})."
+      "TapNotEnoughReserve": "Not enough Chakra Reserve (have {have}, requested {requested}).",
+      "NoWeaponAttack": "{actor}: no valid weapon or attack found for {name}.",
+      "WeaponAttackConfig": "{name}: weaponAttack config issue — {issues}"
     },
     "Cards": {
       "Block": "block",
