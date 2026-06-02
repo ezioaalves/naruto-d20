@@ -1,5 +1,5 @@
 import { MAIN_DISCIPLINES, MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
-import { TechniqueMedkitApp } from "./technique-medkit-app.mjs";
+import { TechniqueSynckitApp } from "./technique-synckit-app.mjs";
 import { buildLearningView } from "../learn-technique.mjs";
 
 // pf1 11.11 uses V1 ApplicationV1. Its render flow is (foundry.mjs:37369–37406):
@@ -168,19 +168,19 @@ export function installChakraTabPatch() {
 let headerButtonInstalled = false;
 
 /**
- * Add the "Sync Techniques" medkit button to the actor sheet's window title bar.
+ * Add the "Sync Techniques" synckit button to the actor sheet's window title bar.
  *
  * pf1 v11.11 actor sheets are V1 Applications and don't override _getHeaderButtons,
  * so we wrap the base ActorSheetPF.prototype._getHeaderButtons once (mirroring the
  * installChakraTabPatch approach) — covering character / npc / lite in one place.
  * Idempotent; must run at "setup" before the first sheet render.
  */
-export function installMedkitHeaderButton() {
+export function installSynckitHeaderButton() {
   if (headerButtonInstalled) return;
   const ActorSheetPF = pf1?.applications?.actor?.ActorSheetPF;
   if (!ActorSheetPF?.prototype?._getHeaderButtons) {
     console.error(
-      "Naruto D20 | ActorSheetPF._getHeaderButtons not found — medkit header button skipped",
+      "Naruto D20 | ActorSheetPF._getHeaderButtons not found — synckit header button skipped",
     );
     return;
   }
@@ -191,10 +191,10 @@ export function installMedkitHeaderButton() {
     const buttons = original.call(this);
     if (["character", "npc"].includes(this.actor?.type)) {
       buttons.unshift({
-        label: game.i18n.localize("NarutoD20.Medkit.HeaderButton"),
-        class: "naruto-technique-medkit",
+        label: game.i18n.localize("NarutoD20.Synckit.HeaderButton"),
+        class: "naruto-technique-synckit",
         icon: "fa-solid fa-kit-medical",
-        onclick: () => new TechniqueMedkitApp({ actor: this.actor }).render(true),
+        onclick: () => new TechniqueSynckitApp({ actor: this.actor }).render(true),
       });
     }
     return buttons;

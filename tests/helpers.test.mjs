@@ -197,7 +197,7 @@ describe("learning calculations", () => {
   });
 });
 
-describe("medkit normalization", () => {
+describe("synckit normalization", () => {
   it("ignores generated ids, learning state, descriptor order, and missing defaults", () => {
     const embedded = {
       tag: "",

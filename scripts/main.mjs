@@ -22,7 +22,7 @@ import { registerDamageTypes } from "./data/damage-types.mjs";
 import { normalizeActionIds } from "./data/action-ids.mjs";
 import { prepareBaseActorData, prepareDerivedActorData } from "./data/derived-data.mjs";
 import { registerNarutoSkills, ensureActorSkillEntries } from "./data/skills.mjs";
-import { installChakraTabPatch, installMedkitHeaderButton } from "./ui/render-patch.mjs";
+import { installChakraTabPatch, installSynckitHeaderButton } from "./ui/render-patch.mjs";
 import { installTechniqueSaveDCPatch } from "./data/technique-save-dc.mjs";
 import { installTechniqueRollDataPatch } from "./data/technique-rolldata.mjs";
 import { registerLearnCheckListeners } from "./ui/learn-checks.mjs";
@@ -64,7 +64,7 @@ Hooks.once("init", () => {
     `modules/${MODULE_ID}/templates/actor/summary-stats.hbs`,
     `modules/${MODULE_ID}/templates/actor/tap-reserves-dialog.hbs`,
     `modules/${MODULE_ID}/templates/item/technique-sheet.hbs`,
-    `modules/${MODULE_ID}/templates/actor/technique-medkit.hbs`,
+    `modules/${MODULE_ID}/templates/actor/technique-synckit.hbs`,
     `modules/${MODULE_ID}/templates/apps/technique-browser.hbs`,
     `modules/${MODULE_ID}/templates/apps/feat-browser.hbs`,
     `modules/${MODULE_ID}/templates/chat/technique-perform.hbs`,
@@ -190,7 +190,7 @@ Hooks.once("pf1RegisterDamageTypes", registerDamageTypes);
 // ── [7] setup ─────────────────────────────────────────────────────────────
 Hooks.once("setup", () => {
   installChakraTabPatch(); // _renderInner wrap — must run before first render
-  installMedkitHeaderButton(); // _getHeaderButtons wrap — "Sync Techniques" title-bar button
+  installSynckitHeaderButton(); // _getHeaderButtons wrap — "Sync Techniques" title-bar button
   registerLearnCheckListeners(); // .shinobi-roll + learn-check tooltips + chakra max tooltips
   registerLearnCardContextMenu(); // learn chat card → right-click "Add Action Point"
   registerTechniqueListListeners(); // chakra tab: filter, drop zone, CRUD

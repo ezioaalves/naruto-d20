@@ -53,6 +53,7 @@
       "CreateTechnique": "Criar Técnica",
       "LearnTechnique": "Aprender Técnica",
       "UseTechnique": "Usar Técnica",
+      "SearchTechniques": "Buscar técnicas…",
       "OpenSheet": "Abrir Ficha",
       "DuplicateTechnique": "Duplicar Técnica",
       "Remove": "Remover",
@@ -333,8 +334,8 @@
       "NoTargets": "Nenhum alvo selecionado para aplicação de buff.",
       "NoPermission": "Sem permissão para modificar {name}. Buff não aplicado."
     },
-    "Medkit": {
-      "Title": "Medkit de Técnicas",
+    "Synckit": {
+      "Title": "Synckit de Técnicas",
       "HeaderButton": "Sincronizar Técnicas",
       "Status": {
         "OutOfDate": "Desatualizada",

@@ -174,24 +174,28 @@ Feats` abrem.
    Resultado esperado: o buff expirado e removido da ficha quando a expiracao
    veio por duracao PF1e.
 
-## Medkit
+## Synckit
 
-1. Abra o Medkit pela aba Chakra em um ator com tecnicas sincronizadas.
+1. Abra o Synckit pelo botao Sync Techniques na barra de titulo em um ator com tecnicas sincronizadas.
    Resultado esperado: tecnicas iguais ao compendio aparecem como Up to date.
 
 2. Altere uma tecnica embedded no ator sem mudar aprendizado.
-   Resultado esperado: o Medkit marca como Out of date.
+   Resultado esperado: o Synckit marca como Out of date.
 
 3. Sincronize uma tecnica Out of date.
    Resultado esperado: dados de sistema voltam ao compendio e o estado de
    aprendizado do ator e preservado.
 
 4. Teste uma tecnica que nao existe mais no compendio.
-   Resultado esperado: ela aparece como Orphan e nao bloqueia o Medkit.
+   Resultado esperado: ela aparece como Orphan e nao bloqueia o Synckit.
 
 5. Use selecao em lote e sincronize multiplas tecnicas.
    Resultado esperado: apenas selecionadas sao atualizadas e o resumo informa a
    quantidade sincronizada.
+
+6. Abra a aba Chakra e use o campo de busca no header de Techniques.
+   Resultado esperado: a lista filtra tecnicas por nome em tempo real e limpar
+   o campo restaura todos os resultados.
 
 ## Browsers
 
@@ -272,6 +276,6 @@ Feats` abrem.
    Resultado esperado: nao ha erros bloqueantes no console durante `init`,
    `setup` ou `ready`.
 
-3. Abra uma ficha, uma tecnica, um browser e o Medkit.
+3. Abra uma ficha, uma tecnica, um browser e o Synckit.
    Resultado esperado: nenhuma janela fica com template faltando ou layout
    quebrado.

@@ -11,7 +11,7 @@ Foundry VTT module for a Naruto D20 homebrew expansion on top of Pathfinder 1e (
 - A Chakra tab on the actor sheet, and Hero Statistics injected into the Summary tab
 - 4 elemental damage types (Earth, Water, Wind, Holy)
 - Buff targets for chakra resources and learn checks that plug into PF1e's changes engine
-- Technique learning, Tap Reserves, Chakra conditions, custom Technique/Feat browsers, Medkit sync, and weapon-attack techniques
+- Technique learning, Tap Reserves, Chakra conditions, custom Technique/Feat browsers, Synckit sync, and weapon-attack techniques
 - Buff automation: on a successful technique perform, look up a same-named buff in the `naruto-d20.technique-buffs` compendium or configured custom packs and apply/refresh it on the resolved targets, inheriting the triggering action's duration
 
 ## Development cycle
@@ -120,7 +120,7 @@ scripts/
     tap-reserves.mjs          # Tap Reserves dialog/listener
     technique-list.mjs        # Chakra-tab filter/drop-zone/CRUD listeners
     technique-browser.mjs     # Technique compendium browser (Application V1)
-    technique-medkit-app.mjs  # Per-actor technique sync/diagnostics UI
+    technique-synckit-app.mjs # Per-actor technique sync/diagnostics UI
     technique-sheet.mjs       # Custom ItemSheet for technique items
     technique-weapon-attack.mjs # Selected weapon/attack item integration
     summary-stats.mjs         # Hero Statistics block on Summary tab
@@ -129,11 +129,11 @@ scripts/
     buff-expiry.mjs           # Delete module-created automation buffs on PF1e expiry
     charge-defense.mjs        # Charge AC penalty buff for PF1e charge attacks
     feat-grants.mjs           # Cascade-delete granted feat supplements
-    technique-sync.mjs        # Medkit sync/diff helpers
+    technique-sync.mjs        # Synckit sync/diff helpers
   utils/
     drag-drop.mjs             # resolveDroppedItem — v12/v13 TextEditor shim
 templates/
-  actor/{chakra-tab,summary-stats,tap-reserves-dialog,technique-medkit}.hbs
+  actor/{chakra-tab,summary-stats,tap-reserves-dialog,technique-synckit}.hbs
   apps/{technique-browser,feat-browser}.hbs
   chat/{technique-perform,learning-result}.hbs
   item/technique-sheet.hbs
@@ -173,7 +173,7 @@ The tab is injected by patching `ActorSheetPF.prototype._renderInner` (in `scrip
 
 Listeners are wired separately because they depend on the live DOM:
 - `scripts/ui/learn-checks.mjs` — `.shinobi-roll` click + `[data-naruto-tooltip="learn.X"]` hover
-- `scripts/ui/technique-list.mjs` — discipline filter chips, drop zone, medkit, browse, open/use/learn/duplicate/delete
+- `scripts/ui/technique-list.mjs` — discipline filter chips, drop zone, synckit search, browse, open/use/learn/duplicate/delete
 - `scripts/ui/tap-reserves.mjs` — Reserve header click opens the Tap Reserves dialog
 
 Both consume `buildLearnCheckBreakdown` (from `data/bonus-sources.mjs`) so a single edit changes what the chat card and the tooltip show.
@@ -220,7 +220,7 @@ And on the technique itself: `item.system.automation.enabled` (default `true`) a
 | [`docs/pf1-buff-changes-reference.md`](docs/pf1-buff-changes-reference.md) | PF1e buff *changes* reference for authoring technique automation |
 
 Per-feature **implementation notes** (how each feature/refactor was built — technique header
-buttons, compendium browser, medkit, DC buffs, mastery, learning, drop-dup fix, chakra
+buttons, compendium browser, synckit, DC buffs, mastery, learning, drop-dup fix, chakra
 tooltips/conditions, auto-add-buffs performance, refactor backlog, etc.) now live in
 `dev-notes/` at the repo root. That directory is **gitignored / local-only** — it is not in
 fresh clones. Read the matching note there before changing a feature if you have it locally.
