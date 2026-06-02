@@ -122,6 +122,7 @@ QA manual:
 Prioridade: alta  
 Tipo: mantenibilidade/risco de bug  
 Area: uso de tecnicas
+Status: concluida
 
 Problema:
 
