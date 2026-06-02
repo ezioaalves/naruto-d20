@@ -282,6 +282,7 @@ Resultado:
 Prioridade: media-alta  
 Tipo: performance/mantenibilidade  
 Area: auto-add-buffs
+Status: concluida
 
 Problema:
 

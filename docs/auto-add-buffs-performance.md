@@ -8,7 +8,7 @@ aplicacao automatica do buff.
 Depois que `performTechnique()` completa a action PF1e e gasta chakra, o modulo
 chama `applyTechniqueBuff()` em `scripts/automation/buff-application.mjs`.
 
-O caminho critico atual e:
+Antes da otimizacao da Tarefa 6, o caminho critico era:
 
 1. `findBuffByName(item.name)`.
 2. Para cada compendio configurado, `pack.getIndex()`.
@@ -18,7 +18,7 @@ O caminho critico atual e:
 6. `existing.update()` para refrescar buff existente ou
    `targetActor.createEmbeddedDocuments("Item", [itemData])` para criar novo buff.
 
-## Conclusao
+## Conclusao do diagnostico
 
 O gargalo mais provavel e o lookup em compendio durante o uso, especialmente em
 primeiro uso ou com packs customizados:
@@ -37,16 +37,16 @@ primeiro uso ou com packs customizados:
 `scripts/automation/buff-expiry.mjs` nao participa do caminho critico do uso da
 tecnica. Ele roda em resposta a expiracao natural de buffs ja existentes.
 
-## Proposta para a proxima tarefa
+## Otimizacao aplicada na Tarefa 6
 
-A otimizacao mais objetiva para a Tarefa 6 e separar e cachear o lookup:
+A Tarefa 6 aplicou a otimizacao mais objetiva do diagnostico:
 
-- Manter um cache de index por pack durante a sessao.
-- Separar `findBuffByName`, resolucao de pack/world item, alvo, duracao e
+- Mantem um cache de index por pack durante a sessao.
+- Separa `findBuffByName`, resolucao de pack/world item, alvo, duracao e
   apply/refresh.
-- Resolver matches exatos e variantes usando indexes cacheados.
-- Carregar documento com `pack.getDocument()` apenas depois de escolher o match.
-- Preservar prioridade atual: compendios primeiro, world items depois.
+- Resolve matches exatos e variantes usando indexes cacheados.
+- Carrega documento com `pack.getDocument()` apenas depois de escolher o match.
+- Preserva prioridade por origem: compendios primeiro, world items depois.
 
 Se ainda houver pausa apos cachear indexes, o proximo ponto a medir e
 `pack.getDocument()` versus `createEmbeddedDocuments()`/`existing.update()` em

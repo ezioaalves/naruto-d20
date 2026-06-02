@@ -419,7 +419,10 @@ Busca:
 - Primeiro no pack `naruto-d20.technique-buffs`.
 - Depois em packs listados por `customBuffCompendia`.
 - Depois em world items do tipo `buff`.
-- Match exato vence; variantes `Nome (...)` são fallback.
+- Dentro da prioridade de origem, match exato vence; variantes `Nome (...)` são
+  fallback.
+- Os indexes dos packs sao cacheados durante a sessao para evitar chamar
+  `pack.getIndex()` a cada uso de tecnica.
 
 Alvos:
 
@@ -434,12 +437,10 @@ Aplicação:
 - Reaplicar refresca o buff em vez de duplicar.
 - Duração pode ser herdada da action da técnica.
 
-Diagnostico de performance:
+Diagnostico e otimizacao de performance:
 
-- O gargalo mais provavel e o lookup em compendio durante o uso:
-  `findBuffByName()` chama `pack.getIndex()` para cada pack configurado e depois
-  `pack.getDocument()` para o buff escolhido.
-- A otimizacao recomendada e cachear indexes por pack durante a sessao e separar
+- O diagnostico indicou lookup em compendio como gargalo mais provavel.
+- A otimizacao implementada cacheia indexes por pack durante a sessao e separa
   lookup, resolucao de documento, alvo, duracao e apply/refresh.
 - Detalhes em `docs/auto-add-buffs-performance.md`.
 
