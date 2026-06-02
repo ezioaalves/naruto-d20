@@ -64,7 +64,7 @@ export class TechniqueCompendiumBrowser extends Application {
             top:      30,
             left:     40,
             resizable: true,
-            title:    "Browse Techniques",
+            title:    game.i18n.localize("NarutoD20.App.BrowseTechniques"),
         });
     }
 
@@ -99,7 +99,7 @@ export class TechniqueCompendiumBrowser extends Application {
         if (this.#entries && !force) return;
         const pack = game.packs.get(PACK_ID);
         if (!pack) {
-            ui.notifications.warn("Technique compendium not found.");
+            ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.TechniqueCompendiumNotFound"));
             this.#entries = [];
             this.#loading = false;
             return;

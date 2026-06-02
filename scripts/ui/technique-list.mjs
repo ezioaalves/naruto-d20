@@ -78,7 +78,7 @@ function registerDropListeners(chakraTab, actor) {
             ev.stopPropagation();
             const srcItem = await resolveDroppedItem(ev.originalEvent, { type: TECHNIQUE_ITEM_TYPE });
             if (!srcItem) {
-                ui.notifications.warn("Only Technique items can be dropped here.");
+                ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.OnlyTechniqueDrop"));
                 return;
             }
             if (srcItem.parent === actor) return; // already owned
@@ -100,8 +100,8 @@ function registerCreateDuplicateDeleteListeners(chakraTab, actor) {
         const item = getTechniqueRowItem(actor, ev.currentTarget);
         if (!item) return;
         const ok = await Dialog.confirm({
-            title:   "Remove Technique",
-            content: `<p>Remove <strong>${item.name}</strong> from this actor?</p>`,
+            title:   game.i18n.localize("NarutoD20.App.RemoveTechnique"),
+            content: `<p>${game.i18n.format("NarutoD20.App.RemoveTechniqueConfirm", { name: item.name })}</p>`,
         });
         if (ok) await item.delete();
     });
@@ -130,7 +130,7 @@ function registerUseLearnOpenListeners(chakraTab, actor) {
         if (!item) return;
         const firstAction = Array.from(item.actions ?? [])[0];
         if (!firstAction) {
-            ui.notifications.warn(`${item.name}: no actions configured.`);
+            ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NoActionsConfigured", { name: item.name }));
             return;
         }
         await performTechnique(item, firstAction.id, ev);

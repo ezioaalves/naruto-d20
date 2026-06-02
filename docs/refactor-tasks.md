@@ -511,6 +511,7 @@ QA manual:
 Prioridade: media  
 Tipo: qualidade/mantenibilidade  
 Area: localizacao
+Status: concluida
 
 Problema:
 

@@ -45,7 +45,7 @@ export class NarutoFeatBrowser extends Application {
             top:       30,
             left:      40,
             resizable: true,
-            title:     "Browse Naruto Feats",
+            title:     game.i18n.localize("NarutoD20.App.BrowseFeats"),
         });
     }
 
@@ -78,7 +78,7 @@ export class NarutoFeatBrowser extends Application {
         if (this.#entries && !force) return;
         const pack = game.packs.get(PACK_ID);
         if (!pack) {
-            ui.notifications.warn("Naruto feats compendium not found.");
+            ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.FeatsCompendiumNotFound"));
             this.#entries = [];
             this.#loading = false;
             return;

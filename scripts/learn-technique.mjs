@@ -15,6 +15,10 @@ function characterLevel(actor) {
     return Number(actor.system.details?.level?.value ?? actor.system.details?.cr?.total ?? 0) || 0;
 }
 
+function blockUnit(count) {
+    return game.i18n.localize(count === 1 ? "NarutoD20.Cards.Block" : "NarutoD20.Cards.Blocks");
+}
+
 function getLearningMode() {
     return game.settings.get(MODULE_ID, "learningProgressionMode") || LEARNING_MODES.STANDARD;
 }
@@ -124,7 +128,7 @@ function availableTrainingChakra(actor) {
 }
 
 function warnInsufficientTrainingChakra(actor, amount, available = availableTrainingChakra(actor)) {
-    ui.notifications.warn(`${actor.name}: learning requires ${amount} training chakra, but only ${available} is available.`);
+    ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.TrainingChakraRequired", { actor: actor.name, amount, available }));
 }
 
 function canPayTrainingChakra(actor, amount) {
@@ -211,9 +215,9 @@ async function expireInterruptedTraining(item, learning) {
     });
 
     await postLearningCard(item.actor, item, {
-        title: `${item.name} training interrupted`,
+        title: game.i18n.format("NarutoD20.Cards.Learn.TrainingInterruptedTitle", { name: item.name }),
         cssClass: "failed",
-        lead: "More than 30 days passed since the last training block. Learning progress is lost before the new attempt.",
+        lead: game.i18n.localize("NarutoD20.Cards.Learn.TrainingInterruptedLead"),
     });
 
     return {
@@ -260,11 +264,11 @@ export async function attemptLearnTechnique(item) {
 function validateLearningActor(item) {
     const actor = item.actor;
     if (!actor) {
-        ui.notifications.warn("Equip this technique on an actor to learn it.");
+        ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.EquipToLearn"));
         return null;
     }
     if (!actor.isOwner) {
-        ui.notifications.warn(`${actor.name}: you do not have permission to update this actor.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NoPermissionUpdate", { actor: actor.name }));
         return null;
     }
     return actor;
@@ -272,14 +276,14 @@ function validateLearningActor(item) {
 
 function validateLearningState(item, actor, learning) {
     if (learning.learned) {
-        ui.notifications.info(`${item.name}: already learned.`);
+        ui.notifications.info(game.i18n.format("NarutoD20.Notifications.AlreadyLearned", { name: item.name }));
         return false;
     }
 
     const rank = Number(item.system.rank ?? 1) || 1;
     const level = characterLevel(actor);
     if (rank > level) {
-        ui.notifications.warn(`${item.name}: rank ${rank} is higher than ${actor.name}'s level ${level}.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.RankTooHigh", { name: item.name, rank, actor: actor.name, level }));
         return false;
     }
 
@@ -295,16 +299,18 @@ async function learnUnmappedTechnique(item, actor, learning) {
     });
     await actor.update({ [learningCurrentTechniqueIdPath]: null });
     await postLearningCard(actor, item, {
-        title: `${item.name} learned`,
+        title: game.i18n.format("NarutoD20.Cards.Learn.LearnedTitle", { name: item.name }),
         cssClass: "success",
-        lead: `${item.system.discipline || "Unmapped discipline"} has no mapped learn skill yet, so this technique is treated as learned for phase 1.`,
+        lead: game.i18n.format("NarutoD20.Cards.Learn.NoSkillLead", {
+            discipline: item.system.discipline || game.i18n.localize("NarutoD20.Cards.Learn.UnmappedDiscipline"),
+        }),
     });
 }
 
 function validateLearningSkillAndChakra(item, actor, skillKey, mode) {
     const ranks = Number(actor.system.skills?.[skillKey]?.rank ?? 0) || 0;
     if (ranks < 1) {
-        ui.notifications.warn(`${actor.name}: at least 1 rank in ${pf1.config.skills?.[skillKey] ?? skillKey} is required to learn ${item.name}.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.SkillRankRequired", { actor: actor.name, skill: pf1.config.skills?.[skillKey] ?? skillKey, name: item.name }));
         return false;
     }
 
@@ -327,7 +333,7 @@ async function rollLearnCheck(item, actor, skillKey, activeLearning) {
     const apBonus = Math.max(0, Number(activeLearning.actionPointBonus ?? 0) || 0);
     const breakdown = buildLearnCheckBreakdown(actor, skillKey, { item, includeConditional: true });
     if (!breakdown) {
-        ui.notifications.warn(`${actor.name}: learn check data for ${skillKey} is not ready.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.LearnDataNotReady", { actor: actor.name, skill: skillKey }));
         return null;
     }
 
@@ -341,7 +347,7 @@ async function rollLearnCheck(item, actor, skillKey, activeLearning) {
     // pass through a button override. Rules disallow Take 20; GMs must enforce
     // that table rule until we replace this with a custom dialog.
     const result = await pf1.dice.d20Roll({
-        flavor: `Learn: ${item.name}`,
+        flavor: game.i18n.format("NarutoD20.Cards.Learn.Flavor", { name: item.name }),
         parts,
         rollData: actor.getRollData?.() ?? {},
         speaker: ChatMessage.implementation.getSpeaker({ actor }),
@@ -351,7 +357,7 @@ async function rollLearnCheck(item, actor, skillKey, activeLearning) {
 
     const total = rollTotal(result);
     if (!Number.isFinite(total)) {
-        ui.notifications.warn(`${item.name}: could not read learn roll total.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.CouldNotReadRoll", { name: item.name }));
         return null;
     }
 
@@ -484,15 +490,22 @@ function buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraD
 
 async function postLearnAttemptResultCard(actor, item, { result, baseLearning, chakraDeduction, now, apRollText }) {
     const apLine = apRollText ? `${apRollText} → ` : "";
-    const chakraLine = `${result.chakraCost}${chakraDeduction.deducted ? ` (${chakraDeduction.deducted} deducted)` : ""}`;
+    const chakraLine = chakraDeduction.deducted
+        ? game.i18n.format("NarutoD20.Cards.Learn.ChakraDeducted", { cost: result.chakraCost, deducted: chakraDeduction.deducted })
+        : `${result.chakraCost}`;
+    const blocksUnit = blockUnit(result.trainingBlocks);
 
-    const trainingFooter = `Training time: +${result.trainingBlocks} block${result.trainingBlocks === 1 ? "" : "s"}; training chakra: ${chakraLine}.`;
+    const trainingFooter = game.i18n.format("NarutoD20.Cards.Learn.TrainingFooter", {
+        blocks: result.trainingBlocks, unit: blocksUnit, chakra: chakraLine,
+    });
 
     if (result.learned) {
         await postLearningCard(actor, item, {
-            title: `${item.name} learned`,
+            title: game.i18n.format("NarutoD20.Cards.Learn.LearnedTitle", { name: item.name }),
             cssClass: "success",
-            lead: `${apLine}Learn check ${result.total} vs DC ${result.learnDC}. Progress ${result.progress}/${result.targetProgress}.`,
+            lead: game.i18n.format("NarutoD20.Cards.Learn.CheckProgress", {
+                ap: apLine, total: result.total, dc: result.learnDC, progress: result.progress, target: result.targetProgress,
+            }),
             footer: trainingFooter,
         });
         return;
@@ -500,26 +513,33 @@ async function postLearnAttemptResultCard(actor, item, { result, baseLearning, c
 
     if (result.resetRun) {
         await postLearningCard(actor, item, {
-            title: `${item.name} learning failed`,
+            title: game.i18n.format("NarutoD20.Cards.Learn.LearningFailedTitle", { name: item.name }),
             cssClass: "failed",
-            lead: `${apLine}Learn check ${result.total} vs DC ${result.learnDC}. Attempts ${result.attemptsUsed}/${result.maxAttempts}; progress is lost and the run starts over.`,
+            lead: game.i18n.format("NarutoD20.Cards.Learn.CheckReset", {
+                ap: apLine, total: result.total, dc: result.learnDC, used: result.attemptsUsed, max: result.maxAttempts,
+            }),
             footer: trainingFooter,
         });
         return;
     }
 
     const attemptText = result.mode === LEARNING_MODES.FOUR_HOUR_BLOCKS
-        ? `${result.attemptsUsed} block${result.attemptsUsed === 1 ? "" : "s"}`
-        : `${result.attemptsUsed}/${result.maxAttempts} attempts`;
+        ? game.i18n.format("NarutoD20.Cards.Learn.BlocksCount", { count: result.attemptsUsed, unit: blockUnit(result.attemptsUsed) })
+        : game.i18n.format("NarutoD20.Cards.Learn.AttemptsCount", { used: result.attemptsUsed, max: result.maxAttempts });
     const resultText = result.success
-        ? `Success, +${result.award} progress.`
-        : `Failure, Failure Insight is now +${result.nextFailureInsight}.`;
+        ? game.i18n.format("NarutoD20.Cards.Learn.ResultSuccess", { award: result.award })
+        : game.i18n.format("NarutoD20.Cards.Learn.ResultFailure", { insight: result.nextFailureInsight });
 
     await postLearningCard(actor, item, {
-        title: `Learning ${item.name}`,
+        title: game.i18n.format("NarutoD20.Cards.Learn.LearningTitle", { name: item.name }),
         cssClass: result.success ? "success" : "failed",
-        lead: `${apLine}Learn check ${result.total} vs DC ${result.learnDC}. ${resultText}`,
-        footer: `Progress ${result.progress}/${result.targetProgress}; ${attemptText}; +${result.trainingBlocks} training block${result.trainingBlocks === 1 ? "" : "s"}; training chakra ${chakraLine}.`,
+        lead: game.i18n.format("NarutoD20.Cards.Learn.CheckResult", {
+            ap: apLine, total: result.total, dc: result.learnDC, result: resultText,
+        }),
+        footer: game.i18n.format("NarutoD20.Cards.Learn.AttemptFooter", {
+            progress: result.progress, target: result.targetProgress, attempts: attemptText,
+            blocks: result.trainingBlocks, unit: blockUnit(result.trainingBlocks), chakra: chakraLine,
+        }),
         flags: buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraDeduction, now }),
     });
 }
@@ -574,13 +594,13 @@ export async function addActionPointToLearnCard(message) {
     const { flags, actor, item } = ctx;
 
     if (!learnCardCanAddAp(message)) {
-        ui.notifications.warn(`${item.name}: cannot add an Action Point to this learn roll (already spent, learned, or superseded by a newer roll).`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.CannotAddActionPoint", { name: item.name }));
         return;
     }
 
     const currentAp = Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0) || 0;
     if (currentAp < 1) {
-        ui.notifications.warn(`${actor.name} has no Action Points remaining.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NoActionPoints", { actor: actor.name }));
         return;
     }
 
@@ -589,7 +609,7 @@ export async function addActionPointToLearnCard(message) {
     const apBonus = Math.max(0, Number(apRoll.total) || 0);
     await apRoll.toMessage({
         speaker: ChatMessage.implementation.getSpeaker({ actor }),
-        flavor: `Action Point — Learn: ${item.name} (${currentAp} → ${currentAp - 1} remaining)`,
+        flavor: game.i18n.format("NarutoD20.Cards.Learn.ActionPointFlavor", { name: item.name, from: currentAp, to: currentAp - 1 }),
         rollMode: game.settings.get("core", "rollMode"),
     });
 
@@ -613,7 +633,7 @@ export async function addActionPointToLearnCard(message) {
         total: (Number(flags.baseTotalNoAp) || 0) + apBonus,
         apBonus,
         supersedes: message,
-        apRollText: `Action Point 1d6 = ${apBonus}`,
+        apRollText: game.i18n.format("NarutoD20.Cards.Learn.ActionPointRollText", { value: apBonus }),
     });
 }
 

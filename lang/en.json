@@ -272,6 +272,71 @@
       "NothingSelected": "No techniques selected.",
       "Synced": "Synced {count} technique(s) from the compendium.",
       "Empty": "This actor has no techniques."
+    },
+    "App": {
+      "TapReserves": "Tap Reserves",
+      "BrowseTechniques": "Browse Techniques",
+      "BrowseFeats": "Browse Naruto Feats",
+      "RemoveTechnique": "Remove Technique",
+      "RemoveTechniqueConfirm": "Remove <strong>{name}</strong> from this actor?"
+    },
+    "Notifications": {
+      "NotEnoughChakra": "{actor}: not enough chakra to perform {name}.",
+      "EquipToUse": "Equip this technique on an actor to use it.",
+      "NotLearned": "{name}: not learned yet.",
+      "ActionNotFound": "{name}: action not found.",
+      "ActionNotFoundPhase": "{name}: action not found {phase}.",
+      "BuffAutomationFailed": "Buff automation failed for {name}. See console.",
+      "NoActionsConfigured": "{name}: no actions configured.",
+      "OnlyTechniqueDrop": "Only Technique items can be dropped here.",
+      "TechniqueCompendiumNotFound": "Technique compendium not found.",
+      "FeatsCompendiumNotFound": "Naruto feats compendium not found.",
+      "TrainingChakraRequired": "{actor}: learning requires {amount} training chakra, but only {available} is available.",
+      "EquipToLearn": "Equip this technique on an actor to learn it.",
+      "NoPermissionUpdate": "{actor}: you do not have permission to update this actor.",
+      "AlreadyLearned": "{name}: already learned.",
+      "RankTooHigh": "{name}: rank {rank} is higher than {actor}'s level {level}.",
+      "SkillRankRequired": "{actor}: at least 1 rank in {skill} is required to learn {name}.",
+      "LearnDataNotReady": "{actor}: learn check data for {skill} is not ready.",
+      "CouldNotReadRoll": "{name}: could not read learn roll total.",
+      "CannotAddActionPoint": "{name}: cannot add an Action Point to this learn roll (already spent, learned, or superseded by a newer roll).",
+      "NoActionPoints": "{actor} has no Action Points remaining.",
+      "TapMinimum": "Amount to tap must be at least 1.",
+      "TapNotEnoughReserve": "Not enough Chakra Reserve (have {have}, requested {requested})."
+    },
+    "Cards": {
+      "Block": "block",
+      "Blocks": "blocks",
+      "Perform": {
+        "Failed": "Perform check failed (DC {dc}). No chakra spent.",
+        "Spent": "Spent {cost} chakra ({summary}).",
+        "MasteryNote": " (+{value} mastery)",
+        "AutoBypass": "Ranks {ranks}{mastery} ≥ threshold {threshold} — auto-perform.",
+        "NoCheckRequired": "No perform check required."
+      },
+      "TapReservesFlavor": "Tap Reserves — {amount} chakra{seal}",
+      "Learn": {
+        "Flavor": "Learn: {name}",
+        "ActionPointFlavor": "Action Point — Learn: {name} ({from} → {to} remaining)",
+        "ActionPointRollText": "Action Point 1d6 = {value}",
+        "UnmappedDiscipline": "Unmapped discipline",
+        "TrainingInterruptedTitle": "{name} training interrupted",
+        "TrainingInterruptedLead": "More than 30 days passed since the last training block. Learning progress is lost before the new attempt.",
+        "LearnedTitle": "{name} learned",
+        "LearningFailedTitle": "{name} learning failed",
+        "LearningTitle": "Learning {name}",
+        "NoSkillLead": "{discipline} has no mapped learn skill yet, so this technique is treated as learned for phase 1.",
+        "CheckProgress": "{ap}Learn check {total} vs DC {dc}. Progress {progress}/{target}.",
+        "CheckReset": "{ap}Learn check {total} vs DC {dc}. Attempts {used}/{max}; progress is lost and the run starts over.",
+        "CheckResult": "{ap}Learn check {total} vs DC {dc}. {result}",
+        "ResultSuccess": "Success, +{award} progress.",
+        "ResultFailure": "Failure, Failure Insight is now +{insight}.",
+        "TrainingFooter": "Training time: +{blocks} {unit}; training chakra: {chakra}.",
+        "AttemptFooter": "Progress {progress}/{target}; {attempts}; +{blocks} training {unit}; training chakra {chakra}.",
+        "AttemptsCount": "{used}/{max} attempts",
+        "BlocksCount": "{count} {unit}",
+        "ChakraDeducted": "{cost} ({deducted} deducted)"
+      }
     }
   }
 }

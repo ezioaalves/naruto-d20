@@ -32,7 +32,7 @@ export async function performTechnique(item, actionId, event = null) {
     if (!useResult || useResult.err) return;
 
     if (!canAffordTechnique(actor, current.item)) {
-        ui.notifications.warn(`${actor.name}: not enough chakra to perform ${current.item.name}.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", { actor: actor.name, name: current.item.name }));
         return;
     }
 
@@ -49,23 +49,23 @@ export async function performTechnique(item, actionId, event = null) {
 function validateTechniqueUse(item, actionId) {
     const actor = item.actor;
     if (!actor) {
-        ui.notifications.warn("Equip this technique on an actor to use it.");
+        ui.notifications.warn(game.i18n.localize("NarutoD20.Notifications.EquipToUse"));
         return null;
     }
 
     if (game.settings.get(MODULE_ID, "enforceLearning") && !isTechniqueEffectivelyLearned(item)) {
-        ui.notifications.warn(`${item.name}: not learned yet.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NotLearned", { name: item.name }));
         return null;
     }
 
     const action = item.actions?.get(actionId);
     if (!action) {
-        ui.notifications.warn(`${item.name}: action not found.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.ActionNotFound", { name: item.name }));
         return null;
     }
 
     if (!canAffordTechnique(actor, item)) {
-        ui.notifications.warn(`${actor.name}: not enough chakra to perform ${item.name}.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", { actor: actor.name, name: item.name }));
         return null;
     }
 
@@ -84,7 +84,7 @@ async function resolvePerformCheck(item, actor) {
     const threshold      = sys.derived.skillThreshold;
     const performDC      = sys.derived.performDC;
     const masteryPerform = sys.derived.masteryPerform ?? 0;
-    const masteryNote    = masteryPerform > 0 ? ` (+${masteryPerform} mastery)` : "";
+    const masteryNote    = masteryPerform > 0 ? game.i18n.format("NarutoD20.Cards.Perform.MasteryNote", { value: masteryPerform }) : "";
 
     if (!skillKey || (skillRanks + masteryPerform) >= threshold) {
         return {
@@ -92,8 +92,8 @@ async function resolvePerformCheck(item, actor) {
             performDC,
             masteryNote,
             bypassNote: skillKey
-                ? `Ranks ${skillRanks}${masteryNote} ≥ threshold ${threshold} — auto-perform.`
-                : "No perform check required.",
+                ? game.i18n.format("NarutoD20.Cards.Perform.AutoBypass", { ranks: skillRanks, mastery: masteryNote, threshold })
+                : game.i18n.localize("NarutoD20.Cards.Perform.NoCheckRequired"),
         };
     }
 
@@ -113,7 +113,7 @@ function resolveCurrentTechniqueAction(actor, item, actionId, actionIndex, phase
     const currentItem = actor.items.get(item.id) ?? item;
     const action = currentItem.actions?.get(actionId) ?? Array.from(currentItem.actions ?? [])[actionIndex];
     if (!action) {
-        ui.notifications.warn(`${item.name}: action not found ${phase}.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.ActionNotFoundPhase", { name: item.name, phase }));
         return null;
     }
     return { item: currentItem, action };
@@ -206,7 +206,7 @@ async function postPerformFailureCard(actor, item, { performDC, masteryNote }) {
     await postPerformCard(actor, {
         name: item.name,
         cssClass: "failed",
-        message: `Perform check failed (DC ${performDC}${masteryNote}). No chakra spent.`,
+        message: game.i18n.format("NarutoD20.Cards.Perform.Failed", { dc: `${performDC}${masteryNote}` }),
     });
 }
 
@@ -217,7 +217,7 @@ async function postTechniqueSuccessCard(actor, item, cost, spendSummary, bypassN
         cssClass: "success",
         message: bypassNote || "",
         messageClass: bypassNote ? "naruto-perform-bypass" : "",
-        footer: `Spent ${cost} chakra (${spendSummary}).`,
+        footer: game.i18n.format("NarutoD20.Cards.Perform.Spent", { cost, summary: spendSummary }),
     });
 }
 
@@ -229,6 +229,6 @@ async function applyPostUseAutomation(item, actor, action) {
         await applyTechniqueBuff(item, actor, action);
     } catch (err) {
         console.error(`naruto-d20 | buff automation failed for "${item.name}":`, err);
-        ui.notifications.warn(`Buff automation failed for ${item.name}. See console.`);
+        ui.notifications.warn(game.i18n.format("NarutoD20.Notifications.BuffAutomationFailed", { name: item.name }));
     }
 }

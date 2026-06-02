@@ -272,6 +272,71 @@
       "NothingSelected": "Nenhuma técnica selecionada.",
       "Synced": "{count} técnica(s) sincronizada(s) do compendium.",
       "Empty": "Este personagem não tem técnicas."
+    },
+    "App": {
+      "TapReserves": "Drenar Reservas",
+      "BrowseTechniques": "Procurar Técnicas",
+      "BrowseFeats": "Procurar Talentos Naruto",
+      "RemoveTechnique": "Remover Técnica",
+      "RemoveTechniqueConfirm": "Remover <strong>{name}</strong> deste personagem?"
+    },
+    "Notifications": {
+      "NotEnoughChakra": "{actor}: chakra insuficiente para realizar {name}.",
+      "EquipToUse": "Equipe esta técnica em um personagem para usá-la.",
+      "NotLearned": "{name}: ainda não aprendida.",
+      "ActionNotFound": "{name}: ação não encontrada.",
+      "ActionNotFoundPhase": "{name}: ação não encontrada {phase}.",
+      "BuffAutomationFailed": "Automação de buff falhou para {name}. Veja o console.",
+      "NoActionsConfigured": "{name}: nenhuma ação configurada.",
+      "OnlyTechniqueDrop": "Apenas itens de Técnica podem ser soltos aqui.",
+      "TechniqueCompendiumNotFound": "Compêndio de técnicas não encontrado.",
+      "FeatsCompendiumNotFound": "Compêndio de talentos Naruto não encontrado.",
+      "TrainingChakraRequired": "{actor}: aprender requer {amount} de chakra de treino, mas só há {available} disponível.",
+      "EquipToLearn": "Equipe esta técnica em um personagem para aprendê-la.",
+      "NoPermissionUpdate": "{actor}: você não tem permissão para atualizar este personagem.",
+      "AlreadyLearned": "{name}: já aprendida.",
+      "RankTooHigh": "{name}: rank {rank} é maior que o nível {level} de {actor}.",
+      "SkillRankRequired": "{actor}: pelo menos 1 rank em {skill} é necessário para aprender {name}.",
+      "LearnDataNotReady": "{actor}: os dados de teste de aprendizado de {skill} não estão prontos.",
+      "CouldNotReadRoll": "{name}: não foi possível ler o total da rolagem de aprendizado.",
+      "CannotAddActionPoint": "{name}: não é possível adicionar um Ponto de Ação a esta rolagem de aprendizado (já gasto, aprendida ou substituída por uma rolagem mais recente).",
+      "NoActionPoints": "{actor} não tem Pontos de Ação restantes.",
+      "TapMinimum": "A quantidade a drenar deve ser pelo menos 1.",
+      "TapNotEnoughReserve": "Reserva de Chakra insuficiente (tem {have}, solicitado {requested})."
+    },
+    "Cards": {
+      "Block": "bloco",
+      "Blocks": "blocos",
+      "Perform": {
+        "Failed": "Teste de execução falhou (DC {dc}). Nenhum chakra gasto.",
+        "Spent": "Gastou {cost} de chakra ({summary}).",
+        "MasteryNote": " (+{value} maestria)",
+        "AutoBypass": "Ranks {ranks}{mastery} ≥ limiar {threshold} — execução automática.",
+        "NoCheckRequired": "Nenhum teste de execução necessário."
+      },
+      "TapReservesFlavor": "Drenar Reservas — {amount} de chakra{seal}",
+      "Learn": {
+        "Flavor": "Aprender: {name}",
+        "ActionPointFlavor": "Ponto de Ação — Aprender: {name} ({from} → {to} restantes)",
+        "ActionPointRollText": "Ponto de Ação 1d6 = {value}",
+        "UnmappedDiscipline": "Disciplina não mapeada",
+        "TrainingInterruptedTitle": "{name} treino interrompido",
+        "TrainingInterruptedLead": "Mais de 30 dias se passaram desde o último bloco de treino. O progresso de aprendizado é perdido antes da nova tentativa.",
+        "LearnedTitle": "{name} aprendida",
+        "LearningFailedTitle": "{name} aprendizado falhou",
+        "LearningTitle": "Aprendendo {name}",
+        "NoSkillLead": "{discipline} ainda não tem perícia de aprendizado mapeada, então esta técnica é tratada como aprendida na fase 1.",
+        "CheckProgress": "{ap}Teste de aprendizado {total} vs DC {dc}. Progresso {progress}/{target}.",
+        "CheckReset": "{ap}Teste de aprendizado {total} vs DC {dc}. Tentativas {used}/{max}; o progresso é perdido e a sequência recomeça.",
+        "CheckResult": "{ap}Teste de aprendizado {total} vs DC {dc}. {result}",
+        "ResultSuccess": "Sucesso, +{award} de progresso.",
+        "ResultFailure": "Falha, Failure Insight agora é +{insight}.",
+        "TrainingFooter": "Tempo de treino: +{blocks} {unit}; chakra de treino: {chakra}.",
+        "AttemptFooter": "Progresso {progress}/{target}; {attempts}; +{blocks} {unit} de treino; chakra de treino {chakra}.",
+        "AttemptsCount": "{used}/{max} tentativas",
+        "BlocksCount": "{count} {unit}",
+        "ChakraDeducted": "{cost} ({deducted} deduzido)"
+      }
     }
   }
 }
