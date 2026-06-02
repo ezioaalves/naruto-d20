@@ -1,4 +1,5 @@
 import { MODULE_ID } from "../constants.mjs";
+import { chakraPoolTempPath, chakraReserveValuePath } from "../flag-paths.mjs";
 import { buildLearnCheckBreakdown } from "../data/bonus-sources.mjs";
 import { checkAndUpdateConditions } from "../data/chakra-conditions.mjs";
 
@@ -153,8 +154,8 @@ export class TapReservesDialog extends Application {
             const newTemp    = (nData.pool?.temp ?? 0) + amount;
 
             await this.actor.update({
-                [`flags.${MODULE_ID}.chakra.reserve.value`]: newReserve,
-                [`flags.${MODULE_ID}.chakra.pool.temp`]:     newTemp,
+                [chakraReserveValuePath]: newReserve,
+                [chakraPoolTempPath]:     newTemp,
             });
 
             // Re-evaluate chakra conditions — draining the reserve may trigger

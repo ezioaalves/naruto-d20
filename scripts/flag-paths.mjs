@@ -1,24 +1,40 @@
 import { MODULE_ID } from "./constants.mjs";
 
+export const moduleFlagsPath = `flags.${MODULE_ID}`;
+
 // ── Hero statistics flag paths ──────────────────────────────────────────
-export const actionPointsPath = `flags.${MODULE_ID}.actionPoints`;
+export const heroStatPath = (key) => `${moduleFlagsPath}.${key}`;
+export const actionPointsPath = heroStatPath("actionPoints");
+export const reputationPath = heroStatPath("reputation");
+export const wealthPath = heroStatPath("wealth");
+export const epsPath = heroStatPath("eps");
+export const HERO_STAT_DEFAULTS = [
+    { key: "actionPoints", path: actionPointsPath },
+    { key: "reputation", path: reputationPath },
+    { key: "wealth", path: wealthPath },
+    { key: "eps", path: epsPath },
+];
 
 // ── Learn check flag paths ───────────────────────────────────────────────
-export const learnBuffPath = (k) => `flags.${MODULE_ID}.learn.${k}.buffBonus`;
-export const learnMiscPath = (k) => `flags.${MODULE_ID}.learn.${k}.miscBonus`;
-export const learningCurrentTechniqueIdPath = `flags.${MODULE_ID}.learning.currentTechniqueId`;
+export const learnBuffPath = (k) => `${moduleFlagsPath}.learn.${k}.buffBonus`;
+export const learnMiscPath = (k) => `${moduleFlagsPath}.learn.${k}.miscBonus`;
+export const learningCurrentTechniqueIdPath = `${moduleFlagsPath}.learning.currentTechniqueId`;
 
 // ── Technique DC flag paths ──────────────────────────────────────────────
 // k ∈ {"all","ckc","fui","gnj","nin","tai"}; "all" is the global bonus,
 // the discipline keys are per-type bonuses (mirror of pf1's per-school spell DC).
-export const techniqueDCBuffPath = (k) => `flags.${MODULE_ID}.techniqueDC.${k}.buffBonus`;
+export const techniqueDCBuffPath = (k) => `${moduleFlagsPath}.techniqueDC.${k}.buffBonus`;
 
 // ── Chakra resource flag paths ───────────────────────────────────────────
-export const chakraPoolMaxBonusPath    = `flags.${MODULE_ID}.chakra.pool.maxBonus`;
-export const chakraReserveMaxBonusPath = `flags.${MODULE_ID}.chakra.reserve.maxBonus`;
-export const chakraPoolValuePath       = `flags.${MODULE_ID}.chakra.pool.value`;
-export const chakraPoolTempPath        = `flags.${MODULE_ID}.chakra.pool.temp`;
-export const chakraReserveValuePath    = `flags.${MODULE_ID}.chakra.reserve.value`;
+export const chakraPoolMaxBonusPath    = `${moduleFlagsPath}.chakra.pool.maxBonus`;
+export const chakraReserveMaxBonusPath = `${moduleFlagsPath}.chakra.reserve.maxBonus`;
+export const chakraPoolValuePath       = `${moduleFlagsPath}.chakra.pool.value`;
+export const chakraPoolTempPath        = `${moduleFlagsPath}.chakra.pool.temp`;
+export const chakraReserveValuePath    = `${moduleFlagsPath}.chakra.reserve.value`;
+
+// ── Chakra condition tracking paths ──────────────────────────────────────
+export const conditionAppliedFatiguedPath = `${moduleFlagsPath}.conditions.appliedFatigued`;
+export const conditionAppliedExhaustedPath = `${moduleFlagsPath}.conditions.appliedExhausted`;
 
 /**
  * Single source of truth for pf1's changes-engine integration.

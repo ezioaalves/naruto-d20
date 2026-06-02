@@ -78,6 +78,7 @@ QA manual:
 Prioridade: alta  
 Tipo: mantenibilidade/risco de bug  
 Area: chakra, aprendizado, actor flags
+Status: concluida
 
 Problema:
 
