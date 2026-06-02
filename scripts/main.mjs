@@ -74,6 +74,9 @@ Hooks.once("init", () => {
   // Namespaced equality helper for this module's templates — avoids colliding
   // with a generic `eq` another module might register with different semantics.
   Handlebars.registerHelper("nd20-eq", (a, b) => a === b);
+  Handlebars.registerHelper("nd20-chakra-nature-label", (value) =>
+    game.i18n.localize(`NarutoD20.ChakraNature.${String(value ?? "").trim() || "None"}`),
+  );
 
   game.settings.register(MODULE_ID, "flagMigrationVersion", {
     scope: "world",

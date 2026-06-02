@@ -5,11 +5,11 @@ import {
 } from "../data/bonus-sources.mjs";
 
 const LEARN_LABELS = {
-  ckc: "Chakra Control",
-  gnj: "Genjutsu",
-  nin: "Ninjutsu",
-  tai: "Taijutsu",
-  fui: "Fuinjutsu",
+  ckc: "NarutoD20.Skills.ckc",
+  gnj: "NarutoD20.Skills.gnj",
+  nin: "NarutoD20.Skills.nin",
+  tai: "NarutoD20.Skills.tai",
+  fui: "NarutoD20.Skills.fui",
 };
 
 /**
@@ -34,7 +34,7 @@ export function registerLearnCheckListeners() {
         if (!breakdown) return;
 
         await pf1.dice.d20Roll({
-          flavor: `${label} Learn Check`,
+          flavor: game.i18n.format("NarutoD20.ChakraTab.LearnCheckFlavor", { label }),
           parts: breakdown.parts,
           rollData: app.actor.getRollData?.() ?? {},
           speaker: ChatMessage.implementation.getSpeaker({ actor: app.actor }),
@@ -51,7 +51,7 @@ export function registerLearnCheckListeners() {
         const content = await foundry.applications.handlebars.renderTemplate(
           "systems/pf1/templates/extended-tooltip.hbs",
           {
-            header: LEARN_LABELS[key] ?? key,
+            header: game.i18n.localize(LEARN_LABELS[key] ?? key),
             sources: [{ untyped: true, sources: breakdown.sources }],
           },
         );
@@ -70,7 +70,7 @@ export function registerLearnCheckListeners() {
         const content = await foundry.applications.handlebars.renderTemplate(
           "systems/pf1/templates/extended-tooltip.hbs",
           {
-            header: "Chakra Pool Max",
+            header: game.i18n.localize("NarutoD20.BuffTargets.ChakraPool"),
             sources: [{ untyped: true, sources: breakdown.sources }],
           },
         );
@@ -89,7 +89,7 @@ export function registerLearnCheckListeners() {
         const content = await foundry.applications.handlebars.renderTemplate(
           "systems/pf1/templates/extended-tooltip.hbs",
           {
-            header: "Chakra Reserve Max",
+            header: game.i18n.localize("NarutoD20.BuffTargets.ChakraReserve"),
             sources: [{ untyped: true, sources: breakdown.sources }],
           },
         );

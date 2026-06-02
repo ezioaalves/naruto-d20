@@ -3,18 +3,18 @@
     <div class="attributes flexrow">
         <!-- Chakra Pool -->
         <div class="info-box-header health-details flexcol" style="flex: 1.5; margin-right: 5px;">
-            <h3>Chakra Pool</h3>
+            <h3>{{localize "NarutoD20.ChakraTab.ChakraPool"}}</h3>
             <div class="info-box-joined tooltip">
                 <div class="info-box current">
-                    <h5>Current</h5>
+                    <h5>{{localize "NarutoD20.Common.Current"}}</h5>
                     <input class="value text-box direct allow-relative" type="text" name="flags.naruto-d20.chakra.pool.value" value="{{flags.naruto-d20.chakra.pool.value}}" data-dtype="Number" placeholder="0">
                 </div>
                 <div class="info-box temp">
-                    <h5>Temp</h5>
+                    <h5>{{localize "NarutoD20.Common.Temp"}}</h5>
                     <input class="value text-box direct allow-relative" type="text" name="flags.naruto-d20.chakra.pool.temp" value="{{flags.naruto-d20.chakra.pool.temp}}" data-dtype="Number" placeholder="0">
                 </div>
                 <div class="info-box maximum">
-                    <h5>Max</h5>
+                    <h5>{{localize "NarutoD20.Common.Max"}}</h5>
                     <span class="value text-box readonly" data-naruto-tooltip="chakra.pool.max" style="cursor: default;">{{flags.naruto-d20.chakra.pool.max}}</span>
                 </div>
             </div>
@@ -22,16 +22,16 @@
 
         <!-- Chakra Reserve -->
         <div class="info-box-header health-details flexcol" style="flex: 1.5; margin-right: 5px; margin-left: 5px;">
-            <h3 class="rollable tap-reserve-roll" style="cursor: pointer;" data-tooltip="Roll Tap Reserves">
-                <i class="fas fa-dice-d20"></i> Chakra Reserve
+            <h3 class="rollable tap-reserve-roll" style="cursor: pointer;" data-tooltip="{{localize 'NarutoD20.ChakraTab.RollTapReserves'}}">
+                <i class="fas fa-dice-d20"></i> {{localize "NarutoD20.ChakraTab.ChakraReserve"}}
             </h3>
             <div class="info-box-joined tooltip">
                 <div class="info-box current">
-                    <h5>Current</h5>
+                    <h5>{{localize "NarutoD20.Common.Current"}}</h5>
                     <input class="value text-box direct allow-relative" type="text" name="flags.naruto-d20.chakra.reserve.value" value="{{flags.naruto-d20.chakra.reserve.value}}" data-dtype="Number" placeholder="0">
                 </div>
                 <div class="info-box maximum">
-                    <h5>Max</h5>
+                    <h5>{{localize "NarutoD20.Common.Max"}}</h5>
                     <span class="value text-box readonly" data-naruto-tooltip="chakra.reserve.max" style="cursor: default;">{{flags.naruto-d20.chakra.reserve.max}}</span>
                 </div>
             </div>
@@ -39,10 +39,10 @@
 
         <!-- Empathy Points -->
         <div class="info-box-header health-details flexcol" style="flex: 1.2; margin-right: 5px; margin-left: 5px;">
-            <h3>Empathy Points</h3>
+            <h3>{{localize "NarutoD20.ChakraTab.EmpathyPoints"}}</h3>
             <div class="info-box-joined">
                 <div class="info-box current">
-                    <h5>Total</h5>
+                    <h5>{{localize "NarutoD20.Common.Total"}}</h5>
                     <input class="value text-box direct allow-relative" type="number" name="flags.naruto-d20.eps" value="{{flags.naruto-d20.eps}}" min="0" max="99" data-dtype="Number" placeholder="0">
                 </div>
             </div>
@@ -50,33 +50,33 @@
 
         <!-- Elemental Affinities -->
         <div class="info-box-header speed-details flexcol" style="flex: 2; margin-left: 5px;">
-            <h3>Elemental Affinities</h3>
+            <h3>{{localize "NarutoD20.ChakraTab.ElementalAffinities"}}</h3>
             <div class="info-box-joined">
                 <div class="info-box maneuverability-details">
-                    <h5>Primary</h5>
+                    <h5>{{localize "NarutoD20.ChakraTab.Primary"}}</h5>
                     <div class="value">
                         <select name="flags.naruto-d20.chakra.nature.primary" class="live chakra-nature-select">
-                            <option value="">None</option>
-                            <option value="Fire"      {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Fire")}}selected{{/if}}>Fire</option>
-                            <option value="Wind"      {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Wind")}}selected{{/if}}>Wind</option>
-                            <option value="Lightning" {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Lightning")}}selected{{/if}}>Lightning</option>
-                            <option value="Earth"     {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Earth")}}selected{{/if}}>Earth</option>
-                            <option value="Water"     {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Water")}}selected{{/if}}>Water</option>
+                            <option value="">{{localize "NarutoD20.ChakraNature.None"}}</option>
+                            <option value="Fire"      {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Fire")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Fire"}}</option>
+                            <option value="Wind"      {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Wind")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Wind"}}</option>
+                            <option value="Lightning" {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Lightning")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Lightning"}}</option>
+                            <option value="Earth"     {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Earth")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Earth"}}</option>
+                            <option value="Water"     {{#if (nd20-eq flags.naruto-d20.chakra.nature.primary "Water")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Water"}}</option>
                         </select>
                     </div>
                 </div>
 
                 {{#if (gte system.details.level.value 10)}}
                 <div class="info-box maneuverability-details">
-                    <h5>Secondary</h5>
+                    <h5>{{localize "NarutoD20.ChakraTab.Secondary"}}</h5>
                     <div class="value">
                         <select name="flags.naruto-d20.chakra.nature.secondary.0" class="live chakra-nature-select">
-                            <option value="">None</option>
-                            <option value="Fire"      {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Fire")}}selected{{/if}}>Fire</option>
-                            <option value="Wind"      {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Wind")}}selected{{/if}}>Wind</option>
-                            <option value="Lightning" {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Lightning")}}selected{{/if}}>Lightning</option>
-                            <option value="Earth"     {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Earth")}}selected{{/if}}>Earth</option>
-                            <option value="Water"     {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Water")}}selected{{/if}}>Water</option>
+                            <option value="">{{localize "NarutoD20.ChakraNature.None"}}</option>
+                            <option value="Fire"      {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Fire")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Fire"}}</option>
+                            <option value="Wind"      {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Wind")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Wind"}}</option>
+                            <option value="Lightning" {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Lightning")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Lightning"}}</option>
+                            <option value="Earth"     {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Earth")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Earth"}}</option>
+                            <option value="Water"     {{#if (nd20-eq flags.naruto-d20.chakra.nature.secondary.[0] "Water")}}selected{{/if}}>{{localize "NarutoD20.ChakraNature.Water"}}</option>
                         </select>
                     </div>
                 </div>
@@ -89,13 +89,13 @@
 
     <!-- Shinobi Learn Bonuses -->
     <div class="defenses flexcol">
-        <h3>Shinobi Learn Checks</h3>
+        <h3>{{localize "NarutoD20.ChakraTab.ShinobiLearnChecks"}}</h3>
         <div class="combat-stats">
 
             <!-- Chakra Control -->
             <div class="info-box attribute attack cmb learn-check-box" data-naruto-tooltip="learn.ckc">
-                <h5 class="rollable shinobi-roll learn-check-header" data-key="ckc" data-bonus="{{flags.naruto-d20.learn.ckc.total}}" data-label="Chakra Control">
-                    <i class="fas fa-dice-d20"></i> Chakra Control
+                <h5 class="rollable shinobi-roll learn-check-header" data-key="ckc" data-bonus="{{flags.naruto-d20.learn.ckc.total}}" data-label="{{localize 'NarutoD20.Skills.ckc'}}">
+                    <i class="fas fa-dice-d20"></i> {{localize "NarutoD20.Skills.ckc"}}
                 </h5>
                 <span class="value learn-check-content">
                     <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.ckc.total sign=true}}</span>
@@ -107,8 +107,8 @@
 
             <!-- Genjutsu -->
             <div class="info-box attribute attack cmb learn-check-box" data-naruto-tooltip="learn.gnj">
-                <h5 class="rollable shinobi-roll learn-check-header" data-key="gnj" data-bonus="{{flags.naruto-d20.learn.gnj.total}}" data-label="Genjutsu">
-                    <i class="fas fa-dice-d20"></i> Genjutsu
+                <h5 class="rollable shinobi-roll learn-check-header" data-key="gnj" data-bonus="{{flags.naruto-d20.learn.gnj.total}}" data-label="{{localize 'NarutoD20.Skills.gnj'}}">
+                    <i class="fas fa-dice-d20"></i> {{localize "NarutoD20.Skills.gnj"}}
                 </h5>
                 <span class="value learn-check-content">
                     <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.gnj.total sign=true}}</span>
@@ -120,8 +120,8 @@
 
             <!-- Ninjutsu -->
             <div class="info-box attribute attack cmb learn-check-box" data-naruto-tooltip="learn.nin">
-                <h5 class="rollable shinobi-roll learn-check-header" data-key="nin" data-bonus="{{flags.naruto-d20.learn.nin.total}}" data-label="Ninjutsu">
-                    <i class="fas fa-dice-d20"></i> Ninjutsu
+                <h5 class="rollable shinobi-roll learn-check-header" data-key="nin" data-bonus="{{flags.naruto-d20.learn.nin.total}}" data-label="{{localize 'NarutoD20.Skills.nin'}}">
+                    <i class="fas fa-dice-d20"></i> {{localize "NarutoD20.Skills.nin"}}
                 </h5>
                 <span class="value learn-check-content">
                     <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.nin.total sign=true}}</span>
@@ -129,15 +129,15 @@
                         <input class="text-box direct allow-relative" type="text" name="flags.naruto-d20.learn.nin.miscBonus" value="{{flags.naruto-d20.learn.nin.miscBonus}}" data-dtype="Number" placeholder="0">
                     </div>
                     {{#if flags.naruto-d20.learn.nin.conditional}}
-                        <span class="learn-check-conditional">+{{flags.naruto-d20.learn.nin.conditional}} to {{flags.naruto-d20.chakra.nature.primary}}</span>
+                        <span class="learn-check-conditional">+{{flags.naruto-d20.learn.nin.conditional}} {{localize "NarutoD20.ChakraTab.NinjutsuConditionalTo"}} {{nd20-chakra-nature-label flags.naruto-d20.chakra.nature.primary}}</span>
                     {{/if}}
                 </span>
             </div>
 
             <!-- Taijutsu -->
             <div class="info-box attribute attack cmb learn-check-box" data-naruto-tooltip="learn.tai">
-                <h5 class="rollable shinobi-roll learn-check-header" data-key="tai" data-bonus="{{flags.naruto-d20.learn.tai.total}}" data-label="Taijutsu">
-                    <i class="fas fa-dice-d20"></i> Taijutsu
+                <h5 class="rollable shinobi-roll learn-check-header" data-key="tai" data-bonus="{{flags.naruto-d20.learn.tai.total}}" data-label="{{localize 'NarutoD20.Skills.tai'}}">
+                    <i class="fas fa-dice-d20"></i> {{localize "NarutoD20.Skills.tai"}}
                 </h5>
                 <span class="value learn-check-content">
                     <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.tai.total sign=true}}</span>
@@ -149,8 +149,8 @@
 
             <!-- Fuinjutsu -->
             <div class="info-box attribute attack cmb learn-check-box" data-naruto-tooltip="learn.fui">
-                <h5 class="rollable shinobi-roll learn-check-header" data-key="fui" data-bonus="{{flags.naruto-d20.learn.fui.total}}" data-label="Fuinjutsu">
-                    <i class="fas fa-dice-d20"></i> Fuinjutsu
+                <h5 class="rollable shinobi-roll learn-check-header" data-key="fui" data-bonus="{{flags.naruto-d20.learn.fui.total}}" data-label="{{localize 'NarutoD20.Skills.fui'}}">
+                    <i class="fas fa-dice-d20"></i> {{localize "NarutoD20.Skills.fui"}}
                 </h5>
                 <span class="value learn-check-content">
                     <span class="learn-check-total">{{numberFormat flags.naruto-d20.learn.fui.total sign=true}}</span>
@@ -168,11 +168,11 @@
     <!-- Techniques -->
     <div class="naruto-techniques">
         <div class="techniques-header flexrow">
-            <h3>Techniques</h3>
+            <h3>{{localize "NarutoD20.ChakraTab.Techniques"}}</h3>
         </div>
 
         <div class="technique-disc-tabs flexrow">
-            <a class="technique-filter active" data-disc="all">All</a>
+            <a class="technique-filter active" data-disc="all">{{localize "NarutoD20.ChakraTab.All"}}</a>
             {{#each techniques.tabs}}
             <a class="technique-filter" data-disc="{{key}}">{{label}}</a>
             {{/each}}
@@ -184,15 +184,15 @@
                 {{#each techniques.allGroups}}
                 <ol class="item-list technique-list">
                     <li class="flexrow item-list-header spellbook-header" data-level="{{rank}}">
-                        <div class="item-name"><h3>Rank {{rank}}</h3></div>
-                        <div class="item-detail technique-cost"><i class="fa-solid fa-fire" data-tooltip="Chakra Cost"></i></div>
-                        <div class="item-detail item-actions"><i class="icon-pf icon-gears" data-tooltip="Actions"></i></div>
-                        <div class="item-detail spell-activation"><i class="icon-pf icon-hand" data-tooltip="Activation"></i></div>
-                        <div class="item-detail spell-components"><i class="icon-pf icon-expense" data-tooltip="Components"></i></div>
-                        <div class="item-detail spell-school"><i class="icon-pf icon-spell-book" data-tooltip="Type"></i></div>
+                        <div class="item-name"><h3>{{localize "NarutoD20.Technique.Rank.Label"}} {{rank}}</h3></div>
+                        <div class="item-detail technique-cost"><i class="fa-solid fa-fire" data-tooltip="{{localize 'NarutoD20.Technique.ChakraCost.Label'}}"></i></div>
+                        <div class="item-detail item-actions"><i class="icon-pf icon-gears" data-tooltip="{{localize 'PF1.ActionPlural'}}"></i></div>
+                        <div class="item-detail spell-activation"><i class="icon-pf icon-hand" data-tooltip="{{localize 'NarutoD20.ChakraTab.Activation'}}"></i></div>
+                        <div class="item-detail spell-components"><i class="icon-pf icon-expense" data-tooltip="{{localize 'NarutoD20.Technique.Components.Legend'}}"></i></div>
+                        <div class="item-detail spell-school"><i class="icon-pf icon-spell-book" data-tooltip="{{localize 'NarutoD20.Technique.Type.Label'}}"></i></div>
                         <div class="item-controls">
-                            <a class="technique-create item-control" data-tooltip="Create Technique" data-rank="{{rank}}"><i class="fa-solid fa-plus" inert></i></a>
-                            <a class="technique-browse item-control" data-tooltip="Browse Techniques" data-rank="{{rank}}"><i class="fa-solid fa-folder-plus" inert></i></a>
+                            <a class="technique-create item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.CreateTechnique'}}" data-rank="{{rank}}"><i class="fa-solid fa-plus" inert></i></a>
+                            <a class="technique-browse item-control" data-tooltip="{{localize 'NarutoD20.App.BrowseTechniques'}}" data-rank="{{rank}}"><i class="fa-solid fa-folder-plus" inert></i></a>
                         </div>
                     </li>
                     {{#each rows}}
@@ -205,13 +205,13 @@
                                 <span class="technique-learning-badge">
                                     {{learning.progress}}/{{learning.targetProgress}}
                                     {{#if learning.isFourHourBlocks}}
-                                    &middot; {{learning.attemptsUsed}} blocks
+                                    &middot; {{learning.attemptsUsed}} {{localize "NarutoD20.Cards.Blocks"}}
                                     {{else}}
-                                    &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} attempts
+                                    &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} {{localize "NarutoD20.ChakraTab.Attempts"}}
                                     {{/if}}
-                                    {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} insight{{/if}}
-                                    {{#if learning.trainingBlocks}} &middot; {{learning.trainingBlocks}} train blocks{{/if}}
-                                    {{#if learning.chakraSpent}} &middot; {{learning.chakraSpent}} chakra{{/if}}
+                                    {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} {{localize "NarutoD20.ChakraTab.Insight"}}{{/if}}
+                                    {{#if learning.trainingBlocks}} &middot; {{learning.trainingBlocks}} {{localize "NarutoD20.ChakraTab.TrainBlocks"}}{{/if}}
+                                    {{#if learning.chakraSpent}} &middot; {{learning.chakraSpent}} {{localize "NarutoD20.ChakraTab.ChakraUnit"}}{{/if}}
                                     {{#if learning.actionPointBonus}} &middot; ⚡ +{{learning.actionPointBonus}} AP{{/if}}
                                 </span>
                                 {{/unless}}
@@ -221,14 +221,14 @@
                         <div class="item-detail item-actions">
                             {{#unless learning.effectivelyLearned}}
                             <div class="item-action">
-                                <a class="shinobi-technique-learn item-control action roll" data-tooltip="Learn Technique">
+                                <a class="shinobi-technique-learn item-control action roll" data-tooltip="{{localize 'NarutoD20.ChakraTab.LearnTechnique'}}">
                                     <i class="fa-solid fa-graduation-cap" inert></i>
                                 </a>
                             </div>
                             {{/unless}}
                             {{#if hasActions}}
                             <div class="item-action">
-                                <a class="shinobi-technique-use item-control action roll{{#unless canUse}} disabled{{/unless}}" data-tooltip="Use Technique">
+                                <a class="shinobi-technique-use item-control action roll{{#unless canUse}} disabled{{/unless}}" data-tooltip="{{localize 'NarutoD20.ChakraTab.UseTechnique'}}">
                                     <i class="fa-solid fa-dice-d20" inert></i>
                                 </a>
                             </div>
@@ -238,9 +238,9 @@
                         <div class="item-detail spell-components"><span>{{components}}</span></div>
                         <div class="item-detail spell-school"><span>{{discipline}}</span></div>
                         <div class="item-controls">
-                            <a class="shinobi-technique-open item-control" data-tooltip="Open Sheet"><i class="fa-solid fa-edit" inert></i></a>
-                            <a class="shinobi-technique-duplicate item-control" data-tooltip="Duplicate Technique"><i class="fa-solid fa-copy" inert></i></a>
-                            <a class="shinobi-technique-delete item-control" data-tooltip="Remove"><i class="fa-solid fa-trash" inert></i></a>
+                            <a class="shinobi-technique-open item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.OpenSheet'}}"><i class="fa-solid fa-edit" inert></i></a>
+                            <a class="shinobi-technique-duplicate item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.DuplicateTechnique'}}"><i class="fa-solid fa-copy" inert></i></a>
+                            <a class="shinobi-technique-delete item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.Remove'}}"><i class="fa-solid fa-trash" inert></i></a>
                         </div>
                     </li>
                     {{/each}}
@@ -252,15 +252,15 @@
                 {{#each groups}}
                 <ol class="item-list technique-list">
                     <li class="flexrow item-list-header spellbook-header" data-level="{{rank}}">
-                        <div class="item-name"><h3>Rank {{rank}}</h3></div>
-                        <div class="item-detail technique-cost"><i class="fa-solid fa-fire" data-tooltip="Chakra Cost"></i></div>
-                        <div class="item-detail item-actions"><i class="icon-pf icon-gears" data-tooltip="Actions"></i></div>
-                        <div class="item-detail spell-activation"><i class="icon-pf icon-hand" data-tooltip="Activation"></i></div>
-                        <div class="item-detail spell-components"><i class="icon-pf icon-expense" data-tooltip="Components"></i></div>
-                        <div class="item-detail spell-school"><i class="icon-pf icon-spell-book" data-tooltip="Type"></i></div>
+                        <div class="item-name"><h3>{{localize "NarutoD20.Technique.Rank.Label"}} {{rank}}</h3></div>
+                        <div class="item-detail technique-cost"><i class="fa-solid fa-fire" data-tooltip="{{localize 'NarutoD20.Technique.ChakraCost.Label'}}"></i></div>
+                        <div class="item-detail item-actions"><i class="icon-pf icon-gears" data-tooltip="{{localize 'PF1.ActionPlural'}}"></i></div>
+                        <div class="item-detail spell-activation"><i class="icon-pf icon-hand" data-tooltip="{{localize 'NarutoD20.ChakraTab.Activation'}}"></i></div>
+                        <div class="item-detail spell-components"><i class="icon-pf icon-expense" data-tooltip="{{localize 'NarutoD20.Technique.Components.Legend'}}"></i></div>
+                        <div class="item-detail spell-school"><i class="icon-pf icon-spell-book" data-tooltip="{{localize 'NarutoD20.Technique.Type.Label'}}"></i></div>
                         <div class="item-controls">
-                            <a class="technique-create item-control" data-tooltip="Create Technique" data-rank="{{rank}}" data-disc="{{../label}}"><i class="fa-solid fa-plus" inert></i></a>
-                            <a class="technique-browse item-control" data-tooltip="Browse Techniques" data-rank="{{rank}}"><i class="fa-solid fa-folder-plus" inert></i></a>
+                            <a class="technique-create item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.CreateTechnique'}}" data-rank="{{rank}}" data-disc="{{../label}}"><i class="fa-solid fa-plus" inert></i></a>
+                            <a class="technique-browse item-control" data-tooltip="{{localize 'NarutoD20.App.BrowseTechniques'}}" data-rank="{{rank}}"><i class="fa-solid fa-folder-plus" inert></i></a>
                         </div>
                     </li>
                     {{#each rows}}
@@ -273,13 +273,13 @@
                                 <span class="technique-learning-badge">
                                     {{learning.progress}}/{{learning.targetProgress}}
                                     {{#if learning.isFourHourBlocks}}
-                                    &middot; {{learning.attemptsUsed}} blocks
+                                    &middot; {{learning.attemptsUsed}} {{localize "NarutoD20.Cards.Blocks"}}
                                     {{else}}
-                                    &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} attempts
+                                    &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} {{localize "NarutoD20.ChakraTab.Attempts"}}
                                     {{/if}}
-                                    {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} insight{{/if}}
-                                    {{#if learning.trainingBlocks}} &middot; {{learning.trainingBlocks}} train blocks{{/if}}
-                                    {{#if learning.chakraSpent}} &middot; {{learning.chakraSpent}} chakra{{/if}}
+                                    {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} {{localize "NarutoD20.ChakraTab.Insight"}}{{/if}}
+                                    {{#if learning.trainingBlocks}} &middot; {{learning.trainingBlocks}} {{localize "NarutoD20.ChakraTab.TrainBlocks"}}{{/if}}
+                                    {{#if learning.chakraSpent}} &middot; {{learning.chakraSpent}} {{localize "NarutoD20.ChakraTab.ChakraUnit"}}{{/if}}
                                     {{#if learning.actionPointBonus}} &middot; ⚡ +{{learning.actionPointBonus}} AP{{/if}}
                                 </span>
                                 {{/unless}}
@@ -289,14 +289,14 @@
                         <div class="item-detail item-actions">
                             {{#unless learning.effectivelyLearned}}
                             <div class="item-action">
-                                <a class="shinobi-technique-learn item-control action roll" data-tooltip="Learn Technique">
+                                <a class="shinobi-technique-learn item-control action roll" data-tooltip="{{localize 'NarutoD20.ChakraTab.LearnTechnique'}}">
                                     <i class="fa-solid fa-graduation-cap" inert></i>
                                 </a>
                             </div>
                             {{/unless}}
                             {{#if hasActions}}
                             <div class="item-action">
-                                <a class="shinobi-technique-use item-control action roll{{#unless canUse}} disabled{{/unless}}" data-tooltip="Use Technique">
+                                <a class="shinobi-technique-use item-control action roll{{#unless canUse}} disabled{{/unless}}" data-tooltip="{{localize 'NarutoD20.ChakraTab.UseTechnique'}}">
                                     <i class="fa-solid fa-dice-d20" inert></i>
                                 </a>
                             </div>
@@ -306,9 +306,9 @@
                         <div class="item-detail spell-components"><span>{{components}}</span></div>
                         <div class="item-detail spell-school"><span>{{discipline}}</span></div>
                         <div class="item-controls">
-                            <a class="shinobi-technique-open item-control" data-tooltip="Open Sheet"><i class="fa-solid fa-edit" inert></i></a>
-                            <a class="shinobi-technique-duplicate item-control" data-tooltip="Duplicate Technique"><i class="fa-solid fa-copy" inert></i></a>
-                            <a class="shinobi-technique-delete item-control" data-tooltip="Remove"><i class="fa-solid fa-trash" inert></i></a>
+                            <a class="shinobi-technique-open item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.OpenSheet'}}"><i class="fa-solid fa-edit" inert></i></a>
+                            <a class="shinobi-technique-duplicate item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.DuplicateTechnique'}}"><i class="fa-solid fa-copy" inert></i></a>
+                            <a class="shinobi-technique-delete item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.Remove'}}"><i class="fa-solid fa-trash" inert></i></a>
                         </div>
                     </li>
                     {{/each}}
@@ -318,10 +318,10 @@
             {{/each}}
             {{else}}
             <div class="techniques-empty">
-                <p>Drag &amp; drop Technique items here to add them.</p>
+                <p>{{localize "NarutoD20.ChakraTab.EmptyTechniques"}}</p>
                 <div class="item-controls">
-                    <a class="technique-create item-control" data-tooltip="Create Technique"><i class="fa-solid fa-plus" inert></i></a>
-                    <a class="technique-browse item-control" data-tooltip="Browse Techniques"><i class="fa-solid fa-folder-plus" inert></i></a>
+                    <a class="technique-create item-control" data-tooltip="{{localize 'NarutoD20.ChakraTab.CreateTechnique'}}"><i class="fa-solid fa-plus" inert></i></a>
+                    <a class="technique-browse item-control" data-tooltip="{{localize 'NarutoD20.App.BrowseTechniques'}}"><i class="fa-solid fa-folder-plus" inert></i></a>
                 </div>
             </div>
             {{/if}}
