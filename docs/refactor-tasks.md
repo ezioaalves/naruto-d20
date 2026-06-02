@@ -330,6 +330,7 @@ QA manual:
 Prioridade: media-alta  
 Tipo: mantenibilidade  
 Area: Chakra tab
+Status: concluida
 
 Problema:
 
