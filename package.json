@@ -17,10 +17,22 @@
     "expand:blood-pact": "node tools/expand-blood-pact.mjs",
     "extract:feat-changes": "node tools/extract-feat-changes.mjs",
     "apply:feat-changes": "node tools/apply-feat-changes.mjs",
-    "assign:feat-icons": "node tools/assign-feat-icons.mjs"
+    "assign:feat-icons": "node tools/assign-feat-icons.mjs",
+    "lint:js": "eslint scripts tools eslint.config.mjs",
+    "lint:css": "stylelint \"styles/**/*.css\"",
+    "lint:format": "prettier --check \"scripts/**/*.mjs\" \"tools/**/*.mjs\" \"styles/**/*.css\" \"lang/**/*.json\"",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:format",
+    "lint:fix": "eslint --fix scripts tools eslint.config.mjs && stylelint --fix \"styles/**/*.css\" && prettier --write \"scripts/**/*.mjs\" \"tools/**/*.mjs\" \"styles/**/*.css\" \"lang/**/*.json\""
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
-    "@foundryvtt/foundryvtt-cli": "^1.0.0"
+    "@eslint/js": "^10.0.1",
+    "@foundryvtt/foundryvtt-cli": "^1.0.0",
+    "eslint": "^10.4.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3",
+    "stylelint": "^17.12.0",
+    "stylelint-config-standard": "^40.0.0"
   }
 }

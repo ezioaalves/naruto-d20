@@ -22,17 +22,17 @@ import { applyTechniqueSystemDefaults } from "../data/technique-defaults.mjs";
  */
 
 export const STATUS = {
-    UP_TO_DATE:  "up-to-date",
-    OUT_OF_DATE: "out-of-date",
-    ORPHAN:      "orphan", // no counterpart in the compendium — cannot be synced
+  UP_TO_DATE: "up-to-date",
+  OUT_OF_DATE: "out-of-date",
+  ORPHAN: "orphan", // no counterpart in the compendium — cannot be synced
 };
 
 export function getTechniqueCompendium() {
-    return game.packs.get(`${MODULE_ID}.techniques`);
+  return game.packs.get(`${MODULE_ID}.techniques`);
 }
 
 function embeddedTechniques(actor) {
-    return actor?.items?.filter((i) => i.type === TECHNIQUE_ITEM_TYPE) ?? [];
+  return actor?.items?.filter((i) => i.type === TECHNIQUE_ITEM_TYPE) ?? [];
 }
 
 /**
@@ -42,10 +42,10 @@ function embeddedTechniques(actor) {
  * when a compendium item is dragged onto an actor. Zero-cost, exact.
  */
 function sourceIdFromCompendiumSource(item, pack) {
-    const cs = item._stats?.compendiumSource ?? item.flags?.core?.sourceId;
-    if (typeof cs !== "string") return null;
-    const prefix = `Compendium.${pack.collection}.Item.`;
-    return cs.startsWith(prefix) ? cs.slice(prefix.length) : null;
+  const cs = item._stats?.compendiumSource ?? item.flags?.core?.sourceId;
+  if (typeof cs !== "string") return null;
+  const prefix = `Compendium.${pack.collection}.Item.`;
+  return cs.startsWith(prefix) ? cs.slice(prefix.length) : null;
 }
 
 /**
@@ -56,22 +56,22 @@ function sourceIdFromCompendiumSource(item, pack) {
  * @returns {Map<string, string|null>} embedded item id → source `_id` (or null)
  */
 function resolveMatches(actor, pack, index) {
-    const byName = new Map();
-    const indexIds = new Set();
-    for (const entry of index) {
-        indexIds.add(entry._id);
-        if (!byName.has(entry.name)) byName.set(entry.name, entry._id);
-    }
+  const byName = new Map();
+  const indexIds = new Set();
+  for (const entry of index) {
+    indexIds.add(entry._id);
+    if (!byName.has(entry.name)) byName.set(entry.name, entry._id);
+  }
 
-    const matches = new Map();
-    for (const item of embeddedTechniques(actor)) {
-        let sourceId = sourceIdFromCompendiumSource(item, pack);
-        // Stale link (source deleted/renamed in the pack) → fall back to name.
-        if (sourceId && !indexIds.has(sourceId)) sourceId = null;
-        if (!sourceId) sourceId = byName.get(item.name) ?? null;
-        matches.set(item.id, sourceId);
-    }
-    return matches;
+  const matches = new Map();
+  for (const item of embeddedTechniques(actor)) {
+    let sourceId = sourceIdFromCompendiumSource(item, pack);
+    // Stale link (source deleted/renamed in the pack) → fall back to name.
+    if (sourceId && !indexIds.has(sourceId)) sourceId = null;
+    if (!sourceId) sourceId = byName.get(item.name) ?? null;
+    matches.set(item.id, sourceId);
+  }
+  return matches;
 }
 
 /**
@@ -81,34 +81,34 @@ function resolveMatches(actor, pack, index) {
  * technique has `system.actions`) always reports "different".
  */
 function deepEqual(a, b) {
-    if (a === b) return true;
-    if (a === null || b === null) return a === b;
-    if (Array.isArray(a)) {
-        if (!Array.isArray(b) || a.length !== b.length) return false;
-        return a.every((v, i) => deepEqual(v, b[i]));
-    }
-    if (typeof a === "object") {
-        if (typeof b !== "object" || Array.isArray(b)) return false;
-        const ak = Object.keys(a);
-        const bk = Object.keys(b);
-        if (ak.length !== bk.length) return false;
-        return ak.every((k) => Object.prototype.hasOwnProperty.call(b, k) && deepEqual(a[k], b[k]));
-    }
-    return a === b;
+  if (a === b) return true;
+  if (a === null || b === null) return a === b;
+  if (Array.isArray(a)) {
+    if (!Array.isArray(b) || a.length !== b.length) return false;
+    return a.every((v, i) => deepEqual(v, b[i]));
+  }
+  if (typeof a === "object") {
+    if (typeof b !== "object" || Array.isArray(b)) return false;
+    const ak = Object.keys(a);
+    const bk = Object.keys(b);
+    if (ak.length !== bk.length) return false;
+    return ak.every((k) => Object.prototype.hasOwnProperty.call(b, k) && deepEqual(a[k], b[k]));
+  }
+  return a === b;
 }
 
 /** Recursively drop every `_id` key — identifiers are not semantic content. */
 function stripIds(value) {
-    if (Array.isArray(value)) return value.map(stripIds);
-    if (value && typeof value === "object") {
-        const out = {};
-        for (const [k, v] of Object.entries(value)) {
-            if (k === "_id") continue;
-            out[k] = stripIds(v);
-        }
-        return out;
+  if (Array.isArray(value)) return value.map(stripIds);
+  if (value && typeof value === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) {
+      if (k === "_id") continue;
+      out[k] = stripIds(v);
     }
-    return value;
+    return out;
+  }
+  return value;
 }
 
 /**
@@ -119,11 +119,11 @@ function stripIds(value) {
  * forms to the same string.
  */
 function canonicalizeHtml(s) {
-    if (typeof s !== "string" || !s) return s;
-    if (typeof document === "undefined") return s;
-    const el = document.createElement("div");
-    el.innerHTML = s;
-    return el.innerHTML;
+  if (typeof s !== "string" || !s) return s;
+  if (typeof document === "undefined") return s;
+  const el = document.createElement("div");
+  el.innerHTML = s;
+  return el.innerHTML;
 }
 
 /**
@@ -137,29 +137,31 @@ function canonicalizeHtml(s) {
  * Real content edits (cost, rank, description text, …) still survive and diff.
  */
 export function normalizeSystem(system) {
-    const out = applyTechniqueSystemDefaults(foundry.utils.deepClone(system), { collectionType: "array" });
-    delete out.tag;
-    delete out.learning;
-    out.descriptors = Array.from(new Set(out.descriptors ?? [])).sort();
-    out.description.value = canonicalizeHtml(out.description.value);
-    out.description.instructions = canonicalizeHtml(out.description.instructions);
-    return stripIds(out);
+  const out = applyTechniqueSystemDefaults(foundry.utils.deepClone(system), {
+    collectionType: "array",
+  });
+  delete out.tag;
+  delete out.learning;
+  out.descriptors = Array.from(new Set(out.descriptors ?? [])).sort();
+  out.description.value = canonicalizeHtml(out.description.value);
+  out.description.instructions = canonicalizeHtml(out.description.instructions);
+  return stripIds(out);
 }
 
 /** True when the embedded technique's stored data already matches the source. */
 export function diffTechnique(embeddedSystem, sourceSystem) {
-    return deepEqual(normalizeSystem(embeddedSystem), normalizeSystem(sourceSystem));
+  return deepEqual(normalizeSystem(embeddedSystem), normalizeSystem(sourceSystem));
 }
 
 function describe(item, status) {
-    return {
-        id:         item.id,
-        name:       item.name,
-        img:        item.img,
-        rank:       item.system?.rank ?? null,
-        discipline: item.system?.discipline ?? "",
-        status,
-    };
+  return {
+    id: item.id,
+    name: item.name,
+    img: item.img,
+    rank: item.system?.rank ?? null,
+    discipline: item.system?.discipline ?? "",
+    status,
+  };
 }
 
 /**
@@ -167,25 +169,25 @@ function describe(item, status) {
  * @returns {Promise<Array<{id,name,img,rank,discipline,status}>>}
  */
 export async function analyzeActor(actor) {
-    const techniques = embeddedTechniques(actor);
-    const pack = getTechniqueCompendium();
-    if (!pack || !techniques.length) {
-        return techniques.map((it) => describe(it, STATUS.ORPHAN));
-    }
+  const techniques = embeddedTechniques(actor);
+  const pack = getTechniqueCompendium();
+  if (!pack || !techniques.length) {
+    return techniques.map((it) => describe(it, STATUS.ORPHAN));
+  }
 
-    const index = await pack.getIndex();
-    const matches = resolveMatches(actor, pack, index);
+  const index = await pack.getIndex();
+  const matches = resolveMatches(actor, pack, index);
 
-    const sourceIds = [...new Set([...matches.values()].filter(Boolean))];
-    const docs = sourceIds.length ? await pack.getDocuments({ _id__in: sourceIds }) : [];
-    const docById = new Map(docs.map((d) => [d.id, d]));
+  const sourceIds = [...new Set([...matches.values()].filter(Boolean))];
+  const docs = sourceIds.length ? await pack.getDocuments({ _id__in: sourceIds }) : [];
+  const docById = new Map(docs.map((d) => [d.id, d]));
 
-    return techniques.map((item) => {
-        const sourceDoc = docById.get(matches.get(item.id));
-        if (!sourceDoc) return describe(item, STATUS.ORPHAN);
-        const same = diffTechnique(item.toObject().system, sourceDoc.toObject().system);
-        return describe(item, same ? STATUS.UP_TO_DATE : STATUS.OUT_OF_DATE);
-    });
+  return techniques.map((item) => {
+    const sourceDoc = docById.get(matches.get(item.id));
+    if (!sourceDoc) return describe(item, STATUS.ORPHAN);
+    const same = diffTechnique(item.toObject().system, sourceDoc.toObject().system);
+    return describe(item, same ? STATUS.UP_TO_DATE : STATUS.OUT_OF_DATE);
+  });
 }
 
 /**
@@ -194,14 +196,16 @@ export async function analyzeActor(actor) {
  * `ItemMedkit.update` with `{diff:false}`). Action `_id`s are re-normalized.
  */
 export async function syncTechnique(item, sourceDoc) {
-    const src = sourceDoc.toObject();
-    const { actions, changed } = normalizeActionIds(src.system?.actions);
-    if (changed) src.system.actions = actions;
-    src.system.learning = foundry.utils.deepClone(item.toObject().system?.learning ?? item.system?.learning ?? {});
-    await item.update(
-        { name: src.name, img: src.img, system: src.system },
-        { diff: false, recursive: false },
-    );
+  const src = sourceDoc.toObject();
+  const { actions, changed } = normalizeActionIds(src.system?.actions);
+  if (changed) src.system.actions = actions;
+  src.system.learning = foundry.utils.deepClone(
+    item.toObject().system?.learning ?? item.system?.learning ?? {},
+  );
+  await item.update(
+    { name: src.name, img: src.img, system: src.system },
+    { diff: false, recursive: false },
+  );
 }
 
 /**
@@ -210,26 +214,26 @@ export async function syncTechnique(item, sourceDoc) {
  * @returns {Promise<number>} number of techniques actually updated
  */
 export async function syncSelected(actor, itemIds) {
-    const pack = getTechniqueCompendium();
-    if (!pack) return 0;
+  const pack = getTechniqueCompendium();
+  if (!pack) return 0;
 
-    const index = await pack.getIndex();
-    const matches = resolveMatches(actor, pack, index);
+  const index = await pack.getIndex();
+  const matches = resolveMatches(actor, pack, index);
 
-    const wanted = itemIds.filter((id) => matches.get(id));
-    const sourceIds = [...new Set(wanted.map((id) => matches.get(id)))];
-    if (!sourceIds.length) return 0;
+  const wanted = itemIds.filter((id) => matches.get(id));
+  const sourceIds = [...new Set(wanted.map((id) => matches.get(id)))];
+  if (!sourceIds.length) return 0;
 
-    const docs = await pack.getDocuments({ _id__in: sourceIds });
-    const docById = new Map(docs.map((d) => [d.id, d]));
+  const docs = await pack.getDocuments({ _id__in: sourceIds });
+  const docById = new Map(docs.map((d) => [d.id, d]));
 
-    let count = 0;
-    for (const id of wanted) {
-        const item = actor.items.get(id);
-        const sourceDoc = docById.get(matches.get(id));
-        if (!item || !sourceDoc) continue;
-        await syncTechnique(item, sourceDoc);
-        count++;
-    }
-    return count;
+  let count = 0;
+  for (const id of wanted) {
+    const item = actor.items.get(id);
+    const sourceDoc = docById.get(matches.get(id));
+    if (!item || !sourceDoc) continue;
+    await syncTechnique(item, sourceDoc);
+    count++;
+  }
+  return count;
 }
