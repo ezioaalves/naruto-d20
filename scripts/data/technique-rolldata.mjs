@@ -3,11 +3,10 @@ import { TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
 const PATCH_KEY = Symbol.for("naruto-d20.techniqueRollDataPatched");
 
 export function getTechniqueCasterLevel(item, actor = item?.actor) {
-    const charLevel = actor?.system?.details?.level?.value
-        ?? actor?.system?.attributes?.hd?.total
-        ?? 0;
-    const offset = item?.system?.derived?.masteryLevel ?? 0;
-    return charLevel + offset;
+  const charLevel =
+    actor?.system?.details?.level?.value ?? actor?.system?.attributes?.hd?.total ?? 0;
+  const offset = item?.system?.derived?.masteryLevel ?? 0;
+  return charLevel + offset;
 }
 
 /**
@@ -17,18 +16,18 @@ export function getTechniqueCasterLevel(item, actor = item?.actor) {
  * caster level offset). Mirrors installTechniqueSaveDCPatch.
  */
 export function installTechniqueRollDataPatch() {
-    const proto = pf1.components.ItemAction?.prototype;
-    if (!proto || proto[PATCH_KEY]) return;
+  const proto = pf1.components.ItemAction?.prototype;
+  if (!proto || proto[PATCH_KEY]) return;
 
-    const _original = proto.getRollData;
+  const _original = proto.getRollData;
 
-    proto.getRollData = function (...args) {
-        const rd = _original.apply(this, args);
-        if (this.item?.type === TECHNIQUE_ITEM_TYPE) {
-            rd.cl = getTechniqueCasterLevel(this.item);
-        }
-        return rd;
-    };
+  proto.getRollData = function (...args) {
+    const rd = _original.apply(this, args);
+    if (this.item?.type === TECHNIQUE_ITEM_TYPE) {
+      rd.cl = getTechniqueCasterLevel(this.item);
+    }
+    return rd;
+  };
 
-    proto[PATCH_KEY] = true;
+  proto[PATCH_KEY] = true;
 }

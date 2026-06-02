@@ -53,9 +53,21 @@ const COMPLEXITIES = new Set([
 
 const AUTOMATION_TARGET_MODES = new Set(["auto", "self", "selected"]);
 const WEAPON_ATTACK_PREFIX = "weaponAttack";
-const WEAPON_ATTACK_KEYS = new Set(["mode", "filter", "attackBonus", "damageBonus", "held", "charge"]);
+const WEAPON_ATTACK_KEYS = new Set([
+  "mode",
+  "filter",
+  "attackBonus",
+  "damageBonus",
+  "held",
+  "charge",
+]);
 const WEAPON_ATTACK_MODES = new Set(["selected"]);
-const WEAPON_ATTACK_FILTERS = new Set(["meleeWeapon", "rangedWeapon", "unarmedOnly", "meleeOrUnarmed"]);
+const WEAPON_ATTACK_FILTERS = new Set([
+  "meleeWeapon",
+  "rangedWeapon",
+  "unarmedOnly",
+  "meleeOrUnarmed",
+]);
 
 const docsByPack = new Map();
 const foldersByPack = new Map();
@@ -102,7 +114,9 @@ function readPack({ name, dir, type }) {
     return docs;
   }
 
-  for (const filename of readdirSync(packDir).filter((f) => f.endsWith(".json")).sort()) {
+  for (const filename of readdirSync(packDir)
+    .filter((f) => f.endsWith(".json"))
+    .sort()) {
     const path = join(packDir, filename);
     let doc;
     try {
@@ -142,7 +156,9 @@ function validateCommon({ doc, filename, packName, expectedType }) {
     warn(packName, filename, `_key "${doc._key}" does not match _id "${doc._id}"`);
   }
 
-  validateActions(packName, filename, doc.system?.actions, { technique: doc.type === "naruto-d20.technique" });
+  validateActions(packName, filename, doc.system?.actions, {
+    technique: doc.type === "naruto-d20.technique",
+  });
   validateChanges(packName, filename, doc.system?.changes);
   validateLinks(packName, filename, doc.system?.links);
 }
@@ -177,8 +193,10 @@ function validateActions(packName, filename, actions, { technique = false } = {}
 
     if (action.id && !action._id) error(packName, filename, `${prefix} uses legacy id without _id`);
     if (!isNonEmptyString(action._id)) error(packName, filename, `${prefix} missing _id`);
-    else if (!ACTION_ID_RE.test(action._id)) error(packName, filename, `${prefix} has invalid _id "${action._id}"`);
-    else if (seen.has(action._id)) error(packName, filename, `${prefix} duplicates action _id "${action._id}"`);
+    else if (!ACTION_ID_RE.test(action._id))
+      error(packName, filename, `${prefix} has invalid _id "${action._id}"`);
+    else if (seen.has(action._id))
+      error(packName, filename, `${prefix} duplicates action _id "${action._id}"`);
     else seen.add(action._id);
 
     if (technique) validateTechniqueAction(packName, filename, prefix, action);
@@ -188,7 +206,11 @@ function validateActions(packName, filename, actions, { technique = false } = {}
 function validateTechniqueAction(packName, filename, prefix, action) {
   const type = action.actionType;
   if (type === "msak" || type === "rsak") {
-    error(packName, filename, `${prefix}.actionType "${type}" is a PF1e spell attack type; use mwak/rwak for techniques`);
+    error(
+      packName,
+      filename,
+      `${prefix}.actionType "${type}" is a PF1e spell attack type; use mwak/rwak for techniques`,
+    );
   }
 
   if (type === "mwak" || type === "rwak") {
@@ -205,10 +227,13 @@ function validateTechniqueAction(packName, filename, prefix, action) {
 
 function hasActionDamage(action) {
   const parts = action.damage?.parts;
-  return Array.isArray(parts) && parts.some((part) => {
-    if (typeof part === "string") return part.trim() !== "";
-    return isPlainObject(part) && String(part.formula ?? "").trim() !== "";
-  });
+  return (
+    Array.isArray(parts) &&
+    parts.some((part) => {
+      if (typeof part === "string") return part.trim() !== "";
+      return isPlainObject(part) && String(part.formula ?? "").trim() !== "";
+    })
+  );
 }
 
 function validateChanges(packName, filename, changes) {
@@ -226,7 +251,8 @@ function validateChanges(packName, filename, changes) {
       return;
     }
     if (!isNonEmptyString(change._id)) error(packName, filename, `${prefix} missing _id`);
-    else if (seen.has(change._id)) error(packName, filename, `${prefix} duplicates change _id "${change._id}"`);
+    else if (seen.has(change._id))
+      error(packName, filename, `${prefix} duplicates change _id "${change._id}"`);
     else seen.add(change._id);
     if (!isNonEmptyString(change.target)) warn(packName, filename, `${prefix} missing target`);
     if (!isNonEmptyString(change.operator)) warn(packName, filename, `${prefix} missing operator`);
@@ -265,17 +291,24 @@ function validateTechnique({ doc, filename, packName }) {
   if (!DISCIPLINES.has(system.discipline)) {
     error(packName, filename, `unknown discipline "${system.discipline ?? "<missing>"}"`);
   }
-  if (!isIntegerInRange(system.rank, 1, 15)) error(packName, filename, `rank must be an integer from 1 to 15`);
-  if (!COMPLEXITIES.has(system.complexity)) error(packName, filename, `unknown complexity "${system.complexity ?? "<missing>"}"`);
-  if (!Number.isInteger(system.chakraCost) || system.chakraCost < 0) error(packName, filename, "chakraCost must be a non-negative integer");
+  if (!isIntegerInRange(system.rank, 1, 15))
+    error(packName, filename, `rank must be an integer from 1 to 15`);
+  if (!COMPLEXITIES.has(system.complexity))
+    error(packName, filename, `unknown complexity "${system.complexity ?? "<missing>"}"`);
+  if (!Number.isInteger(system.chakraCost) || system.chakraCost < 0)
+    error(packName, filename, "chakraCost must be a non-negative integer");
 
   if (system.descriptors !== undefined && !Array.isArray(system.descriptors)) {
     error(packName, filename, "system.descriptors must be an array in source JSON");
   }
 
   if (system.automation !== undefined) {
-    if (!isPlainObject(system.automation)) error(packName, filename, "system.automation must be an object");
-    else if (system.automation.targetMode !== undefined && !AUTOMATION_TARGET_MODES.has(system.automation.targetMode)) {
+    if (!isPlainObject(system.automation))
+      error(packName, filename, "system.automation must be an object");
+    else if (
+      system.automation.targetMode !== undefined &&
+      !AUTOMATION_TARGET_MODES.has(system.automation.targetMode)
+    ) {
       error(packName, filename, `unknown automation.targetMode "${system.automation.targetMode}"`);
     }
   }
@@ -291,13 +324,19 @@ function validateWeaponAttack(doc, filename, packName) {
   }
 
   const rawNested = dict[WEAPON_ATTACK_PREFIX];
-  const nested = rawNested && typeof rawNested === "object" && !Array.isArray(rawNested) ? rawNested : null;
+  const nested =
+    rawNested && typeof rawNested === "object" && !Array.isArray(rawNested) ? rawNested : null;
   const malformed = rawNested !== undefined && nested === null;
   const dottedKeys = Object.keys(dict).filter((k) => k.startsWith(`${WEAPON_ATTACK_PREFIX}.`));
   const present = malformed || nested !== null || dottedKeys.length > 0;
   if (!present) return;
 
-  if (malformed) error(packName, filename, `"${WEAPON_ATTACK_PREFIX}" must be an object or use dotted "${WEAPON_ATTACK_PREFIX}.*" keys`);
+  if (malformed)
+    error(
+      packName,
+      filename,
+      `"${WEAPON_ATTACK_PREFIX}" must be an object or use dotted "${WEAPON_ATTACK_PREFIX}.*" keys`,
+    );
 
   const values = {};
   const keys = new Set();
@@ -314,19 +353,24 @@ function validateWeaponAttack(doc, filename, packName) {
   }
 
   for (const key of keys) {
-    if (!WEAPON_ATTACK_KEYS.has(key)) error(packName, filename, `unknown weaponAttack field "${WEAPON_ATTACK_PREFIX}.${key}"`);
+    if (!WEAPON_ATTACK_KEYS.has(key))
+      error(packName, filename, `unknown weaponAttack field "${WEAPON_ATTACK_PREFIX}.${key}"`);
   }
 
   const str = (key) => String(values[key] ?? "").trim();
   const mode = str("mode");
-  if (!mode) error(packName, filename, `weaponAttack.mode is required when weaponAttack config is present`);
-  else if (!WEAPON_ATTACK_MODES.has(mode)) error(packName, filename, `unsupported weaponAttack.mode "${mode}"`);
+  if (!mode)
+    error(packName, filename, `weaponAttack.mode is required when weaponAttack config is present`);
+  else if (!WEAPON_ATTACK_MODES.has(mode))
+    error(packName, filename, `unsupported weaponAttack.mode "${mode}"`);
 
   const filter = str("filter") || "meleeWeapon";
-  if (!WEAPON_ATTACK_FILTERS.has(filter)) error(packName, filename, `unsupported weaponAttack.filter "${filter}"`);
+  if (!WEAPON_ATTACK_FILTERS.has(filter))
+    error(packName, filename, `unsupported weaponAttack.filter "${filter}"`);
 
   const charge = str("charge").toLowerCase();
-  if (charge && charge !== "true" && charge !== "false") error(packName, filename, `weaponAttack.charge must be "true" or "false"`);
+  if (charge && charge !== "true" && charge !== "false")
+    error(packName, filename, `weaponAttack.charge must be "true" or "false"`);
 }
 
 function validateFeat({ doc, filename, packName }) {
@@ -352,7 +396,8 @@ function validateAutomationBuffMatches() {
     if (doc.system?.automation?.enabled !== true) continue;
     if (buffNames.has(doc.name)) continue;
     const hasVariant = Array.from(buffNames).some((name) => name.startsWith(`${doc.name} (`));
-    if (!hasVariant) warn(packName, filename, `automation.enabled is true but no matching buff source was found`);
+    if (!hasVariant)
+      warn(packName, filename, `automation.enabled is true but no matching buff source was found`);
   }
 }
 
@@ -369,13 +414,20 @@ function printSummary() {
   for (const { name } of PACKS) {
     const docs = docsByPack.get(name) ?? [];
     const folders = foldersByPack.get(name) ?? [];
-    console.log(`${name}: ${docs.length} item document(s) scanned, ${folders.length} folder document(s) skipped`);
+    console.log(
+      `${name}: ${docs.length} item document(s) scanned, ${folders.length} folder document(s) skipped`,
+    );
   }
   console.log(`Errors: ${errors.length}`);
   console.log(`Warnings: ${warnings.length}`);
 }
 
-export function validateCompendia({ root = DEFAULT_ROOT, sourceRoot = null, strictWarnings = false, print = false } = {}) {
+export function validateCompendia({
+  root = DEFAULT_ROOT,
+  sourceRoot = null,
+  strictWarnings = false,
+  print = false,
+} = {}) {
   activeRoot = resolve(root);
   activeSourceRoot = sourceRoot ? resolve(sourceRoot) : join(activeRoot, "packs/_source");
   issues.length = 0;

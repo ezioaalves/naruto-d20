@@ -1,156 +1,156 @@
 /* Chakra Tab - Techniques panel */
 
 .chakra .naruto-techniques {
-    margin-top: 6px;
-    flex: 1 1 0;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  margin-top: 6px;
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .chakra .naruto-techniques h3 {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 /* Discipline filter tab bar */
 .chakra .technique-disc-tabs {
-    gap: 2px;
-    flex-wrap: wrap;
-    margin-bottom: 6px;
-    border-bottom: 1px solid #c0b89a;
-    padding-bottom: 4px;
+  gap: 2px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #c0b89a;
+  padding-bottom: 4px;
 }
 
 .chakra .technique-filter {
-    cursor: pointer;
-    padding: 2px 8px;
-    border: 1px solid transparent;
-    border-radius: 3px 3px 0 0;
-    font-size: 0.8em;
-    color: #5a4830;
-    line-height: 1.6;
+  cursor: pointer;
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  border-radius: 3px 3px 0 0;
+  font-size: 0.8em;
+  color: #5a4830;
+  line-height: 1.6;
 }
 
 .chakra .technique-filter:hover {
-    background: rgba(192, 184, 154, 0.3);
+  background: rgba(192, 184, 154, 0.3);
 }
 
 .chakra .technique-filter.active {
-    background: #c0b89a;
-    border-color: #a09070;
-    color: #2a1a00;
-    font-weight: 600;
+  background: #c0b89a;
+  border-color: #a09070;
+  color: #2a1a00;
+  font-weight: 600;
 }
 
 /* Grid layout overrides flexrow's display:flex to guarantee column alignment
    between rank header rows and technique data rows.
    Columns: name | cost | actions | activation | components | school | controls */
 .chakra .technique-list li {
-    display: grid;
-    grid-template-columns: 1fr 44px 52px 80px 80px 96px 120px;
-    align-items: center;
-    min-height: 24px;
+  display: grid;
+  grid-template-columns: 1fr 44px 52px 80px 80px 96px 120px;
+  align-items: center;
+  min-height: 24px;
 }
 
 .chakra .technique-list .item-name {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    min-width: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
 }
 
 /* Item summary spans all grid columns when expanded */
 .chakra .technique-list .item-summary {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 /* Individual technique row */
 .chakra .technique-row {
-    align-items: center;
-    padding: 2px 4px;
-    border-bottom: 1px solid rgba(192, 184, 154, 0.4);
+  align-items: center;
+  padding: 2px 4px;
+  border-bottom: 1px solid rgba(192, 184, 154, 0.4);
 }
 
 .chakra .technique-row:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .chakra .technique-row .item-image {
-    flex: 0 0 28px;
-    height: 28px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 3px;
-    border: 1px solid #c0b89a;
+  flex: 0 0 28px;
+  height: 28px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+  border: 1px solid #c0b89a;
 }
 
 .chakra .technique-row .item-name h4 {
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 0.9em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
 }
 
 .chakra .technique-name-stack {
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
 .chakra .technique-learning-badge {
-    color: #6b6050;
-    font-size: 0.72em;
-    line-height: 1.1;
+  color: #6b6050;
+  font-size: 0.72em;
+  line-height: 1.1;
 }
 
 .chakra .technique-row .item-actions {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
 }
 
 .chakra .technique-list .item-controls {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
 }
 
 .chakra .technique-row .item-controls a {
-    cursor: pointer;
-    color: #5a4830;
-    opacity: 0.7;
-    font-size: 0.85em;
+  cursor: pointer;
+  color: #5a4830;
+  opacity: 0.7;
+  font-size: 0.85em;
 }
 
 .chakra .technique-row .item-controls a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .chakra .shinobi-technique-use.disabled {
-    pointer-events: none;
-    opacity: 0.35;
+  pointer-events: none;
+  opacity: 0.35;
 }
 
 /* Drop zone / empty state */
 .chakra .techniques-body {
-    flex: 1 1 0;
-    min-height: 0;
-    overflow: hidden scroll;
-    scrollbar-width: thin;
-    scrollbar-color: var(--pf1-scrollbar-handle) var(--pf1-scrollbar-background);
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pf1-scrollbar-handle) var(--pf1-scrollbar-background);
 }
 
 .chakra .techniques-empty {
-    text-align: center;
-    color: #888;
-    font-size: 0.85em;
-    font-style: italic;
-    padding: 12px;
-    border: 2px dashed #c0b89a;
-    border-radius: 4px;
+  text-align: center;
+  color: #888;
+  font-size: 0.85em;
+  font-style: italic;
+  padding: 12px;
+  border: 2px dashed #c0b89a;
+  border-radius: 4px;
 }

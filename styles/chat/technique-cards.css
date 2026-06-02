@@ -2,24 +2,28 @@
 
 /* Perform auto-bypass paragraph inside chat cards */
 .naruto-perform-bypass {
-    color: #5a4830;
-    font-style: italic;
-    margin: 4px 0;
+  color: #5a4830;
+  font-style: italic;
+  margin: 4px 0;
 }
 
 .naruto-technique-card {
-    border: 1px solid #c0b89a;
-    border-radius: 4px;
-    padding: 6px;
-    background: rgba(0, 0, 0, 0.03);
+  border: 1px solid #c0b89a;
+  border-radius: 4px;
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.03);
 }
 
-.naruto-technique-card.failed { border-color: #a04040; }
+.naruto-technique-card.failed {
+  border-color: #a04040;
+}
 
-.naruto-technique-card header h3 { margin: 0; }
+.naruto-technique-card header h3 {
+  margin: 0;
+}
 
 .naruto-technique-card footer {
-    font-size: 0.85em;
-    color: #6b6050;
-    margin-top: 4px;
+  font-size: 0.85em;
+  color: #6b6050;
+  margin-top: 4px;
 }

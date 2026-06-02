@@ -1,9 +1,5 @@
 import { MODULE_ID, CHAKRA_DEPLETION_CONDITION_ID } from "../constants.mjs";
-import {
-    chakraPoolValuePath,
-    chakraPoolTempPath,
-    chakraReserveValuePath,
-} from "../flag-paths.mjs";
+import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from "../flag-paths.mjs";
 import { checkAndUpdateConditions } from "./chakra-conditions.mjs";
 
 /**
@@ -27,42 +23,40 @@ import { checkAndUpdateConditions } from "./chakra-conditions.mjs";
  * @param {ActorRestOptions} options  — { restoreHealth, restoreDailyUses, hours, longTermCare }
  */
 export function onActorRest(actor, options) {
-    if (!["character", "npc"].includes(actor.type)) return;
+  if (!["character", "npc"].includes(actor.type)) return;
 
-    const chakra = actor.flags?.[MODULE_ID]?.chakra;
-    if (!chakra) return;
+  const chakra = actor.flags?.[MODULE_ID]?.chakra;
+  if (!chakra) return;
 
-    const updates = {};
+  const updates = {};
 
-    // Temp chakra — always cleared on any rest (it is inherently temporary)
-    updates[chakraPoolTempPath] = 0;
+  // Temp chakra — always cleared on any rest (it is inherently temporary)
+  updates[chakraPoolTempPath] = 0;
 
-    // Chakra Pool — recovery amount depends on whether Chakra Depletion is active
-    if (options.restoreDailyUses !== false) {
-        const poolMax     = chakra.pool.max ?? 0;
-        const hasDepletion = actor.statuses?.has(CHAKRA_DEPLETION_CONDITION_ID) ?? false;
+  // Chakra Pool — recovery amount depends on whether Chakra Depletion is active
+  if (options.restoreDailyUses !== false) {
+    const poolMax = chakra.pool.max ?? 0;
+    const hasDepletion = actor.statuses?.has(CHAKRA_DEPLETION_CONDITION_ID) ?? false;
 
-        let poolRecovery;
-        if (hasDepletion) {
-            // Depleted: partial recovery — doubled if the actor is under long-term care
-            poolRecovery = options.longTermCare
-                ? Math.floor(poolMax / 2)
-                : Math.floor(poolMax / 4);
-        } else {
-            poolRecovery = poolMax;
-        }
-
-        updates[chakraPoolValuePath] = poolRecovery;
+    let poolRecovery;
+    if (hasDepletion) {
+      // Depleted: partial recovery — doubled if the actor is under long-term care
+      poolRecovery = options.longTermCare ? Math.floor(poolMax / 2) : Math.floor(poolMax / 4);
+    } else {
+      poolRecovery = poolMax;
     }
 
-    // Chakra Reserve — recovers 1 point per HD (same metric PF1e uses for HP recovery)
-    if (options.restoreHealth !== false) {
-        const hdTotal = actor.system.attributes?.hd?.total ?? 0;
-        const current = chakra.reserve.value ?? 0;
-        const max     = chakra.reserve.max ?? 0;
-        updates[chakraReserveValuePath] = Math.min(current + hdTotal, max);
-    }
+    updates[chakraPoolValuePath] = poolRecovery;
+  }
 
-    // fire-and-forget — matching the existing pattern (no top-level await in this module)
-    actor.update(updates).then(() => checkAndUpdateConditions(actor));
+  // Chakra Reserve — recovers 1 point per HD (same metric PF1e uses for HP recovery)
+  if (options.restoreHealth !== false) {
+    const hdTotal = actor.system.attributes?.hd?.total ?? 0;
+    const current = chakra.reserve.value ?? 0;
+    const max = chakra.reserve.max ?? 0;
+    updates[chakraReserveValuePath] = Math.min(current + hdTotal, max);
+  }
+
+  // fire-and-forget — matching the existing pattern (no top-level await in this module)
+  actor.update(updates).then(() => checkAndUpdateConditions(actor));
 }

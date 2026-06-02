@@ -2,17 +2,17 @@
 
 /* Sidebar quickbar/combat flags */
 .pf1.sheet.item .sidebar .sidebar-flags {
-    margin-top: 8px;
-    padding-top: 6px;
-    border-top: 1px solid #c0b89a;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid #c0b89a;
 }
 
 .pf1.sheet.item .technique-learning-controls {
-    gap: 4px;
+  gap: 4px;
 }
 
 .pf1.sheet.item .learning-progress-line {
-    color: #6b6050;
-    font-size: 0.8em;
-    line-height: 1.2;
+  color: #6b6050;
+  font-size: 0.8em;
+  line-height: 1.2;
 }

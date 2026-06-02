@@ -6,8 +6,16 @@ import { describe, it } from "node:test";
 
 import { applyTechniqueSystemDefaults } from "../scripts/data/technique-defaults.mjs";
 import { diffTechnique, normalizeSystem } from "../scripts/automation/technique-sync.mjs";
-import { LEARNING_MODES, buildLearnAttemptResult, getLearningMaxAttempts, getLearningTargetProgress } from "../scripts/learn-technique.mjs";
-import { parseWeaponAttackConfig, readWeaponAttackRaw } from "../scripts/ui/technique-weapon-attack.mjs";
+import {
+  LEARNING_MODES,
+  buildLearnAttemptResult,
+  getLearningMaxAttempts,
+  getLearningTargetProgress,
+} from "../scripts/learn-technique.mjs";
+import {
+  parseWeaponAttackConfig,
+  readWeaponAttackRaw,
+} from "../scripts/ui/technique-weapon-attack.mjs";
 import { validateCompendia } from "../tools/validate-compendia.mjs";
 
 globalThis.foundry = {
@@ -167,7 +175,13 @@ describe("learning calculations", () => {
     const result = buildLearnAttemptResult(item, actor, {
       skillKey: "nin",
       mode: LEARNING_MODES.FOUR_HOUR_BLOCKS,
-      baseLearning: { progress: 2, attemptsUsed: 1, failureInsight: 1, trainingBlocks: 2, chakraSpent: 16 },
+      baseLearning: {
+        progress: 2,
+        attemptsUsed: 1,
+        failureInsight: 1,
+        trainingBlocks: 2,
+        chakraSpent: 16,
+      },
       total: 30,
       apBonus: 0,
     });
@@ -189,13 +203,17 @@ describe("medkit normalization", () => {
       tag: "",
       description: { value: "<p>Text<br></p>", summary: "", instructions: "" },
       descriptors: ["Fire", "Wind"],
-      actions: [{ _id: "embedded1", name: "Action", damage: { parts: [{ _id: "part1", formula: "1d6" }] } }],
+      actions: [
+        { _id: "embedded1", name: "Action", damage: { parts: [{ _id: "part1", formula: "1d6" }] } },
+      ],
       learning: { learned: true, progress: 2 },
     };
     const source = {
       description: { value: "<p>Text<br></p>" },
       descriptors: ["Wind", "Fire"],
-      actions: [{ _id: "source1", name: "Action", damage: { parts: [{ _id: "part2", formula: "1d6" }] } }],
+      actions: [
+        { _id: "source1", name: "Action", damage: { parts: [{ _id: "part2", formula: "1d6" }] } },
+      ],
     };
 
     assert.deepEqual(normalizeSystem(embedded).descriptors, ["Fire", "Wind"]);
@@ -233,7 +251,11 @@ describe("source JSON validation", () => {
     assert.equal(result.failed, false);
     assert.deepEqual(
       result.counts.map((c) => [c.name, c.documents]),
-      [["techniques", 1], ["feats", 1], ["technique-buffs", 1]],
+      [
+        ["techniques", 1],
+        ["feats", 1],
+        ["technique-buffs", 1],
+      ],
     );
   });
 

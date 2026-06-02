@@ -13,20 +13,22 @@ import { randomBytes } from "crypto";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT      = resolve(__dirname, "..");
-const SRC_DIR   = join(ROOT, "packs/_source/techniques");
+const ROOT = resolve(__dirname, "..");
+const SRC_DIR = join(ROOT, "packs/_source/techniques");
 
 const DRY_RUN = process.argv.includes("--dry-run");
 const ACTION_ID_RE = /^[A-Za-z0-9]+$/;
 
 function isValidActionId(id) {
-    return typeof id === "string" && ACTION_ID_RE.test(id);
+  return typeof id === "string" && ACTION_ID_RE.test(id);
 }
 
 function randomId(existing) {
-    let id;
-    do { id = randomBytes(8).toString("hex"); } while (existing.has(id));
-    return id;
+  let id;
+  do {
+    id = randomBytes(8).toString("hex");
+  } while (existing.has(id));
+  return id;
 }
 
 let scanned = 0;
@@ -34,56 +36,62 @@ let actionsScanned = 0;
 let actionsChanged = 0;
 let filesChanged = 0;
 
-const files = readdirSync(SRC_DIR).filter((f) => f.endsWith(".json")).sort();
+const files = readdirSync(SRC_DIR)
+  .filter((f) => f.endsWith(".json"))
+  .sort();
 
 for (const filename of files) {
-    const path = join(SRC_DIR, filename);
-    let doc;
-    try {
-        doc = JSON.parse(readFileSync(path, "utf8"));
-    } catch {
-        continue;
+  const path = join(SRC_DIR, filename);
+  let doc;
+  try {
+    doc = JSON.parse(readFileSync(path, "utf8"));
+  } catch {
+    continue;
+  }
+
+  if (doc.type !== "naruto-d20.technique") continue;
+  scanned++;
+
+  const actions = doc.system?.actions;
+  if (!Array.isArray(actions)) continue;
+
+  const seen = new Set();
+  let changed = false;
+
+  for (const action of actions) {
+    if (!action || typeof action !== "object") continue;
+    actionsScanned++;
+
+    if (action.id && !action._id) {
+      action._id = action.id;
+      delete action.id;
+      changed = true;
     }
 
-    if (doc.type !== "naruto-d20.technique") continue;
-    scanned++;
-
-    const actions = doc.system?.actions;
-    if (!Array.isArray(actions)) continue;
-
-    const seen = new Set();
-    let changed = false;
-
-    for (const action of actions) {
-        if (!action || typeof action !== "object") continue;
-        actionsScanned++;
-
-        if (action.id && !action._id) {
-            action._id = action.id;
-            delete action.id;
-            changed = true;
-        }
-
-        if (!isValidActionId(action._id) || seen.has(action._id)) {
-            action._id = randomId(seen);
-            changed = true;
-            actionsChanged++;
-        }
-
-        seen.add(action._id);
+    if (!isValidActionId(action._id) || seen.has(action._id)) {
+      action._id = randomId(seen);
+      changed = true;
+      actionsChanged++;
     }
 
-    if (!changed) continue;
-    filesChanged++;
+    seen.add(action._id);
+  }
 
-    if (DRY_RUN) {
-        console.log(`[dry-run] ${doc.name} (${filename})`);
-    } else {
-        writeFileSync(path, JSON.stringify(doc, null, 2) + "\n", "utf8");
-    }
+  if (!changed) continue;
+  filesChanged++;
+
+  if (DRY_RUN) {
+    console.log(`[dry-run] ${doc.name} (${filename})`);
+  } else {
+    writeFileSync(path, JSON.stringify(doc, null, 2) + "\n", "utf8");
+  }
 }
 
 console.log(`\nDone. ${scanned} techniques scanned.`);
 console.log(`  ${actionsScanned} action(s) scanned.`);
-console.log(`  ${actionsChanged} action id(s) ${DRY_RUN ? "would be" : ""} rewritten${DRY_RUN ? " (dry-run, not written)" : ""}.`);
-console.log(`  ${filesChanged} file(s) ${DRY_RUN ? "would be" : ""} rewritten${DRY_RUN ? " (dry-run, not written)" : ""}.`);
+console.log(
+  `  ${actionsChanged} action id(s) ${DRY_RUN ? "would be" : ""} rewritten${DRY_RUN ? " (dry-run, not written)" : ""}.`,
+);
+console.log(
+  `  ${filesChanged} file(s) ${DRY_RUN ? "would be" : ""} rewritten${DRY_RUN ? " (dry-run, not written)" : ""}.`,
+);

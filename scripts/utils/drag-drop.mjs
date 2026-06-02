@@ -11,13 +11,17 @@
  * @returns {Promise<Item|null>}  The dropped Item, or null if invalid/wrong type.
  */
 export async function resolveDroppedItem(event, { type } = {}) {
-    const TE = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
-    let data;
-    try { data = TE.getDragEventData(event); } catch { return null; }
-    if (!data?.uuid) return null;
+  const TE = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
+  let data;
+  try {
+    data = TE.getDragEventData(event);
+  } catch {
+    return null;
+  }
+  if (!data?.uuid) return null;
 
-    const doc = await fromUuid(data.uuid);
-    if (!(doc instanceof Item)) return null;
-    if (type && doc.type !== type) return null;
-    return doc;
+  const doc = await fromUuid(data.uuid);
+  if (!(doc instanceof Item)) return null;
+  if (type && doc.type !== type) return null;
+  return doc;
 }
