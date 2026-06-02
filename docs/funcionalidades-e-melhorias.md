@@ -18,7 +18,7 @@ Para validacao manual antes de release ou PR grande, use
 - Dados de técnicas e compêndios: `packs/_source/` como fonte JSON e `packs/`
   como LevelDB runtime.
 - Templates: `templates/`.
-- Estilos: `styles/naruto-d20.css`.
+- Estilos: `styles/`, dividido por area de UI.
 - Localização: `lang/en.json` e `lang/pt-BR.json`.
 - Compatibilidade declarada: Foundry VTT mínimo 11, verificado em 13, PF1e
   mínimo 11.11.

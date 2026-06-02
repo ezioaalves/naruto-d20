@@ -1,0 +1,110 @@
+/* Chakra Tab */
+
+.tab.chakra {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.chakra .attributes.flexrow {
+    margin-bottom: 10px;
+}
+
+.chakra .info-box-header {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.chakra .info-box-header.health-details {
+    margin-right: 5px;
+}
+
+.chakra .info-box-header.speed-details {
+    margin-left: 5px;
+}
+
+.chakra .info-box-header h3 {
+    flex: none;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chakra .info-box-joined {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+}
+
+.chakra .chakra-resource-value {
+    width: 40px;
+    text-align: center;
+}
+
+.chakra .chakra-nature-select {
+    width: 100%;
+    padding-block: 0;
+}
+
+.chakra .combat-stats {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.chakra .learn-check-box {
+    flex: 1;
+}
+
+.chakra .learn-check-header {
+    font-size: 0.9em;
+}
+
+.chakra .learn-check-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.chakra .learn-check-total {
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.chakra .learn-check-subtext {
+    font-size: 0.7em;
+    color: gray;
+    margin-top: 2px;
+}
+
+.chakra .learn-check-misc {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.chakra .learn-check-misc label {
+    font-size: 0.7em;
+    margin-right: 3px;
+}
+
+.chakra .learn-check-misc input {
+    width: 30px;
+    height: 16px;
+    font-size: 0.8em;
+}
+
+.chakra .learn-check-conditional {
+    font-size: 0.7em;
+    color: #4a5b6c;
+    font-style: italic;
+    margin-top: 2px;
+}

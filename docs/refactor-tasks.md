@@ -488,7 +488,7 @@ Arquivos principais:
 - `scripts/use-technique.mjs`
 - `scripts/learn-technique.mjs`
 - `templates/`
-- `styles/naruto-d20.css`
+- `styles/`
 
 Criterios de aceite:
 

@@ -11,7 +11,8 @@ Foundry VTT module for a Naruto D20 homebrew expansion on top of Pathfinder 1e (
 - A Chakra tab on the actor sheet, and Hero Statistics injected into the Summary tab
 - 4 elemental damage types (Earth, Water, Wind, Holy)
 - Buff targets for chakra resources and learn checks that plug into PF1e's changes engine
-- Buff automation: on a successful technique perform, look up a same-named buff in the `naruto-d20.technique-buffs` compendium and apply it to the caster for self-targeting techniques or selected targets for targeted techniques, inheriting the triggering action's duration
+- Technique learning, Tap Reserves, Chakra conditions, custom Technique/Feat browsers, Medkit sync, and weapon-attack techniques
+- Buff automation: on a successful technique perform, look up a same-named buff in the `naruto-d20.technique-buffs` compendium or configured custom packs and apply/refresh it on the resolved targets, inheriting the triggering action's duration
 
 ## Development cycle
 
@@ -75,15 +76,16 @@ The numbered comments in `scripts/main.mjs` are authoritative. The sequence matt
 
 | Hook | What we do |
 |------|-----------|
-| `init` [1] | Register `TechniqueDataModel` into `CONFIG.Item.dataModels`, register `TechniqueItemSheet` |
-| `pf1PostInit` [2] | Register buff targets in `CONFIG.PF1` (not available before this), register Naruto skill labels |
+| `init` [1] | Register `TechniqueDataModel`, route techniques through `ItemPF`, register `TechniqueItemSheet`, preload templates, register settings |
+| `pf1PostInit` [2] | Register buff targets in `CONFIG.PF1` (not available before this), register Naruto skills, script-call categories, Technique DC / `@cl` patches, Chakra conditions |
 | `pf1PrepareBaseActorData` [3] | Init flag schema on actor, reset computed fields to 0 so the changes engine writes onto a clean slate; seed skill entries |
 | `pf1GetChangeFlat` [4] | Map buff target keys (`chakraPool`, `learnCkc`, …) to their flag paths so the changes engine knows where to write |
 | `pf1PrepareDerivedActorData` [5] | Compute all totals (chakra max, learn check totals, elemental resistance) after the changes engine has committed buff values |
 | `pf1RegisterDamageTypes` [6] | Register Earth/Water/Wind/Holy elemental damage types |
-| `setup` [7] | Push Chakra tab into PF1e sheet `TABS`, install the `_renderInner` patch, register roll listeners |
+| `setup` [7] | Install sheet/header patches, register Chakra tab/listeners, browsers, learn card menu, Summary stats, Tap Reserves, and automation hooks |
 | `preCreateActor` [8] | Seed default flag values (`actionPoints`, `reputation`, `wealth`) on new actors |
-| `ready` [9] | GM-only one-time migration to backfill missing flags on existing actors |
+| `ready` [9] | GM-only one-time migrations for actor flags, technique action IDs, and learned-state backfill |
+| `pf1ActorRest` [10] | Recover chakra on rest and recalculate Chakra conditions |
 
 ## Architecture
 
@@ -95,26 +97,48 @@ scripts/
   constants.mjs               # MODULE_ID, TECHNIQUE_ITEM_TYPE, MAIN_DISCIPLINES
   flag-paths.mjs              # Flag-path builders + BUFF_TARGETS (single source of truth
                               # for pf1GetChangeFlat / CONFIG.PF1.buffTargets)
-  use-technique.mjs           # Chakra deduction + perform-check flow
+  use-technique.mjs           # Technique use orchestration, perform checks, chakra spend
+  learn-technique.mjs         # Learning progression, training costs, Action Point flow
   data/
+    action-ids.mjs            # PF1e action id normalization/migration helpers
     skills.mjs                # NARUTO_SKILLS (canonical), LEARN_KEYS, DISCIPLINE_SKILL_MAP
     derived-data.mjs          # prepareBase/Derived actor data
+    rest-recovery.mjs         # Chakra recovery on pf1ActorRest
+    chakra-conditions.mjs     # Low Reserves / Chakra Depletion registration + updates
+    technique-defaults.mjs    # Shared Technique system defaults for model + sync
     technique-model.mjs       # TypeDataModel + COMPLEXITY_TABLE
+    technique-rolldata.mjs    # @cl injection for technique actions
+    technique-save-dc.mjs     # Technique action DC patch
     damage-types.mjs          # Earth/Water/Wind/Holy registration
     bonus-sources.mjs         # buildLearnCheckBreakdown — shared by roll + tooltip
   ui/
+    browser-shared.mjs        # Shared listener helpers for custom browsers
+    feat-browser.mjs          # Naruto feat browser (Application V1)
+    feat-list.mjs             # Browse button on PF1e Features tab
     render-patch.mjs          # _renderInner wrap that injects the Chakra tab
     learn-checks.mjs          # .shinobi-roll + learn-tooltip listeners
+    tap-reserves.mjs          # Tap Reserves dialog/listener
     technique-list.mjs        # Chakra-tab filter/drop-zone/CRUD listeners
+    technique-browser.mjs     # Technique compendium browser (Application V1)
+    technique-medkit-app.mjs  # Per-actor technique sync/diagnostics UI
     technique-sheet.mjs       # Custom ItemSheet for technique items
+    technique-weapon-attack.mjs # Selected weapon/attack item integration
     summary-stats.mjs         # Hero Statistics block on Summary tab
   automation/
     buff-application.mjs      # Compendium lookup + buff create/refresh on perform success
+    buff-expiry.mjs           # Delete module-created automation buffs on PF1e expiry
+    charge-defense.mjs        # Charge AC penalty buff for PF1e charge attacks
+    feat-grants.mjs           # Cascade-delete granted feat supplements
+    technique-sync.mjs        # Medkit sync/diff helpers
   utils/
     drag-drop.mjs             # resolveDroppedItem — v12/v13 TextEditor shim
 templates/
-  actor/{chakra-tab,summary-stats}.hbs
+  actor/{chakra-tab,summary-stats,tap-reserves-dialog,technique-medkit}.hbs
+  apps/{technique-browser,feat-browser}.hbs
+  chat/{technique-perform,learning-result}.hbs
   item/technique-sheet.hbs
+styles/
+  actor/ apps/ chat/ item/ settings/   # CSS split by UI area; listed in module.json
 ```
 
 Anchor invariants:
@@ -149,7 +173,8 @@ The tab is injected by patching `ActorSheetPF.prototype._renderInner` (in `scrip
 
 Listeners are wired separately because they depend on the live DOM:
 - `scripts/ui/learn-checks.mjs` — `.shinobi-roll` click + `[data-naruto-tooltip="learn.X"]` hover
-- `scripts/ui/technique-list.mjs` — discipline filter chips, drop zone, open/use/delete
+- `scripts/ui/technique-list.mjs` — discipline filter chips, drop zone, medkit, browse, open/use/learn/duplicate/delete
+- `scripts/ui/tap-reserves.mjs` — Reserve header click opens the Tap Reserves dialog
 
 Both consume `buildLearnCheckBreakdown` (from `data/bonus-sources.mjs`) so a single edit changes what the chat card and the tooltip show.
 
@@ -188,18 +213,23 @@ And on the technique itself: `item.system.automation.enabled` (default `true`) a
 
 Per-feature implementation notes live in `docs/` (English, kebab-case filenames). Each documents
 the goal, how it mirrors PF1e where relevant, the files touched, and manual verification steps.
-Read the matching doc before changing a feature.
+Read the matching doc before changing a feature. Use `docs/manual-qa.md` as the release/large-PR
+manual QA checklist, and `docs/refactor-tasks.md` for the completed refactor backlog/history.
 
 | Doc | Feature |
 |---|---|
 | [`docs/technique-header-buttons.md`](docs/technique-header-buttons.md) | Create / Browse buttons on each Rank header of the Chakra tab |
-| [`docs/technique-compendium-browser.md`](docs/technique-compendium-browser.md) | Custom AppV2 Compendium Browser for techniques (replaces the native pack window) |
+| [`docs/technique-compendium-browser.md`](docs/technique-compendium-browser.md) | Custom Application V1 Compendium Browser for techniques (replaces the native pack window) |
 | [`docs/technique-medkit.md`](docs/technique-medkit.md) | Per-actor "medkit": detect out-of-date embedded techniques (content diff) and re-sync from the compendium |
 | [`docs/technique-dc-buffs.md`](docs/technique-dc-buffs.md) | Technique save-DC buff targets (global + per-discipline), mirroring spell DC |
 | [`docs/technique-mastery.md`](docs/technique-mastery.md) | `mastery` field — caster-level offset (`@cl`) + perform bonus |
-| [`docs/technique-implementation-plan.md`](docs/technique-implementation-plan.md) | Technique actions & perform-flow implementation plan (`ItemPF` routing, perform pipeline) |
+| [`docs/technique-learning.md`](docs/technique-learning.md) | Learning progression, Failure Insight, training blocks, and Action Point flow |
 | [`docs/technique-drop-duplication-fix.md`](docs/technique-drop-duplication-fix.md) | Fix for techniques being added twice on drop (`stopPropagation` vs pf1's native sheet drop) |
 | [`docs/chakra-tooltips-tap-reserves.md`](docs/chakra-tooltips-tap-reserves.md) | Chakra Pool/Reserve max tooltips (from sources), Temp chakra field, Tap Reserves roll dialog |
+| [`docs/chakra-conditions.md`](docs/chakra-conditions.md) | Low Reserves, Chakra Depletion, Emergency Transfer, and rest recovery behavior |
+| [`docs/auto-add-buffs-performance.md`](docs/auto-add-buffs-performance.md) | Auto-add-buffs performance diagnosis and cache strategy |
+| [`docs/compendium-source-packing.md`](docs/compendium-source-packing.md) | Source JSON ↔ packed LevelDB workflow |
+| [`docs/manual-qa.md`](docs/manual-qa.md) | Manual QA checklist by feature |
 
 ## Key references
 

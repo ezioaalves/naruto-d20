@@ -200,7 +200,7 @@ other chakra flag-path constants.
 | `templates/actor/chakra-tab.hbs` | `data-naruto-tooltip` on max spans; Temp column in Pool; clickable Reserve header |
 | `templates/actor/tap-reserves-dialog.hbs` | **new** — dialog template |
 | `scripts/main.mjs` | Import tap-reserves; add template to preload; call listener in setup |
-| `styles/naruto-d20.css` | Styles for dialog DC display, seal hints, buttons, Reserve header hover |
+| `styles/apps/tap-reserves.css` | Styles for dialog DC display, seal hints, buttons, Reserve header hover |
 | `scripts/flag-paths.mjs` | `chakraPoolTempPath` export |
 | `scripts/use-technique.mjs` | Temp absorption logic in `canAffordTechnique` + `performTechnique` |
 

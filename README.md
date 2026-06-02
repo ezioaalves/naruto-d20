@@ -227,7 +227,12 @@ scripts/
 templates/
   actor/{chakra-tab,summary-stats}.hbs
   item/technique-sheet.hbs
-styles/naruto-d20.css
+styles/
+  actor/
+  apps/
+  chat/
+  item/
+  settings/
 lang/en.json
 icons/{earth,water,wind,holy}.svg
 module.json

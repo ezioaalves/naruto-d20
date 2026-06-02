@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This is a Foundry VTT module for Pathfinder 1e. Runtime code lives in `scripts/` as ESM loaded directly by Foundry. Core hook wiring is in `scripts/main.mjs`; data models and calculations are in `scripts/data/`; UI listeners and sheet patches are in `scripts/ui/`; automation helpers are in `scripts/automation/`. Handlebars templates are under `templates/`, styles in `styles/naruto-d20.css`, localization in `lang/`, and icons in `icons/`.
+This is a Foundry VTT module for Pathfinder 1e. Runtime code lives in `scripts/` as ESM loaded directly by Foundry. Core hook wiring is in `scripts/main.mjs`; data models and calculations are in `scripts/data/`; UI listeners and sheet patches are in `scripts/ui/`; automation helpers are in `scripts/automation/`. Handlebars templates are under `templates/`, styles are split by UI area under `styles/`, localization in `lang/`, and icons in `icons/`.
 
 Compendium source JSON is under `packs/_source/{techniques,feats,technique-buffs}/`. Packed LevelDB data under `packs/` is runtime output; do not hand-edit it. Architecture notes and feature docs are in `README.md`, `CLAUDE.md`, and `docs/`.
 
@@ -24,7 +24,7 @@ Technique item data belongs in `item.system.*`. Actor module state belongs in `f
 
 ## Testing Guidelines
 
-No automated test suite is configured. Verify manually in Foundry VTT 13 with PF1e v11.11+: reload the world, open an actor sheet, exercise the Chakra tab, technique sheets, rolls, and affected compendium entries. For compendium transforms, run dry-run first, review `git diff`, then `npm run pack` and confirm the packed data loads.
+No automated test suite is configured. Verify manually in Foundry VTT 13 with PF1e v11.11+: reload the world, open an actor sheet, exercise the Chakra tab, technique sheets, rolls, and affected compendium entries. Use `docs/manual-qa.md` for release or large-PR validation. For compendium transforms, run dry-run first, review `git diff`, then `npm run pack` and confirm the packed data loads.
 
 ## Commit & Pull Request Guidelines
 

@@ -1,0 +1,10 @@
+/* Actor settings */
+
+/* Settings tab - Taijutsu ability selector */
+div.naruto-tai-setting {
+    flex: 0;
+}
+
+div.naruto-tai-setting .form-group {
+    margin: 0;
+}

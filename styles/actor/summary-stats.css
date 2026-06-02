@@ -1,0 +1,23 @@
+/* Summary Tab - Hero Statistics */
+
+#naruto-hero-statistics {
+    margin-bottom: 10px;
+}
+
+.naruto-summary-stats {
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+.naruto-summary-stats .info-box.current {
+    flex: 1;
+}
+
+.naruto-summary-stats .value.text-box {
+    width: 100%;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
