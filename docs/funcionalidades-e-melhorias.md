@@ -637,6 +637,7 @@ Comandos importantes:
 - `npm run unpack`
 - `npm run add-actions -- --dry-run`
 - `npm run fix-spell-attacks -- --dry-run`
+- `npm run validate:compendia`
 
 Arquivos e docs relacionados:
 
@@ -687,8 +688,6 @@ verifique contra PF1e v11.11 instalado, conforme orientação em `CLAUDE.md`.
   `TechniqueDataModel.prepareBaseData()` e `automation/technique-sync.mjs`.
   O sync precisa espelhar defaults para diff correto; isso pode divergir com o
   tempo.
-- Documentar formalmente o formato de `system.flags.dictionary.weaponAttack`,
-  pois hoje é uma integração poderosa, mas pouco descoberta.
 - Adicionar uma página curta de settings, com impacto de cada setting no fluxo
   de uso/aprendizado/automação.
 - Padronizar cards de chat por helper/template, em vez de HTML inline em vários
@@ -699,9 +698,6 @@ verifique contra PF1e v11.11 instalado, conforme orientação em `CLAUDE.md`.
 - Avaliar se os browsers devem manter cache global por pack para reuso entre
   janelas, mantendo botão de reload para invalidação manual.
 - Manter `docs/manual-qa.md` atualizado quando features criticas mudarem.
-- Considerar um pequeno script de validação de source JSON de técnicas para
-  encontrar actions sem `_id`, buffs sem match, técnicas sem disciplina ou
-  weaponAttack malformado.
 - Criar docs em português equivalentes aos principais docs ingleses, se o
   público principal do módulo continuar sendo PT-BR.
 

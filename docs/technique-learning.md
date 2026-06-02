@@ -1,10 +1,11 @@
 # Technique Learning Progression
 
-> **Status: in progress.** Phase 1 shipped in commit `ab310f9`. Phase 2 has
-> started with training-time tracking, interruption expiry, exceptional time
-> modifiers, optional training-chakra deduction, insufficient-chakra roll
-> blocking, and Chakra-tab scroll preservation during learning updates.
-> Remaining unchecked items below are still planned work.
+> **Status: partially implemented.** The core learning loop is shipped: unlearned
+> drops, learn rolls against `learnDC`, standard and 4-hour-block progression,
+> Failure Insight, learning gates, migration for existing embedded techniques,
+> training-time/chakra tracking, interruption expiry, Action Point persistence,
+> and Chakra-tab scroll preservation. Remaining gaps are tracked below as
+> explicit backlog, not active implementation.
 
 A **learning loop** for techniques. A technique dragged onto an actor starts
 **unlearned**. The practitioner rolls learn checks for the technique's discipline
@@ -148,12 +149,10 @@ Take 10 and Take 20 together and does not currently provide a clean option to
 remove only Take 20. Learn rolls use the PF1e dialog for now; GMs must enforce
 the no-Take-20 rule until a custom learn-roll dialog replaces it.
 
-**Phase 2 — automation in progress:** learning time, chakra drain,
-interruption timer, exceptional-roll time changes, the four learning Methods,
-and the `(t)/(f)/(a)/(1-5)` structured requirements. The first shipped Phase 2
-slice tracks training blocks/chakra, expires progress after long interruption,
-and can optionally deduct training chakra. **Action Point persistence is now
-shipped** (see below).
+**Phase 2 — partially shipped / backlog:** learning time, chakra drain,
+interruption timer, exceptional-roll time changes, and Action Point persistence
+are shipped. The four learning Methods and structured `(t)/(f)/(a)/(1-5)`
+requirements remain backlog.
 
 ### Phase 2 Action Point persistence
 
@@ -463,9 +462,9 @@ default (`learned: false`) applies to newly created embedded items.
    attempt affordable. If the actual post-roll cost is higher than the remaining
    chakra, the current behavior aborts resolution after the roll instead of
    spending partial chakra or applying progress.
-3. **Phase 2 ordering** — which manual rule to automate next: the four Methods,
+3. **Backlog ordering** — which manual rule to automate next: the four Methods,
    or structured `(t)/(f)/(a)/(1-5)` requirements tied into the existing
-   `links.prerequisites`. (Action Point persistence is now shipped.)
+   `links.prerequisites`.
 
 ## Manual verification
 

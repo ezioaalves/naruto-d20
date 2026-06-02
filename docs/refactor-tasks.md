@@ -714,7 +714,7 @@ tecnicas no pack com config "lixo" proposital.
   `weaponAttack` warnings (`issues`) e escapar o nome no Dialog de remocao de
   tecnica em `technique-list.mjs`.
 
-### QA manual pendente (nao executado)
+### QA manual nao executado na revisao 10-12
 
 - Trocar o mundo para PT-BR e conferir notificacoes, cards e titulos.
 - Auto-perform com sucesso; perform roll falho; learn success/failure; run
@@ -735,7 +735,6 @@ tecnicas no pack com config "lixo" proposital.
 
 Estas tarefas devem vir depois das areas criticas, a menos que virem bloqueio:
 
-- Criar scripts de validacao de JSON de tecnicas, feats e buffs.
 - Adicionar cache compartilhado para indexes de compendio se a investigacao de
   performance justificar.
 - Criar docs PT-BR equivalentes aos docs de feature em ingles.

@@ -31,10 +31,10 @@ without writing a custom browser.
 
 ## Design decisions
 
-- **Browse** → opens the **native pack window** for `naruto-d20.techniques`
-  (`game.packs.get(...).render(true)`). The user searches by name and drags the technique onto
-  the tab (the drop zone already existed in `technique-list.mjs`). Chosen for being simple and
-  reliable, with no dependency on pf1's compiled internals. *(Superseded — see the update note above.)*
+- **Browse** → opens the custom Technique Compendium Browser for
+  `naruto-d20.techniques`, with the clicked rank pre-selected. It originally
+  opened the native pack window via `pack.render(true)`, but that was superseded
+  by [`technique-compendium-browser.md`](./technique-compendium-browser.md).
 - **Button placement** → on **each Rank** header, mirroring the Spells tab (which puts the
   buttons on each level's row).
   - Since an empty tab has no rank header, the *empty-state* block also gets the button pair so
@@ -101,6 +101,6 @@ No build step (ESM loaded directly by Foundry). Reload with `Ctrl+R` in-world or
 1. Sheet **with** techniques → each Rank header shows `+` and the folder icon.
 2. `+` on Rank 3 → creates a "New Technique" rank 3 and opens its sheet. In a discipline group
    (e.g. Taijutsu) the technique is born with `discipline = Taijutsu`.
-3. Folder button → opens the technique compendium; dragging onto the tab still works.
+3. Folder button → opens the custom Technique Browser; dragging onto the tab still works.
 4. Sheet **without** techniques → the empty-state shows the button pair; `+` creates rank 1 and opens.
 5. Discipline filters and per-row use/open/delete still work (no regression).
