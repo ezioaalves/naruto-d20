@@ -390,7 +390,7 @@ async function resolveLearnAttempt(item, actor, { skillKey, mode, baseLearning, 
     });
 }
 
-function buildLearnAttemptResult(item, actor, { skillKey, mode, baseLearning, total, apBonus }) {
+export function buildLearnAttemptResult(item, actor, { skillKey, mode, baseLearning, total, apBonus }) {
     const learnDC = Number(item.system.derived?.learnDC ?? 10) || 10;
     const targetProgress = getLearningTargetProgress(item, mode);
     const maxAttempts = getLearningMaxAttempts(actor, skillKey);

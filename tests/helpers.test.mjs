@@ -1,0 +1,268 @@
+import assert from "node:assert/strict";
+import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { describe, it } from "node:test";
+
+import { applyTechniqueSystemDefaults } from "../scripts/data/technique-defaults.mjs";
+import { diffTechnique, normalizeSystem } from "../scripts/automation/technique-sync.mjs";
+import { LEARNING_MODES, buildLearnAttemptResult, getLearningMaxAttempts, getLearningTargetProgress } from "../scripts/learn-technique.mjs";
+import { parseWeaponAttackConfig, readWeaponAttackRaw } from "../scripts/ui/technique-weapon-attack.mjs";
+import { validateCompendia } from "../tools/validate-compendia.mjs";
+
+globalThis.foundry = {
+  utils: {
+    deepClone: (value) => structuredClone(value),
+  },
+};
+
+globalThis.game = {
+  settings: {
+    get: () => false,
+  },
+};
+
+function techniqueDoc(overrides = {}) {
+  return {
+    type: "naruto-d20.technique",
+    _id: overrides._id ?? "technique01",
+    _key: `!items!${overrides._id ?? "technique01"}`,
+    name: overrides.name ?? "Test Technique",
+    system: {
+      discipline: "Ninjutsu",
+      rank: 1,
+      complexity: "E-Class",
+      chakraCost: 1,
+      ...overrides.system,
+    },
+  };
+}
+
+function writeJson(path, data) {
+  writeFileSync(path, `${JSON.stringify(data, null, 2)}\n`);
+}
+
+function makeSourceRoot(filesByPack) {
+  const root = mkdtempSync(join(tmpdir(), "naruto-d20-tests-"));
+  const sourceRoot = join(root, "packs/_source");
+  for (const pack of ["techniques", "feats", "technique-buffs"]) {
+    mkdirSync(join(sourceRoot, pack), { recursive: true });
+  }
+  for (const [pack, files] of Object.entries(filesByPack)) {
+    for (const [filename, data] of Object.entries(files)) {
+      writeJson(join(sourceRoot, pack, filename), data);
+    }
+  }
+  return { root, sourceRoot };
+}
+
+describe("technique defaults", () => {
+  it("fills Foundry-safe defaults and mirrors descriptor booleans", () => {
+    const system = applyTechniqueSystemDefaults({
+      isHijutsu: true,
+      isCombination: true,
+      descriptors: ["Fire"],
+      tags: { primary: "combat" },
+    });
+
+    assert.equal(system.description.value, "");
+    assert.equal(system.learning.learned, false);
+    assert.equal(system.automation.enabled, true);
+    assert.equal(system.automation.targetMode, "auto");
+    assert.deepEqual(system.links.prerequisites, []);
+    assert.deepEqual(system.tags, ["combat"]);
+    assert.deepEqual(system.descriptors, ["Fire", "Hijutsu", "Combination"]);
+  });
+
+  it("can normalize collections to sets for the TypeDataModel path", () => {
+    const system = applyTechniqueSystemDefaults(
+      { descriptors: ["Kinjutsu"], isKinjutsu: true },
+      { collectionType: "set" },
+    );
+
+    assert.ok(system.descriptors instanceof Set);
+    assert.deepEqual([...system.descriptors], ["Kinjutsu"]);
+  });
+});
+
+describe("weaponAttack parsing", () => {
+  it("reads nested and dotted forms with nested values taking precedence", () => {
+    const raw = readWeaponAttackRaw({
+      system: {
+        flags: {
+          dictionary: {
+            weaponAttack: { mode: "selected", filter: "rangedWeapon", charge: "true" },
+            "weaponAttack.filter": "unarmedOnly",
+            "weaponAttack.attackBonus": "@cl",
+          },
+        },
+      },
+    });
+
+    assert.equal(raw.present, true);
+    assert.deepEqual(raw.values, {
+      mode: "selected",
+      filter: "rangedWeapon",
+      charge: "true",
+      attackBonus: "@cl",
+    });
+
+    const { config, warnings } = parseWeaponAttackConfig(raw);
+    assert.deepEqual(warnings, []);
+    assert.deepEqual(config, {
+      mode: "selected",
+      filter: "rangedWeapon",
+      attackBonus: "@cl",
+      damageBonus: "",
+      held: "",
+      charge: true,
+    });
+  });
+
+  it("reports invalid fields while returning a usable fallback config", () => {
+    const { config, warnings } = parseWeaponAttackConfig({
+      values: { mode: "selected", filter: "badFilter", charge: "sometimes" },
+      keys: new Set(["mode", "filter", "charge", "extra"]),
+      malformed: false,
+    });
+
+    assert.equal(config.filter, "meleeWeapon");
+    assert.equal(config.charge, false);
+    assert.ok(warnings.some((w) => w.includes("unknown field")));
+    assert.ok(warnings.some((w) => w.includes("unsupported")));
+    assert.ok(warnings.some((w) => w.includes("should be")));
+  });
+});
+
+describe("learning calculations", () => {
+  it("computes target progress and max attempts from simple actor data", () => {
+    const item = { system: { rank: 3, derived: { successes: 2 } } };
+    const actor = {
+      system: {
+        abilities: { wis: { mod: 2 } },
+        skills: { nin: { ability: "wis", rank: 5 } },
+      },
+    };
+
+    assert.equal(getLearningTargetProgress(item, LEARNING_MODES.STANDARD), 2);
+    assert.equal(getLearningTargetProgress(item, LEARNING_MODES.FOUR_HOUR_BLOCKS), 12);
+    assert.equal(getLearningMaxAttempts(actor, "nin"), 5);
+  });
+
+  it("resolves a four-hour-block success without Foundry documents", () => {
+    const item = {
+      system: {
+        rank: 2,
+        derived: { successes: 3, learnDC: 15 },
+      },
+    };
+    const actor = {
+      flags: { "naruto-d20": { chakra: { pool: { max: 20 } } } },
+      system: {
+        abilities: { int: { mod: 1 } },
+        skills: { nin: { rank: 4 } },
+      },
+    };
+
+    const result = buildLearnAttemptResult(item, actor, {
+      skillKey: "nin",
+      mode: LEARNING_MODES.FOUR_HOUR_BLOCKS,
+      baseLearning: { progress: 2, attemptsUsed: 1, failureInsight: 1, trainingBlocks: 2, chakraSpent: 16 },
+      total: 30,
+      apBonus: 0,
+    });
+
+    assert.equal(result.success, true);
+    assert.equal(result.award, 4);
+    assert.equal(result.progress, 6);
+    assert.equal(result.targetProgress, 12);
+    assert.equal(result.trainingBlocks, 1);
+    assert.equal(result.chakraCost, 8);
+    assert.equal(result.nextFailureInsight, 1);
+    assert.equal(result.learned, false);
+  });
+});
+
+describe("medkit normalization", () => {
+  it("ignores generated ids, learning state, descriptor order, and missing defaults", () => {
+    const embedded = {
+      tag: "",
+      description: { value: "<p>Text<br></p>", summary: "", instructions: "" },
+      descriptors: ["Fire", "Wind"],
+      actions: [{ _id: "embedded1", name: "Action", damage: { parts: [{ _id: "part1", formula: "1d6" }] } }],
+      learning: { learned: true, progress: 2 },
+    };
+    const source = {
+      description: { value: "<p>Text<br></p>" },
+      descriptors: ["Wind", "Fire"],
+      actions: [{ _id: "source1", name: "Action", damage: { parts: [{ _id: "part2", formula: "1d6" }] } }],
+    };
+
+    assert.deepEqual(normalizeSystem(embedded).descriptors, ["Fire", "Wind"]);
+    assert.equal(diffTechnique(embedded, source), true);
+  });
+});
+
+describe("source JSON validation", () => {
+  it("accepts a minimal valid source tree", () => {
+    const { root, sourceRoot } = makeSourceRoot({
+      techniques: { "technique.json": techniqueDoc() },
+      feats: {
+        "feat.json": {
+          type: "feat",
+          _id: "feat0001",
+          _key: "!items!feat0001",
+          name: "Test Feat",
+          system: { subType: "feat" },
+        },
+      },
+      "technique-buffs": {
+        "buff.json": {
+          type: "buff",
+          _id: "buff0001",
+          _key: "!items!buff0001",
+          name: "Test Buff",
+          system: { subType: "buff" },
+        },
+      },
+    });
+
+    const result = validateCompendia({ root, sourceRoot });
+
+    assert.equal(result.errorCount, 0);
+    assert.equal(result.failed, false);
+    assert.deepEqual(
+      result.counts.map((c) => [c.name, c.documents]),
+      [["techniques", 1], ["feats", 1], ["technique-buffs", 1]],
+    );
+  });
+
+  it("reports structural and weaponAttack source mistakes", () => {
+    const { root, sourceRoot } = makeSourceRoot({
+      techniques: {
+        "bad-technique.json": techniqueDoc({
+          system: {
+            rank: 99,
+            descriptors: { not: "array" },
+            flags: {
+              dictionary: {
+                weaponAttack: { mode: "wrong", filter: "bad", charge: "maybe", extra: "x" },
+              },
+            },
+          },
+        }),
+      },
+    });
+
+    const result = validateCompendia({ root, sourceRoot });
+    const messages = result.issues.map((i) => i.message);
+
+    assert.equal(result.failed, true);
+    assert.ok(messages.some((m) => m.includes("rank must be")));
+    assert.ok(messages.some((m) => m.includes("system.descriptors must be an array")));
+    assert.ok(messages.some((m) => m.includes("unknown weaponAttack field")));
+    assert.ok(messages.some((m) => m.includes("unsupported weaponAttack.mode")));
+    assert.ok(messages.some((m) => m.includes("unsupported weaponAttack.filter")));
+    assert.ok(messages.some((m) => m.includes("weaponAttack.charge")));
+  });
+});

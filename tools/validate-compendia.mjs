@@ -15,10 +15,9 @@ import { dirname, join, relative, resolve } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..");
-const SOURCE_ROOT = join(ROOT, "packs/_source");
+const DEFAULT_ROOT = resolve(__dirname, "..");
+const DEFAULT_SOURCE_ROOT = join(DEFAULT_ROOT, "packs/_source");
 
-const STRICT_WARNINGS = process.argv.includes("--strict-warnings");
 const ACTION_ID_RE = /^[A-Za-z0-9]+$/;
 
 const PACKS = [
@@ -61,6 +60,8 @@ const WEAPON_ATTACK_FILTERS = new Set(["meleeWeapon", "rangedWeapon", "unarmedOn
 const docsByPack = new Map();
 const foldersByPack = new Map();
 const issues = [];
+let activeRoot = DEFAULT_ROOT;
+let activeSourceRoot = DEFAULT_SOURCE_ROOT;
 
 function addIssue(severity, pack, file, message) {
   issues.push({ severity, pack, file, message });
@@ -75,7 +76,7 @@ function warn(pack, file, message) {
 }
 
 function rel(path) {
-  return relative(ROOT, path);
+  return relative(activeRoot, path);
 }
 
 function isPlainObject(value) {
@@ -91,7 +92,7 @@ function isIntegerInRange(value, min, max) {
 }
 
 function readPack({ name, dir, type }) {
-  const packDir = join(SOURCE_ROOT, dir);
+  const packDir = join(activeSourceRoot, dir);
   const docs = [];
   const folders = [];
   if (!existsSync(packDir)) {
@@ -374,20 +375,47 @@ function printSummary() {
   console.log(`Warnings: ${warnings.length}`);
 }
 
-for (const pack of PACKS) {
-  const docs = readPack(pack);
-  validateUniqueIds(pack.name, docs);
-  for (const ctx of docs) {
-    validateCommon(ctx);
-    if (pack.name === "techniques") validateTechnique(ctx);
-    if (pack.name === "feats") validateFeat(ctx);
-    if (pack.name === "technique-buffs") validateBuff(ctx);
+export function validateCompendia({ root = DEFAULT_ROOT, sourceRoot = null, strictWarnings = false, print = false } = {}) {
+  activeRoot = resolve(root);
+  activeSourceRoot = sourceRoot ? resolve(sourceRoot) : join(activeRoot, "packs/_source");
+  issues.length = 0;
+  docsByPack.clear();
+  foldersByPack.clear();
+
+  for (const pack of PACKS) {
+    const docs = readPack(pack);
+    validateUniqueIds(pack.name, docs);
+    for (const ctx of docs) {
+      validateCommon(ctx);
+      if (pack.name === "techniques") validateTechnique(ctx);
+      if (pack.name === "feats") validateFeat(ctx);
+      if (pack.name === "technique-buffs") validateBuff(ctx);
+    }
   }
+
+  validateAutomationBuffMatches();
+  if (print) printSummary();
+
+  const errorCount = issues.filter((i) => i.severity === "error").length;
+  const warningCount = issues.filter((i) => i.severity === "warning").length;
+
+  return {
+    issues: issues.map((i) => ({ ...i })),
+    errorCount,
+    warningCount,
+    failed: errorCount > 0 || (strictWarnings && warningCount > 0),
+    counts: PACKS.map(({ name }) => ({
+      name,
+      documents: docsByPack.get(name)?.length ?? 0,
+      folders: foldersByPack.get(name)?.length ?? 0,
+    })),
+  };
 }
 
-validateAutomationBuffMatches();
-printSummary();
-
-const errorCount = issues.filter((i) => i.severity === "error").length;
-const warningCount = issues.filter((i) => i.severity === "warning").length;
-if (errorCount > 0 || (STRICT_WARNINGS && warningCount > 0)) process.exit(1);
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const result = validateCompendia({
+    strictWarnings: process.argv.includes("--strict-warnings"),
+    print: true,
+  });
+  if (result.failed) process.exit(1);
+}

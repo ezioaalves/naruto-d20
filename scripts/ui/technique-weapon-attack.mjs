@@ -12,7 +12,7 @@ const KNOWN_KEYS = new Set(["mode", "filter", "attackBonus", "damageBonus", "hel
  * keys (`"weaponAttack.mode"`, …) — with the nested object taking precedence.
  * Returns `{ present, values, keys, malformed }` so callers can validate.
  */
-function readWeaponAttackRaw(item) {
+export function readWeaponAttackRaw(item) {
     const dict = item.system?.flags?.dictionary ?? {};
     const rawNested = dict[CONFIG_PREFIX];
     const nested = rawNested && typeof rawNested === "object" ? rawNested : null;
@@ -36,7 +36,7 @@ function readWeaponAttackRaw(item) {
 
 /** Validate raw weaponAttack values, returning a usable config (or null) plus
  *  human-readable warnings naming the offending field. */
-function parseWeaponAttackConfig({ values, keys, malformed }) {
+export function parseWeaponAttackConfig({ values, keys, malformed }) {
     const warnings = [];
     const str = (key) => String(values[key] ?? "").trim();
 
