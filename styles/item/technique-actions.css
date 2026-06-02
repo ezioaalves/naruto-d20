@@ -1,0 +1,21 @@
+/* Technique Sheet - action controls */
+
+/* Technique perform-hint inline header text */
+.pf1.sheet.item .perform-hint {
+    font-size: 0.75em;
+    color: #6b6050;
+    font-weight: normal;
+    margin-left: 8px;
+    font-style: italic;
+}
+
+/* Use action button on action rows */
+.pf1.sheet.item .use-action {
+    cursor: pointer;
+    color: #5a4830;
+}
+
+.pf1.sheet.item .use-action.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}

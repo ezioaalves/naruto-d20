@@ -198,7 +198,7 @@ calls `syncSelected`, notifies, re-renders itself and the actor sheet.
 ### i18n & styles
 
 `NarutoD20.Medkit.*` in `lang/en.json` and `lang/pt-BR.json`. Window styling
-under `.naruto-technique-medkit` in `styles/naruto-d20.css`.
+under `.naruto-technique-medkit` in `styles/apps/technique-medkit.css`.
 
 ---
 

@@ -48,7 +48,16 @@
     "scripts/main.mjs"
   ],
   "styles": [
-    "styles/naruto-d20.css"
+    "styles/apps/tap-reserves.css",
+    "styles/settings/actor-settings.css",
+    "styles/actor/summary-stats.css",
+    "styles/actor/chakra-tab.css",
+    "styles/item/technique-sheet.css",
+    "styles/actor/technique-list.css",
+    "styles/item/technique-actions.css",
+    "styles/chat/technique-cards.css",
+    "styles/item/technique-sidebar.css",
+    "styles/apps/technique-medkit.css"
   ],
   "languages": [
     {

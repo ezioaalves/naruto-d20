@@ -1,0 +1,63 @@
+/* Technique Sheet */
+
+.pf1.sheet.item .descriptor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2px 10px;
+}
+
+.pf1.sheet.item .descriptor-grid label.checkbox {
+    min-width: 0;
+}
+
+/* Delete buttons inside tag chips */
+.pf1.sheet.item .tag .delete-tag {
+    margin-left: 4px;
+    cursor: pointer;
+    font-style: normal;
+    opacity: 0.6;
+}
+
+.pf1.sheet.item .tag .delete-tag:hover {
+    opacity: 1;
+}
+
+/* Add-tag inline input inside .tag-list */
+.pf1.sheet.item .tag-list .add-tag-input {
+    flex: 1 1 80px;
+    min-width: 60px;
+    background: transparent;
+    border: 1px dashed #c0b89a;
+    border-radius: 3px;
+    padding: 0 6px;
+    font-size: 0.8em;
+    height: 20px;
+}
+
+/* data-selector layout (entry-selector + label) */
+.pf1.sheet.item .data-selector {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Dictionary flag read-only table */
+.pf1.sheet.item .flags table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    font-size: 0.85em;
+}
+
+.pf1.sheet.item .flags table th {
+    text-align: left;
+    padding: 2px 4px;
+    border-bottom: 1px solid #c0b89a;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.pf1.sheet.item .flags table td {
+    padding: 2px 4px;
+    vertical-align: middle;
+}
