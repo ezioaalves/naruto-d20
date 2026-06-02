@@ -9,6 +9,14 @@ name: Release
 #   - module.json  (with version + download URL stamped to this tag)
 #   - module.zip   (runtime artifacts only — no dev tooling or pack sources)
 #
+# Before packaging, the job runs a set of lightweight gates so a broken release
+# can never be published:
+#   - module.json manifest validation (every referenced file exists)
+#   - compendium source JSON validation
+#   - CSS lint
+#   - recompiles the source-backed compendia (techniques, technique-buffs, feats)
+#     from packs/_source so the zip never ships stale LevelDB packs
+#
 # The manifest URL in module.json points at releases/latest/download/module.json,
 # so Foundry can detect and install updates automatically.
 
@@ -26,6 +34,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Derive version from tag
         id: version
@@ -47,8 +64,17 @@ jobs:
           console.log(`Stamped download=${m.download}`);
           EOF
 
+      - name: Validate module manifest
+        run: npm run validate:manifest
+
       - name: Validate compendium source JSON
         run: npm run validate:compendia
+
+      - name: Lint CSS
+        run: npm run lint:css
+
+      - name: Recompile compendia from source
+        run: npm run pack:all
 
       - name: Build module.zip (runtime artifacts only)
         run: |
