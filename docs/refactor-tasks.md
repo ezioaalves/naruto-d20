@@ -598,6 +598,7 @@ QA manual:
 Prioridade: media  
 Tipo: qualidade/processo  
 Area: release workflow
+Status: concluida
 
 Problema:
 
@@ -634,7 +635,8 @@ Criterios de aceite:
 ## Registro de execucao (sessao 2026-06-02)
 
 Tarefas 10, 11 e 12 executadas em sequencia na branch
-`refactor/refactor-by-feature`, um commit por tarefa.
+`refactor/refactor-by-feature`, um commit por tarefa. A Tarefa 13 foi adicionada
+na mesma sessao de refactor como documentacao de QA manual.
 
 ### Tarefa 10 - chat cards para templates (commit `bafda8e`)
 
@@ -695,6 +697,23 @@ tecnicas no pack com config "lixo" proposital.
 - Diagnosticos de TS que aparecem sao ruido conhecido (globais `game`/`ui`/
   `foundry`/`ChatMessage`, `any` implicito), nao erros reais.
 
+### Revisao pos-implementacao (Codex)
+
+- Revisao dos ultimos 4 commits (`bafda8e`, `6d66030`, `25120f0`,
+  `6189dee`) nao encontrou bug funcional que justificasse modificacao imediata.
+- Templates de chat usam `{{...}}`, entao nomes e textos dinamicos seguem
+  escapados pelo Handlebars.
+- Validadas 1366 tecnicas em `packs/_source/techniques`: 132 possuem
+  `weaponAttack` e nenhuma config atual dispara warning novo.
+- A expansao de i18n cobre os fluxos principais do escopo, mas ainda ha strings
+  hardcoded fora desse bloco em `scripts/ui/summary-stats.mjs`,
+  `scripts/ui/learn-checks.mjs` e `scripts/automation/charge-defense.mjs`.
+  Tratar como melhoria posterior, salvo se a meta passar a ser zerar todo
+  hardcode runtime.
+- Melhorias opcionais sem urgencia: localizar os fragmentos internos de
+  `weaponAttack` warnings (`issues`) e escapar o nome no Dialog de remocao de
+  tecnica em `technique-list.mjs`.
+
 ### QA manual pendente (nao executado)
 
 - Trocar o mundo para PT-BR e conferir notificacoes, cards e titulos.
@@ -702,6 +721,15 @@ tecnicas no pack com config "lixo" proposital.
   reset; training interrupted; Action Point aplicado.
 - Tecnica `weaponAttack` valida (melee/ranged/unarmed/charge) e uma malformada
   para ver o aviso apontando o campo.
+
+### Tarefa 13 - QA manual por feature
+
+- Criado `docs/manual-qa.md` com setup minimo e checklist por Chakra, Tap
+  Reserves, aprendizado, uso de tecnicas, auto-buffs, Medkit, browsers,
+  descanso, compendios e sweep final de release.
+- Cada caso inclui resultado esperado, para servir como roteiro antes de release
+  ou PR grande.
+- `README.md` e `docs/funcionalidades-e-melhorias.md` apontam para o checklist.
 
 ## Tarefas futuras opcionais
 

@@ -251,6 +251,9 @@ Se rodar Foundry em Docker com `foundrydata` bind-mounted, **não** reinicie o c
 
 Para autocomplete de APIs do pf1e, mantenha o symlink `pf1/` → `../pf1-source` (referenciado por `jsconfig.json`).
 
+Para validação antes de release ou PR grande, use o checklist em
+[`docs/manual-qa.md`](docs/manual-qa.md).
+
 ---
 
 ## Documentação para Claude Code

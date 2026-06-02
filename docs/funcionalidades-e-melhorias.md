@@ -8,6 +8,9 @@ O módulo estende o Pathfinder 1e no Foundry VTT com regras de Naruto D20:
 técnicas como itens próprios, chakra, disciplinas ninja, aprendizado,
 automação de buffs e integrações com o motor nativo de actions/changes do PF1e.
 
+Para validacao manual antes de release ou PR grande, use
+`docs/manual-qa.md`.
+
 ## Visão geral da arquitetura
 
 - Entrada principal: `scripts/main.mjs`.
@@ -695,8 +698,7 @@ verifique contra PF1e v11.11 instalado, conforme orientação em `CLAUDE.md`.
 
 - Avaliar se os browsers devem manter cache global por pack para reuso entre
   janelas, mantendo botão de reload para invalidação manual.
-- Criar um checklist manual de QA por feature, consolidando o que hoje está
-  espalhado pelos docs individuais.
+- Manter `docs/manual-qa.md` atualizado quando features criticas mudarem.
 - Considerar um pequeno script de validação de source JSON de técnicas para
   encontrar actions sem `_id`, buffs sem match, técnicas sem disciplina ou
   weaponAttack malformado.
