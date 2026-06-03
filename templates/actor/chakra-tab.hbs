@@ -39,7 +39,9 @@
 
         <!-- Empathy Points -->
         <div class="info-box-header health-details flexcol" style="flex: 1.2; margin-right: 5px; margin-left: 5px;">
-            <h3>{{localize "NarutoD20.ChakraTab.EmpathyPoints"}}</h3>
+            <h3 class="rollable empathy-learn-open" style="cursor: pointer;" data-tooltip="{{localize 'NarutoD20.App.LearnWithEmpathy'}}">
+                <i class="fas fa-hand-holding-heart"></i> {{localize "NarutoD20.ChakraTab.EmpathyPoints"}}
+            </h3>
             <div class="info-box-joined">
                 <div class="info-box current">
                     <h5>{{localize "NarutoD20.Common.Total"}}</h5>
@@ -223,6 +225,11 @@
                                     {{#if learning.actionPointBonus}} &middot; ⚡ +{{learning.actionPointBonus}} AP{{/if}}
                                 </span>
                                 {{/unless}}
+                                {{#if learning.learnedViaEmpathy}}
+                                <span class="technique-learning-badge empathy" data-tooltip="{{localize 'NarutoD20.App.LearnWithEmpathy'}}">
+                                    <i class="fa-solid fa-hand-holding-heart"></i> {{localize "NarutoD20.Technique.LearnedViaEmpathy"}}
+                                </span>
+                                {{/if}}
                             </div>
                         </div>
                         <div class="item-detail technique-cost"><span>{{chakraCost}}</span></div>
@@ -295,6 +302,11 @@
                                     {{#if learning.actionPointBonus}} &middot; ⚡ +{{learning.actionPointBonus}} AP{{/if}}
                                 </span>
                                 {{/unless}}
+                                {{#if learning.learnedViaEmpathy}}
+                                <span class="technique-learning-badge empathy" data-tooltip="{{localize 'NarutoD20.App.LearnWithEmpathy'}}">
+                                    <i class="fa-solid fa-hand-holding-heart"></i> {{localize "NarutoD20.Technique.LearnedViaEmpathy"}}
+                                </span>
+                                {{/if}}
                             </div>
                         </div>
                         <div class="item-detail technique-cost"><span>{{chakraCost}}</span></div>

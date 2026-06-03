@@ -55,12 +55,18 @@
         </li>
       {{else}}
         {{#each entries as |entry|}}
-          <li class="directory-item flexrow" draggable="true" data-uuid="{{entry.__uuid}}">
+          <li class="directory-item flexrow{{#if entry.threshold}} empathy-mode{{/if}}" draggable="true" data-uuid="{{entry.__uuid}}">
             <img class="profile" src="{{entry.img}}" data-tooltip="{{entry.name}}" loading="lazy">
             <div class="flexcol">
               <h4 class="entry-name"><a>{{entry.name}}</a></h4>
               <span class="entry-source">Rank {{entry.system.rank}} · {{entry.system.discipline}}</span>
             </div>
+            {{#if entry.threshold}}
+            <a class="empathy-learn" data-tooltip="{{localize 'NarutoD20.App.LearnWithEmpathyTooltip'}}">
+              <i class="fa-solid fa-hand-holding-heart" inert></i>
+              <span class="empathy-cost">{{entry.threshold}}</span>
+            </a>
+            {{/if}}
           </li>
         {{/each}}
         <li class="directory-bottom"></li>

@@ -119,6 +119,7 @@
       "SkillThreshold": {
         "Label": "Limiar de Perícia"
       },
+      "LearnedViaEmpathy": "via Empatia",
       "MasteryStep": {
         "Label": "Maestria",
         "Hint": "Degrau de maestria 0–5. Degrau 1+ soma bônus de Perform (à rolagem e ao limiar); degrau 2+ também soma um offset de nível efetivo ao @cl (duração, alcance, dano…)."
@@ -353,6 +354,8 @@
     "App": {
       "TapReserves": "Drenar Reservas",
       "BrowseTechniques": "Procurar Técnicas",
+      "LearnWithEmpathy": "Aprender com Pontos de Empatia",
+      "LearnWithEmpathyTooltip": "Aprende esta técnica — gasta Pontos de Empatia iguais ao seu Limiar de Perícia (exibido)",
       "BrowseFeats": "Procurar Talentos Naruto",
       "RemoveTechnique": "Remover Técnica",
       "RemoveTechniqueConfirm": "Remover <strong>{name}</strong> deste personagem?",
@@ -382,6 +385,8 @@
       "CouldNotReadRoll": "{name}: não foi possível ler o total da rolagem de aprendizado.",
       "CannotAddActionPoint": "{name}: não é possível adicionar um Ponto de Ação a esta rolagem de aprendizado (já gasto, aprendida ou substituída por uma rolagem mais recente).",
       "NoActionPoints": "{actor} não tem Pontos de Ação restantes.",
+      "NotEnoughEmpathy": "{actor}: Pontos de Empatia insuficientes para aprender {name} (precisa de {cost}, tem {have}).",
+      "AlreadyOwnedTechnique": "{actor}: já possui {name}.",
       "TapMinimum": "A quantidade a drenar deve ser pelo menos 1.",
       "TapNotEnoughReserve": "Reserva de Chakra insuficiente (tem {have}, solicitado {requested}).",
       "NoWeaponAttack": "{actor}: nenhuma arma ou ataque válido encontrado para {name}.",
@@ -410,6 +415,8 @@
         "TrainingInterruptedTitle": "{name} treino interrompido",
         "TrainingInterruptedLead": "Mais de 30 dias se passaram desde o último bloco de treino. O progresso de aprendizado é perdido antes da nova tentativa.",
         "LearnedTitle": "{name} aprendida",
+        "LearnedViaEmpathyTitle": "{name} aprendida via Empatia",
+        "EmpathyLead": "Aprendida gastando {cost} Pontos de Empatia ({remaining} restantes).",
         "LearningFailedTitle": "{name} aprendizado falhou",
         "LearningTitle": "Aprendendo {name}",
         "NoSkillLead": "{discipline} ainda não tem perícia de aprendizado mapeada, então esta técnica é tratada como aprendida na fase 1.",

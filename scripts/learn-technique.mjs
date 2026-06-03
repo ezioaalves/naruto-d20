@@ -1,11 +1,13 @@
-import { MODULE_ID } from "./constants.mjs";
+import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
 import {
   actionPointsPath,
   chakraPoolTempPath,
   chakraPoolValuePath,
+  epsPath,
   learningCurrentTechniqueIdPath,
 } from "./flag-paths.mjs";
 import { applyChatVisibility, chatVisibilityFrom } from "./chat-visibility.mjs";
+import { normalizeActionIds } from "./data/action-ids.mjs";
 import { buildLearnCheckBreakdown } from "./data/bonus-sources.mjs";
 import {
   canonicalizeDisciplineName,
@@ -223,6 +225,7 @@ export function buildLearningView(item, actor, mode = getLearningMode()) {
 
   return {
     learned: learning.learned === true,
+    learnedViaEmpathy: learning.learnedViaEmpathy === true,
     effectivelyLearned: learning.learned === true || (!resolution.requiresChoice && !skillKey),
     progress,
     attemptsUsed,
@@ -441,6 +444,73 @@ export async function attemptLearnTechnique(item) {
     total: roll.total,
     apBonus: roll.apBonus,
     visibility: roll.rollVisibility,
+  });
+}
+
+/**
+ * Learn a technique by spending Empathy Points instead of training.
+ *
+ * Copies `srcItem` onto `actor`, flags it as learned (via Empathy), and deducts
+ * a number of Empathy Points equal to the technique's skill threshold. Used by
+ * the Empathy-mode technique browser opened from the Chakra tab.
+ */
+export async function learnTechniqueViaEmpathy(actor, srcItem) {
+  if (!actor?.isOwner) {
+    ui.notifications.warn(
+      game.i18n.format("NarutoD20.Notifications.NoPermissionUpdate", { actor: actor?.name ?? "" }),
+    );
+    return;
+  }
+  if (!srcItem || srcItem.type !== TECHNIQUE_ITEM_TYPE) return;
+
+  const existing = actor.items.find(
+    (i) => i.type === TECHNIQUE_ITEM_TYPE && i.name === srcItem.name,
+  );
+  if (existing) {
+    ui.notifications.warn(
+      game.i18n.format("NarutoD20.Notifications.AlreadyOwnedTechnique", {
+        actor: actor.name,
+        name: srcItem.name,
+      }),
+    );
+    return;
+  }
+
+  const threshold = Math.max(0, Number(srcItem.system?.derived?.skillThreshold ?? 0) || 0);
+  const currentEps = Number(foundry.utils.getProperty(actor, epsPath) ?? 0) || 0;
+  if (currentEps < threshold) {
+    ui.notifications.warn(
+      game.i18n.format("NarutoD20.Notifications.NotEnoughEmpathy", {
+        actor: actor.name,
+        name: srcItem.name,
+        cost: threshold,
+        have: currentEps,
+      }),
+    );
+    return;
+  }
+
+  const itemData = srcItem.toObject();
+  const { actions, changed } = normalizeActionIds(itemData.system?.actions);
+  if (changed) itemData.system.actions = actions;
+  itemData.system.learning = {
+    ...(itemData.system.learning ?? {}),
+    learned: true,
+    learnedViaEmpathy: true,
+    progress: getLearningTargetProgress(srcItem),
+  };
+
+  const [created] = await actor.createEmbeddedDocuments("Item", [itemData]);
+  const remaining = currentEps - threshold;
+  await actor.update({ [epsPath]: remaining });
+
+  await postLearningCard(actor, created ?? srcItem, {
+    title: game.i18n.format("NarutoD20.Cards.Learn.LearnedViaEmpathyTitle", { name: srcItem.name }),
+    cssClass: "success",
+    lead: game.i18n.format("NarutoD20.Cards.Learn.EmpathyLead", {
+      cost: threshold,
+      remaining,
+    }),
   });
 }
 

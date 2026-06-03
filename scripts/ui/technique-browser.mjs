@@ -1,5 +1,6 @@
 import { MAIN_DISCIPLINES, MODULE_ID } from "../constants.mjs";
 import { COMPLEXITY_TABLE } from "../data/technique-model.mjs";
+import { learnTechniqueViaEmpathy } from "../learn-technique.mjs";
 import {
   buildFilterGroup,
   clearFilterSets,
@@ -56,6 +57,13 @@ const COMPONENT_FLAGS = {
 
 const RANKS = Array.from({ length: 15 }, (_, i) => String(i + 1));
 
+/** Skill threshold from index fields — mirrors TechniqueDataModel#derived. */
+function computeSkillThreshold(system) {
+  const c = COMPLEXITY_TABLE[system?.complexity] ?? COMPLEXITY_TABLE["E-Class"];
+  const rank = Math.max(1, Number(system?.rank ?? 1) || 1);
+  return Math.max(1, rank + c.skillMod - 3);
+}
+
 /**
  * Custom compendium browser for technique items. Extends Application (V1) to
  * match PF1e's own CompendiumBrowser architecture — same window chrome, checkbox
@@ -97,12 +105,21 @@ export class TechniqueCompendiumBrowser extends Application {
   /** Restore search focus after re-render when true */
   #focusSearch = false;
   #searchSelection = null;
+  /** Empathy-learn mode: pick a technique to learn by spending Empathy Points. */
+  empathyMode = false;
+  /** @type {Actor|null} target actor for Empathy-learn picks */
+  actor = null;
 
   constructor(options = {}) {
     super(options);
     // All groups start collapsed except Rank, which shows immediately.
     this.#collapsed = new Set(["discipline", "complexity", "special", "components"]);
     if (options.rank) this.#filters.rank.add(String(options.rank));
+    this.empathyMode = !!options.empathyMode;
+    this.actor = options.actor ?? null;
+    if (this.empathyMode) {
+      this.options.title = game.i18n.localize("NarutoD20.App.LearnWithEmpathy");
+    }
   }
 
   /** Load the pack index (once) and map it to display entries. */
@@ -147,7 +164,10 @@ export class TechniqueCompendiumBrowser extends Application {
   async getData() {
     await this.#loadEntries();
     const all = this.#entries ?? [];
-    const filtered = all.filter((e) => this.#matches(e));
+    let filtered = all.filter((e) => this.#matches(e));
+    if (this.empathyMode) {
+      filtered = filtered.map((e) => ({ ...e, threshold: computeSkillThreshold(e.system) }));
+    }
 
     const disciplineChoices = Object.fromEntries(MAIN_DISCIPLINES.map((d) => [d, d]));
     const rankChoices = Object.fromEntries(RANKS.map((r) => [r, `Rank ${r}`]));
@@ -186,6 +206,7 @@ export class TechniqueCompendiumBrowser extends Application {
       itemCount: all.length,
       filteredItemCount: filtered.length,
       loading: this.#loading,
+      empathyMode: this.empathyMode,
     };
   }
 
@@ -209,6 +230,18 @@ export class TechniqueCompendiumBrowser extends Application {
     registerFilterCollapseListeners(root, this.#collapsed);
     registerEntryOpenListeners(root);
     registerUuidDragStartListeners(root);
+
+    if (this.empathyMode && this.actor) {
+      root.querySelectorAll(".empathy-learn").forEach((btn) => {
+        btn.addEventListener("click", async (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          const uuid = ev.currentTarget.closest("[data-uuid]")?.dataset.uuid;
+          const src = uuid ? await fromUuid(uuid) : null;
+          if (src) await learnTechniqueViaEmpathy(this.actor, src);
+        });
+      });
+    }
 
     registerReloadListener(root, async () => {
       await this.#loadEntries({ force: true });

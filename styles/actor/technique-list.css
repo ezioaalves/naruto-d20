@@ -133,6 +133,15 @@
   line-height: 1.1;
 }
 
+.chakra .technique-learning-badge.empathy {
+  color: #9c3a6b;
+  font-weight: 600;
+}
+
+.chakra .empathy-learn-open:hover {
+  text-shadow: 0 0 6px #c46a99;
+}
+
 .chakra .technique-row .item-actions {
   display: flex;
   justify-content: center;

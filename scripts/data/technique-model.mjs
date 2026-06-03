@@ -203,6 +203,9 @@ export function createTechniqueDataModel() {
         learning: new fields.SchemaField(
           {
             learned: new fields.BooleanField({ ...opt, initial: false }),
+            // True when the technique was learned by spending Empathy Points
+            // (bypassing the learn-check progression) rather than by training.
+            learnedViaEmpathy: new fields.BooleanField({ ...opt, initial: false }),
             progress: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
             // GM override for the target progress required to learn this
             // technique, in the *current* training mode's units. Null → fall
