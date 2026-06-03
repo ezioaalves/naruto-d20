@@ -90,10 +90,43 @@ jobs:
             LICENSE \
             -x "packs/_source/*"
 
+      - name: Extract release notes from CHANGELOG.md
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          node - <<'EOF'
+          const fs = require("fs");
+
+          const version = process.env.VERSION;
+          const changelog = fs.readFileSync("CHANGELOG.md", "utf8");
+          const escapedVersion = version.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          const heading = new RegExp(`^##\\s+v${escapedVersion}\\b.*$`, "m");
+          const match = changelog.match(heading);
+
+          if (!match) {
+            console.error(`Missing CHANGELOG entry for v${version}`);
+            process.exit(1);
+          }
+
+          const start = match.index + match[0].length;
+          const rest = changelog.slice(start);
+          const nextHeading = rest.search(/^##\s+/m);
+          const body = (nextHeading === -1 ? rest : rest.slice(0, nextHeading)).trim();
+
+          if (!body) {
+            console.error(`Empty CHANGELOG entry for v${version}`);
+            process.exit(1);
+          }
+
+          fs.writeFileSync("release-notes.md", body + "\n");
+          console.log(`Extracted release notes for v${version}`);
+          EOF
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           name: ${{ github.ref_name }}
+          body_path: release-notes.md
           files: |
             module.json
             module.zip
