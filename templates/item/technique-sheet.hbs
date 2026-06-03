@@ -46,6 +46,9 @@
       <li class="property generic-tag">Successes {{learning.requiredSuccesses}}</li>
       {{#if learning.effectivelyLearned}}
       <li class="property generic-tag learning learned">Learned</li>
+      {{#if learning.learnedViaEmpathy}}
+      <li class="property generic-tag learning empathy" data-tooltip="{{localize 'NarutoD20.App.LearnWithEmpathy'}}"><i class="fa-solid fa-hand-holding-heart" inert></i> {{localize "NarutoD20.Technique.LearnedViaEmpathy"}}</li>
+      {{/if}}
       {{else}}
       <li class="property generic-tag learning">Learning {{learning.progress}}/{{learning.targetProgress}}</li>
       {{/if}}

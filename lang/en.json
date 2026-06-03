@@ -119,6 +119,7 @@
       "SkillThreshold": {
         "Label": "Skill Threshold"
       },
+      "LearnedViaEmpathy": "via Empathy",
       "MasteryStep": {
         "Label": "Mastery",
         "Hint": "Mastery step 0–5. Step 1+ adds a Perform bonus (to the perform roll and threshold); step 2+ also adds an effective-level offset to @cl (duration, range, damage…)."
@@ -353,6 +354,8 @@
     "App": {
       "TapReserves": "Tap Reserves",
       "BrowseTechniques": "Browse Techniques",
+      "LearnWithEmpathy": "Learn with Empathy Points",
+      "LearnWithEmpathyTooltip": "Learn this technique — spends Empathy Points equal to its Skill Threshold (shown)",
       "BrowseFeats": "Browse Naruto Feats",
       "RemoveTechnique": "Remove Technique",
       "RemoveTechniqueConfirm": "Remove <strong>{name}</strong> from this actor?",
@@ -382,6 +385,8 @@
       "CouldNotReadRoll": "{name}: could not read learn roll total.",
       "CannotAddActionPoint": "{name}: cannot add an Action Point to this learn roll (already spent, learned, or superseded by a newer roll).",
       "NoActionPoints": "{actor} has no Action Points remaining.",
+      "NotEnoughEmpathy": "{actor}: not enough Empathy Points to learn {name} (need {cost}, have {have}).",
+      "AlreadyOwnedTechnique": "{actor}: already owns {name}.",
       "TapMinimum": "Amount to tap must be at least 1.",
       "TapNotEnoughReserve": "Not enough Chakra Reserve (have {have}, requested {requested}).",
       "NoWeaponAttack": "{actor}: no valid weapon or attack found for {name}.",
@@ -410,6 +415,8 @@
         "TrainingInterruptedTitle": "{name} training interrupted",
         "TrainingInterruptedLead": "More than 30 days passed since the last training block. Learning progress is lost before the new attempt.",
         "LearnedTitle": "{name} learned",
+        "LearnedViaEmpathyTitle": "{name} learned via Empathy",
+        "EmpathyLead": "Learned by spending {cost} Empathy Points ({remaining} remaining).",
         "LearningFailedTitle": "{name} learning failed",
         "LearningTitle": "Learning {name}",
         "NoSkillLead": "{discipline} has no mapped learn skill yet, so this technique is treated as learned for phase 1.",

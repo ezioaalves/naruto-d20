@@ -24,6 +24,7 @@ export function registerTechniqueListListeners() {
     registerCreateDuplicateDeleteListeners(chakraTab, app.actor);
     registerUseLearnOpenListeners(chakraTab, app.actor);
     registerBrowserListeners(chakraTab);
+    registerEmpathyLearnListener(chakraTab, app.actor);
   });
 }
 
@@ -174,6 +175,16 @@ function registerBrowserListeners(chakraTab) {
       ev.preventDefault();
       const rank = ev.currentTarget.dataset.rank;
       new TechniqueCompendiumBrowser({ rank }).render(true);
+    });
+}
+
+function registerEmpathyLearnListener(chakraTab, actor) {
+  chakraTab
+    .find(".empathy-learn-open")
+    .off("click")
+    .on("click", (ev) => {
+      ev.preventDefault();
+      new TechniqueCompendiumBrowser({ empathyMode: true, actor }).render(true);
     });
 }
 

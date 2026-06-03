@@ -1,0 +1,31 @@
+/* Empathy-learn mode for the technique compendium browser */
+
+.naruto-technique-browser .directory-item.empathy-mode {
+  align-items: center;
+}
+
+.naruto-technique-browser .empathy-learn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  padding: 2px 8px;
+  border: 1px solid #9c3a6b;
+  border-radius: 4px;
+  color: #9c3a6b;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.naruto-technique-browser .empathy-learn:hover {
+  background: #9c3a6b;
+  color: #fff;
+  text-shadow: none;
+  box-shadow: 0 0 6px #c46a99;
+}
+
+.naruto-technique-browser .empathy-learn .empathy-cost {
+  font-variant-numeric: tabular-nums;
+}
