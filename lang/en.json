@@ -267,7 +267,7 @@
       },
       "DeductLearningChakra": {
         "Name": "Deduct Training Chakra",
-        "Hint": "When enabled, technique learning deducts training chakra from Pool then Reserve. Conditions are not updated automatically because training ignores depletion penalties."
+        "Hint": "When enabled, technique learning deducts training chakra from temp chakra first and then Pool. Reserve is never consumed automatically because Tap Reserves must be used manually."
       }
     },
     "Conditions": {

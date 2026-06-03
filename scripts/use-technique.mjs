@@ -11,8 +11,7 @@ import { isTechniqueEffectivelyLearned } from "./learn-technique.mjs";
 export function canAffordTechnique(actor, item) {
   if (!actor) return false;
   const chakra = actor.flags?.[MODULE_ID]?.chakra ?? {};
-  const available =
-    (chakra.pool?.temp ?? 0) + (chakra.pool?.value ?? 0) + (chakra.reserve?.value ?? 0);
+  const available = (chakra.pool?.temp ?? 0) + (chakra.pool?.value ?? 0);
   return available >= (item.system.chakraCost ?? 0);
 }
 
@@ -184,7 +183,8 @@ async function useTechniqueAction(item, action, actor, event) {
 }
 
 function calculateChakraSpend(actor, cost) {
-  // Deduct chakra: temp first, then pool, then reserve as overflow.
+  // Deduct chakra: temp first, then pool. Reserve never pays a technique's
+  // cost directly; it only participates via the Emergency Transfer rule below.
   const chakra = actor.flags[MODULE_ID]?.chakra ?? {};
   const tempValue = chakra.pool?.temp ?? 0;
   const poolValue = chakra.pool?.value ?? 0;
@@ -192,26 +192,23 @@ function calculateChakraSpend(actor, cost) {
   const fromTemp = Math.min(cost, tempValue);
   const remaining = cost - fromTemp;
   const fromPool = Math.min(remaining, poolValue);
-  const fromReserve = remaining - fromPool;
 
   let newPool = poolValue - fromPool;
-  let newReserve = reserveValue - fromReserve;
+  let newReserve = reserveValue;
 
   // Emergency Transfer: if pool hits 0 but reserve still has chakra, the body
-  // automatically burns the entire reserve to return 1 chakra to the pool.
-  // This guarantees pool == 0 only when reserve == 0 (which triggers Chakra Depletion).
+  // automatically burns the entire reserve to return 1 chakra to the pool
+  // after the normal temp+pool spend resolves. This guarantees pool == 0 only
+  // when reserve == 0 (which triggers Chakra Depletion).
   if (newPool <= 0 && newReserve > 0) {
     newPool = 1;
     newReserve = 0;
   }
 
-  // Build a readable spend summary (omit zero-value sources).
-  // If the Emergency Transfer fired, the actual reserve spent is the full original reserve.
-  const actualFromReserve = reserveValue - newReserve;
+  // Build a readable spend summary for the technique cost itself.
   const spendParts = [];
   if (fromTemp > 0) spendParts.push(`${fromTemp} temp`);
   if (fromPool > 0) spendParts.push(`${fromPool} pool`);
-  if (actualFromReserve > 0) spendParts.push(`${actualFromReserve} reserve`);
 
   return {
     temp: tempValue - fromTemp,

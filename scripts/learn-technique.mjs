@@ -1,8 +1,8 @@
 import { MODULE_ID } from "./constants.mjs";
 import {
   actionPointsPath,
+  chakraPoolTempPath,
   chakraPoolValuePath,
-  chakraReserveValuePath,
   learningCurrentTechniqueIdPath,
 } from "./flag-paths.mjs";
 import { buildLearnCheckBreakdown } from "./data/bonus-sources.mjs";
@@ -269,9 +269,9 @@ function minimumTrainingBlocksForRoll(item, mode) {
 
 function availableTrainingChakra(actor) {
   const chakra = actor.flags?.[MODULE_ID]?.chakra ?? {};
+  const tempValue = Math.max(0, Number(chakra.pool?.temp ?? 0) || 0);
   const poolValue = Math.max(0, Number(chakra.pool?.value ?? 0) || 0);
-  const reserveValue = Math.max(0, Number(chakra.reserve?.value ?? 0) || 0);
-  return poolValue + reserveValue;
+  return tempValue + poolValue;
 }
 
 function warnInsufficientTrainingChakra(actor, amount, available = availableTrainingChakra(actor)) {
@@ -291,28 +291,28 @@ function canPayTrainingChakra(actor, amount) {
 
 async function applyTrainingChakraDeduction(actor, amount) {
   if (!game.settings.get(MODULE_ID, "deductLearningChakra") || amount <= 0) {
-    return { paid: true, deducted: 0, fromPool: 0, fromReserve: 0 };
+    return { paid: true, deducted: 0, fromTemp: 0, fromPool: 0 };
   }
 
   const chakra = actor.flags?.[MODULE_ID]?.chakra ?? {};
+  const tempValue = Math.max(0, Number(chakra.pool?.temp ?? 0) || 0);
   const poolValue = Math.max(0, Number(chakra.pool?.value ?? 0) || 0);
-  const reserveValue = Math.max(0, Number(chakra.reserve?.value ?? 0) || 0);
-  const available = poolValue + reserveValue;
+  const available = tempValue + poolValue;
   if (available < amount) {
     warnInsufficientTrainingChakra(actor, amount, available);
-    return { paid: false, deducted: 0, fromPool: 0, fromReserve: 0 };
+    return { paid: false, deducted: 0, fromTemp: 0, fromPool: 0 };
   }
 
-  const fromPool = Math.min(amount, poolValue);
-  const fromReserve = Math.min(amount - fromPool, reserveValue);
-  const deducted = fromPool + fromReserve;
+  const fromTemp = Math.min(amount, tempValue);
+  const fromPool = Math.min(amount - fromTemp, poolValue);
+  const deducted = fromTemp + fromPool;
 
   await actor.update({
+    [chakraPoolTempPath]: tempValue - fromTemp,
     [chakraPoolValuePath]: poolValue - fromPool,
-    [chakraReserveValuePath]: reserveValue - fromReserve,
   });
 
-  return { paid: true, deducted, fromPool, fromReserve };
+  return { paid: true, deducted, fromTemp, fromPool };
 }
 
 function rollTotal(result) {
@@ -686,7 +686,7 @@ function buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraD
     mode: result.mode,
     baseLearning: foundry.utils.deepClone(baseLearning),
     baseTotalNoAp: result.total,
-    deducted: { fromPool: chakraDeduction.fromPool, fromReserve: chakraDeduction.fromReserve },
+    deducted: { fromTemp: chakraDeduction.fromTemp, fromPool: chakraDeduction.fromPool },
     result: {
       progress: result.progress,
       attemptsUsed: result.finalAttemptsUsed,
@@ -868,15 +868,15 @@ export async function addActionPointToLearnCard(message) {
   // Refund the superseded attempt's training chakra (no-op when none was deducted),
   // then spend the Action Point — all in one actor update.
   const update = { [actionPointsPath]: currentAp - 1 };
+  const fromTemp = Number(flags.deducted?.fromTemp ?? 0) || 0;
   const fromPool = Number(flags.deducted?.fromPool ?? 0) || 0;
-  const fromReserve = Number(flags.deducted?.fromReserve ?? 0) || 0;
+  if (fromTemp) {
+    update[chakraPoolTempPath] =
+      (Number(foundry.utils.getProperty(actor, chakraPoolTempPath) ?? 0) || 0) + fromTemp;
+  }
   if (fromPool) {
     update[chakraPoolValuePath] =
       (Number(foundry.utils.getProperty(actor, chakraPoolValuePath) ?? 0) || 0) + fromPool;
-  }
-  if (fromReserve) {
-    update[chakraReserveValuePath] =
-      (Number(foundry.utils.getProperty(actor, chakraReserveValuePath) ?? 0) || 0) + fromReserve;
   }
   await actor.update(update);
 

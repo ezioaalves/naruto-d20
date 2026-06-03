@@ -267,7 +267,7 @@
       },
       "DeductLearningChakra": {
         "Name": "Deduzir Chakra de Treino",
-        "Hint": "Quando ativado, o aprendizado de técnicas deduz chakra de treino da Pool e depois da Reserva. Condições não são atualizadas automaticamente porque treino ignora penalidades de depleção."
+        "Hint": "Quando ativado, o aprendizado de técnicas deduz chakra de treino do chakra temporário primeiro e depois da Pool. A Reserva nunca é consumida automaticamente porque Tap Reserves deve ser usado manualmente."
       }
     },
     "Conditions": {

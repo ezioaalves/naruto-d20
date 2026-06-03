@@ -129,11 +129,13 @@ Feats` abrem.
    Resultado esperado: o dialog PF1e aparece quando a action tem ataque ou dano,
    e `@cl` resolve conforme nivel + mastery.
 
-5. Use uma tecnica cujo custo excede Pool mas nao Pool + Reserve.
-   Resultado esperado: gasta Temp primeiro, depois Pool e Reserve.
+5. Use uma tecnica cujo custo excede Temp + Pool, mas nao Temp + Pool + Reserve.
+   Resultado esperado: o uso falha por chakra insuficiente; Reserve nao entra
+   no calculo do custo automatico.
 
 6. Use uma tecnica que acione Emergency Transfer.
-   Resultado esperado: Pool termina em 1, Reserve em 0 e Chakra Depletion ativa.
+   Resultado esperado: apos gastar Temp + Pool, se a Pool zerar e ainda houver
+   Reserve, Pool termina em 1, Reserve em 0 e Chakra Depletion ativa.
 
 7. Use uma tecnica `weaponAttack` com arma melee.
    Resultado esperado: abre seletor, mostra armas melee equipadas e aplica
