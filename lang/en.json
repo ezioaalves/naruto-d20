@@ -355,6 +355,7 @@
       "BrowseFeats": "Browse Naruto Feats",
       "RemoveTechnique": "Remove Technique",
       "RemoveTechniqueConfirm": "Remove <strong>{name}</strong> from this actor?",
+      "ChooseLearnDiscipline": "Choose Learn Discipline - {name}",
       "ChooseAttack": "Choose Attack - {name}",
       "KindWeapon": "Weapon",
       "KindAttack": "Attack"
@@ -403,6 +404,8 @@
         "ActionPointFlavor": "Action Point — Learn: {name} ({from} → {to} remaining)",
         "ActionPointRollText": "Action Point 1d6 = {value}",
         "UnmappedDiscipline": "Unmapped discipline",
+        "TrainingDisciplinePrompt": "Choose which discipline this Training technique uses for learn checks.",
+        "ChooseDisciplineFirst": "choose discipline on first learn attempt",
         "TrainingInterruptedTitle": "{name} training interrupted",
         "TrainingInterruptedLead": "More than 30 days passed since the last training block. Learning progress is lost before the new attempt.",
         "LearnedTitle": "{name} learned",

@@ -355,6 +355,7 @@
       "BrowseFeats": "Procurar Talentos Naruto",
       "RemoveTechnique": "Remover Técnica",
       "RemoveTechniqueConfirm": "Remover <strong>{name}</strong> deste personagem?",
+      "ChooseLearnDiscipline": "Escolher disciplina de aprendizado - {name}",
       "ChooseAttack": "Escolher Ataque - {name}",
       "KindWeapon": "Arma",
       "KindAttack": "Ataque"
@@ -403,6 +404,8 @@
         "ActionPointFlavor": "Ponto de Ação — Aprender: {name} ({from} → {to} restantes)",
         "ActionPointRollText": "Ponto de Ação 1d6 = {value}",
         "UnmappedDiscipline": "Disciplina não mapeada",
+        "TrainingDisciplinePrompt": "Escolha qual disciplina esta técnica de Treinamento usa nos testes de aprendizado.",
+        "ChooseDisciplineFirst": "escolha a disciplina na primeira tentativa",
         "TrainingInterruptedTitle": "{name} treino interrompido",
         "TrainingInterruptedLead": "Mais de 30 dias se passaram desde o último bloco de treino. O progresso de aprendizado é perdido antes da nova tentativa.",
         "LearnedTitle": "{name} aprendida",

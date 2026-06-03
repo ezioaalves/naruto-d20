@@ -211,7 +211,11 @@
                                     {{#if learning.isFourHourBlocks}}
                                     &middot; {{learning.attemptsUsed}} {{localize "NarutoD20.Cards.Blocks"}}
                                     {{else}}
-                                    &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} {{localize "NarutoD20.ChakraTab.Attempts"}}
+                                      {{#if learning.requiresDisciplineChoice}}
+                                      &middot; {{localize "NarutoD20.Cards.Learn.ChooseDisciplineFirst"}}
+                                      {{else}}
+                                      &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} {{localize "NarutoD20.ChakraTab.Attempts"}}
+                                      {{/if}}
                                     {{/if}}
                                     {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} {{localize "NarutoD20.ChakraTab.Insight"}}{{/if}}
                                     {{#if learning.trainingBlocks}} &middot; {{learning.trainingBlocks}} {{localize "NarutoD20.ChakraTab.TrainBlocks"}}{{/if}}
@@ -279,7 +283,11 @@
                                     {{#if learning.isFourHourBlocks}}
                                     &middot; {{learning.attemptsUsed}} {{localize "NarutoD20.Cards.Blocks"}}
                                     {{else}}
-                                    &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} {{localize "NarutoD20.ChakraTab.Attempts"}}
+                                      {{#if learning.requiresDisciplineChoice}}
+                                      &middot; {{localize "NarutoD20.Cards.Learn.ChooseDisciplineFirst"}}
+                                      {{else}}
+                                      &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} {{localize "NarutoD20.ChakraTab.Attempts"}}
+                                      {{/if}}
                                     {{/if}}
                                     {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} {{localize "NarutoD20.ChakraTab.Insight"}}{{/if}}
                                     {{#if learning.trainingBlocks}} &middot; {{learning.trainingBlocks}} {{localize "NarutoD20.ChakraTab.TrainBlocks"}}{{/if}}

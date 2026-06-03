@@ -9,6 +9,26 @@ export const DISCIPLINE_SKILL_MAP = Object.freeze({
   "": undefined,
 });
 
+export const DISCIPLINE_LABEL_KEYS = Object.freeze({
+  "Chakra Control": "NarutoD20.Technique.Discipline.ChakraControl",
+  Fuinjutsu: "NarutoD20.Technique.Discipline.Fuinjutsu",
+  Genjutsu: "NarutoD20.Technique.Discipline.Genjutsu",
+  "Hachimon Tonkou": "NarutoD20.Technique.Discipline.HachimonTonkou",
+  Ninjutsu: "NarutoD20.Technique.Discipline.Ninjutsu",
+  Taijutsu: "NarutoD20.Technique.Discipline.Taijutsu",
+  Training: "NarutoD20.Technique.Discipline.Training",
+});
+
+export const LEARN_DISCIPLINES = Object.freeze(
+  Object.entries(DISCIPLINE_SKILL_MAP)
+    .filter(([, skillKey]) => !!skillKey)
+    .map(([discipline]) => discipline),
+);
+
+const CANONICAL_DISCIPLINE_LOOKUP = new Map(
+  Object.keys(DISCIPLINE_LABEL_KEYS).map((discipline) => [normalizeDisciplineName(discipline), discipline]),
+);
+
 export const NARUTO_SKILLS = Object.freeze({
   ckc: { label: "NarutoD20.Skills.ckc", ability: "wis", discipline: "Chakra Control" },
   fui: { label: "NarutoD20.Skills.fui", ability: "int", discipline: "Fuinjutsu" },
@@ -19,6 +39,17 @@ export const NARUTO_SKILLS = Object.freeze({
 
 /** Stable order matches NARUTO_SKILLS insertion order. Used by all reset/iter loops. */
 export const LEARN_KEYS = Object.freeze(Object.keys(NARUTO_SKILLS));
+
+export function normalizeDisciplineName(value) {
+  return String(value ?? "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLocaleLowerCase();
+}
+
+export function canonicalizeDisciplineName(value) {
+  return CANONICAL_DISCIPLINE_LOOKUP.get(normalizeDisciplineName(value)) ?? null;
+}
 
 /**
  * Resolve the governing ability for a discipline skill: prefer the actor's
