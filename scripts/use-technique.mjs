@@ -2,6 +2,7 @@ import { MODULE_ID } from "./constants.mjs";
 import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from "./flag-paths.mjs";
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
 import { checkAndUpdateConditions } from "./data/chakra-conditions.mjs";
+import { applyChatVisibility, chatVisibilityFrom } from "./chat-visibility.mjs";
 import {
   getTechniqueWeaponAttackConfig,
   rollSelectedWeaponAttackWithTechnique,
@@ -52,7 +53,7 @@ export async function performTechnique(item, actionId, event = null) {
 
   const spend = calculateChakraSpend(actor, cost);
   await applyChakraSpend(actor, spend);
-  await postTechniqueSuccessCard(actor, item, cost, spend.summary, perform.bypassNote);
+  await postTechniqueSuccessCard(actor, item, cost, spend.summary, perform);
 
   const updated = resolveCurrentTechniqueAction(
     actor,
@@ -133,15 +134,15 @@ async function resolvePerformCheck(item, actor) {
     };
   }
 
-  const result = await actor.rollSkill(skillKey);
-  if (!result) return null;
+  const rollMessage = await actor.rollSkill(skillKey);
+  if (!rollMessage) return null;
 
-  const lastMsg = game.messages.contents.at(-1);
   return {
-    succeeded: (lastMsg?.rolls?.[0]?.total ?? 0) + masteryPerform >= performDC,
+    succeeded: (rollMessage?.rolls?.[0]?.total ?? 0) + masteryPerform >= performDC,
     performDC,
     masteryNote,
     bypassNote: null,
+    rollVisibility: chatVisibilityFrom(rollMessage),
   };
 }
 
@@ -228,36 +229,51 @@ async function applyChakraSpend(actor, spend) {
   await checkAndUpdateConditions(actor);
 }
 
-async function postPerformCard(actor, data) {
+async function postPerformCard(actor, data, visibility = null) {
   const content = await foundry.applications.handlebars.renderTemplate(
     `modules/${MODULE_ID}/templates/chat/technique-perform.hbs`,
     data,
   );
-  await ChatMessage.create({
-    speaker: ChatMessage.getSpeaker({ actor }),
-    content,
-  });
+  const messageData = applyChatVisibility(
+    {
+      speaker: ChatMessage.getSpeaker({ actor }),
+      content,
+    },
+    visibility,
+  );
+  await ChatMessage.create(messageData);
 }
 
-async function postPerformFailureCard(actor, item, { performDC, masteryNote }) {
-  await postPerformCard(actor, {
-    name: item.name,
-    cssClass: "failed",
-    message: game.i18n.format("NarutoD20.Cards.Perform.Failed", {
-      dc: `${performDC}${masteryNote}`,
-    }),
-  });
+async function postPerformFailureCard(actor, item, { performDC, masteryNote, rollVisibility }) {
+  await postPerformCard(
+    actor,
+    {
+      name: item.name,
+      cssClass: "failed",
+      message: game.i18n.format("NarutoD20.Cards.Perform.Failed", {
+        dc: `${performDC}${masteryNote}`,
+      }),
+    },
+    rollVisibility,
+  );
 }
 
-async function postTechniqueSuccessCard(actor, item, cost, spendSummary, bypassNote) {
-  // Post outcome card when there was an auto-bypass (roll card covers the roll path).
-  await postPerformCard(actor, {
-    name: item.name,
-    cssClass: "success",
-    message: bypassNote || "",
-    messageClass: bypassNote ? "naruto-perform-bypass" : "",
-    footer: game.i18n.format("NarutoD20.Cards.Perform.Spent", { cost, summary: spendSummary }),
-  });
+async function postTechniqueSuccessCard(actor, item, cost, spendSummary, perform) {
+  // Auto-perform (ranks ≥ threshold, or no skill required) is self-evident and the card adds
+  // nothing useful — skip it. Only post the outcome card when the perform was actually rolled,
+  // matching the roll's visibility so a self/GM roll stays private.
+  if (perform.bypassNote) return;
+  await postPerformCard(
+    actor,
+    {
+      name: item.name,
+      cssClass: "success",
+      message: "",
+      messageClass: "",
+      footer: game.i18n.format("NarutoD20.Cards.Perform.Spent", { cost, summary: spendSummary }),
+    },
+    perform.rollVisibility,
+  );
 }
 
 async function applyPostUseAutomation(item, actor, action) {

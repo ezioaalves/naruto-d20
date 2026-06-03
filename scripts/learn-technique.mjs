@@ -5,6 +5,7 @@ import {
   chakraPoolValuePath,
   learningCurrentTechniqueIdPath,
 } from "./flag-paths.mjs";
+import { applyChatVisibility, chatVisibilityFrom } from "./chat-visibility.mjs";
 import { buildLearnCheckBreakdown } from "./data/bonus-sources.mjs";
 import {
   canonicalizeDisciplineName,
@@ -340,16 +341,19 @@ function rollTotal(result) {
 async function postLearningCard(
   actor,
   item,
-  { title, lead = "", footer = "", cssClass = "", flags = null },
+  { title, lead = "", footer = "", cssClass = "", flags = null, visibility = null },
 ) {
   const content = await foundry.applications.handlebars.renderTemplate(
     `modules/${MODULE_ID}/templates/chat/learning-result.hbs`,
     { title, lead, footer, cssClass },
   );
-  const data = {
-    speaker: ChatMessage.implementation.getSpeaker({ actor }),
-    content,
-  };
+  const data = applyChatVisibility(
+    {
+      speaker: ChatMessage.implementation.getSpeaker({ actor }),
+      content,
+    },
+    visibility,
+  );
   if (flags) data.flags = { [MODULE_ID]: { learn: flags } };
   await ChatMessage.create(data);
 }
@@ -436,6 +440,7 @@ export async function attemptLearnTechnique(item) {
     baseLearning: activeLearning,
     total: roll.total,
     apBonus: roll.apBonus,
+    visibility: roll.rollVisibility,
   });
 }
 
@@ -564,7 +569,7 @@ async function rollLearnCheck(item, actor, skillKey, activeLearning) {
     return null;
   }
 
-  return { total, apBonus };
+  return { total, apBonus, rollVisibility: chatVisibilityFrom(result) };
 }
 
 /**
@@ -577,7 +582,16 @@ async function rollLearnCheck(item, actor, skillKey, activeLearning) {
 async function resolveLearnAttempt(
   item,
   actor,
-  { skillKey, mode, baseLearning, total, apBonus = 0, supersedes = null, apRollText = "" },
+  {
+    skillKey,
+    mode,
+    baseLearning,
+    total,
+    apBonus = 0,
+    supersedes = null,
+    apRollText = "",
+    visibility = null,
+  },
 ) {
   const result = buildLearnAttemptResult(item, actor, {
     skillKey,
@@ -606,6 +620,7 @@ async function resolveLearnAttempt(
     chakraDeduction,
     now,
     apRollText,
+    visibility,
   });
 }
 
@@ -717,7 +732,7 @@ function buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraD
 async function postLearnAttemptResultCard(
   actor,
   item,
-  { result, baseLearning, chakraDeduction, now, apRollText },
+  { result, baseLearning, chakraDeduction, now, apRollText, visibility = null },
 ) {
   const apLine = apRollText ? `${apRollText} → ` : "";
   const chakraLine = chakraDeduction.deducted
@@ -746,6 +761,7 @@ async function postLearnAttemptResultCard(
         target: result.targetProgress,
       }),
       footer: trainingFooter,
+      visibility,
     });
     return;
   }
@@ -762,6 +778,7 @@ async function postLearnAttemptResultCard(
         max: result.maxAttempts,
       }),
       footer: trainingFooter,
+      visibility,
     });
     return;
   }
@@ -800,6 +817,7 @@ async function postLearnAttemptResultCard(
       chakra: chakraLine,
     }),
     flags: buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraDeduction, now }),
+    visibility,
   });
 }
 
@@ -873,15 +891,20 @@ export async function addActionPointToLearnCard(message) {
   const apRoll = new Roll("1d6");
   await apRoll.evaluate();
   const apBonus = Math.max(0, Number(apRoll.total) || 0);
-  await apRoll.toMessage({
-    speaker: ChatMessage.implementation.getSpeaker({ actor }),
-    flavor: game.i18n.format("NarutoD20.Cards.Learn.ActionPointFlavor", {
-      name: item.name,
-      from: currentAp,
-      to: currentAp - 1,
-    }),
-    rollMode: game.settings.get("core", "rollMode"),
-  });
+  const visibility = chatVisibilityFrom(message);
+  await apRoll.toMessage(
+    applyChatVisibility(
+      {
+        speaker: ChatMessage.implementation.getSpeaker({ actor }),
+        flavor: game.i18n.format("NarutoD20.Cards.Learn.ActionPointFlavor", {
+          name: item.name,
+          from: currentAp,
+          to: currentAp - 1,
+        }),
+      },
+      visibility,
+    ),
+  );
 
   // Refund the superseded attempt's training chakra (no-op when none was deducted),
   // then spend the Action Point — all in one actor update.
@@ -906,6 +929,7 @@ export async function addActionPointToLearnCard(message) {
     apBonus,
     supersedes: message,
     apRollText: game.i18n.format("NarutoD20.Cards.Learn.ActionPointRollText", { value: apBonus }),
+    visibility,
   });
 }
 
