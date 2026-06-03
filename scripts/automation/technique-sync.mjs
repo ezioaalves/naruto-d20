@@ -132,6 +132,7 @@ function canonicalizeHtml(s) {
  * Removes the noise that the system introduces but the user never edits:
  *  - `_id`s inside actions/changes/links (randomized on import),
  *  - `system.tag` (pf1 auto-derives it from the name when empty),
+ *  - actor-owned progression fields (`system.learning`, `system.mastery`),
  *  - HTML serialization differences in description fields,
  *  - prepareBaseData defaults being present on one side and absent on the other.
  * Real content edits (cost, rank, description text, …) still survive and diff.
@@ -142,6 +143,7 @@ export function normalizeSystem(system) {
   });
   delete out.tag;
   delete out.learning;
+  delete out.mastery;
   out.descriptors = Array.from(new Set(out.descriptors ?? [])).sort();
   out.description.value = canonicalizeHtml(out.description.value);
   out.description.instructions = canonicalizeHtml(out.description.instructions);
@@ -199,6 +201,7 @@ export async function syncTechnique(item, sourceDoc) {
   const src = sourceDoc.toObject();
   const { actions, changed } = normalizeActionIds(src.system?.actions);
   if (changed) src.system.actions = actions;
+  src.system.mastery = item.toObject().system?.mastery ?? item.system?.mastery ?? 0;
   src.system.learning = foundry.utils.deepClone(
     item.toObject().system?.learning ?? item.system?.learning ?? {},
   );
