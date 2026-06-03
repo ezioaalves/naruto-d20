@@ -26,7 +26,10 @@ export const LEARN_DISCIPLINES = Object.freeze(
 );
 
 const CANONICAL_DISCIPLINE_LOOKUP = new Map(
-  Object.keys(DISCIPLINE_LABEL_KEYS).map((discipline) => [normalizeDisciplineName(discipline), discipline]),
+  Object.keys(DISCIPLINE_LABEL_KEYS).map((discipline) => [
+    normalizeDisciplineName(discipline),
+    discipline,
+  ]),
 );
 
 export const NARUTO_SKILLS = Object.freeze({

@@ -160,7 +160,7 @@ export async function rollSelectedWeaponAttackWithTechnique({ technique, actor, 
     if (config.attackBonus) actionUse.shared.attackBonus.push(config.attackBonus);
     if (config.damageBonus) actionUse.shared.damageBonus.push(config.damageBonus);
     if (config.nonCritDamageBonus) {
-      const nonCritParts = actionUse.shared.action.damage.nonCritParts ??= [];
+      const nonCritParts = (actionUse.shared.action.damage.nonCritParts ??= []);
       const originalLength = nonCritParts.length;
       nonCritParts.push({ formula: config.nonCritDamageBonus, types: [] });
       cleanup.push(() => nonCritParts.splice(originalLength, 1));
