@@ -79,7 +79,11 @@
         {{#if learning.isFourHourBlocks}}
         &middot; {{learning.attemptsUsed}} blocks
         {{else}}
-        &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} attempts
+          {{#if learning.requiresDisciplineChoice}}
+          &middot; {{localize "NarutoD20.Cards.Learn.ChooseDisciplineFirst"}}
+          {{else}}
+          &middot; {{learning.attemptsUsed}}/{{learning.maxAttempts}} attempts
+          {{/if}}
         {{/if}}
         {{#if learning.failureInsight}} &middot; +{{learning.failureInsight}} insight{{/if}}
         {{#if learning.trainingBlocks}} &middot; {{learning.trainingBlocks}} training blocks{{/if}}

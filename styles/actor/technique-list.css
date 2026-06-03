@@ -13,6 +13,24 @@
   margin-bottom: 4px;
 }
 
+.chakra .techniques-header {
+  align-items: center;
+  gap: 6px;
+}
+
+.chakra .item-list-search {
+  flex: 0 0 12em;
+  margin-left: auto;
+}
+
+.chakra .item-list-search .search-input {
+  border: 1px solid #c0b89a;
+  background-color: rgba(255, 255, 255, 0.6);
+  height: unset;
+  font-size: 0.85em;
+  width: 100%;
+}
+
 /* Discipline filter tab bar */
 .chakra .technique-disc-tabs {
   gap: 2px;
@@ -75,6 +93,14 @@
 
 .chakra .technique-row:last-child {
   border-bottom: none;
+}
+
+.chakra .technique-row.search-hidden {
+  display: none;
+}
+
+.chakra .technique-list.search-empty {
+  display: none;
 }
 
 .chakra .technique-row .item-image {

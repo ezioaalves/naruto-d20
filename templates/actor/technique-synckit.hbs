@@ -1,0 +1,46 @@
+<form class="naruto-technique-synckit-content" autocomplete="off">
+    <header class="synckit-summary flexrow">
+        <span class="synckit-count out-of-date" data-tooltip="{{localize "NarutoD20.Synckit.Status.OutOfDate"}}">
+            <i class="fa-solid fa-triangle-exclamation"></i> {{counts.outOfDate}}
+        </span>
+        <span class="synckit-count up-to-date" data-tooltip="{{localize "NarutoD20.Synckit.Status.UpToDate"}}">
+            <i class="fa-solid fa-circle-check"></i> {{counts.upToDate}}
+        </span>
+        <span class="synckit-count orphan" data-tooltip="{{localize "NarutoD20.Synckit.Status.Orphan"}}">
+            <i class="fa-solid fa-link-slash"></i> {{counts.orphan}}
+        </span>
+    </header>
+
+    {{#if hasRows}}
+    <ol class="synckit-list">
+        {{#each rows}}
+        <li class="synckit-row {{statusCss}}" data-item-id="{{id}}">
+            <div class="synckit-pick-cell">
+                {{#if syncable}}
+                <input type="checkbox" class="synckit-pick" data-item-id="{{id}}" checked>
+                {{/if}}
+            </div>
+            <img class="synckit-img" src="{{img}}" width="24" height="24" alt="" />
+            <div class="synckit-name">
+                <span class="synckit-title">{{name}}</span>
+                <span class="synckit-meta">{{discipline}}{{#if rank}} · Rank {{rank}}{{/if}}</span>
+            </div>
+            <div class="synckit-status {{statusCss}}">
+                <i class="fa-solid {{statusIcon}}"></i> {{statusLabel}}
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+    {{else}}
+    <p class="synckit-empty">{{localize "NarutoD20.Synckit.Empty"}}</p>
+    {{/if}}
+
+    <footer class="synckit-footer flexrow">
+        <button type="button" data-action="select-outdated" {{#unless hasOutOfDate}}disabled{{/unless}}>
+            <i class="fa-solid fa-list-check"></i> {{localize "NarutoD20.Synckit.SelectOutdated"}}
+        </button>
+        <button type="button" data-action="sync" {{#unless hasOutOfDate}}disabled{{/unless}}>
+            <i class="fa-solid fa-kit-medical"></i> {{localize "NarutoD20.Synckit.SyncSelected"}}
+        </button>
+    </footer>
+</form>

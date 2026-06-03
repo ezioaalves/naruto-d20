@@ -1,6 +1,7 @@
 import { MODULE_ID } from "../constants.mjs";
 import {
   learnBuffPath,
+  chakraTapReservesBuffPath,
   chakraPoolMaxBonusPath,
   chakraReserveMaxBonusPath,
 } from "../flag-paths.mjs";
@@ -26,7 +27,7 @@ const AFFINITY_SUBTYPE_ALIASES = {
  * pf1's extended-tooltip sources list.
  *
  * Source-name discovery: pf1's changes engine populates
- * `actor.sourceInfo[flagPath].positive` with `{name, value}` entries — one per
+ * `actor.sourceInfo[flagPath]` with signed `{name, value}` entries — one per
  * change writing to that flag. We use those individual names when available
  * (so the chat card / tooltip shows "Iron Will Buff" instead of a generic
  * "Buff Bonus" line). Falls back to the lump-sum `data.buffBonus` if pf1's
@@ -63,7 +64,7 @@ export function buildLearnCheckBreakdown(
     sources.push({ name: data.abilityLabel, value: data.abilityMod, builtIn: true });
   }
 
-  const buffSources = actor.sourceInfo?.[learnBuffPath(key)]?.positive ?? [];
+  const buffSources = getChangeSources(actor, learnBuffPath(key));
   if (buffSources.length > 0) {
     for (const src of buffSources) {
       parts.push(`${src.value}[${src.name}]`);
@@ -90,6 +91,36 @@ export function buildLearnCheckBreakdown(
   }
 
   return { parts, sources };
+}
+
+export function buildTapReservesRollBreakdown(actor) {
+  const breakdown = buildLearnCheckBreakdown(actor, "ckc");
+  if (!breakdown) return null;
+
+  const parts = [...breakdown.parts];
+  const sources = [...breakdown.sources];
+  const buffSources = getChangeSources(actor, chakraTapReservesBuffPath);
+  const tapReservesBonus =
+    Number(actor.flags?.[MODULE_ID]?.chakra?.tapReserves?.buffBonus ?? 0) || 0;
+
+  if (buffSources.length > 0) {
+    for (const src of buffSources) {
+      parts.push(`${src.value}[${src.name}]`);
+      sources.push({ name: src.name, value: src.value, builtIn: false });
+    }
+  } else if (tapReservesBonus) {
+    const label = game.i18n.localize("NarutoD20.BuffTargets.TapReserves");
+    parts.push(`${tapReservesBonus}[${label}]`);
+    sources.push({ name: label, value: tapReservesBonus, builtIn: false });
+  }
+
+  return { parts, sources };
+}
+
+function getChangeSources(actor, path) {
+  const info = actor.sourceInfo?.[path];
+  if (!info) return [];
+  return [...(info.positive ?? []), ...(info.negative ?? [])];
 }
 
 function resolveNinjutsuAffinityBonus(actor, key, item) {
@@ -180,7 +211,7 @@ export function buildChakraPoolBreakdown(actor) {
   }
 
   // Buff bonuses — use named per-source entries when available
-  const buffSources = actor.sourceInfo?.[chakraPoolMaxBonusPath]?.positive ?? [];
+  const buffSources = getChangeSources(actor, chakraPoolMaxBonusPath);
   if (buffSources.length > 0) {
     for (const src of buffSources) {
       sources.push({ name: src.name, value: src.value, builtIn: false });
@@ -219,7 +250,7 @@ export function buildChakraReserveBreakdown(actor) {
     builtIn: true,
   });
 
-  const buffSources = actor.sourceInfo?.[chakraReserveMaxBonusPath]?.positive ?? [];
+  const buffSources = getChangeSources(actor, chakraReserveMaxBonusPath);
   if (buffSources.length > 0) {
     for (const src of buffSources) {
       sources.push({ name: src.name, value: src.value, builtIn: false });

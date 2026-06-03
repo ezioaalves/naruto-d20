@@ -1,12 +1,18 @@
 import { MODULE_ID } from "./constants.mjs";
 import {
   actionPointsPath,
+  chakraPoolTempPath,
   chakraPoolValuePath,
-  chakraReserveValuePath,
   learningCurrentTechniqueIdPath,
 } from "./flag-paths.mjs";
 import { buildLearnCheckBreakdown } from "./data/bonus-sources.mjs";
-import { DISCIPLINE_SKILL_MAP, resolveSkillAbility } from "./data/skills.mjs";
+import {
+  canonicalizeDisciplineName,
+  DISCIPLINE_LABEL_KEYS,
+  DISCIPLINE_SKILL_MAP,
+  LEARN_DISCIPLINES,
+  resolveSkillAbility,
+} from "./data/skills.mjs";
 
 export const LEARNING_MODES = Object.freeze({
   STANDARD: "standard",
@@ -14,6 +20,7 @@ export const LEARNING_MODES = Object.freeze({
 });
 
 const TRAINING_INTERRUPTION_SECONDS = 30 * 24 * 60 * 60;
+const TRAINING_SUBTYPE_SEPARATOR_RE = /\s*(?:,|\/|\bor\b)\s*/i;
 
 function characterLevel(actor) {
   return Number(actor.system.details?.level?.value ?? actor.system.details?.cr?.total ?? 0) || 0;
@@ -49,14 +56,147 @@ export function getLearningMaxAttempts(actor, skillKey) {
   return Math.max(1, 1 + abilityMod + Math.floor(ranks / 2));
 }
 
+function localizeDiscipline(discipline) {
+  const key = DISCIPLINE_LABEL_KEYS[discipline];
+  return key ? game.i18n.localize(key) : discipline;
+}
+
+function parseTrainingSubtypeOptions(subtype) {
+  const text = String(subtype ?? "").trim();
+  if (!text) return [];
+
+  const seen = new Set();
+  const options = [];
+  for (const part of text.split(TRAINING_SUBTYPE_SEPARATOR_RE)) {
+    const discipline = canonicalizeDisciplineName(part);
+    if (!discipline || !DISCIPLINE_SKILL_MAP[discipline] || seen.has(discipline)) continue;
+    seen.add(discipline);
+    options.push(discipline);
+  }
+  return options;
+}
+
+function getTrainingDisciplineOptions(item) {
+  const options = parseTrainingSubtypeOptions(item.system?.subtype);
+  return options.length ? options : [...LEARN_DISCIPLINES];
+}
+
+function getTechniqueLearningResolution(item) {
+  const discipline = item.system?.discipline ?? "";
+  if (discipline !== "Training") {
+    const skillKey = DISCIPLINE_SKILL_MAP[discipline];
+    return {
+      discipline,
+      skillKey,
+      options: skillKey ? [discipline] : [],
+      requiresChoice: false,
+    };
+  }
+
+  const options = getTrainingDisciplineOptions(item);
+  const stored = canonicalizeDisciplineName(item.system?.learning?.selectedDiscipline);
+  if (stored && options.includes(stored)) {
+    return {
+      discipline: stored,
+      skillKey: DISCIPLINE_SKILL_MAP[stored],
+      options,
+      requiresChoice: false,
+    };
+  }
+
+  if (options.length === 1) {
+    const resolved = options[0];
+    return {
+      discipline: resolved,
+      skillKey: DISCIPLINE_SKILL_MAP[resolved],
+      options,
+      requiresChoice: false,
+    };
+  }
+
+  return {
+    discipline: null,
+    skillKey: null,
+    options,
+    requiresChoice: true,
+  };
+}
+
+async function promptTrainingDisciplineChoice(item, options) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = (value) => {
+      if (settled) return;
+      settled = true;
+      resolve(value);
+    };
+
+    const selected = options[0] ?? "";
+    const content = `
+      <form class="naruto-training-discipline-choice">
+        <p>${game.i18n.localize("NarutoD20.Cards.Learn.TrainingDisciplinePrompt")}</p>
+        ${options
+          .map(
+            (discipline, index) => `
+              <label class="checkbox">
+                <input type="radio" name="training-discipline" value="${discipline}" ${index === 0 ? "checked" : ""}>
+                ${localizeDiscipline(discipline)}
+              </label>
+            `,
+          )
+          .join("")}
+      </form>
+    `;
+
+    new Dialog({
+      title: game.i18n.format("NarutoD20.App.ChooseLearnDiscipline", { name: item.name }),
+      content,
+      buttons: {
+        roll: {
+          label: game.i18n.localize("PF1.Roll"),
+          callback: (html) => {
+            const value =
+              html.find("input[name='training-discipline']:checked").val() || selected || null;
+            finish(canonicalizeDisciplineName(value));
+          },
+        },
+        cancel: {
+          label: game.i18n.localize("Cancel"),
+          callback: () => finish(null),
+        },
+      },
+      default: "roll",
+      close: () => finish(null),
+    }).render(true);
+  });
+}
+
+async function resolveTechniqueLearningSkill(item) {
+  const resolution = getTechniqueLearningResolution(item);
+  if (!resolution.requiresChoice) return resolution;
+
+  const chosen = await promptTrainingDisciplineChoice(item, resolution.options);
+  if (!chosen) return null;
+
+  await item.update({ "system.learning.selectedDiscipline": chosen });
+  return {
+    discipline: chosen,
+    skillKey: DISCIPLINE_SKILL_MAP[chosen],
+    options: resolution.options,
+    requiresChoice: false,
+  };
+}
+
 export function isTechniqueEffectivelyLearned(item) {
-  const skillKey = DISCIPLINE_SKILL_MAP[item.system.discipline];
-  return item.system.learning?.learned === true || !skillKey;
+  const learning = item.system.learning ?? {};
+  const resolution = getTechniqueLearningResolution(item);
+  return learning.learned === true || (!resolution.requiresChoice && !resolution.skillKey);
 }
 
 export function buildLearningView(item, actor, mode = getLearningMode()) {
   const learning = item.system.learning ?? {};
-  const skillKey = DISCIPLINE_SKILL_MAP[item.system.discipline];
+  const resolution = getTechniqueLearningResolution(item);
+  const skillKey = resolution.skillKey;
   const targetProgress = getLearningTargetProgress(item, mode);
   const progress = Math.min(Number(learning.progress ?? 0) || 0, targetProgress);
   const attemptsUsed = Number(learning.attemptsUsed ?? 0) || 0;
@@ -67,7 +207,7 @@ export function buildLearningView(item, actor, mode = getLearningMode()) {
 
   return {
     learned: learning.learned === true,
-    effectivelyLearned: learning.learned === true || !skillKey,
+    effectivelyLearned: learning.learned === true || (!resolution.requiresChoice && !skillKey),
     progress,
     attemptsUsed,
     failureInsight,
@@ -75,12 +215,15 @@ export function buildLearningView(item, actor, mode = getLearningMode()) {
     chakraSpent,
     lastTrainingAt,
     actionPointBonus: Number(learning.actionPointBonus ?? 0) || 0,
+    selectedDiscipline: resolution.discipline,
+    selectedDisciplineLabel: resolution.discipline ? localizeDiscipline(resolution.discipline) : "",
+    requiresDisciplineChoice: resolution.requiresChoice,
     expiresAt: lastTrainingAt ? lastTrainingAt + TRAINING_INTERRUPTION_SECONDS : 0,
     targetProgress,
     maxAttempts: getLearningMaxAttempts(actor, skillKey),
     mode,
     isFourHourBlocks: mode === LEARNING_MODES.FOUR_HOUR_BLOCKS,
-    hasSkill: !!skillKey,
+    hasSkill: !!skillKey || resolution.requiresChoice,
   };
 }
 
@@ -126,9 +269,9 @@ function minimumTrainingBlocksForRoll(item, mode) {
 
 function availableTrainingChakra(actor) {
   const chakra = actor.flags?.[MODULE_ID]?.chakra ?? {};
+  const tempValue = Math.max(0, Number(chakra.pool?.temp ?? 0) || 0);
   const poolValue = Math.max(0, Number(chakra.pool?.value ?? 0) || 0);
-  const reserveValue = Math.max(0, Number(chakra.reserve?.value ?? 0) || 0);
-  return poolValue + reserveValue;
+  return tempValue + poolValue;
 }
 
 function warnInsufficientTrainingChakra(actor, amount, available = availableTrainingChakra(actor)) {
@@ -148,28 +291,28 @@ function canPayTrainingChakra(actor, amount) {
 
 async function applyTrainingChakraDeduction(actor, amount) {
   if (!game.settings.get(MODULE_ID, "deductLearningChakra") || amount <= 0) {
-    return { paid: true, deducted: 0, fromPool: 0, fromReserve: 0 };
+    return { paid: true, deducted: 0, fromTemp: 0, fromPool: 0 };
   }
 
   const chakra = actor.flags?.[MODULE_ID]?.chakra ?? {};
+  const tempValue = Math.max(0, Number(chakra.pool?.temp ?? 0) || 0);
   const poolValue = Math.max(0, Number(chakra.pool?.value ?? 0) || 0);
-  const reserveValue = Math.max(0, Number(chakra.reserve?.value ?? 0) || 0);
-  const available = poolValue + reserveValue;
+  const available = tempValue + poolValue;
   if (available < amount) {
     warnInsufficientTrainingChakra(actor, amount, available);
-    return { paid: false, deducted: 0, fromPool: 0, fromReserve: 0 };
+    return { paid: false, deducted: 0, fromTemp: 0, fromPool: 0 };
   }
 
-  const fromPool = Math.min(amount, poolValue);
-  const fromReserve = Math.min(amount - fromPool, reserveValue);
-  const deducted = fromPool + fromReserve;
+  const fromTemp = Math.min(amount, tempValue);
+  const fromPool = Math.min(amount - fromTemp, poolValue);
+  const deducted = fromTemp + fromPool;
 
   await actor.update({
+    [chakraPoolTempPath]: tempValue - fromTemp,
     [chakraPoolValuePath]: poolValue - fromPool,
-    [chakraReserveValuePath]: reserveValue - fromReserve,
   });
 
-  return { paid: true, deducted, fromPool, fromReserve };
+  return { paid: true, deducted, fromTemp, fromPool };
 }
 
 function rollTotal(result) {
@@ -253,7 +396,10 @@ export async function attemptLearnTechnique(item) {
   const learning = item.system.learning ?? {};
   if (!validateLearningState(item, actor, learning)) return;
 
-  const skillKey = DISCIPLINE_SKILL_MAP[item.system.discipline];
+  const learningSkill = await resolveTechniqueLearningSkill(item);
+  if (!learningSkill) return;
+
+  const { skillKey } = learningSkill;
   if (!skillKey) {
     await learnUnmappedTechnique(item, actor, learning);
     return;
@@ -540,7 +686,7 @@ function buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraD
     mode: result.mode,
     baseLearning: foundry.utils.deepClone(baseLearning),
     baseTotalNoAp: result.total,
-    deducted: { fromPool: chakraDeduction.fromPool, fromReserve: chakraDeduction.fromReserve },
+    deducted: { fromTemp: chakraDeduction.fromTemp, fromPool: chakraDeduction.fromPool },
     result: {
       progress: result.progress,
       attemptsUsed: result.finalAttemptsUsed,
@@ -722,15 +868,15 @@ export async function addActionPointToLearnCard(message) {
   // Refund the superseded attempt's training chakra (no-op when none was deducted),
   // then spend the Action Point — all in one actor update.
   const update = { [actionPointsPath]: currentAp - 1 };
+  const fromTemp = Number(flags.deducted?.fromTemp ?? 0) || 0;
   const fromPool = Number(flags.deducted?.fromPool ?? 0) || 0;
-  const fromReserve = Number(flags.deducted?.fromReserve ?? 0) || 0;
+  if (fromTemp) {
+    update[chakraPoolTempPath] =
+      (Number(foundry.utils.getProperty(actor, chakraPoolTempPath) ?? 0) || 0) + fromTemp;
+  }
   if (fromPool) {
     update[chakraPoolValuePath] =
       (Number(foundry.utils.getProperty(actor, chakraPoolValuePath) ?? 0) || 0) + fromPool;
-  }
-  if (fromReserve) {
-    update[chakraReserveValuePath] =
-      (Number(foundry.utils.getProperty(actor, chakraReserveValuePath) ?? 0) || 0) + fromReserve;
   }
   await actor.update(update);
 

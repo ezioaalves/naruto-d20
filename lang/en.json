@@ -53,6 +53,7 @@
       "CreateTechnique": "Create Technique",
       "LearnTechnique": "Learn Technique",
       "UseTechnique": "Use Technique",
+      "SearchTechniques": "Search techniques…",
       "OpenSheet": "Open Sheet",
       "DuplicateTechnique": "Duplicate Technique",
       "Remove": "Remove",
@@ -66,6 +67,7 @@
       "Category": "Technique",
       "ChakraPool": "Chakra Pool Max",
       "ChakraReserve": "Chakra Reserve Max",
+      "TapReserves": "Tap Reserves",
       "Learn": {
         "ckc": "Learn: Chakra Control",
         "fui": "Learn: Fuinjutsu",
@@ -265,7 +267,7 @@
       },
       "DeductLearningChakra": {
         "Name": "Deduct Training Chakra",
-        "Hint": "When enabled, technique learning deducts training chakra from Pool then Reserve. Conditions are not updated automatically because training ignores depletion penalties."
+        "Hint": "When enabled, technique learning deducts training chakra from temp chakra first and then Pool. Reserve is never consumed automatically because Tap Reserves must be used manually."
       }
     },
     "Conditions": {
@@ -333,8 +335,8 @@
       "NoTargets": "No targets selected for buff application.",
       "NoPermission": "No permission to modify {name}. Buff not applied."
     },
-    "Medkit": {
-      "Title": "Technique Medkit",
+    "Synckit": {
+      "Title": "Technique Synckit",
       "HeaderButton": "Sync Techniques",
       "Status": {
         "OutOfDate": "Out of date",
@@ -353,6 +355,7 @@
       "BrowseFeats": "Browse Naruto Feats",
       "RemoveTechnique": "Remove Technique",
       "RemoveTechniqueConfirm": "Remove <strong>{name}</strong> from this actor?",
+      "ChooseLearnDiscipline": "Choose Learn Discipline - {name}",
       "ChooseAttack": "Choose Attack - {name}",
       "KindWeapon": "Weapon",
       "KindAttack": "Attack"
@@ -401,6 +404,8 @@
         "ActionPointFlavor": "Action Point — Learn: {name} ({from} → {to} remaining)",
         "ActionPointRollText": "Action Point 1d6 = {value}",
         "UnmappedDiscipline": "Unmapped discipline",
+        "TrainingDisciplinePrompt": "Choose which discipline this Training technique uses for learn checks.",
+        "ChooseDisciplineFirst": "choose discipline on first learn attempt",
         "TrainingInterruptedTitle": "{name} training interrupted",
         "TrainingInterruptedLead": "More than 30 days passed since the last training block. Learning progress is lost before the new attempt.",
         "LearnedTitle": "{name} learned",

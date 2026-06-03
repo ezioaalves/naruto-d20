@@ -3,7 +3,7 @@ import { normalizeActionIds } from "../data/action-ids.mjs";
 import { applyTechniqueSystemDefaults } from "../data/technique-defaults.mjs";
 
 /**
- * Technique "medkit" core — detection & sync (no UI).
+ * Technique synckit core — detection & sync (no UI).
  *
  * Techniques are copied onto actors as embedded items at drop time; they keep no
  * live link to the compendium. This module re-establishes the link on demand:
@@ -13,7 +13,7 @@ import { applyTechniqueSystemDefaults } from "../data/technique-defaults.mjs";
  * Detection strategy: CONTENT DIFF (deep-equal of normalized `system` data).
  * No version field is required on the technique, so any edit you make in the
  * compendium is detected automatically with zero per-technique maintenance.
- * See docs/technique-medkit.md for the alternatives (version flag / indexed hash)
+ * See dev-notes/technique-synckit.md for the alternatives (version flag / indexed hash)
  * and how to migrate to them later.
  *
  * Cost: runs only on a button click, only over the techniques of ONE actor
@@ -132,6 +132,7 @@ function canonicalizeHtml(s) {
  * Removes the noise that the system introduces but the user never edits:
  *  - `_id`s inside actions/changes/links (randomized on import),
  *  - `system.tag` (pf1 auto-derives it from the name when empty),
+ *  - actor-owned progression fields (`system.learning`, `system.mastery`),
  *  - HTML serialization differences in description fields,
  *  - prepareBaseData defaults being present on one side and absent on the other.
  * Real content edits (cost, rank, description text, …) still survive and diff.
@@ -142,6 +143,7 @@ export function normalizeSystem(system) {
   });
   delete out.tag;
   delete out.learning;
+  delete out.mastery;
   out.descriptors = Array.from(new Set(out.descriptors ?? [])).sort();
   out.description.value = canonicalizeHtml(out.description.value);
   out.description.instructions = canonicalizeHtml(out.description.instructions);
@@ -193,12 +195,13 @@ export async function analyzeActor(actor) {
 /**
  * Overwrite an embedded technique's data with the compendium source, preserving
  * the embedded item's own `_id` and flags (mirrors chris-premades'
- * `ItemMedkit.update` with `{diff:false}`). Action `_id`s are re-normalized.
+ * `ItemSynckit.update` with `{diff:false}`). Action `_id`s are re-normalized.
  */
 export async function syncTechnique(item, sourceDoc) {
   const src = sourceDoc.toObject();
   const { actions, changed } = normalizeActionIds(src.system?.actions);
   if (changed) src.system.actions = actions;
+  src.system.mastery = item.toObject().system?.mastery ?? item.system?.mastery ?? 0;
   src.system.learning = foundry.utils.deepClone(
     item.toObject().system?.learning ?? item.system?.learning ?? {},
   );

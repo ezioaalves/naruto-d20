@@ -17,9 +17,10 @@ import { conditionAppliedExhaustedPath, conditionAppliedFatiguedPath } from "../
  * Conditions are mutually exclusive (depletion supersedes low reserves).
  *
  * The "Emergency Transfer" mechanic (handled in use-technique.mjs):
- *   When pool.value would reach 0 but reserve.value > 0, the body automatically
- *   zeroes the reserve and returns 1 chakra to the pool. This means pool == 0
- *   is only possible when reserve == 0 — and therefore always triggers depletion.
+ *   After a technique spends from temp chakra and pool, if pool.value would
+ *   reach 0 but reserve.value > 0, the body automatically zeroes the reserve
+ *   and returns 1 chakra to the pool. This means pool == 0 is only possible
+ *   when reserve == 0 — and therefore always triggers depletion.
  *
  * PF1e implied conditions (fatigued / exhausted) are applied and removed carefully:
  *   We only remove a PF1e condition if WE were the ones who applied it, tracked via

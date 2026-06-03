@@ -309,6 +309,7 @@ Changes de buffs PF1.
 | --- | --- | --- | --- |
 | `chakraPool` | Chakra | Chakra Pool Max | `flags.naruto-d20.chakra.pool.maxBonus` |
 | `chakraReserve` | Chakra | Chakra Reserve Max | `flags.naruto-d20.chakra.reserve.maxBonus` |
+| `tapReserves` | Chakra | Tap Reserves | `flags.naruto-d20.chakra.tapReserves.buffBonus` |
 | `learnCkc` | Chakra | Learn: Chakra Control | `flags.naruto-d20.learn.ckc.buffBonus` |
 | `learnGnj` | Chakra | Learn: Genjutsu | `flags.naruto-d20.learn.gnj.buffBonus` |
 | `learnNin` | Chakra | Learn: Ninjutsu | `flags.naruto-d20.learn.nin.buffBonus` |

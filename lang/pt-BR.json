@@ -53,6 +53,7 @@
       "CreateTechnique": "Criar Técnica",
       "LearnTechnique": "Aprender Técnica",
       "UseTechnique": "Usar Técnica",
+      "SearchTechniques": "Buscar técnicas…",
       "OpenSheet": "Abrir Ficha",
       "DuplicateTechnique": "Duplicar Técnica",
       "Remove": "Remover",
@@ -66,6 +67,7 @@
       "Category": "Técnica",
       "ChakraPool": "Máximo de Chakra",
       "ChakraReserve": "Máximo de Reserva de Chakra",
+      "TapReserves": "Tap Reserves",
       "Learn": {
         "ckc": "Aprender: Controle de Chakra",
         "fui": "Aprender: Fuinjutsu",
@@ -265,7 +267,7 @@
       },
       "DeductLearningChakra": {
         "Name": "Deduzir Chakra de Treino",
-        "Hint": "Quando ativado, o aprendizado de técnicas deduz chakra de treino da Pool e depois da Reserva. Condições não são atualizadas automaticamente porque treino ignora penalidades de depleção."
+        "Hint": "Quando ativado, o aprendizado de técnicas deduz chakra de treino do chakra temporário primeiro e depois da Pool. A Reserva nunca é consumida automaticamente porque Tap Reserves deve ser usado manualmente."
       }
     },
     "Conditions": {
@@ -333,8 +335,8 @@
       "NoTargets": "Nenhum alvo selecionado para aplicação de buff.",
       "NoPermission": "Sem permissão para modificar {name}. Buff não aplicado."
     },
-    "Medkit": {
-      "Title": "Medkit de Técnicas",
+    "Synckit": {
+      "Title": "Synckit de Técnicas",
       "HeaderButton": "Sincronizar Técnicas",
       "Status": {
         "OutOfDate": "Desatualizada",
@@ -353,6 +355,7 @@
       "BrowseFeats": "Procurar Talentos Naruto",
       "RemoveTechnique": "Remover Técnica",
       "RemoveTechniqueConfirm": "Remover <strong>{name}</strong> deste personagem?",
+      "ChooseLearnDiscipline": "Escolher disciplina de aprendizado - {name}",
       "ChooseAttack": "Escolher Ataque - {name}",
       "KindWeapon": "Arma",
       "KindAttack": "Ataque"
@@ -401,6 +404,8 @@
         "ActionPointFlavor": "Ponto de Ação — Aprender: {name} ({from} → {to} restantes)",
         "ActionPointRollText": "Ponto de Ação 1d6 = {value}",
         "UnmappedDiscipline": "Disciplina não mapeada",
+        "TrainingDisciplinePrompt": "Escolha qual disciplina esta técnica de Treinamento usa nos testes de aprendizado.",
+        "ChooseDisciplineFirst": "escolha a disciplina na primeira tentativa",
         "TrainingInterruptedTitle": "{name} treino interrompido",
         "TrainingInterruptedLead": "Mais de 30 dias se passaram desde o último bloco de treino. O progresso de aprendizado é perdido antes da nova tentativa.",
         "LearnedTitle": "{name} aprendida",

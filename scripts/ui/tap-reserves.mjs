@@ -1,6 +1,6 @@
 import { MODULE_ID } from "../constants.mjs";
 import { chakraPoolTempPath, chakraReserveValuePath } from "../flag-paths.mjs";
-import { buildLearnCheckBreakdown } from "../data/bonus-sources.mjs";
+import { buildTapReservesRollBreakdown } from "../data/bonus-sources.mjs";
 import { checkAndUpdateConditions } from "../data/chakra-conditions.mjs";
 
 const SEAL_BONUS = { none: 0, half: 2, hand: 5 };
@@ -115,9 +115,9 @@ export class TapReservesDialog extends Application {
 
     const dc = this._computeDC(amount, seal);
 
-    // ── Build roll parts from CKC breakdown ────────────────────────
+    // ── Build roll parts from Tap Reserves breakdown ───────────────
     // pf1.dice.d20Roll will prepend the d20 die automatically.
-    const breakdown = buildLearnCheckBreakdown(this.actor, "ckc");
+    const breakdown = buildTapReservesRollBreakdown(this.actor);
     const parts = breakdown ? [...breakdown.parts] : [];
 
     // Add situational bonus to parts if provided.

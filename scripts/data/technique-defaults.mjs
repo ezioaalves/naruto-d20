@@ -31,6 +31,7 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   system.learning.chakraSpent ??= 0;
   system.learning.lastTrainingAt ??= 0;
   system.learning.actionPointBonus ??= 0;
+  system.learning.selectedDiscipline ??= "";
 
   system.automation ??= {};
   system.automation.enabled ??= true;

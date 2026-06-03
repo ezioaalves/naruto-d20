@@ -57,7 +57,7 @@
     "styles/item/technique-actions.css",
     "styles/chat/technique-cards.css",
     "styles/item/technique-sidebar.css",
-    "styles/apps/technique-medkit.css"
+    "styles/apps/technique-synckit.css"
   ],
   "languages": [
     {

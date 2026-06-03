@@ -1,33 +1,33 @@
-/* Technique Medkit */
+/* Technique Synckit */
 
-.naruto-technique-medkit .window-content {
+.naruto-technique-synckit .window-content {
   padding: 8px;
 }
 
-.naruto-technique-medkit-content {
+.naruto-technique-synckit-content {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.naruto-technique-medkit .medkit-summary {
+.naruto-technique-synckit .synckit-summary {
   gap: 12px;
   align-items: center;
   flex: 0 0 auto;
   font-weight: bold;
 }
 
-.naruto-technique-medkit .medkit-count.out-of-date {
+.naruto-technique-synckit .synckit-count.out-of-date {
   color: #b03030;
 }
-.naruto-technique-medkit .medkit-count.up-to-date {
+.naruto-technique-synckit .synckit-count.up-to-date {
   color: #2f7d32;
 }
-.naruto-technique-medkit .medkit-count.orphan {
+.naruto-technique-synckit .synckit-count.orphan {
   color: #8a6d1b;
 }
 
-.naruto-technique-medkit .medkit-list {
+.naruto-technique-synckit .synckit-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -35,7 +35,7 @@
   overflow-y: auto;
 }
 
-.naruto-technique-medkit .medkit-row {
+.naruto-technique-synckit .synckit-row {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -43,61 +43,61 @@
   border-bottom: 1px solid #c0b89a;
 }
 
-.naruto-technique-medkit .medkit-pick-cell {
+.naruto-technique-synckit .synckit-pick-cell {
   flex: 0 0 18px;
   text-align: center;
 }
 
-.naruto-technique-medkit .medkit-img {
+.naruto-technique-synckit .synckit-img {
   flex: 0 0 24px;
   border: none;
   object-fit: cover;
 }
 
-.naruto-technique-medkit .medkit-name {
+.naruto-technique-synckit .synckit-name {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
-.naruto-technique-medkit .medkit-title {
+.naruto-technique-synckit .synckit-title {
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.naruto-technique-medkit .medkit-meta {
+.naruto-technique-synckit .synckit-meta {
   font-size: 0.8em;
   opacity: 0.7;
 }
 
-.naruto-technique-medkit .medkit-status {
+.naruto-technique-synckit .synckit-status {
   flex: 0 0 auto;
   font-size: 0.85em;
   white-space: nowrap;
 }
 
-.naruto-technique-medkit .medkit-status.out-of-date {
+.naruto-technique-synckit .synckit-status.out-of-date {
   color: #b03030;
 }
-.naruto-technique-medkit .medkit-status.up-to-date {
+.naruto-technique-synckit .synckit-status.up-to-date {
   color: #2f7d32;
 }
-.naruto-technique-medkit .medkit-status.orphan {
+.naruto-technique-synckit .synckit-status.orphan {
   color: #8a6d1b;
 }
-.naruto-technique-medkit .medkit-row.up-to-date {
+.naruto-technique-synckit .synckit-row.up-to-date {
   opacity: 0.65;
 }
 
-.naruto-technique-medkit .medkit-footer {
+.naruto-technique-synckit .synckit-footer {
   gap: 8px;
   flex: 0 0 auto;
 }
 
-.naruto-technique-medkit .medkit-empty {
+.naruto-technique-synckit .synckit-empty {
   text-align: center;
   opacity: 0.7;
   padding: 12px;

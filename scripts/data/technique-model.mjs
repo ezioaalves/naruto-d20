@@ -215,6 +215,7 @@ export function createTechniqueDataModel() {
             trainingBlocks: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
             chakraSpent: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
             lastTrainingAt: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+            selectedDiscipline: new fields.StringField({ ...opt, blank: true, initial: "" }),
             actionPointBonus: new fields.NumberField({
               ...opt,
               integer: true,
