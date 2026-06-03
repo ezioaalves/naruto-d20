@@ -23,6 +23,11 @@ Foundry runs in Docker (`/home/ezioaalves/Documents/foundry/docker-compose.yml`)
 1. Edit source files.
 2. Reload in the browser: `F5` for a full page reload, or `Ctrl+R` in-world for a lighter module-only reload that re-fires all module hooks without reloading the whole page.
 
+## Branch merge policy
+
+- Pull requests merged into `develop` must use squash merge and delete the merged branch afterward.
+- Pull requests merged into `master` should use the repository's default merge mode.
+
 ## PF1e version pinning — IMPORTANT
 
 The installed system is **PF1e v11.11** at `/systems/pf1/`. There is also a
