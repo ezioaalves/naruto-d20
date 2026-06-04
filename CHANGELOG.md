@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.5 - 2026-06-04
+
+- Added automated Jouryoku and Kousoku rank buffs: using a Strength Rank or Speed Rank technique now applies the shared buff at the matching level.
+- Added chakra costs to Strength Rank and Speed Rank technique source JSON and rebuilt the techniques pack.
+- Added upkeep prompts for active rank buffs: when maintenance is due, the owner can spend the rank's chakra cost to keep the buff active or deactivate it.
+- Shared chakra spending logic between technique use and rank buff upkeep so temporary chakra, pool chakra, and Emergency Transfer resolve consistently.
+
 ## v1.0.4 - 2026-06-03
 
 - Added a mastery learning process: roll learn checks toward the next mastery step from the technique's Master button, tracking attempts, failure insight, training blocks/chakra, four-hour-block mode, and the post-roll Action Point re-evaluation. On enough successes the technique advances one mastery step.

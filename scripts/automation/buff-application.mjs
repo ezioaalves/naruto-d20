@@ -1,4 +1,10 @@
 import { MODULE_ID } from "../constants.mjs";
+import {
+  RANK_BUFF_FLAG,
+  rankBuffDuration,
+  rankBuffFlagData,
+  resolveRankTechnique,
+} from "./rank-buffs.mjs";
 
 const SOURCE_FLAG = MODULE_ID;
 const DEFAULT_BUFF_PACK_ID = "naruto-d20.technique-buffs";
@@ -15,22 +21,29 @@ export async function applyTechniqueBuff(item, actor, action) {
 
   if (game.settings.get(MODULE_ID, "buffTargetFiltering") === "off") return;
 
-  const buffEntry = await resolveBuffMatch(item.name);
+  const context = resolveTechniqueBuffContext(item);
+  const buffEntry = await resolveBuffMatch(context.buffName);
   if (!buffEntry) {
-    console.warn(`naruto-d20 | No buff found named "${item.name}" in technique-buffs compendia.`);
+    console.warn(
+      `naruto-d20 | No buff found named "${context.buffName}" in technique-buffs compendia.`,
+    );
     return;
   }
 
   const buffDoc = await resolveBuffDocument(buffEntry);
   if (!buffDoc) return;
 
-  const applyTargets = resolveBuffTargets(item, actor);
+  const applyTargets = resolveBuffTargets(item, actor, context);
   if (!applyTargets.length) return;
 
-  const duration = resolveBuffDurationFromAction(action);
+  const duration = context.duration ?? resolveBuffDurationFromAction(action);
 
   for (const targetActor of applyTargets) {
-    await applyBuffToTarget(buffDoc, targetActor, duration);
+    await applyBuffToTarget(buffDoc, targetActor, {
+      duration,
+      level: context.level,
+      rankBuff: context.rankBuff,
+    });
   }
 }
 
@@ -42,7 +55,28 @@ export function clearBuffLookupCache() {
  * Personal techniques always affect their performer. Other technique buffs
  * require an explicit canvas target so debuffs are not accidentally self-applied.
  */
-function resolveBuffTargets(item, actor) {
+function resolveTechniqueBuffContext(item) {
+  const rankBuff = resolveRankTechnique(item.name);
+  if (rankBuff) {
+    return {
+      ...rankBuff,
+      duration: rankBuffDuration(rankBuff.interval),
+      rankBuff: rankBuffFlagData(rankBuff),
+    };
+  }
+
+  return {
+    buffName: item.name,
+    level: null,
+    duration: null,
+    rankBuff: null,
+    selfTarget: false,
+  };
+}
+
+function resolveBuffTargets(item, actor, context = null) {
+  if (context?.selfTarget) return [actor];
+
   const targetMode = item.system?.automation?.targetMode ?? "auto";
   if (targetMode === "self") return [actor];
   if (targetMode === "selected") return selectedTargetActors();
@@ -221,7 +255,7 @@ function findWorldBuffMatches(name) {
  * Tracks origin via flags["naruto-d20"].sourceId so update-vs-create works correctly.
  * If duration is provided it overrides whatever the compendium buff had stored.
  */
-export async function applyBuffToTarget(buffDoc, targetActor, duration = null) {
+export async function applyBuffToTarget(buffDoc, targetActor, options = null) {
   if (!targetActor.isOwner) {
     ui.notifications.warn(
       game.i18n.format("NarutoD20.Automation.NoPermission", { name: targetActor.name }),
@@ -229,42 +263,73 @@ export async function applyBuffToTarget(buffDoc, targetActor, duration = null) {
     return;
   }
 
+  const { duration, level, rankBuff } = normalizeBuffApplyOptions(options);
   const sourceId = buffDoc.uuid;
   const existing = findExistingAppliedBuff(targetActor, sourceId);
 
   if (existing) {
-    await refreshExistingBuff(existing, duration);
+    await refreshExistingBuff(existing, { duration, level, rankBuff });
   } else {
-    await createBuffOnTarget(buffDoc, targetActor, sourceId, duration);
+    await createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff });
   }
+}
+
+function normalizeBuffApplyOptions(options) {
+  if (
+    !options ||
+    (!("duration" in Object(options)) &&
+      !("level" in Object(options)) &&
+      !("rankBuff" in Object(options)))
+  ) {
+    return { duration: options ?? null, level: null, rankBuff: null };
+  }
+  return {
+    duration: options.duration ?? null,
+    level: Number.isInteger(options.level) ? options.level : null,
+    rankBuff: options.rankBuff ?? null,
+  };
 }
 
 function findExistingAppliedBuff(targetActor, sourceId) {
   return targetActor.items.find((i) => i.flags?.[SOURCE_FLAG]?.sourceId === sourceId);
 }
 
-async function refreshExistingBuff(existing, duration) {
+async function refreshExistingBuff(existing, { duration, level, rankBuff }) {
   const updates = { "system.active": true };
   if (duration) {
     updates["system.duration.units"] = duration.units;
     updates["system.duration.value"] = duration.value;
+    if (duration.end) updates["system.duration.end"] = duration.end;
+    if (duration.start !== undefined) updates["system.duration.start"] = duration.start;
+  }
+  if (level != null) {
+    updates["system.level"] = level;
+  }
+  if (rankBuff) {
+    updates[`flags.${MODULE_ID}.${RANK_BUFF_FLAG}`] = rankBuff;
   }
   await existing.update(updates);
 }
 
-async function createBuffOnTarget(buffDoc, targetActor, sourceId, duration) {
+async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff }) {
   const itemData = buffDoc.toObject();
   delete itemData._id;
 
   itemData.flags ??= {};
   itemData.flags[SOURCE_FLAG] ??= {};
   itemData.flags[SOURCE_FLAG].sourceId = sourceId;
+  if (rankBuff) itemData.flags[SOURCE_FLAG][RANK_BUFF_FLAG] = rankBuff;
 
   itemData.system ??= {};
   if (duration) {
     itemData.system.duration ??= {};
     itemData.system.duration.units = duration.units;
     itemData.system.duration.value = duration.value;
+    if (duration.end) itemData.system.duration.end = duration.end;
+    if (duration.start !== undefined) itemData.system.duration.start = duration.start;
+  }
+  if (level != null) {
+    itemData.system.level = level;
   }
   itemData.system.active = true;
 

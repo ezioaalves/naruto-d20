@@ -1,0 +1,139 @@
+{
+  "type": "buff",
+  "name": "KOUSOKU (SPEED RANK)",
+  "system": {
+    "description": {
+      "value": "<p>Characters that are <em>helpless, paralyzed, immobilized, grappled</em> or <em>pinned</em> are automatically reduced to speed rank 0. You take a -1 Speed Rank penalty while wearing medium armor, or a -3 penalty while wearing heavy armor.</p><p><strong>Dodge:</strong> The dodge bonus applies to Defense and Reflex saves, and does not function if you are denied your Dexterity bonus to Defense.</p><p><strong>Hide:</strong> This hide bonus applies only in situations where fast movement would help.</p><p><strong>Kawarimi Defense:</strong> If you attack an opponent while having this quality, they cannot use <em>defensive maneuvers</em> or <em>avoiding an attack</em> type actions against the attack unless they are moving at the specified speed rank.</p><p><strong>Extra Attacks:</strong> You can make additional attacks during a Full Attack, using your highest attack bonus -5. At Speed Rank 7 the -5 penalty is removed. At Speed Rank 10, you gain a second extra attack, at your highest attack bonus -5.</p><table><caption>Table 1-5: Speed Ranks</caption><thead><tr><th>Speed Rank</th><th>Jump</th><th>Dodge</th><th>Attack</th><th>Speed</th><th>Hide</th><th>Kawarimi Defense</th><th>Extra Attacks *</th><th>Cost</th></tr></thead><tbody><tr><td>1</td><td>+2</td><td>+1</td><td>-</td><td>+10ft</td><td>+1</td><td>-</td><td>-</td><td>1 / 5 rounds</td></tr><tr><td>2</td><td>+3</td><td>+2</td><td>+1</td><td>+15ft</td><td>+2</td><td>-</td><td>-</td><td>2 / 5 rounds</td></tr><tr><td>3</td><td>+4</td><td>+3</td><td>+1</td><td>+20ft</td><td>+3</td><td>-</td><td>-</td><td>3 / 5 rounds</td></tr><tr><td>4</td><td>+5</td><td>+4</td><td>+2</td><td>+25ft</td><td>+4</td><td>1</td><td>-</td><td>4 / 5 rounds</td></tr><tr><td>5</td><td>+6</td><td>+5</td><td>+2</td><td>+30ft</td><td>+5</td><td>2</td><td>-</td><td>1 / round</td></tr><tr><td>6</td><td>+7</td><td>+6</td><td>+3</td><td>+35ft</td><td>+6</td><td>3</td><td>1</td><td>3 / 2 rounds</td></tr><tr><td>7</td><td>+8</td><td>+7</td><td>+3</td><td>+40ft</td><td>+7</td><td>3</td><td>1</td><td>2 / round</td></tr><tr><td>8</td><td>+9</td><td>+8</td><td>+4</td><td>+45ft</td><td>+8</td><td>4</td><td>1</td><td>5 / 2 rounds</td></tr><tr><td>9</td><td>+10</td><td>+9</td><td>+4</td><td>+50ft</td><td>+9</td><td>5</td><td>1</td><td>3 / round</td></tr><tr><td>10</td><td>+10</td><td>+10</td><td>+5</td><td>+60ft</td><td>+10</td><td>6</td><td>2</td><td>5 / round</td></tr></tbody></table>",
+      "instructions": ""
+    },
+    "tags": [],
+    "changes": [
+      {
+        "type": "untyped",
+        "_id": "B5YddrZI",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.acr",
+        "formula": "@item.level+1"
+      },
+      {
+        "type": "dodge",
+        "_id": "JfNd3IDk",
+        "operator": "add",
+        "priority": 0,
+        "target": "ac",
+        "formula": "@item.level"
+      },
+      {
+        "type": "untyped",
+        "_id": "vkK43M8p",
+        "operator": "add",
+        "priority": 0,
+        "target": "attack",
+        "formula": "floor(@item.level/2)"
+      },
+      {
+        "type": "untyped",
+        "_id": "PDR8lbWh",
+        "operator": "add",
+        "priority": 0,
+        "target": "allSpeeds",
+        "formula": "@item.level*5 + 5"
+      },
+      {
+        "type": "untyped",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.ste",
+        "formula": "@item.level+1",
+        "_id": "RjMHVqgN"
+      },
+      {
+        "type": "untyped",
+        "operator": "add",
+        "priority": 0,
+        "target": "ref",
+        "formula": "@item.level",
+        "_id": "17OhbWVn"
+      },
+      {
+        "type": "untyped",
+        "_id": "YfxaAt5D",
+        "operator": "add",
+        "priority": 0,
+        "target": "cmb",
+        "formula": "-floor(@item.level/2)"
+      }
+    ],
+    "changeFlags": {
+      "immuneToMorale": false,
+      "loseDexToAC": false,
+      "noMediumEncumbrance": false,
+      "noHeavyEncumbrance": false,
+      "mediumArmorFullSpeed": false,
+      "heavyArmorFullSpeed": false,
+      "lowLightVision": false,
+      "seeInvisibility": false,
+      "seeInDarkness": false
+    },
+    "contextNotes": [],
+    "actions": [],
+    "attackNotes": [],
+    "effectNotes": [],
+    "uses": {
+      "value": null,
+      "per": "",
+      "autoDeductChargesCost": "",
+      "maxFormula": "",
+      "rechargeFormula": ""
+    },
+    "links": {
+      "children": []
+    },
+    "tag": "",
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "scriptCalls": [],
+    "subType": "temp",
+    "active": false,
+    "level": 3,
+    "duration": {
+      "value": "",
+      "units": "",
+      "end": "turnStart",
+      "start": 24651075
+    },
+    "conditions": [],
+    "hideFromToken": false,
+    "showInQuickbar": true
+  },
+  "img": "icons/skills/movement/feet-winged-boots-glowing-yellow.webp",
+  "effects": [],
+  "flags": {
+    "scene-packer": {
+      "hash": "ef2e6b78454429353f4f212010e4079926357c6b"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780546400549,
+    "modifiedTime": 1780546400549,
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+  },
+  "ownership": {
+    "default": 0,
+    "gvxnSdRZKSX8B66p": 3,
+    "vTUJ4X3yMMGO4o4P": 3
+  },
+  "folder": null,
+  "_id": "8mMF2zl7fuB4lTZy",
+  "sort": 0,
+  "_key": "!items!8mMF2zl7fuB4lTZy"
+}

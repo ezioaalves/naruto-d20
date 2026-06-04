@@ -400,10 +400,17 @@
       "NoWeaponAttack": "{actor}: no valid weapon or attack found for {name}.",
       "WeaponAttackConfig": "{name}: weaponAttack config issue — {issues}",
       "ChargeDefenseFailed": "Charge defense penalty automation failed. See console.",
+      "RankBuffMaintenanceNotEnoughChakra": "{actor}: not enough chakra to maintain {name} (need {cost}, have {available}).",
       "EquipToMaster": "Equip this technique on an actor to master it.",
       "NotLearnedForMastery": "{name}: must be learned before it can be mastered.",
       "AlreadyMaxMastery": "{name}: already at the maximum mastery step (5).",
       "MasterySkillRequired": "{actor}: {name} has no mapped discipline skill, so it cannot be mastered."
+    },
+    "RankBuffMaintenance": {
+      "Title": "Maintain {name}?",
+      "Message": "{actor}'s {name} has reached its maintenance point. Spend {cost} chakra to keep it active for {interval} more round(s)?",
+      "Maintain": "Maintain",
+      "Deactivate": "Deactivate"
     },
     "Cards": {
       "Block": "block",

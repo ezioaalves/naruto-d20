@@ -1,7 +1,6 @@
 import { MODULE_ID } from "./constants.mjs";
-import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from "./flag-paths.mjs";
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
-import { checkAndUpdateConditions } from "./data/chakra-conditions.mjs";
+import { applyChakraSpend, calculateChakraSpend, canPayChakra } from "./data/chakra-spend.mjs";
 import { applyChatVisibility, chatVisibilityFrom } from "./chat-visibility.mjs";
 import {
   getTechniqueWeaponAttackConfig,
@@ -10,10 +9,7 @@ import {
 import { isTechniqueEffectivelyLearned } from "./learn-technique.mjs";
 
 export function canAffordTechnique(actor, item) {
-  if (!actor) return false;
-  const chakra = actor.flags?.[MODULE_ID]?.chakra ?? {};
-  const available = (chakra.pool?.temp ?? 0) + (chakra.pool?.value ?? 0);
-  return available >= (item.system.chakraCost ?? 0);
+  return canPayChakra(actor, item.system.chakraCost ?? 0);
 }
 
 export async function performTechnique(item, actionId, event = null) {
@@ -182,52 +178,6 @@ async function useTechniqueAction(item, action, actor, event) {
   // technique triggers internally. Applying it again here would duplicate the
   // buff due to the dedup race (the hook runs un-awaited, concurrently).
   return useResult;
-}
-
-function calculateChakraSpend(actor, cost) {
-  // Deduct chakra: temp first, then pool. Reserve never pays a technique's
-  // cost directly; it only participates via the Emergency Transfer rule below.
-  const chakra = actor.flags[MODULE_ID]?.chakra ?? {};
-  const tempValue = chakra.pool?.temp ?? 0;
-  const poolValue = chakra.pool?.value ?? 0;
-  const reserveValue = chakra.reserve?.value ?? 0;
-  const fromTemp = Math.min(cost, tempValue);
-  const remaining = cost - fromTemp;
-  const fromPool = Math.min(remaining, poolValue);
-
-  let newPool = poolValue - fromPool;
-  let newReserve = reserveValue;
-
-  // Emergency Transfer: if pool hits 0 but reserve still has chakra, the body
-  // automatically burns the entire reserve to return 1 chakra to the pool
-  // after the normal temp+pool spend resolves. This guarantees pool == 0 only
-  // when reserve == 0 (which triggers Chakra Depletion).
-  if (newPool <= 0 && newReserve > 0) {
-    newPool = 1;
-    newReserve = 0;
-  }
-
-  // Build a readable spend summary for the technique cost itself.
-  const spendParts = [];
-  if (fromTemp > 0) spendParts.push(`${fromTemp} temp`);
-  if (fromPool > 0) spendParts.push(`${fromPool} pool`);
-
-  return {
-    temp: tempValue - fromTemp,
-    pool: newPool,
-    reserve: newReserve,
-    summary: spendParts.join(", ") || "0",
-  };
-}
-
-async function applyChakraSpend(actor, spend) {
-  await actor.update({
-    [chakraPoolTempPath]: spend.temp,
-    [chakraPoolValuePath]: spend.pool,
-    [chakraReserveValuePath]: spend.reserve,
-  });
-
-  await checkAndUpdateConditions(actor);
 }
 
 async function postPerformCard(actor, data, visibility = null) {

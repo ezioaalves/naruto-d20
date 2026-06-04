@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 2 (Spell Level 1)</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> Mas, M</p>\n\n<hr>\n\n<p>You gain the Speed Rank 1 extraordinary ability.</p>\n\n\n<p><b>Mastery:</b> The fifth step of mastery allows you to have Speed Rank 1 active for up to 5 rounds per day without paying the Chakra cost.</p>\n",
+      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 2 (Spell Level 1)</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> Mas, M</p>\n\n<hr>\n\n<p>You gain the Speed Rank 1 extraordinary ability.</p>\n\n\n<p><b>Mastery:</b> The fifth step of mastery allows you to have Speed Rank 1 active for up to 5 rounds per day without paying the Chakra cost.</p>\n",
       "summary": "",
       "instructions": ""
     },
@@ -22,7 +22,7 @@
     "descriptors": [],
     "rank": 2,
     "complexity": "C-Class",
-    "chakraCost": 0,
+    "chakraCost": 1,
     "activation": "standard",
     "range": "",
     "target": "",

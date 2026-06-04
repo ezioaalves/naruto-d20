@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Shodan Jouryoku. You gain the Strength Rank 2 extraordinary ability. Mastery in this technique applies to Strength Rank 2 instead.</p>\n\n\n\n",
+      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 4 (Spell Level 2)</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Shodan Jouryoku. You gain the Strength Rank 2 extraordinary ability. Mastery in this technique applies to Strength Rank 2 instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },
@@ -22,7 +22,7 @@
     "descriptors": [],
     "rank": 4,
     "complexity": "B-Class",
-    "chakraCost": 0,
+    "chakraCost": 2,
     "activation": "standard",
     "range": "",
     "target": "",

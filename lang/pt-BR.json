@@ -400,10 +400,17 @@
       "NoWeaponAttack": "{actor}: nenhuma arma ou ataque válido encontrado para {name}.",
       "WeaponAttackConfig": "{name}: problema na config weaponAttack — {issues}",
       "ChargeDefenseFailed": "A automação da penalidade de defesa por charge falhou. Veja o console.",
+      "RankBuffMaintenanceNotEnoughChakra": "{actor}: chakra insuficiente para manter {name} (precisa de {cost}, tem {available}).",
       "EquipToMaster": "Equipe esta técnica em um ator para dominá-la.",
       "NotLearnedForMastery": "{name}: precisa ser aprendida antes de poder ser dominada.",
       "AlreadyMaxMastery": "{name}: já está no degrau máximo de maestria (5).",
       "MasterySkillRequired": "{actor}: {name} não tem perícia de disciplina mapeada, então não pode ser dominada."
+    },
+    "RankBuffMaintenance": {
+      "Title": "Manter {name}?",
+      "Message": "{name} de {actor} chegou ao ponto de manutenção. Gastar {cost} de chakra para manter ativo por mais {interval} rodada(s)?",
+      "Maintain": "Manter",
+      "Deactivate": "Desativar"
     },
     "Cards": {
       "Block": "bloco",

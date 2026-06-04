@@ -1,0 +1,139 @@
+{
+  "type": "buff",
+  "name": "JOURYOKU (STRENGTH RANK)",
+  "system": {
+    "description": {
+      "value": "<table><caption>Table 1-6: Strength Ranks</caption><thead><tr><th>Strength Rank</th><th>Combat</th><th>Actions</th><th>Carry</th><th>Ignore Hardness</th><th>Damage Reduction</th><th>Cost</th></tr></thead><tbody><tr><td>1</td><td>+1</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1 / 5 rounds</td></tr><tr><td>2</td><td>+1</td><td>+2</td><td>x1.5</td><td>2</td><td>-</td><td>2 / 5 rounds</td></tr><tr><td>3</td><td>+2</td><td>+4</td><td>x2</td><td>4</td><td>-</td><td>3 / 5 rounds</td></tr><tr><td>4</td><td>+2</td><td>+6</td><td>x2</td><td>6</td><td>-</td><td>4 / 5 rounds</td></tr><tr><td>5</td><td>+3</td><td>+8</td><td>x2.5</td><td>8</td><td>-</td><td>1 / round</td></tr><tr><td>6</td><td>+4</td><td>+10</td><td>x2.5</td><td>8</td><td>2</td><td>3 / 2 rounds</td></tr><tr><td>7</td><td>+4</td><td>+10</td><td>x3</td><td>8</td><td>3</td><td>2 / round</td></tr><tr><td>8</td><td>+5</td><td>+11</td><td>x3</td><td>8</td><td>5</td><td>5 / 2 rounds</td></tr><tr><td>9</td><td>+5</td><td>+11</td><td>x3.5</td><td>8</td><td>6</td><td>3 / round</td></tr><tr><td>10</td><td>+6</td><td>+12</td><td>x4</td><td>10</td><td>8</td><td>5 / round</td></tr></tbody></table><p>In addition to the benefits as shown below, Strength Ranks permanently increase your carrying capacity as though your Strength were increased by 1 per Strength Rank you have obtained.</p><p><strong>Combat:</strong> You roll attack and weapon damage as though your Strength modifier was increased by this amount.</p><p><strong>Actions:</strong> This bonus applies to Climb, Jump, and Swim checks, as well as Disarm, Trip, Grapple, Bull Rush and Overrun checks. It also applies to Strength checks.</p><p><strong>Ignore Hardness:</strong> You may ignore an object's hardness if its hardness is equal to or lower than this number.</p><p><strong>DR:</strong> You gain this Damage Reduction, which can be overcome by Dark Iron.</p>",
+      "instructions": ""
+    },
+    "tags": [],
+    "changes": [
+      {
+        "type": "untyped",
+        "_id": "YKdSsITe",
+        "operator": "add",
+        "priority": 0,
+        "target": "strMod",
+        "formula": "ceil(@item.level/2)"
+      },
+      {
+        "type": "untyped",
+        "operator": "add",
+        "priority": 0,
+        "target": "strChecks",
+        "formula": "(@item.level-1)*2",
+        "_id": "Tset2222"
+      },
+      {
+        "type": "untyped",
+        "_id": "Sn9K4o9C",
+        "operator": "add",
+        "priority": 0,
+        "formula": "@item.level/2+0.5",
+        "target": "carryMult"
+      },
+      {
+        "type": "untyped",
+        "_id": "vgeKDbL4",
+        "operator": "add",
+        "priority": 0,
+        "formula": "2*(@item.level -1)",
+        "target": "cmb"
+      },
+      {
+        "type": "untyped",
+        "_id": "GpOlyjHo",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.acr",
+        "formula": "2*(@item.level -1)"
+      },
+      {
+        "type": "untyped",
+        "_id": "2TLF7mVN",
+        "operator": "add",
+        "priority": 0,
+        "formula": "2*(@item.level -1)",
+        "target": "skill.clm"
+      },
+      {
+        "type": "untyped",
+        "_id": "ypV9AbpK",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.swm",
+        "formula": "2*(@item.level -1)"
+      }
+    ],
+    "changeFlags": {
+      "immuneToMorale": false,
+      "loseDexToAC": false,
+      "noMediumEncumbrance": false,
+      "noHeavyEncumbrance": false,
+      "mediumArmorFullSpeed": false,
+      "heavyArmorFullSpeed": false,
+      "lowLightVision": false,
+      "seeInvisibility": false,
+      "seeInDarkness": false
+    },
+    "contextNotes": [],
+    "actions": [],
+    "attackNotes": [],
+    "effectNotes": [],
+    "uses": {
+      "value": null,
+      "per": "",
+      "autoDeductChargesCost": "",
+      "maxFormula": "",
+      "rechargeFormula": ""
+    },
+    "links": {
+      "children": []
+    },
+    "tag": "",
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "scriptCalls": [],
+    "subType": "temp",
+    "active": false,
+    "level": 2,
+    "duration": {
+      "value": "",
+      "units": "",
+      "end": "turnStart",
+      "start": 24651075
+    },
+    "conditions": [],
+    "hideFromToken": false,
+    "showInQuickbar": true
+  },
+  "img": "systems/pf1/icons/spells/haste-fire-3.jpg",
+  "effects": [],
+  "flags": {
+    "scene-packer": {
+      "hash": "1185a58faba11e58215862ad438bbd3a253c5c29"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780546396809,
+    "modifiedTime": 1780546396838,
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+  },
+  "ownership": {
+    "default": 0,
+    "mIZLV3aRVXSMGsYi": 3,
+    "vTUJ4X3yMMGO4o4P": 3
+  },
+  "folder": null,
+  "_id": "1eLqhOyZ4a1z4Bsn",
+  "sort": 2800000,
+  "_key": "!items!1eLqhOyZ4a1z4Bsn"
+}
