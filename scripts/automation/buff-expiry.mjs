@@ -1,4 +1,5 @@
 import { MODULE_ID } from "../constants.mjs";
+import { queueRankBuffMaintenance } from "./rank-buff-maintenance.mjs";
 
 /**
  * Delete module automation buffs when their duration expires.
@@ -24,6 +25,8 @@ export function registerExpiredBuffCleanup() {
 
     const actor = item.actor;
     if (!actor?.isOwner) return;
+
+    if (queueRankBuffMaintenance(item)) return;
 
     // PF1e expires buffs inside a database transaction (combat turn processing /
     // world-time update). Deleting synchronously here races that transaction and

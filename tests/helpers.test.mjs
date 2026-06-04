@@ -5,6 +5,7 @@ import { join } from "node:path";
 import { describe, it } from "node:test";
 
 import { applyTechniqueSystemDefaults } from "../scripts/data/technique-defaults.mjs";
+import { calculateChakraSpend, canPayChakra } from "../scripts/data/chakra-spend.mjs";
 import { diffTechnique, normalizeSystem } from "../scripts/automation/technique-sync.mjs";
 import {
   LEARNING_MODES,
@@ -196,6 +197,30 @@ describe("learning calculations", () => {
     assert.equal(result.chakraCost, 8);
     assert.equal(result.nextFailureInsight, 1);
     assert.equal(result.learned, false);
+  });
+});
+
+describe("chakra spending", () => {
+  it("spends temp before pool and triggers emergency reserve transfer", () => {
+    const actor = {
+      flags: {
+        "naruto-d20": {
+          chakra: {
+            pool: { temp: 2, value: 3 },
+            reserve: { value: 4 },
+          },
+        },
+      },
+    };
+
+    assert.equal(canPayChakra(actor, 5), true);
+    assert.equal(canPayChakra(actor, 6), false);
+    assert.deepEqual(calculateChakraSpend(actor, 5), {
+      temp: 0,
+      pool: 1,
+      reserve: 0,
+      summary: "2 temp, 3 pool",
+    });
   });
 });
 

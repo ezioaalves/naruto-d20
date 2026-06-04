@@ -1,19 +1,14 @@
 import { MODULE_ID } from "../constants.mjs";
+import {
+  RANK_BUFF_FLAG,
+  rankBuffDuration,
+  rankBuffFlagData,
+  resolveRankTechnique,
+} from "./rank-buffs.mjs";
 
 const SOURCE_FLAG = MODULE_ID;
 const DEFAULT_BUFF_PACK_ID = "naruto-d20.technique-buffs";
 const buffIndexCache = new Map();
-const RANK_BUFFS = {
-  JOURYOKU: "JOURYOKU (STRENGTH RANK)",
-  KOUSOKU: "KOUSOKU (SPEED RANK)",
-};
-const RANK_LEVELS = {
-  SHODAN: 1,
-  NIDAN: 2,
-  SANDAN: 3,
-  YONDAN: 4,
-  GODAN: 5,
-};
 
 /**
  * Entry point: orchestrate buff lookup → target resolution → application.
@@ -41,10 +36,14 @@ export async function applyTechniqueBuff(item, actor, action) {
   const applyTargets = resolveBuffTargets(item, actor, context);
   if (!applyTargets.length) return;
 
-  const duration = resolveBuffDurationFromAction(action);
+  const duration = context.duration ?? resolveBuffDurationFromAction(action);
 
   for (const targetActor of applyTargets) {
-    await applyBuffToTarget(buffDoc, targetActor, { duration, level: context.level });
+    await applyBuffToTarget(buffDoc, targetActor, {
+      duration,
+      level: context.level,
+      rankBuff: context.rankBuff,
+    });
   }
 }
 
@@ -57,30 +56,21 @@ export function clearBuffLookupCache() {
  * require an explicit canvas target so debuffs are not accidentally self-applied.
  */
 function resolveTechniqueBuffContext(item) {
-  const rankBuff = resolveRankBuff(item.name);
-  if (rankBuff) return rankBuff;
+  const rankBuff = resolveRankTechnique(item.name);
+  if (rankBuff) {
+    return {
+      ...rankBuff,
+      duration: rankBuffDuration(rankBuff.interval),
+      rankBuff: rankBuffFlagData(rankBuff),
+    };
+  }
 
   return {
     buffName: item.name,
     level: null,
+    duration: null,
+    rankBuff: null,
     selfTarget: false,
-  };
-}
-
-function resolveRankBuff(name) {
-  const match = String(name ?? "")
-    .trim()
-    .match(/^([A-Z]+)\s+(JOURYOKU|KOUSOKU)\b/i);
-  if (!match) return null;
-
-  const level = RANK_LEVELS[match[1].toUpperCase()];
-  const buffName = RANK_BUFFS[match[2].toUpperCase()];
-  if (!level || !buffName) return null;
-
-  return {
-    buffName,
-    level,
-    selfTarget: true,
   };
 }
 
@@ -273,24 +263,30 @@ export async function applyBuffToTarget(buffDoc, targetActor, options = null) {
     return;
   }
 
-  const { duration, level } = normalizeBuffApplyOptions(options);
+  const { duration, level, rankBuff } = normalizeBuffApplyOptions(options);
   const sourceId = buffDoc.uuid;
   const existing = findExistingAppliedBuff(targetActor, sourceId);
 
   if (existing) {
-    await refreshExistingBuff(existing, { duration, level });
+    await refreshExistingBuff(existing, { duration, level, rankBuff });
   } else {
-    await createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level });
+    await createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff });
   }
 }
 
 function normalizeBuffApplyOptions(options) {
-  if (!options || (!("duration" in Object(options)) && !("level" in Object(options)))) {
-    return { duration: options ?? null, level: null };
+  if (
+    !options ||
+    (!("duration" in Object(options)) &&
+      !("level" in Object(options)) &&
+      !("rankBuff" in Object(options)))
+  ) {
+    return { duration: options ?? null, level: null, rankBuff: null };
   }
   return {
     duration: options.duration ?? null,
     level: Number.isInteger(options.level) ? options.level : null,
+    rankBuff: options.rankBuff ?? null,
   };
 }
 
@@ -298,31 +294,39 @@ function findExistingAppliedBuff(targetActor, sourceId) {
   return targetActor.items.find((i) => i.flags?.[SOURCE_FLAG]?.sourceId === sourceId);
 }
 
-async function refreshExistingBuff(existing, { duration, level }) {
+async function refreshExistingBuff(existing, { duration, level, rankBuff }) {
   const updates = { "system.active": true };
   if (duration) {
     updates["system.duration.units"] = duration.units;
     updates["system.duration.value"] = duration.value;
+    if (duration.end) updates["system.duration.end"] = duration.end;
+    if (duration.start !== undefined) updates["system.duration.start"] = duration.start;
   }
   if (level != null) {
     updates["system.level"] = level;
   }
+  if (rankBuff) {
+    updates[`flags.${MODULE_ID}.${RANK_BUFF_FLAG}`] = rankBuff;
+  }
   await existing.update(updates);
 }
 
-async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level }) {
+async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff }) {
   const itemData = buffDoc.toObject();
   delete itemData._id;
 
   itemData.flags ??= {};
   itemData.flags[SOURCE_FLAG] ??= {};
   itemData.flags[SOURCE_FLAG].sourceId = sourceId;
+  if (rankBuff) itemData.flags[SOURCE_FLAG][RANK_BUFF_FLAG] = rankBuff;
 
   itemData.system ??= {};
   if (duration) {
     itemData.system.duration ??= {};
     itemData.system.duration.units = duration.units;
     itemData.system.duration.value = duration.value;
+    if (duration.end) itemData.system.duration.end = duration.end;
+    if (duration.start !== undefined) itemData.system.duration.start = duration.start;
   }
   if (level != null) {
     itemData.system.level = level;
