@@ -123,6 +123,7 @@ describe("weaponAttack parsing", () => {
       attackBonus: "@cl",
       damageBonus: "",
       nonCritDamageBonus: "",
+      damageMode: "add",
       held: "",
       charge: true,
     });
