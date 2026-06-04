@@ -146,9 +146,9 @@
       <legend><i class="fa-solid fa-star" inert></i> {{localize "NarutoD20.Technique.Master.GMLegend"}}</legend>
 
       <div class="gm-learning__grid">
-        <label class="gm-field" title="Achieved mastery step — edit on the Details tab">
+        <label class="gm-field" title="Achieved mastery step — GM override (normally earned through the mastery learning process)">
           <span>{{localize "NarutoD20.Technique.MasteryStep.Label"}}</span>
-          <input type="number" value="{{mastery.step}}" min="0" max="5" step="1" disabled>
+          <input type="number" name="system.mastery" value="{{mastery.step}}" min="0" max="5" step="1">
         </label>
         <label class="gm-field" title="Successes accumulated toward the next step">
           <span>Successes</span>
@@ -299,7 +299,7 @@
       <div class="form-group">
         <label>{{localize "NarutoD20.Technique.MasteryStep.Label"}}</label>
         <div class="form-fields">
-          <input type="number" name="system.mastery" value="{{system.mastery}}" min="0" max="5" step="1">
+          <input type="number" value="{{system.mastery}}" min="0" max="5" step="1" disabled>
         </div>
         <p class="hint">{{localize "NarutoD20.Technique.MasteryStep.Hint"}}</p>
       </div>
