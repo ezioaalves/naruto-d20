@@ -19,7 +19,8 @@
       "Current": "Atual",
       "Temp": "Temp",
       "Max": "Máx",
-      "Total": "Total"
+      "Total": "Total",
+      "Cancel": "Cancelar"
     },
     "ChakraNature": {
       "None": "Nenhum",
@@ -401,6 +402,7 @@
       "WeaponAttackConfig": "{name}: problema na config weaponAttack — {issues}",
       "ChargeDefenseFailed": "A automação da penalidade de defesa por charge falhou. Veja o console.",
       "RankBuffMaintenanceNotEnoughChakra": "{actor}: chakra insuficiente para manter {name} (precisa de {cost}, tem {available}).",
+      "RankMasteryFreeUseUnavailable": "{name}: a gratuidade de maestria não está mais disponível.",
       "EquipToMaster": "Equipe esta técnica em um ator para dominá-la.",
       "NotLearnedForMastery": "{name}: precisa ser aprendida antes de poder ser dominada.",
       "AlreadyMaxMastery": "{name}: já está no degrau máximo de maestria (5).",
@@ -412,6 +414,13 @@
       "Maintain": "Manter",
       "Deactivate": "Desativar"
     },
+    "RankMasteryFreeUse": {
+      "Title": "Usar rounds grátis de maestria para {name}?",
+      "ActivationMessage": "{actor} pode ativar {name} por 5 rounds sem pagar o custo de {cost} chakra. Usar agora a gratuidade de maestria 1/dia?",
+      "MaintenanceMessage": "A maestria degrau 5 pode renovar este rank por {rounds} rounds sem pagar chakra uma vez por dia.",
+      "UseFree": "Gratuidade",
+      "PayChakra": "Pagar Chakra"
+    },
     "Cards": {
       "Block": "bloco",
       "Blocks": "blocos",
@@ -419,6 +428,7 @@
       "Perform": {
         "Failed": "Teste de execução falhou (DC {dc}). Nenhum chakra gasto.",
         "Spent": "Gastou {cost} de chakra ({summary}).",
+        "FreeUse": "Usou rounds grátis de maestria ({rounds} rounds, nenhum chakra gasto).",
         "MasteryNote": " (+{value} maestria)",
         "AutoBypass": "Ranks {ranks}{mastery} ≥ limiar {threshold} — execução automática.",
         "NoCheckRequired": "Nenhum teste de execução necessário."

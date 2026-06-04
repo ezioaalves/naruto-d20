@@ -60,8 +60,9 @@ function resolveTechniqueBuffContext(item) {
   if (rankBuff) {
     return {
       ...rankBuff,
+      sourceTechniqueId: item.id,
       duration: rankBuffDuration(rankBuff.interval),
-      rankBuff: rankBuffFlagData(rankBuff),
+      rankBuff: rankBuffFlagData({ ...rankBuff, sourceTechniqueId: item.id }),
     };
   }
 

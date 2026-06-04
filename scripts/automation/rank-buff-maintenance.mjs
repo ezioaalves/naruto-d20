@@ -1,5 +1,14 @@
 import { availableChakra, canPayChakra, payChakra } from "../data/chakra-spend.mjs";
-import { getRankBuffFlag, rankBuffDuration, rankMaintenanceForLevel } from "./rank-buffs.mjs";
+import {
+  consumeRankMasteryFreeUse,
+  ensureRankMasteryDailyUse,
+  findRankTechniqueForBuff,
+  getRankBuffFlag,
+  hasRankMasteryFreeUseAvailable,
+  rankBuffDuration,
+  rankMaintenanceForLevel,
+  RANK_MASTERY_FREE_ROUNDS,
+} from "./rank-buffs.mjs";
 
 const pendingMaintenance = new Set();
 
@@ -36,9 +45,28 @@ async function maintainRankBuff(actor, itemId) {
     return;
   }
 
-  const keepActive = await promptMaintainRankBuff(actor, item, maintenance);
-  if (!keepActive) {
+  const sourceTechnique = await resolveFreeUseSourceTechnique(actor, flag);
+  const choice = await promptMaintainRankBuff(actor, item, maintenance, {
+    canUseFree: hasRankMasteryFreeUseAvailable(sourceTechnique),
+  });
+  if (choice === "deactivate") {
     await deleteRankBuff(actor, itemId);
+    return;
+  }
+
+  if (choice === "free") {
+    const spent = await consumeRankMasteryFreeUse(sourceTechnique);
+    if (!spent) {
+      ui.notifications.warn(
+        game.i18n.format("NarutoD20.Notifications.RankMasteryFreeUseUnavailable", {
+          name: sourceTechnique?.name ?? item.name,
+        }),
+      );
+      await deleteRankBuff(actor, itemId);
+      return;
+    }
+
+    await refreshRankBuff(actor, itemId, RANK_MASTERY_FREE_ROUNDS);
     return;
   }
 
@@ -61,10 +89,20 @@ async function maintainRankBuff(actor, itemId) {
     return;
   }
 
+  await refreshRankBuff(actor, itemId, maintenance.interval);
+}
+
+async function resolveFreeUseSourceTechnique(actor, flag) {
+  const sourceTechnique = findRankTechniqueForBuff(actor, flag);
+  if (!sourceTechnique) return null;
+  return ensureRankMasteryDailyUse(sourceTechnique);
+}
+
+async function refreshRankBuff(actor, itemId, interval) {
   const current = actor.items.get(itemId);
   if (!current) return;
 
-  const duration = rankBuffDuration(maintenance.interval);
+  const duration = rankBuffDuration(interval);
   await current.update({
     "system.active": true,
     "system.duration.units": duration.units,
@@ -74,13 +112,32 @@ async function maintainRankBuff(actor, itemId) {
   });
 }
 
-function promptMaintainRankBuff(actor, item, maintenance) {
+function promptMaintainRankBuff(actor, item, maintenance, { canUseFree = false } = {}) {
   return new Promise((resolve) => {
     let resolved = false;
     const done = (value) => {
       if (resolved) return;
       resolved = true;
       resolve(value);
+    };
+
+    const buttons = {};
+    if (canUseFree) {
+      buttons.free = {
+        icon: '<i class="fas fa-certificate"></i>',
+        label: game.i18n.localize("NarutoD20.RankMasteryFreeUse.UseFree"),
+        callback: () => done("free"),
+      };
+    }
+    buttons.maintain = {
+      icon: '<i class="fas fa-fire"></i>',
+      label: game.i18n.localize("NarutoD20.RankBuffMaintenance.Maintain"),
+      callback: () => done("maintain"),
+    };
+    buttons.deactivate = {
+      icon: '<i class="fas fa-times"></i>',
+      label: game.i18n.localize("NarutoD20.RankBuffMaintenance.Deactivate"),
+      callback: () => done("deactivate"),
     };
 
     new Dialog({
@@ -90,21 +147,16 @@ function promptMaintainRankBuff(actor, item, maintenance) {
         name: item.name,
         cost: maintenance.cost,
         interval: maintenance.interval,
-      })}</p>`,
-      buttons: {
-        maintain: {
-          icon: '<i class="fas fa-fire"></i>',
-          label: game.i18n.localize("NarutoD20.RankBuffMaintenance.Maintain"),
-          callback: () => done(true),
-        },
-        deactivate: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize("NarutoD20.RankBuffMaintenance.Deactivate"),
-          callback: () => done(false),
-        },
-      },
+      })}</p>${
+        canUseFree
+          ? `<p>${game.i18n.format("NarutoD20.RankMasteryFreeUse.MaintenanceMessage", {
+              rounds: RANK_MASTERY_FREE_ROUNDS,
+            })}</p>`
+          : ""
+      }`,
+      buttons,
       default: "maintain",
-      close: () => done(false),
+      close: () => done("deactivate"),
     }).render(true);
   });
 }

@@ -1,6 +1,8 @@
 import { MODULE_ID } from "../constants.mjs";
 
 export const RANK_BUFF_FLAG = "rankBuff";
+export const RANK_MASTERY_FREE_ROUNDS = 5;
+export const RANK_MASTERY_REQUIRED_STEP = 5;
 
 const RANK_BUFFS = {
   JOURYOKU: "JOURYOKU (STRENGTH RANK)",
@@ -50,6 +52,54 @@ export function resolveRankTechnique(name) {
   };
 }
 
+export function isRankMasteryFreeUseEligible(item) {
+  return (
+    Boolean(resolveRankTechnique(item?.name)) &&
+    Number(item?.system?.mastery ?? 0) >= RANK_MASTERY_REQUIRED_STEP
+  );
+}
+
+export function hasRankMasteryFreeUseAvailable(item) {
+  if (!isRankMasteryFreeUseEligible(item)) return false;
+  return Number(item.system?.uses?.value ?? 0) > 0;
+}
+
+export async function ensureRankMasteryDailyUse(item) {
+  if (!isRankMasteryFreeUseEligible(item)) return item;
+
+  const uses = item.system?.uses ?? {};
+  const updates = {};
+  if (uses.per !== "day") updates["system.uses.per"] = "day";
+  if (Number(uses.max ?? 0) !== 1) updates["system.uses.max"] = 1;
+  if (uses.maxFormula !== "1") updates["system.uses.maxFormula"] = "1";
+  if (uses.autoDeductChargesCost !== "0") updates["system.uses.autoDeductChargesCost"] = "0";
+  if (!Number.isFinite(Number(uses.value))) updates["system.uses.value"] = 1;
+
+  if (foundry.utils.isEmpty(updates)) return item;
+  await item.update(updates);
+  return item.actor?.items.get(item.id) ?? item;
+}
+
+export async function consumeRankMasteryFreeUse(item) {
+  if (!hasRankMasteryFreeUseAvailable(item)) return false;
+  await item.update({ "system.uses.value": 0 });
+  return true;
+}
+
+export function findRankTechniqueForBuff(actor, rankBuffFlag) {
+  if (!actor || !rankBuffFlag) return null;
+
+  if (rankBuffFlag.sourceTechniqueId) {
+    const item = actor.items.get(rankBuffFlag.sourceTechniqueId);
+    if (item) return item;
+  }
+
+  return actor.items.find((item) => {
+    const context = resolveRankTechnique(item.name);
+    return context?.key === rankBuffFlag.key && context?.level === rankBuffFlag.level;
+  });
+}
+
 export function rankMaintenanceForLevel(level) {
   return RANK_MAINTENANCE[Number(level)] ?? null;
 }
@@ -70,6 +120,7 @@ export function rankBuffFlagData(context) {
     level: context.level,
     cost: context.cost,
     interval: context.interval,
+    sourceTechniqueId: context.sourceTechniqueId ?? null,
   };
 }
 

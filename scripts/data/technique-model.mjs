@@ -312,6 +312,20 @@ export function createTechniqueDataModel() {
         // fields (damage, attack, save, etc.) without schema stripping.
         actions: new fields.ArrayField(new fields.ObjectField(), { ...opt, initial: [] }),
 
+        // PF1e-compatible limited-use fields. Rank mastery uses this for the
+        // once-per-day free activation/maintenance charge restored by PF1e rest.
+        uses: new fields.SchemaField(
+          {
+            value: new fields.NumberField({ ...opt, integer: true, nullable: true, initial: null }),
+            max: new fields.NumberField({ ...opt, integer: true, nullable: true, initial: null }),
+            maxFormula: new fields.StringField({ ...opt, blank: true, initial: "" }),
+            per: new fields.StringField({ ...opt, blank: true, initial: "" }),
+            autoDeductChargesCost: new fields.StringField({ ...opt, blank: true, initial: "" }),
+            rechargeFormula: new fields.StringField({ ...opt, blank: true, initial: "" }),
+          },
+          opt,
+        ),
+
         // ── Buff Automation ────────────────────────────────────
         automation: new fields.SchemaField(
           {

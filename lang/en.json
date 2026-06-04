@@ -19,7 +19,8 @@
       "Current": "Current",
       "Temp": "Temp",
       "Max": "Max",
-      "Total": "Total"
+      "Total": "Total",
+      "Cancel": "Cancel"
     },
     "ChakraNature": {
       "None": "None",
@@ -401,6 +402,7 @@
       "WeaponAttackConfig": "{name}: weaponAttack config issue — {issues}",
       "ChargeDefenseFailed": "Charge defense penalty automation failed. See console.",
       "RankBuffMaintenanceNotEnoughChakra": "{actor}: not enough chakra to maintain {name} (need {cost}, have {available}).",
+      "RankMasteryFreeUseUnavailable": "{name}: the mastery free use is no longer available.",
       "EquipToMaster": "Equip this technique on an actor to master it.",
       "NotLearnedForMastery": "{name}: must be learned before it can be mastered.",
       "AlreadyMaxMastery": "{name}: already at the maximum mastery step (5).",
@@ -412,6 +414,13 @@
       "Maintain": "Maintain",
       "Deactivate": "Deactivate"
     },
+    "RankMasteryFreeUse": {
+      "Title": "Use mastery free rounds for {name}?",
+      "ActivationMessage": "{actor} can activate {name} for 5 rounds without paying its {cost} chakra cost. Use the once-per-day mastery free use now?",
+      "MaintenanceMessage": "Mastery step 5 can renew this rank for {rounds} rounds without paying chakra once per day.",
+      "UseFree": "Free Rounds",
+      "PayChakra": "Pay Chakra"
+    },
     "Cards": {
       "Block": "block",
       "Blocks": "blocks",
@@ -419,6 +428,7 @@
       "Perform": {
         "Failed": "Perform check failed (DC {dc}). No chakra spent.",
         "Spent": "Spent {cost} chakra ({summary}).",
+        "FreeUse": "Used mastery free rounds ({rounds} rounds, no chakra spent).",
         "MasteryNote": " (+{value} mastery)",
         "AutoBypass": "Ranks {ranks}{mastery} ≥ threshold {threshold} — auto-perform.",
         "NoCheckRequired": "No perform check required."

@@ -74,7 +74,15 @@
       "dictionary": {}
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "uses": {
+      "value": 1,
+      "max": 1,
+      "maxFormula": "1",
+      "per": "day",
+      "autoDeductChargesCost": "0",
+      "rechargeFormula": ""
+    }
   },
   "effects": [],
   "folder": "ayYIiiWUKK026ygC",

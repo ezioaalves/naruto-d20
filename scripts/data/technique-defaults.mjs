@@ -17,6 +17,13 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   system.descriptors = normalizeCollection(system.descriptors, collectionType);
   system.changes ??= [];
   system.actions ??= [];
+  system.uses ??= {};
+  system.uses.value ??= null;
+  system.uses.max ??= null;
+  system.uses.maxFormula ??= "";
+  system.uses.per ??= "";
+  system.uses.autoDeductChargesCost ??= "";
+  system.uses.rechargeFormula ??= "";
 
   addDescriptorFlag(system, "isHijutsu", "Hijutsu");
   addDescriptorFlag(system, "isKinjutsu", "Kinjutsu");

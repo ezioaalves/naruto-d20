@@ -7,6 +7,13 @@ import {
   rollSelectedWeaponAttackWithTechnique,
 } from "./ui/technique-weapon-attack.mjs";
 import { isTechniqueEffectivelyLearned } from "./learn-technique.mjs";
+import {
+  consumeRankMasteryFreeUse,
+  ensureRankMasteryDailyUse,
+  hasRankMasteryFreeUseAvailable,
+  isRankMasteryFreeUseEligible,
+  RANK_MASTERY_FREE_ROUNDS,
+} from "./automation/rank-buffs.mjs";
 
 export function canAffordTechnique(actor, item) {
   return canPayChakra(actor, item.system.chakraCost ?? 0);
@@ -16,18 +23,33 @@ export async function performTechnique(item, actionId, event = null) {
   const context = validateTechniqueUse(item, actionId);
   if (!context) return;
 
-  const { actor, actionIndex, cost } = context;
+  let { actor, actionIndex, cost } = context;
+  let currentItem = item;
 
-  const perform = await resolvePerformCheck(item, actor);
+  const freeUseChoice = await resolveRankMasteryFreeUseChoice(item, actor, cost);
+  if (freeUseChoice === null) return;
+  if (freeUseChoice?.item) currentItem = freeUseChoice.item;
+
+  if (!freeUseChoice?.useFree && !canAffordTechnique(actor, currentItem)) {
+    ui.notifications.warn(
+      game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", {
+        actor: actor.name,
+        name: currentItem.name,
+      }),
+    );
+    return;
+  }
+
+  const perform = await resolvePerformCheck(currentItem, actor);
   if (!perform) return;
   if (!perform.succeeded) {
-    await postPerformFailureCard(actor, item, perform);
+    await postPerformFailureCard(actor, currentItem, perform);
     return;
   }
 
   const current = resolveCurrentTechniqueAction(
     actor,
-    item,
+    currentItem,
     actionId,
     actionIndex,
     "after perform check",
@@ -37,7 +59,7 @@ export async function performTechnique(item, actionId, event = null) {
   const useResult = await useTechniqueAction(current.item, current.action, actor, event);
   if (!useResult || useResult.err) return;
 
-  if (!canAffordTechnique(actor, current.item)) {
+  if (!freeUseChoice?.useFree && !canAffordTechnique(actor, current.item)) {
     ui.notifications.warn(
       game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", {
         actor: actor.name,
@@ -47,16 +69,32 @@ export async function performTechnique(item, actionId, event = null) {
     return;
   }
 
-  const spend = calculateChakraSpend(actor, cost);
-  await applyChakraSpend(actor, spend);
-  await postTechniqueSuccessCard(actor, item, cost, spend.summary, perform);
+  let spend = null;
+  if (freeUseChoice?.useFree) {
+    const spent = await consumeRankMasteryFreeUse(current.item);
+    if (!spent) {
+      ui.notifications.warn(
+        game.i18n.format("NarutoD20.Notifications.RankMasteryFreeUseUnavailable", {
+          name: current.item.name,
+        }),
+      );
+      return;
+    }
+  } else {
+    cost = current.item.system.chakraCost ?? cost;
+    spend = calculateChakraSpend(actor, cost);
+    await applyChakraSpend(actor, spend);
+  }
+  await postTechniqueSuccessCard(actor, current.item, cost, spend?.summary ?? null, perform, {
+    freeUse: freeUseChoice?.useFree === true,
+  });
 
   const updated = resolveCurrentTechniqueAction(
     actor,
     current.item,
     current.action.id,
     actionIndex,
-    "after chakra update",
+    freeUseChoice?.useFree ? "after daily use update" : "after chakra update",
   );
   if (!updated) return;
 
@@ -85,22 +123,66 @@ function validateTechniqueUse(item, actionId) {
     return null;
   }
 
-  if (!canAffordTechnique(actor, item)) {
-    ui.notifications.warn(
-      game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", {
-        actor: actor.name,
-        name: item.name,
-      }),
-    );
-    return null;
-  }
-
   return {
     actor,
     action,
     actionIndex: Array.from(item.actions ?? []).findIndex((a) => a.id === action.id),
     cost: item.system.chakraCost ?? 0,
   };
+}
+
+async function resolveRankMasteryFreeUseChoice(item, actor, cost) {
+  if (!isRankMasteryFreeUseEligible(item) || Number(cost ?? 0) <= 0) {
+    return { useFree: false, item };
+  }
+
+  const currentItem = await ensureRankMasteryDailyUse(actor.items.get(item.id) ?? item);
+  if (!hasRankMasteryFreeUseAvailable(currentItem)) {
+    return { useFree: false, item: currentItem };
+  }
+
+  const choice = await promptRankMasteryFreeUse(actor, currentItem, cost);
+  if (choice === "cancel") return null;
+  return { useFree: choice === "free", item: currentItem };
+}
+
+function promptRankMasteryFreeUse(actor, item, cost) {
+  return new Promise((resolve) => {
+    let resolved = false;
+    const done = (value) => {
+      if (resolved) return;
+      resolved = true;
+      resolve(value);
+    };
+
+    new Dialog({
+      title: game.i18n.format("NarutoD20.RankMasteryFreeUse.Title", { name: item.name }),
+      content: `<p>${game.i18n.format("NarutoD20.RankMasteryFreeUse.ActivationMessage", {
+        actor: actor.name,
+        name: item.name,
+        cost,
+      })}</p>`,
+      buttons: {
+        free: {
+          icon: '<i class="fas fa-certificate"></i>',
+          label: game.i18n.localize("NarutoD20.RankMasteryFreeUse.UseFree"),
+          callback: () => done("free"),
+        },
+        pay: {
+          icon: '<i class="fas fa-fire"></i>',
+          label: game.i18n.localize("NarutoD20.RankMasteryFreeUse.PayChakra"),
+          callback: () => done("pay"),
+        },
+        cancel: {
+          icon: '<i class="fas fa-times"></i>',
+          label: game.i18n.localize("NarutoD20.Common.Cancel"),
+          callback: () => done("cancel"),
+        },
+      },
+      default: "free",
+      close: () => done("cancel"),
+    }).render(true);
+  });
 }
 
 async function resolvePerformCheck(item, actor) {
@@ -209,7 +291,7 @@ async function postPerformFailureCard(actor, item, { performDC, masteryNote, rol
   );
 }
 
-async function postTechniqueSuccessCard(actor, item, cost, spendSummary, perform) {
+async function postTechniqueSuccessCard(actor, item, cost, spendSummary, perform, options = {}) {
   // Auto-perform (ranks ≥ threshold, or no skill required) is self-evident and the card adds
   // nothing useful — skip it. Only post the outcome card when the perform was actually rolled,
   // matching the roll's visibility so a self/GM roll stays private.
@@ -221,7 +303,11 @@ async function postTechniqueSuccessCard(actor, item, cost, spendSummary, perform
       cssClass: "success",
       message: "",
       messageClass: "",
-      footer: game.i18n.format("NarutoD20.Cards.Perform.Spent", { cost, summary: spendSummary }),
+      footer: options.freeUse
+        ? game.i18n.format("NarutoD20.Cards.Perform.FreeUse", {
+            rounds: RANK_MASTERY_FREE_ROUNDS,
+          })
+        : game.i18n.format("NarutoD20.Cards.Perform.Spent", { cost, summary: spendSummary }),
     },
     perform.rollVisibility,
   );
