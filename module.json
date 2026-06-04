@@ -2,7 +2,7 @@
   "id": "naruto-d20",
   "title": "Naruto D20",
   "description": "<p>A Naruto D20 homebrew expansion for the Pathfinder 1e (PF1e) system. Adds a custom <strong>Technique</strong> item type, Chakra Pool/Reserve resources, five ninja discipline learn-check skills, elemental damage types, a Chakra sheet tab, and buff automation that plugs into PF1e's changes engine.</p>",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "compatibility": {
     "minimum": "11",
     "verified": "13"
