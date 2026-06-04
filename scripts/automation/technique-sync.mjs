@@ -132,7 +132,9 @@ function canonicalizeHtml(s) {
  * Removes the noise that the system introduces but the user never edits:
  *  - `_id`s inside actions/changes/links (randomized on import),
  *  - `system.tag` (pf1 auto-derives it from the name when empty),
- *  - actor-owned progression fields (`system.learning`, `system.mastery`),
+ *  - actor-owned progression fields (`system.learning`, `system.mastery`,
+ *    `system.masteryLearning`),
+ *  - actor-owned daily charge state (`system.uses.value`),
  *  - HTML serialization differences in description fields,
  *  - prepareBaseData defaults being present on one side and absent on the other.
  * Real content edits (cost, rank, description text, …) still survive and diff.
@@ -144,6 +146,8 @@ export function normalizeSystem(system) {
   delete out.tag;
   delete out.learning;
   delete out.mastery;
+  delete out.masteryLearning;
+  out.uses.value = null;
   out.descriptors = Array.from(new Set(out.descriptors ?? [])).sort();
   out.description.value = canonicalizeHtml(out.description.value);
   out.description.instructions = canonicalizeHtml(out.description.instructions);
@@ -153,6 +157,17 @@ export function normalizeSystem(system) {
 /** True when the embedded technique's stored data already matches the source. */
 export function diffTechnique(embeddedSystem, sourceSystem) {
   return deepEqual(normalizeSystem(embeddedSystem), normalizeSystem(sourceSystem));
+}
+
+function hasLimitedUseConfig(uses) {
+  return Boolean(
+    uses &&
+      ((uses.max !== null && uses.max !== undefined) ||
+        uses.maxFormula ||
+        uses.per ||
+        uses.autoDeductChargesCost ||
+        uses.rechargeFormula),
+  );
 }
 
 function describe(item, status) {
@@ -201,10 +216,19 @@ export async function syncTechnique(item, sourceDoc) {
   const src = sourceDoc.toObject();
   const { actions, changed } = normalizeActionIds(src.system?.actions);
   if (changed) src.system.actions = actions;
-  src.system.mastery = item.toObject().system?.mastery ?? item.system?.mastery ?? 0;
+  const embeddedSystem = item.toObject().system ?? {};
+  src.system.mastery = embeddedSystem.mastery ?? item.system?.mastery ?? 0;
   src.system.learning = foundry.utils.deepClone(
-    item.toObject().system?.learning ?? item.system?.learning ?? {},
+    embeddedSystem.learning ?? item.system?.learning ?? {},
   );
+  src.system.masteryLearning = foundry.utils.deepClone(
+    embeddedSystem.masteryLearning ?? item.system?.masteryLearning ?? {},
+  );
+  const embeddedUses = embeddedSystem.uses ?? item.system?.uses ?? {};
+  if (embeddedUses.value !== undefined && hasLimitedUseConfig(embeddedUses)) {
+    src.system.uses ??= {};
+    src.system.uses.value = embeddedUses.value;
+  }
   await item.update(
     { name: src.name, img: src.img, system: src.system },
     { diff: false, recursive: false },

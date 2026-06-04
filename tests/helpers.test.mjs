@@ -225,7 +225,7 @@ describe("chakra spending", () => {
 });
 
 describe("synckit normalization", () => {
-  it("ignores generated ids, learning state, descriptor order, and missing defaults", () => {
+  it("ignores generated ids, actor progress state, descriptor order, and missing defaults", () => {
     const embedded = {
       tag: "",
       description: { value: "<p>Text<br></p>", summary: "", instructions: "" },
@@ -233,7 +233,25 @@ describe("synckit normalization", () => {
       actions: [
         { _id: "embedded1", name: "Action", damage: { parts: [{ _id: "part1", formula: "1d6" }] } },
       ],
+      uses: {
+        value: 0,
+        max: 1,
+        maxFormula: "1",
+        per: "day",
+        autoDeductChargesCost: "0",
+        rechargeFormula: "",
+      },
       learning: { learned: true, progress: 2 },
+      mastery: 3,
+      masteryLearning: {
+        progress: 4,
+        attemptsUsed: 1,
+        failureInsight: 2,
+        trainingBlocks: 8,
+        chakraSpent: 16,
+        lastTrainingAt: 123456,
+        actionPointBonus: 1,
+      },
     };
     const source = {
       description: { value: "<p>Text<br></p>" },
@@ -241,10 +259,49 @@ describe("synckit normalization", () => {
       actions: [
         { _id: "source1", name: "Action", damage: { parts: [{ _id: "part2", formula: "1d6" }] } },
       ],
+      uses: {
+        value: 1,
+        max: 1,
+        maxFormula: "1",
+        per: "day",
+        autoDeductChargesCost: "0",
+        rechargeFormula: "",
+      },
     };
 
     assert.deepEqual(normalizeSystem(embedded).descriptors, ["Fire", "Wind"]);
+    assert.equal(normalizeSystem(embedded).uses.value, null);
+    assert.equal(normalizeSystem(embedded).masteryLearning, undefined);
     assert.equal(diffTechnique(embedded, source), true);
+  });
+
+  it("still detects limited-use configuration changes", () => {
+    const embedded = {
+      description: { value: "" },
+      descriptors: [],
+      uses: {
+        value: 0,
+        max: 1,
+        maxFormula: "1",
+        per: "day",
+        autoDeductChargesCost: "0",
+        rechargeFormula: "",
+      },
+    };
+    const source = {
+      description: { value: "" },
+      descriptors: [],
+      uses: {
+        value: 1,
+        max: 2,
+        maxFormula: "2",
+        per: "day",
+        autoDeductChargesCost: "0",
+        rechargeFormula: "",
+      },
+    };
+
+    assert.equal(diffTechnique(embedded, source), false);
   });
 });
 
