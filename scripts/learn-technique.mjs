@@ -1,12 +1,6 @@
-import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
-import {
-  actionPointsPath,
-  chakraPoolTempPath,
-  chakraPoolValuePath,
-  epsPath,
-  learningCurrentTechniqueIdPath,
-} from "./flag-paths.mjs";
-import { applyChatVisibility, chatVisibilityFrom } from "./chat-visibility.mjs";
+import { TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
+import { actionPointsPath, epsPath, learningCurrentTechniqueIdPath } from "./flag-paths.mjs";
+import { chatVisibilityFrom } from "./chat-visibility.mjs";
 import { normalizeActionIds } from "./data/action-ids.mjs";
 import { buildLearnCheckBreakdown } from "./data/bonus-sources.mjs";
 import {
@@ -14,41 +8,55 @@ import {
   DISCIPLINE_LABEL_KEYS,
   DISCIPLINE_SKILL_MAP,
   LEARN_DISCIPLINES,
-  resolveSkillAbility,
 } from "./data/skills.mjs";
+import {
+  PROGRESSION_MODES,
+  applyTrainingChakraDeduction,
+  blockUnit,
+  buildProgressionCardFlags,
+  canPayTrainingChakra,
+  characterLevel,
+  getMaxAttempts,
+  getTrainingMode,
+  marginAward,
+  minimumTrainingBlocksForRoll,
+  postProgressionCard,
+  registerProgressionCardContextMenu,
+  rollTotal,
+  trainingBlocksForRoll,
+  trainingChakraCost,
+  trainingTimestamp,
+  warnInsufficientTrainingChakra,
+} from "./data/training-progression.mjs";
 
-export const LEARNING_MODES = Object.freeze({
-  STANDARD: "standard",
-  FOUR_HOUR_BLOCKS: "fourHourBlocks",
-});
+// Back-compat re-exports: external call sites and the mastery flow reuse these.
+export { getMaxAttempts as getLearningMaxAttempts };
+export const LEARNING_MODES = PROGRESSION_MODES;
 
-const TRAINING_INTERRUPTION_SECONDS = 30 * 24 * 60 * 60;
 const TRAINING_SUBTYPE_SEPARATOR_RE = /\s*(?:,|\/|\bor\b)\s*/i;
 
-function characterLevel(actor) {
-  return Number(actor.system.details?.level?.value ?? actor.system.details?.cr?.total ?? 0) || 0;
-}
+/** Learn-flow Action-Point card config for the shared progression engine. */
+const LEARN_CARD_CONFIG = {
+  flagKey: "learn",
+  actionPointsPath,
+  apFlavorKey: "NarutoD20.Cards.Learn.ActionPointFlavor",
+  apRollTextKey: "NarutoD20.Cards.Learn.ActionPointRollText",
+  getState: (item) => item.system.learning ?? {},
+  isClosed: (state) => state.learned === true,
+  resolveAttempt: (item, actor, opts) => resolveLearnAttempt(item, actor, opts),
+};
 
-function blockUnit(count) {
-  return game.i18n.localize(count === 1 ? "NarutoD20.Cards.Block" : "NarutoD20.Cards.Blocks");
-}
-
-function getLearningMode() {
-  return game.settings.get(MODULE_ID, "learningProgressionMode") || LEARNING_MODES.STANDARD;
-}
-
-function trainingTimestamp() {
-  const worldTime = Number(game.time?.worldTime ?? 0) || 0;
-  return worldTime > 0 ? worldTime : Math.floor(Date.now() / 1000);
+function postLearningCard(actor, item, opts) {
+  return postProgressionCard(actor, item, { ...opts, flagKey: "learn" });
 }
 
 /**
  * Rules-derived target progress for a mode, ignoring any GM override.
  * Standard → raw successes; four-hour blocks → rank × successes × 2.
  */
-function getDerivedTargetProgress(item, mode = getLearningMode()) {
+function getDerivedTargetProgress(item, mode = getTrainingMode()) {
   const successes = Math.max(1, Number(item.system.derived?.successes ?? 1) || 1);
-  if (mode === LEARNING_MODES.FOUR_HOUR_BLOCKS) {
+  if (mode === PROGRESSION_MODES.FOUR_HOUR_BLOCKS) {
     const rank = Math.max(1, Number(item.system.rank ?? 1) || 1);
     return rank * successes * 2;
   }
@@ -60,18 +68,10 @@ function getDerivedTargetProgress(item, mode = getLearningMode()) {
  * target in the *current* mode's units) wins; otherwise it is derived from
  * the rules and scales with the training mode.
  */
-export function getLearningTargetProgress(item, mode = getLearningMode()) {
+export function getLearningTargetProgress(item, mode = getTrainingMode()) {
   const override = Number(item.system.learning?.successesOverride);
   if (Number.isFinite(override) && override > 0) return Math.max(1, Math.floor(override));
   return getDerivedTargetProgress(item, mode);
-}
-
-export function getLearningMaxAttempts(actor, skillKey) {
-  if (!actor || !skillKey) return null;
-  const ability = resolveSkillAbility(actor, skillKey);
-  const abilityMod = Number(actor.system.abilities?.[ability]?.mod ?? 0) || 0;
-  const ranks = Number(actor.system.skills?.[skillKey]?.rank ?? 0) || 0;
-  return Math.max(1, 1 + abilityMod + Math.floor(ranks / 2));
 }
 
 function localizeDiscipline(discipline) {
@@ -99,7 +99,7 @@ function getTrainingDisciplineOptions(item) {
   return options.length ? options : [...LEARN_DISCIPLINES];
 }
 
-function getTechniqueLearningResolution(item) {
+export function getTechniqueLearningResolution(item) {
   const discipline = item.system?.discipline ?? "";
   if (discipline !== "Training") {
     const skillKey = DISCIPLINE_SKILL_MAP[discipline];
@@ -189,7 +189,7 @@ async function promptTrainingDisciplineChoice(item, options) {
   });
 }
 
-async function resolveTechniqueLearningSkill(item) {
+export async function resolveTechniqueLearningSkill(item) {
   const resolution = getTechniqueLearningResolution(item);
   if (!resolution.requiresChoice) return resolution;
 
@@ -211,7 +211,7 @@ export function isTechniqueEffectivelyLearned(item) {
   return learning.learned === true || (!resolution.requiresChoice && !resolution.skillKey);
 }
 
-export function buildLearningView(item, actor, mode = getLearningMode()) {
+export function buildLearningView(item, actor, mode = getTrainingMode()) {
   const learning = item.system.learning ?? {};
   const resolution = getTechniqueLearningResolution(item);
   const skillKey = resolution.skillKey;
@@ -237,128 +237,16 @@ export function buildLearningView(item, actor, mode = getLearningMode()) {
     selectedDiscipline: resolution.discipline,
     selectedDisciplineLabel: resolution.discipline ? localizeDiscipline(resolution.discipline) : "",
     requiresDisciplineChoice: resolution.requiresChoice,
-    expiresAt: lastTrainingAt ? lastTrainingAt + TRAINING_INTERRUPTION_SECONDS : 0,
+    expiresAt: lastTrainingAt ? lastTrainingAt + 30 * 24 * 60 * 60 : 0,
     targetProgress,
     requiredSuccesses: targetProgress,
     derivedSuccesses: getDerivedTargetProgress(item, mode),
     successesOverride: learning.successesOverride ?? null,
-    maxAttempts: getLearningMaxAttempts(actor, skillKey),
+    maxAttempts: getMaxAttempts(actor, skillKey),
     mode,
-    isFourHourBlocks: mode === LEARNING_MODES.FOUR_HOUR_BLOCKS,
+    isFourHourBlocks: mode === PROGRESSION_MODES.FOUR_HOUR_BLOCKS,
     hasSkill: !!skillKey || resolution.requiresChoice,
   };
-}
-
-function marginAward(margin, mode) {
-  if (mode === LEARNING_MODES.STANDARD) return 1;
-  if (margin >= 15) return 4;
-  const inclusive = game.settings.get(MODULE_ID, "learnMarginInclusive");
-  return inclusive ? (margin >= 5 ? 2 : 1) : margin > 5 ? 2 : 1;
-}
-
-function clearsFiveBoundary(margin) {
-  const inclusive = game.settings.get(MODULE_ID, "learnMarginInclusive");
-  return inclusive ? margin >= 5 : margin > 5;
-}
-
-function failsFiveBoundary(margin) {
-  const inclusive = game.settings.get(MODULE_ID, "learnMarginInclusive");
-  return inclusive ? margin <= -5 : margin < -5;
-}
-
-function trainingBlocksForRoll(item, mode, margin) {
-  if (mode === LEARNING_MODES.FOUR_HOUR_BLOCKS) return 1;
-
-  const rank = Math.max(1, Number(item.system.rank ?? 1) || 1);
-  const baseBlocks = rank * 2;
-  if (margin >= 15) return Math.max(1, Math.ceil(baseBlocks * 0.25));
-  if (clearsFiveBoundary(margin)) return Math.max(1, Math.ceil(baseBlocks * 0.5));
-  if (failsFiveBoundary(margin)) return Math.max(1, Math.ceil(baseBlocks * 1.5));
-  return baseBlocks;
-}
-
-function trainingChakraCost(actor, blocks) {
-  const poolMax = Number(actor.flags?.[MODULE_ID]?.chakra?.pool?.max ?? 0) || 0;
-  return Math.max(0, Math.ceil(poolMax * 0.4 * blocks));
-}
-
-function minimumTrainingBlocksForRoll(item, mode) {
-  if (mode === LEARNING_MODES.FOUR_HOUR_BLOCKS) return 1;
-
-  const rank = Math.max(1, Number(item.system.rank ?? 1) || 1);
-  return Math.max(1, Math.ceil(rank * 2 * 0.25));
-}
-
-function availableTrainingChakra(actor) {
-  const chakra = actor.flags?.[MODULE_ID]?.chakra ?? {};
-  const tempValue = Math.max(0, Number(chakra.pool?.temp ?? 0) || 0);
-  const poolValue = Math.max(0, Number(chakra.pool?.value ?? 0) || 0);
-  return tempValue + poolValue;
-}
-
-function warnInsufficientTrainingChakra(actor, amount, available = availableTrainingChakra(actor)) {
-  ui.notifications.warn(
-    game.i18n.format("NarutoD20.Notifications.TrainingChakraRequired", {
-      actor: actor.name,
-      amount,
-      available,
-    }),
-  );
-}
-
-function canPayTrainingChakra(actor, amount) {
-  if (!game.settings.get(MODULE_ID, "deductLearningChakra") || amount <= 0) return true;
-  return availableTrainingChakra(actor) >= amount;
-}
-
-async function applyTrainingChakraDeduction(actor, amount) {
-  if (!game.settings.get(MODULE_ID, "deductLearningChakra") || amount <= 0) {
-    return { paid: true, deducted: 0, fromTemp: 0, fromPool: 0 };
-  }
-
-  const chakra = actor.flags?.[MODULE_ID]?.chakra ?? {};
-  const tempValue = Math.max(0, Number(chakra.pool?.temp ?? 0) || 0);
-  const poolValue = Math.max(0, Number(chakra.pool?.value ?? 0) || 0);
-  const available = tempValue + poolValue;
-  if (available < amount) {
-    warnInsufficientTrainingChakra(actor, amount, available);
-    return { paid: false, deducted: 0, fromTemp: 0, fromPool: 0 };
-  }
-
-  const fromTemp = Math.min(amount, tempValue);
-  const fromPool = Math.min(amount - fromTemp, poolValue);
-  const deducted = fromTemp + fromPool;
-
-  await actor.update({
-    [chakraPoolTempPath]: tempValue - fromTemp,
-    [chakraPoolValuePath]: poolValue - fromPool,
-  });
-
-  return { paid: true, deducted, fromTemp, fromPool };
-}
-
-function rollTotal(result) {
-  return result?.rolls?.[0]?.total ?? result?.roll?.total ?? result?.total ?? null;
-}
-
-async function postLearningCard(
-  actor,
-  item,
-  { title, lead = "", footer = "", cssClass = "", flags = null, visibility = null },
-) {
-  const content = await foundry.applications.handlebars.renderTemplate(
-    `modules/${MODULE_ID}/templates/chat/learning-result.hbs`,
-    { title, lead, footer, cssClass },
-  );
-  const data = applyChatVisibility(
-    {
-      speaker: ChatMessage.implementation.getSpeaker({ actor }),
-      content,
-    },
-    visibility,
-  );
-  if (flags) data.flags = { [MODULE_ID]: { learn: flags } };
-  await ChatMessage.create(data);
 }
 
 async function resetFailureInsightForDifferentTechnique(actor, item, learning) {
@@ -382,7 +270,7 @@ async function resetFailureInsightForDifferentTechnique(actor, item, learning) {
 async function expireInterruptedTraining(item, learning) {
   const lastTrainingAt = Number(learning.lastTrainingAt ?? 0) || 0;
   const now = trainingTimestamp();
-  if (!lastTrainingAt || now - lastTrainingAt <= TRAINING_INTERRUPTION_SECONDS) {
+  if (!lastTrainingAt || now - lastTrainingAt <= 30 * 24 * 60 * 60) {
     return { ...learning };
   }
 
@@ -430,7 +318,7 @@ export async function attemptLearnTechnique(item) {
     return;
   }
 
-  const mode = getLearningMode();
+  const mode = getTrainingMode();
   if (!validateLearningSkillAndChakra(item, actor, skillKey, mode)) return;
 
   const activeLearning = await prepareActiveLearning(actor, item, learning);
@@ -440,7 +328,7 @@ export async function attemptLearnTechnique(item) {
   await resolveLearnAttempt(item, actor, {
     skillKey,
     mode,
-    baseLearning: activeLearning,
+    baseState: activeLearning,
     total: roll.total,
     apBonus: roll.apBonus,
     visibility: roll.rollVisibility,
@@ -585,7 +473,10 @@ function validateLearningSkillAndChakra(item, actor, skillKey, mode) {
     return false;
   }
 
-  const minimumChakraCost = trainingChakraCost(actor, minimumTrainingBlocksForRoll(item, mode));
+  const minimumChakraCost = trainingChakraCost(
+    actor,
+    minimumTrainingBlocksForRoll(item.system.rank, mode),
+  );
   if (!canPayTrainingChakra(actor, minimumChakraCost)) {
     warnInsufficientTrainingChakra(actor, minimumChakraCost);
     return false;
@@ -655,7 +546,7 @@ async function resolveLearnAttempt(
   {
     skillKey,
     mode,
-    baseLearning,
+    baseState,
     total,
     apBonus = 0,
     supersedes = null,
@@ -666,7 +557,7 @@ async function resolveLearnAttempt(
   const result = buildLearnAttemptResult(item, actor, {
     skillKey,
     mode,
-    baseLearning,
+    baseLearning: baseState,
     total,
     apBonus,
   });
@@ -686,7 +577,7 @@ async function resolveLearnAttempt(
 
   await postLearnAttemptResultCard(actor, item, {
     result,
-    baseLearning,
+    baseState,
     chakraDeduction,
     now,
     apRollText,
@@ -701,7 +592,7 @@ export function buildLearnAttemptResult(
 ) {
   const learnDC = Number(item.system.derived?.learnDC ?? 10) || 10;
   const targetProgress = getLearningTargetProgress(item, mode);
-  const maxAttempts = getLearningMaxAttempts(actor, skillKey);
+  const maxAttempts = getMaxAttempts(actor, skillKey);
   const oldProgress = Number(baseLearning.progress ?? 0) || 0;
   const oldAttempts = Number(baseLearning.attemptsUsed ?? 0) || 0;
   const baseFailureInsight = Math.min(
@@ -711,7 +602,7 @@ export function buildLearnAttemptResult(
   const attemptsUsed = oldAttempts + 1;
   const success = total >= learnDC;
   const margin = total - learnDC;
-  const trainingBlocks = trainingBlocksForRoll(item, mode, margin);
+  const trainingBlocks = trainingBlocksForRoll(item.system.rank, mode, margin);
   const chakraCost = trainingChakraCost(actor, trainingBlocks);
 
   let progress = oldProgress;
@@ -729,7 +620,7 @@ export function buildLearnAttemptResult(
     nextFailureInsight = Math.min(5, baseFailureInsight + 1);
   }
 
-  if (!learned && mode === LEARNING_MODES.STANDARD && attemptsUsed >= maxAttempts) {
+  if (!learned && mode === PROGRESSION_MODES.STANDARD && attemptsUsed >= maxAttempts) {
     resetRun = true;
     progress = 0;
     nextFailureInsight = 0;
@@ -778,31 +669,10 @@ async function persistLearnAttemptResult(item, actor, result, now) {
   if (result.learned) await actor.update({ [learningCurrentTechniqueIdPath]: null });
 }
 
-function buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraDeduction, now }) {
-  // Re-eval flags: only offer "Add Action Point" while the run is open and no AP is committed yet.
-  if (result.runEnded || result.apBonus !== 0) return null;
-
-  return {
-    itemId: item.id,
-    actorUuid: actor.uuid,
-    skillKey: result.skillKey,
-    mode: result.mode,
-    baseLearning: foundry.utils.deepClone(baseLearning),
-    baseTotalNoAp: result.total,
-    deducted: { fromTemp: chakraDeduction.fromTemp, fromPool: chakraDeduction.fromPool },
-    result: {
-      progress: result.progress,
-      attemptsUsed: result.finalAttemptsUsed,
-      failureInsight: result.nextFailureInsight,
-      lastTrainingAt: now,
-    },
-  };
-}
-
 async function postLearnAttemptResultCard(
   actor,
   item,
-  { result, baseLearning, chakraDeduction, now, apRollText, visibility = null },
+  { result, baseState, chakraDeduction, now, apRollText, visibility = null },
 ) {
   const apLine = apRollText ? `${apRollText} → ` : "";
   const chakraLine = chakraDeduction.deducted
@@ -854,7 +724,7 @@ async function postLearnAttemptResultCard(
   }
 
   const attemptText =
-    result.mode === LEARNING_MODES.FOUR_HOUR_BLOCKS
+    result.mode === PROGRESSION_MODES.FOUR_HOUR_BLOCKS
       ? game.i18n.format("NarutoD20.Cards.Learn.BlocksCount", {
           count: result.attemptsUsed,
           unit: blockUnit(result.attemptsUsed),
@@ -886,134 +756,19 @@ async function postLearnAttemptResultCard(
       unit: blockUnit(result.trainingBlocks),
       chakra: chakraLine,
     }),
-    flags: buildLearnAttemptCardFlags(item, actor, { result, baseLearning, chakraDeduction, now }),
+    flags: buildProgressionCardFlags(item, actor, {
+      skillKey: result.skillKey,
+      mode: result.mode,
+      baseState,
+      result,
+      chakraDeduction,
+      now,
+    }),
     visibility,
   });
 }
 
-// ─────────────────────────────────────────────────────────────────────────
-// Action Point — post-roll commitment via the learn chat card context menu
-// ─────────────────────────────────────────────────────────────────────────
-
-function resolveMessageFromElement(li) {
-  const el = li instanceof HTMLElement ? li : li?.[0];
-  const id = el?.closest?.("[data-message-id]")?.dataset?.messageId;
-  return id ? game.messages.get(id) : null;
-}
-
-function getLearnCardContext(message) {
-  const flags = message?.getFlag?.(MODULE_ID, "learn");
-  if (!flags) return null;
-  const actor = fromUuidSync(flags.actorUuid);
-  if (!(actor instanceof Actor)) return null;
-  const item = actor.items.get(flags.itemId);
-  if (!item) return null;
-  return { flags, actor, item };
-}
-
-/** A learn card may offer "Add Action Point" only while it reflects the current,
- *  still-open run, no AP is committed yet, and the owner has an Action Point. */
-function learnCardCanAddAp(message) {
-  const ctx = getLearnCardContext(message);
-  if (!ctx) return false;
-  const { flags, actor, item } = ctx;
-  if (!actor.isOwner) return false;
-
-  const learning = item.system.learning ?? {};
-  if (learning.learned) return false;
-  if ((Number(learning.actionPointBonus ?? 0) || 0) > 0) return false;
-
-  // Freshness: a newer learn roll would have moved these on — don't clobber it.
-  const res = flags.result ?? {};
-  if ((Number(learning.progress ?? 0) || 0) !== (Number(res.progress ?? 0) || 0)) return false;
-  if ((Number(learning.attemptsUsed ?? 0) || 0) !== (Number(res.attemptsUsed ?? 0) || 0))
-    return false;
-  if ((Number(learning.failureInsight ?? 0) || 0) !== (Number(res.failureInsight ?? 0) || 0))
-    return false;
-  if ((Number(learning.lastTrainingAt ?? 0) || 0) !== (Number(res.lastTrainingAt ?? 0) || 0))
-    return false;
-
-  return (Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0) || 0) >= 1;
-}
-
-/** Spend one Action Point: roll 1d6 once, re-evaluate the carded attempt with the
- *  boosted total, and persist the value so the rest of the run reuses it. */
-export async function addActionPointToLearnCard(message) {
-  const ctx = getLearnCardContext(message);
-  if (!ctx) return;
-  const { flags, actor, item } = ctx;
-
-  if (!learnCardCanAddAp(message)) {
-    ui.notifications.warn(
-      game.i18n.format("NarutoD20.Notifications.CannotAddActionPoint", { name: item.name }),
-    );
-    return;
-  }
-
-  const currentAp = Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0) || 0;
-  if (currentAp < 1) {
-    ui.notifications.warn(
-      game.i18n.format("NarutoD20.Notifications.NoActionPoints", { actor: actor.name }),
-    );
-    return;
-  }
-
-  const apRoll = new Roll("1d6");
-  await apRoll.evaluate();
-  const apBonus = Math.max(0, Number(apRoll.total) || 0);
-  const visibility = chatVisibilityFrom(message);
-  await apRoll.toMessage(
-    applyChatVisibility(
-      {
-        speaker: ChatMessage.implementation.getSpeaker({ actor }),
-        flavor: game.i18n.format("NarutoD20.Cards.Learn.ActionPointFlavor", {
-          name: item.name,
-          from: currentAp,
-          to: currentAp - 1,
-        }),
-      },
-      visibility,
-    ),
-  );
-
-  // Refund the superseded attempt's training chakra (no-op when none was deducted),
-  // then spend the Action Point — all in one actor update.
-  const update = { [actionPointsPath]: currentAp - 1 };
-  const fromTemp = Number(flags.deducted?.fromTemp ?? 0) || 0;
-  const fromPool = Number(flags.deducted?.fromPool ?? 0) || 0;
-  if (fromTemp) {
-    update[chakraPoolTempPath] =
-      (Number(foundry.utils.getProperty(actor, chakraPoolTempPath) ?? 0) || 0) + fromTemp;
-  }
-  if (fromPool) {
-    update[chakraPoolValuePath] =
-      (Number(foundry.utils.getProperty(actor, chakraPoolValuePath) ?? 0) || 0) + fromPool;
-  }
-  await actor.update(update);
-
-  await resolveLearnAttempt(item, actor, {
-    skillKey: flags.skillKey,
-    mode: flags.mode,
-    baseLearning: flags.baseLearning,
-    total: (Number(flags.baseTotalNoAp) || 0) + apBonus,
-    apBonus,
-    supersedes: message,
-    apRollText: game.i18n.format("NarutoD20.Cards.Learn.ActionPointRollText", { value: apBonus }),
-    visibility,
-  });
-}
-
-/** Register the "Add Action Point" entry on the learn chat card's right-click menu.
- *  Mirrors PF1e by binding both the v12 and v13 hook names. */
+/** Register the "Add Action Point" entry on the learn chat card's right-click menu. */
 export function registerLearnCardContextMenu() {
-  const addOption = (_html, options) => {
-    options.push({
-      name: "Add Action Point",
-      icon: '<i class="fa-solid fa-bolt"></i>',
-      condition: (li) => learnCardCanAddAp(resolveMessageFromElement(li)),
-      callback: (li) => addActionPointToLearnCard(resolveMessageFromElement(li)),
-    });
-  };
-  Hooks.on("getChatLogEntryContext", addOption);
-  Hooks.on("getChatMessageContextOptions", addOption);
+  registerProgressionCardContextMenu(LEARN_CARD_CONFIG);
 }

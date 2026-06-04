@@ -11,6 +11,7 @@ import { MODULE_ID } from "../constants.mjs";
 import { DISCIPLINE_SKILL_MAP } from "../data/skills.mjs";
 import { COMPLEXITY_TABLE, TECHNIQUE_DESCRIPTORS } from "../data/technique-model.mjs";
 import { attemptLearnTechnique, buildLearningView } from "../learn-technique.mjs";
+import { attemptMasterTechnique, buildMasteryView } from "../master-technique.mjs";
 import { canAffordTechnique, performTechnique } from "../use-technique.mjs";
 import { resolveDroppedItem } from "../utils/drag-drop.mjs";
 
@@ -98,6 +99,7 @@ export function createTechniqueItemSheet() {
       const ranksLabel = masteryPerform > 0 ? `${skillRanks}+${masteryPerform}` : `${skillRanks}`;
 
       context.learning = learning;
+      context.mastery = buildMasteryView(item, actor);
       context.enforceLearning = game.settings.get(MODULE_ID, "enforceLearning");
       context.canUse =
         !!actor &&
@@ -221,6 +223,8 @@ export function createTechniqueItemSheet() {
       html.on("click", ".use-action", this._onUseAction.bind(this));
       html.on("click", ".learn-technique", this._onLearnTechnique.bind(this));
       html.on("click", ".reset-learning", this._onResetLearning.bind(this));
+      html.on("click", ".master-technique", this._onMasterTechnique.bind(this));
+      html.on("click", ".reset-mastery", this._onResetMastery.bind(this));
       html.on("click", ".add-action", this._onAddAction.bind(this));
       html.on("click", ".edit-action", this._onEditAction.bind(this));
       html.on("click", ".delete-action", this._onDeleteAction.bind(this));
@@ -274,6 +278,26 @@ export function createTechniqueItemSheet() {
         "system.learning.chakraSpent": 0,
         "system.learning.lastTrainingAt": 0,
         "system.learning.actionPointBonus": 0,
+      });
+    }
+
+    async _onMasterTechnique(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      await attemptMasterTechnique(this.item);
+    }
+
+    async _onResetMastery(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      await this.item.update({
+        "system.masteryLearning.progress": 0,
+        "system.masteryLearning.attemptsUsed": 0,
+        "system.masteryLearning.failureInsight": 0,
+        "system.masteryLearning.trainingBlocks": 0,
+        "system.masteryLearning.chakraSpent": 0,
+        "system.masteryLearning.lastTrainingAt": 0,
+        "system.masteryLearning.actionPointBonus": 0,
       });
     }
 

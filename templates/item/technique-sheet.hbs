@@ -71,6 +71,29 @@
     {{/if}}
     {{/unless}}
 
+    {{#if item.actor}}
+    {{#if mastery.canMaster}}
+    <button type="button" class="master-technique">
+      <i class="fa-solid fa-star" inert></i> {{localize "NarutoD20.Technique.Master.Button"}}
+    </button>
+    <span class="technique-learning-badge mastery">
+      {{localize "NarutoD20.Technique.Master.StepLabel"}} {{mastery.step}}→{{mastery.nextStep}}
+      &middot; {{mastery.progress}}/{{mastery.targetProgress}}
+      {{#if mastery.isFourHourBlocks}}
+      &middot; {{mastery.attemptsUsed}} {{localize "NarutoD20.Cards.Blocks"}}
+      {{else}}
+      &middot; {{mastery.attemptsUsed}}/{{mastery.maxAttempts}} {{localize "NarutoD20.ChakraTab.Attempts"}}
+      {{/if}}
+      {{#if mastery.failureInsight}} &middot; +{{mastery.failureInsight}} {{localize "NarutoD20.ChakraTab.Insight"}}{{/if}}
+      {{#if mastery.actionPointBonus}} &middot; ⚡ +{{mastery.actionPointBonus}} AP{{/if}}
+    </span>
+    {{else if mastery.atMax}}
+    <span class="property generic-tag learning learned mastery-full" data-tooltip="{{localize 'NarutoD20.Technique.Master.MasteredHint'}}">
+      <i class="fa-solid fa-star" inert></i> {{localize "NarutoD20.Technique.Master.Mastered"}}
+    </span>
+    {{/if}}
+    {{/if}}
+
     {{#if isGM}}
     <fieldset class="gm-learning">
       <legend><i class="fa-solid fa-user-shield" inert></i> GM · Learning</legend>
@@ -117,6 +140,49 @@
         {{#if learning.actionPointBonus}} &middot; ⚡ +{{learning.actionPointBonus}} AP{{/if}}
       </div>
       <button type="button" class="reset-learning">Reset Learning</button>
+    </fieldset>
+
+    <fieldset class="gm-learning gm-mastery">
+      <legend><i class="fa-solid fa-star" inert></i> {{localize "NarutoD20.Technique.Master.GMLegend"}}</legend>
+
+      <div class="gm-learning__grid">
+        <label class="gm-field" title="Achieved mastery step — GM override (normally earned through the mastery learning process)">
+          <span>{{localize "NarutoD20.Technique.MasteryStep.Label"}}</span>
+          <input type="number" name="system.mastery" value="{{mastery.step}}" min="0" max="5" step="1">
+        </label>
+        <label class="gm-field" title="Successes accumulated toward the next step">
+          <span>Successes</span>
+          <input type="number" name="system.masteryLearning.progress" value="{{mastery.progress}}" min="0" step="1">
+        </label>
+        <label class="gm-field" title="Successes required for the next step (leave blank for the rules default)">
+          <span>Required</span>
+          <input type="number" name="system.masteryLearning.successesOverride" value="{{mastery.successesOverride}}"
+                 placeholder="{{mastery.derivedSuccesses}}" min="1" step="1">
+        </label>
+        <label class="gm-field" title="Attempts used this run">
+          <span>Attempts</span>
+          <input type="number" name="system.masteryLearning.attemptsUsed" value="{{mastery.attemptsUsed}}" min="0" step="1">
+        </label>
+        <label class="gm-field" title="Failure insight bonus (0–5)">
+          <span>Insight</span>
+          <input type="number" name="system.masteryLearning.failureInsight" value="{{mastery.failureInsight}}" min="0" max="5" step="1">
+        </label>
+      </div>
+
+      <div class="learning-progress-line">
+        {{localize "NarutoD20.Technique.Master.StepLabel"}} {{mastery.step}}→{{mastery.nextStep}}
+        &middot; {{mastery.progress}}/{{mastery.targetProgress}}
+        {{#if mastery.isFourHourBlocks}}
+        &middot; {{mastery.attemptsUsed}} blocks
+        {{else}}
+        &middot; {{mastery.attemptsUsed}}/{{mastery.maxAttempts}} attempts
+        {{/if}}
+        {{#if mastery.failureInsight}} &middot; +{{mastery.failureInsight}} insight{{/if}}
+        {{#if mastery.trainingBlocks}} &middot; {{mastery.trainingBlocks}} training blocks{{/if}}
+        {{#if mastery.chakraSpent}} &middot; {{mastery.chakraSpent}} training chakra{{/if}}
+        {{#if mastery.actionPointBonus}} &middot; ⚡ +{{mastery.actionPointBonus}} AP{{/if}}
+      </div>
+      <button type="button" class="reset-mastery">{{localize "NarutoD20.Technique.Master.GMReset"}}</button>
     </fieldset>
     {{/if}}
 
@@ -233,7 +299,7 @@
       <div class="form-group">
         <label>{{localize "NarutoD20.Technique.MasteryStep.Label"}}</label>
         <div class="form-fields">
-          <input type="number" name="system.mastery" value="{{system.mastery}}" min="0" max="5" step="1">
+          <input type="number" value="{{system.mastery}}" min="0" max="5" step="1" disabled>
         </div>
         <p class="hint">{{localize "NarutoD20.Technique.MasteryStep.Hint"}}</p>
       </div>

@@ -31,6 +31,14 @@ export const COMPLEXITY_TABLE = {
 /** Mastery bonuses by step (0–5). Index = mastery step. See transcricao_tecnicas.md. */
 export const MASTERY_PERFORM = [0, 1, 2, 3, 4, 6]; // bonus to Perform roll + threshold ranks
 export const MASTERY_LEVEL = [0, 0, 1, 2, 3, 5]; // effective-level offset (acts as cl offset)
+export const MASTERY_SAVES = [0, 1, 1, 2, 2, 3]; // bonus to saves vs the technique (situational)
+
+/**
+ * Successes required to *obtain* each mastery step (index = step being earned;
+ * index 0 unused). Per learn_mechanics.md § Mastery table. Step 5's "2*" is a
+ * footnote on the −2 learn-check penalty, not an extra success — kept as 2 here.
+ */
+export const MASTERY_SUCCESSES = [0, 1, 1, 1, 2, 2];
 
 export const TECHNIQUE_DESCRIPTORS = [
   "*",
@@ -240,6 +248,40 @@ export function createTechniqueDataModel() {
           opt,
         ),
 
+        // In-progress tracking for *mastering* the current step. The achieved
+        // step lives in `mastery`; this holds the run toward `mastery + 1`.
+        masteryLearning: new fields.SchemaField(
+          {
+            progress: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+            successesOverride: new fields.NumberField({
+              ...opt,
+              integer: true,
+              nullable: true,
+              initial: null,
+              min: 1,
+            }),
+            attemptsUsed: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+            failureInsight: new fields.NumberField({
+              ...opt,
+              integer: true,
+              initial: 0,
+              min: 0,
+              max: 5,
+            }),
+            trainingBlocks: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+            chakraSpent: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+            lastTrainingAt: new fields.NumberField({ ...opt, integer: true, initial: 0, min: 0 }),
+            actionPointBonus: new fields.NumberField({
+              ...opt,
+              integer: true,
+              initial: 0,
+              min: 0,
+              max: 6,
+            }),
+          },
+          opt,
+        ),
+
         isHijutsu: new fields.BooleanField({ ...opt, initial: false }),
         isKinjutsu: new fields.BooleanField({ ...opt, initial: false }),
         isCombination: new fields.BooleanField({ ...opt, initial: false }),
@@ -359,12 +401,16 @@ export function createTechniqueDataModel() {
       const { skillMod, performMod } = c;
       const descriptors = this.descriptors ?? new Set();
 
-      if (this.isHijutsu || descriptors.has("Hijutsu")) successes += 1;
-      if (this.isKinjutsu || descriptors.has("Kinjutsu")) successes += 2;
+      // Success modifiers from special descriptors. The same delta applies to
+      // both learning and mastering (per learn_mechanics.md § Mastery).
+      let successModifier = 0;
+      if (this.isHijutsu || descriptors.has("Hijutsu")) successModifier += 1;
+      if (this.isKinjutsu || descriptors.has("Kinjutsu")) successModifier += 2;
       if (this.isCombination || descriptors.has("Combination")) {
         learnMod += 5;
-        successes = Math.max(1, successes - 2);
+        successModifier -= 2;
       }
+      successes = Math.max(1, successes + successModifier);
 
       const m = Math.max(0, Math.min(5, this.mastery ?? 0));
 
@@ -372,9 +418,11 @@ export function createTechniqueDataModel() {
         learnDC: 10 + this.rank + learnMod,
         performDC: 10 + this.rank + performMod,
         successes,
+        successModifier,
         skillThreshold: Math.max(1, this.rank + skillMod - 3),
         masteryPerform: MASTERY_PERFORM[m],
         masteryLevel: MASTERY_LEVEL[m],
+        masterySaves: MASTERY_SAVES[m],
       };
     }
   }

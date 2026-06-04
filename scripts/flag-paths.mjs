@@ -19,6 +19,7 @@ export const HERO_STAT_DEFAULTS = [
 export const learnBuffPath = (k) => `${moduleFlagsPath}.learn.${k}.buffBonus`;
 export const learnMiscPath = (k) => `${moduleFlagsPath}.learn.${k}.miscBonus`;
 export const learningCurrentTechniqueIdPath = `${moduleFlagsPath}.learning.currentTechniqueId`;
+export const masteryCurrentTechniqueIdPath = `${moduleFlagsPath}.mastery.currentTechniqueId`;
 
 // ── Technique DC flag paths ──────────────────────────────────────────────
 // k ∈ {"all","ckc","fui","gnj","nin","tai"}; "all" is the global bonus,

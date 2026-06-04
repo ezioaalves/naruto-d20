@@ -122,7 +122,15 @@
       "LearnedViaEmpathy": "via Empathy",
       "MasteryStep": {
         "Label": "Mastery",
-        "Hint": "Mastery step 0–5. Step 1+ adds a Perform bonus (to the perform roll and threshold); step 2+ also adds an effective-level offset to @cl (duration, range, damage…)."
+        "Hint": "Mastery step 0–5, earned through the mastery learning process. Step 1+ adds a Perform bonus (to the perform roll and threshold); step 2+ also adds an effective-level offset to @cl (duration, range, damage…)."
+      },
+      "Master": {
+        "Button": "Master",
+        "StepLabel": "Step",
+        "Mastered": "Mastered 5/5",
+        "MasteredHint": "This technique is mastered at the maximum step.",
+        "GMLegend": "GM · Mastery",
+        "GMReset": "Reset Mastery Run"
       },
       "ChakraCost": {
         "Label": "Chakra Cost"
@@ -391,7 +399,11 @@
       "TapNotEnoughReserve": "Not enough Chakra Reserve (have {have}, requested {requested}).",
       "NoWeaponAttack": "{actor}: no valid weapon or attack found for {name}.",
       "WeaponAttackConfig": "{name}: weaponAttack config issue — {issues}",
-      "ChargeDefenseFailed": "Charge defense penalty automation failed. See console."
+      "ChargeDefenseFailed": "Charge defense penalty automation failed. See console.",
+      "EquipToMaster": "Equip this technique on an actor to master it.",
+      "NotLearnedForMastery": "{name}: must be learned before it can be mastered.",
+      "AlreadyMaxMastery": "{name}: already at the maximum mastery step (5).",
+      "MasterySkillRequired": "{actor}: {name} has no mapped discipline skill, so it cannot be mastered."
     },
     "Cards": {
       "Block": "block",
@@ -423,6 +435,26 @@
         "CheckProgress": "{ap}Learn check {total} vs DC {dc}. Progress {progress}/{target}.",
         "CheckReset": "{ap}Learn check {total} vs DC {dc}. Attempts {used}/{max}; progress is lost and the run starts over.",
         "CheckResult": "{ap}Learn check {total} vs DC {dc}. {result}",
+        "ResultSuccess": "Success, +{award} progress.",
+        "ResultFailure": "Failure, Failure Insight is now +{insight}.",
+        "TrainingFooter": "Training time: +{blocks} {unit}; training chakra: {chakra}.",
+        "AttemptFooter": "Progress {progress}/{target}; {attempts}; +{blocks} training {unit}; training chakra {chakra}.",
+        "AttemptsCount": "{used}/{max} attempts",
+        "BlocksCount": "{count} {unit}",
+        "ChakraDeducted": "{cost} ({deducted} deducted)"
+      },
+      "Master": {
+        "Flavor": "Master: {name} (step {step})",
+        "ActionPointFlavor": "Action Point — Master: {name} ({from} → {to} remaining)",
+        "ActionPointRollText": "Action Point 1d6 = {value}",
+        "TrainingInterruptedTitle": "{name} mastery training interrupted",
+        "TrainingInterruptedLead": "More than 30 days passed since the last training block. Mastery progress is lost before the new attempt.",
+        "StepAchievedTitle": "{name} — mastery step {step} achieved",
+        "StepAchievedLead": "{ap}Mastery check {total} vs DC {dc}. Reached mastery step {step}.",
+        "MasteringTitle": "Mastering {name} (step {step})",
+        "MasteringFailedTitle": "{name} mastery failed",
+        "CheckReset": "{ap}Mastery check {total} vs DC {dc}. Attempts {used}/{max}; progress toward step {step} is lost and the run starts over.",
+        "CheckResult": "{ap}Mastery check {total} vs DC {dc}. {result}",
         "ResultSuccess": "Success, +{award} progress.",
         "ResultFailure": "Failure, Failure Insight is now +{insight}.",
         "TrainingFooter": "Training time: +{blocks} {unit}; training chakra: {chakra}.",

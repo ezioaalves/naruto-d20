@@ -122,7 +122,15 @@
       "LearnedViaEmpathy": "via Empatia",
       "MasteryStep": {
         "Label": "Maestria",
-        "Hint": "Degrau de maestria 0–5. Degrau 1+ soma bônus de Perform (à rolagem e ao limiar); degrau 2+ também soma um offset de nível efetivo ao @cl (duração, alcance, dano…)."
+        "Hint": "Degrau de maestria 0–5, conquistado pelo processo de aprendizado de maestria. Degrau 1+ soma bônus de Perform (à rolagem e ao limiar); degrau 2+ também soma um offset de nível efetivo ao @cl (duração, alcance, dano…)."
+      },
+      "Master": {
+        "Button": "Dominar",
+        "StepLabel": "Degrau",
+        "Mastered": "Dominada 5/5",
+        "MasteredHint": "Esta técnica está dominada no degrau máximo.",
+        "GMLegend": "GM · Maestria",
+        "GMReset": "Reiniciar Maestria"
       },
       "ChakraCost": {
         "Label": "Custo de Chakra"
@@ -391,7 +399,11 @@
       "TapNotEnoughReserve": "Reserva de Chakra insuficiente (tem {have}, solicitado {requested}).",
       "NoWeaponAttack": "{actor}: nenhuma arma ou ataque válido encontrado para {name}.",
       "WeaponAttackConfig": "{name}: problema na config weaponAttack — {issues}",
-      "ChargeDefenseFailed": "A automação da penalidade de defesa por charge falhou. Veja o console."
+      "ChargeDefenseFailed": "A automação da penalidade de defesa por charge falhou. Veja o console.",
+      "EquipToMaster": "Equipe esta técnica em um ator para dominá-la.",
+      "NotLearnedForMastery": "{name}: precisa ser aprendida antes de poder ser dominada.",
+      "AlreadyMaxMastery": "{name}: já está no degrau máximo de maestria (5).",
+      "MasterySkillRequired": "{actor}: {name} não tem perícia de disciplina mapeada, então não pode ser dominada."
     },
     "Cards": {
       "Block": "bloco",
@@ -425,6 +437,26 @@
         "CheckResult": "{ap}Teste de aprendizado {total} vs DC {dc}. {result}",
         "ResultSuccess": "Sucesso, +{award} de progresso.",
         "ResultFailure": "Falha, Failure Insight agora é +{insight}.",
+        "TrainingFooter": "Tempo de treino: +{blocks} {unit}; chakra de treino: {chakra}.",
+        "AttemptFooter": "Progresso {progress}/{target}; {attempts}; +{blocks} {unit} de treino; chakra de treino {chakra}.",
+        "AttemptsCount": "{used}/{max} tentativas",
+        "BlocksCount": "{count} {unit}",
+        "ChakraDeducted": "{cost} ({deducted} deduzido)"
+      },
+      "Master": {
+        "Flavor": "Dominar: {name} (degrau {step})",
+        "ActionPointFlavor": "Ponto de Ação — Dominar: {name} ({from} → {to} restantes)",
+        "ActionPointRollText": "Ponto de Ação 1d6 = {value}",
+        "TrainingInterruptedTitle": "Treino de maestria de {name} interrompido",
+        "TrainingInterruptedLead": "Mais de 30 dias se passaram desde o último bloco de treino. O progresso de maestria é perdido antes da nova tentativa.",
+        "StepAchievedTitle": "{name} — degrau de maestria {step} alcançado",
+        "StepAchievedLead": "{ap}Teste de maestria {total} vs DC {dc}. Alcançou o degrau de maestria {step}.",
+        "MasteringTitle": "Dominando {name} (degrau {step})",
+        "MasteringFailedTitle": "Maestria de {name} falhou",
+        "CheckReset": "{ap}Teste de maestria {total} vs DC {dc}. Tentativas {used}/{max}; o progresso até o degrau {step} é perdido e a sequência recomeça.",
+        "CheckResult": "{ap}Teste de maestria {total} vs DC {dc}. {result}",
+        "ResultSuccess": "Sucesso, +{award} de progresso.",
+        "ResultFailure": "Falha, o Insight de Falha agora é +{insight}.",
         "TrainingFooter": "Tempo de treino: +{blocks} {unit}; chakra de treino: {chakra}.",
         "AttemptFooter": "Progresso {progress}/{target}; {attempts}; +{blocks} {unit} de treino; chakra de treino {chakra}.",
         "AttemptsCount": "{used}/{max} tentativas",
