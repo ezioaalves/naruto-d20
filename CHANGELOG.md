@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.6 - 2026-06-04
+
+- Added mastery step 5 free rounds for Strength Rank and Speed Rank techniques: mastered rank techniques now prompt for the once-per-day 5-round free activation instead of paying chakra.
+- Added PF1e daily use tracking to the rank techniques so resting with Restore Daily Uses restores the mastery free use.
+- Added the same mastery free-use option when a rank buff reaches its maintenance point.
+- Added daily use data to all Strength Rank and Speed Rank technique source JSON and rebuilt the techniques pack.
+
 ## v1.0.5 - 2026-06-04
 
 - Added automated Jouryoku and Kousoku rank buffs: using a Strength Rank or Speed Rank technique now applies the shared buff at the matching level.
