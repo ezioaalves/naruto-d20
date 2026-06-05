@@ -3,6 +3,7 @@ import {
   buildChakraPoolBreakdown,
   buildChakraReserveBreakdown,
 } from "../data/bonus-sources.mjs";
+import { buildNarutoRerollMessageData } from "../chat-rerolls.mjs";
 
 const LEARN_LABELS = {
   ckc: "NarutoD20.Skills.ckc",
@@ -38,6 +39,7 @@ export function registerLearnCheckListeners() {
           parts: breakdown.parts,
           rollData: app.actor.getRollData?.() ?? {},
           speaker: ChatMessage.implementation.getSpeaker({ actor: app.actor }),
+          messageData: buildNarutoRerollMessageData(app.actor, "shinobi-learn-check"),
         });
       });
 

@@ -28,6 +28,7 @@ import { installTechniqueRollDataPatch } from "./data/technique-rolldata.mjs";
 import { registerLearnCheckListeners } from "./ui/learn-checks.mjs";
 import { registerLearnCardContextMenu } from "./learn-technique.mjs";
 import { registerMasterCardContextMenu } from "./master-technique.mjs";
+import { registerNarutoRollContextMenu } from "./chat-rerolls.mjs";
 import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
 import { registerSummaryStats } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
@@ -195,6 +196,7 @@ Hooks.once("setup", () => {
   registerLearnCheckListeners(); // .shinobi-roll + learn-check tooltips + chakra max tooltips
   registerLearnCardContextMenu(); // learn chat card → right-click "Add Action Point"
   registerMasterCardContextMenu(); // mastery chat card → right-click "Add Action Point"
+  registerNarutoRollContextMenu(); // Naruto d20 cards → AP / reroll context menu
   registerTechniqueListListeners(); // chakra tab: filter, drop zone, CRUD
   registerSummaryStats(); // Hero Statistics block on the Summary tab
   registerFeatListListeners(); // Naruto Browse button on the Features tab

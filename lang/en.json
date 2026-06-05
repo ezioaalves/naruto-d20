@@ -408,6 +408,19 @@
       "AlreadyMaxMastery": "{name}: already at the maximum mastery step (5).",
       "MasterySkillRequired": "{actor}: {name} has no mapped discipline skill, so it cannot be mastered."
     },
+    "Reroll": {
+      "ActionPoint": "Add Action Point",
+      "KeepNew": "Reroll and keep the new result",
+      "KeepLower": "Reroll and keep the lower result",
+      "KeepHigher": "Reroll and keep the higher result",
+      "Original": "Original",
+      "Rerolled": "Reroll",
+      "ActionPointRoll": "Action Point",
+      "KeptTotal": "Kept result: {total}",
+      "ActionPointTotal": "{base} {bonus} Action Point = {total}",
+      "CannotReroll": "This roll cannot be rerolled.",
+      "CannotAddActionPoint": "Cannot add an Action Point to this roll."
+    },
     "RankBuffMaintenance": {
       "Title": "Maintain {name}?",
       "Message": "{actor}'s {name} has reached its maintenance point. Spend {cost} chakra to keep it active for {interval} more round(s)?",

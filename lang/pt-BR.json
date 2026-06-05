@@ -408,6 +408,19 @@
       "AlreadyMaxMastery": "{name}: já está no degrau máximo de maestria (5).",
       "MasterySkillRequired": "{actor}: {name} não tem perícia de disciplina mapeada, então não pode ser dominada."
     },
+    "Reroll": {
+      "ActionPoint": "Adicionar Ponto de Ação",
+      "KeepNew": "Rerrolar e manter o novo resultado",
+      "KeepLower": "Rerrolar e manter o menor resultado",
+      "KeepHigher": "Rerrolar e manter o maior resultado",
+      "Original": "Original",
+      "Rerolled": "Rerrolagem",
+      "ActionPointRoll": "Ponto de Ação",
+      "KeptTotal": "Resultado mantido: {total}",
+      "ActionPointTotal": "{base} {bonus} Ponto de Ação = {total}",
+      "CannotReroll": "Esta rolagem não pode ser rerrolada.",
+      "CannotAddActionPoint": "Não é possível adicionar um Ponto de Ação a esta rolagem."
+    },
     "RankBuffMaintenance": {
       "Title": "Manter {name}?",
       "Message": "{name} de {actor} chegou ao ponto de manutenção. Gastar {cost} de chakra para manter ativo por mais {interval} rodada(s)?",

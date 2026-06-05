@@ -2,6 +2,7 @@ import { MODULE_ID } from "./constants.mjs";
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
 import { applyChakraSpend, calculateChakraSpend, canPayChakra } from "./data/chakra-spend.mjs";
 import { applyChatVisibility, chatVisibilityFrom } from "./chat-visibility.mjs";
+import { markNarutoRollRerollable } from "./chat-rerolls.mjs";
 import {
   getTechniqueWeaponAttackConfig,
   rollSelectedWeaponAttackWithTechnique,
@@ -216,6 +217,7 @@ async function resolvePerformCheck(item, actor) {
 
   const rollMessage = await actor.rollSkill(skillKey);
   if (!rollMessage) return null;
+  await markNarutoRollRerollable(rollMessage, actor, "technique-perform");
 
   return {
     succeeded: (rollMessage?.rolls?.[0]?.total ?? 0) + masteryPerform >= performDC,

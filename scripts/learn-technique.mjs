@@ -1,6 +1,7 @@
 import { TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
 import { actionPointsPath, epsPath, learningCurrentTechniqueIdPath } from "./flag-paths.mjs";
 import { chatVisibilityFrom } from "./chat-visibility.mjs";
+import { markNarutoRollRerollable } from "./chat-rerolls.mjs";
 import { normalizeActionIds } from "./data/action-ids.mjs";
 import { buildLearnCheckBreakdown } from "./data/bonus-sources.mjs";
 import {
@@ -14,6 +15,7 @@ import {
   applyTrainingChakraDeduction,
   blockUnit,
   buildProgressionCardFlags,
+  buildProgressionRollRerollData,
   canPayTrainingChakra,
   characterLevel,
   getMaxAttempts,
@@ -22,6 +24,7 @@ import {
   minimumTrainingBlocksForRoll,
   postProgressionCard,
   registerProgressionCardContextMenu,
+  registerProgressionRollReroll,
   rollTotal,
   trainingBlocksForRoll,
   trainingChakraCost,
@@ -45,6 +48,7 @@ const LEARN_CARD_CONFIG = {
   isClosed: (state) => state.learned === true,
   resolveAttempt: (item, actor, opts) => resolveLearnAttempt(item, actor, opts),
 };
+const LEARN_REROLL_SOURCE = "learn-attempt";
 
 function postLearningCard(actor, item, opts) {
   return postProgressionCard(actor, item, { ...opts, flagKey: "learn" });
@@ -332,6 +336,7 @@ export async function attemptLearnTechnique(item) {
     total: roll.total,
     apBonus: roll.apBonus,
     visibility: roll.rollVisibility,
+    rollMessage: roll.message,
   });
 }
 
@@ -530,7 +535,7 @@ async function rollLearnCheck(item, actor, skillKey, activeLearning) {
     return null;
   }
 
-  return { total, apBonus, rollVisibility: chatVisibilityFrom(result) };
+  return { total, apBonus, rollVisibility: chatVisibilityFrom(result), message: result };
 }
 
 /**
@@ -552,6 +557,8 @@ async function resolveLearnAttempt(
     supersedes = null,
     apRollText = "",
     visibility = null,
+    rollMessage = null,
+    progressionFlags = !rollMessage,
   },
 ) {
   const result = buildLearnAttemptResult(item, actor, {
@@ -575,14 +582,28 @@ async function resolveLearnAttempt(
     }
   }
 
-  await postLearnAttemptResultCard(actor, item, {
+  const resultCard = await postLearnAttemptResultCard(actor, item, {
     result,
     baseState,
     chakraDeduction,
     now,
     apRollText,
     visibility,
+    progressionFlags,
   });
+
+  const rerollData = buildProgressionRollRerollData(item, actor, {
+    skillKey,
+    mode,
+    baseState,
+    result,
+    chakraDeduction,
+    now,
+    resultCard,
+  });
+  if (rollMessage && rerollData) {
+    await markNarutoRollRerollable(rollMessage, actor, LEARN_REROLL_SOURCE, rerollData);
+  }
 }
 
 export function buildLearnAttemptResult(
@@ -672,7 +693,7 @@ async function persistLearnAttemptResult(item, actor, result, now) {
 async function postLearnAttemptResultCard(
   actor,
   item,
-  { result, baseState, chakraDeduction, now, apRollText, visibility = null },
+  { result, baseState, chakraDeduction, now, apRollText, visibility = null, progressionFlags = true },
 ) {
   const apLine = apRollText ? `${apRollText} → ` : "";
   const chakraLine = chakraDeduction.deducted
@@ -690,7 +711,7 @@ async function postLearnAttemptResultCard(
   });
 
   if (result.learned) {
-    await postLearningCard(actor, item, {
+    return postLearningCard(actor, item, {
       title: game.i18n.format("NarutoD20.Cards.Learn.LearnedTitle", { name: item.name }),
       cssClass: "success",
       lead: game.i18n.format("NarutoD20.Cards.Learn.CheckProgress", {
@@ -703,11 +724,10 @@ async function postLearnAttemptResultCard(
       footer: trainingFooter,
       visibility,
     });
-    return;
   }
 
   if (result.resetRun) {
-    await postLearningCard(actor, item, {
+    return postLearningCard(actor, item, {
       title: game.i18n.format("NarutoD20.Cards.Learn.LearningFailedTitle", { name: item.name }),
       cssClass: "failed",
       lead: game.i18n.format("NarutoD20.Cards.Learn.CheckReset", {
@@ -720,7 +740,6 @@ async function postLearnAttemptResultCard(
       footer: trainingFooter,
       visibility,
     });
-    return;
   }
 
   const attemptText =
@@ -739,7 +758,7 @@ async function postLearnAttemptResultCard(
         insight: result.nextFailureInsight,
       });
 
-  await postLearningCard(actor, item, {
+  return postLearningCard(actor, item, {
     title: game.i18n.format("NarutoD20.Cards.Learn.LearningTitle", { name: item.name }),
     cssClass: result.success ? "success" : "failed",
     lead: game.i18n.format("NarutoD20.Cards.Learn.CheckResult", {
@@ -756,14 +775,16 @@ async function postLearnAttemptResultCard(
       unit: blockUnit(result.trainingBlocks),
       chakra: chakraLine,
     }),
-    flags: buildProgressionCardFlags(item, actor, {
-      skillKey: result.skillKey,
-      mode: result.mode,
-      baseState,
-      result,
-      chakraDeduction,
-      now,
-    }),
+    flags: progressionFlags
+      ? buildProgressionCardFlags(item, actor, {
+          skillKey: result.skillKey,
+          mode: result.mode,
+          baseState,
+          result,
+          chakraDeduction,
+          now,
+        })
+      : null,
     visibility,
   });
 }
@@ -771,4 +792,5 @@ async function postLearnAttemptResultCard(
 /** Register the "Add Action Point" entry on the learn chat card's right-click menu. */
 export function registerLearnCardContextMenu() {
   registerProgressionCardContextMenu(LEARN_CARD_CONFIG);
+  registerProgressionRollReroll(LEARN_REROLL_SOURCE, LEARN_CARD_CONFIG);
 }

@@ -2,6 +2,7 @@ import { MODULE_ID } from "../constants.mjs";
 import { chakraPoolTempPath, chakraReserveValuePath } from "../flag-paths.mjs";
 import { buildTapReservesRollBreakdown } from "../data/bonus-sources.mjs";
 import { checkAndUpdateConditions } from "../data/chakra-conditions.mjs";
+import { buildNarutoRerollMessageData } from "../chat-rerolls.mjs";
 
 const SEAL_BONUS = { none: 0, half: 2, hand: 5 };
 const SEAL_LABEL = { none: "no seal", half: "half-seal", hand: "hand seal" };
@@ -145,6 +146,7 @@ export class TapReservesDialog extends Application {
       speaker: ChatMessage.implementation.getSpeaker({ actor: this.actor }),
       rollMode,
       dc,
+      messageData: buildNarutoRerollMessageData(this.actor, "tap-reserves"),
     });
 
     if (!chatMsg) return; // cancelled or hook blocked

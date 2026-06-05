@@ -15,6 +15,7 @@
 import { MODULE_ID } from "../constants.mjs";
 import { chakraPoolTempPath, chakraPoolValuePath } from "../flag-paths.mjs";
 import { applyChatVisibility, chatVisibilityFrom } from "../chat-visibility.mjs";
+import { registerNarutoRerollHandler, updateMessageWithActionPoint } from "../chat-rerolls.mjs";
 import { resolveSkillAbility } from "./skills.mjs";
 
 export const PROGRESSION_MODES = Object.freeze({
@@ -183,7 +184,7 @@ export async function postProgressionCard(
     visibility,
   );
   if (flags) data.flags = { [MODULE_ID]: { [flagKey]: flags } };
-  await ChatMessage.create(data);
+  return ChatMessage.create(data);
 }
 
 /**
@@ -214,6 +215,32 @@ export function buildProgressionCardFlags(
   };
 }
 
+export function buildProgressionRollRerollData(
+  item,
+  actor,
+  { skillKey, mode, baseState, result, chakraDeduction, now, resultCard = null },
+) {
+  if (result.runEnded) return null;
+
+  return {
+    progression: {
+      itemId: item.id,
+      skillKey,
+      mode,
+      baseState: foundry.utils.deepClone(baseState),
+      apBonus: Number(result.apBonus ?? 0) || 0,
+      deducted: { fromTemp: chakraDeduction.fromTemp, fromPool: chakraDeduction.fromPool },
+      resultCardUuid: resultCard?.uuid ?? null,
+      result: {
+        progress: result.progress,
+        attemptsUsed: result.finalAttemptsUsed,
+        failureInsight: result.nextFailureInsight,
+        lastTrainingAt: now,
+      },
+    },
+  };
+}
+
 // ── Action Point — post-roll commitment via the chat card context menu ───────
 
 function resolveMessageFromElement(li) {
@@ -230,6 +257,156 @@ function getProgressionCardContext(message, config) {
   const item = actor.items.get(flags.itemId);
   if (!item) return null;
   return { flags, actor, item };
+}
+
+function getProgressionRollContext(flags, actor, config) {
+  const progression = flags?.progression;
+  if (!progression) return null;
+
+  const item = actor.items.get(progression.itemId);
+  if (!item) return null;
+
+  return { progression, actor, item, state: config.getState(item) };
+}
+
+function progressionRollCanReroll(_message, ctx, config) {
+  if (!ctx?.actor?.isOwner) return false;
+
+  const rollCtx = getProgressionRollContext(ctx.flags, ctx.actor, config);
+  if (!rollCtx) return false;
+
+  const { progression, state } = rollCtx;
+  if (config.isClosed?.(state)) return false;
+
+  const res = progression.result ?? {};
+  if ((Number(state.progress ?? 0) || 0) !== (Number(res.progress ?? 0) || 0)) return false;
+  if ((Number(state.attemptsUsed ?? 0) || 0) !== (Number(res.attemptsUsed ?? 0) || 0))
+    return false;
+  if ((Number(state.failureInsight ?? 0) || 0) !== (Number(res.failureInsight ?? 0) || 0))
+    return false;
+  if ((Number(state.lastTrainingAt ?? 0) || 0) !== (Number(res.lastTrainingAt ?? 0) || 0))
+    return false;
+  if ((Number(state.actionPointBonus ?? 0) || 0) !== (Number(progression.apBonus ?? 0) || 0))
+    return false;
+
+  return true;
+}
+
+function buildProgressionDeductionRefund(actor, deducted) {
+  const update = {};
+  const fromTemp = Number(deducted?.fromTemp ?? 0) || 0;
+  const fromPool = Number(deducted?.fromPool ?? 0) || 0;
+  if (fromTemp) {
+    update[chakraPoolTempPath] =
+      (Number(foundry.utils.getProperty(actor, chakraPoolTempPath) ?? 0) || 0) + fromTemp;
+  }
+  if (fromPool) {
+    update[chakraPoolValuePath] =
+      (Number(foundry.utils.getProperty(actor, chakraPoolValuePath) ?? 0) || 0) + fromPool;
+  }
+  return update;
+}
+
+async function refundProgressionDeduction(actor, deducted) {
+  const update = buildProgressionDeductionRefund(actor, deducted);
+  if (!foundry.utils.isEmpty(update)) await actor.update(update);
+}
+
+async function applyProgressionRollReroll(message, ctx, { keptRoll }, config) {
+  const rollCtx = getProgressionRollContext(ctx.flags, ctx.actor, config);
+  if (!rollCtx || !progressionRollCanReroll(message, ctx, config)) {
+    ui.notifications.warn(game.i18n.localize("NarutoD20.Reroll.CannotReroll"));
+    return false;
+  }
+
+  const { progression, actor, item } = rollCtx;
+  await refundProgressionDeduction(actor, progression.deducted);
+
+  const resultCard = progression.resultCardUuid
+    ? fromUuidSync(progression.resultCardUuid)
+    : null;
+
+  await config.resolveAttempt(item, actor, {
+    skillKey: progression.skillKey,
+    mode: progression.mode,
+    baseState: progression.baseState,
+    total: Number(keptRoll.total) || 0,
+    apBonus: Number(progression.apBonus ?? 0) || 0,
+    supersedes: resultCard instanceof ChatMessage ? resultCard : null,
+    progressionFlags: false,
+    visibility: chatVisibilityFrom(message),
+  });
+
+  return true;
+}
+
+function progressionRollCanAddAp(message, ctx, config) {
+  if (!progressionRollCanReroll(message, ctx, config)) return false;
+
+  const rollCtx = getProgressionRollContext(ctx.flags, ctx.actor, config);
+  if (!rollCtx) return false;
+
+  const apBonus = Number(rollCtx.progression.apBonus ?? 0) || 0;
+  const stateApBonus = Number(rollCtx.state.actionPointBonus ?? 0) || 0;
+  if (apBonus > 0 || stateApBonus > 0) return false;
+
+  return (Number(foundry.utils.getProperty(ctx.actor, config.actionPointsPath) ?? 0) || 0) >= 1;
+}
+
+async function addActionPointToProgressionRoll(message, ctx, config) {
+  if (!progressionRollCanAddAp(message, ctx, config)) {
+    ui.notifications.warn(game.i18n.localize("NarutoD20.Reroll.CannotAddActionPoint"));
+    return;
+  }
+
+  const rollCtx = getProgressionRollContext(ctx.flags, ctx.actor, config);
+  const { progression, actor, item } = rollCtx;
+  const currentAp = Number(foundry.utils.getProperty(actor, config.actionPointsPath) ?? 0) || 0;
+  if (currentAp < 1) {
+    ui.notifications.warn(
+      game.i18n.format("NarutoD20.Notifications.NoActionPoints", { actor: actor.name }),
+    );
+    return;
+  }
+
+  const oldRoll = message.rolls?.[0];
+  if (!oldRoll) return;
+
+  const apRoll = new Roll("1d6");
+  await apRoll.evaluate({ allowInteractive: false });
+  const apBonus = Math.max(0, Number(apRoll.total) || 0);
+  const total = (Number(oldRoll.total) || 0) + apBonus;
+
+  const update = buildProgressionDeductionRefund(actor, progression.deducted);
+  update[config.actionPointsPath] = currentAp - 1;
+  await actor.update(update);
+
+  const resultCard = progression.resultCardUuid
+    ? fromUuidSync(progression.resultCardUuid)
+    : null;
+
+  await config.resolveAttempt(item, actor, {
+    skillKey: progression.skillKey,
+    mode: progression.mode,
+    baseState: progression.baseState,
+    total,
+    apBonus,
+    supersedes: resultCard instanceof ChatMessage ? resultCard : null,
+    apRollText: game.i18n.format(config.apRollTextKey, { value: apBonus }),
+    progressionFlags: false,
+    visibility: chatVisibilityFrom(message),
+  });
+
+  await updateMessageWithActionPoint(message, { oldRoll, apRoll, apBonus, total });
+}
+
+export function registerProgressionRollReroll(source, config) {
+  registerNarutoRerollHandler(source, {
+    canAlter: (message, ctx) => progressionRollCanReroll(message, ctx, config),
+    canAddActionPoint: (message, ctx) => progressionRollCanAddAp(message, ctx, config),
+    addActionPoint: (message, ctx) => addActionPointToProgressionRoll(message, ctx, config),
+    applyReroll: (message, ctx, data) => applyProgressionRollReroll(message, ctx, data, config),
+  });
 }
 
 /** A card may offer "Add Action Point" only while it reflects the current,

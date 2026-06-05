@@ -16,6 +16,7 @@
 
 import { actionPointsPath, masteryCurrentTechniqueIdPath } from "./flag-paths.mjs";
 import { chatVisibilityFrom } from "./chat-visibility.mjs";
+import { markNarutoRollRerollable } from "./chat-rerolls.mjs";
 import { buildLearnCheckBreakdown } from "./data/bonus-sources.mjs";
 import { MASTERY_SUCCESSES } from "./data/technique-model.mjs";
 import {
@@ -28,6 +29,7 @@ import {
   applyTrainingChakraDeduction,
   blockUnit,
   buildProgressionCardFlags,
+  buildProgressionRollRerollData,
   canPayTrainingChakra,
   getMaxAttempts,
   getTrainingMode,
@@ -35,6 +37,7 @@ import {
   minimumTrainingBlocksForRoll,
   postProgressionCard,
   registerProgressionCardContextMenu,
+  registerProgressionRollReroll,
   rollTotal,
   trainingBlocksForRoll,
   trainingChakraCost,
@@ -54,6 +57,7 @@ const MASTER_CARD_CONFIG = {
   getState: (item) => item.system.masteryLearning ?? {},
   resolveAttempt: (item, actor, opts) => resolveMasterAttempt(item, actor, opts),
 };
+const MASTER_REROLL_SOURCE = "master-attempt";
 
 function postMasteryCard(actor, item, opts) {
   return postProgressionCard(actor, item, { ...opts, flagKey: "master" });
@@ -177,6 +181,7 @@ export async function attemptMasterTechnique(item) {
     total: roll.total,
     apBonus: roll.apBonus,
     visibility: roll.rollVisibility,
+    rollMessage: roll.message,
   });
 }
 
@@ -336,7 +341,7 @@ async function rollMasteryCheck(item, actor, skillKey, activeState) {
     return null;
   }
 
-  return { total, apBonus, rollVisibility: chatVisibilityFrom(result) };
+  return { total, apBonus, rollVisibility: chatVisibilityFrom(result), message: result };
 }
 
 async function resolveMasterAttempt(
@@ -351,6 +356,8 @@ async function resolveMasterAttempt(
     supersedes = null,
     apRollText = "",
     visibility = null,
+    rollMessage = null,
+    progressionFlags = !rollMessage,
   },
 ) {
   const result = buildMasteryAttemptResult(item, actor, {
@@ -374,14 +381,28 @@ async function resolveMasterAttempt(
     }
   }
 
-  await postMasterAttemptResultCard(actor, item, {
+  const resultCard = await postMasterAttemptResultCard(actor, item, {
     result,
     baseState,
     chakraDeduction,
     now,
     apRollText,
     visibility,
+    progressionFlags,
   });
+
+  const rerollData = buildProgressionRollRerollData(item, actor, {
+    skillKey,
+    mode,
+    baseState,
+    result,
+    chakraDeduction,
+    now,
+    resultCard,
+  });
+  if (rollMessage && rerollData) {
+    await markNarutoRollRerollable(rollMessage, actor, MASTER_REROLL_SOURCE, rerollData);
+  }
 }
 
 function buildMasteryAttemptResult(item, actor, { skillKey, mode, baseState, total, apBonus }) {
@@ -481,7 +502,7 @@ async function persistMasteryAttemptResult(item, actor, result, now) {
 async function postMasterAttemptResultCard(
   actor,
   item,
-  { result, baseState, chakraDeduction, now, apRollText, visibility = null },
+  { result, baseState, chakraDeduction, now, apRollText, visibility = null, progressionFlags = true },
 ) {
   const apLine = apRollText ? `${apRollText} → ` : "";
   const chakraLine = chakraDeduction.deducted
@@ -499,7 +520,7 @@ async function postMasterAttemptResultCard(
   });
 
   if (result.stepAchieved) {
-    await postMasteryCard(actor, item, {
+    return postMasteryCard(actor, item, {
       title: game.i18n.format("NarutoD20.Cards.Master.StepAchievedTitle", {
         name: item.name,
         step: result.newStep,
@@ -514,11 +535,10 @@ async function postMasterAttemptResultCard(
       footer: trainingFooter,
       visibility,
     });
-    return;
   }
 
   if (result.resetRun) {
-    await postMasteryCard(actor, item, {
+    return postMasteryCard(actor, item, {
       title: game.i18n.format("NarutoD20.Cards.Master.MasteringFailedTitle", { name: item.name }),
       cssClass: "failed",
       lead: game.i18n.format("NarutoD20.Cards.Master.CheckReset", {
@@ -532,7 +552,6 @@ async function postMasterAttemptResultCard(
       footer: trainingFooter,
       visibility,
     });
-    return;
   }
 
   const attemptText =
@@ -551,7 +570,7 @@ async function postMasterAttemptResultCard(
         insight: result.nextFailureInsight,
       });
 
-  await postMasteryCard(actor, item, {
+  return postMasteryCard(actor, item, {
     title: game.i18n.format("NarutoD20.Cards.Master.MasteringTitle", {
       name: item.name,
       step: result.step,
@@ -571,14 +590,16 @@ async function postMasterAttemptResultCard(
       unit: blockUnit(result.trainingBlocks),
       chakra: chakraLine,
     }),
-    flags: buildProgressionCardFlags(item, actor, {
-      skillKey: result.skillKey,
-      mode: result.mode,
-      baseState,
-      result,
-      chakraDeduction,
-      now,
-    }),
+    flags: progressionFlags
+      ? buildProgressionCardFlags(item, actor, {
+          skillKey: result.skillKey,
+          mode: result.mode,
+          baseState,
+          result,
+          chakraDeduction,
+          now,
+        })
+      : null,
     visibility,
   });
 }
@@ -586,4 +607,5 @@ async function postMasterAttemptResultCard(
 /** Register the "Add Action Point" entry on the mastery chat card's menu. */
 export function registerMasterCardContextMenu() {
   registerProgressionCardContextMenu(MASTER_CARD_CONFIG);
+  registerProgressionRollReroll(MASTER_REROLL_SOURCE, MASTER_CARD_CONFIG);
 }

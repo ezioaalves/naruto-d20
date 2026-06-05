@@ -27,3 +27,39 @@
   color: #6b6050;
   margin-top: 4px;
 }
+
+.naruto-reroll-card {
+  display: grid;
+  gap: 6px;
+}
+
+.naruto-reroll-entry {
+  border: 1px solid rgba(80, 80, 80, 0.25);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.naruto-reroll-entry h4 {
+  margin: 0 0 3px;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
+.naruto-reroll-entry.discarded {
+  opacity: 0.58;
+}
+
+.naruto-reroll-entry.discarded .dice-total {
+  text-decoration: line-through;
+}
+
+.naruto-reroll-entry.kept {
+  border-color: rgba(40, 100, 55, 0.55);
+}
+
+.naruto-reroll-summary {
+  border-top: 1px solid rgba(80, 80, 80, 0.25);
+  font-weight: 700;
+  padding-top: 4px;
+  text-align: center;
+}
