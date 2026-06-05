@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.8 - 2026-06-05
+
+- Added Denjiba Reiki no Jutsu (Electromagnetic Aura Technique) to the techniques compendium and rebuilt the techniques pack.
+- Added Naruto chat roll context options for Action Points and rerolls on Tap Reserves, shinobi learn checks, technique perform checks, and learn/mastery attempt rolls.
+- Reworked learn/mastery rerolls and Action Points from the d20 roll card so they reprocess progression state, chakra deductions, and result cards safely.
+
 ## v1.0.7 - 2026-06-04
 
 - Fixed Synckit so actor-owned technique state no longer marks compendium-sourced techniques out of sync: current daily-use charges and mastery training progress are ignored during diffing.
