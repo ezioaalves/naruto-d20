@@ -1,0 +1,154 @@
+{
+  "type": "class",
+  "system": {
+    "description": {
+      "value": "",
+      "instructions": ""
+    },
+    "tags": [],
+    "changes": [
+      {
+        "type": "untyped",
+        "_id": "1RG4J3qB",
+        "operator": "add",
+        "priority": 0,
+        "target": "ac",
+        "formula": "1"
+      }
+    ],
+    "changeFlags": {
+      "immuneToMorale": false,
+      "loseDexToAC": false,
+      "noMediumEncumbrance": false,
+      "noHeavyEncumbrance": false,
+      "mediumArmorFullSpeed": false,
+      "heavyArmorFullSpeed": false,
+      "lowLightVision": false,
+      "seeInvisibility": false,
+      "seeInDarkness": false
+    },
+    "contextNotes": [],
+    "links": {
+      "children": [],
+      "classAssociations": []
+    },
+    "tag": "",
+    "armorProf": [],
+    "weaponProf": [],
+    "languages": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "scriptCalls": [],
+    "subType": "base",
+    "level": 1,
+    "hd": 8,
+    "hp": 8,
+    "bab": "high",
+    "skillsPerLevel": 2,
+    "savingThrows": {
+      "fort": {
+        "value": "low"
+      },
+      "ref": {
+        "value": "high"
+      },
+      "will": {
+        "value": "low"
+      }
+    },
+    "fc": {
+      "hp": {
+        "value": 0
+      },
+      "skill": {
+        "value": 0
+      },
+      "alt": {
+        "value": 0,
+        "notes": ""
+      }
+    },
+    "wealth": "",
+    "alignment": "",
+    "classSkills": {
+      "acr": false,
+      "apr": false,
+      "art": false,
+      "blf": false,
+      "newSkill2": false,
+      "clm": false,
+      "crf": false,
+      "dip": false,
+      "dev": false,
+      "dis": false,
+      "esc": false,
+      "fly": false,
+      "han": false,
+      "newSkill5": false,
+      "hea": false,
+      "int": false,
+      "newSkill": false,
+      "kar": false,
+      "kdu": false,
+      "ken": false,
+      "kge": false,
+      "khi": false,
+      "klo": false,
+      "kna": false,
+      "kno": false,
+      "kpl": false,
+      "kre": false,
+      "lin": false,
+      "lor": false,
+      "newSkill7": false,
+      "newSkill4": false,
+      "per": false,
+      "prf": false,
+      "pro": false,
+      "rid": false,
+      "sen": false,
+      "slt": false,
+      "spl": false,
+      "ste": false,
+      "sur": false,
+      "swm": false,
+      "newSkill3": false,
+      "newSkill6": false,
+      "umd": false,
+      "ckc": false,
+      "fui": false,
+      "gnj": false,
+      "nin": false,
+      "tai": false
+    },
+    "customHD": "",
+    "casting": {
+      "type": ""
+    }
+  },
+  "name": "Livewire",
+  "_id": "ywwhNtzs3fPtKfO5",
+  "img": "systems/pf1/icons/items/inventory/net.jpg",
+  "effects": [],
+  "folder": "Ei6uGmYukb9vCaYd",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780757331003,
+    "modifiedTime": 1780757331003,
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+  },
+  "ownership": {
+    "default": 0,
+    "vTUJ4X3yMMGO4o4P": 3
+  },
+  "sort": 0,
+  "_key": "!items!ywwhNtzs3fPtKfO5"
+}

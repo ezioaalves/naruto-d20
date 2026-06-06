@@ -1,0 +1,22 @@
+{
+  "type": "Item",
+  "folder": "Ai9gJMf1XW9zrD8G",
+  "name": "Community Compendium",
+  "color": "#671792",
+  "sorting": "a",
+  "_id": "aTQhlt1n8zon1BvO",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P",
+    "modifiedTime": 1780757245389
+  },
+  "_key": "!folders!aTQhlt1n8zon1BvO"
+}

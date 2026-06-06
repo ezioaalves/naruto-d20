@@ -1,0 +1,23 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Advanced Classes",
+  "color": "#b60c0c",
+  "sorting": "a",
+  "_id": "Ai9gJMf1XW9zrD8G",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780757224950,
+    "modifiedTime": 1780757224950,
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+  },
+  "_key": "!folders!Ai9gJMf1XW9zrD8G"
+}

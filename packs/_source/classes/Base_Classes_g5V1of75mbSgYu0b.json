@@ -1,0 +1,23 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Base Classes",
+  "color": "#058f28",
+  "sorting": "a",
+  "_id": "g5V1of75mbSgYu0b",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780757268711,
+    "modifiedTime": 1780757268711,
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+  },
+  "_key": "!folders!g5V1of75mbSgYu0b"
+}

@@ -1,0 +1,23 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Prestige Classes",
+  "color": "#bcb3b3",
+  "sorting": "a",
+  "_id": "Ei6uGmYukb9vCaYd",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780757322833,
+    "modifiedTime": 1780757322833,
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+  },
+  "_key": "!folders!Ei6uGmYukb9vCaYd"
+}
