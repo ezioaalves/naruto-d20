@@ -1,0 +1,23 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Paragon Classes",
+  "color": "#b09b0c",
+  "sorting": "a",
+  "_id": "e9v8Q2OS0jswXEGE",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780757291755,
+    "modifiedTime": 1780757301782,
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+  },
+  "_key": "!folders!e9v8Q2OS0jswXEGE"
+}

@@ -1,0 +1,186 @@
+{
+  "type": "class",
+  "system": {
+    "description": {
+      "value": "<h2>Charismatic Paragon</h2><p>The Charismatic Paragon is easily recognized by his forceful, magnetic personality. He is an expert at convincing others to see and do things his way, though they may not always be aware of his influence.</p><p>The Charismatic paragon is best suited to a support role, directing his comrades while keeping away from the front line.</p><h3>Examples of Charismatic Paragons</h3><p>The genjutsu master and squad captains are excellent examples of the Charismatic paragon's capabilities. Their true strength lies in subtlety, and they can turn a good team into an unstoppable force.</p><h3>Class Information</h3><p>The following information pertains to the Charismatic Paragon basic class.</p><h3>Ability</h3><p>Charisma is the primary ability for the Charismatic paragon. Intelligence also allows for even more skill points, as he is second to only the Smart hero or paragon in that domain. A good Dexterity and Constitution score allow for better efficiency with saving throws.</p><h3>Hit Die</h3><p>The Charismatic Paragon gains 1d6 hit points per level. The Constitution modifier applies.</p><h3>Action Points</h3><p>The Charismatic Paragon gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</p><h3>Class Skills</h3><p>The Charismatic Paragon's class skills are as follows. Bluff (Cha), Chakra Control (Wis), Craft (calligraphy, visual art, writing) (Int), Diplomacy (Cha), Disguise (Cha), Gather Information (Cha), Genjutsu (Cha), Handle Animal (Cha), Intimidate (Cha), Knowledge (arcane lore, art, behavioral sciences, business, civics, current events, ninja lore, popular culture, streetwise, theology and philosophy) (Int), Perform (act, dance, keyboards, percussion instruments, sing, stand-up, stringed instruments, wind instruments) (Cha), Profession (Wis), Read/Write Language (none), and Speak Language (none).</p><p>Also, the starting occupation the character selects can provide additional class skills to choose from.</p><p><strong>Skill Points at First Level:</strong> (7 + Int modifier) × 4.</p><p><strong>Skill Points at Each Level:</strong> 7 + Int modifier.</p><table><caption>Table: Charismatic Paragon</caption><thead><tr><th>Level</th><th>Base Attack Bonus</th><th>Fort Save</th><th>Ref Save</th><th>Will Save</th><th>Special</th><th>Defense Bonus</th><th>Reputation Bonus</th></tr></thead><tbody><tr><td>1st</td><td>+0</td><td>+2</td><td>+2</td><td>+0</td><td>Talent</td><td>+0</td><td>+2</td></tr><tr><td>2nd</td><td>+1</td><td>+3</td><td>+3</td><td>+0</td><td>Bonus feat</td><td>+1</td><td>+2</td></tr><tr><td>3rd</td><td>+1</td><td>+3</td><td>+3</td><td>+1</td><td>Talent</td><td>+1</td><td>+2</td></tr><tr><td>4th</td><td>+2</td><td>+4</td><td>+4</td><td>+1</td><td>Bonus feat</td><td>+1</td><td>+3</td></tr><tr><td>5th</td><td>+2</td><td>+4</td><td>+4</td><td>+1</td><td>Charisma boost</td><td>+2</td><td>+3</td></tr></tbody></table><h3>Starting Feats</h3><p>In addition to the two feats all characters get at first level, a Charismatic paragon begins play with the Simple Weapon Proficiency feat.</p><p><em>Optional Rule:</em> Charismatic Paragons may begin play with proficiency in light armors. Taking this class after level 1 grants no armor proficiency.</p><h3>Class Features</h3><p>All of the following are class features of the Charismatic paragon.</p><h3>Talents</h3><p>At 1st and 3rd level, the Charismatic paragon selects a talent from the Charismatic hero base class' talent trees, or the following talent tree. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the paragon qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p><h3>Charismatic Prodigy Talent Tree</h3><p>The following talents can only be selected by the Charismatic paragon.</p><p><strong>Charismatic Prodigy:</strong> You can spend an action point once per encounter when making a Charisma-based skill or ability check to influence a NPC (such as a Bluff or Diplomacy check). As a result, the check automatically considered a success (in a situation where the degree of success is important, such as in a Diplomacy check, you must still roll the check. On a failed check, assume the minimum degree of success instead).<br /><em>Prerequisite:</em> Genius Ninja, any Charismatic Hero talent.</p><h3>Bonus Feats</h3><p>At 2nd and 4th level, the Charismatic paragon gains a bonus feat. This feat must be selected from the Charismatic hero list of bonus feats, and the Charismatic paragon must meet any prerequisites.</p><h3>Charisma Boost</h3><p>At 5th level, the Charismatic paragon's Charisma score increases by 2 points.</p>",
+      "instructions": ""
+    },
+    "tags": [],
+    "changes": [
+      {
+        "type": "untyped",
+        "_id": "ChAc5M2t",
+        "operator": "add",
+        "priority": 0,
+        "target": "ac",
+        "formula": "floor((@item.level + 1) / 3)"
+      }
+    ],
+    "changeFlags": {
+      "immuneToMorale": false,
+      "loseDexToAC": false,
+      "noMediumEncumbrance": false,
+      "noHeavyEncumbrance": false,
+      "mediumArmorFullSpeed": false,
+      "heavyArmorFullSpeed": false,
+      "lowLightVision": false,
+      "seeInvisibility": false,
+      "seeInDarkness": false
+    },
+    "contextNotes": [],
+    "links": {
+      "children": [],
+      "classAssociations": []
+    },
+    "tag": "",
+    "armorProf": [
+      "lgt"
+    ],
+    "weaponProf": [
+      "simple",
+      "Nin Weapon"
+    ],
+    "languages": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "scriptCalls": [
+      {
+        "category": "changeLevel",
+        "type": "script",
+        "_id": "ChSc8L4p",
+        "name": "New Script Call",
+        "img": null,
+        "value": "",
+        "hidden": false
+      }
+    ],
+    "subType": "base",
+    "level": 1,
+    "hd": 6,
+    "hp": null,
+    "bab": "low",
+    "skillsPerLevel": 6,
+    "savingThrows": {
+      "fort": {
+        "value": "high"
+      },
+      "ref": {
+        "value": "high"
+      },
+      "will": {
+        "value": "low"
+      }
+    },
+    "fc": {
+      "hp": {
+        "value": 0
+      },
+      "skill": {
+        "value": 0
+      },
+      "alt": {
+        "value": 0,
+        "notes": ""
+      }
+    },
+    "wealth": "",
+    "alignment": "",
+    "classSkills": {
+      "acr": false,
+      "apr": false,
+      "art": false,
+      "blf": true,
+      "clm": false,
+      "crf": true,
+      "dip": true,
+      "dev": false,
+      "dis": true,
+      "esc": false,
+      "fly": false,
+      "han": true,
+      "hea": false,
+      "int": true,
+      "kar": true,
+      "kdu": true,
+      "ken": true,
+      "kge": true,
+      "khi": true,
+      "klo": true,
+      "kna": true,
+      "kno": true,
+      "kpl": true,
+      "kre": true,
+      "lin": true,
+      "lor": false,
+      "per": false,
+      "prf": true,
+      "pro": true,
+      "rid": false,
+      "sen": false,
+      "slt": false,
+      "spl": false,
+      "ste": false,
+      "sur": false,
+      "swm": false,
+      "umd": false,
+      "taijutsu": false,
+      "chakracontrol": true,
+      "fuinjutsu": false,
+      "genjutsu": true,
+      "ninjutsu": false,
+      "gamble": false,
+      "ckc": true,
+      "fui": false,
+      "gnj": true,
+      "nin": false,
+      "tai": false
+    },
+    "customHD": "",
+    "casting": {
+      "type": "",
+      "progression": "high",
+      "ability": "int",
+      "spells": "arcane",
+      "domain": null,
+      "offset": null,
+      "cantrips": false
+    },
+    "sources": [
+      {
+        "title": "Prodigy to Paragon",
+        "pages": ""
+      }
+    ]
+  },
+  "name": "Charismatic Paragon",
+  "_id": "cH5aR9iS2mT8uL4p",
+  "img": "systems/pf1/icons/feats/deceitful.jpg",
+  "effects": [],
+  "folder": "e9v8Q2OS0jswXEGE",
+  "flags": {
+    "pf1": {
+      "links": {
+        "classAssociations": {}
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780759500000,
+    "modifiedTime": 1780759500000,
+    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+  },
+  "ownership": {
+    "default": 0,
+    "vTUJ4X3yMMGO4o4P": 3
+  },
+  "sort": 0,
+  "_key": "!items!cH5aR9iS2mT8uL4p"
+}

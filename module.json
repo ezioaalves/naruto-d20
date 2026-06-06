@@ -93,6 +93,13 @@
       "path":   "packs/feats",
       "type":   "Item",
       "system": "pf1"
+    },
+    {
+      "name":   "classes",
+      "label":  "Naruto Classes",
+      "path":   "packs/classes",
+      "type":   "Item",
+      "system": "pf1"
     }
   ],
   "packFolders": [
@@ -103,7 +110,8 @@
       "packs": [
         "techniques",
         "technique-buffs",
-        "feats"
+        "feats",
+        "classes"
       ]
     }
   ]
