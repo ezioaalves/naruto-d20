@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.10 - 2026-06-06
+
+- Fixed class skills for Fast Paragon, Strong Ninja, Strong Paragon, Tough Ninja, and Tough Paragon classes.
+
 ## v1.0.9 - 2026-06-06
 
 - Added a Classes compendium pack with base ninja classes (Strong, Fast, Dedicated, Charismatic, Smart, Tough) and their matching Paragon variants.

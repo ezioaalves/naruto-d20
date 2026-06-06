@@ -127,7 +127,7 @@
       "sur": true,
       "swm": false,
       "umd": false,
-      "ckc": false,
+      "ckc": true,
       "fui": false,
       "gnj": false,
       "nin": false,
@@ -155,12 +155,11 @@
     "systemId": "pf1",
     "systemVersion": "11.11",
     "createdTime": 1780757278144,
-    "modifiedTime": 1780757278144,
-    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+    "modifiedTime": 1780764795730,
+    "lastModifiedBy": "mIZLV3aRVXSMGsYi"
   },
   "ownership": {
-    "default": 2,
-    "vTUJ4X3yMMGO4o4P": 3
+    "default": 0
   },
   "sort": 0,
   "_key": "!items!QCnjlxL46CsOgu4c"

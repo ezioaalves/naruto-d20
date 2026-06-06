@@ -79,7 +79,7 @@
     "wealth": "",
     "alignment": "",
     "classSkills": {
-      "acr": false,
+      "acr": true,
       "apr": false,
       "art": false,
       "blf": false,
@@ -97,7 +97,7 @@
       "kdu": false,
       "ken": false,
       "kge": false,
-      "khi": true,
+      "khi": false,
       "klo": true,
       "kna": false,
       "kno": false,
@@ -143,13 +143,12 @@
     "systemId": "pf1",
     "systemVersion": "11.11",
     "createdTime": 1780757278144,
-    "modifiedTime": 1780757278144,
-    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+    "modifiedTime": 1780764795730,
+    "lastModifiedBy": "mIZLV3aRVXSMGsYi"
   },
   "_id": "4hLXlBfADg43MAZ0",
   "ownership": {
-    "default": 2,
-    "vTUJ4X3yMMGO4o4P": 3
+    "default": 0
   },
   "sort": 0,
   "_key": "!items!4hLXlBfADg43MAZ0"

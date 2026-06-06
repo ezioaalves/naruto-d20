@@ -133,7 +133,7 @@
       "genjutsu": false,
       "ninjutsu": true,
       "gamble": false,
-      "ckc": false,
+      "ckc": true,
       "fui": false,
       "gnj": false,
       "nin": true,
@@ -176,12 +176,11 @@
     "systemId": "pf1",
     "systemVersion": "11.11",
     "createdTime": 1780759500000,
-    "modifiedTime": 1780759500000,
-    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
+    "modifiedTime": 1780764836276,
+    "lastModifiedBy": "mIZLV3aRVXSMGsYi"
   },
   "ownership": {
-    "default": 0,
-    "vTUJ4X3yMMGO4o4P": 3
+    "default": 0
   },
   "sort": 0,
   "_key": "!items!tG9cW3hF5jK7pD2n"
