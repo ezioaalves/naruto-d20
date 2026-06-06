@@ -59,7 +59,7 @@
     "subType": "base",
     "level": 1,
     "hd": 8,
-    "hp": 28,
+    "hp": null,
     "bab": "med",
     "skillsPerLevel": 4,
     "savingThrows": {
