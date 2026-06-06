@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.9 - 2026-06-06
+
+- Added a Classes compendium pack with base ninja classes (Strong, Fast, Dedicated, Charismatic, Smart, Tough) and their matching Paragon variants.
+- Added Deft Skirmisher and Livewire prestige classes to the compendium.
+- Added pack/unpack scripts for the classes compendium (`npm run pack:classes`, `unpack:classes`, `pack:all`, `unpack:all`).
+
 ## v1.0.8 - 2026-06-05
 
 - Added Denjiba Reiki no Jutsu (Electromagnetic Aura Technique) to the techniques compendium and rebuilt the techniques pack.
