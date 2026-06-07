@@ -1,0 +1,77 @@
+# Extracted Classes List
+
+- [Akatsuki Spy] (prestige) - HD: d6, SP: 7
+- [Akimichi Master] (prestige) - HD: d8, SP: 4
+- [Battle Maiden] (prestige) - HD: d8, SP: 4
+- [Beast Tamer] (prestige) - HD: d8, SP: 4
+- [Beastlord] (prestige) - HD: d8, SP: 3
+- [Beastmaster] (prestige) - HD: d8, SP: 3
+- [Blinkstrike] (prestige) - HD: d8, SP: 3
+- [Bulwark] (prestige) - HD: d8, SP: 4
+- [Chakra Fighter] (prestige) - HD: d8, SP: 4
+- [Charismatic Ninja] (base) - HD: d8, SP: 7
+- [Chemist] (prestige) - HD: d6, SP: 4
+- [Clairvoyant Assassin] (prestige) - HD: d6, SP: 5
+- [Clansman] (prestige) - HD: d8, SP: 5
+- [Dao Shi Monk] (prestige) - HD: d8, SP: 5
+- [Dedicated Ninja] (base) - HD: d8, SP: 5
+- [Deft Skirmisher] (prestige) - HD: d8, SP: 4
+- [Dervish Dancer] (prestige) - HD: d10, SP: 3
+- [Devastator] (prestige) - HD: d8, SP: 5
+- [Elemental Master] (prestige) - HD: d6, SP: 5
+- [Elementalist] (prestige) - HD: d8, SP: 5
+- [Exarch] (prestige) - HD: d8, SP: 5
+- [Exemplar] (prestige) - HD: d8, SP: 3
+- [Fast Ninja] (base) - HD: d8, SP: 5
+- [Genjutsu Master] (prestige) - HD: d8, SP: 5
+- [Hisuigakure] (prestige) - HD: d8, SP: 4
+- [Hitokiri] (prestige) - HD: d8, SP: 4
+- [Holy/Unholy Warrior] (prestige) - HD: d8, SP: 4
+- [Iaijutsu Master] (prestige) - HD: d10, SP: 3
+- [Inuzuka Beastmaster] (prestige) - HD: d8, SP: 3
+- [Kaguya Marauder] (prestige) - HD: d8, SP: 4
+- [Livewire] (prestige) - HD: d8, SP: 3
+- [Master Strategist] (prestige) - HD: d8, SP: 9
+- [Master Thrower] (prestige) - HD: d8, SP: 4
+- [Medical Specialist] (prestige) - HD: d8, SP: 5
+- [Nara Shadowmaster] (prestige) - HD: d8, SP: 5
+- [Ninja Chef (Wip)] (prestige) - HD: d8, SP: 4
+- [Ninja Crafter] (prestige) - HD: d6, SP: 6
+- [Ninja Hunter] (prestige) - HD: d8, SP: 7
+- [Ninja Police] (prestige) - HD: d8, SP: 7
+- [Ninja Scout] (prestige) - HD: d8, SP: 5
+- [Piercing Seer] (prestige) - HD: d8, SP: 3
+- [Puppeteer] (prestige) - HD: d8, SP: 5
+- [Ravager] (prestige) - HD: d12, SP: 3
+- [Ryukyu Swordsman] (prestige) - HD: d8, SP: 3
+- [Sacred Fist] (prestige) - HD: d8, SP: 3
+- [Sannin] (prestige) - HD: d10, SP: 7
+- [Sensory Shinobi] (prestige) - HD: d8, SP: 4
+- [Shade] (prestige) - HD: d8, SP: 5
+- [Shadow Adept] (prestige) - HD: d6, SP: 5
+- [Shinobi Adept] (prestige) - HD: d8, SP: 7
+- [Shinobi Bodyguard] (prestige) - HD: d8, SP: 3
+- [Shinobi Scribe] (prestige) - HD: d8, SP: 4
+- [Shinobi Squad Leader] (prestige) - HD: d8, SP: 4
+- [Shinobi Swordsman] (prestige) - HD: d8, SP: 3
+- [Shunjutsu Master] (prestige) - HD: d8, SP: 3
+- [Shuriken Expert] (prestige) - HD: d8, SP: 5
+- [Smart Ninja] (base) - HD: d8, SP: 9
+- [Soul Edge] (prestige) - HD: d8, SP: 3
+- [Space-Time Specialist] (prestige) - HD: d8, SP: 5
+- [Specialist Summoner] (prestige) - HD: d6, SP: 5
+- [Squad Captain] (prestige) - HD: d8, SP: 5
+- [Strong Ninja] (base) - HD: d8, SP: 3
+- [Summoner] (prestige) - HD: d8, SP: 3
+- [Sword Saint] (prestige) - HD: d8, SP: 4
+- [Sword Savant] (prestige) - HD: d8, SP: 3
+- [Symbiote Bugmaster] (prestige) - HD: d6, SP: 5
+- [Taijutsu Master] (prestige) - HD: d8, SP: 3
+- [Technique Analyst] (prestige) - HD: d8, SP: 5
+- [Tora Oshiego] (prestige) - HD: d8, SP: 4
+- [Tough Ninja] (base) - HD: d8, SP: 3
+- [Uchiha Elite] (prestige) - HD: d8, SP: 5
+- [Uzumaki Warrior] (prestige) - HD: d6, SP: 5
+- [Waterbender] (prestige) - HD: d8, SP: 4
+- [Wind Walker] (prestige) - HD: d8, SP: 5
+- [Yamanaka Spymaster] (prestige) - HD: d8, SP: 4

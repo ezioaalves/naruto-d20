@@ -391,7 +391,7 @@ skills, proficiências, changes, associações, fonte, IDs e pasta.
 
 [`generate-prestige-classes.pl`](../tools/generate-prestige-classes.pl) converte
 um diretório de classes em Markdown para JSONs de classe. Ele foi criado para o
-lote em `Classes/Prestige/`, mas aceita outros diretórios e destinos.
+lote em `classes/prestige/`, mas aceita outros diretórios e destinos.
 
 O gerador:
 
@@ -444,10 +444,10 @@ Para outro lote, informe os caminhos e a pasta explicitamente:
 
 ```sh
 perl tools/generate-prestige-classes.pl \
-  --source-dir Classes/Outro-Lote \
+  --source-dir classes/outro-lote \
   --output-dir packs/_source/classes \
-  --template packs/_source/classes/Classe_Modelo_ID.json \
-  --folder-id ID_DA_PASTA
+  --template packs/_source/classes/classe-modelo-id.json \
+  --folder-id id-da-pasta
 ```
 
 Os IDs dependem do nome da classe; renomear um título cria outro ID e deve ser

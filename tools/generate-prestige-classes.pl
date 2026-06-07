@@ -11,7 +11,7 @@ use Digest::SHA qw(sha256_hex);
 use Getopt::Long qw(GetOptions);
 use JSON::PP;
 
-my $source_dir = "Classes/Prestige";
+my $source_dir = "classes/prestige";
 my $output_dir = "packs/_source/classes";
 my $template_path;
 my $folder_id = "Ei6uGmYukb9vCaYd";
@@ -267,7 +267,7 @@ sub usage {
 Usage: perl tools/generate-prestige-classes.pl [options]
 
 Options:
-  --source-dir PATH  Markdown source directory (default: Classes/Prestige)
+  --source-dir PATH  Markdown source directory (default: classes/prestige)
   --output-dir PATH  Class JSON output directory (default: packs/_source/classes)
   --template PATH    Existing class JSON used as structural template
   --folder-id ID     Destination compendium folder ID
