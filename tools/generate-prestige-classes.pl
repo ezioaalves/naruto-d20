@@ -109,6 +109,33 @@ my %icons = (
   "Tough Ninja" => "systems/pf1/icons/feats/intimidating-prowess.jpg",
   "Tough Paragon" => "systems/pf1/icons/feats/intimidating-prowess.jpg",
   "Wild Technician" => "systems/pf1/icons/items/inventory/essence-void.jpg",
+
+  # Community Compendium advanced classes
+  "Akatsuki Spy" => "systems/pf1/icons/items/inventory/mask-bird.jpg",
+  "Battle Maiden" => "systems/pf1/icons/items/weapons/longsword.png",
+  "Beast Tamer" => "systems/pf1/icons/skills/beast_01.jpg",
+  "Chakra Fighter" => "systems/pf1/icons/feats/gorgons-fist.jpg",
+  "Chemist" => "systems/pf1/icons/feats/brew-potion.jpg",
+  "Clansman" => "systems/pf1/icons/items/inventory/badge-banner.jpg",
+  "Dao Shi Monk" => "systems/pf1/icons/feats/stunning-fist.jpg",
+  "Dervish Dancer" => "systems/pf1/icons/items/weapons/scimitar.PNG",
+  "Elemental Master" => "systems/pf1/icons/feats/elemental-channel.jpg",
+  "Hitokiri" => "systems/pf1/icons/skills/blood_01.jpg",
+  "Holy/Unholy Warrior" => "systems/pf1/icons/items/inventory/badge-cross.jpg",
+  "Iaijutsu Master" => "systems/pf1/icons/items/weapons/katana.png",
+  "Master Thrower" => "systems/pf1/icons/items/weapons/shuriken.png",
+  "Ninja Crafter" => "systems/pf1/icons/feats/craft-wondrous-items.jpg",
+  "Ryukyu Swordsman" => "systems/pf1/icons/items/weapons/sickle-sword.png",
+  "Sannin" => "systems/pf1/icons/items/inventory/medal.jpg",
+  "Sensory Shinobi" => "systems/pf1/icons/items/inventory/monster-eyes.jpg",
+  "Shadow Adept" => "systems/pf1/icons/skills/shadow_01.jpg",
+  "Shinobi Scribe" => "systems/pf1/icons/feats/scribe-scroll.jpg",
+  "Shinobi Squad Leader" => "systems/pf1/icons/feats/leadership.jpg",
+  "Shunjutsu Master" => "systems/pf1/icons/spells/haste-royal-1.jpg",
+  "Space-Time Specialist" => "systems/pf1/icons/items/weapons/starknife.png",
+  "Specialist Summoner" => "systems/pf1/icons/feats/augument-summoning.jpg",
+  "Sword Saint" => "systems/pf1/icons/items/weapons/elven-curve-blade.PNG",
+  "Tora Oshiego" => "systems/pf1/icons/items/inventory/badge-tiger.jpg",
 );
 
 my %associations = (
