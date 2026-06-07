@@ -1,0 +1,166 @@
+{
+   "_id" : "792164d1bb721876",
+   "_key" : "!items!792164d1bb721876",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/feats/deadly-aim.jpg",
+   "name" : "Sharpshooter",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "81ccc1e524bba720",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : true,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Sharpshooter</h1>\n<p>The Sharpshooter is an expert at taking out his targets from a distance, never letting himself known. The need for stealth is often reduced as a result of the distance, but oftentimes the only hint of his presence is the sound of a body striking the floor.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a sharpshooter, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Sleight of Hand 6 ranks, Tumble 6 ranks.</li>\n<li><strong>Feats</strong>: Precise Shot and one of the following: Archaic Weapons Proficiency, Exotic Firearms Proficiency or Personal Firearms Proficiency.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Sharpshooter advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Sharpshooter gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Sharpshooter gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Sharpshooter's class skills are as follows: Bluff (Cha), Concentration (Con), Demolitions (Int), Drive (Dex), Escape Artist (Dex), Hide (Dex), Intimidate (Cha), Knowledge (current events, ninja lore, streetwise) (Int), Move Silently (Dex), Profession (Wis), Read/Write Language (none), Ride (Dex), Sleight of Hand (Dex), Speak Language (none), Spot (Wis), Survival (Wis), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Sharpshooter</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>Marksman, close-quarters combat</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+2</td>\n<td>Specialized weapon focus, rapid shot</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>Adept marksman</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+3</td>\n<td>Specialized weapon specialization</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>Deadly shots</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+4</td>\n<td>+4</td>\n<td>Expert marksman</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6</td>\n<td>+2</td>\n<td>+4</td>\n<td>+4</td>\n<td>Greater specialized weapon focus</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>Bonus feat</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7</td>\n<td>+3</td>\n<td>+5</td>\n<td>+5</td>\n<td>Master marksman</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Sharpshooter advanced class.</p>\n<h3>Marksman</h3>\n<p>At 1st level, the sharpshooter may choose one of the three combat styles pertaining to a weapon group and gain different bonuses as he gains levels in this class, depending on this choice.</p>\n<ul>\n<li><strong>Bows and Crossbows</strong>: The sharpshooter gains the Far Shot feat.</li>\n<li><strong>Handguns</strong>: The sharpshooter gains the Precise Shot feat.</li>\n<li><strong>Longarms</strong>: The sharpshooter gains the [Universal: Risky Strike] feat even if he does not meet the prerequisite.</li>\n</ul>\n<h3>Close-Quarters Combat</h3>\n<p>At 1st level, the sharpshooter can fire a ranged weapons from his chosen weapon group in a threatened area without provoking an attack of opportunity.</p>\n<h3>Specialized Weapon Focus</h3>\n<p>At 2nd level, the sharpshooter gains the benefits of the weapon focus feat when attacking with any weapon that falls within the weapon group chosen at level 1. The character gains a +1 bonus to attack rolls made with any such weapon. This bonus does not stack with other similar abilities.</p>\n<h3>Rapid Shot</h3>\n<p>At 2nd level, the sharpshooter gains Rapid Shot as a bonus feat even if he does not meet the prerequisites.</p>\n<h3>Adept Marksman</h3>\n<p>At 4th level, the sharpshooter gains great proficiency with his chosen weapons.</p>\n<ul>\n<li><strong>Bows and Crossbows</strong>: The sharpshooter can attempt to disarm an opponent with a ranged attack. Doing so does not provoke an attack of opportunity, and the opponent cannot attempt to disarm him in turn.</li>\n<li><strong>Handguns</strong>: When the sharpshooter attacks a target with cover, the Defense bonus for one-quarter, one-half, three-quarters or nine-tenths cover is reduced by 2.</li>\n<li><strong>Longarms</strong>: When the sharpshooter uses the dead aim feat, he deals an additional +1d6 points of damage every odd-numbered sharpshooter level. This ability can be used no more than three times per day.</li>\n</ul>\n<h3>Specialized Weapon Specialization</h3>\n<p>At 5th level, the sharpshooter gains a +2 bonus to damage rolls when attacking with any weapon that falls within the group he chose at level 1. This bonus does not stack with other similar abilities.</p>\n<h3>Deadly Shots</h3>\n<p>At 6th level, the sharpshooter gains the innate ability to make deadlier shots at the price of accuracy. The sharpshooter can take a –1 penalty to all ranged attack rolls when using his chosen weapons to gain a +1 bonus to damage rolls. This number cannot exceed the sharpshooter's base attack bonus, and the effects last until his next turn.</p>\n<h3>Expert Marksman</h3>\n<p>At 7th level, the sharpshooter becomes an expert in the user of his chosen weapons.</p>\n<ul>\n<li><strong>Bows and Crossbows</strong>: The sharpshooter can attempt to pin a target to any nearby surfaces. The target must be within 5 feet of a wall, tree or other applicable surfaces where a projectile can be stuck and must be wearing clothing, armor or other applicable accessory. The sharpshooter must succeed on a ranged attack and win an opposed grapple check. To break free, the target must make a Strength or Dexterity check (DC 15) as an attack action.</li>\n<li><strong>Handguns</strong>: When the sharpshooter uses the Rapid Shot feat with weapons that fall in this category, he no longer takes a penalty to attack rolls.</li>\n<li><strong>Longarms</strong>: The sharpshooter can use the [Universal: Risky Strike] feat with any weapon that falls in this category as a move action instead of a full-round action.</li>\n</ul>\n<h3>Greater Specialized Weapon Focus</h3>\n<p>At 8th level, the sharpshooter gains greater proficiency with his chosen weapons, and the bonus granted by Weapon Focus increases to +2.</p>\n<h3>Master Marksman</h3>\n<p>At 10th level, the sharpshooter gains increased critical strike range when attacking with weapons that fall within the group he chose at level 1. The critical strike range of those attacks is increased by 1.</p>\n<h3>Bonus Feat</h3>\n<p>At 3rd and 9th level, the Sharpshooter gets a bonus feat. The bonus feat must be selected from the following list, and the Sharpshooter must meet all the prerequisites of the feat to select it.</p>\n<ul>\n<li>Alertness</li>\n<li>Armor Proficiency (light)</li>\n<li>Athletic</li>\n<li>Chuunin</li>\n<li>[Universal: Defensive Stance]</li>\n<li>[Universal: Risky Strike]</li>\n<li>Dodge</li>\n<li>Elusive Target</li>\n<li>Far Shot</li>\n<li>Genin</li>\n<li>Nimble</li>\n<li>Precise Shot</li>\n<li>Quick Draw</li>\n<li>Quick Reload</li>\n<li>Shot on the Run</li>\n<li>Stealthy</li>\n</ul>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : [
+            {
+               "level" : 2,
+               "uuid" : "Compendium.naruto-d20.feats.Item.SWcOsmAU86WMikKi"
+            }
+         ]
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

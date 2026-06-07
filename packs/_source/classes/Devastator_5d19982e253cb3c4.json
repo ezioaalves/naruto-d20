@@ -1,0 +1,172 @@
+{
+   "_id" : "5d19982e253cb3c4",
+   "_key" : "!items!5d19982e253cb3c4",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/spells/fireball-red-3.jpg",
+   "name" : "Devastator",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "b9f1334d3a47b6af",
+            "formula" : "floor((@item.level + 2) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "b12bcfbc59d588fd",
+            "formula" : "2 * @item.level - 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "88542410fcda17ab",
+            "formula" : "4 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : true,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : true,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : true,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Devastator</h1>\n<p>Of all the technique users, the devastator is the deadliest. He has reached the peak of his ability and can literally turn himself into a force of nature, tapping into a well of vast power. A constant companion to the Devastator's great power is complete and utter devastation.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a devastator, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Chakra Control 16 ranks, Knowledge (ninja lore) 12 ranks and Genjutsu 16 ranks or Ninjutsu 16 ranks.</li>\n<li><strong>Feats</strong>: Genjutsu Adept or Ninjutsu Adept, Technique Focus (any) and any 2 meta-chakra feats.</li>\n<li><strong>Special</strong>: A devastator candidate must have an effective skill threshold 18 ranks in either Genjutsu or Ninjutsu. The character must also have 20 or more bonus reserve from talents, feats or class levels.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Devastator prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Devastator gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Devastator gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Devastator's class skills are as follows. Chakra Control (Wis), Concentration (Con), Craft (all skills taken individually) (Int), Decipher Script (Int), Diplomacy (Cha), Disable Device (Int), Drive (Dex), Demolitions (Int), Fuinjutsu (Int), Genjutsu (Cha), Intimidate (Cha), Investigate (Int), Knowledge (all skills taken individually) (Int), Ninjutsu (Int), Perform (sing, string instruments) (Cha), Profession (Wis), Read Language (None), Search (Int), Sign Language (None), Speak Language (None).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Devastator prestige class.</p>\n<h3>Unleashed Power</h3>\n<p>The devastator is able to fire a blast of raw chakra as an attack action. The blast is a ranged touch attack with a long range (30 feet plus 15 feet every 2 levels) that deals 1d6 points of force damage per devastator level, plus 1d6 every point of chakra spent in it. The devastator cannot spend more than 1 point of chakra every 2 levels.</p>\n<h3>Bonus Chakra</h3>\n<p>The Devastator gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>3</td>\n<td>8</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>5</td>\n<td>12</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>7</td>\n<td>16</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>9</td>\n<td>20</td>\n</tr>\n</tbody>\n</table>\n<h3>Succession Technique</h3>\n<p>At 2nd, 3rd and 4th level, the devastator gains a special ability from the list below, called succession techniques. Unless otherwise specified, a succession technique cannot be selected twice.</p>\n<ul>\n<li><strong>Advanced Chakra Nature Manipulation (Su)</strong>: The devastator is able to combine chakra natures into a hybrid subtype that can have devastating effects. Each hybrid attack deals two types of damage; if a creature is vulnerable to either, both types deal increased damage. If the creature is immune to either, the attack deals half damage of a single type it would be vulnerable to; if the creature is immune to both types, the attack has no effect. Energy resistance applies normally. Abilities such as the elementalist's elemental fury apply to all damage die. A technique so modified cannot be copied or assimilated. This ability can be selected twice; each time applying to a different nature manipulation. Selecting this ability permanently costs the devastator 1 meta-chakra charge.</li>\n<li><strong>Blaze Release: Enton (requires Electricity and Fire affinity) (Su)</strong>: The hybrid attack deals half electricity and half fire damage. This hybrid type applies only to Ninjutsu techniques either the electricity or fire descriptor, and includes whichever descriptor is missing.</li>\n<li><strong>Crystal Release: Shoton (requires Earth and Ice affinity) (Su)</strong>: The hybrid attack deals half cold and half earth damage. This hybrid type applies only to Ninjutsu techniques either the cold or earth descriptor, and includes whichever descriptor is missing. It ignores object hardness fully. Objects created from Shoton hybrids gain +6 hardness.</li>\n<li><strong>Dust Release: Jinton (requires Earth and Wind affinity) (Su)</strong>: The hybrid attack deals half earth and half wind damage. This hybrid type applies only to Ninjutsu techniques either the earth or wind descriptor, and includes whichever descriptor is missing.</li>\n<li><strong>Ice Release: Hyouton (requires Ice or Water and Wind affinity) (Su)</strong>: The devastator gains the ability to learn and perform Hyouton techniques. The devastator is able to deconstruct any Ninjutsu technique with the cold descriptor and deal half water and half wind damage instead, replacing the cold descriptor by water and wind. The Elemental Fury ability or other similar abilities do not apply to the deconstructed technique, but any material focus requirement is waived.</li>\n<li><strong>Lava Release: Youton (requires Earth and Fire affinity) (Su)</strong>: The hybrid attack deals half earth and half fire damage. This hybrid type applies only to Ninjutsu techniques either the earth or fire descriptor, and includes whichever descriptor is missing.</li>\n<li><strong>Steam Release: Futton (requires Fire and Water affinity) (Su)</strong>: The hybrid attack deals half fire and half water damage. This hybrid type applies only to Ninjutsu techniques either the fire or water descriptor, and includes whichever descriptor is missing.</li>\n<li><strong>Storm Release: Ranton (requires Electricity and Water affinity) (Su)</strong>: The hybrid attack deals half electricity and half wind damage. This hybrid type applies only to Ninjutsu techniques either the electricity or water descriptor, and includes whichever descriptor is missing.</li>\n<li><strong>Advanced Chakra Shape Manipulation (Su)</strong>: The devastator is able to turn a Genjutsu or Ninjutsu burst attack into a shapeable spread effect, and a cone effect into a line twice its length. Additionally, he is able to turn a spread effect into a shapeable burst, or a line into a cone effect half its length (round down).</li>\n</ul>\n<p>The devastator is able to spend a meta-chakra charge to deliver the full effects of the technique with a melee touch attack. The range becomes \"melee touch\" and it targets a single creature exclusively. A technique so modified cannot be copied or assimilated.</p>\n<ul>\n<li><strong>Bonus Feat</strong>: Instead of a succession technique, the devastator may elect to pick a bonus feat from the list below. This ability can be selected twice. Advanced Seal Proficiency, Chakra Penetration, Chakra Presence, Chakra Restoration, Chakra Weaving, Combat Tactics, Efficient Technique, Elemental Shaping, Elemental Specialization, Empower Technique, Empowered Resilience, Enlarge Technique, Extend Technique, Force of Personality, Retrieval Expert, Grand Master, Greater Chakra Penetration, Hand Seals Proficiency, Hidden Gaze, Improved Chakra Pool, Insightful Reflexes, Maximize Technique, Sturdy Illusion, Supercharged Technique, Technique Focus, Training, Vile Technique, Widen Technique.</li>\n<li><strong>Chakra Medium Alteration (Su)</strong>: The devastator is able to manipulate the way his Genjutsu techniques affect a foe. He may deliver a scent-based illusion as a gaze attack or sound-based effect, or a gaze attack as a sound- or scent-based effect, or finally a sound-based effect as a gaze attack or smell-based effect. The number of target affected is still dependent on the technique used and level of the devastator, and normal limitations of gaze attacks, scent- and sound-based effects apply (such as blindness or deafness). Selecting this ability permanently costs the devastator 1 meta-chakra charge.</li>\n<li><strong>Chakra Reach Extension (Su)</strong>: The devastator is able to deliver melee touch attacks with Chakra Control, Genjutsu or Ninjutsu techniques on a target up to 30 feet away. He must make a ranged touch attack instead. This ability can be selected twice, the range increases to 60 feet; the second time permanently costs the devastator 1 meta-chakra charge.</li>\n<li><strong>Chakra Pulse Mastery (Su) (requires 1 other succession technique)</strong>: The devastator adds his Devastator level as a circumstance bonus to dispel checks against Genjutsu techniques.</li>\n<li><strong>Chakra Shape Manipulation (Su)</strong>: The devastator is able to shape area effects to omit certain spaces that would normally be affected. The area effect must be either a burst, cone, cylinder, emanation or spread effect, and the minimum dimension for these spaces is one 5-ft. cube. Furthermore, the minimum dimension for a shapeable technique is 5 feet, rather than 10 feet.</li>\n<li><strong>Devastation (Su) (requires 1 other succession technique)</strong>: The devastator adds his Charisma or Intelligence modifier (whichever applies) to damage when using a Genjutsu or Ninjutsu technique, up to +1 per rank or +10, whichever is lower. This applies only in instances where an ability deals hit points damage, not ability damage.</li>\n<li><strong>Intense Power (Su) (requires 2 other succession techniques)</strong>: The devastator counts as though one level higher when performing Chakra Control, Genjutsu and Ninjutsu techniques for purposes of determining level-dependent variables such as maximum damage dice or range, and level checks only.</li>\n</ul>\n<h3>Force of Nature</h3>\n<p>Once per day, the Devastator can activate this ability to become a vessel for immense power for a short duration by spending an action point to regain chakra. He taps his reserves for seemingly unlimited energy and can perform techniques without drawing from his chakra pool or chakra reserves.</p>\n<p>The Devastator is able to do so for 1 round × one-half the result of his action point (round down, minimum 1). At the end of the encounter or after 1 minute, his chakra reserve is reduced to 0 and his current chakra pool halved (minimum 1). The character may spend a second action point to lose only half his chakra reserve. This ability cannot be used while suffering from chakra depletion or while exhausted.</p>\n<h2>Table: The Devastator</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+2</td>\n<td>Unleashed power, bonus chakra</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+3</td>\n<td>Succession technique</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+3</td>\n<td>Succession technique</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+4</td>\n<td>Succession technique</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+4</td>\n<td>Force of nature</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

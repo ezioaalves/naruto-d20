@@ -1,0 +1,172 @@
+{
+   "_id" : "c8af8eb1fcbe5e2b",
+   "_key" : "!items!c8af8eb1fcbe5e2b",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/items/inventory/monster-brain.jpg",
+   "name" : "Puppeteer",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "34b07301e4c68850",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "7578db888776cf6d",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "d697050520630a68",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : true,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Puppeteer</h1>\n<p>This type of ninja does not like Melee combat. Instead, it uses tools to fight for him, while he calmly watches and analyzes his enemy from the shadows. The fastest path to this class is through the Smart hero basic class.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a puppeteer, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Concentration 3 ranks, Ninjutsu 6 ranks, Repair 6 ranks.</li>\n<li><strong>Special</strong>: The puppeteer candidate must be able to create C-Class chakra threads or better with the <em>Ninpou: Chakra no Ito</em> technique.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Puppeteer advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Puppeteer gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Puppeteer gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Puppeteer's class skills are as follows. Chakra Control (Wis), Craft (chemical, mechanical) (Int), Concentration (Con), Disable Device (Int), Drive (Dex), Escape Artist (Dex), Hide (Dex), Knowledge (earth and life science, ninja lore, popular culture, streetwise, technology) (Int), Listen (Wis), Ninjutsu (Int), Perform (Cha), Pilot (Dex), Profession (Wis), Read Language (None), Repair (Int), Ride (Dex), Search (Int), Speak Language (None), Spot (Wis).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Puppeteer advanced class.</p>\n<h3>Puppetry</h3>\n<p>The user is able to use chakra threads to animate and control a single Small, Medium or Large puppet within his reach as an attack action, and use any component installed on the puppet. The puppet cannot move further than the maximum distance of the chakra threads, but the chakra threads' range increment penalties otherwise do not apply. The puppeteer can control up to 1 hit dice of puppet per character level. No puppet can be animated with more hit dice than the puppeteer's total hit dice.</p>\n<p>The puppet is animated with 1 hit dice per chakra spent, and has a chakra pool equal to the chakra spent animating it. A puppet reduced to 0 chakra is deanimated and cannot be reanimated for 1d4 rounds, and a puppet reduced to 0 hit points is disabled (see Puppet Combat for details). If the chakra threads are severed or cancelled, the puppet is deanimated but retains its chakra for 1 round, enabling the puppeteer to reanimate the puppet by paying the chakra cost of the chakra threads only, rather than the full cost of the puppet.</p>\n<p>The puppeteer must make a Concentration check at the beginning of each turn if he has taken damage in the previous turn. The check is DC 10+damage taken, and causes the puppet to be disabled when failed.</p>\n<p>The puppet is animated for 5 minutes, plus 1 minute per character level. See the Puppets section of the Ninja Tools chapter for detail on controlling puppets and puppet components. Using this ability can provoke an attack of opportunity.</p>\n<h3>Bonus Chakra</h3>\n<p>The Puppeteer gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>3</td>\n<td>6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>5</td>\n<td>10</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>6</td>\n<td>12</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>7</td>\n<td>14</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>8</td>\n<td>16</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>9</td>\n<td>18</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>10</td>\n<td>20</td>\n</tr>\n</tbody>\n</table>\n<h3>Advanced Puppetry</h3>\n<p>The puppeteer is able to control two Small puppets instead of a Medium-sized or Large puppet. He is able to do so with a single use of the Puppetry ability, but must pay the chakra cost for each puppet. The sum of both puppet's hit dice cannot exceed the amount the puppeteer could normally control.</p>\n<p>The puppets animated by the Puppetry ability remain animated for 5 minutes plus 2 minutes per character level.</p>\n<h3>Advanced Puppetry II</h3>\n<p>The puppeteer can use the Puppetry ability as a move action, and reanimate puppets that were disabled from the puppeteer damage on his next turn as a move action by simply paying the cost of the chakra threads instead of the puppet's full chakra cost. This must be done within 1 round of the puppet being disabled.</p>\n<p>A puppet that was disabled from taking chakra damage or deanimated because the duration of the Puppetry ability expired cannot be reanimated with this ability.</p>\n<h3>Advanced Puppetry III</h3>\n<p>The puppeteer is able to control two Medium-sized puppets, or one Medium-sized and one Small puppet at once with the Puppetry ability.</p>\n<p>The duration of the Puppetry ability increases to 5 minutes plus 5 minutes per character level.</p>\n<h3>Advanced Puppetry IV</h3>\n<p>The puppeteer can control up to four Small puppets at once, or three Medium-sized puppets, or one Large puppet and one Medium-sized puppets at once with the Puppetry ability.</p>\n<p>The duration of the Puppetry ability increases to 5 minutes plus 10 minutes per character level.</p>\n<h3>Puppeteer Skills</h3>\n<p>At 2nd, 4th, 6th, 8th and 10th level, the Puppeteer gets the chance to improves his skills as a puppeteer. He may chose from the following list of ability every time he gains a Puppeteer Skill. Unless specified, a skill cannot be selected more than once.</p>\n<ul>\n<li><strong>Bonus Feat (can be selected multiple times)</strong>: The Puppeteer gets a bonus feat. The bonus feat must be selected from the following list, and the Puppeteer must meet all the prerequisites of the feat to select it. Alertness, Armor Proficiency (Light, Medium), Brawl, Builder, Chuunin, Craft Living Puppets, Craft Poisons, Craft Puppets, Deceptive, Educated, Focused, Gearhead, Genin, Mastercrafter, Meticulous, Multipuppet Fighting, Nin Weapons Proficiency, Puppeteer Insight, Puppet Multiattack, Stealthy, Studious, Trustworthy.</li>\n<li><strong>Efficient Puppetry (any 4 Puppeteer skills)</strong>: Whenever the puppeteer animates a puppet with a number of hit dice equal to or higher than his puppeteer level, he can reduce the chakra cost by an amount equal to one-half his puppeteer level. This also affects the total chakra pool of the animated puppet.</li>\n<li><strong>Energize Puppet</strong>: The puppeteer may imbue his puppet with more chakra than normal. The puppet does not gain more hit dice, but can hold up to twice its hit dice in chakra.</li>\n<li><strong>Intense Concentration</strong>: The puppeteer no longer risks losing control of his puppets when damaged.</li>\n<li><strong>Master Puppeteer (any 4 Puppeteer skills)</strong>: The maximum HD of puppet the puppeteer can control increases by 5. No puppet can have more HD than the puppeteer.</li>\n<li><strong>Puppet Mastery</strong>: The puppeteer gains a +1 attack bonus when attacking with puppets, and his puppets make extra attacks as though his base attack bonus base attack bonus was 1 point higher. This bonus increases to +2 at 5th level, and +3 at 10th level.</li>\n<li><strong>Puppet Specialization (requires Puppet Mastery)</strong>: The puppeteer gains a +1 competence bonus to damage rolls made with puppets. This bonus increases to +2 at 5th level and +3 at 10th level.</li>\n<li><strong>Improved Speed</strong>: When selecting this skill, the speed of the character's puppet increases by 10 feet.</li>\n<li><strong>Puppet Evasion</strong>: Whenever a puppet needs to make a Reflex save to take half damage from an ability or a technique, if it succeeds the save, it takes no damage instead.</li>\n<li><strong>Puppet Flight (any 2 Puppeteer skills)</strong>: All of the character's puppet gain a Fly speed equal to half its normal speed with a Poor maneuverability while the puppeteer remains stationary.</li>\n<li><strong>Puppet Defense (any Puppeteer skill)</strong>: The puppeteer's puppets gains a +2 dodge bonus to defense while they remain within 30 feet of the puppeteer. This bonus increases to +3 at 8th level.</li>\n<li><strong>Sneak Attack (any 2 puppeteer skills)</strong>: The puppeteer gains Sneak Attack (+1d6), bonus also shared with his puppets. At 10th level, the ability improves to Sneak Attack (+2d6). Sneak attack gained from an ability other than this one does not stack with the puppet's sneak attack, only the puppeteer's. This bonus does not apply if the puppet moves farther than 30 feet from the puppeteer.</li>\n<li><strong>Skilled Puppeteer (requires [Universal / Finesse Category] feat or Exploit Weakness class ability)</strong>: The puppeteer may confer the bonuses of either the [Universal / Finesse Category] feat or Exploit Weakness class ability upon his puppet. In place of its Strength modifier, the puppeteer uses his own Dexterity modifier (with [Universal / Finesse Category]) or Intelligence modifier (with Exploit Weakness) to make attack rolls. This does not affect damage rolls.</li>\n<li><strong>Trap Expert (any 1 Puppeteer skills)</strong>: The puppet components' save DC increase by 1. The puppeteer also gains a +4 bonus to Repair checks made to reload or install components.</li>\n<li><strong>Resilient Puppets (any Puppeteer skills)</strong>: All of the puppeteer's puppets, when animated, gain an additional hit points per hit dice.</li>\n</ul>\n<h2>Table: The Puppeteer</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1</td>\n<td>Puppetry, bonus chakra</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Puppeteer skill</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Advanced puppetry</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Puppeteer skill</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Advanced puppetry II</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Puppeteer skill</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Advanced puppetry III</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Puppeteer skill</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Advanced puppetry IV</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>Puppeteer skill</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

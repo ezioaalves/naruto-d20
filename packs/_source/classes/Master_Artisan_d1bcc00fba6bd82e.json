@@ -1,0 +1,182 @@
+{
+   "_id" : "d1bcc00fba6bd82e",
+   "_key" : "!items!d1bcc00fba6bd82e",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/feats/master-craftsman.jpg",
+   "name" : "Master Artisan",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "7b7e5e76d867c3f5",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "bbcfacedc99e5985",
+            "formula" : "2 * @item.level - 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "b7655343041c73ce",
+            "formula" : "4 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : true,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : true,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Master Artisan</h1>\n<p>A true master of his art or craft, the master artisan is capable of crafting objects with such finesse that they, along with their creator, often make their mark in history. </p>\n<h2>Requirements</h2>\n<p>To qualify to become a master artisan, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills:</strong> Craft (chemical, electronical or mechanical) 6 ranks or Fuinjutsu 6 ranks</li>\n<li><strong>Feats:</strong> Any item creation feat and either Craft Armor Seals or Craft Weapon Seals.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Master Artisan prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Master Artisan gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Master Artisan gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Master Artisan's class skills are as follows. Chakra Control (Wis), Craft (Int), Diplomacy (Cha), Disable Device (Dex), Fuinjutsu (Int), Knowledge (any) (Int), Linguistics (Int), Ninjutsu (Int), Perception (Wis), Profession (Wis), Sense Motive (Wis)</li>\n<li><strong>Skill Points at Each Level:</strong> 7 + Int modifier.</li>\n</ul>\n<p>TABLE: THE MASTER ARTISAN</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+0</td>\n<td>+1</td>\n<td>Master at work, bonus chakra</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+0</td>\n<td>+2</td>\n<td>Renown, bonus feat</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>Specialty</td>\n<td>+2</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Master Artisan prestige class.</p>\n<h3>Master at Work</h3>\n<p>The Master Artisan adds his class level as a bonus to determine his effective level when crafting enhancement seals and sealed items and to Craft checks when creating objects with the Craft skill.</p>\n<h3>Bonus Chakra</h3>\n<p>The Master Artisan gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice. The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>3</td>\n<td>8</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>5</td>\n<td>12</td>\n</tr>\n</tbody>\n</table>\n<h3>Renown</h3>\n<p>The Master Artisan gains the Renown feat for free at 2nd level.</p>\n<h3>Specialty</h3>\n<p>The Master Artisan's renown is well deserved and stems from his ability to produce objects with great ease or to craft swords of such quality that they become legends. At 3rdlevel, he may choose a specialty from the two presented below:</p>\n<ul>\n<li><em>Double Order:</em> The master artisan is able to work on two items, enhacement seals or sealed items simultaneously. This ability does not allow the master artisan to create an item in half the time, or craft an item he would not be able to normally create.</li>\n<li><em>Good as New:</em> The master artisan always repairs and restores objects in perfect condition. If an object has an enhancement seal, such as a broken weapon with a superior mystical weapon seal, or a puppet with puppet components, the chance the enhancement seal or puppet components will be destroyed in the process is eliminated completely.</li>\n<li><em>Grandmaster at Work:</em> The master artisan can create mastercraft objects with ease using the Mastercrafter feat. He gains a +2 bonus to Craft checks to do so, and completes the object in the normal time it takes to create a non-mastercraft item. Furthermore, the experience cost is reduced to 50 × the mastercraft bonus, to be further reduced by feats and abilities that reduce the experience cost of creating objects.</li>\n<li><em>Legendary Arms and Weapons:</em> The master artisan can craft weapons and armor of such quality that, in the right hands, sometimes become legendary. These objects are seldom created, even by smiths with the ability, other than as a favor. The legendary weapon never loses its edge. The Craft check difficulty to make legendary objects increases by 20,and it takes 20 times as long to create.</li>\n<p> A legendary armor's hardness increases by 10 and it weighs half as much. Its armor check penalty is reduced by 1 and maximum Dexterity bonus increases by 1. A legendary weapon's hardness increases by 10, and it ignores hardness from objects with hardness 8 or less. In addition, the Craft check difficulty to add an extra armor or weapon seal to a legendary weapon or suit of armor decreases by 15.</p>\n</ul>\n<h3>Bonus Feat</h3>\n<p>At 2nd level, the Master Artisan gets a bonus item creation feat feat. The Master Artisan must meet all the prerequisites of the feat to select it.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : [
+            {
+               "level" : 2,
+               "uuid" : "Compendium.naruto-d20.feats.Item.qYWo4SmcmgCSkQ28"
+            }
+         ]
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 6,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

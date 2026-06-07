@@ -1,0 +1,172 @@
+{
+   "_id" : "cf2a9191bc132ce1",
+   "_key" : "!items!cf2a9191bc132ce1",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/items/weapons/sword-bastard.PNG",
+   "name" : "Soul Edge",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "963c5d96f43e10fb",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "08c2b3d9f82ca90b",
+            "formula" : "max(1, floor(@item.level / 2))",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "86c8457bd7d6b6af",
+            "formula" : "max(2, @item.level)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Soul Edge</h1>\n<p>These close-quarter specialists are adept at creating chakra-formed weapons and using them in battle. They have the ability to, at a moment's notice, create a battle-ready weapon—a soul edge—and use it with frightening proficiency.</p>\n<h2>Requirements</h2>\n<p>To qualify to become an soul edge, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +2</li>\n<li><strong>Skills</strong>: Chakra Control 6 ranks</li>\n<li><strong>Feats</strong>: Archaic Weapon Proficiency</li>\n<li><strong>Special</strong>: Must have obtained the third step of mastery in the <em>Seireiha</em> technique.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Soul Edge advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Soul Edge gains 1d10 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Soul Edge gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Soul Edge's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Craft (calligraphy) (Int), Jump (Str), Listen (Wis), Move Silently (Dex), Profession (Wis), Read Language (None), Ride (Dex), Speak Language (None), Spot (Int), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Soul Edge advanced class.</p>\n<h3>Soul Edge</h3>\n<p>The Soul Edge is able to manifest his signature weapon, the soul edge, as a move action. This works in a way similar to the <em>Seireiha</em> technique, but costs no chakra, does not require concentration and does not provoke an attack of opportunity. The soul edge lasts until dispelled (as a free action) or until dropped, disarmed or sundered, at which point it dissipates instantly.</p>\n<p>Though the blade can be broken by chakra-enhanced attacks (the soul edge's hardness is 10, and has 5 hit points, plus 1 per Soul Edge level), the Soul Edge can simply create another one as a move action.</p>\n<p>The soul edge is considered a shortsword in all ways except visually, and is always sized appropriately to the character that wields it; to a Medium-sized character, a soul edge would deal 1d6 points of damage, crit 19-20/x2. To a small character, a soul edge would deal 1d4 points of damage, and 1d8 points of damage to a Large character.</p>\n<p>The soul edge is always considered a chakra-enhanced weapon for the purpose of bypassing damage reduction. The soul edge can be used to deal non-lethal damage just like a normal weapon, at a -4 penalty.</p>\n<h3>Weapon Focus (soul edge)</h3>\n<p>The Soul Edge gains the weapon focus feat for his soul edge. It cannot be retrained. If the soul edge already had the weapon focus feat for his soul edge, he may choose a feat from his bonus feat list instead.</p>\n<h3>Bonus Chakra</h3>\n<p>The Soul Edge gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>1</td>\n<td>3</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>2</td>\n<td>5</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>3</td>\n<td>6</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>3</td>\n<td>7</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>4</td>\n<td>9</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>5</td>\n<td>10</td>\n</tr>\n</tbody>\n</table>\n<h3>Empower Soul Edge</h3>\n<p>The Soul Edge can convey the benefits of weapon seals to his soul edge as long as he is wearing a pair of chakra gauntlets with a weapon seal scribed on them. At 2nd level, the soul edge is able to adapt to Minor weapon seals. At 6th and 9th level, the soul edge is able to adapt to superior and greater weapon seals respectively.</p>\n<p>The soul edge can also bypass damage reduction if the gauntlets worn are made of special materials, such as thorium or dark iron.</p>\n<h3>Bonus Feats</h3>\n<p>At 3rd, 6th and 9th level, the Soul Edge gets a bonus feat. The bonus feat must be selected from the following list, and the Soul Edge must meet all the prerequisites of the feat to select it. Advanced Two-Weapon Fighting, Alertness, Armor Proficiency (light), Chuunin, Dodge, Efficient Technique, Empowered Resilience, Exotic Melee Weapon Proficiency, Genin, Harmony, Greater Two-Weapon Fighting, Innate Control, Jounin, Keen Senses, Dodge, Soul Edge Specialization, Twin Soul Style, Two-Weapon Fighting.</p>\n<h3>Increase Speed</h3>\n<p>At 4th and 8th level, the Soul Edge's base land speed increases by 5 feet. This bonus applies only when the character is unencumbered and wears light armor or no armor. This ability stacks with other similar abilities.</p>\n<h3>Swift Blade</h3>\n<p>The Soul Edge is able to create a soul edge as a swift action once per round.</p>\n<h3>Shape Soul Edge</h3>\n<p>The Soul Edge is able to concentrate for a full-round action and change the shape and size of his soul edge. At 5th level, the soul edge can be shaped into a longsword (1d8 points of damage for a Medium-sized character, wielded as a one-handed weapon). At 7th level, the soul edge can be shaped into a bastard sword (1d10 points of damage for a Medium-sized character, wielded as a two-handed weapon unless the Soul Edge has the Exotic Melee Weapon Proficiency (bastard sword) feat.)</p>\n<p>If the Soul Edge shapes his soul edge in the form of a longsword or bastard sword wields it two-handed, he applies his Strength modifier to damage one and a half times, as with any two-handed weapon.</p>\n<h3>Ghost Edge</h3>\n<p>The Soul Edge is able to empower his soul edge to suffer no penalty to hit incorporeal creatures as long as his Chakra pool is at least 50% full. If lower than 50%, the soul edge can still be empowered as a free action at the cost of 2 points of chakra. This bonus lasts for the duration of the encounter or until the soul edge is dismissed or destroyed.</p>\n<h2>Table: The Soul Edge</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+0</td>\n<td>+1</td>\n<td>+2</td>\n<td>Soul edge, weapon focus (soul edge), bonus chakra</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+0</td>\n<td>+2</td>\n<td>+3</td>\n<td>Empower soul edge (minor)</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+1</td>\n<td>+2</td>\n<td>+4</td>\n<td>Increase speed (5 feet)</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+1</td>\n<td>+3</td>\n<td>+4</td>\n<td>Swift blade, shape soul edge (longsword)</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+6</td>\n<td>+2</td>\n<td>+3</td>\n<td>+5</td>\n<td>Bonus feat, empower soul edge (superior)</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+7</td>\n<td>+2</td>\n<td>+4</td>\n<td>+5</td>\n<td>Shape soul edge (bastard sword)</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+8</td>\n<td>+2</td>\n<td>+4</td>\n<td>+6</td>\n<td>Increase speed (10 feet)</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+9</td>\n<td>+3</td>\n<td>+4</td>\n<td>+6</td>\n<td>Bonus feat, empower soul edge (greater)</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+10</td>\n<td>+3</td>\n<td>+5</td>\n<td>+7</td>\n<td>Ghost edge</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

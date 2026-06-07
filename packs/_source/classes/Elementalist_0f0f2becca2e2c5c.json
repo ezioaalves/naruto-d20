@@ -1,0 +1,172 @@
+{
+   "_id" : "0f0f2becca2e2c5c",
+   "_key" : "!items!0f0f2becca2e2c5c",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/races/creature-types/elemental.png",
+   "name" : "Elementalist",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "ddd088ab65e44b03",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "3a1d58825fd876d4",
+            "formula" : "2 * @item.level - 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "66bf9890bb101241",
+            "formula" : "4 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Elementalist</h1>\n<p>This elementalist specialize in Ninjutsu techniques of an element. The fastest path to this class is through the Smart Hero basic class.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a elementalist, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Ninjutsu 9 ranks</li>\n<li><strong>Feats</strong>: Ninjutsu Adept</li>\n<li><strong>Special</strong>: Must know at least 4 Ninjutsu technique of the element he wants to specialize into.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Elementalist prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Elementalist gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Elementalist gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Elementalist's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Craft (chemical) (Int), Hide (Dex), Knowledge (current events, history, ninja lore, physical science, popular culture) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Search (Int), Speak Language (None), Spot (Wis), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Elementalist prestige class.</p>\n<h3>Optional Rules</h3>\n<p>A character may take this class more than once. Its effects don't stack, but he may chose another element that is not opposed to the ones he chose up to now (One can't specialize in Katon, and then Hyouton).</p>\n<h3>Element Specialization</h3>\n<p>At first level, the elementalist may chose one element he wishes to Specialize in. He may chose from any of his elemental affinities. He gains a +2 bonus to his Ninjutsu checks and +1 enhancement bonus to his effective skill threshold with techniques with the appropriate descriptor. Because of his deficiency with the opposed element, he suffers a -2 penalty to his Ninjutsu and Learn checks and perform requirements with techniques of the element his chosen element isweak against (see Elemental Chakra Nature for details).</p>\n<h3>Bonus Chakra</h3>\n<p>The Elementalist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>3</td>\n<td>8</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>5</td>\n<td>12</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>7</td>\n<td>16</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>9</td>\n<td>20</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>11</td>\n<td>24</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>13</td>\n<td>28</td>\n</tr>\n</tbody>\n</table>\n<h3>Elemental Fury</h3>\n<p>At second level, the elementalist may use his specialized element with greater efficiency. The elementalist deals an additional point of damage per die with any Ninjutsu technique with the appropriate descriptor.</p>\n<h3>Limitless Fury</h3>\n<p>By third level, the elementalist is able to increase the range of his specialized element. He may use any technique of his element and increase its range by 1.5 times. Techniques with a \"Touch,\" \"Personal,\" or \"Melee\" range are unaffected.</p>\n<h3>Bonus Feat</h3>\n<p>At 4th level, the Elementalist gets a bonus feat. The bonus feat must be selected from the following list, and the Elementalist must meet all the prerequisites of the feat to select it. Chakra Penetration, Chuunin, Elemental Shaping, Genin, Retrieval Expert, Greater Chakra Penetration, Improved Chakra Pool, Insightful Reflexes, Jounin, Supercharged Technique, Technique Focus, Vile Technique.</p>\n<h3>Rage of the Elements</h3>\n<p>At 5th level, the elementalist may spend an action point to activate this ability or use it for free once per day. Rage of the Elements allows the user to deal increased damage with a technique of his specialized element. With his next elemental technique, he will deal one-half again normal damage, and his saving throws DC will increase by one point every odd-numbered elementalist level (the saving throw DC increase does not stack with Elemental Focus).</p>\n<p>This ability can only be used once every odd-numbered elementalist level per day, and does not stack with the Empower Technique or Heighten Technique meta-chakra feats.</p>\n<h3>Elemental Focus</h3>\n<p>At 6th level, the elementalist becomes so focused in his specialized element that he develops a natural affinity for it, while his proficiency with his natural opposite lessens. He gains a +1 bonus to his saving throws Difficulty Class with his chosen element, while the saves of his opposed element decrease by 1. This bonus does not stack with the one provided by the Rage of the Elements ability.</p>\n<h3>Elemental Surge</h3>\n<p>Three times per day, the Elementalist can perform a Ninjutsu technique from his chosen element as a quickened action, provided the technique's perform time is no longer than 1 full-round action. The perform requirements of the technique are automatically met, and performing the technique does not provoke an attack of opportunity. This enables the elementalist to take other actions, even performing a second technique, in the same round as he performed a quickened technique. The elementalist can only gain one quickened action per round, no matter the type (see Basic Game Mechanics for rules on Quickened Actions).</p>\n<h2>Table: The Elementalist</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+2</td>\n<td>Element specialization, bonus chakra</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+3</td>\n<td>Elemental fury</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+3</td>\n<td>Limitless fury</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+4</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+4</td>\n<td>Rage of the elements</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+3</td>\n<td>+5</td>\n<td>Elemental focus</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+4</td>\n<td>+5</td>\n<td>Elemental surge</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

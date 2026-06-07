@@ -1,0 +1,172 @@
+{
+   "_id" : "bf3a406b68aff5ab",
+   "_key" : "!items!bf3a406b68aff5ab",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/spells/heal-royal-3.jpg",
+   "name" : "Exarch",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "adc9fdfe205facbc",
+            "formula" : "floor((@item.level + 2) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "95e024aa62603886",
+            "formula" : "2 * @item.level - 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "4e05f8430e2f80cd",
+            "formula" : "4 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : true,
+         "han" : false,
+         "hea" : true,
+         "int" : false,
+         "kar" : true,
+         "kdu" : true,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : true,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Exarch</h1>\n<p>The exarch is the cornerstone of any army. He works tirelessly as a miracle worker, healer, physician and sometimes assassin, and takes the ability of a regular medical specialist to mystifying extremes.</p>\n<h2>Requirements</h2>\n<p>To qualify to become an exarch, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Chakra Control 16 ranks, Knowledge (earth and life science) 12 ranks, Ninjutsu 16 ranks, Treat Injury 12 ranks.</li>\n<li><strong>Feats</strong>: Harmony, any meta-chakra feat.</li>\n<li><strong>Special</strong>: The character must have the chakra scalpel and chakra scalpel expertise abilities.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Exarch prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Exarch gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Exarch gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Exarch's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Craft (all skills taken individually) (Int), Fuinjutsu (Int), Genjutsu (Cha), Hide (Dex), Jump (Str), Knowledge (all skills taken individually) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Speak Language (None), Spot (Wis), Survival (Wis), Treat Injury (Wis), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Exarch prestige class.</p>\n<h3>Chakra Scalpel Overchannel</h3>\n<p>The exarch's chakra scalpel deals an additional dice of damage. In addition, when creating the chakra scalpel, the exarch can spend a meta-chakra charge to imbue it with elemental power, if he has any. The chakra scalpel's additional damage dice is energy damage matching his primary elemental affinity, but it cannot deal non-lethal damage when so empowered.</p>\n<h3>Medical Specialist abilities</h3>\n<p>Each level in the exarch class stacks with levels in the Medical Specialist advanced class for the purpose of determining chakra scalpel damage and the ability to discharge or concentrate on Medical Ninjutsu techniques.</p>\n<h3>Bonus Chakra</h3>\n<p>The Exarch gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>3</td>\n<td>8</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>5</td>\n<td>12</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>7</td>\n<td>16</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>9</td>\n<td>20</td>\n</tr>\n</tbody>\n</table>\n<h3>Exarch Arcana</h3>\n<p>At 2nd, 3rd and 4th level, the exarch gains a special ability chosen from the following list:</p>\n<ul>\n<li><strong>Arm of Justice (Su)</strong>: The exarch is able to make melee touch attacks with a range of 30 feet. He must make a ranged touch attack instead. This ability also applies to Medical ninjutsu techniques and chakra scalpel attacks.</li>\n<li><strong>Bonus Feat</strong>: Instead of a special ability, the exarch may elect to pick a bonus feat from the list below. This ability can be selected twice. Advanced Seal Proficiency, Chakra Restoration, Chakra Weaving, Combat Tactics, Craft Poisons, Craft Shinobi Drugs, Efficient Technique, Empower Technique, Empowered Resilience, Extend Technique, Forensics Training, Grand Master, Hand Seals Proficiency, Improved Chakra Pool, Insightful Reflexes, Maximize Technique, Reverse Doctor, Training.</li>\n<li><strong>Exarch Smite (Su)</strong>: When empowering his chakra scalpel with elemental power, the exarch deals an additional 1d10 points of energy damage on a critical hit. The critical threat range of the empowered scalpel increases by 1. Selecting this ability permanently costs the exarch 1 meta-chakra charge.</li>\n<li><strong>Exarch's Retribution (Su)</strong>: The exarch can perform any of the <em>Iryou Ninjutsu: Chiyu</em> techniques and deal damage to the target as though it suffered from chakra overload. The exarch must still succeed on a touch attack, and the target still receives a saving throw to take only half damage, but suffers no additional effects (such as fast healing from the Exarch's Blessing ability).</li>\n<li><strong>Lay on Hands (Su)</strong>: When the exarch performs a Medical ninjutsu techniques of rank 6 or higher on a character, he may spend a meta-chakra charge to restore an amount of chakra equal to his Wisdom modifier to the target. This ability can only be used twice on the same target in a 24 hours period. This ability cannot affect the exarch himself. Selecting this ability permanently costs the exarch 1 meta-chakra charge.</li>\n<li><strong>Maximized Healing (Su)</strong>: Twice per day, the exarch is able to use any Medical ninjutsu technique as though empowered by the meta-chakra feat of the same name. Doing so does not cost additional chakra or meta-chakra charges.</li>\n<li><strong>Medical Miracle (Su)</strong>: Once per day, the exarch is able to spend an action point to revive any character who was brought down to -10 hit points or lower within the last 3 rounds. This ability is an attack action and costs 1 point of chakra per hit dice of the revived character. The revived character can make a Fortitude save (DC 20) to stabilize and be brought back to 0 hit points. A character cannot be affected by this ability more than once every 7 days.</li>\n<li><strong>Rejuvenating Touch (Su) (requires 2 other exarch arcanas)</strong>: When the exarch performs Medical ninjutsu techniques of rank 8 or higher on a character, he may spend a meta-chakra charge to restore 1d4 points of permanent or temporary ability damage, and removes 1 negative level. This ability can only be used twice on the same target in a 24 hours period. This ability cannot affect the exarch himself. Selecting this ability permanently costs the exarch 1 meta-chakra charge.</li>\n</ul>\n<h3>Exarch's Blessing</h3>\n<p>The exarch's medical chakra lingers within the characters healed by him. Each time he automatically discharges a Medical ninjutsu technique, the tagret gains a fast healing quality for 5 rounds. Multiple use of medical techniques does not grant stacking fast healing, but the duration is refreshed each time.</p>\n<p>The fast healing gained varies depending on the technique used. <em>Chiyu - Shodan</em> grants fast healing 2; <em>Nidan</em> grants fast healing 3; <em>Sandan</em> grants fast healing 4; <em>Yondan</em> grants fast healing 5; <em>Godan</em> grants fast healing 8.</p>\n<h2>Table: The Exarch</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+2</td>\n<td>+2</td>\n<td>Chakra scalpel overchannel, medical specialist abilities, bonus chakra</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+3</td>\n<td>+3</td>\n<td>Exarch arcana</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+1</td>\n<td>+3</td>\n<td>+3</td>\n<td>Exarch arcana</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>+1</td>\n<td>+4</td>\n<td>+4</td>\n<td>Exarch arcana</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+2</td>\n<td>+1</td>\n<td>+4</td>\n<td>+4</td>\n<td>Exarch's blessing</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

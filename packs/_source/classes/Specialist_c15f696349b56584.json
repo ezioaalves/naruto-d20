@@ -1,0 +1,177 @@
+{
+   "_id" : "c15f696349b56584",
+   "_key" : "!items!c15f696349b56584",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/items/inventory/bomb.jpg",
+   "name" : "Specialist",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "d2d72d732b6cef39",
+            "formula" : "floor((@item.level + 2) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "25e89ef43376e4af",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "0454b6c9b892d63a",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : true,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : true,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Specialist</h1>\n<p>The specialist is a shinobi capable of handling himself in most situations, though he is most at ease during infiltration or on demolitions missions. In combat, the specialist relies on ninja tools such as smoke bombs and paper bombs to devastating effect, enabling him to take attrition warfare to the next level. This class can be accessed easily from any basic class.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a specialist, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Knowledge (ninja lore) 6 ranks.</li>\n<li><strong>Feats</strong>: Nin Weapons Proficiency.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Specialist advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Specialist gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Specialist gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Specialist's class skills are as follows: Balance (Dex), Chakra Control (Wis), Computer Use (Int), Concentration (Con), Craft (chemical) (Int), Demolitions (Int), Disable Device (Int), Drive (Dex), Escape Artist (Dex), Hide (Dex), Listen (Wis), Knowledge (current events, ninja lore, tactics, technology) (Int), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Search (Int), Sign Language (None), Sleight of Hand (Dex), Speak Language (None), Spot (Wis), Survival (Wis), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Specialist</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>Ninja lore, bonus chakra</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+2</td>\n<td>Demolitionist</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>Grenadier, bonus feat</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>Specialist's cunning</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+3</td>\n<td>Demolitions expert, ninja tool mastery</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Specialist advanced class.</p>\n<h3>Ninja Lore</h3>\n<p>When examining a device, enhancement seal or sealed item, the specialist can attempt to determine its function. The specialist can make a Knowledge (ninja lore) check to determine how to use a foreign object, or to identify one property or enhancement bonus of an enhancement seal or sealed item. The difficulty of this check is equal to the object's purchase DC.</p>\n<h3>Bonus Chakra</h3>\n<p>The Specialist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>3</td>\n<td>6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>5</td>\n<td>10</td>\n</tr>\n</tbody>\n</table>\n<h3>Demolitionist</h3>\n<p>The specialist gains a competence bonus to charge or activate paper bombs, sealing tags and sunburst tags equal to his specialist class levels. In addition, he adds his specialist class level as a bonus to the total damage dealt when using ice bombs and paper bombs.</p>\n<p>Additionally, if the specialist can craft any of the following items, he is able to do so in half the normal time: ice bombs, paper bombs, poisoned smoke bombs, sealing tags, smoke bombs, and sunburst tags.</p>\n<h3>Grenadier</h3>\n<p>The specialist handles ninja tools with casual ease. He gains a bonus to attack rolls using ice bombs, poisoned smoke bombs and smoke bombs equal to one-half his specialist class level.</p>\n<p>Furthermore, the specialist adds his Intelligence modifier to the saving throw difficulty of his paper bombs, ice bombs and sunburst tags.</p>\n<h3>Specialist's Cunning</h3>\n<p>The specialist can quickly become comfortable with almost any weapon or object and can quickly learn to use it in combat. To use this ability, the specialist must be able to handle the object normally and spend an attack action to familiarize himself with the object, and succeed an Intelligence check (DC 15). The specialist adds his specialist class level as a circumstance bonus to that check.</p>\n<p>A successful check enables the specialist to use the selected weapon, improvised weapon or object as though he were proficient with it for the duration of the encounter. The specialist can use this ability once per day every odd-numbered specialist level.</p>\n<h3>Demolitions Expert</h3>\n<p>The specialist can shape the blast of any explosives, ice bombs, paper bombs and sunburst tags he uses by making an Intelligence check (DC 15). A successful check enables the specialist to shape the attack into a cone-shaped burst one-half again as long as the radius of the burst attack, extending in any direction from the point of impact (at the specialist's discretion). The specialist adds his specialist class levels to this check.</p>\n<h3>Ninja Tool Mastery</h3>\n<p>The specialist has achieved complete mastery over ninja tools. At 5th level, he can spend an action point when activating any ninja tools to enhance their effects considerably. The effects of this ability vary depending on the ninja tool used, as shown below. This ability can only be used when activating a single ninja tool and will not work when using several at once, such as linked paper bombs.</p>\n<ul>\n<li><strong>Ice Bomb</strong>: The ice bomb deals 6d6 points of damage in a 15-foot-radius burst.</li>\n<li><strong>Paper Bomb</strong>: The paper bomb can hold an additional number of charges equal to the specialist's class levels.</li>\n<li><strong>Sealing Tag</strong>: The sealing tag also dampens chakra in a 5-foot-radius emanation for 1 round after being activated, imposing a –5 penalty to meet the perform requirements of techniques and checks to activate ninja tools on anyone who stands inside the affected area.</li>\n<li><strong>Smoke Bomb</strong>: The smoke bomb or high-powered smoke bomb covers its full area on the round it is thrown.</li>\n<li><strong>Sunburst Tag</strong>: The sunburst tag causes creatures within a 40-foot-radius burst to also make a Fortitude save to avoid being dazzled for 1d6 rounds.</li>\n</ul>\n<h3>Bonus Feat</h3>\n<p>At 2nd level, the Specialist gets a bonus feat. The bonus feat must be selected from the following list, and the Specialist must meet all the prerequisites of the feat to select it.</p>\n<ul>\n<li>Chuunin</li>\n<li>Focused</li>\n<li>Insightful Reflexes</li>\n<li>Jounin</li>\n<li>Personal Firearms Proficiency</li>\n<li>Weapon Adaption Training</li>\n<li>Weapon Focus</li>\n</ul>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

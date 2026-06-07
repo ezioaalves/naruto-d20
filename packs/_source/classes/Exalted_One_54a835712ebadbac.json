@@ -1,0 +1,172 @@
+{
+   "_id" : "54a835712ebadbac",
+   "_key" : "!items!54a835712ebadbac",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/feats/stunning-fist.jpg",
+   "name" : "Exalted One",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "c0bfb1a6a3406ed1",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "71f539edcff1a150",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "c434ebe17013f4ad",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : true,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Exalted One</h1>\n<p>The exalted one has been set on a path to enlightenment his entire life and has finally reached the final steps of his journey. He is a warrior monk, a master of both the mind and the body. Wise men defer to his wisdom, and martial artists bow before his skill.</p>\n<h2>Requirements</h2>\n<p>To qualify to become an exalted one, a character must fulfill all the following criteria. <strong>Skills:</strong> Chakra Control 9 ranks, Knowledge (theology and philosophy) 9 ranks, Taijutsu 16 ranks. <strong>Feats:</strong> Combat Martial Arts, Harmony, Improved Combat Martial Arts, Sacred Flurry. <strong>Special:</strong> Sacred fist stance, buddhist palm and enlightened defense Sacred Fist class features.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Exalted One prestige class.</p>\n<p><strong>Hit Die</strong> The Exalted One gains 1d8 hit points per level. The Constitution modifier applies.</p>\n<p><strong>Action Points</strong> The Exalted One gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</p>\n<p><strong>Class Skills</strong> The Exalted One's class skills are as follows. Balance (Dex), Concentration (Con), Chakra Control (Wis), Craft (calligraphy) (Int), Knowledge (earth and life science, ninja lore, theology and philosophy) (Int), Profession (Wis), Read Language (None), Ride (Dex), Sense Motive (Wis), Speak Language (None), Spot (Wis), Taijutsu (Str). <strong>Skill Points at Each Level:</strong> 3 + Int modifier.</p>\n<h3>TABLE: THE EXALTED ONE</h3>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Exalted strike, sacred fist abilities, bonus chakra</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Exalted art</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Exalted art</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Exalted art</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Perfection of mind and body</td>\n<td>+4</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Exalted One prestige class.</p>\n<h3>Exalted Strike</h3>\n<p>The exalted one can declare one melee attack per Exalted One level per day as a touch attack. This attack must be done while in sacred fist stance and ignores all hardness and damage reduction if it hits. This ability must be declared before damage is rolled.</p>\n<h3>Sacred Fist Abilities</h3>\n<p>Each exalted one class level stacks with sacred fist class levels to determine the progress of the Sacred Fist Stance and Buddhist Palm abilities. Epic progression still requires sufficient levels in the Sacred Fist class.</p>\n<h3>Bonus Chakra</h3>\n<p>The Exalted One gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>3</td>\n<td>6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>5</td>\n<td>10</td>\n</tr>\n</tbody>\n</table>\n<h3>Exalted Art</h3>\n<p>At 2nd, 3rd and 4th level, the exalted one gains an exalted art, a special ability taken from the list below:</p>\n<p><strong>Absolute Equilibrium:</strong> Once per day every odd-numbered exalted one level, the exalted one is able to completely ignore falling damage and land softly and gracefully on his feet, unless he is unable to do so. He is able to do so even when paralyzed or otherwise physically incapacitated, but must still be conscious. </p>\n<p><strong>Bonus Feat:</strong> Instead of a special ability, the exemplar may elect to pick a bonus feat from the list below instead. This ability can be selected twice. Advanced Two-Weapon Defense, Advanced Two-Weapon Fighting, Chakra Presence, Flawless Form, Hachimon Tonkou, Improved Two-Weapon Defense, Greater Two-Weapon Fighting, Grand Master, Monkey Grip, Oversized Weapons Mastery, Oversized Weapons Proficiency, Power Critical, Skillful Assault, Tactical Implements, Training, Two-Weapon Defense, Two-Weapon Fighting.</p>\n<p><strong>Exalted Fist:</strong> The exalted one always gains the benefits of the sacred fist stance ability while entering any of the following Kyushojutsu stances: Kyushojutsu: Dachi - Shodan, Nidan, Sandan or Seidan.</p>\n<p><strong>Exalted Mastery:</strong> The exalted one can substitute an attack when making a full-attack action for a Kyushojutsu technique that can be performed as an attack action. The attack is resolved as specified by the Kyushojutsu technique, using that attack's base attack bonus. This ability is usable once per exalted one level per day, but no more than once per round. The chakra cost must be paid normally, and the same technique cannot be substituted twice during the same encounter.</p>\n<p><strong>Master's Resilience (Ex):</strong> The exalted one is not subject by Kyushojutsu techniques that would not affect creatures wearing medium armor even when wearing no armor and gains a +1 bonus per odd-numbered exalted one levels to saving throws and ability checks against Kyushojutsu techniques.</p>\n<p><strong>Paragon of Body (Ex):</strong> The exalted one is immune to poisons and diseases.</p>\n<p><strong>Paragon of Spirit (Su):</strong> The exalted one gains a chakra resistance equal to 12 + his exalted one level + his Wisdom modifier.</p>\n<p><strong>Peaceful Master:</strong> The exalted one can use his Wisdom modifier in place of his Strength modifier to resolve unarmed attack and damage rolls in Sacred Fist Stance, whichever is higher.</p>\n<p><strong>Transcendent Senses (Su):</strong> The exalted one gains the blindsense ability up to 5 feet, doubled while in Sacred Fist stance. This exalted art can be selected more than once. </p>\n<h3>Perfection of Mind and Body</h3>\n<p>The exalted one is capable of extreme economy of energy with his body. He requires only one meal per day to function at optimal levels, or half a gallon of fluids and one-quarter of a pound of food every three days to avoid suffering from starvation or thirst. Additionally, the exalted one only requires 4 hours of sleep per evening of rest to gain the full benefits of recovery and recovers from fatigue, exhaustion and unconsciousness in half the normal time. Once per day, the exalted one can spend an action point to reroll failed saving throws against all effects that currently still affect the exalted one and that required a failed save. A successful save automatically ends the effect, even if it wouldn't otherwise. Any lingering effect from Kyushojutsu techniques are automatically terminated, but not reversed unless the technique specifically states otherwise.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

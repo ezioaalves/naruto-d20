@@ -1,0 +1,172 @@
+{
+   "_id" : "310123ff4681523e",
+   "_key" : "!items!310123ff4681523e",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/actions/heart-plus.svg",
+   "name" : "Medical Specialist",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "07d0485133b51363",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "caf54ed0f166c21b",
+            "formula" : "2 * @item.level - 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "6ec2ee1da93cf803",
+            "formula" : "4 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : true,
+         "han" : false,
+         "hea" : true,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : true,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Medical Specialist</h1>\n<p>A medical specialist is a ninja that is adept at focusing his chakra for healing purposes. He knows the human anatomy perfectly, making him a dangerous opponent in combat situations as well. They are however exceedingly rare among shinobi, most medical ninja being only trained in first aid and a few medical techniques rather than at being a medical specialist.</p>\n<p>A medical specialist needs a perfect control over his Chakra, as well as a flawless knowledge of the human body. The fastest path to this class is through the Dedicated Hero basic class.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a medical specialist, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +2</li>\n<li><strong>Skills</strong>: Chakra Control 6 ranks, Knowledge (earth and life science) 6 ranks, Ninjutsu 6 ranks, Treat Injury 6 ranks.</li>\n<li><strong>Feats</strong>: Harmony, Medical Expert.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Medical Specialist advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Medical Specialist gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Medical Specialist gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Medical Specialist's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con) Craft (chemical, pharmaceutical) (Int), Fuinjutsu (Int), Genjutsu (Cha), Hide (Dex), Jump (Str), Knowledge (earth and life science, current events, ninja lore, popular culture) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Speak Language (None), Spot (Wis), Survival (Wis), Treat Injury (Wis), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Medical Specialist advanced class.</p>\n<h3>Medical Ability</h3>\n<p>This ability of the Medical Specialist enables him to learn Medical techniques without suffering the usual penalty to the Learn check, and the increased time. In addition, the character gains a +1 bonus per two level to Learn checks when learning Medical ninjutsu, and to Perform checks to use Medical techniques (minimum +1).</p>\n<p>In addition, the Medical Specialist, when using any of the <em>Iryou Ninjutsu: Chiyu</em> techniques, heals the target every 5 rounds rather than every minute. The duration of the techniques change accordingly (see <em>Iryou Ninjutsu: Chiyu - Shodan Jutsu</em> for details).</p>\n<p>A medical specialist of level 2, 4, 6 and 8 gains greater proficiency with the <em>Chiyu</em> techniques and is able to \"discharge\" the technique in one large burst of healing energy. See <em>Iryou Ninjutsu: Chiyu - Shodan, Nidan, Sandan and Yondan Jutsu</em> for details.</p>\n<h3>Bonus Chakra</h3>\n<p>The Medical Specialist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>3</td>\n<td>8</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>5</td>\n<td>12</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>7</td>\n<td>16</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>9</td>\n<td>20</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>11</td>\n<td>24</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>13</td>\n<td>28</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>15</td>\n<td>32</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>17</td>\n<td>36</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>19</td>\n<td>40</td>\n</tr>\n</tbody>\n</table>\n<h3>Chakra Scalpel</h3>\n<p>This ability of the Medical Specialist allows him to produce Chakra at the tip of his finger and use it as a sharp knife. The chakra scalpel can be created as a move action that does not provoke attacks of opportunity, as long as the medical specialist's chakra pool is 1 or higher. The chakra scalpel deals slashing damage and counts as though it was chakra-enhanced for the purpose of overcoming damage reduction.</p>\n<p>The chakra scalpel deals 1d4 points of damage at first, increasing to 1d6 points of damage at 9th level. The character doesn't apply his Strength modifier when attacking with a chakra scalpel, but can deal non-lethal damage without taking the standard -4 penalty to attack rolls.</p>\n<p>Attacking with a chakra scalpel is a melee touch attack modified by the medical specialist's Wisdom modifier. A medical specialist with the Two-Weapon Fighting feat can create two chakra scalpels in one action.</p>\n<h3>Expert Healer</h3>\n<p>At 2nd level, the Medical Specialist's ability to restore hit points with a medical kit or surgery kit and a successful use of the Treat Injury skill improves. In addition to the normal hit point recovery rate (1d4 for a medical kit, 1d6 per patient's character level for surgery), the Medical Specialist restores 1 hit point for every level he has in this advanced class.</p>\n<p>The medical specialist also gains a +1 enhancement bonus to his effective skill threshold for to perform Medical ninjutsu techniques.</p>\n<h3>Bonus Feats</h3>\n<p>At 2nd, 4th, and 6th level, the Medical Specialist gets a bonus feat. The bonus feat must be selected from the following list, and the Medical Specialist must meet all the prerequisites of the feat to select it. Builder, Cautious, Chuunin, Defensive Martial Arts, Dodge, Educated, Forensics Training, Genin, Retrieval Expert, Improved Initiative, Nin Weapons Proficiency, Reverse Doctor, Surgery, Unbalance Opponent.</p>\n<h3>Sneak Attack</h3>\n<p>This ability functions as the Ninja Scout sneak attack ability. If he can catch an opponent when he is unable to defend himself effectively from his attack, he can strike a vital spot for extra damage. Creatures immune to critical hits and sneak attacks, or who have concealment, do not suffer extra damage.</p>\n<p>This extra damage is 1d6 at 3rd level, and it increases by 1d6 every 5 levels thereafter. If the medical specialist gains a bonus to sneak attack from another source, the bonuses stack.</p>\n<h3>Chakra Scalpel Expertise</h3>\n<p>When the Medical Specialist deals a sneak attack with his chakra scalpel, he may sacrifice 1 die of damage to deal either 1 point of temporary Strength or Dexterity damage as a free action. This applies to a single attack and must be declared before the attack is rolled.</p>\n<p>The ability cannot be used to deal more than 6 points of ability damage on a single target, and must be declared before making the attack roll. The ability damage lasts for 1 minute per medical specialist level.</p>\n<h3>Medical Mastery</h3>\n<p>When making a Treat Injury skill check, a Medical Specialist of 7th level or higher may take 10 even if stress and distractions would normally prevent him from doing so. When using the <em>Iryou Ninjutsu: Chiyu</em> techniques, the Medical Specialist also heals the target every round rather than every minute or 5 rounds.</p>\n<h3>Empower Healing</h3>\n<p>For a Medical Specialist, focus and control enables him to go one step farther and exceed his limit. At 10th level, the Medical Specialist may, at the expenses of an action point, perform a Medical technique as though empowered by the meta-chakra feat of the same name. The perform requirements are automatically met with empowered healing.</p>\n<h2>Table: The Medical Specialist</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+2</td>\n<td>Medical ability, chakra scalpel 1d4, bonus chakra</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+3</td>\n<td>Expert healer, bonus feat</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+3</td>\n<td>Sneak attack +1d6</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+4</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+4</td>\n<td>Chakra scalpel expertise</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+3</td>\n<td>+5</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+4</td>\n<td>+5</td>\n<td>Medical mastery</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6</td>\n<td>+2</td>\n<td>+4</td>\n<td>+6</td>\n<td>Sneak attack +2d6</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6</td>\n<td>+3</td>\n<td>+4</td>\n<td>+6</td>\n<td>Chakra scalpel 1d6</td>\n<td>+5</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7</td>\n<td>+3</td>\n<td>+5</td>\n<td>+7</td>\n<td>Empower healing</td>\n<td>+5</td>\n<td>+4</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

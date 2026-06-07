@@ -1,0 +1,177 @@
+{
+   "_id" : "04b8cc47762227bc",
+   "_key" : "!items!04b8cc47762227bc",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/items/inventory/book-blue.jpg",
+   "name" : "Grand Scholar",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "5c3a0492a7ce66a1",
+            "formula" : "floor((@item.level + 1) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "365d5809594ffd78",
+            "formula" : "2 * @item.level - 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "c397bcd75f3524b8",
+            "formula" : "4 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : true,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : true,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : true,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Grand Scholar</h1>\n<p>The grand scholar is a master of the more technical aspect of techniques. His unique abilities enable him to uncover secrets none other have access to, and make him particularly suited to imparting their craft on others.</p>\n<h2>Requirements:</h2>\n<p>To qualify to become a grand scholar, a character must fulfill all the following criteria. </p>\n<ul>\n<li><strong>Skills:</strong> Knowledge (arcana) 3 ranks, Linguistics 3 ranks, and at least 1 ranks in any four of the following skills: Chakra Control, Fuinjutsu, Genjutsu, Knowledge (any), Ninjutsu or Taijutsu.</li>\n<li><strong>Feats:</strong> Grand Master.</li>\n<li><strong>Techniques:</strong> The grand scholar must know at least 10 techniques from three different technique types, four of which must be rank 3 or higher.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Grand Scholar advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Grand Scholar gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Grand Scholar gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>:The Grand Scholar's class skills are as follows. Chakra Control (Wis), Craft (Int), Diplomacy (Cha), Fuinjutsu (Int), Genjutsu (Cha),  Knowledge (any) (Int), Linguistics (Int), Ninjutsu (Int), Perception (Wis), Perform (Cha), Profession (Wis), Sense Motive (Wis), Survival (wis), Taijutsu (Str).</li>\n<li><strong>Skill Points at Each Level:</strong> 9 + Int modifier.</li>\n</ul>\n<p>TABLE: THE GRAND SCHOLAR</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1</td>\n<td>Discovery, bonus chakra</td>\n<td>+0</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Loremaster</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Discovery, bonus feat</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Research technique</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Discovery</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Grandmaster, bonus feat</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Discovery</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Chakra reader</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Discovery, bonus feat</td>\n<td>+3</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>Grand discovery</td>\n<td>+3</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Grand Scholar advanced class.</p>\n<h3>Discovery</h3>\n<p>At 1st level, and every odd-numbered level afterward, the grand scholar gains a discovery. This discovery must be chosen from the table of grand scholar discoveries below, and requires that the sum of the grand scholar's Intelligence modifier plus his Grand Scholar level be high enough to select that discovery. The grand scholar cannot gain the same discovery twice.</p>\n<table>\n<thead>\n<tr>\n<th>Level + Int&lt;br&gt;Modifier</th>\n<th>Modifier</th>\n<th>Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Instant mastery</td>\n<td>Gain 4 ranks in a skill in which the grand scholar has no ranks</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Studious health</td>\n<td>Gain the Toughness bonus feat</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Secrets of true stamina</td>\n<td>Gain a +2 bonus on Fortitude saves</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Secrets of celerity</td>\n<td>Gain a +2 bonus on Reflex saves</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Secrets of inner strength</td>\n<td>Gain a +2 bonus on Will saves</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Offensive knack</td>\n<td>Gain a +1 bonus on attack rolls</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Defensive trick</td>\n<td>Gain a +1 dodge bonus to Defense</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Applied knowledge</td>\n<td>Gain any one feat</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Technique mastery</td>\n<td>Gain a +2 bonus to Learn checks</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Chakra mastery</td>\n<td>Gain 2 bonus chakra and 4 bonus reserves</td>\n</tr>\n</tbody>\n</table>\n<h3>Bonus Chakra</h3>\n<p>The grand scholar gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice. The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>3</td>\n<td>8</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>5</td>\n<td>12</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>7</td>\n<td>16</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>9</td>\n<td>20</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>11</td>\n<td>24</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>13</td>\n<td>28</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>15</td>\n<td>32</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>17</td>\n<td>36</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>19</td>\n<td>40</td>\n</tr>\n</tbody>\n</table>\n<h3>Loremaster</h3>\n<p>At 2nd level, the grand scholar gains a bonus to all Knowledge and Research checks equal to one-half his grand scholar level.</p>\n<h3>Research Technique</h3>\n<p>At 4th level, the grand scholar can research a particular technique extensively to gain intimate knowledge of it. This ability provides two benefits. Each time the grand scholar gains a level in this class, he can select one technique he knows as his perfected technique. The grand scholar treats his effective character level when performing his perfected technique as though being 2 higher. In addition, the character gains a +2 bonus to master this technique, which stacks with the Grand Master feat. Furthermore, the grand scholar can apply his Linguistics skill when learning, developing and creating technique. This process requires additional time equivalent to an attempt made to learn the technique, modified by a Linguistics check against the technique's Learn difficulty (therefore, exceeding it by a sufficient amount can lower the time this process takes). A successful check grants the grand scholar a bonus to Learn checks with the technique equal to one-half his grand scholar level. In addition, if the grand scholar was creating or developing a technique, his effective character level to determine the additional number of successes is increased by 2.</p>\n<h3>Grandmaster</h3>\n<p>At 6th level, the grand scholar can pass on his knowledge to others with far greater efficiency than even the most capable, non-scholar teachers. When determining the maximum bonuses he can spread amongst multiple students, add double his grand scholarlevel to the pool, though no student can receive a bonus greater than +5. When teaching a single individual, the bonus that student receives, regardless of its level in relation to the grand scholar, increases by +2. In addition, the grand scholar can use this ability to aid another character trying to create or develop a technique. To do so requires a Research check equal to the technique's difficulty, and grants the character a bonus to Learn checks equal to one-half the grand scholar's level. This requires the same time commitment as teaching a technique.</p>\n<h3>Chakra Reader</h3>\n<p>At 8th level, the grand scholar can concentrate and read chakra by touch. This enables him to determine the chakra signature of a touched creature as an attack action as though using sense chakra, or identifying the properties of a touched item as though using the Chakra Reading effect of the Chakra Shori no Jutsu technique by concentrating for 5 minutes.</p>\n<h3>Grand Discovery</h3>\n<p>At 10th level, the grand scholar can enter a state of absolute insight and clarity once per day. This state lasts for 1 minute, but enables him call information to mind that would normally take hours of research to find. As a free action once per round, the grand scholar can study a creature or object and glean information regarding it as though he had rolled 15 on any Knowledge and Linguistics checks concerning it, adding his modifier for that particular skill normally. In addition, the grand scholar identifies any curious quirks of energy surrounding the object or creature. This enables him to gain information as though looking at the subject with the see through chakra ability, and to identify any property it might have as though with the chakra reading effect of the Chakra Shori no Jutsu technique, including the subject's elemental affinities and nature transformation if it has any, without having to make a check.</p>\n<h3>Bonus Feat</h3>\n<p>At 3rd, 6th and 9th level, the Grand Scholar gets a bonus feat. The bonus feat must be a meta-chakra feat, or a feat selected from the following list. The Grand Scholar must meet all the prerequisites of the feat to select it. </p>\n<ul>\n<li>Combat Tactics</li>\n<li>Educated</li>\n<li>Fuinjutsu Adept</li>\n<li>Genjutsu Adept</li>\n<li>Harmony</li>\n<li>Insightful Reflexes</li>\n<li>Meticulous</li>\n<li>Ninjutsu Adept</li>\n<li>Retrieval Expert</li>\n<li>Renown</li>\n<li>Studious</li>\n<li>Taijutsu Adept</li>\n<li>Talented Shinobi</li>\n<li>Technique Focus.</li>\n</ul>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 8,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

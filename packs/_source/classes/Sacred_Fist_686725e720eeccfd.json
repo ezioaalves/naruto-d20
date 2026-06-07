@@ -1,0 +1,172 @@
+{
+   "_id" : "686725e720eeccfd",
+   "_key" : "!items!686725e720eeccfd",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/feats/gorgons-fist.jpg",
+   "name" : "Sacred Fist",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "0c272b805ef47b0d",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "8b99aba837bae09b",
+            "formula" : "max(1, floor(@item.level / 2))",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "64edb0feb95028a7",
+            "formula" : "max(2, @item.level)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Sacred Fist</h1>\n<p>The Sacred Fist is an expert in the spiritual side of martial arts, and often claims his power to be of divine origins. Sacred Fists are often temple monks or wandering priests and masters of chakra control. They are fierce combatants on the battlefield, combining both effective offense and defense, but their strikes carrying an unstoppable weight to them. The fastest path to this class is through the Dedicated Hero basic class.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a sacred fist, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +2</li>\n<li><strong>Skills</strong>: Chakra Control 6 ranks, Knowledge (theology and philosophy) 6 ranks, Taijutsu 6 ranks.</li>\n<li><strong>Feats</strong>: Combat Martial Arts, Harmony.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Sacred Fist advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Sacred Fist gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Sacred Fist gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Sacred Fist's class skills are as follows. Balance (Dex), Concentration (Con), Chakra Control (Wis), Craft (calligraphy) (Int), Fuinjutsu (Int), Knowledge (ninja lore, theology and philosophy) (Int), Profession (Wis), Move Silently (Dex), Read Language (None), Ride (Dex), Sense Motive (Wis), Speak Language (None), Spot (Wis), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Sacred Fist advanced class.</p>\n<h3>Sacred Fist Stance</h3>\n<p>The sacred fist stance is the signature ability of the Sacred Fist and an open-palmed unarmed fighting style unlike the taijutsu master's or the beastmaster's, and completely unlike the Jyuuken style. Sacred fist stance counts as a separate mode of combat utilizing unarmed attacks and does not stack with class abilities such as living weapon, unarmed attack, or feral combat.</p>\n<p>The sacred fist ability counts as a Stance taijutsu technique the character may enter any time as a free action. When attacking with the sacred fist, the character counts as armed and does not provoke attacks of opportunity. The sacred fist may also deal nonlethal damage without penalty.</p>\n<p>The sacred fist increases a character's unarmed strike damage increases to 1d6 at first level, then 1d8 at 5th level and 1d10 at 9th level.</p>\n<h3>Bonus Chakra</h3>\n<p>The Sacred Fist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>1</td>\n<td>3</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>2</td>\n<td>5</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>3</td>\n<td>6</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>3</td>\n<td>7</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>4</td>\n<td>9</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>5</td>\n<td>10</td>\n</tr>\n</tbody>\n</table>\n<h3>Bonus Feats</h3>\n<p>At 2nd and 8th level, the Sacred Fist gets a bonus feat. The bonus feat must be selected from the following list, and the Sacred Fist must meet all the prerequisites of the feat to select it. Advanced Combat Martial Arts, Chuunin, Defensive Martial Arts, Empowered Resilience, Improved Combat Martial Arts, Improved Initiative, Flawless Form, Genin, Keen Senses, Sacred Flurry, Taijutsu Adept.</p>\n<h3>Enlightened Defense</h3>\n<p>The sacred fist applies his Wisdom modifier as a dodge bonus to Defense when using the Sacred Fist Stance while wearing no armor and unencumbered. This bonus applies even against touch attacks, but any conditions that would make the sacred fist lose his Dexterity bonus to defense also denies the sacred fist this bonus as well.</p>\n<h3>Evasion</h3>\n<p>The sacred fist, when unencumbered and wearing no armor, takes no damage on a successful Reflex save against an ability that would normally allow him to make a Reflex save for half damage. This ability does not work when the character is helpless or denied his Dexterity bonus to Defense.</p>\n<h3>Buddhist Palm</h3>\n<p>The sacred fist's sacred fist stance attacks work to bypass damage reduction of a specific type. At 5th level, the character's sacred fist stance attacks count as chakra-enhanced to bypass damage reduction. At 9th level, the sacred fist's attacks count as dark iron for the purpose of bypassing damage reduction.</p>\n<h3>Devotion</h3>\n<p>The sacred fist gains a +2 bonus to Will saves against compulsion and phantasm effects.</p>\n<h3>Ageless Body</h3>\n<p>The sacred fist no longer ages when attaining this ability. He no longer suffers penalty for aging, and is not subject to artificial or magical aging. Penalties he has already taken, however, remain. The sacred fist still dies of old age when his time is up.</p>\n<h2>Table: The Sacred Fist</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Sacred fist stance (1d6), bonus chakra</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Enlightened defense</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Evasion</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Sacred fist stance (1d8)</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>Buddhist palm (chakra)</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>Devotion</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6</td>\n<td>+6</td>\n<td>+6</td>\n<td>+6</td>\n<td>Bonus feat</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6</td>\n<td>+6</td>\n<td>+6</td>\n<td>+6</td>\n<td>Sacred fist stance (1d10), buddhist palm (dark iron)</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7</td>\n<td>+7</td>\n<td>+7</td>\n<td>+7</td>\n<td>Ageless body</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

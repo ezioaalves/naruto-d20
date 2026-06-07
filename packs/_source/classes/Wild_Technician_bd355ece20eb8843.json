@@ -1,0 +1,161 @@
+{
+   "_id" : "bd355ece20eb8843",
+   "_key" : "!items!bd355ece20eb8843",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/items/inventory/essence-void.jpg",
+   "name" : "Wild Technician",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "21fbb1ad18fc0fd2",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : false,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : true,
+         "han" : true,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Wild Technician</h1>\n<p>The wild technician is a master of the unpredictable, so skilled he continuously surprises even himself. To the uninitiated, a wild technician only has a tenuous mastery of his craft, but a skilled observer can recognize the signs for what they are: of a dangerous adept whose wrath is a simmering cauldron waiting to be unleashed upon anyone unlucky enough to stand between the wild technician and his objective.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a wild technician, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Ability Score</strong>: Constitution 13.</li>\n<li><strong>Skills</strong>: Any of the following skills at 6 ranks or more: Chakra Control, Fuinjutsu, Genjutsu or Ninjutsu.</li>\n<li><strong>Feats</strong>: Improved Chakra Pool and any meta-chakra feat.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Wild Technician advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Wild Technician gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Wild Technician gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Wild Technician's class skills are as follows: Bluff (Cha), Computer Use (Int), Decipher Script (Int), Disable Device (Int), Drive (Dex), Fuinjutsu (Int), Genjutsu (Cha), Handle Animal (Cha), Intimidate (Cha), Investigate (Int), Listen (Wis), Knowledge (arcane lore, history, ninja lore, theology and philosophy) (Int), Ninjutsu (Int), Profession (Wis), Read/Write Language (None), Sign Language (None), Speak Language (None), Spot (Wis).</li>\n<li><strong>Skill Points at Each Level</strong>: 7 + Int modifier.</li>\n</ul>\n<h2>Table: The Wild Technician</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>Null entity, boundless chakra</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+2</td>\n<td>Wild technique +1</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>Delay surge 1/day</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+3</td>\n<td>Wild technique +2</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+4</td>\n<td>+4</td>\n<td>Purgative transference, delay surge 2/day</td>\n<td>+4</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6</td>\n<td>+2</td>\n<td>+4</td>\n<td>+4</td>\n<td>Wild technique +3</td>\n<td>+4</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>Bonus feat</td>\n<td>+5</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7</td>\n<td>+3</td>\n<td>+5</td>\n<td>+5</td>\n<td>Destructive surge, delay surge 3/day</td>\n<td>+5</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Wild Technician advanced class.</p>\n<h3>Null Entity</h3>\n<p>Becoming a wild technician is a transformative experience. At 1st level, the wild technician's maximum chakra reserve becomes 0, effectively losing the ability to gain chakra reserves by any means, as well as the penalties for having a low reserve. In addition, the wild technician gains a secondary chakra pool called null chakra, which is equal to one-half the wild technician's chakra pool. The null chakra pool is reset to 0 at the end of a night of rest, and cannot be drawn from to perform techniques. Likewise, a null chakra pool of 0 does not incur chakra depletion.</p>\n<p>Any time the wild technician uses a Chakra Control, Fuinjutsu, Genjutsu or Ninjutsu technique, he adds the technique's base cost to his null chakra pool. When the wild technician's null chakra pool is full, he enters a state of wild chakra until it is empty again.</p>\n<p>In wild chakra, any chakra cost is deducted from the wild technician's null chakra pool instead of his normal chakra pool, and does not further increase null chakra pool until the wild chakra state ends. Furthermore, every technique performed must be empowered to the maximum extent the character is capable of and provokes a wild surge (see below). When the wild chakra pool is too low to pay for the full cost of a technique, that technique must still be empowered to its fullest extent, and the remainder of the cost is drawn from the wild technician's normal chakra pool.</p>\n<h3>Wild Surge</h3>\n<p>When a wild technician provokes a wild surge, it threatens to create an effect that is entirely outside his control. However, it is possible to try and contain the energy of the surge by making a Constitution check (DC 15) with a bonus equal to one-half his wild technician class levels (round up). Whether the surge is contained or not, the GM secretly rolls 1d20 and consults the appropriate column on the table below. The effect happens at the end of the wild technician's turn.</p>\n<h3>Table: Wild Surge Effects</h3>\n<table>\n<thead>\n<tr>\n<th>1d20</th>\n<th>Wild Surge (Uncontained)</th>\n<th>Contained Surge</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Roll twice. If either number is a 20, the surge has no effect.</td>\n<td>Roll twice. If either number is a 20, the surge has no effect.</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Character releases energy uncontrollably in a 15-ft. long cone (1d4 + one-half wild technician level times 1d6 damage, Reflex save halves DC 10+wild technician level, primary chakra nature determines damage type, 1d8 determines direction).</td>\n<td>Body goes numb for 1d6 rounds, causing a 20% chance to fail techniques with hand seals or half-seals and the effects if Iryou Ninjutsu: Hiken - Fujimi.</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Character's skin secretes a contact poison for 1d6 rounds, to which it is immediately exposed (Fortitude save DC 10+wild technician level, primary and secondary damage 1d3 Str damage).</td>\n<td>Character suffers 1d12 tenketsu damage.</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Character is buried to his neck as if with Shinjuu Zanshu no Jutsu (Reflex DC 10+wild technician level negates).</td>\n<td>Character suffers 1d8 damage (ignores resistance).</td>\n</tr>\n<tr>\n<td>5</td>\n<td>1d3 hostile level 1 soldiers from random blood pacts appear to fight the wild technician for 1d6 rounds.</td>\n<td>Effective chakra spent on next technique modified by 1d8-5.¹</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Character releases energy uncontrollably in a 15-ft. radius burst, dealing 1d6 nonlethal damage per two wild technician levels to any creatures nearby, Fortitude DC 10+wild technician level halves, including himself).</td>\n<td>Character gains a bite attack for 1 minute. This attack ignores hardness and allows the character to digest anything harmlessly, including harmful substances.</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Character and any creature within 5 feet gains darkvision 60 ft. for 1d6 rounds.</td>\n<td>Effective character level of next technique modified by 1d6-4.</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Character glows brightly for 1d6 minutes, shedding bright light in a 60-ft. radius.</td>\n<td>Character addled for 1 round, reducing a random ability score to 3 (roll 1d6 to determine the ability score).</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Character becomes incorporeal for 1 round. All objects it is holding fall to the floor (including clothes, at GM's discretion).</td>\n<td>Character's movement across all modes multiplied (positive) or divided (negative) by 1d4-2 after movement is declared.</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Character gains 1d6 null chakra.</td>\n<td>Character is fatigued for 1d3 rounds.</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Next enemy slain by the character explodes violently (or similar effect, at the GM's discretion).</td>\n<td>Character's tongue grows uncontrollably, giving language-dependent effects a 20% chance of failure.</td>\n</tr>\n<tr>\n<td>12</td>\n<td>Character and area in a 5-ft. radius is spontaneously covered in sticky substance, as if affected by Mizuame Nabara for 1d6 rounds.</td>\n<td>Character vomits, becoming sickened for 1 round and negating all poisons currently in effect, if any.</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Character's gravity changes for 1 round, potentially causing him to fall (roll 1d6 to determine direction, 1 - up, 2 - left, 3 - right, 4 - forward, 5 - backwards, 6 - down).</td>\n<td>Character teleports 1d4×5 feet in a random direction at the start of its turn for 1d3 rounds.</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Next technique's base cost is halved (round up).</td>\n<td>Base chakra cost of techniques is doubled for 1d3 rounds.</td>\n</tr>\n<tr>\n<td>15</td>\n<td>Character can only communicate with animal sounds for 1 minute, but is understood by animals (character cannot understand animals in return).</td>\n<td>Character falls prone and is flat-footed until the start of its next turn.</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Character's voice is amplified, audible anywhere within 1 mile for 1d4 rounds.</td>\n<td>Techniques cannot be empowered or used with mastery for 1d3 rounds.</td>\n</tr>\n<tr>\n<td>17</td>\n<td>Character gains one shadow clone under his control for 1d4 rounds as if with Kage Bunshin no Jutsu (mastery 0).</td>\n<td>Character's skin turns an exotic color (red, blue, etc.).</td>\n</tr>\n<tr>\n<td>18</td>\n<td>Character gains an additional attack action then is dazed for 1 round at the end of its turn.</td>\n<td>Character gains 1 meta-chakra charge (cannot exceed maximum).</td>\n</tr>\n<tr>\n<td>19</td>\n<td>Character assumes the shape of a random nearby humanoid for 1d6 rounds (as if with Henge no Jutsu, not cancelled by damage).</td>\n<td>Character heals 1d6 hit points.</td>\n</tr>\n<tr>\n<td>20</td>\n<td>Character under the effects of Kai-mon Kai (mastery 0) for 1d4 rounds.</td>\n<td>Next technique is performed as if with full mastery.</td>\n</tr>\n</tbody>\n</table>\n<p>¹ If the effective chakra spent on the technique is below its base cost, the technique fails and the chakra spent is wasted.</p>\n<h3>Boundless Chakra</h3>\n<p>Though the wild technician has no chakra reserves to speak of, his chakra pool is the stuff of legend. At 1st level and every wild technician level afterwards, his chakra pool increases by 4. This affects the size of his null chakra pool as well.</p>\n<h3>Wild Technique</h3>\n<p>At 2nd level, a wild technician learns to perform a wild technique. This technique provokes a wild surge, but increases the effective character level the technique is performed at by +1 at 2nd level, +2 at 5th level and +3 at 8th level. If the wild technician uses a meta-chakra feat on a wild technique, the perform requirements are not increased and the increased chakra cost is also added to the wild technician's null chakra pool (if any).</p>\n<p>The wild technician can use this ability once per day every two wild technician levels.</p>\n<h3>Bonus Feat</h3>\n<p>At 3rd, 6th and 9th level, the Wild Technician gets a bonus feat. The bonus feat must be a meta-chakra feat, and the Wild Technician must meet all the prerequisites of the feat to select it.</p>\n<h3>Delay Surge</h3>\n<p>At 4th level, the wild technician gains a measure of control over his wild chakra. Whenever he provokes a wild surge, the wild technician can use this ability to delay its effects by one round every 2 wild technician levels he has. He can use this ability once per day, then an additional time per day at 7th and 10th level.</p>\n<h3>Purgative Transference</h3>\n<p>At 7th level, the wild technician can spend a meta-chakra charge and touch a creature to transfer some of their chakra to them. The wild technician chooses how much chakra is transferred, and that amount is taken from his null chakra pool. The target gains that same amount as temporary chakra for 1 hour, and incurs a wild surge the next time it spends any chakra. The wild technician can transfer no more than his wild technician level in chakra at a time. Any use of the ability after the first deducts more and more chakra (twice as much for the second use, three times for the third, etc.).</p>\n<h3>Destructive Surge</h3>\n<p>At 10th level, the wild technician has mastered the ability to summon his wild chakra on command. Whenever the wild technician uses the Wild Technique ability, the wild surge is always contained unless the wild technician declares otherwise. In addition, if a wild technique can be empowered to deal damage to a maximum number of dice limited, the number of dice it can be empowered to increases by an amount equal to the wild technician's Wild Technique bonus.</p>\n<p>When performing a wild technique, the wild technician can spend an action point to apply the effects of a meta-chakra feat to a technique that has already been enhanced by another meta-chakra feat, even when he otherwise couldn't do so. The wild technician can use this effect without spending an action point once per day.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 6,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

@@ -1,0 +1,161 @@
+{
+   "_id" : "2870f99f0ba1b934",
+   "_key" : "!items!2870f99f0ba1b934",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/feats/leadership.jpg",
+   "name" : "Commando",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "5f7adf5e32d4bfc7",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : true,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Commando</h1>\n<p>The commando is a master of surprise and group tactics. He excels with a small team, surrounded on all sides in a situation that seems hopeless until, with a short command, he and his team turn the tide and cut out a victory from the cusp of total defeat. The fastest path to this class is through the Strong Hero basic class.</p>\n<h2>Requirements:</h2>\n<p>To qualify to become a commando, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus:</strong> +3.</li>\n<li><strong>Skills:</strong> Knowledge (Arcana) 3 ranks, a total of 8 ranks in the following skills: Acrobatics, Climb, Perception, Stealth and Swim.</li>\n<li><strong>Feats:</strong> Any one of the following: Archaic Weapons Proficiency, Nin Weapons Proficiency or Personal Firearms Proficiency.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Commando advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Commando gains 1d10 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Commando gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Commando's class skills are as follows. Acrobatics (Dex), Climb (Str), Craft (Int), Intimidate (Cha), Knowledge (arcane, history, local) (Int), Linguistic (Int), Perception (Wis), Profession (Wis), Spot (Wis), Stealth (Dex), Survival (Wis), and Swim (Str).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<p>TABLE: THE COMMANDO</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1</td>\n<td>+0</td>\n<td>Weapon focus, bonus tactic</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+0</td>\n<td>Teamwork, bonus feat</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>Weapon specialization</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>Improved reactions</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>Greater rage, rage 3/day</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+6</td>\n<td>+3</td>\n<td>+3</td>\n<td>+2</td>\n<td>Opportunist</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+7</td>\n<td>+4</td>\n<td>+4</td>\n<td>+2</td>\n<td>Improved Critical</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+8</td>\n<td>+4</td>\n<td>+4</td>\n<td>+2</td>\n<td>Team Leader +4, bonus feat</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+9</td>\n<td>+4</td>\n<td>+4</td>\n<td>+3</td>\n<td>Greater weapon Specilization</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+10</td>\n<td>+5</td>\n<td>+5</td>\n<td>+3</td>\n<td>Improved Teamwork</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Commando advanced class.</p>\n<h3>Weapon Focus</h3>\n<p>At 1st level, the commando chooses a weapon in which he will spend the rest of his levels as a commando specializing into, and gains the Weapon Focus feat for that weapon. The commando must be proficient in the chosen weapon.</p>\n<h3>Bonus Tactic</h3>\n<p>At 1st level, the commando gains an additional tactic of his choice, even if he does not meet the prerequisite for that tactic. Each time he gains a level in the commando class, he can replace that tactic for another one.</p>\n<h3>Teamwork</h3>\n<p>At 2nd level, the commando becomes very proficient at keeping track of his allies. He gains a +10 circumstance bonus to Listen and Spot checks to hear and see allies. In addition, he can confer the benefit of his bonus tactic to up to 1 ally per commando level as long as they remain within 30 feet. At 10th level, the commando becomes so in tune with his team that he is aware of the location and condition of any ally within 50 feet (as though with the Iryou Ninjutsu: Iji - Shinryou Jutsu technique). The range at which he can share his bonus tactic also improves to 50 feet.</p>\n<h3>Weapon Specialization</h3>\n<p>At 3rd level, the commando gains a +2 bonus to damage rolls with his chosen weapon.</p>\n<h3>Team Leader</h3>\n<p>At 4th level, the commando's training enables him to effectively manage his team's efforts. All allies within 30 feet of the commando gain a +2 competence bonus on Climb, Jump, Hide, Listen, Move Silently, Spot and Swim checks. Allies must be able to see the commando to gain this bonus. At 8th level, this bonus increases to +4. Improved Reactions At 5th level, the commando's ability to react to confrontation improves, and he gains a +2 competence bonus to Initiative checks.</p>\n<h3>Opportunist</h3>\n<p>At 6th level, the commando can spend an action point to make an attack of opportunity once per round against an opponent who has just been injured in melee by an ally. If the commando already has the Opportunist talent or ability, it can be used without spending an action point.</p>\n<h3>Improved Critical</h3>\n<p>At 7th level, the commando's threat range with his chosen weapon is increased by 1. Greater Weapon Specialization At 9th level, the commando's bonus to damage rolls with his chosen weapon from Weapon Specialization improves to +4.</p>\n<h3>Bonus Feat</h3>\n<p>At 2nd and 8th level, the Commando gets a bonus feat. The bonus feat must be selected from the following list, and the Commando must meet all the prerequisites of the feat to select it.</p>\n<ul>\n<li>Advanced Firearms Proficiency</li>\n<li>Archaic Weapons Proficiency</li>\n<li>Armor Proficiency (light, medium, heavy)</li>\n<li>Burst Fire</li>\n<li>Cleave</li>\n<li>Combat Reflexes</li>\n<li>Great Cleave</li>\n<li>Nin Weapons Proficiency</li>\n<li>Personal Firearms Proficiency</li>\n<li>[Universal: Risky Strike]</li>\n<li>Power Critical</li>\n<li>Tactical Implements</li>\n<li>Weapon Adaptation Training.</li>\n</ul>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

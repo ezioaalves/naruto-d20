@@ -1,0 +1,156 @@
+{
+   "_id" : "8e6132dc4c76be29",
+   "_key" : "!items!8e6132dc4c76be29",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/items/inventory/badge-sword.jpg",
+   "name" : "Shinobi Bodyguard",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "f47636c275a458f5",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Shinobi Bodyguard</h1>\n<p>A ninja adept at protecting other and jumping in harm's way, the Shinobi Bodyguard is the ideal bodyguard, the one shinobi most likely to stay behind to delay the incoming waves of enemy and survive. He is most wanted in rear guard defense on the battlefield, and the fastest path to this class is through the Tough Hero basic class.</p>\n<h2>Requirements</h2>\n<p>To qualify to become an shinobi bodyguard, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +2</li>\n<li><strong>Skills</strong>: Concentration 6 ranks.</li>\n<li><strong>Feats</strong>: Great Fortitude</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Shinobi Bodyguard advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Shinobi Bodyguard gains 1d12 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Shinobi Bodyguard gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Shinobi Bodyguard's class skills are as follows. Climb (Str), Concentration (Con), Drive (Dex), Hide (Dex), Jump (Str), Intimidate, Knowledge (ninja lore) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Read Language (None), Search (Int), Sense Motive (Wis), Speak Language (None), Spot (Wis), Swim (Str), and Taijutsu (Str).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Shinobi Bodyguard advanced class.</p>\n<h3>Remain Conscious</h3>\n<p>The Shinobi Bodyguard has the ability to continue to perform as normal when he would otherwise be unconscious and dying. When the Shinobi Bodyguard's hit points reach below 0 (-1 to –9), he is still able to move as though disabled instead of being unconscious, making either an attack or move action every round until he reaches -10 hit points and die, or his hit points return to 1 or higher.</p>\n<p>At the Shinobi Bodyguard's choice, he may succumb to unconsciousness if he thinks that doing so might prevent him from taking more damage.</p>\n<h3>Harm's Way</h3>\n<p>Once per round, if the Shinobi Bodyguard is adjacent to an ally who is targeted by a direct melee or ranged attack (but not an area effect), he can subject himself to the attack in the ally's stead. If the attack hits the Shinobi Bodyguard, he takes damage normally. If it misses, it also misses the ally.</p>\n<p>The Shinobi Bodyguard must declare his intention to place himself in harm's way before the attack roll is made. He selects his ally either prior to combat or immediately after the shinobi makes his initiative check. The ally cannot be changed for the duration of the combat.</p>\n<h3>Uncanny Dodge</h3>\n<p>At 3rd level, the shinobi bodyguard is rarely caught off-guard during combat, even when ambushed. He retains his Dexterity bonus to Defense when caught flat-footed or when struck by an unseen opponent.</p>\n<h3>Cover</h3>\n<p>At 4th level, the shinobi bodyguard can choose to provide greater protection to any creature he guards with his harm's way ability. The shinobi bodyguard can use his harm's way ability to defend an ally against areas of effect by subjecting himself to the attack. The shinobi bodyguard can still make a saving throw normally if the attack requires one.</p>\n<h3>Damage Reduction</h3>\n<p>At 3rd, 6th and 9the level, the shinobi bodyguard learns to shrug off the damage from most weapons and natural attacks. The weapon bounces off harmlessly (the opponent knows the attack was ineffective). He takes normal damage from energy attacks (even nonmagical ones), spells, techniques, spell-like abilities, and supernatural abilities.</p>\n<p>The Shinobi Bodyguard's damage reduction is 1/– at 3rd level, 2/– at 6th level and 3/– at 9th level. This damage reduction stacks with the damage reduction of the Tough hero basic class.</p>\n<h3>Mettle</h3>\n<p>At 7th level, when the shinobi bodyguard makes a successful Fortitude or Will save against any spell, power, technique or ability that would have a lesser effect on a successful save (such as a technique that allows a saving throw of Fortitude half or Will partial), the shinobi bodyguard instead completely negates the effect. This ability only functions when the shinobi bodyguard is conscious.</p>\n<h3>Improved Uncanny Dodge</h3>\n<p>At 8th level, the shinobi bodyguard can no longer be flanked. This defense denies opponents the ability to sneak attack the shinobi bodyguard unless the attacker is at least four levels higher than he is.</p>\n<h3>Adapt</h3>\n<p>At 10th level, the shinobi bodyguard knows the battlefield is a chaotic place liable to change at any time. He can change the ally protected by his Harm's Way ability as a free action on his turn.</p>\n<h3>Undying Shinobi</h3>\n<p>At 10th level, the shinobi bodyguard gains the ability to act normally and without penalty or sufferring additional damage when disabled or reduced below 0 hit points. He may choose to succumb to unconsciousness at any time. Once per day, he may spend an action point to stabilize immediately.</p>\n<h3>Bonus Feats</h3>\n<p>At 3rd and 9th level, the Shinobi Bodyguard gets a bonus feat. The bonus feat must be selected from the following list, and the Shinobi Bodyguard must meet all the prerequisites of the feat to select it. Blood Pact, Chuunin, Cleave, Focused, Jounin, [Universal: Risky Strike], Toughness.</p>\n<h2>Table: The Shinobi Bodyguard</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+2</td>\n<td>+1</td>\n<td>+0</td>\n<td>Remain conscious</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+3</td>\n<td>+2</td>\n<td>+0</td>\n<td>Harm's way</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+2</td>\n<td>+1</td>\n<td>Damage reduction 1/–, bonus feat</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+2</td>\n<td>+1</td>\n<td>Uncanny dodge</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+3</td>\n<td>+1</td>\n<td>Cover</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+5</td>\n<td>+3</td>\n<td>+2</td>\n<td>Damage reduction 2/–</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+5</td>\n<td>+4</td>\n<td>+2</td>\n<td>Mettle</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6</td>\n<td>+6</td>\n<td>+4</td>\n<td>+2</td>\n<td>Improved uncanny dodge</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6</td>\n<td>+6</td>\n<td>+4</td>\n<td>+3</td>\n<td>Damage reduction 3/–, bonus feat</td>\n<td>+5</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7</td>\n<td>+7</td>\n<td>+5</td>\n<td>+3</td>\n<td>Adapt, undying shinobi</td>\n<td>+5</td>\n<td>+4</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 12,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

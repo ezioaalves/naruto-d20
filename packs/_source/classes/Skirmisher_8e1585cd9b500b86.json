@@ -1,0 +1,161 @@
+{
+   "_id" : "8e1585cd9b500b86",
+   "_key" : "!items!8e1585cd9b500b86",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/feats/spring-attack.jpg",
+   "name" : "Skirmisher",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "83020b8d5f06264f",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Skirmisher</h1>\n<p>The skirmisher is at his best on an open battlefield, darting in an out of combat and staying out of direct danger. Whether in guerrilla warfare or stage combat, the skirmisher takes center stage as he weaves around his enemies and cuts them down to size little by little.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a skirmisher, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +6.</li>\n<li><strong>Skills</strong>: Tumble 9 ranks.</li>\n<li><strong>Feats</strong>: Dodge, Spring Attack.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Skirmisher prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Skirmisher gains 1d10 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Skirmisher gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Skirmisher's class skills are as follows: Balance (Dex), Climb (Str), Craft (structural) (Int), Drive (Dex), Escape Artist (Dex), Listen (Wis), Knowledge (ninja lore, tactics, technology) (Int), Move Silently (Dex), Perform (Cha), Profession (Wis), Read Language (None), Speak Language (None), Survival (Wis), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Skirmisher</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+1</td>\n<td>+2</td>\n<td>+0</td>\n<td>Improved spring attack</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+3</td>\n<td>+0</td>\n<td>Mobile defense</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+2</td>\n<td>+3</td>\n<td>+1</td>\n<td>Greater spring attack</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+4</td>\n<td>+1</td>\n<td>Increased speed</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+3</td>\n<td>+4</td>\n<td>+1</td>\n<td>Perfect spring attack</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Skirmisher prestige class.</p>\n<h3>Improved Spring Attack</h3>\n<p>When using the spring attack feat, the skirmisher can make an additional melee attack against the same opponent, using his held weapon at his highest attack bonus, but with a –5 penalty. The skirmisher must still move before and after the attack, and still provokes attacks of opportunity from other opponents. Abilities that provide additional attacks during a full-attack action, such as the flurry of blows ability, do not work with spring attack, which is an attack action. Using this ability is a full-round action.</p>\n<h3>Mobile Defense</h3>\n<p>At 2nd level, the skirmisher adds one-half his skirmisher level as a dodge bonus to Defense against melee attacks after making a spring attack or using the perfect spring attack class feature until the start of his next turn.</p>\n<h3>Greater Spring Attack</h3>\n<p>At 3rd level, the skirmisher can make even more attacks when using the spring attack feat. If the skirmisher has a base attack bonus of at least +11, he can make a third attack at his highest attack bonus, but with a –10 penalty. If his base attack bonus is at least +16, he can make a fourth attack at a –15 penalty.</p>\n<h3>Increased Speed</h3>\n<p>At 4th level, the skirmisher's base movement speed increases by 10 feet.</p>\n<h3>Perfect Spring Attack</h3>\n<p>At 5th level, the skirmisher becomes a terror on the battlefield. As a full-round action once per day, the skirmisher can move up to his movement speed and make a single melee attack at his highest attack bonus against all targets that come within range at any point during his movement. This ability cannot be combined with special modes of movement, such as teleport, flight, or techniques like shunpo. This movement doesn't provoke attacks of opportunity from any target the skirmisher designated as part of this ability.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

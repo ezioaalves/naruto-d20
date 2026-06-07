@@ -1,0 +1,172 @@
+{
+   "_id" : "6a753717839c42b5",
+   "_key" : "!items!6a753717839c42b5",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/items/inventory/wand-star.jpg",
+   "name" : "Rising Star",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "6e76c21f994a9715",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "0052cb93cf0402f7",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "8280062706d8bfca",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : true,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : true,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Rising Star</h1>\n<p>The rising star is a legend in the making. Though he isn't excellent at any one thing, he is good at virtually everything. He can inspire his allies, come up with effective battle strategies and make the most out of his enemy's weaknesses. This class is easily accessible from any of the basic classes, but requires the Genius Ninja feat taken at first level.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a rising star, a character must fulfill all the following criteria. <strong>Skills:</strong> Any two of the following skills: Chakra Control 9 ranks, Fuinjutsu 9 ranks, Genjutsu 9 ranks, Knowledge (ninja lore) 9 ranks, Ninjutsu 9 ranks, Taijutsu 9 ranks. <strong>Feats:</strong> Genius Ninja.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Rising Star prestige class.</p>\n<p><strong>Hit Die</strong> The Rising Star gains 1d6 hit points per level. The Constitution modifier applies.</p>\n<p><strong>Action Points</strong> The Rising Star gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</p>\n<p><strong>Class Skills</strong> The Rising Star's class skills are as follows. Balance (Dex), Bluff (Cha), Chakra Control (Wis), Concentration (Con), Craft (calligraphy, chemical, mechanical, pharmaceutical) (Int), Decipher Script (Int), Demolitions (Int), Forgery (Int), Fuinjutsu (Int), Gather Information (Cha), Genjutsu (Cha), Hide (Dex), Intimidate (Cha), Knowledge (all skills, taken individually) (Int), Listen (Wis), Move Silently (Dex), Navigate (Int), Ninjutsu (Int), Perform (Cha), Profession (Wis), Read/Write Language (none), Repair (Int), Research (Int), Search (Int), Speak Language (none), Spot (Wis), Taijutsu (Str), Tumble (Dex). <strong>Skill Points at Each Level:</strong> 7 + Int modifier.</p>\n<h3>TABLE: THE RISING STAR</h3>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1</td>\n<td>Show-off, bonus chakra</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Legend in the making</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Rising Star prestige class.</p>\n<h3>Show-Off</h3>\n<p>At 1st level, the rising star gains the ability to make his successes in anything look smooth and effortless, inspiring allies who look up to him to do better, or driving allies who do not to show him up. To benefit from this ability, the rising star must be in the presence of an ally who can see or hear him, and spend an action point after succeeding on any attack roll, saving throw, skill check or ability check. This does not require an action, but is executed as part of the triggering action.</p>\n<p>Any affected ally gains a bonus equal to one-half the result of the action point, rounded down, on his next attack roll, saving throw, skill check or ability check (whichever triggered the ability). The bonus cannot exceed the rising star's level in this class and applies to any roll that fits the description (a successful Balance check, for example, would affect all skill checks). The effects fade at the end of the encounter if not used before then.</p>\n<p>The GM should note, however, that while any success can trigger this ability, Show-Off should not be used outside the context of an otherwise normal activity. Any action which has no purpose other than to make use of Show-Off fails automatically.</p>\n<h3>Bonus Chakra</h3>\n<p>The Rising Star gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>3</td>\n<td>6</td>\n</tr>\n</tbody>\n</table>\n<h3>Bonus Feat</h3>\n<p>At 2nd level, the Rising Star gets a bonus feat. The bonus feat must be selected from the following list or any previous list of bonus feats from existing class levels, and the Rising Star must meet all the prerequisites of the feat to select it. Able Defender, Absolute Control, Blood Brother, Companion Training, Deadly Accuracy, Dexterous Genius, Elemental Harmony, Elemental Mastery, Empower Machinery, Expert Analysis, Gifted Ninja, Gloom Weaver, Hard Working, Inconspicuous, Medical Prodigy, Meta-chakra Specialist, Mobile Defense, Obscured Technique, One-handed Seals, Pureblooded, Quick Assessment, Sealing Guru, Spymaster's Intuition, Steelwall, Superior Puppetry, Tactical Support, Weapon Intimacy.</p>\n<h3>Legend in the Making</h3>\n<p>At 3rd level, the rising star gains an ability that may well shape the rest of his career as a ninja, selected from a pool of abilities below. There are no requirements for these abilities, but some may suit a character better than others.</p>\n<ul>\n<li><strong>Exploit Weakness (Ex):</strong> This ability functions like the Smart hero talent of the same name, but the rising star uses levels in this class instead of the Smart hero class; levels in Smart hero count towards using this ability.</li>\n<li><strong>Instinctive Identification (Su):</strong> The rising star gains a +2 insight bonus to checks made to identify any technique, even one he isn't familiar with. This bonus increases to +4 to identify a type of technique he applied the Genius Ninja feat to.</li>\n<li><strong>Plan (Ex):</strong> This ability functions like the Smart hero talent of the same name, but the rising star uses levels in this class instead of the Smart hero class; levels in a class that grants the Plan ability count towards using this ability.</li>\n<li><strong>Sneak Attack (Ex):</strong> The rising star gains the sneak attack +1d6 class ability, which functions like the Ninja Scout ability of the same name.</li>\n<li><strong>Sublime Proficiency (Su):</strong> The rising star selects a single technique he knows and gains a +2 insight bonus to his effective skill threshold with that technique as well as a +5 bonus to Learn checks made to gain steps of mastery in the technique. Each time the rising star gains a new character level in any class, he can change the technique this ability applies to.</li>\n<li><strong>Team Player (Su):</strong> As a swift action once per round, the rising star can choose to emulate a feat or tactic that requires more than one participant for the rest of the encounter. Doing so grants the rising star no additional benefits, but allows any ally to function as though the rising star had the feat or tactic. The rising star must declare which ability to emulate when using this ability, and may spend an additional action later during the encounter to emulate a different ability instead.</li>\n<li><strong>Uncanny Dodge (Ex):</strong> The rising star retains his Dexterity bonus to Defense when caught flat-footed or struck by an unseen attacker.</li>\n<li><strong>Unwavering Will (Su):</strong> The rising star gains a +2 bonus to saving throws against compulsion and fear effects, as well as any saving throw or check made to resist torture or intimidation.</li>\n</ul>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 6,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

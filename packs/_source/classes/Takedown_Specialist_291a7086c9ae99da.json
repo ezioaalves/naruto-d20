@@ -1,0 +1,161 @@
+{
+   "_id" : "291a7086c9ae99da",
+   "_key" : "!items!291a7086c9ae99da",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/feats/greater-grapple.jpg",
+   "name" : "Takedown Specialist",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "f16fb1452e1cfe69",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : false,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Takedown Specialist</h1>\n<p>The takedown specialist is a master with a very narrow focus, and specializes in wrestling, grappling and clinch-fighting. What he may lack outright destructive prowess, he more than makes up for with the ability to take on virtually any opponent single-handedly, quickly and quietly.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a takedown specialist, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +6.</li>\n<li><strong>Skills</strong>: Escape Artist 10 ranks, Tumble 7 ranks.</li>\n<li><strong>Feats</strong>: Combat Martial Arts, Combat Throw, Defensive Martial Arts, Unarmed Combatant.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Takedown Specialist prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Takedown Specialist gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Takedown Specialist gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Takedown Specialist's class skills are as follows: Bluff (Cha), Climb (Str), Escape Artist (Dex), Intimidate (Cha), Jump (Str), Knowledge (streetwise) (Int), Profession (Wis), Read/Write Language (None), Sense Motive (Wis), Speak Language (None), Swim (Str), Taijutsu (Str) and Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Takedown Specialist</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+2</td>\n<td>+2</td>\n<td>+0</td>\n<td>Pit fighter, exceptional wrestler +1</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+3</td>\n<td>+3</td>\n<td>+0</td>\n<td>Deadly hold +1d6</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+1</td>\n<td>Exceptional wrestler +2</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+1</td>\n<td>Pit maneuvers</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+5</td>\n<td>+5</td>\n<td>+2</td>\n<td>Deadly hold +2d6, bonus feat</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>+2</td>\n<td>Human shield, exceptional wrestler +3</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Takedown Specialist prestige class.</p>\n<h3>Pit Fighter</h3>\n<p>A takedown specialist's class levels stack with levels in the Taijutsu Master class to determine the damage dealt by unarmed attacks. In addition, he counts as having an Intelligence score of 13 to qualify for the [Universal: Defensive Stance] feat, and feats that have it as a prerequisite.</p>\n<h3>Exceptional Wrestler</h3>\n<p>At 1st level, the takedown specialist gains a +1 competence bonus to Grapple checks, and opposed Strength and Dexterity checks to whenever the takedown specialist attempts or defends against a grapple or trip while wearing light armor or no armor. This bonus increases to +2 at 4th level and +3 at 7th level.</p>\n<h3>Deadly Hold</h3>\n<p>At 2nd level, the grappler can establish a powerful hold on his opponents. Whenever the takedown specialist deals unarmed damage from making a successful grapple, he deals an extra 1d6 points of damage. At 6th level, the extra damage increases to 2d6.</p>\n<h3>Pit Maneuvers</h3>\n<p>At 5th level, the takedown specialist can initiate disarm or trip maneuvers as the same time as he initiates a grapple. To do so imposes a –4 penalty on all grapple checks this round. If the initial grapple attempt was successful, the takedown specialist can make a disarm or trip attempt against the opponent as a free action. These attempts are resolved normally, but do not provoke an attack of opportunity. </p>\n<h3>Human Shield</h3>\n<p>At 7th level, the takedown specialist can use the body of anyone he is grappling as a shield once per round. As an instant action when targeted by a melee or ranged attack, he may spend an action point to make any grappled opponent the target of the attack instead.</p>\n<h3>Bonus Feat</h3>\n<p>At 3rd and 6th level, the Takedown Specialist gets a bonus feat. The bonus feat must be selected from the following list, and the Takedown Specialist must meet all the prerequisites of the feat to select it.</p>\n<ul>\n<li>Advanced Combat Martial Arts</li>\n<li>[Universal: Defensive Stance]</li>\n<li>Combat Reflexes</li>\n<li>Elusive Target</li>\n<li>Improved Combat Martial Arts</li>\n<li>Deft Maneuvers</li>\n</ul>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

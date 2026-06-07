@@ -1,0 +1,161 @@
+{
+   "_id" : "c3eb9b48c9f9c5eb",
+   "_key" : "!items!c3eb9b48c9f9c5eb",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/skills/mech_12.jpg",
+   "name" : "Technowarrior",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "8ba2b642cb7cfe2a",
+            "formula" : "floor((@item.level + 1) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Technowarrior</h1>\n<p>Everything goes somewhere, and the technowarrior is everywhere. With nothing but a computer, a healthy supply of orange soda and sheer audacity, the technowarrior can single-handedly wage war against the entire world. He is a master of all when it comes to computers, and it is a rare system that he cannot beat, given enough time... or more likely, hardly any time at all.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a technowarrior, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Computer Use 8 ranks, Decipher Script 5 ranks, Knowledge (technology) 8 ranks.</li>\n<li><strong>Feats</strong>: Gearhead.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Technowarrior prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Technowarrior gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Technowarrior gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Technowarrior's class skills are as follows: Computer Use (Int), Craft (electronic, mechanical) (Int), Decipher Script (Int), Disable Device (Int), Forgery (Int), Gamble (Wis), Gather Information (Cha), Intimidate (Cha), Knowledge (current events, history, popular culture, technology) (Int), Profession (Wis), Read/Write Language (none), Repair (Int), Research (Int), Speak Language (none), Search (Int).</li>\n<li><strong>Skill Points at Each Level</strong>: 7 + Int modifier.</li>\n</ul>\n<h2>Table: The Technowarrior</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+0</td>\n<td>+2</td>\n<td>Expert analysis, technomancy</td>\n<td>+0</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+0</td>\n<td>+3</td>\n<td>Technotactic</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1</td>\n<td>+3</td>\n<td>Technotactic</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>+1</td>\n<td>+1</td>\n<td>+4</td>\n<td>Technotactic</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+2</td>\n<td>+1</td>\n<td>+1</td>\n<td>+4</td>\n<td>Shock and awe</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Technowarrior prestige class.</p>\n<h3>Expert Analysis</h3>\n<p>The technowarrior can quickly analyze computer code and determine the intended function of a program. He must make a successful Decipher Script check (DC 10 + the Computer Use skill modifier of the code's author), and determines the function as well as any potential vulnerability or malfunction in the code, and gains a +2 competence bonus to Computer Use checks to degrade the program.</p>\n<h3>Technomancy</h3>\n<p>When attempting to defeat computer security, the system administrator is only alerted of the technowarrior's presence on a check failed by 10 or more.</p>\n<h3>Technotactic</h3>\n<p>At 2nd, 3rd and 4th level, the technowarrior gains a special ability from the list below, called technotactics. Unless otherwise specified, technotactics cannot be selected twice.</p>\n<ul>\n<li><strong>Attrition Warfare (Su)</strong>: This ability increases the penalty imposed to Computer Use checks when degrading a computer's programming by –1 every odd-numbered technowarrior level, and increases the difficulty of fixing degraded programming by 5.</li>\n<li><strong>Black Ops (Su)</strong>: When breaking into a computer system, the technowarrior can install a backdoor into the system by making a Computer Use check against the system's security. A successful check enables the technowarrior to automatically defeat the system's security during further intrusion attempts. The difficulty of the check is as shown below.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>System security</th>\n<th>DC</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Minimum</td>\n<td>25</td>\n</tr>\n<tr>\n<td>Average</td>\n<td>30</td>\n</tr>\n<tr>\n<td>Exceptional</td>\n<td>40</td>\n</tr>\n<tr>\n<td>Maximum</td>\n<td>45</td>\n</tr>\n</tbody>\n</table>\n<p>Each time the backdoor is used, the technowarrior must make a Computer Use check against the administrator. A failed check means the backdoor is discovered (but the technowarrior's intrusion remains undetected), and may be deleted before the technowarrior's return.</p>\n<ul>\n<li><strong>Bonus Feat</strong>: Instead of a special ability, the technowarrior may elect to pick a bonus feat from the list below. This ability can be selected more than once: Builder, Insightful Reflexes, Low Profile, Meticulous, Renown, Studious, Windfall.</li>\n<li><strong>Covert Ops (Su)</strong>: When attempting to cover his tracks during an intrusion, the technowarrior can take a –5 penalty to increase the penalty to track him by 1 every odd-numbered technowarrior level. Furthermore, if the attempt to identify him fails by 10 or more, the tracker follows the technowarrior's trail to a wrong location.</li>\n<li><strong>Drill Instructor (Su)</strong>: The technowarrior adds his technowarrior level as a circumstance bonus to Reputation and Charisma-based checks such as Bluff or Intimidate when used in an online context.</li>\n<li><strong>Minute Man (Su)</strong>: The technowarrior decreases the time required for all applications of the Computer Use skill by one-half (-50%), minimum 1 round.</li>\n<li><strong>Secret Agent (Su)</strong>: When attempting to defeat computer security, the technowarrior is so adept at avoiding detection that the system administrator is only alerted of his presence on a natural roll of 1. However, because there are no automatic failures when rolling skill checks, if the technowarrior's skill check is high enough that he succeeds on the skill check regardless of the low roll, his presence is not detected by the administrator.</li>\n<li><strong>Well Trained and Well Armed (Su)</strong>: Given enough time to prepare, the technowarrior is a tough opponent to beat. When writing a program, the circumstance bonus granted increases to +4.</li>\n</ul>\n<h3>Shock and Awe</h3>\n<p>Once per day at 5th level, the technowarrior can spend an action point to use this ability after successfully defeating the security of a computer system. As a result, he gains complete control over the computer or network as though he were the system administrator, and locks out the administrator from the system, but is immediately detected. Each round, the technowarrior must make an opposed Computer Use check against the system administrator to retain control as a free action, at a cumulative –1 penalty imposed each round the administrator attempts to regain control of the system.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 6,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

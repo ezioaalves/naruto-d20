@@ -1,0 +1,172 @@
+{
+   "_id" : "d10e342ed888d30a",
+   "_key" : "!items!d10e342ed888d30a",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/items/inventory/monster-heart.jpg",
+   "name" : "Living Puppeteer",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "2d94d66d754535ee",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "fec9e28b993b11e5",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "ae284ed679b33b57",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : true,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : false,
+         "hea" : true,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : true,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Living Puppeteer</h1>\n<p>The Living Puppeteer is a shinobi who specializes in the creation of puppets made from the carcasses of animals and the bodies of humans. His ability to do so has increased his skill as a puppeteer manyfold but often comes at the price of a certain level of infamy.</p>\n<p>The living puppeteer is often shunned for his affinity with human puppets and ability to turn a once perfectly normal human body into an ambulating parody of its former self, but the degree to which he is able to do so is often bemusing.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a living puppeteer, a character must fulfill all the following criteria. <strong>Skills:</strong> Concentration 12 ranks, Craft (mechanical) 12 ranks, Knowledge (earth and life science) 12 ranks, Ninjutsu 12 ranks. <strong>Feats:</strong> Craft Living Puppet, Craft Puppets. <strong>Special:</strong> Advanced Puppetry II class feature. The living puppeteer candidate must be able to create B-Class or better chakra threads with the Ninpou: Chakra no Ito technique.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Living Puppeteer prestige class.</p>\n<p><strong>Hit Die</strong> The Living Puppeteer gains 1d6 hit points per level. The Constitution modifier applies.</p>\n<p><strong>Action Points</strong> The Living Puppeteer gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</p>\n<p><strong>Class Skills</strong> The Living Puppeteer's class skills are as follows. Chakra Control (Wis), Craft (chemical, mechanical) (Int), Concentration (Con), Disable Device (Int), Drive (Dex), Escape Artist (Dex), Genjutsu (Cha), Hide (Dex), Knowledge (earth and life science, ninja lore, popular culture, streetwise, technology) (Int), Listen (Wis), Ninjutsu (Int), Perform (Cha), Pilot (Dex), Profession (Wis), Read Language (None), Repair (Int), Ride (Dex), Search (Int), Speak Language (None), Spot (Wis), Treat Injury (Wis). <strong>Skill Points at Each Level:</strong> 7 + Int modifier.</p>\n<h3>TABLE: THE LIVING PUPPETEER</h3>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1</td>\n<td>Living puppetry, advanced puppetry, bonus chakra</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Puppeteer skill</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Innate mastery</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Puppeteer skill</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Technique preservation</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Puppeteer skill</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Bloodline preservation</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Living Puppeteer prestige class.</p>\n<h3>Living Puppetry</h3>\n<p>The living puppeteer's skill when creating human puppets is baffling. When using a human puppet or animal puppet created by the living puppeteer after obtaining this ability, the puppet retains all weapon proficiencies and proficiencies with natural attacks.</p>\n<p>The maximum bonus chakra a human or animal puppet can be crafted with increases by 1. The living puppeteer gains a +1 bonus to Learn checks every odd-numbered level in this class with techniques that require the Living Puppetry, Puppetry or Advanced Puppetry class abilities to be learned.</p>\n<h3>Advanced Puppetry</h3>\n<p>The living puppeteer's ability continues to progress normally. Each level of living puppeteer stacks with levels in the puppeteer class to progress the Advanced Puppetry ability.</p>\n<h3>Bonus Chakra</h3>\n<p>The Living Puppeteer gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>3</td>\n<td>6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>5</td>\n<td>10</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>6</td>\n<td>12</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>7</td>\n<td>14</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>8</td>\n<td>16</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>9</td>\n<td>18</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>10</td>\n<td>20</td>\n</tr>\n</tbody>\n</table>\n<h3>Puppeteer Skill</h3>\n<p>The living puppeteer may select a Puppeteer Skill from the list provided in the Puppeteer class ability of the same name, as well as the following abilities.</p>\n<p><strong>Lifelike Ninjutsu:</strong> The living puppeteer is able to use a human puppet to deliver a Ninjutsu technique as though it was the living puppeteer itself. A cone-shaped burst from the user, for example, could originate from the human puppet if the living puppeteer chose. In this case, both the puppet and the living puppeteer provoke attacks of opportunity, but the puppet doesn't have a chance to be disrupted.</p>\n<p><strong>Puppet Weapon Focus:</strong> When crafting an animal or human puppet, the living puppeteer designates a single mode of attack, individual to each puppet and including natural attacks and attacks with a specific weapon, to apply the benefits of this puppeteer skill to. Any attack made with that weapon or natural attack gains a +1 bonus to attack roll. This puppeteer skill can be selected multiple times; each time, it applies to a different weapon or natural attack</p>\n<p><strong>Puppet Weapon Specialization</strong> (requires Puppet Weapon Focus): When crafting an animal or human puppet, the living puppeteer designates a single mode of attack, individual to each puppet and including natural attacks and attacks with a specific weapon, to apply the benefits of this puppeteer skill to. Any successful attack made with that weapon or natural attack gains a +2 bonus to damage. This puppeteer skill can be selected multiple times; each time, it applies to a different weapon or natural attack</p>\n<p><strong>True Technique Preservation</strong> (requires Technique Preservation): When using the Technique Preservation ability, the living puppeteer may also build in Genjutsu and Taijutsu techniques instead of only Ninjutsu.</p>\n<p><strong>Instinct Recall:</strong> When crafting a human or animal puppet, the living puppeteer may choose to retain a single one of its extraordinary abilities, if it had any. This ability can only be accessed by a living puppeteer with this puppeteer skill. Any damage reduction or energy resistance cannot exceed the living puppeteer's level plus 3. Chakra resistance is limited to 10 + the living puppeteer's class level, while a living puppet with the chakra immunity ability cannot be animated. Trip, improved grab, rake and constrict attacks all take a -4 penalty to attack and damage rolls.</p>\n<p>Doing so increases the Craft check by 5 and the Wealth check difficulty class by 8.</p>\n<h3>Innate Mastery</h3>\n<p>The living puppeteer gains a circumstance bonus to attack rolls and skill checks when animating an animal or human puppet to certain degrees. A puppet animated with a number of hit dice equal to the living puppeteer's class level plus his Puppeteer class level grants a +1 bonus to attack rolls and skill checks. This bonus does not apply if the puppet is more than 30 feet away. </p>\n<p>The maximum bonus chakra a human or animal puppet can be crafted with increases by 3. This does not stack with other such increases.</p>\n<h3>Technique Preservation</h3>\n<p>During the process to create a human puppet, the living puppeteer is able to study a great deal of its physiology and learn a great deal about the base creature's skill in life. The living puppeteer may make an Intelligence check and add his living puppeteer level to the result of that check to learn one of the base creature's most frequently used Ninjutsu techniques per point of his Intelligence modifier, up to a maximum of half his living puppeteer level, round up. The check is made against the technique's Learn DC, requiring only one success; if the living puppeteer already knows the technique, or has preserved the technique before, this process only takes a half day. The time spent building in the technique is equal to the time spent attempting one success. A retry is not possible.</p>\n<p>The techniques learned can only be used when the human puppet is animated with a number of hit dice equal to or higher than the living puppeteer's class levels. The techniques originate from the human puppet as though the puppet had used the techniques, but the living puppeteer must still pay the chakra cost and other associated costs himself, such as XP costs. Using this technique with the puppet does not facilitate learning the same technique for the living puppeteer.</p>\n<p>This process increases the time to create a human puppet by a number of days equal to the time spent learning the selected techniques, and increases the Craft check and wealth check DC by 2 per techniques.</p>\n<p>If the human puppet is disabled or destroyed, the techniques can no longer be used until the puppet is repaired and reanimated. The human puppet is unable to deliver gaze effects, use Spacetime techniques or techniques that would normally allow it to teleport (as special ability), avoidance or defensive maneuvers, and does not gain the benefits of training techniques. The human puppet is unable to learn techniques that create real duplicate of itself, or techniques and abilities that allow it to control another creature or object, such as the Puppetry ability.</p>\n<p>The maximum bonus chakra a human or animal puppet can be crafted with increases by 5. This does not stack with other such increases.</p>\n<h3>Bloodline Preservation</h3>\n<p>The living puppeteer's skill with the creation of human puppets is so great that he is able to impart a puppet with a bloodline the base creature possessed in life.</p>\n<p>Doing so increases the Craft check DC by 15 and the wealth check DC by 10. The base creature's effective level is halved to determine the power of the bloodline, and the bloodline never progresses further after it was imparted on a puppet.</p>\n<p>If a bloodline ability has a chakra cost, the cost is paid directly from the puppet's chakra pool. The puppet does not benefit from insight bonus, morale bonus, speed and strength ranks. </p>\n<p>The living puppeteer cannot use this ability to impart a Doujutsu bloodline, and the process costs experience points: 150 XP for a minor bloodline, 300 XP for an intermediate bloodline and 500 XP for a major bloodline.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 6,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

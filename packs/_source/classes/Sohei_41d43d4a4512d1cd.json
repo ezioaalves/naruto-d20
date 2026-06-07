@@ -1,0 +1,161 @@
+{
+   "_id" : "41d43d4a4512d1cd",
+   "_key" : "!items!41d43d4a4512d1cd",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/feats/weapon-focus.jpg",
+   "name" : "Sohei",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "d1fea669321b909a",
+            "formula" : "floor((@item.level + 3) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : true,
+         "int" : false,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Sohei</h1>\n<p>If it can be used as a weapon, the sohei has mastered it—and if it can't, he will show you how. These legendary warriors are said to train in secret and seclusion, and the result can be beyond spectacular. A sohei is the absolute master of weapons, needing little more than to give it a few practice swings and a bit of time to demonstrate a level of mastery some warriors spend their entire careers striving for.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a sohei, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +5.</li>\n<li><strong>Skills</strong>: Knowledge (tactics) 4 ranks, Sense Motive 8 ranks.</li>\n<li><strong>Feats</strong>: [Universal: Defensive Stance], Precise Shot, [Universal: Risky Strike].</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Sohei prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Sohei gains 1d10 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Sohei gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Sohei's class skills are as follows: Balance (Dex), Climb (Str), Craft (calligraphy, writing) (Int), Gamble (Wis), Listen (Wis), Move Silently (Dex), Profession (Wis), Read Language (None), Sense Motive (Wis), Speak Language (None), Spot (Wis), Survival (Wis), Taijutsu (Str), Treat Injury (Wis).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Sohei</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+0</td>\n<td>+1</td>\n<td>Intuitive weapon proficiency</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+0</td>\n<td>+2</td>\n<td>Intuitive weapon focus</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>Innate defense</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>Intuitive weapon specialization</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>Innate focus</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+3</td>\n<td>+2</td>\n<td>+3</td>\n<td>Greater intuitive weapon focus</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+2</td>\n<td>+4</td>\n<td>Intuitive weapon supremacy</td>\n<td>+3</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Sohei prestige class.</p>\n<h3>Intuitive Weapon Proficiency</h3>\n<p>Starting at 1st level, the sohei can immediately become proficient in any weapon or improvised weapon he picks up. To do so, he must succeed on a Wisdom check to which he gains a bonus equal to his sohei class levels. The difficulty of this check depends on the type of the weapon, as shown on the table below.</p>\n<table>\n<thead>\n<tr>\n<th>Weapon type</th>\n<th>DC</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Simple or improvised weapon</td>\n<td>10</td>\n</tr>\n<tr>\n<td>Archaic or nin weapon</td>\n<td>13</td>\n</tr>\n<tr>\n<td>Exotic weapon</td>\n<td>18</td>\n</tr>\n<tr>\n<td>Weapon is rarely or never used</td>\n<td>+5</td>\n</tr>\n<tr>\n<td>Weapon is frequently used</td>\n<td>–2</td>\n</tr>\n</tbody>\n</table>\n<p>A successful check enables the sohei to become proficient in the weapon for the duration of the encounter or the task for which he needs the weapon. Likewise, the action required to achieve proficiency depends on the frequency at which the weapon is used, as shown on the table below.</p>\n<table>\n<thead>\n<tr>\n<th>Frequency of use</th>\n<th>Action required</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Never used before</td>\n<td>Attack action</td>\n</tr>\n<tr>\n<td>Used before</td>\n<td>Move action</td>\n</tr>\n<tr>\n<td>Frequently used</td>\n<td>Free action</td>\n</tr>\n</tbody>\n</table>\n<p>Using this ability does not provoke an attack of opportunity. This check can be retried, but the intuitive can only attempt to achieve proficiency in a specific weapon once per round, even though he can use this ability with as many different weapons per round as he has actions available. The sohei can gain proficiency in a number of weapons simultaneously equal to 1 plus his Wisdom modifier (minimum 1). When used successfully, the sohei becomes proficient in that weapon for the duration of an encounter.</p>\n<h3>Intuitive Weapon Focus</h3>\n<p>At 2nd level, the sohei gains a +1 bonus to attack rolls when using a weapon with which he used the Intuitive Weapon Proficiency ability, as though having the Weapon Focus feat in that weapon. This bonus does not stack with the Weapon Focus feat.</p>\n<h3>Innate Defense</h3>\n<p>At 3rd level, the sohei gains 1 point of his Wisdom bonus (if any) to his Defense per sohei class level when not wearing armor or using a shield. Any condition that causes the sohei to lose his Dexterity bonus to Defense also causes him to lose this bonus.</p>\n<h3>Intuitive Weapon Specialization</h3>\n<p>At 4th level, the sohei gains a +2 bonus to damage rolls when using a weapon with which he used the Intuitive Weapon Proficiency ability. This bonus does not stack with other instances of the Weapon Specialization ability.</p>\n<h3>Innate Focus</h3>\n<p>At 5th level, the sohei can achieve complete focus in battle. Once per day every odd-numbered sohei level, he can spend an action point to activate this ability and gain a +2 bonus to attack rolls and make attacks as though his attack bonus was 2 points higher with any weapon with which he gains intuitive weapon proficiency for the duration of an encounter. Once per day, this ability can be used without spending an action point, and if the ability gained at 21st level or later, it has no effect.</p>\n<h3>Greater Intuitive Weapon Focus</h3>\n<p>At 6th level, the sohei's bonus to attack rolls with weapons he gained Intuitive Weapon Proficiency in improves to +2. This bonus does not stack with other instances of the Greater Weapon Focus ability.</p>\n<h3>Intuitive Weapon Supremacy</h3>\n<p>At 7th level, the sohei can concentrate all of his skill to one weapon and spend an action point to use this ability once per day. The sohei selects one weapon with which he used Intuitive Weapon Proficiency and gains the following benefits:</p>\n<p>The sohei gains a +5 bonus on all checks to resist being disarmed with that weapon. When the sohei takes a full-attack action, he can apply a +5 circumstance bonus to attack rolls to a single attack after his first strike. In addition, once per round before making an attack roll with the weapon, the sohei can choose to instead treat the d20 result as a 10. If the weapon chosen is an improvised weapon, it is treated as being one size category larger to determine the damage it deals.</p>\n<p>This ability lasts for the duration of the encounter.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

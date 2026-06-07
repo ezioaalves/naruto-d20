@@ -1,0 +1,161 @@
+{
+   "_id" : "d7e32e9870a00d51",
+   "_key" : "!items!d7e32e9870a00d51",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/feats/whirlwind-attack.jpg",
+   "name" : "Swarmwrecker",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "b1cb34dd0395bab0",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : true,
+         "crf" : true,
+         "dev" : true,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Swarmwrecker</h1>\n<p>The swarmwrecker is an absolute specialist in taking on a large group of enemies by himself. His ability to stand in the thick of battle and even withstand friendly fire from his allies make him an opponent his enemies would be foolish to ignore.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a swarmwrecker, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +7.</li>\n<li><strong>Feats</strong>: Armor Proficiency (medium or heavy), Toughness.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Swarmwrecker prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Swarmwrecker gains 1d12 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Swarmwrecker gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Swarmwrecker's class skills are as follows: Balance (Dex), Climb (Str), Concentration (Con), Craft (structural) (Int), Demolitions (Int), Drive (Dex), Escape Artist (Dex), Intimidate (Cha), Jump (Str), Knowledge (tactics) (Int), Listen (Wis), Profession (Wis), Read/Write Language (none), Ride (Dex), Speak Language (none), Spot (Wis), Swim (Str), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Swarmwrecker</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1</td>\n<td>+0</td>\n<td>Against the odds</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+0</td>\n<td>Uncanny dodge, bottleneck</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>Armor training</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>Swarm fighter</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>Improved uncanny dodge</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+6</td>\n<td>+3</td>\n<td>+3</td>\n<td>+2</td>\n<td>Whirlwind attack, improved bottleneck</td>\n<td>+4</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+7</td>\n<td>+4</td>\n<td>+4</td>\n<td>+2</td>\n<td>Retaliatory strike</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Swarmwrecker prestige class.</p>\n<h3>Against the Odds</h3>\n<p>The swarmwrecker is at his best when fighting against the odds. At 1st level, the swarmwrecker gains a +2 morale bonus to saving throws and checks against fear and a swarm's distraction ability when adjacent to two or more opponents, or adjacent or inside a swarm or unit. This bonus increases by +1 every odd-numbered levels.</p>\n<h3>Uncanny Dodge</h3>\n<p>At 2nd level, the swarmwrecker retains his Dexterity bonus to Defense when caught flat-footed or struck by an unseen opponent. The benefits of this ability do not extend to feinting or other conditions that may deny the swarmwrecker his Dexterity bonus to Defense.</p>\n<h3>Bottleneck</h3>\n<p>At 2nd level, the swarmwrecker can use his ability to stand fast in the face of danger. When the swarmwrecker is caught by an effect that affects an area that originates from an ally or himself, the swarmwrecker gains a +4 bonus to saving throws against the effect. If the effect requires a saving throw to take a lesser effect instead (such as a Fortitude partial or Reflex half effect), the swarmwrecker takes no damage on a successful save.</p>\n<h3>Armor Training</h3>\n<p>At 3rd level, the swarmwrecker reduces the armor check penalty imposed by medium or heavy armor by 2 (minimum 0).</p>\n<h3>Swarm Fighter</h3>\n<p>At 4th level, the swarmwrecker gains the ability to eliminate swarms with great expediency. Using this ability imposes a –4 penalty to all melee attack rolls made during the round, but allows the swarmwrecker to target swarms with his melee attacks and deal damage normally, removing the chance that a swarm might ignore the damage.</p>\n<h3>Improved Uncanny Dodge</h3>\n<p>At 5th level, the swarmwrecker can no longer be flanked. This defense denies opponents the ability to sneak attack the swarmwrecker unless the attacker is at least four levels higher than the swarmwrecker.</p>\n<h3>Whirlwind Attack</h3>\n<p>At 6th, level, the swarmwrecker can substitute all of his regular attacks in a full-attack action to instead make a single melee attack against all adjacent opponents at his highest attack bonus. This ability can be combined with the Swarm Fighter to treat this attack as an area attack and deal additional damage to swarms.</p>\n<h3>Improved Bottleneck</h3>\n<p>At 6th level, the swarmwrecker becomes even more adept at remaining safe inside a danger zone. When using the bottleneck ability, the swarmwrecker takes only the partial or half effect on a failed save, and no effect or damage on a successful save.</p>\n<h3>Retaliatory Strike</h3>\n<p>At 7th level, the swarmwrecker can retaliate against opponents who strike him. Once per round as a free action, the swarmwrecker can make an attack of opportunity against an opponent who has just attacked him in melee. Abilities that enable the swarmwrecker to make more than one attack of opportunities in a single round do not enable him to use this ability more than once.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 12,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

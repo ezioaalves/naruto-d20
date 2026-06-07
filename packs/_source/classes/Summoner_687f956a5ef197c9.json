@@ -1,0 +1,177 @@
+{
+   "_id" : "687f956a5ef197c9",
+   "_key" : "!items!687f956a5ef197c9",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/feats/augument-summoning.jpg",
+   "name" : "Summoner",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "d5d86adcc1d562d3",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "aa0c3c52841f4ead",
+            "formula" : "2 * @item.level - 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "bdf090e1b538daa8",
+            "formula" : "4 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Summoner</h1>\n<p>The summoner is adept at spacetime Ninjutsu of the summoning variety. More accurately, his specialty lies in forging powerful bonds with his summoned creatures and summoning increasingly powerful allies into combat.</p>\n<h2>Requirements</h2>\n<p>To qualify to become an summoner, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Will Save</strong>: +4</li>\n<li><strong>Skills</strong>: Ninjutsu 9 ranks</li>\n<li><strong>Feats</strong>: Blood Pact, Retrieval Expert</li>\n<li><strong>Special</strong>: Must have learned the <em>Kuchiyose no Jutsu</em> technique.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Summoner prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Summoner gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Summoner gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Summoner's class skills are as follows. Chakra Control (Wis), Concentration (Con), Craft (calligraphy) (Int), Diplomacy (Cha), Drive (Dex), Ninjutsu (Int), Knowledge (behavioral science, current events, ninja lore, theology and philosophy) (Int), Profession (Wis), Read Language (None), Ride (Dex), Speak Language (None), Search (Int), Spot (Int).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Summoner prestige class.</p>\n<h3>Empower Summoning</h3>\n<p>The Summoner gains the Empower Summoning meta-chakra feat.</p>\n<h3>Bonus Chakra</h3>\n<p>The Summoner gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>3</td>\n<td>8</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>5</td>\n<td>12</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>7</td>\n<td>16</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>9</td>\n<td>20</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>11</td>\n<td>24</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>13</td>\n<td>28</td>\n</tr>\n</tbody>\n</table>\n<h3>Might of the Summoner</h3>\n<p>The summoner gains confidence as he fights with his summoned ally. Whenever he fights on the same battlefield as one of his summoned creature, both the summoner and the summon gain a morale bonus to attack and weapon damage rolls and skill checks. The bonus is +1 at level 2 and +2 at level 6.</p>\n<h3>Bonus Feats</h3>\n<p>At 3rd, 5th and 7th level, the Summoner gets a bonus feat. The bonus feat must be selected from the following list, and the Summoner must meet all the prerequisites of the feat to select it. Chuunin, Craft Sealed Item, Empower Summoning, Genin, Harmony, Improved Chakra Pool, Insightful Reflexes, Jounin, Nin Weapons Proficiency, Ninjutsu Adept, Talented Shinobi.</p>\n<h3>Extend Summoning</h3>\n<p>The summoner's summoning techniques duration increase by 50%.</p>\n<h3>Will of the Summoner</h3>\n<p>The summoner pays less chakra per level of each creature he summons: a soldier, protector or guardian summoned creature costs 1 point less chakra per level of the summon; a noble or champion summon costs 1.5 point less per level of the summon, rounded down. Regardless of the amount reduced, the cost cannot be lowered by more than half (a level 10 Lizard soldier would cost 8, not 5).</p>\n<h3>Pride of the Summoner</h3>\n<p>Three times per day, the summoner can perform a Spacetime ninjutsu technique with the Summoning descriptor with a perform time no longer than 1 full-round action as an attack action. The perform requirements of the technique are automatically met, and performing the technique does not provoke an attack of opportunity. This ability can only be used once per round.</p>\n<p>Additionally, this ability can be used to perform a Spacetime ninjutsu technique with the Summoning descriptor as a quickened action, provided the technique's perform time is no longer than 1 attack action. The ability otherwise functions as described above, but the summoner can only gain one quickened action per round, no matter the type (see Basic Game Mechanics for rules on Quickened Actions).</p>\n<h2>Table: The Summoner</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>+2</td>\n<td>Empower summoning, bonus chakra</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+3</td>\n<td>Might of the summoner +1</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+4</td>\n<td>Extend summoning</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+4</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>+5</td>\n<td>Might of the summoner +2, will of the summoner</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+5</td>\n<td>Pride of the summoner, bonus feat</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : [
+            {
+               "level" : 1,
+               "uuid" : "Compendium.naruto-d20.feats.Item.8W8G6CAugsMIAsms"
+            }
+         ]
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

@@ -1,0 +1,156 @@
+{
+   "_id" : "66b32ac3d71c85dd",
+   "_key" : "!items!66b32ac3d71c85dd",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/skills/shadow_01.jpg",
+   "name" : "Shade",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "7fc1565b9fb4711a",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : true,
+         "dev" : true,
+         "dip" : true,
+         "dis" : true,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : true,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : true,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Shade</h1>\n<p>These shinobi work in the dark, and the sole focus of their ability is to kill swiftly without requiring use of techniques of any sort. They are very sought-after in professions such as ANBU or especially Hunter-nins, and tend to kill only with a purpose or to refine their skills. Shades care little for defense, because their preys tend never to live long enough to fight back, and they are never surprised.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a shade, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Hide 9 ranks, Listen 6 ranks, Move Silently 9 ranks, Spot 6 ranks.</li>\n<li><strong>Feats</strong>: Alertness or Stealthy, Improved Initiative.</li>\n<li><strong>Special</strong>: Must be able to Sense Chakra or Suppress Chakra.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Shade prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Shade gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Shade gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Shade's class skills are as follows. Balance (Dex), Bluff (Cha), Climb (Str), Craft (chemical, pharmaceutical) (Int), Disable Device (Int), Disguise (Cha), Escape Artist (Dex), Forgery (Int), Gather Information (Cha), Hide (Dex), Jump (Str), Knowledge (ninja lore, streetwise, tactics) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Search (Int), Sense Motive (Wis), Sleight of Hand (Dex), Spot (Wis), Swim (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Shade prestige class.</p>\n<h3>Death Attack</h3>\n<p>If the shade studies his victim for 3 rounds and then makes a sneak attack with a melee weapon that successfully deals damage, the sneak attack has the additional effect of possibly either paralyzing or killing the target (shade's choice).</p>\n<p>While studying the victim, the shade can undertake other actions so long as his attention stays focused on the target and the target does not detect the shade or recognize the shade as an enemy. If the victim of such an attack fails a Fortitude save (DC 10 + the shade's class level + the shade's Int modifier) against the kill effect, it dies.</p>\n<p>If the saving throw fails against the paralysis effect, the victim is rendered helpless and unable to act for 1 round per level of the shade. If the victim's saving throw succeeds, the attack is just a normal sneak attack. Once the shade has completed the 3 rounds of study, he must make the death attack within the next 3 rounds.</p>\n<p>If a death attack is attempted and fails (the victim makes its save, or the attack misses) or if the shade does not launch the attack within 3 rounds of completing the study, 3 new rounds of study are required before he can attempt another death attack.</p>\n<p>If the shade's death attack fails because of a failed save or a missed attack roll, save DC against that victim decreases by 2, and an additional 2 every failure, for one day. If engaged in combat, the shade cannot study the victim for a death attack.</p>\n<p>Death attack can only be used once per encounter.</p>\n<h3>Poison Expert</h3>\n<p>The shade never risks poisoning himself when applying poison to a weapon.</p>\n<h3>Save against Poison</h3>\n<p>The shade has a natural affinity with poison and gains a natural bonus to saving throws against poisins. This bonus is +1 at 2nd level, and increases by +2 every even-numbered level.</p>\n<h3>Sneak Attack</h3>\n<p>This ability functions as the Ninja Scout sneak attack ability. If he can catch an opponent when he is unable to defend himself effectively from his attack, he can strike a vital spot for extra damage. Creatures immune to critical hits and sneak attacks, or who have concealment, do not suffer extra damage.</p>\n<p>This extra damage is 1d6 at 1st level, and it increases by 1d6 every odd-numbered level thereafter. If the shade gains a bonus to sneak attack from another source, the bonuses stack.</p>\n<h3>Sure Kill</h3>\n<p>The shade, if he misses on a death attack, may make a Concentration check (DC 20) to which he gains a bonus equal to his shade level. If the check is successful, he may retains his attempt to a death attack until his next successful sneak attack, so long as it happens within 3 rounds. This ability cannot be used twice in a row if the shade fails again.</p>\n<h2>Table: The Shade</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+2</td>\n<td>+0</td>\n<td>Death attack, poison expert, sneak attack +1d6</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+3</td>\n<td>+0</td>\n<td>+1 save against poison</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+3</td>\n<td>+1</td>\n<td>Sneak attack +2d6</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+4</td>\n<td>+1</td>\n<td>+3 save against poison</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+4</td>\n<td>+1</td>\n<td>Sneak attack +3d6</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+5</td>\n<td>+2</td>\n<td>+5 save against poison</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+5</td>\n<td>+2</td>\n<td>Sneak attack +4d6, sure kill</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

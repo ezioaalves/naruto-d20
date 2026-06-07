@@ -1,0 +1,156 @@
+{
+   "_id" : "8972658df9c76bdc",
+   "_key" : "!items!8972658df9c76bdc",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/races/creature-types/animal.png",
+   "name" : "Beastmaster",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "2e763fa5c3983abf",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : true,
+         "hea" : false,
+         "int" : true,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : false,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Beastmaster</h1>\n<p>These ninja follow the path of the beast, and are specialists of heavy melee combat, fighting side by side with their animal companions. They, along with their companions, are adept of feral combat. They inspire fear and awe within their peers, both for their amazing combat prowesses and their volatile nature.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a beastmaster, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +2</li>\n<li><strong>Skills</strong>: Handle Animal 6 ranks, Survival 3 ranks.</li>\n<li><strong>Feats</strong>: Moujuu Aishou</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Beastmaster advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Beastmaster gains 1d10 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Beastmaster gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Beastmaster's class skills are as follows. Balance (Dex), Climb (Str), Handle Animal (Cha), Hide (Dex), Intimidate (Cha), Jump (Str), Listen (Wis), Move Silently (Dex), Profession (Wis), Spot (Wis), Survival (Wis), Swim (Str), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Beastmaster advanced class.</p>\n<h3>Frenzy</h3>\n<p>The Beastmaster can enter a frenzy during combat. While frenzied, he gains a +4 bonus to his Strength and, if he makes a full-attack action, gains a single extra attack each round at his highest attack bonus. This effect is not cumulative with other effects that grant extra attacks.</p>\n<p>However, he also takes a -4 penalty to Defense and takes 2 points of damage per round (or 2 points of non-lethal damage under the cumulative non-lethal damage rules). A frenzy lasts for a number of rounds equal to 4 + the beastmaster's Constitution modifier. To end the frenzy before its duration expires, the character may attempt a Will save (DC 20) once per round as a free action. Success ends the frenzy immediately; failure means it continues. The effects of frenzy stack with those from any rage ability the character may have.</p>\n<p>At 1st level, the character can enter frenzy once per day. Every 4 levels afterwards (5th, 9th levels), he gains an additional use per day of this ability. Regardless of the level of the Beastmaster, he may not use this ability more than once per encounter.</p>\n<p>The character can enter frenzy as a free action anytime during his turn. In addition, whenever the character takes enough damage to equal to one quarter of his total hit points, he enters a frenzy at the start of his next action, as long as he has any daily use of the ability left. In order to avoid doing so, he must succeed a Will save (DC 20) at the start of his next turn. He must make another save every further quarter of his hit points he loses.</p>\n<p>While frenzied, the character cannot use any Charisma-, Dexterity-, or Intelligence-based skills (except Intimidate), the Concentration skill or any abilities that require patience or concentration, nor can he perform Chakra Control, Genjutsu or Ninjutsu techniques, and can only perform Taijutsu that do not require the Concentration component.</p>\n<p>During frenzy, the Beastmaster must attack those he perceives as foes to the best of his ability. Should he run out of enemies before his frenzy expires, his rampage continues. He must then attack the nearest creature (determine randomly if several potential foes are equidistant) and fight that opponent without regard to friendship or health (the target's or his own). In this case, the DC to cancel the frenzy is equal a DC 20 - beastmaster's class levels.</p>\n<p>When a frenzy ends, the beastmaster is fatigued for the duration of the encounter. If the character is still under the effect of a rage ability, the fatigued condition does not apply until the rage ends—at which point the character is exhausted, not merely fatigued.</p>\n<h3>Feral Combat</h3>\n<p>The Beastmaster's nails and teeth are sharp as claws and fangs, and he is adept at using a special, feral style of combat. Feral Combat counts as unarmed attacks that deal slashing damage, and threaten a critical strike on a natural roll of 20, and deal double damage. At 2nd level, the Beastmaster deals 1d6 points of damage. At 6th and 10th level, the damage becomes 1d8 and 1d10 respectively.</p>\n<p>The beastmaster counts as though he was armed when making unarmed \"feral combat\" attacks. Feral combat attacks are still considered unarmed, and feats and abilities that benefit unarmed attacks, such as the weapon focus (unarmed) feat or the combat martial arts tree also apply normally.</p>\n<h3>Inspire Frenzy</h3>\n<p>When the Beastmaster enters frenzy, if his animal companion is within 50 feet, it enters frenzy as well. The frenzied animal attacks the same creature as the beastmaster, and leaves frenzy at the same time as the character, without needing to make a save.</p>\n<h3>Speak with Animals</h3>\n<p>The beastmaster is able to communicate verbally with any animal of the same type as his companion, as though affected by the speak with animals spell constantly. This ability only works when his animal companion is within 30 feet.</p>\n<h3>Amazing Tricks</h3>\n<p>The beastmaster's animal companion is far stronger than most. At 4th level, his effective level when determining the strength of his companion counts as though it was 2 higher. At 8th level, he counts as though he was 4 levels higher.</p>\n<h3>Greater Frenzy</h3>\n<p>At 7th level, the Beastmaster is far more controlled and powerful in his Frenzy. The bonus to Strength score he gains is increased to +6, and he gains a +4 bonus to Will saves made to control the effects of his Frenzy, and against fear effects while frenzying.</p>\n<h3>Animal Aspect</h3>\n<p>At 10th level, the beastmaster is able to manifest an aspect of his animal companion. If the character has a companion not on the following list, an ability should be assigned by the GM. All of these abilities can be manifested while frenzied.</p>\n<ul>\n<li><strong>Ape</strong>: The Beastmaster can always take 10 on Climb checks, and gains a Climb speed equal to his normal speed.</li>\n<li><strong>Bear</strong>: The Beastmaster can use the Improved Grab ability once per encounter if he hits with two Feral Combat attacks in one round.</li>\n<li><strong>Boar</strong>: When the Beastmaster's hit points reach below 0 (−1 to –9), he is still able to move as though disabled instead of being unconscious, making either an attack or move action every round until he reaches –10 hit points and die, or his hit points return to 1 or higher.</li>\n<li><strong>Cheetah</strong>: Once per hour, the beastmaster is able to move at 10 times his speed when Charging.</li>\n<li><strong>Dog</strong>: The Beastmaster gains the Scent exceptional ability, and a +4 bonus to Survival checks made when tracking.</li>\n<li><strong>Hawk</strong>: The character gains the low-light vision ability and a +8 bonus to Spot check in daylight.</li>\n<li><strong>Hyena</strong>: The Beastmaster gains the Scent exceptional ability, and a +4 bonus to Hide checks when hiding in tall grass or heavy undergrowth.</li>\n<li><strong>Owl</strong>: The Beastmaster gains the low-light vision ability and a +4 bonus to Listen and Move Silently checks.</li>\n<li><strong>Snake</strong>: The Beastmaster can use the Improved Grab ability once per encounter if he hits with a Feral Combat attacks.</li>\n<li><strong>Tiger</strong>: Once per encounter, the Beastmaster may make full-attack action during a charge.</li>\n<li><strong>Wolf</strong>: The Beastmaster gains the Scent exceptional ability, and a +4 bonus to Survival checks made when tracking.</li>\n</ul>\n<p>If the beastmaster has more than one animal companion, the animal aspect can be changed once per day. It requires the beastmaster to meditate for 1 minute.</p>\n<h2>Table: The Beastmaster</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+2</td>\n<td>+1</td>\n<td>+0</td>\n<td>Frenzy 1/day</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+2</td>\n<td>+0</td>\n<td>Feral combat 1d6, inspire frenzy</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+3</td>\n<td>+2</td>\n<td>+1</td>\n<td>Speak with animals</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+2</td>\n<td>+1</td>\n<td>Amazing tricks +2</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+3</td>\n<td>+1</td>\n<td>Frenzy 2/day</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+6</td>\n<td>+5</td>\n<td>+3</td>\n<td>+2</td>\n<td>Feral combat 1d8</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+7</td>\n<td>+5</td>\n<td>+4</td>\n<td>+2</td>\n<td>Greater frenzy</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+8</td>\n<td>+6</td>\n<td>+4</td>\n<td>+2</td>\n<td>Amazing tricks +4</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+9</td>\n<td>+6</td>\n<td>+4</td>\n<td>+3</td>\n<td>Frenzy 3/day</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+10</td>\n<td>+7</td>\n<td>+5</td>\n<td>+3</td>\n<td>Feral combat 1d10, animal aspect</td>\n<td>+5</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

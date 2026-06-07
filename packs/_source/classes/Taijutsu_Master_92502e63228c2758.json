@@ -1,0 +1,156 @@
+{
+   "_id" : "92502e63228c2758",
+   "_key" : "!items!92502e63228c2758",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/feats/stunning-fist.jpg",
+   "name" : "Taijutsu Master",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "86c8ad6bb5a8d941",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : false,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Taijutsu Master</h1>\n<p>Those melee combat specialist are evidently expert in Taijutsu and martial arts. Unlike most other Ninja class, this one does not rely on stealth, although they are taught some of the necessary pressure points. The fastest path to this class is through the Strong Hero basic class, though other paths are possible.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a taijutsu master, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +3</li>\n<li><strong>Skills</strong>: Taijutsu 6 ranks</li>\n<li><strong>Feats</strong>: Combat Martial Arts</li>\n<li><strong>Special</strong>: Must know at least 4 Taijutsu techniques.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Taijutsu Master advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Taijutsu Master gains 1d10 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Taijutsu Master gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Taijutsu Master's class skills are as follows. Balance (Dex), Climb (Str), Drive (Dex), Jump (Str), Knowledge (ninja lore) (Int), Profession (Wis), Read Language (None), Speak Language (None), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Taijutsu Master advanced class.</p>\n<h3>Unarmed Attack</h3>\n<p>The Taijutsu Master attacks with either fist interchangeably, or even with elbows, knees, and feet. This means that the Taijutsu Master may even make unarmed strikes when his or her hands are full, and there is no such thing as an off-hand attack for striking unarmed.</p>\n<p>The Taijutsu Master also deals more damage with unarmed strikes. See the table below for the Taijutsu Master unarmed damage progression.</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Small Character</th>\n<th>Medium-size Character</th>\n<th>Large Character</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1d4</td>\n<td>1d6</td>\n<td>1d8</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>1d6</td>\n<td>1d8</td>\n<td>1d10</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>1d8</td>\n<td>1d10</td>\n<td>2d6</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>1d10</td>\n<td>2d6</td>\n<td>2d8</td>\n</tr>\n</tbody>\n</table>\n<h3>Taijutsu Mastery</h3>\n<p>As his name indicate, the Taijutsu Master specializes in Taijutsu and martial arts more than anything. This enables the Taijutsu Master to develop some abilities that help him through his life as a martial artist. Each time the Taijutsu Master gains a Taijutsu Mastery (at level 2, 4, 6, 8 and 10), he may chose from the list below:</p>\n<ul>\n<li><strong>Critical Strike (any 2 Taijutsu Mastery)</strong>: Whenever the Taijutsu Master would threaten a critical hit with an unarmed attack, he can spend an action point to automatically confirm the critical.</li>\n<li><strong>Flying Kick</strong>: The Taijutsu Master can use the momentum gained with a charge to deliver a devastating flying kick to an opponent. At the end of this charge, the taijutsu master adds his class level as a bonus to the damage he deals with an unarmed strike.</li>\n<li><strong>Martial Arts Master</strong>: This Mastery grants the Taijutsu Master a +2 competence bonus to perform taijutsu technique and allows the Taijutsu Master to learn Training techniques of the Taijutsu subtype normally. The taijutsu master also gains a +1 enhancement bonus to his effective skill threshold to learn Taijutsu techniques.</li>\n<li><strong>Uncanny Critical (any 4 Taijutsu Mastery and Weapon Focus [unarmed])</strong>: The Taijutsu Master's unarmed strikes can threaten a critical hit against creatures not normally subject to critical hits.</li>\n<li><strong>Stance Mastery (any 2 Taijutsu Mastery)</strong>: The Taijutsu Master is able to enter stances at half the normal Chakra cost (minimum 0). This ability doesn't stack with the Taijutsu mastery \"Way of Preservation.\"</li>\n<li><strong>Sneak Attack (requires Sneak Attack +1d6)</strong>: The Taijutsu Master may chose this ability and increase his sneak attack damage by one die.</li>\n<li><strong>Way of Expertise</strong>: The Taijutsu Master may decide to apply either his Dexterity or Wisdom bonus to attack rolls for his unarmed attack instead of strength. The damage rolls, however, are still modified by strength.</li>\n<li><strong>Way of Preservation (any 2 Taijutsu Mastery)</strong>: This ability of the Taijutsu Master allows him to save his chakra when performing a <em>Strike</em> Taijutsu technique. By spending an action point, he may reduce the Chakra Cost of a successfully performed technique by one point per two level of Taijutsu Master (minimum 1).</li>\n<li><strong>Weapon Focus</strong>: As the name suggest, the user automatically gains the feat Weapon Focus for his unarmed attacks.</li>\n<li><strong>Weapon Mastery (any 2 Taijutsu Mastery)</strong>: The taijutsu master is able to apply his Unarmed Damage to the following weapons: nunchaku, tonfa. He gains all the benefits of normally wielding them, with increased damage, but may not apply any bonuses to attack and damage rolls that apply to his unarmed attacks (such as from having ranks in the Tajutsu skill, or the weapon focus and specialization masteries), nor can he use techniques that can only be done with unarmed attacks with them.</li>\n<li><strong>Weapon Specialization (Weapon Focus (unarmed) feat)</strong>: The character gains a +2 damage bonus on his unarmed attacks, and damage done by <em>Strike</em> taijutsu techniques.</li>\n</ul>\n<h3>Bonus Feats</h3>\n<p>At 3rd and 9th level, the Taijutsu Master gets a bonus feat. The bonus feat must be selected from the following list, and the Taijutsu Master must meet all the prerequisites of the feat to select it. Advanced Combat Martial Arts, Athletic, Chuunin, Cleave, [Universal: Defensive Stance], Combat Reflexes, Defensive Martial Arts, Flawless Form, Genin, Gouken, Improved Combat Martial Arts, [Universal: Risky Strike], Taijutsu Adept.</p>\n<h3>Sneak Attack</h3>\n<p>This ability functions as the Ninja Scout sneak attack ability. If he can catch an opponent when he is unable to defend himself effectively from his attack, he can strike a vital spot for extra damage. Creatures immune to critical hits and sneak attacks, or who have concealment, do not suffer extra damage.</p>\n<p>This extra damage is 1d6 at 5th level and it does not increase from taking levels in this class. If the taijutsu gains a bonus to sneak attack from another source, the bonuses stack.</p>\n<h2>Table: The Taijutsu Master</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+2</td>\n<td>+1</td>\n<td>+0</td>\n<td>Unarmed attack</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+2</td>\n<td>+0</td>\n<td>Taijutsu mastery</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+3</td>\n<td>+2</td>\n<td>+1</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+2</td>\n<td>+1</td>\n<td>Unarmed attack, taijutsu mastery</td>\n<td>+3</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+3</td>\n<td>+1</td>\n<td>Sneak attack +1d6</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+6</td>\n<td>+5</td>\n<td>+3</td>\n<td>+2</td>\n<td>Taijutsu mastery</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+7</td>\n<td>+5</td>\n<td>+4</td>\n<td>+2</td>\n<td>Unarmed attack</td>\n<td>+5</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+8</td>\n<td>+6</td>\n<td>+4</td>\n<td>+2</td>\n<td>Taijutsu mastery</td>\n<td>+6</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+9</td>\n<td>+6</td>\n<td>+4</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+6</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+10</td>\n<td>+7</td>\n<td>+5</td>\n<td>+3</td>\n<td>Taijutsu mastery, unarmed attack</td>\n<td>+7</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

@@ -1,0 +1,172 @@
+{
+   "_id" : "f099c55b8ac33691",
+   "_key" : "!items!f099c55b8ac33691",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/items/weapons/sword-dueling.png",
+   "name" : "Sword Savant",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "efd1ba04b8d05169",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "62a6924add52745f",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "98f5c27e6b87c7cd",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Sword Savant</h1>\n<p>The sword savant is an adept warrior with the uncanny ability to flawlessly blend ninutsu and taijutsu into a deadly hybrid style. A simple wave of the sword savant's weapon can unleashe a thunderstorm or cause a powerful earthquake.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a sword savant, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +6</li>\n<li><strong>Skills</strong>: Genjutsu 12 ranks or Ninjutsu 12 ranks, and Taijutsu 12 ranks.</li>\n<li><strong>Feats</strong>: Genjutsu Adept or Ninjutsu Adept, and Taijutsu Adept.</li>\n<li><strong>Special</strong>: Must be proficient in at least one archaic, exotic, or nin weapon.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Sword Savant prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Sword Savant gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Sword Savant gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Sword Savant's class skills are as follows. Balance (Dex), Chakra Control (Wis), Climb (Str), Concentration (Con), Genjutsu (Cha), Jump (Str), Knowledge (ninja lore, tactics) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Speak Language (None), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Sword Savant prestige class.</p>\n<h3>Chakra State</h3>\n<p>The sword savant can focus for 1 hour and spend 1 point of chakra per sword savant level to imbue a single weapon with the chakra state. The chakra state lasts until it is applied to another weapon or until the chosen weapon is further than 5 feet away from the sword savant for 24 hours or more.</p>\n<p>The chakra state weapon is treated as a chakra weapon to overcome damage reduction.</p>\n<p>If the Sword Savant has the two-weapon fighting feat, he may apply the benefits of his chakra state ability to two weapons.</p>\n<h3>Bonus Chakra</h3>\n<p>The Sword Savant gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.</p>\n<p>The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.</p>\n<table>\n<thead>\n<tr>\n<th>Class Levels</th>\n<th>Bonus Chakra</th>\n<th>Bonus Reserve</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>3</td>\n<td>6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>5</td>\n<td>10</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>6</td>\n<td>12</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>7</td>\n<td>14</td>\n</tr>\n</tbody>\n</table>\n<h3>Sword Weaving</h3>\n<p>While holding his chakra state weapon, the sword savant is able to perform techniques using half seals or hand seals with a simple wave of his sword. Doing so in a threatened area can still provoke an attack of opportunity.</p>\n<p>The sword savant must choose which type of techniques to apply this ability to: Genjutsu or Ninjutsu.</p>\n<h3>Bonus Feats</h3>\n<p>At 2nd and 6th level, the Sword Savant gets a bonus feat. The bonus feat must be selected from the following list, and the Sword Savant must meet all the prerequisites of the feat to select it. Chakra Penetration, Chakra Restoration, Combat Reflexes, Dodge, Elemental Specialization, Enlarge Technique, Extend Technique, Flawless Form, Greater Chakra Penetration, Monkey Grip, Technique Focus, Training.</p>\n<h3>Sealing Sword</h3>\n<p>The chakra state weapon acts as a containment seal while worn by the sword savant. At 4th level, the chakra state acts as a minor containment seal. At 7th level, it acts as a superior seal. The sealing sword can be recharged per day.</p>\n<h3>Weapon Specialization</h3>\n<p>At 5th level, the Sword Savant gains a +2 bonus to damage rolls with the weapon he applied the Weapon Focus ability to.</p>\n<p>If the sword savant already has this ability with his chosen weapon, he may apply it to another weapon or select a bonus feat instead.</p>\n<h3>Heightened Chakra State</h3>\n<p>The sword savant gains a +2 bonus to all attack rolls with his chakra state weapons. In addition, he gains extra attacks as though his base attack bonus was 2 points higher than it is. To benefit from the extra attacks, the sword savant must only use his chakra state weapon to attack that round.</p>\n<p>The sword savant does not gain the benefits of this ability if it is obtained at 21st level or higher.</p>\n<h2>Table: The Sword Savant</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>Chakra state, weapon focus, bonus chakra</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>Sword weaving</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>Sealing sword (minor)</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+3</td>\n<td>Weapon specialization</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>Heightened chakra state, bonus feat</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+4</td>\n<td>+4</td>\n<td>Sealing sword (superior)</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

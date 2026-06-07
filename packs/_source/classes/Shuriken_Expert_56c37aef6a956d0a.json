@@ -1,0 +1,165 @@
+{
+   "_id" : "56c37aef6a956d0a",
+   "_key" : "!items!56c37aef6a956d0a",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
+   "img" : "systems/pf1/icons/items/weapons/shuriken.png",
+   "name" : "Shuriken Expert",
+   "ownership" : {
+      "default" : 0,
+      "vTUJ4X3yMMGO4o4P" : 3
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "4f04d8202ff483cf",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : false,
+         "dev" : true,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : true,
+         "slt" : true,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Shuriken Expert</h1>\n<p>Those ninjas chose thrown weapon as their main weapons. They dislike fighting in melee, but can nail the target straight in the middle even in their blind spots with a thrown kunai. The fastest path to this class is through the Fast Hero basic class, though other paths are possible.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a shuriken expert, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +2</li>\n<li><strong>Skills</strong>: Sleight of Hands 6 ranks, Tumble 6 ranks.</li>\n<li><strong>Feats</strong>: Archaic Weapons Proficiency or Nin Weapons Proficiency, Precise Shot</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Shuriken Expert advanced class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Shuriken Expert gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Shuriken Expert gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Shuriken Expert's class skills are as follows. Balance (Dex), Climb (Str), Disable Device (Int), Drive (Dex), Escape Artist (Dex), Hide (Dex), Jump (Str), Knowledge (behavioral science, civics, ninja lore, popular culture, streetwise) (Int), Listen (Wis), Move Silently (Dex), Pilot (Dex), Profession (Wis), Read Language (None), Ride (Dex), Search (Int), Sleight of Hand (Dex), Speak Language (None), Spot (Wis), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Class Features</h2>\n<p>The following features pertain to the Shuriken Expert advanced class.</p>\n<h3>Thrown Weapon Focus</h3>\n<p>At 1st level, the Shuriken Expert gains greater proficiency with thrown attacks of all kinds. The character gains a +1 bonus to attack rolls made with any thrown weapon. This bonus does not stack with other similar abilities.</p>\n<h3>Rapid Shot</h3>\n<p>At 2nd level, the Shuriken Expert gains the Rapid Shot feat for free, whether or not he meets the prerequisites. If the shuriken expert already has the rapid shot feat, he gains a bonus feat instead.</p>\n<h3>Sneak Attack</h3>\n<p>This ability functions as the Ninja Scout sneak attack ability. If he can catch an opponent when he is unable to defend himself effectively from his attack, he can strike a vital spot for extra damage. Creatures immune to critical hits and sneak attacks, or who have concealment, do not suffer extra damage.</p>\n<p>This extra damage is 1d6 at 3rd level, and it increases by 1d6 every 5 levels thereafter. If the shuriken expert gains a bonus to sneak attack from another source, the bonuses stack.</p>\n<h3>Bonus Feats</h3>\n<p>At 3rd, 6th, and 9th level, the Shuriken Expert gets a bonus feat. The bonus feat must be selected from the following list, and the Shuriken Expert must meet all the prerequisites of the feat to select it. Alertness, Armor Proficiency (light), Athletic, Chuunin, [Universal: Defensive Stance], [Universal: Risky Strike], Dodge, Elusive Target, Far Shot, Genin, Dodge, Nimble, Precise Shot, Shot on the Run, Stealthy.</p>\n<h3>Quick Draw</h3>\n<p>At 4th level, the Shuriken Expert can draw any weapon as a free action to throw them immediately, as though drawing ammunition to shoot with a bow.</p>\n<p>If the shuriken expert already has the quick draw feat, he gains a bonus feat instead.</p>\n<h3>Precision</h3>\n<p>At 5th level, the Shuriken Expert deals increased damage on a successful throw. At 5th level, this damage is 1d4; it increases to 2d4 at 10th level.</p>\n<p>The damage is applied to any throw made against a creature within 30 feet, and is not multiplied on a critical hit. Precision damage does not affect melee attacks, nor does it affect projectiles of the user's size or larger.</p>\n<p>Precision damage affects only living creatures with a discernable anatomy. Creatures like constructs, oozes, plants, undeads and incorporeal creatures, as well as creatures immune to critical hits are unaffected by precision damage.</p>\n<h3>Greater Weapon Focus</h3>\n<p>At 6th level, a Shuriken Expert gains greater weapon focus with all thrown weapons. This ability increases the bonus on attack rolls to +2 when using thrown weapons. This bonus does not stack with other similar abilities.</p>\n<h3>Thrown Weapon Specialization</h3>\n<p>At 7th level, a Shuriken Expert gains weapon specialization and is able to deal more damage with a single throw. The shuriken expert gains a +2 bonus on damage rolls on any attacks made with thrown weapons (throwing needles included).</p>\n<h3>Precise Throw</h3>\n<p>At 9th level, a Shuriken Expert partially ignores cover and miss chances granted to targets by anything less than total cover, or total concealment.</p>\n<p>The Shuriken Expert ignores 4 points of the Defense bonus granted by one-quarter, one-half, three-quarters or nine-tenths cover and rerolls any miss chance other than from total cover or concealment.</p>\n<p>In addition, when the Shuriken Expert throws a weapon at a grappling opponent, he automatically strikes the chosen opponent.</p>\n<h3>Bullseye</h3>\n<p>Once per encounter, the shuriken expert is able to gain one of the three following benefits:</p>\n<ul>\n<li>+10 insight bonus to ranged attack rolls for 1 round, or</li>\n<li>+5 insight bonus to ranged attack damage rolls for 1 round, or</li>\n<li>ignoring all cover and concealment penalties with ranged attacks (save for total concealment and full cover) for 1 round</li>\n</ul>\n<p>This benefit does not apply when using a technique of some sort, only when attacking with thrown weapons.</p>\n<h2>Table: The Shuriken Expert</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+2</td>\n<td>+0</td>\n<td>Thrown weapon focus</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+3</td>\n<td>+0</td>\n<td>Rapid shot</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+3</td>\n<td>+1</td>\n<td>Sneak attack +1d6, bonus feat</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+4</td>\n<td>+1</td>\n<td>Quick draw</td>\n<td>+3</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+4</td>\n<td>+1</td>\n<td>Precision +1d4</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+5</td>\n<td>+2</td>\n<td>Greater thrown weapon focus, bonus feat</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+5</td>\n<td>+2</td>\n<td>Thrown weapon specialization</td>\n<td>+5</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6</td>\n<td>+2</td>\n<td>+6</td>\n<td>+2</td>\n<td>Sneak attack +2d6</td>\n<td>+6</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6</td>\n<td>+3</td>\n<td>+6</td>\n<td>+3</td>\n<td>Precise throw, bonus feat</td>\n<td>+6</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7</td>\n<td>+3</td>\n<td>+7</td>\n<td>+3</td>\n<td>Precision +2d4, bullseye</td>\n<td>+7</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : [
+            {
+               "level" : 2,
+               "uuid" : "Compendium.naruto-d20.feats.Item.SWcOsmAU86WMikKi"
+            },
+            {
+               "level" : 4,
+               "uuid" : "Compendium.naruto-d20.feats.Item.esmuAacI88Ay8G4s"
+            }
+         ]
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

@@ -1,0 +1,161 @@
+{
+   "_id" : "1f91de0e2edde571",
+   "_key" : "!items!1f91de0e2edde571",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
+      }
+   },
+   "folder" : "Ai9gJMf1XW9zrD8G",
+   "img" : "systems/pf1/icons/spells/horror-eerie-3.jpg",
+   "name" : "Interrogator",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "255ec6397b0e5b63",
+            "formula" : "floor((@item.level + 2) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : false,
+         "dev" : false,
+         "dip" : true,
+         "dis" : true,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : true,
+         "hea" : false,
+         "int" : true,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : true,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Interrogator</h1>\n<p>The interrogator is a macabre element of warfare, but a highly efficient one. A master of acquiring information, he will stop at nothing to get his way, satisfied that the ends justify the means. </p>\n<h2>Requirements:</h2>\n<p>To qualify to become an interrogator, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills:</strong> Bluff 3 ranks, Diplomacy 3 ranks, Intimidate 3 ranks, Sense Motive 6 ranks, Knowledge (Nature) 3 ranks.</li>\n<li><strong>Feats:</strong> Confident.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Interrogator prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Interrogator gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Interrogator gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Interrogator's class skills are as follows. Bluff (Cha), Chakra Control (Wis), Diplomacy (Cha), Disguise (Cha), Genjutsu (Cha), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Linguistics (Int), Ninjutsu (Int), Perception (Wis), Profession (Wis), Sense Motive (Wis), Stealth (Dex).</li>\n<li><strong>Skill Points at Each Level:</strong> 7 + Int modifier.</li>\n</ul>\n<p>TABLE: THE INTERROGATOR</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+0</td>\n<td>+2</td>\n<td>Frightful presence, commanding presence</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+0</td>\n<td>+3</td>\n<td>Interrogation, sneak attack +1d6</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+0</td>\n<td>+0</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+1</td>\n<td>+4</td>\n<td>Master interrogator</td>\n<td>+3</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+1</td>\n<td>+4</td>\n<td>Sneak attack +2d6</td>\n<td>+3</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+1</td>\n<td>+1</td>\n<td>+5</td>\n<td>Bonus feat</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+2</td>\n<td>+5</td>\n<td>Thought reform</td>\n<td>+4</td>\n<td>+4</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Interrogator prestige class.</p>\n<h3>Frightful Presence</h3>\n<p>The interrogator gains the frightful presence ability, which the interrogator can activate at will by showing aggression. Any creatures within 30 feet must succeed a Will save (DC 10+the interrogator's level+the interrogator's Charisma modifier) or become shaken for 1d6 rounds. A creature with at least 10 hit dice fewer than the interrogator is shaken for 5d6 rounds or panicked for 1d6 rounds, the interrogator's choice.</p>\n<h3>Commanding Presence</h3>\n<p>The interrogator is well aware of his reputation and knows how to make the best use of it. He gains a +2 bonus on Charisma-based checks against creatures aware of his reputation (such as those who succeed a Reputation check). At 7th level, this bonus increases to +4.</p>\n<h3>Interrogation</h3>\n<p>At 2nd level, any time the interrogator deals damage or nonlethal damage to a helpless target, he can retry an Intimidate check. This check is has the same effect as a normal Intimidate check, but takes 1 minute. The victim of any Intimidate check made by the interrogator is also shaken for 1 round, plus 1 round for every 5 points the interrogator beat the opposed check by.</p>\n<h3>Sneak Attack</h3>\n<p>This ability functions as the Ninja Scout sneak attack ability. If the interrogator can catch an opponent when he is unable to defend himself effectively from his attack, he can strike a vital spot for extra damage. Creatures immune to critical hits and sneak attacks, or who have concealment, do not suffer extra damage.This extra damage is 1d6 at 3rd level and increases to 2d6 at 6th level. If the interrogator gains sneak attack damage from another source, they stack.</p>\n<h3>Master Interrogator</h3>\n<p>At 4th level, the interrogator can bully another creature into fulfilling one task. The creature must be able to understand the interrogator, and must be either helpless or unableto flee from or attack the interrogator. This ability is an Intimidate check (DC 15+the target's level or Hit Dice). The difficulty of the check decreases by 5 if the target doesn't care about the task or it carries no inherent risk to the target. The difficulty increases by 5 if the task is risky to the target, by 10 if the task is dangerous, and by an additional 5 if there are severe consequences. The target remains intimidated for 24 hours, during which time it will attempt to carry out the tasks to the best of its ability. A failed check means the target is immune to this ability for 24 hours. A creature cannot be made to perform actions that would be considered suicidal. At 7th level, the interrogator can increase the difficulty of the check by an additional 5 to have the target carry out two tasks instead of just one. </p>\n<h3>Bonus Feat</h3>\n<p>At 3rd and 6th, the Interrogator gets a bonus feat. The bonus feat must be selected from the following list, and the Interrogator must meet all the prerequisites of the feat to select it.</p>\n<ul>\n<li>Brawl</li>\n<li>[Universal: Defensive Stance]</li>\n<li>Deceptive</li>\n<li>Educated</li>\n<li>Improved Brawl</li>\n<li>Deft Maneuvers</li>\n<li>Unarmed Combatant</li>\n</ul>\n<h3>Thought Reform</h3>\n<p>At 7th level, the interrogator can spend an action point when using his master interrogator ability to completely subsume the target's mind. This has the effect of either Ishikika Kasseika no Jutsu or Kinjutsu: Shinbuki no Jutsu instead of the normal effects of the ability, at the Interrogator's discretion. If the Intimidate check is unsuccessful, the target is immune to the effects of both thought reform and master interrogator for 1 week. The duration of the effect varies. If mimicking the effects of Ishikika Kasseika no Jutsu, thought reform lasts 1 day or until triggered. If mimicking Kinjutsu: Shinbuki no Jutsu, the effects last for 1 hour. In both cases, the target is unaware it is under the effects of the ability and is unable to recall the specifics of the session, even after the fact (such as the specific trigger or command issued). The effects of thought reform are not chakra-based, and cannot be dispelled by conventional means. The effect can be detected with a successful Sense Motive check (DC 15 + the Interrogator's level + the Interrogator's Charisma modifier). Furthermore, a Diplomacy check on a willing victim can dispel the effect (DC 15 + the Interrogator's level + the Interrogator's Charisma modifier).</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((@level - 1) / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((@level - 1) / 3)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 6,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}
