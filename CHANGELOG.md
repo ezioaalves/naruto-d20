@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.12 - 2026-06-07
+
+- Added 14 Bloodline prestige classes to the classes compendium: Akimichi Master, Bulwark, Clairvoyant Assassin, Inuzuka Beastmaster, Kaguya Marauder, Nara Shadowmaster, Piercing Seer, Ravager, Symbiote Bugmaster, Uchiha Elite, Uzumaki Warrior, Waterbender, Wind Walker, Yamanaka Spymaster.
+- Refreshed the generated class descriptions for the Bloodline classes from standardized local Markdown sources.
+
 ## v1.0.11 - 2026-06-07
 
 - Added 29 prestige classes to the classes compendium: Beastlord, Berserker, Blinkstrike, Devastator, Elementalist, Exalted One, Exarch, Exemplar, Genjutsu Master, Interrogator, Living Puppeteer, Master Artisan, Master Strategist, Ninja Hunter, Outlaw, Pain Engine, Poisoner, Reaver, Rising Star, Sage, Shade, Skirmisher, Sohei, Summoner, Swarmwrecker, Sword Savant, Takedown Specialist, Technique Analyst, Technowarrior.
