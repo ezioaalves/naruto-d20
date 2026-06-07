@@ -11,7 +11,7 @@ use Digest::SHA qw(sha256_hex);
 use Getopt::Long qw(GetOptions);
 use JSON::PP;
 
-my $source_dir = "Classes/Prestige";
+my $source_dir = "classes/prestige";
 my $output_dir = "packs/_source/classes";
 my $template_path;
 my $folder_id = "Ei6uGmYukb9vCaYd";
@@ -30,7 +30,19 @@ usage(0) if $help;
 $template_path //= "$output_dir/Livewire_ywwhNtzs3fPtKfO5.json";
 
 my %fixed_ids = (
+  "Charismatic Ninja" => "wVujknVqmoenCFZF",
+  "Charismatic Paragon" => "cH5aR9iS2mT8uL4p",
+  "Dedicated Ninja" => "50NvjYGRa8eOPxue",
+  "Dedicated Paragon" => "dE6bN1qV9zX3cH7k",
+  "Fast Ninja" => "RITwQLY5KREs7VBe",
+  "Fast Paragon" => "4We55EJqStV6f09r",
   "Livewire" => "ywwhNtzs3fPtKfO5",
+  "Smart Ninja" => "qizosda9B7IhAALf",
+  "Smart Paragon" => "mA4rT8yU2iO6pS1d",
+  "Strong Ninja" => "4hLXlBfADg43MAZ0",
+  "Strong Paragon" => "sP7kR2mN8vQ4xL6a",
+  "Tough Ninja" => "QCnjlxL46CsOgu4c",
+  "Tough Paragon" => "tG9cW3hF5jK7pD2n",
 );
 
 my %icons = (
@@ -38,12 +50,18 @@ my %icons = (
   "Beastmaster" => "systems/pf1/icons/races/creature-types/animal.png",
   "Berserker" => "systems/pf1/icons/feats/extra-rage.jpg",
   "Blinkstrike" => "systems/pf1/icons/spells/haste-fire-1.jpg",
+  "Charismatic Ninja" => "systems/pf1/icons/feats/deceitful.jpg",
+  "Charismatic Paragon" => "systems/pf1/icons/feats/deceitful.jpg",
   "Commando" => "systems/pf1/icons/feats/leadership.jpg",
+  "Dedicated Ninja" => "systems/pf1/icons/feats/alertness.jpg",
+  "Dedicated Paragon" => "systems/pf1/icons/feats/alertness.jpg",
   "Devastator" => "systems/pf1/icons/spells/fireball-red-3.jpg",
   "Elementalist" => "systems/pf1/icons/races/creature-types/elemental.png",
   "Exalted One" => "systems/pf1/icons/feats/stunning-fist.jpg",
   "Exarch" => "systems/pf1/icons/spells/heal-royal-3.jpg",
   "Exemplar" => "systems/pf1/icons/items/inventory/badge-sword.jpg",
+  "Fast Ninja" => "systems/pf1/icons/feats/dodge.jpg",
+  "Fast Paragon" => "systems/pf1/icons/feats/fleet.png",
   "Gadgeteer" => "systems/pf1/icons/skills/mech_7.jpg",
   "Genjutsu Master" => "systems/pf1/icons/spells/evil-eye-eerie-3.jpg",
   "Grand Scholar" => "systems/pf1/icons/items/inventory/book-blue.jpg",
@@ -73,10 +91,14 @@ my %icons = (
   "Shinobi Swordsman" => "systems/pf1/icons/items/weapons/longsword.png",
   "Shuriken Expert" => "systems/pf1/icons/items/weapons/shuriken.png",
   "Skirmisher" => "systems/pf1/icons/feats/spring-attack.jpg",
+  "Smart Ninja" => "systems/pf1/icons/feats/scribe-scroll.jpg",
+  "Smart Paragon" => "systems/pf1/icons/feats/scribe-scroll.jpg",
   "Sohei" => "systems/pf1/icons/feats/weapon-focus.jpg",
   "Soul Edge" => "systems/pf1/icons/items/weapons/sword-bastard.PNG",
   "Specialist" => "systems/pf1/icons/items/inventory/bomb.jpg",
   "Squad Captain" => "systems/pf1/icons/items/inventory/badge-sword.jpg",
+  "Strong Ninja" => "systems/pf1/icons/feats/athletic.jpg",
+  "Strong Paragon" => "systems/pf1/icons/feats/athletic.jpg",
   "Summoner" => "systems/pf1/icons/feats/augument-summoning.jpg",
   "Swarmwrecker" => "systems/pf1/icons/feats/whirlwind-attack.jpg",
   "Sword Savant" => "systems/pf1/icons/items/weapons/sword-dueling.png",
@@ -84,7 +106,36 @@ my %icons = (
   "Takedown Specialist" => "systems/pf1/icons/feats/greater-grapple.jpg",
   "Technique Analyst" => "systems/pf1/icons/items/inventory/scroll-secret.jpg",
   "Technowarrior" => "systems/pf1/icons/skills/mech_12.jpg",
+  "Tough Ninja" => "systems/pf1/icons/feats/intimidating-prowess.jpg",
+  "Tough Paragon" => "systems/pf1/icons/feats/intimidating-prowess.jpg",
   "Wild Technician" => "systems/pf1/icons/items/inventory/essence-void.jpg",
+
+  # Community Compendium advanced classes
+  "Akatsuki Spy" => "systems/pf1/icons/items/inventory/mask-bird.jpg",
+  "Battle Maiden" => "systems/pf1/icons/items/weapons/longsword.png",
+  "Beast Tamer" => "systems/pf1/icons/skills/beast_01.jpg",
+  "Chakra Fighter" => "systems/pf1/icons/feats/gorgons-fist.jpg",
+  "Chemist" => "systems/pf1/icons/feats/brew-potion.jpg",
+  "Clansman" => "systems/pf1/icons/items/inventory/badge-banner.jpg",
+  "Dao Shi Monk" => "systems/pf1/icons/feats/stunning-fist.jpg",
+  "Dervish Dancer" => "systems/pf1/icons/items/weapons/scimitar.PNG",
+  "Elemental Master" => "systems/pf1/icons/feats/elemental-channel.jpg",
+  "Hitokiri" => "systems/pf1/icons/skills/blood_01.jpg",
+  "Holy/Unholy Warrior" => "systems/pf1/icons/items/inventory/badge-cross.jpg",
+  "Iaijutsu Master" => "systems/pf1/icons/items/weapons/katana.png",
+  "Master Thrower" => "systems/pf1/icons/items/weapons/shuriken.png",
+  "Ninja Crafter" => "systems/pf1/icons/feats/craft-wondrous-items.jpg",
+  "Ryukyu Swordsman" => "systems/pf1/icons/items/weapons/sickle-sword.png",
+  "Sannin" => "systems/pf1/icons/items/inventory/medal.jpg",
+  "Sensory Shinobi" => "systems/pf1/icons/items/inventory/monster-eyes.jpg",
+  "Shadow Adept" => "systems/pf1/icons/skills/shadow_01.jpg",
+  "Shinobi Scribe" => "systems/pf1/icons/feats/scribe-scroll.jpg",
+  "Shinobi Squad Leader" => "systems/pf1/icons/feats/leadership.jpg",
+  "Shunjutsu Master" => "systems/pf1/icons/spells/haste-royal-1.jpg",
+  "Space-Time Specialist" => "systems/pf1/icons/items/weapons/starknife.png",
+  "Specialist Summoner" => "systems/pf1/icons/feats/augument-summoning.jpg",
+  "Sword Saint" => "systems/pf1/icons/items/weapons/elven-curve-blade.PNG",
+  "Tora Oshiego" => "systems/pf1/icons/items/inventory/badge-tiger.jpg",
 );
 
 my %associations = (
@@ -110,6 +161,28 @@ my %associations = (
   "Summoner" => [
     ["Compendium.naruto-d20.feats.Item.8W8G6CAugsMIAsms", 1],
   ],
+);
+
+# Per-class custom progressions for tables the source prints irregularly, so no
+# shared preset reproduces them. Each entry pairs the exact PF1e formula with a
+# Perl check that must match the parsed table at every level, keeping the
+# "fail loud on drift" guarantee instead of trusting the formula blindly.
+my %bab_override = (
+  # Community Compendium v2 p.99 — BaB 0,0,1,1,2,2,3,4,4,5
+  "Master Thrower" => [
+    'floor((@hitDice - 1) / 6) + floor(2 * @hitDice / 5)',
+    sub { int(($_[0] - 1) / 6) + int(2 * $_[0] / 5) },
+  ],
+);
+
+my %save_override = (
+  "Shadow Adept" => {
+    # Community Compendium v2 p.110 — Fort 0,0,1,1,1,2,3
+    fort => [
+      'floor(@level / 3) + floor((@level - 1) / 6)',
+      sub { int($_[0] / 3) + int(($_[0] - 1) / 6) },
+    ],
+  },
 );
 
 my @skill_keys = qw(
@@ -154,25 +227,62 @@ for my $path (@files) {
   die "Missing class skill list for $name\n" unless defined $skill_text;
 
   my ($class_kind) =
-    $markdown =~ /pertains to the \Q$name\E\s+(advanced|prestige)\s+class/i;
-  die "Missing advanced/prestige classification for $name\n" unless $class_kind;
+    $markdown =~ /pertains to the \Q$name\E\s+(advanced|prestige|basic)\s+class/i;
+  ($class_kind) =
+    $class_info =~ /pertains to the [^\n]+?\s+(advanced|prestige|basic)\s+class/i
+    unless $class_kind;
+  die "Missing advanced/prestige/basic classification for $name\n" unless $class_kind;
 
   my $table = extract_main_table($markdown, $name);
   my $levels = scalar(@{$table->{bab}});
-  my $bab = identify_bab($table->{bab}, $name);
-  my $saves = {
-    fort => identify_save($table->{fort}, "$name Fort"),
-    ref => identify_save($table->{ref}, "$name Ref"),
-    will => identify_save($table->{will}, "$name Will"),
-  };
-  my $defense_formula = identify_defense($table->{defense}, $name);
-  my $chakra = extract_chakra($markdown, $name);
-
   my $id = $fixed_ids{$name} // substr(sha256_hex("naruto-d20 class $name"), 0, 16);
   my $slug = $name;
   $slug =~ s/[^A-Za-z0-9]+/_/g;
   $slug =~ s/^_+|_+$//g;
   my $output_path = "$output_dir/${slug}_${id}.json";
+
+  if (lc($class_kind) eq "basic" && -f $output_path) {
+    my $item = $json->decode(read_file($output_path));
+    $item->{name} = $name;
+    $item->{_id} = $id;
+    $item->{_key} = "!items!$id";
+    $item->{folder} = $folder_id;
+    $item->{img} = $icons{$name} // $item->{img};
+    $item->{system}{description} = {
+      value => markdown_to_html($markdown),
+      instructions => "",
+    };
+    my $encoded = $json->encode($item);
+    if ($check_only) {
+      if (read_file($output_path) ne $encoded) {
+        warn "Generated output differs: $output_path\n";
+        $has_differences = 1;
+      }
+    } else {
+      write_file($output_path, $encoded);
+    }
+    print "$name: $levels levels -> $output_path\n";
+    next;
+  }
+
+  my $bab_formula;
+  my $bab;
+  if (my $ov = $bab_override{$name}) {
+    my ($formula, $fn) = @$ov;
+    die "BAB override for $name does not match its table\n"
+      unless sequence_matches($table->{bab}, $fn);
+    $bab = "custom";
+    $bab_formula = $formula;
+  } else {
+    $bab = identify_bab($table->{bab}, $name);
+  }
+  my $saves = {
+    fort => resolve_save($name, "fort", $table->{fort}, "$name Fort"),
+    ref => resolve_save($name, "ref", $table->{ref}, "$name Ref"),
+    will => resolve_save($name, "will", $table->{will}, "$name Will"),
+  };
+  my $defense_formula = identify_defense($table->{defense}, $name);
+  my $chakra = extract_chakra($markdown, $name, $table);
 
   my $item = deep_clone($template);
   $item->{name} = $name;
@@ -215,12 +325,16 @@ for my $path (@files) {
     dictionary => {},
   };
   $system->{scriptCalls} = [];
-  $system->{subType} = lc($class_kind) eq "advanced" ? "base" : "prestige";
+  $system->{subType} = lc($class_kind) eq "prestige" ? "prestige" : "base";
   $system->{level} = 1;
   $system->{hd} = 0 + $hd;
   $system->{hp} = undef;
   $system->{bab} = $bab;
-  delete $system->{babFormula};
+  if (defined $bab_formula) {
+    $system->{babFormula} = $bab_formula;
+  } else {
+    delete $system->{babFormula};
+  }
   $system->{skillsPerLevel} = $skills_per_level;
   $system->{savingThrows} = $saves;
   $system->{fc} = {
@@ -267,7 +381,7 @@ sub usage {
 Usage: perl tools/generate-prestige-classes.pl [options]
 
 Options:
-  --source-dir PATH  Markdown source directory (default: Classes/Prestige)
+  --source-dir PATH  Markdown source directory (default: classes/prestige)
   --output-dir PATH  Class JSON output directory (default: packs/_source/classes)
   --template PATH    Existing class JSON used as structural template
   --folder-id ID     Destination compendium folder ID
@@ -322,6 +436,7 @@ sub extract_main_table {
     $indexes{ref} = $index if $header eq "ref save";
     $indexes{will} = $index if $header eq "will save";
     $indexes{defense} = $index if $header eq "defense bonus";
+    $indexes{chakra} = $index if $header eq "chakra";
   }
   for my $column (qw(bab fort ref will defense)) {
     die "Missing $column column in main table for $name\n"
@@ -334,6 +449,8 @@ sub extract_main_table {
     ref => [],
     will => [],
     defense => [],
+    chakra_pool => [],
+    chakra_reserve => [],
   );
   for my $line (@lines) {
     next unless $line =~ /^\|\s*\d+(?:st|nd|rd|th)\s*\|/i;
@@ -342,6 +459,11 @@ sub extract_main_table {
       unless @cells == @headers;
     for my $column (qw(bab fort ref will defense)) {
       push @{$columns{$column}}, numeric_cell($cells[$indexes{$column}]);
+    }
+    if (defined $indexes{chakra}) {
+      my ($pool, $reserve) = chakra_cell($cells[$indexes{chakra}]);
+      push @{$columns{chakra_pool}}, $pool;
+      push @{$columns{chakra_reserve}}, $reserve;
     }
   }
   die "No main table levels for $name\n" unless @{$columns{bab}};
@@ -380,12 +502,26 @@ sub identify_bab {
   die "Unsupported BAB progression for $name: " . join(",", @$values) . "\n";
 }
 
+sub resolve_save {
+  my ($name, $key, $values, $label) = @_;
+  if (my $ov = $save_override{$name} && $save_override{$name}{$key}) {
+    my ($formula, $fn) = @$ov;
+    die "Save override for $label does not match its table\n"
+      unless sequence_matches($values, $fn);
+    return { value => "custom", custom => $formula };
+  }
+  return identify_save($values, $label);
+}
+
 sub identify_save {
   my ($values, $label) = @_;
   my @patterns = (
     ['2 + floor(@level / 2)', sub { 2 + int($_[0] / 2) }],
     ['floor((2 * @level + 6) / 5)', sub { int((2 * $_[0] + 6) / 5) }],
+    ['floor((@level + 2) / 2)', sub { int(($_[0] + 2) / 2) }],
     ['floor((@level + 1) / 2)', sub { int(($_[0] + 1) / 2) }],
+    ['floor((@level - 1) / 2)', sub { int(($_[0] - 1) / 2) }],
+    ['floor((2 * @level + 2) / 3)', sub { int((2 * $_[0] + 2) / 3) }],
     ['floor((@level + 1) / 3)', sub { int(($_[0] + 1) / 3) }],
     ['floor(@level / 3)', sub { int($_[0] / 3) }],
     ['floor((@level - 1) / 3)', sub { int(($_[0] - 1) / 3) }],
@@ -403,6 +539,18 @@ sub identify_save {
 sub identify_defense {
   my ($values, $name) = @_;
   my @patterns = (
+    [
+      'floor((@item.level + 2) / 2) - (floor(@item.level / 6) - floor((@item.level - 1) / 6)) - (floor(@item.level / 8) - floor((@item.level - 1) / 8)) - (floor(@item.level / 10) - floor((@item.level - 1) / 10))',
+      sub {
+        my ($level) = @_;
+        return int(($level + 2) / 2)
+          - (int($level / 6) - int(($level - 1) / 6))
+          - (int($level / 8) - int(($level - 1) / 8))
+          - (int($level / 10) - int(($level - 1) / 10));
+      },
+    ],
+    ['floor(@item.level / 2) + 3', sub { int($_[0] / 2) + 3 }],
+    ['ceil((@item.level - 1) / 2) + 3', sub { int($_[0] / 2) + 3 }],
     ['floor((@item.level + 1) / 2)', sub { int(($_[0] + 1) / 2) }],
     ['floor((2 * @item.level + 2) / 3)', sub { int((2 * $_[0] + 2) / 3) }],
     ['floor((@item.level + 2) / 2)', sub { int(($_[0] + 2) / 2) }],
@@ -425,7 +573,11 @@ sub sequence_matches {
 }
 
 sub extract_chakra {
-  my ($markdown, $name) = @_;
+  my ($markdown, $name, $table) = @_;
+  if (@{$table->{chakra_pool}} && @{$table->{chakra_reserve}}) {
+    return identify_chakra($table->{chakra_pool}, $table->{chakra_reserve}, $name);
+  }
+
   return undef unless $markdown =~ /^###\s+Bonus Chakra\s*$/mi;
   my ($block) =
     $markdown =~ /^###\s+Bonus Chakra\s*\n.*?(\|[^\n]*Bonus Chakra[^\n]*(?:Bonus )?Reserve[^\n]*\n(?:\|[^\n]*\n)+)/msi;
@@ -445,6 +597,29 @@ sub extract_chakra {
     push @reserve, numeric_cell($cells[2]);
   }
 
+  return identify_chakra(\@pool, \@reserve, $name);
+}
+
+sub chakra_cell {
+  my ($cell) = @_;
+  $cell =~ s/^\s+|\s+$//g;
+  my ($pool, $reserve) = $cell =~ /([+-]?\d+|-)\s*\/\s*([+-]?\d+|-)/;
+  die "Expected Chakra table cell in 'pool / reserve' format, got '$cell'\n"
+    unless defined $pool && defined $reserve;
+  return (chakra_value($pool), chakra_value($reserve));
+}
+
+sub chakra_value {
+  my ($value) = @_;
+  return 0 if $value eq "-";
+  $value =~ /([+-]?\d+)/ or die "Expected numeric Chakra value, got '$value'\n";
+  return 0 + $1;
+}
+
+sub identify_chakra {
+  my ($pool_values, $reserve_values, $name) = @_;
+  my @pool = @$pool_values;
+  my @reserve = @$reserve_values;
   my @patterns = (
     [
       '@item.level',
@@ -463,6 +638,12 @@ sub extract_chakra {
       'max(2, @item.level)',
       sub { my $v = int($_[0] / 2); $v > 1 ? $v : 1 },
       sub { $_[0] > 2 ? $_[0] : 2 },
+    ],
+    [
+      'floor(@item.level / 2)',
+      '@item.level',
+      sub { int($_[0] / 2) },
+      sub { $_[0] },
     ],
   );
   for my $pattern (@patterns) {

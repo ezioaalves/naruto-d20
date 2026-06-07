@@ -1,0 +1,171 @@
+{
+   "_id" : "923c0f896c83edb0",
+   "_key" : "!items!923c0f896c83edb0",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/feats/augument-summoning.jpg",
+   "name" : "Specialist Summoner",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "12e8fdb21903f19f",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "7c45c613fc57cf37",
+            "formula" : "2 * @item.level - 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "c97f30e99ff7a128",
+            "formula" : "4 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : false,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Specialist Summoner</h1>\n<p>This kind of shinobi excels at using the Kuchiyose no Jutsu, a famous technique in the shinobi world that allows the user to summon different kinds of allies. They can be anything from small and harmless animals to even special summons of colossal proportions, able to turn the tide of battle by themselves. Many famous ninja such as the legendary Sannin are known for their mastery of Kuchiyose no Jutsu.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a specialist summoner, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Ninjutsu 6 Ranks</li>\n<li><strong>Feats</strong>: Blood Pact</li>\n<li><strong>Special</strong>: The character must have achieved at least the first stage of mastery with Kuchiyose no Jutsu.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Specialist Summoner prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d6</li>\n<li><strong>Action Points</strong>: 6 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Chakra Control (Wis), Concentration (Con), Craft (calligraphy) (Int), Diplomacy (Cha), Knowledge (ninja lore, theology and philosophy) (Int), Listen (Wis), Ninjutsu (Int), Profession (Wis), Search (Int), Spot (Wis).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Specialist Summoner</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n<th>Chakra</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+2</td>\n<td>Summon Specialization, Bonus Feat</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1 / +4</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+3</td>\n<td>Augment Summoning</td>\n<td>+1</td>\n<td>+1</td>\n<td>+3 / +8</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+1</td>\n<td>+2</td>\n<td>+3</td>\n<td>Bonus Feat</td>\n<td>+2</td>\n<td>+1</td>\n<td>+5 / +12</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+4</td>\n<td>Summoning Expertise</td>\n<td>+2</td>\n<td>+2</td>\n<td>+7 / +16</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+2</td>\n<td>+1</td>\n<td>+3</td>\n<td>+4</td>\n<td>Bonus Feat, Swift Kuchiyose</td>\n<td>+3</td>\n<td>+2</td>\n<td>+9 / +20</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Specialist Summoner prestige class.</p>\n<h3>Summoning Specialization</h3>\n<p>At 1st level, the Specialist Summoner choses a blood pact in which he will spend the rest of his levels specializing into. When using Kuchiyose no Jutsu to summon a creature of the chosen blood pact, the summoner receives a bonus of +4 to perform. The Specialist also receives a +4 bonus on Diplomacy and Handle Animal checks with creatures of the chosen blood pact, even those not summoned by him or ordinary animals.</p>\n<h3>Augment Summoning</h3>\n<p>At 2nd level, the Specialist Summoner further improves his skills at summoning tougher and stronger allies. He receives the feat Augment Summoning.</p>\n<h3>Summoning Expertise</h3>\n<p>The greatest degree of expertise achieved by the Specialist Summoner is the ability to summon his allies spending less of his spiritual and physical energy. A Specialist Summoner of 4th level or higher, by spending an Action Point or Meta Chakra charge, is able to reduce the cost to summon a creature of the chosen blood pact by 0.5 points of chakra per Summon level and per level in this class. Regardless of the amount reduced, the cost cannot be lowered by more than half. For example, a level 4 Specialist Summoner trying to summon a level 5 Soldier Kuma would pay 11 points chakra instead of 15.</p>\n<h3>Swift Kuchiyose</h3>\n<p>At 5th level, the Specialist Summoner further refines his mastery over Kuchiyose no Jutsu, making him able to use said technique as an Attack Action Instead of a Full Round Action.</p>\n<h3>Bonus Feat</h3>\n<p>Choose a feat from among the following, for which you must meet any prerequisites: Animal Affinity (with their chosen Blood Pact), Chuunin, Empowered Summoning, Genin, Harmony, Improved Chakra Pool, Jounin, Ninjutsu Adept, Talented Shinobi, Technique Focus (Kuchiyose no Jutsu).</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

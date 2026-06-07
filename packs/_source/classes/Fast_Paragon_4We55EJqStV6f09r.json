@@ -1,180 +1,180 @@
 {
-  "type": "class",
-  "system": {
-    "description": {
-      "value": "<h2>Fast Paragon</h2><p>The Fast paragon is an individual who has strives for a perfect balance of speed and agility. He is a force to be reckoned with in combat, and highly proficient in most types of stealth, making him the ideal for traditional shinobi.</p><p>The Fast paragon is a skillful melee and ranged combatant, but will be most useful in situations that require stealth and agility.</p><h3>Examples of Fast Paragons</h3><p>The shade and shuriken expert and excellent examples of Fast Paragons. They never need to get directly involved in combat, striking from the shadows and ending a fight before it can even begin, but will easily be able to gain the upper hand should the situation ever come up.</p><h3>Class Information</h3><p>The following information pertains to the Fast Paragon basic class.</p><h3>Ability</h3><p>The main focus of the Fast Paragon is Dexterity. While this characteristic is very important, a Fast paragon also makes good use of his Strength and Constitution score. Having a high Intelligence score also helps increasing his already wide array of skills.</p><h3>Hit Die</h3><p>The Fast Paragon gains 1d8 hit points per level. The Constitution modifier applies.</p><h3>Action Points</h3><p>The Fast Paragon gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</p><h3>Class Skills</h3><p>The Fast Paragon's class skills, and the key ability for each are as follows. Balance (Dex), Craft (mechanical) (Int), Drive (Dex), Escape Artist (Dex), Genjutsu (Cha), Hide (Dex), Knowledge (current events, ninja lore, popular culture, streetwise) (Int), Move Silently (Dex), Pilot (Dex), Profession (Wis), Read/Write Language (none), Ride (Dex), Sleight of Hand (Dex), Speak Language (none), Taijutsu (Str) and Tumble (Dex).</p><p>Also, the starting occupation the character selects can provide additional class skills to choose from.</p><p><strong>Skill Points at First Level:</strong> (5 + Int modifier) × 4.</p><p><strong>Skill Points at Each Level:</strong> 5 + Int modifier.</p><table><caption>Table: Fast Paragon</caption><thead><tr><th>Level</th><th>Base Attack Bonus</th><th>Fort Save</th><th>Ref Save</th><th>Will Save</th><th>Special</th><th>Defense Bonus</th><th>Reputation Bonus</th></tr></thead><tbody><tr><td>1st</td><td>+0</td><td>+0</td><td>+2</td><td>+0</td><td>Talent</td><td>+3</td><td>+0</td></tr><tr><td>2nd</td><td>+1</td><td>+0</td><td>+3</td><td>+0</td><td>Bonus feat</td><td>+4</td><td>+0</td></tr><tr><td>3rd</td><td>+2</td><td>+1</td><td>+3</td><td>+1</td><td>Talent</td><td>+4</td><td>+1</td></tr><tr><td>4th</td><td>+3</td><td>+1</td><td>+4</td><td>+1</td><td>Bonus feat</td><td>+5</td><td>+1</td></tr><tr><td>5th</td><td>+3</td><td>+1</td><td>+4</td><td>+1</td><td>Dexterity boost</td><td>+5</td><td>+1</td></tr></tbody></table><h3>Starting Feats</h3><p>In addition to the two feats all characters get at first level, a Fast paragon begins play with the Simple Weapon Proficiency feat.</p><p><em>Optional Rule:</em> Fast Paragons may begin play with proficiency in light armors. Taking this class after first level grants no armor proficiency.</p><h3>Class Features</h3><p>The following features pertain to the Fast Paragon basic class.</p><h3>Talents</h3><p>At 1st and 3rd level, the Fast paragon selects a talent from the Fast hero base class' talent trees, or the following talent tree. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the paragon qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p><h3>Fast Prodigy Talent Tree</h3><p>The following talents can only be selected by the Fast paragon.</p><p><strong>Fast Prodigy:</strong> You can spend an action point once per encounter when making a Fortitude or Will save. As a result, you use your Reflex save modifier instead of your usual modifier. Evasion and other such abilities to not apply to that save.<br /><em>Prerequisite:</em> Genius Ninja, any Fast Hero talent.</p><h3>Bonus Feats</h3><p>At 2nd and 4th level, the Fast paragon gains a bonus feat. This feat must be selected from the Fast hero list of bonus feats, and the Fast paragon must meet any prerequisites.</p><h3>Dexterity Boost</h3><p>At 5th level, the Fast paragon's Dexterity score increases by 2 points.</p>",
-      "instructions": ""
-    },
-    "tags": [],
-    "changes": [
-      {
-        "type": "untyped",
-        "_id": "bdMJubyT",
-        "operator": "add",
-        "priority": 0,
-        "target": "ac",
-        "formula": "ceil((@item.level - 1) / 2) + 3"
+   "_id" : "4We55EJqStV6f09r",
+   "_key" : "!items!4We55EJqStV6f09r",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757309682,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
       }
-    ],
-    "changeFlags": {
-      "immuneToMorale": false,
-      "loseDexToAC": false,
-      "noMediumEncumbrance": false,
-      "noHeavyEncumbrance": false,
-      "mediumArmorFullSpeed": false,
-      "heavyArmorFullSpeed": false,
-      "lowLightVision": false,
-      "seeInvisibility": false,
-      "seeInDarkness": false
-    },
-    "contextNotes": [],
-    "links": {
-      "children": [],
-      "classAssociations": []
-    },
-    "tag": "",
-    "armorProf": [
-      "lgt"
-    ],
-    "weaponProf": [
-      "simple",
-      "Nin Weapon"
-    ],
-    "languages": [],
-    "flags": {
-      "boolean": {},
-      "dictionary": {}
-    },
-    "scriptCalls": [
-      {
-        "category": "changeLevel",
-        "type": "script",
-        "_id": "BGpSCFAd",
-        "name": "New Script Call",
-        "img": null,
-        "value": "",
-        "hidden": false
-      }
-    ],
-    "subType": "base",
-    "level": 1,
-    "hd": 8,
-    "hp": null,
-    "bab": "med",
-    "skillsPerLevel": 4,
-    "savingThrows": {
-      "fort": {
-        "value": "low"
+   },
+   "folder" : "e9v8Q2OS0jswXEGE",
+   "img" : "systems/pf1/icons/feats/fleet.png",
+   "name" : "Fast Paragon",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [
+         "lgt"
+      ],
+      "bab" : "med",
+      "casting" : {
+         "ability" : "int",
+         "cantrips" : false,
+         "domain" : null,
+         "offset" : null,
+         "progression" : "high",
+         "spells" : "arcane",
+         "type" : ""
       },
-      "ref": {
-        "value": "high",
-        "custom": "1+(@level/2.5)"
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
       },
-      "will": {
-        "value": "low"
-      }
-    },
-    "fc": {
-      "hp": {
-        "value": 0
+      "changes" : [
+         {
+            "_id" : "bdMJubyT",
+            "formula" : "ceil((@item.level - 1) / 2) + 3",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : false,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : true,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
       },
-      "skill": {
-        "value": 0
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Fast Paragon</h1>\n<p>The Fast paragon is an individual who has strives for a perfect balance of speed and agility. He is a force to be reckoned with in combat, and highly proficient in most types of stealth, making him the ideal for traditional shinobi.</p>\n<p>The Fast paragon is a skillful melee and ranged combatant, but will be most useful in situations that require stealth and agility.</p>\n<h2>Examples of Fast Paragons</h2>\n<p>The shade and shuriken expert and excellent examples of Fast Paragons. They never need to get directly involved in combat, striking from the shadows and ending a fight before it can even begin, but will easily be able to gain the upper hand should the situation ever come up.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Fast Paragon basic class.</p>\n<ul>\n<li><strong>Ability</strong>: The main focus of the Fast Paragon is Dexterity. While this characteristic is very important, a Fast paragon also makes good use of his Strength and Constitution score. Having a high Intelligence score also helps increasing his already wide array of skills.</li>\n<li><strong>Hit Die</strong>: The Fast Paragon gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Fast Paragon gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Fast Paragon's class skills, and the key ability for each are as follows. Balance (Dex), Craft (mechanical) (Int), Drive (Dex), Escape Artist (Dex), Genjutsu (Cha), Hide (Dex), Knowledge (current events, ninja lore, popular culture, streetwise) (Int), Move Silently (Dex), Pilot (Dex), Profession (Wis), Read/Write Language (none), Ride (Dex), Sleight of Hand (Dex), Speak Language (none), Taijutsu (Str) and Tumble (Dex). Also, the starting occupation the character selects can provide additional class skills to choose from.</li>\n<li><strong>Skill Points at First Level</strong>: (5 + Int modifier) × 4.</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Fast Paragon</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+2</td>\n<td>+0</td>\n<td>Talent</td>\n<td>+3</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+3</td>\n<td>+0</td>\n<td>Bonus feat</td>\n<td>+4</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+3</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+4</td>\n<td>+1</td>\n<td>Bonus feat</td>\n<td>+5</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+4</td>\n<td>+1</td>\n<td>Dexterity boost</td>\n<td>+5</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n<h2>Starting Feats</h2>\n<p>In addition to the two feats all characters get at first level, a Fast paragon begins play with the Simple Weapon Proficiency feat. <em>Optional Rule:</em> Fast Paragons may begin play with proficiency in light armors. Taking this class after first level grants no armor proficiency.</p>\n<h2>Class Features</h2>\n<p>The following features pertain to the Fast Paragon basic class.</p>\n<h3>Talents</h3>\n<p>At 1st and 3rd level, the Fast paragon selects a talent from the Fast hero base class' talent trees, or the following talent tree. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the paragon qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p>\n<h3>Fast Prodigy Talent Tree</h3>\n<p>The following talents can only be selected by the Fast paragon.</p>\n<p><strong>Fast Prodigy:</strong> You can spend an action point once per encounter when making a Fortitude or Will save. As a result, you use your Reflex save modifier instead of your usual modifier. Evasion and other such abilities to not apply to that save. <em>Prerequisite:</em> Genius Ninja, any Fast Hero talent.</p>\n<h3>Bonus Feats</h3>\n<p>At 2nd and 4th level, the Fast paragon gains a bonus feat. This feat must be selected from the Fast hero list of bonus feats, and the Fast paragon must meet any prerequisites.</p>\n<h3>Dexterity Boost</h3>\n<p>At 5th level, the Fast paragon's Dexterity score increases by 2 points.</p>\n</article>"
       },
-      "alt": {
-        "value": 0,
-        "notes": ""
-      }
-    },
-    "wealth": "",
-    "alignment": "",
-    "classSkills": {
-      "acr": true,
-      "apr": false,
-      "art": false,
-      "blf": false,
-      "clm": false,
-      "crf": true,
-      "dip": false,
-      "dev": false,
-      "dis": false,
-      "esc": true,
-      "fly": false,
-      "han": false,
-      "hea": false,
-      "int": false,
-      "kar": true,
-      "kdu": false,
-      "ken": false,
-      "kge": false,
-      "khi": false,
-      "klo": true,
-      "kna": false,
-      "kno": false,
-      "kpl": false,
-      "kre": false,
-      "lin": true,
-      "lor": false,
-      "per": false,
-      "prf": false,
-      "pro": true,
-      "rid": true,
-      "sen": false,
-      "slt": true,
-      "spl": false,
-      "ste": true,
-      "sur": false,
-      "swm": false,
-      "umd": false,
-      "ckc": false,
-      "fui": false,
-      "gnj": true,
-      "nin": false,
-      "tai": true
-    },
-    "customHD": "",
-    "casting": {
-      "type": "",
-      "progression": "high",
-      "ability": "int",
-      "spells": "arcane",
-      "domain": null,
-      "offset": null,
-      "cantrips": false
-    },
-    "sources": [
-      {
-        "title": "Prodigy to Paragon",
-        "pages": "8-9"
-      }
-    ]
-  },
-  "name": "Fast Paragon",
-  "_id": "4We55EJqStV6f09r",
-  "img": "systems/pf1/icons/feats/fleet.png",
-  "effects": [],
-  "folder": "e9v8Q2OS0jswXEGE",
-  "flags": {
-    "pf1": {
-      "links": {
-        "classAssociations": {}
-      }
-    }
-  },
-  "_stats": {
-    "compendiumSource": null,
-    "duplicateSource": null,
-    "exportSource": null,
-    "coreVersion": "13.351",
-    "systemId": "pf1",
-    "systemVersion": "11.11",
-    "createdTime": 1780757309682,
-    "modifiedTime": 1780764836276,
-    "lastModifiedBy": "mIZLV3aRVXSMGsYi"
-  },
-  "ownership": {
-    "default": 0
-  },
-  "sort": 0,
-  "_key": "!items!4We55EJqStV6f09r"
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "value" : "low"
+         },
+         "ref" : {
+            "custom" : "1+(@level/2.5)",
+            "value" : "high"
+         },
+         "will" : {
+            "value" : "low"
+         }
+      },
+      "scriptCalls" : [
+         {
+            "_id" : "BGpSCFAd",
+            "category" : "changeLevel",
+            "hidden" : false,
+            "img" : null,
+            "name" : "New Script Call",
+            "type" : "script",
+            "value" : ""
+         }
+      ],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "8-9",
+            "title" : "Prodigy to Paragon"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : [
+         "simple",
+         "Nin Weapon"
+      ]
+   },
+   "type" : "class"
 }

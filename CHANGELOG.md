@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.13 - 2026-06-07
+
+- Added 25 Community Compendium advanced classes to the classes compendium: Akatsuki Spy, Battle Maiden, Beast Tamer, Chakra Fighter, Chemist, Clansman, Dao Shi Monk, Dervish Dancer, Elemental Master, Hitokiri, Holy/Unholy Warrior, Iaijutsu Master, Master Thrower, Ninja Crafter, Ryukyu Swordsman, Sannin, Sensory Shinobi, Shadow Adept, Shinobi Scribe, Shinobi Squad Leader, Shunjutsu Master, Space-Time Specialist, Specialist Summoner, Sword Saint, Tora Oshiego.
+- Each new class carries a themed PF1e icon, and its Base Attack Bonus, saving throw, and Defense progressions were verified faithful to the source books at every level.
+- Taught the class generator to reproduce the irregular save and BAB tables some Community Compendium classes print, so their formulas match the books exactly.
+
 ## v1.0.12 - 2026-06-07
 
 - Added 14 Bloodline prestige classes to the classes compendium: Akimichi Master, Bulwark, Clairvoyant Assassin, Inuzuka Beastmaster, Kaguya Marauder, Nara Shadowmaster, Piercing Seer, Ravager, Symbiote Bugmaster, Uchiha Elite, Uzumaki Warrior, Waterbender, Wind Walker, Yamanaka Spymaster.

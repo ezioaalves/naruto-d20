@@ -1,0 +1,171 @@
+{
+   "_id" : "1f8ba529f57961fd",
+   "_key" : "!items!1f8ba529f57961fd",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/feats/gorgons-fist.jpg",
+   "name" : "Chakra Fighter",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "5f3debd406d4f323",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "7e2d628bb009de76",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "cc1ab1fb9d4b9e95",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : false,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : true,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Chakra Fighter</h1>\n<p>The Chakra Fighter is a shinobi who utilizes chakra control to enhance their Taijutsu, unleashing devastating physical attacks onto their foes.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a chakra fighter, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +4</li>\n<li><strong>Skills</strong>: Chakra Control and Taijutsu 6 ranks.</li>\n<li><strong>Feats</strong>: Taijutsu Adept, Combat Martial Arts and Harmony.</li>\n<li><strong>Special</strong>: None</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Chakra Fighter prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d8</li>\n<li><strong>Action Points</strong>: 6 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Balance (Dex), Chakra Control (Wis), Concentration (Con), Climb (Str), Jump (Str), Listen, (Wis), Profession (Wis), Spot (Wis), Survival (Wis), Swim (Str), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Chakra Fighter</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n<th>Chakra</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+2</td>\n<td>+1</td>\n<td>+0</td>\n<td>Chakra-Enhanced Melee</td>\n<td>+1</td>\n<td>+0</td>\n<td>+1 / +2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+2</td>\n<td>+0</td>\n<td>Bonus Feat</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2 / +4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+3</td>\n<td>+2</td>\n<td>+1</td>\n<td>Empowered Strength</td>\n<td>+2</td>\n<td>+1</td>\n<td>+3 / +6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+2</td>\n<td>+1</td>\n<td>Bonus Feat</td>\n<td>+2</td>\n<td>+1</td>\n<td>+4 / +8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+3</td>\n<td>+1</td>\n<td>Chakra Explosion</td>\n<td>+3</td>\n<td>+1</td>\n<td>+5 / +10</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Chakra Fighter prestige class.</p>\n<h3>Chakra-Enhanced Melee</h3>\n<p>The Chakra Fighter is able to strengthen his melee attacks by focusing chakra into his hands and feet during physical combat. Every time the user makes a successful melee attack, the Chakra Fighter adds a bonus to his damage rolls equal to his Chakra Fighter levels.</p>\n<h3>Empowered Strength</h3>\n<p>The chakra fighter has the ability to deal massive damage with a single swing by empowering his fist with chakra. At the cost of 2 chakra per die, the chakra fighter may add 1 die of appropriate size to his damage rolls. (Up to 1 die per level of Chakra Fighter) This ability is considered a full-attack action, and it stacks with the chakra fighter’s Chakra-Enhanced Melee ability.</p>\n<h3>Chakra Explosion</h3>\n<p>Three times per day, the chakra fighter can make a slam attack that harnesses a large amount of chakra. First, the user must make a Chakra Control check (DC 15) to gather the chakra into his limb of choice. Then the user slams the ground. The attack causes an explosion that erupts in a 10-foot radius around the user. Anyone caught in the area of effect takes 10d6 damage which can be halved by a successful Reflex save (DC 10+ character’s Strength Modifier + Chakra Fighter Level). Anyone within 10 feet of the original area of effect must succeed a Reflex save of the same amount or else suffer 2d6 points of damage and fall prone. This ability is considered a fullattack action.</p>\n<h3>Bonus Feat</h3>\n<p>Choose a feat from among the following, for which you must meet any prerequisites: Brawl, Chakra Penetration, Chuunin, Defensive Martial Arts, Empowered Resilience, Flawless Form, Greater Chakra Penetration, Improved Brawl, Improved Chakra Pool, Innate Control, Jounin, Power Critical, Streetfighting, Superior Combat Martial Arts.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

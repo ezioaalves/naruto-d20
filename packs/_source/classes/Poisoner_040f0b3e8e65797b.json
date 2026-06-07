@@ -4,23 +4,17 @@
    "_stats" : {
       "compendiumSource" : null,
       "coreVersion" : "13.351",
-      "createdTime" : 1780757309682,
+      "createdTime" : 1780850000000,
       "duplicateSource" : null,
       "exportSource" : null,
-      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
-      "modifiedTime" : 1780764836276,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
       "systemId" : "pf1",
       "systemVersion" : "11.11"
    },
    "effects" : [],
-   "flags" : {
-      "pf1" : {
-         "links" : {
-            "classAssociations" : {}
-         }
-      }
-   },
-   "folder" : "Ai9gJMf1XW9zrD8G",
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
    "img" : "systems/pf1/icons/items/inventory/monster-venom.jpg",
    "name" : "Poisoner",
    "ownership" : {
@@ -48,7 +42,7 @@
       "changes" : [
          {
             "_id" : "3af7eb8ecd0a665c",
-            "formula" : "floor((@item.level + 2) / 2)",
+            "formula" : "floor((@item.level + 2) / 2) - (floor(@item.level / 6) - floor((@item.level - 1) / 6)) - (floor(@item.level / 8) - floor((@item.level - 1) / 8)) - (floor(@item.level / 10) - floor((@item.level - 1) / 10))",
             "operator" : "add",
             "priority" : 0,
             "target" : "ac",

@@ -1,157 +1,156 @@
 {
-  "folder": "g5V1of75mbSgYu0b",
-  "type": "class",
-  "name": "Charismatic Ninja",
-  "system": {
-    "description": {
-      "value": "<p>The Charismatic hero is a type of shinobi that relies on his wits and sharp tongue to fare well in life, and makes the best use of Charisma. Taking levels of Charismatic hero demonstrate a greater ability with words and the various skills required for a ninja, and greater proficiency with Genjutsu.</p><p>The Charismatic hero specializes in spying and Genjutsu, rather than close quarter or even ranged combat.</p><h3 data-heading=\"Examples of Charismatic Heroes\">Examples of Charismatic Heroes</h3><p>Charismatic heroes make the best spy one could possibly hope for. They are proficient with disguises, information gathering, Genjutsu and many social skills most ninja simply can't practice for mere lack of time. Spies, public entertainers or part time bartender are all examples of Charismatic hero found in the everyday life of a shinobi.</p><h3 data-heading=\"Class Information\">Class Information</h3><p>The following information pertains to the Charismatic Hero basic class.</p><p><strong>Ability</strong><br />Charisma is the primary ability for the Charismatic hero. Intelligence also allows for even more skill points, as he is second to only the Smart hero in that domain. A good Dexterity and Constitution score allow for better efficiency with saving throws.</p><p><strong>Hit Die</strong><br />The Charismatic Hero gains 1d6 hit points per level. The Constitution modifier applies.</p><p><strong>Action Points</strong><br />The Charismatic Hero gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</p><p><strong>Class Skills</strong><br />The Charismatic Hero's class skills are as follows.<br />Bluff (Cha), Chakra Control (Wis), Craft (calligraphy, visual art, writing) (Int), Diplomacy (Cha), Disguise (Cha), Genjutsu (Cha), Handle Animal (Cha), Intimidate (Cha), Knowledge (arcana, history, local, nobility, religion) (Int), Linguistics (—), Perform (act, dance, keyboards, percussion instruments, sing, stand-up, stringed instruments, wind instruments) (Cha), Profession (Wis), Sense Motive (Wis).<br />Also, the starting occupation the hero selects can provide additional class skills to choose from.<br /><strong>Skill Points at First Level:</strong> (7 + Int modifier) × 4.<br /><strong>Skill Points at Each Level:</strong> 7 + Int modifier.</p><h3 data-heading=\"TABLE 3-6: CHARISMATIC HERO\">TABLE 3-6: CHARISMATIC HERO</h3><table><thead><tr><th>Level</th><th>Base Attack Bonus</th><th>Fort Save</th><th>Ref Save</th><th>Will Save</th><th>Special</th><th>Defense Bonus</th><th>Reputation Bonus</th></tr></thead><tbody><tr><td>1st</td><td>+0</td><td>+1</td><td>+1</td><td>+0</td><td>Talent</td><td>+0</td><td>+2</td></tr><tr><td>2nd</td><td>+1</td><td>+2</td><td>+2</td><td>+0</td><td>Bonus feat</td><td>+1</td><td>+2</td></tr><tr><td>3rd</td><td>+1</td><td>+2</td><td>+2</td><td>+1</td><td>Talent</td><td>+1</td><td>+2</td></tr><tr><td>4th</td><td>+2</td><td>+2</td><td>+2</td><td>+1</td><td>Bonus feat</td><td>+1</td><td>+3</td></tr><tr><td>5th</td><td>+2</td><td>+3</td><td>+3</td><td>+1</td><td>Talent</td><td>+2</td><td>+3</td></tr><tr><td>6th</td><td>+3</td><td>+3</td><td>+3</td><td>+2</td><td>Bonus feat</td><td>+2</td><td>+3</td></tr><tr><td>7th</td><td>+3</td><td>+4</td><td>+4</td><td>+2</td><td>Talent</td><td>+2</td><td>+4</td></tr><tr><td>8th</td><td>+4</td><td>+4</td><td>+4</td><td>+2</td><td>Bonus feat</td><td>+3</td><td>+4</td></tr><tr><td>9th</td><td>+4</td><td>+4</td><td>+4</td><td>+3</td><td>Talent</td><td>+3</td><td>+4</td></tr><tr><td>10th</td><td>+5</td><td>+5</td><td>+5</td><td>+3</td><td>Bonus feat</td><td>+3</td><td>+5</td></tr></tbody></table><h3 data-heading=\"Starting Feats\">Starting Feats</h3><p>In addition to the two feats all characters get at first level, a Tough hero begins play<em> </em>with proficiency in light armors.</p>",
-      "instructions": ""
-    },
-    "tags": [],
-    "changes": [
-      {
-        "type": "untyped",
-        "_id": "vhfsQMz6",
-        "operator": "add",
-        "priority": 0,
-        "formula": "floor((@item.level+2)/3)",
-        "target": "ac"
+   "_id" : "wVujknVqmoenCFZF",
+   "_key" : "!items!wVujknVqmoenCFZF",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757278144,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780757278144,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "scene-packer" : {
+         "hash" : "68f7426d083c53a25ff3e09fd732084d6d648d0d"
       }
-    ],
-    "changeFlags": {
-      "immuneToMorale": false,
-      "loseDexToAC": false,
-      "noMediumEncumbrance": false,
-      "noHeavyEncumbrance": false,
-      "mediumArmorFullSpeed": false,
-      "heavyArmorFullSpeed": false,
-      "lowLightVision": false,
-      "seeInvisibility": false,
-      "seeInDarkness": false
-    },
-    "contextNotes": [],
-    "links": {
-      "children": [],
-      "classAssociations": []
-    },
-    "tag": "",
-    "armorProf": [
-      "lgt"
-    ],
-    "weaponProf": [],
-    "languages": [],
-    "flags": {
-      "boolean": {},
-      "dictionary": {}
-    },
-    "scriptCalls": [],
-    "subType": "base",
-    "level": 1,
-    "hd": 6,
-    "hp": null,
-    "bab": "low",
-    "skillsPerLevel": 6,
-    "savingThrows": {
-      "fort": {
-        "value": "custom",
-        "custom": "floor((2 * @level + 6) / 5)"
+   },
+   "folder" : "g5V1of75mbSgYu0b",
+   "img" : "systems/pf1/icons/feats/deceitful.jpg",
+   "name" : "Charismatic Ninja",
+   "ownership" : {
+      "default" : 2
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [
+         "lgt"
+      ],
+      "bab" : "low",
+      "casting" : {
+         "type" : ""
       },
-      "ref": {
-        "value": "custom",
-        "custom": "floor((2 * @level + 6) / 5)"
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
       },
-      "will": {
-        "value": "low",
-        "custom": "1+(@level/2.5)"
-      }
-    },
-    "fc": {
-      "hp": {
-        "value": 0
+      "changes" : [
+         {
+            "_id" : "vhfsQMz6",
+            "formula" : "floor((@item.level+2)/3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : true,
+         "dis" : true,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : true,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : false,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : true,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : false,
+         "prf" : true,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
       },
-      "skill": {
-        "value": 0
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Charismatic Ninja</h1>\n<p>The Charismatic hero is a type of shinobi that relies on his wits and sharp tongue to fare well in life, and makes the best use of Charisma. Taking levels of Charismatic hero demonstrate a greater ability with words and the various skills required for a ninja, and greater proficiency with Genjutsu.</p>\n<p>The Charismatic hero specializes in spying and Genjutsu, rather than close quarter or even ranged combat.</p>\n<h2>Examples of Charismatic Heroes</h2>\n<p>Charismatic heroes make the best spy one could possibly hope for. They are proficient with disguises, information gathering, Genjutsu and many social skills most ninja simply can't practice for mere lack of time. Spies, public entertainers or part time bartender are all examples of Charismatic hero found in the everyday life of a shinobi.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Charismatic Hero basic class.</p>\n<ul>\n<li><strong>Ability</strong>: Charisma is the primary ability for the Charismatic hero. Intelligence also allows for even more skill points, as he is second to only the Smart hero in that domain. A good Dexterity and Constitution score allow for better efficiency with saving throws.</li>\n<li><strong>Hit Die</strong>: The Charismatic Hero gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Charismatic Hero gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Charismatic Hero's class skills are as follows. Bluff (Cha), Chakra Control (Wis), Craft (calligraphy, visual art, writing) (Int), Diplomacy (Cha), Disguise (Cha), Genjutsu (Cha), Handle Animal (Cha), Intimidate (Cha), Knowledge (arcana, history, local, nobility, religion) (Int), Linguistics (—), Perform (act, dance, keyboards, percussion instruments, sing, stand-up, stringed instruments, wind instruments) (Cha), Profession (Wis), Sense Motive (Wis). Also, the starting occupation the hero selects can provide additional class skills to choose from.</li>\n<li><strong>Skill Points at First Level</strong>: (7 + Int modifier) × 4.</li>\n<li><strong>Skill Points at Each Level</strong>: 7 + Int modifier.</li>\n</ul>\n<h2>Table: The Charismatic Ninja</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>+0</td>\n<td>Talent</td>\n<td>+0</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+0</td>\n<td>Bonus feat</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>Bonus feat</td>\n<td>+1</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+2</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+4</td>\n<td>+2</td>\n<td>Talent</td>\n<td>+2</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>+3</td>\n<td>Talent</td>\n<td>+3</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+5</td>\n<td>+5</td>\n<td>+5</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+5</td>\n</tr>\n</tbody>\n</table>\n<h2>Starting Feats</h2>\n<p>In addition to the two feats all characters get at first level, a Charismatic hero begins play with the Simple Weapon Proficiency feat. _Optional Rule: Charismatic Heroes may begin play with proficiency in light armors. Taking this class after level 1 grants no armor proficiency._</p>\n<h2>Class Features</h2>\n<p>All of the following are class features of the Charismatic hero.</p>\n<h3>Talents</h3>\n<p>At 1st, 3rd, 5th, 7th, and 9th level, the Charismatic hero selects a talent from the following talent trees. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the hero qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p>\n<h3>Charm Talent Tree</h3>\n<p>The Charismatic hero has an innate talent for being charming and captivating.</p>\n<ul>\n<li><strong>Charm:</strong> The Charismatic hero gets a competence bonus on all Charisma-based skill checks made to influence members of his chosen gender. (Some characters are charming to members of the opposite gender, others to members of the same gender.) The bonus is equal to the character's Charismatic level. A Charismatic hero can only charm Gamemaster characters with attitudes of indifferent or better. The charm bonus can't be used against characters who are unfriendly or hostile. This ability can be taken more than once (for another gender).</li>\n<li><strong>Favor:</strong> The Charismatic hero has the ability to acquire minor aid from anyone he meets. By making a favor check, a Charismatic hero can gain important information without going through the time and trouble of doing a lot of research. Favors can also be used to acquire the loan of equipment or documents, or to receive other minor assistance in the course of an adventure. A Charismatic hero spends 1 action point to activate this talent. To make a favor check, roll a d20 and add the character's favor bonus, equal to the character's Charismatic level. The GM sets the DC based on the scope of the favor being requested. The DC ranges from 10 for a simple favor to as high as 30 for formidable and highly dangerous, expensive, or illegal favors. A Charismatic hero can't take 10 or 20 on this check, nor can the hero retry the check for the same (or virtually the same) favor. Favors should help advance the plot of an adventure. A favor that would enable a character to avoid an adventure altogether should always be unavailable to the character, regardless of the result of a favor check. The GM should carefully monitor a Charismatic hero's use of favors to ensure that this ability isn't abused. The success or failure of a mission shouldn't hinge on the use of a favor, and getting a favor shouldn't replace good roleplaying or the use of other skills. The GM may disallow any favor deemed to be disruptive to the game.</li>\n<p> <strong>Prerequisite:</strong> Charm.</p>\n<li><strong>Captivate:</strong> The Charismatic hero has the ability to temporarily beguile a target through the use of words and bearing. The target must have an Intelligence score of 3 or higher to be susceptible to a captivate attempt, must be within 30 feet of the hero, must be flatfooted or not in combat, and must be able to see, hear, and understand the hero. To captivate a target, the hero must use an attack action and make a Charisma check (DC 15), adding his Charismatic level as a bonus. If the Charisma check succeeds, the target can try to resist. The target resists the captivation attempt by making a Will saving throw (DC 10 + Charismatic hero's class level + Charismatic hero's Cha bonus). If the saving throw fails, the hero becomes the target's sole focus. The target pays no attention to anyone else for 1 round and remains flat-footed. This focusing of the target's attention allows other characters to take actions of which the captivated target is unaware. The effect ends immediately if the target is attacked or threatened. A Charismatic hero can concentrate to keep a target captivated for additional rounds. The Charismatic hero concentrates all his effort on the task, and the target gets to make a new Will save each round. The effect ends when the hero stops concentrating, or when the target succeeds on the save. This is a Mind-Affecting ability.</li>\n<p> <strong>Prerequisites:</strong> Charm, Favor.</p>\n</ul>\n<h3>Fast-Talk Talent Tree</h3>\n<p>The Charismatic hero has an innate talent for bending the truth and dazzling others with a combination of words, mannerisms, and charm.</p>\n<ul>\n<li><strong>Fast-Talk:</strong> The Charismatic hero has a way with words when attempting to con and deceive. With this talent, he applies his Charismatic level as a competence bonus on any Bluff, Diplomacy, or Gamble checks the hero makes while attempting to lie, cheat, or otherwise bend the truth.</li>\n<li><strong>Dazzle:</strong> The Charismatic hero has the ability to dazzle a target through sheer force of personality, a winning smile, and fast-talking. The target must have an Intelligence score of 3 or higher to be susceptible to a dazzle attempt, must be within 30 feet of the hero, and must be able to see, hear, and understand the hero. To dazzle a target, the hero must use an attack action and make a Charisma check (DC 15), adding his Charismatic level as a bonus. If the Charisma check succeeds, the target can try to resist. The target resists the dazzle attempt by making a Will saving throw (DC 10 + Charismatic hero's class level + Charismatic hero's Cha bonus). If the save fails, the target receives a –1 penalty on attack rolls, ability checks, skill checks, and saving throws for a number of rounds equal to the character's Charismatic level. This talent can be selected multiple times, each time worsening the dazzled penalty by -1. This is a Mind-Affecting ability.</li>\n<p> <strong>Prerequisite:</strong> Fast-talk.</p>\n<li><strong>Taunt:</strong> The Charismatic hero has the ability to temporarily rattle a target through the use of insults and goading. The target must have an Intelligence score of 3 or higher to be susceptible to a taunt, must be within 30 feet of the hero, and must be able to hear and understand the hero. To taunt a target, the hero must use an attack action and make a Charisma check (DC 15), adding his Charismatic level as a bonus. If the Charisma check succeeds, the target can try to resist. The target resists the taunt by making a Will saving throw (DC 10 + Charismatic hero's class level + Charismatic hero's Cha bonus). If the save fails, the target becomes dazed (unable to act, but can defend normally) for 1 round. A taunt can be played on an opponent any number of times. This is a Mind-Affecting ability.</li>\n<p> <strong>Prerequisites:</strong> Fast-talk, dazzle.</p>\n</ul>\n<h3>Genjutsu Talent Tree</h3>\n<p>By selecting a talent from this talent tree, the Charismatic Hero gains a bonus to identify and perform Genjutsu techniques.</p>\n<ul>\n<li><strong>Genjutsu:</strong> The Charismatic Hero gains a +1 bonus to Genjutsu checks to perform a technique, and a +2 bonus to identify Genjutsu. His chakra reserve increases by 2.</li>\n<li><strong>Improved Genjutsu:</strong> The bonuses increase to +2 to perform and +4 to identify Genjutsu, and his chakra reserve bonus increases to 4.</li>\n<p> <strong>Prerequisite:</strong> Genjutsu.</p>\n<li><strong>Advanced Genjutsu:</strong> The Charismatic Hero's bonus increase to +3 to perform and +6 to identify Genjutsu, and his chakra reserve bonus increases to 6. In addition, the Hero gains a +2 bonus to his Learn checks for Genjutsu and a +1 enhancement bonus to his effective skill threshold with Genjutsu techniques.</li>\n<p> <strong>Prerequisite:</strong> Genjutsu, Improved Genjutsu.</p>\n<li><strong>Sense Chakra:</strong> The Charismatic Hero gains the ability to Suppress Chakra normally, as per shinobi skill.</li>\n<p> <strong>Prerequisite:</strong> One talent from the Genjutsu talent tree.</p>\n<li><strong>Suppress Chakra:</strong> The Charismatic Hero gains the ability to Suppress Chakra normally, as per shinobi skill.</li>\n<p> <strong>Prerequisite:</strong> One talent from the Genjutsu talent tree.</p>\n</ul>\n<h3>Leadership Talent Tree</h3>\n<p>The Charismatic hero has a talent for leadership and inspiration.</p>\n<ul>\n<li><strong>Coordinate:</strong> The Charismatic hero has a knack for getting people to work together. When the hero can spend a full round directing his allies and makes a Charisma check (DC 10), the hero provides any of his allies within 30 feet a +1 bonus on their attack rolls and skill checks. The bonus lasts for a number of rounds equal to the hero's Charisma modifier. The hero can coordinate a number of allies equal to one-half his Charismatic level, rounded down (to a minimum of one ally).</li>\n<li><strong>Inspiration:</strong> The Charismatic hero can inspire his allies, bolstering them and improving their chances of success. An ally must listen to and observe the Charismatic hero for a full round for the inspiration to take hold, and the hero must make a Charisma check (DC 10). The effect lasts for a number of rounds equal to the hero's Charisma modifier. An inspired ally gains a +2 morale bonus on saving throws, attack rolls, and damage rolls. A Charismatic hero can't inspire himself. The hero can inspire a number of allies equal to one-half his Charismatic level, rounded down (to a minimum of one ally).</li>\n<p> <strong>Prerequisite:</strong> Coordinate.</p>\n<li><strong>Greater Inspiration:</strong> The Charismatic hero can inspire his allies to even greater heights, bolstering them and improving their chances of success. An ally must listen to and observe the Charismatic hero for a full round for the greater inspiration to take hold, and the hero must make a Charisma check (DC 10). The effect lasts for a number of rounds equal to the hero's Charisma modifier. An inspired ally gains an additional +1 morale bonus on saving throws, attack rolls, and damage rolls, which stacks with the bonus from inspiration for a total of a +3 morale bonus. A Charismatic hero can't inspire himself. The hero can inspire a number of allies equal to one-half his Charismatic level, rounded down (to a minimum of one ally).</li>\n<p> <strong>Prerequisites:</strong> Coordinate, inspiration.</p>\n</ul>\n<h3>Bonus Feats</h3>\n<p>At 2nd, 4th, 6th, 8th, and 10th level, a Charismatic hero gains a bonus feat. This feat must be selected from the following list, and the Charismatic hero must meet any prerequisites. Agile Riposte, Creative, Deceptive, Dodge, Force of Personality, Frightful Presence, Genin, Genjutsu Adept, Retrieval Expert, Improved Chakra Pool, Iron Will, Lightning Reflexes, Low Profile, Nin Weapons Proficiency, Precise Shot, Renown, Talented Shinobi, Training, Trustworthy, Windfall.</p>\n</article>"
       },
-      "alt": {
-        "value": 0,
-        "notes": ""
-      }
-    },
-    "wealth": "",
-    "alignment": "",
-    "classSkills": {
-      "acr": false,
-      "apr": false,
-      "art": false,
-      "blf": true,
-      "clm": false,
-      "crf": true,
-      "dip": true,
-      "dev": false,
-      "dis": true,
-      "esc": false,
-      "fly": false,
-      "han": true,
-      "hea": false,
-      "int": true,
-      "kar": true,
-      "kdu": false,
-      "ken": false,
-      "kge": false,
-      "khi": true,
-      "klo": true,
-      "kna": false,
-      "kno": true,
-      "kpl": false,
-      "kre": true,
-      "lin": true,
-      "lor": false,
-      "per": false,
-      "prf": true,
-      "pro": true,
-      "rid": false,
-      "sen": true,
-      "slt": false,
-      "spl": false,
-      "ste": false,
-      "sur": false,
-      "swm": false,
-      "umd": false,
-      "ckc": true,
-      "fui": false,
-      "gnj": true,
-      "nin": false,
-      "tai": false
-    },
-    "customHD": "",
-    "casting": {
-      "type": ""
-    },
-    "sources": []
-  },
-  "img": "systems/pf1/icons/feats/deceitful.jpg",
-  "effects": [],
-  "flags": {
-    "scene-packer": {
-      "hash": "68f7426d083c53a25ff3e09fd732084d6d648d0d"
-    }
-  },
-  "_stats": {
-    "compendiumSource": null,
-    "duplicateSource": null,
-    "exportSource": null,
-    "coreVersion": "13.351",
-    "systemId": "pf1",
-    "systemVersion": "11.11",
-    "createdTime": 1780757278144,
-    "modifiedTime": 1780757278144,
-    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
-  },
-  "_id": "wVujknVqmoenCFZF",
-  "ownership": {
-    "default": 2,
-    "vTUJ4X3yMMGO4o4P": 3
-  },
-  "sort": 0,
-  "_key": "!items!wVujknVqmoenCFZF"
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "1+(@level/2.5)",
+            "value" : "low"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 6,
+      "sources" : [],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
 }

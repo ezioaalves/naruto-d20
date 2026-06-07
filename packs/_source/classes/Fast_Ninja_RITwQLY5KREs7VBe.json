@@ -1,156 +1,155 @@
 {
-  "folder": "g5V1of75mbSgYu0b",
-  "type": "class",
-  "name": "Fast Ninja",
-  "system": {
-    "description": {
-      "value": "<p>The Fast hero is a type of shinobi that relies on both defense and often stealth as its best weapon, and thus makes best uses of Dexterity. With levels in this class, one qualifies as both a ranged and melee specialist, with the ability to make quick and precise throw and using one's quickness to get out of harm's way.</p><p>The Fast hero makes for a fine taijutsu specialist, but is much less damage oriented than the Strong hero.</p><h3 data-heading=\"Examples of Fast Heroes\">Examples of Fast Heroes</h3><p>Acrobats, thieves and burglars are all good examples of fast heroes. They are nimble and quick on their feet, which enables them to make a quick retreat in time of need or swiftly hide around a corner to avoid unwanted attention.</p><h3 data-heading=\"Class Information\">Class Information</h3><p>The following information pertains to the Fast Hero basic class.</p><p><strong>Ability</strong><br />The main focus of this class is Dexterity. While this characteristic is very important, a Fast hero makes good use of his Strength and Constitution score. Having a high Intelligence score also helps increasing his already wide array of skills.</p><p><strong>Hit Die</strong><br />The Fast Hero gains 1d8 hit points per level. The Constitution modifier applies.</p><p><strong>Action Points</strong><br />The Fast Hero gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</p><p><strong>Class Skills</strong><br />The Fast Hero's class skills, and the key ability for each are as follows.<br />Acrobatics (Dex), Craft (mechanical) (Int), Escape Artist (Dex), Genjutsu (Cha), Knowledge (arcana, local) (Int), Linguistics (—), Profession (Wis), Ride (Dex), Sleight of Hand (Dex), Stealth (Dex), Taijutsu (Str).<br />Also, the starting occupation the hero selects can provide additional class skills to choose from.<br /><strong>Skill Points at First Level:</strong> (5 + Int modifier) × 4.<br /><strong>Skill Points at Each Level:</strong> 5 + Int modifier.</p><h3 data-heading=\"TABLE 3-2: FAST HERO\">TABLE 3-2: FAST HERO</h3><table><thead><tr><th>Level</th><th>Base Attack Bonus</th><th>Fort Save</th><th>Ref Save</th><th>Will Save</th><th>Special</th><th>Defense Bonus</th><th>Reputation Bonus</th></tr></thead><tbody><tr><td>1st</td><td>+0</td><td>+0</td><td>+1</td><td>+0</td><td>Talent</td><td>+3</td><td>+0</td></tr><tr><td>2nd</td><td>+1</td><td>+0</td><td>+2</td><td>+0</td><td>Bonus feat</td><td>+4</td><td>+0</td></tr><tr><td>3rd</td><td>+2</td><td>+1</td><td>+2</td><td>+1</td><td>Talent</td><td>+4</td><td>+1</td></tr><tr><td>4th</td><td>+3</td><td>+1</td><td>+2</td><td>+1</td><td>Bonus feat</td><td>+5</td><td>+1</td></tr><tr><td>5th</td><td>+3</td><td>+1</td><td>+3</td><td>+1</td><td>Talent</td><td>+5</td><td>+1</td></tr><tr><td>6th</td><td>+4</td><td>+2</td><td>+3</td><td>+2</td><td>Bonus feat</td><td>+6</td><td>+2</td></tr><tr><td>7th</td><td>+5</td><td>+2</td><td>+4</td><td>+2</td><td>Talent</td><td>+6</td><td>+2</td></tr><tr><td>8th</td><td>+6/+1</td><td>+2</td><td>+4</td><td>+2</td><td>Bonus feat</td><td>+7</td><td>+2</td></tr><tr><td>9th</td><td>+6/+1</td><td>+3</td><td>+4</td><td>+3</td><td>Talent</td><td>+7</td><td>+3</td></tr><tr><td>10th</td><td>+7/+2</td><td>+3</td><td>+5</td><td>+3</td><td>Bonus feat</td><td>+8</td><td>+3</td></tr></tbody></table><h3 data-heading=\"Starting Feats\">Starting Feats</h3><p>In addition to the two feats all characters get at first level, a Tough hero begins play<em> </em>with proficiency in lightarmors.</p>",
-      "instructions": ""
-    },
-    "tags": [],
-    "changes": [
-      {
-        "type": "untyped",
-        "_id": "vhfsQMz6",
-        "operator": "add",
-        "priority": 0,
-        "formula": "floor((@item.level/2)+3)",
-        "target": "ac"
+   "_id" : "RITwQLY5KREs7VBe",
+   "_key" : "!items!RITwQLY5KREs7VBe",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757278144,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780757278144,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "scene-packer" : {
+         "hash" : "dc1bd717906c6ef85426cb9489ef5badeb77cd3e"
       }
-    ],
-    "changeFlags": {
-      "immuneToMorale": false,
-      "loseDexToAC": false,
-      "noMediumEncumbrance": false,
-      "noHeavyEncumbrance": false,
-      "mediumArmorFullSpeed": false,
-      "heavyArmorFullSpeed": false,
-      "lowLightVision": false,
-      "seeInvisibility": false,
-      "seeInDarkness": false
-    },
-    "contextNotes": [],
-    "links": {
-      "children": [],
-      "classAssociations": []
-    },
-    "tag": "",
-    "armorProf": [
-      "lgt"
-    ],
-    "weaponProf": [],
-    "languages": [],
-    "flags": {
-      "boolean": {},
-      "dictionary": {}
-    },
-    "scriptCalls": [],
-    "subType": "base",
-    "level": 1,
-    "hd": 8,
-    "hp": null,
-    "bab": "med",
-    "skillsPerLevel": 4,
-    "savingThrows": {
-      "fort": {
-        "value": "low",
-        "custom": "1+(@level/2.5)"
+   },
+   "folder" : "g5V1of75mbSgYu0b",
+   "img" : "systems/pf1/icons/feats/dodge.jpg",
+   "name" : "Fast Ninja",
+   "ownership" : {
+      "default" : 2
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [
+         "lgt"
+      ],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
       },
-      "ref": {
-        "value": "custom",
-        "custom": "floor((2 * @level + 6) / 5)"
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
       },
-      "will": {
-        "value": "low"
-      }
-    },
-    "fc": {
-      "hp": {
-        "value": 0
+      "changes" : [
+         {
+            "_id" : "vhfsQMz6",
+            "formula" : "floor((@item.level/2)+3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : false,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : true,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
       },
-      "skill": {
-        "value": 0
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Fast Ninja</h1>\n<p>The Fast hero is a type of shinobi that relies on both defense and often stealth as its best weapon, and thus makes best uses of Dexterity. With levels in this class, one qualifies as both a ranged and melee specialist, with the ability to make quick and precise throw and using one's quickness to get out of harm's way.</p>\n<p>The Fast hero makes for a fine taijutsu specialist, but is much less damage oriented than the Strong hero.</p>\n<h2>Examples of Fast Heroes</h2>\n<p>Acrobats, thieves and burglars are all good examples of fast heroes. They are nimble and quick on their feet, which enables them to make a quick retreat in time of need or swiftly hide around a corner to avoid unwanted attention.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Fast Hero basic class.</p>\n<ul>\n<li><strong>Ability</strong>: The main focus of this class is Dexterity. While this characteristic is very important, a Fast hero makes good use of his Strength and Constitution score. Having a high Intelligence score also helps increasing his already wide array of skills.</li>\n<li><strong>Hit Die</strong>: The Fast Hero gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Fast Hero gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Fast Hero's class skills, and the key ability for each are as follows. Acrobatics (Dex), Craft (mechanical) (Int), Escape Artist (Dex), Genjutsu (Cha), Knowledge (arcana, local) (Int), Linguistics (—), Profession (Wis), Ride (Dex), Sleight of Hand (Dex), Stealth (Dex), Taijutsu (Str). Also, the starting occupation the hero selects can provide additional class skills to choose from.</li>\n<li><strong>Skill Points at First Level</strong>: (5 + Int modifier) × 4.</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Fast Ninja</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+0</td>\n<td>+1</td>\n<td>+0</td>\n<td>Talent</td>\n<td>+3</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+0</td>\n<td>Bonus feat</td>\n<td>+4</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2</td>\n<td>+1</td>\n<td>Bonus feat</td>\n<td>+5</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+5</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+3</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+6</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+2</td>\n<td>+4</td>\n<td>+2</td>\n<td>Talent</td>\n<td>+6</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6/+1</td>\n<td>+2</td>\n<td>+4</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+7</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6/+1</td>\n<td>+3</td>\n<td>+4</td>\n<td>+3</td>\n<td>Talent</td>\n<td>+7</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7/+2</td>\n<td>+3</td>\n<td>+5</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+8</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Starting Feats</h2>\n<p>In addition to the two feats all characters get at first level, a Fast hero begins play with the Simple Weapon Proficiency feat. _Optional Rule: Fast Heroes may begin play with proficiency in light armors. Taking this class after level 1 grants no armor proficiency._</p>\n<h2>Class Features</h2>\n<p>The following features pertain to the Fast Hero basic class.</p>\n<h3>Talents</h3>\n<p>At 1st, 3rd, 5th, 7th, and 9th level, the Fast hero selects a talent from the following talent trees. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the hero qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p>\n<h3>Defensive Talent Tree</h3>\n<p>The Fast hero gains the ability to improve his innate defensive talents as the hero attains new levels.</p>\n<ul>\n<li><strong>Evasion:</strong> If the Fast hero is exposed to any effect that normally allows a character to attempt a Reflex saving throw for half damage, the Fast hero suffers no damage if he makes a successful saving throw. Evasion can only be used when wearing light armor or no armor.</li>\n<li><strong>Uncanny Dodge 1:</strong> The Fast hero retains his Dexterity bonus to Defense regardless of being caught flat-footed or struck by a hidden attacker. (The hero still loses his Dexterity bonus to Defense if the hero is immobilized.)</li>\n<p> <strong>Prerequisite:</strong> Evasion.</p>\n<li><strong>Uncanny Dodge 2:</strong> The Fast hero can no longer be flanked; the hero can react to opponents on opposite sides of him as easily as he can react to a single attacker.</li>\n<p> <strong>Prerequisites:</strong> Evasion, uncanny dodge 1.</p>\n<li><strong>Defensive Roll:</strong> The Fast hero can roll with a potentially lethal attack to take less damage from it. When the Fast hero would be reduced to 0 hit points or less by damage in combat (from a ranged or melee attack), he can attempt to roll with the damage. A Fast hero spends 1 action point to use this talent. Once the point is spent, the hero makes a Reflex saving throw (DC = damage dealt). If the save succeeds, he takes only half damage. The Fast hero must be able to react to the attack to execute a defensive roll -if the hero is immobilized, he can't use this talent. Since this effect would not normally allow a character to make a Reflex save for half damage, the Fast hero's evasion talent doesn't apply to the defensive roll.</li>\n<p> <strong>Prerequisites:</strong> Evasion, uncanny dodge 1.</p>\n<li><strong>Opportunist:</strong> The Fast hero can spend 1 action point to use this talent. Once the point is spent, the hero can make an attack of opportunity against an opponent who has just been struck for damage in melee by another character. This attack counts as the Fast hero's attack of opportunity for that round. Even a Fast hero with the Combat Reflexes feat can't use this talent more than once per round.</li>\n<p> <strong>Prerequisite:</strong> Evasion.</p>\n</ul>\n<p>_Optional Rule: In order to make up for the balance issue with the fast hero class, the Defensive Talent Tree may have the Uncanny Dodge 1 and Evasion talents switch place, with Uncanny Dodge 1 being available at level 1, and Evasion requiring Uncanny Dodge 1 rather than the opposite._</p>\n<h3>Deflection Talent Tree</h3>\n<p>By selecting a talent from this talent tree, the Fast Hero gains a bonus to defense against ranged attacks such as thrown weapons and arrows, but not against ballistic weapons.</p>\n<ul>\n<li><strong>Deflect:</strong> The Fast Hero, if he is aware of his enemy, gains a +1 deflection bonus to defense against ranged weapon (ballistic weapons don't apply). This bonus is denied if the Fast Hero is caught flat-footed or is denied his dexterity bonus.</li>\n<li><strong>Improved Deflect:</strong> Defense bonus against ranged weapons increases to +2.</li>\n<p> <strong>Prerequisite:</strong> Deflect.</p>\n<li><strong>Advanced Deflect:</strong> The Fast Hero's deflection bonus against ranged weapon increases to +3.</li>\n<p> <strong>Prerequisite:</strong> Deflect, Improved Deflect.</p>\n<li><strong>Sense Chakra:</strong> The Fast Hero gains the ability to Suppress Chakra normally, as per shinobi skill.</li>\n<p> <strong>Prerequisite:</strong> One talent from the Deflection talent tree.</p>\n<li><strong>Suppress Chakra:</strong> The Fast Hero gains the ability to Suppress Chakra normally, as per shinobi skill.</li>\n<p> <strong>Prerequisite:</strong> One talent from the Deflection talent tree.</p>\n</ul>\n<h3>Increased Speed Talent Tree</h3>\n<p>The Fast hero can increase his natural base speed.</p>\n<ul>\n<li><strong>Increased Speed:</strong> The Fast hero's base speed increases by 5 feet.</li>\n<li><strong>Improved Increased Speed:</strong> The Fast hero's base speed increases by 5 feet. This talent stacks with increased speed (10 feet total).</li>\n<p> <strong>Prerequisite:</strong> Increased speed.</p>\n<li><strong>Advanced Increased Speed:</strong> The Fast hero's base speed increases by 5 feet. This talent stacks with increased speed and improved increased speed (15 feet total).</li>\n<p> <strong>Prerequisites:</strong> Increased speed, improved increased speed.</p>\n</ul>\n<h3>Bonus Feats</h3>\n<p>At 2nd, 4th, 6th, 8th, and 10th level, the Fast hero gains a bonus feat. This feat must be selected from the following list, and the Fast hero must meet any prerequisites. Acrobatic, [Universal: Defensive Stance], Combat Throw, Defensive Martial Arts, Dodge, Double Tap, Elusive Target, Focused, Genin, Retrieval Expert, Improved Chakra Pool, Deft Maneuvers, Dodge, Nin Weapons Proficiency, Personal Firearms Proficiency, Precise Shot, Stealthy, Taijutsu Adept, Training, [Universal / Finesse Category].</p>\n</article>"
       },
-      "alt": {
-        "value": 0,
-        "notes": ""
-      }
-    },
-    "wealth": "",
-    "alignment": "",
-    "classSkills": {
-      "acr": true,
-      "apr": false,
-      "art": false,
-      "blf": false,
-      "clm": false,
-      "crf": true,
-      "dip": false,
-      "dev": false,
-      "dis": false,
-      "esc": true,
-      "fly": false,
-      "han": false,
-      "hea": false,
-      "int": false,
-      "kar": true,
-      "kdu": false,
-      "ken": false,
-      "kge": false,
-      "khi": false,
-      "klo": true,
-      "kna": false,
-      "kno": false,
-      "kpl": false,
-      "kre": false,
-      "lin": true,
-      "lor": false,
-      "per": false,
-      "prf": false,
-      "pro": true,
-      "rid": true,
-      "sen": false,
-      "slt": true,
-      "spl": false,
-      "ste": true,
-      "sur": false,
-      "swm": false,
-      "umd": false,
-      "ckc": false,
-      "fui": false,
-      "gnj": true,
-      "nin": false,
-      "tai": true
-    },
-    "customHD": "",
-    "casting": {
-      "type": ""
-    },
-    "sources": []
-  },
-  "img": "systems/pf1/icons/feats/dodge.jpg",
-  "effects": [],
-  "flags": {
-    "scene-packer": {
-      "hash": "dc1bd717906c6ef85426cb9489ef5badeb77cd3e"
-    }
-  },
-  "_stats": {
-    "compendiumSource": null,
-    "duplicateSource": null,
-    "exportSource": null,
-    "coreVersion": "13.351",
-    "systemId": "pf1",
-    "systemVersion": "11.11",
-    "createdTime": 1780757278144,
-    "modifiedTime": 1780757278144,
-    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
-  },
-  "_id": "RITwQLY5KREs7VBe",
-  "ownership": {
-    "default": 2,
-    "vTUJ4X3yMMGO4o4P": 3
-  },
-  "sort": 0,
-  "_key": "!items!RITwQLY5KREs7VBe"
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "1+(@level/2.5)",
+            "value" : "low"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "value" : "low"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
 }

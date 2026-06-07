@@ -391,7 +391,7 @@ skills, proficiências, changes, associações, fonte, IDs e pasta.
 
 [`generate-prestige-classes.pl`](../tools/generate-prestige-classes.pl) converte
 um diretório de classes em Markdown para JSONs de classe. Ele foi criado para o
-lote em `Classes/Prestige/`, mas aceita outros diretórios e destinos.
+lote em `classes/prestige/`, mas aceita outros diretórios e destinos.
 
 O gerador:
 
@@ -410,8 +410,28 @@ Naruto d20:
 - texto `gains 1dN hit points`;
 - lista iniciada por `class skills are as follows`;
 - linha `Skill Points at Each Level`;
-- tabela principal com `Base Attack Bonus`, saves e `Defense Bonus`;
-- seção `### Bonus Chakra` com tabela de pool e reserve, quando aplicável.
+- tabela principal `## Table: The Nome da classe`, antes de `## Class Features`,
+  com `Base Attack Bonus`, saves, `Defense Bonus` e `Reputation Bonus`;
+- coluna `Chakra` na tabela principal quando a classe conceder bônus de chakra,
+  usando o formato `Pool / Reserve` por nível, por exemplo `1 / 2` ou `- / +1`;
+- não usar uma seção separada `### Bonus Chakra` em novos documentos; o gerador
+  ainda aceita esse formato apenas como fallback para fontes antigas.
+
+Na coluna `Special`, não liste `bonus chakra` quando a mesma linha já tiver
+valor na coluna `Chakra`. O bônus é tratado como progressão mecânica da classe,
+não como feature textual separada.
+
+Para classes basic e paragon, que não têm seção `Requirements`, use:
+
+- título `# Nome da classe`;
+- seção `## Examples of ...`;
+- seção `## Class Information` com bullets para `Ability`, `Hit Die`,
+  `Action Points`, `Class Skills`, `Skill Points at First Level` e
+  `Skill Points at Each Level`;
+- tabela principal `## Table: The Nome da classe`;
+- seção `## Starting Feats`;
+- seção `## Class Features`, com talentos e listas de bonus feats em
+  subtítulos `###`.
 
 Antes de usar o gerador para um novo lote, revise no início do script:
 
@@ -444,10 +464,10 @@ Para outro lote, informe os caminhos e a pasta explicitamente:
 
 ```sh
 perl tools/generate-prestige-classes.pl \
-  --source-dir Classes/Outro-Lote \
+  --source-dir classes/outro-lote \
   --output-dir packs/_source/classes \
-  --template packs/_source/classes/Classe_Modelo_ID.json \
-  --folder-id ID_DA_PASTA
+  --template packs/_source/classes/classe-modelo-id.json \
+  --folder-id id-da-pasta
 ```
 
 Os IDs dependem do nome da classe; renomear um título cria outro ID e deve ser

@@ -1,6 +1,6 @@
 # Classificação das classes convertidas
 
-Os 31 arquivos estavam reunidos em `Classes/Prestige/`, mas o texto de
+Os 31 arquivos estavam reunidos em `classes/prestige/`, mas o texto de
 **Class Information** dos próprios arquivos os separa em dois grupos:
 
 - 13 Advanced Classes;

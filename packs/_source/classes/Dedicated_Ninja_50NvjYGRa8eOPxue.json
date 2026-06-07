@@ -1,158 +1,157 @@
 {
-  "folder": "g5V1of75mbSgYu0b",
-  "type": "class",
-  "name": "Dedicated Ninja",
-  "system": {
-    "description": {
-      "value": "<p>The Dedicated hero is the most intuitive of all the other hero types, and he makes the best use of his Wisdom score. Be it at discerning lies, tracking down a foe or avoiding surprise, the Dedicated hero is the best there is at using his intuition to save himself and his comrades. Taking levels in this class demonstrate true determination and proficiency in battle situation to avoid surprise and turn an ambush to your advantage.</p><p>While the Dedicated hero is not particularly strong in either melee or ranged combat, his unrivaled Willpower and toughness makes it easy for him to fare just as well as a shinobi as any other.</p><h3 data-heading=\"Examples of Dedicated Heroes\">Examples of Dedicated Heroes</h3><p>Sages, medical specialists or scouts, Dedicated heroes are proficient at detecting lies, treating wounds and tracking, thus they make efficient addition to any team of shinobi, during both peace or war time.</p><h3 data-heading=\"Class Information\">Class Information</h3><p>The following information pertains to the Dedicated Hero basic class.</p><p><strong>Ability</strong><br />Wisdom is the primary ability for the Dedicated hero, mainly because of his good Will saves and many Wisdom-based skills. Constitution is also important for both hit points and Fortitude, just as a good Intelligence score allows more flexibility with skill points.</p><p><strong>Hit Die</strong><br />The Dedicated Hero gains 1d6 hit points per level. The Constitution modifier applies.</p><p><strong>Action Points</strong><br />The Dedicated Hero gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</p><p><strong>Class Skills</strong><br />The Dedicated Hero's class skills, and the key ability for each are as follows.<br />Chakra Control (Wis), Craft (calligraphy, pharmaceutical, visual art, writing) (Int), Heal (Wis), Knowledge (arcana, engineering, history, local, nature, nobility, religion) (Int), Linguistics (—), Ninjutsu (Int), Perception (Wis), Profession (Wis), Sense Motive (Wis), Survival (Wis).<br />Also, the starting occupation the hero selects can provide additional class skills to choose from.<br /><strong>Skill Points at First Level:</strong> (5 + Int modifier) × 4.<br /><strong>Skill Points at Each Level:</strong> 5 + Int modifier.</p><h3 data-heading=\"TABLE 3-5: DEDICATED HERO\">TABLE 3-5: DEDICATED HERO</h3><table><thead><tr><th>Level</th><th>Base Attack Bonus</th><th>Fort Save</th><th>Ref Save</th><th>Will Save</th><th>Special</th><th>Defense Bonus</th><th>Reputation Bonus</th></tr></thead><tbody><tr><td>1st</td><td>+0</td><td>+1</td><td>+0</td><td>+1</td><td>Talent</td><td>+1</td><td>+1</td></tr><tr><td>2nd</td><td>+1</td><td>+2</td><td>+0</td><td>+2</td><td>Bonus feat</td><td>+2</td><td>+1</td></tr><tr><td>3rd</td><td>+2</td><td>+2</td><td>+1</td><td>+2</td><td>Talent</td><td>+2</td><td>+1</td></tr><tr><td>4th</td><td>+3</td><td>+2</td><td>+1</td><td>+2</td><td>Bonus feat</td><td>+3</td><td>+2</td></tr><tr><td>5th</td><td>+3</td><td>+3</td><td>+1</td><td>+3</td><td>Talent</td><td>+3</td><td>+2</td></tr><tr><td>6th</td><td>+4</td><td>+3</td><td>+2</td><td>+3</td><td>Bonus feat</td><td>+3</td><td>+2</td></tr><tr><td>7th</td><td>+5</td><td>+4</td><td>+2</td><td>+4</td><td>Talent</td><td>+4</td><td>+3</td></tr><tr><td>8th</td><td>+6/+1</td><td>+4</td><td>+2</td><td>+4</td><td>Bonus feat</td><td>+4</td><td>+3</td></tr><tr><td>9th</td><td>+6/+1</td><td>+4</td><td>+3</td><td>+4</td><td>Talent</td><td>+5</td><td>+3</td></tr><tr><td>10th</td><td>+7/+2</td><td>+5</td><td>+3</td><td>+5</td><td>Bonus feat</td><td>+5</td><td>+4</td></tr></tbody></table><h3 data-heading=\"Starting Feats\">Starting Feats</h3><p>In addition to the two feats all characters get at first level, a Tough hero begins play<em> </em>with proficiency in light and medium armors.</p>",
-      "instructions": ""
-    },
-    "tags": [],
-    "changes": [
-      {
-        "type": "untyped",
-        "_id": "vhfsQMz6",
-        "operator": "add",
-        "priority": 0,
-        "formula": "floor((@item.level+1)/2)",
-        "target": "ac"
+   "_id" : "50NvjYGRa8eOPxue",
+   "_key" : "!items!50NvjYGRa8eOPxue",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757278144,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780757278144,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "scene-packer" : {
+         "hash" : "3614bf73bf2de6bc2bf6155258607007af4e9679"
       }
-    ],
-    "changeFlags": {
-      "immuneToMorale": false,
-      "loseDexToAC": false,
-      "noMediumEncumbrance": false,
-      "noHeavyEncumbrance": false,
-      "mediumArmorFullSpeed": false,
-      "heavyArmorFullSpeed": false,
-      "lowLightVision": false,
-      "seeInvisibility": false,
-      "seeInDarkness": false
-    },
-    "contextNotes": [],
-    "links": {
-      "children": [],
-      "classAssociations": []
-    },
-    "tag": "",
-    "armorProf": [
-      "lgt",
-      "med"
-    ],
-    "weaponProf": [],
-    "languages": [],
-    "flags": {
-      "boolean": {},
-      "dictionary": {}
-    },
-    "scriptCalls": [],
-    "subType": "base",
-    "level": 1,
-    "hd": 6,
-    "hp": null,
-    "bab": "med",
-    "skillsPerLevel": 4,
-    "savingThrows": {
-      "fort": {
-        "value": "custom",
-        "custom": "floor((2 * @level + 6) / 5)"
+   },
+   "folder" : "g5V1of75mbSgYu0b",
+   "img" : "systems/pf1/icons/feats/alertness.jpg",
+   "name" : "Dedicated Ninja",
+   "ownership" : {
+      "default" : 2
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [
+         "lgt",
+         "med"
+      ],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
       },
-      "ref": {
-        "value": "low",
-        "custom": "1+(@level/2.5)"
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
       },
-      "will": {
-        "value": "custom",
-        "custom": "floor((2 * @level + 6) / 5)"
-      }
-    },
-    "fc": {
-      "hp": {
-        "value": 0
+      "changes" : [
+         {
+            "_id" : "vhfsQMz6",
+            "formula" : "floor((@item.level+1)/2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : true,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : true,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : true,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : true,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
       },
-      "skill": {
-        "value": 0
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Dedicated Ninja</h1>\n<p>The Dedicated hero is the most intuitive of all the other hero types, and he makes the best use of his Wisdom score. Be it at discerning lies, tracking down a foe or avoiding surprise, the Dedicated hero is the best there is at using his intuition to save himself and his comrades. Taking levels in this class demonstrate true determination and proficiency in battle situation to avoid surprise and turn an ambush to your advantage.</p>\n<p>While the Dedicated hero is not particularly strong in either melee or ranged combat, his unrivaled Willpower and toughness makes it easy for him to fare just as well as a shinobi as any other.</p>\n<h2>Examples of Dedicated Heroes</h2>\n<p>Sages, medical specialists or scouts, Dedicated heroes are proficient at detecting lies, treating wounds and tracking, thus they make efficient addition to any team of shinobi, during both peace or war time.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Dedicated Hero basic class.</p>\n<ul>\n<li><strong>Ability</strong>: Wisdom is the primary ability for the Dedicated hero, mainly because of his good Will saves and many Wisdom-based skills. Constitution is also important for both hit points and Fortitude, just as a good Intelligence score allows more flexibility with skill points.</li>\n<li><strong>Hit Die</strong>: The Dedicated Hero gains 1d6 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Dedicated Hero gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Dedicated Hero's class skills, and the key ability for each are as follows. Chakra Control (Wis), Craft (calligraphy, pharmaceutical, visual art, writing) (Int), Heal (Wis), Knowledge (arcana, engineering, history, local, nature, nobility, religion) (Int), Linguistics (—), Ninjutsu (Int), Perception (Wis), Profession (Wis), Sense Motive (Wis), Survival (Wis). Also, the starting occupation the hero selects can provide additional class skills to choose from.</li>\n<li><strong>Skill Points at First Level</strong>: (5 + Int modifier) × 4.</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Dedicated Ninja</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+0</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+0</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>Talent</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>Talent</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+3</td>\n<td>+2</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+2</td>\n<td>+4</td>\n<td>Talent</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6/+1</td>\n<td>+4</td>\n<td>+2</td>\n<td>+4</td>\n<td>Bonus feat</td>\n<td>+4</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6/+1</td>\n<td>+4</td>\n<td>+3</td>\n<td>+4</td>\n<td>Talent</td>\n<td>+5</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7/+2</td>\n<td>+5</td>\n<td>+3</td>\n<td>+5</td>\n<td>Bonus feat</td>\n<td>+5</td>\n<td>+4</td>\n</tr>\n</tbody>\n</table>\n<h2>Starting Feats</h2>\n<p>In addition to the two feats all characters get at first level, a Dedicated hero begins play with the Simple Weapon Proficiency feat. _Optional Rule: Dedicated Heroes may begin play with proficiency in light and medium armors. Taking this class after level 1 grants no armor proficiency._</p>\n<h2>Class Features</h2>\n<p>The following are class features of the Dedicated hero.</p>\n<h3>Talents</h3>\n<p>At 1st, 3rd, 5th, 7th, and 9th level, the Dedicated hero selects a talent from the following talent trees. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the hero qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p>\n<h3>Chakra Control Talent Tree</h3>\n<p>By selecting a talent from this talent tree, the Dedicated Hero gains a bonus to control the flow of Chakra within his body.</p>\n<ul>\n<li><strong>Chakra Control:</strong> The Dedicated Hero gains a +1 bonus to all Chakra Control checks and his chakra reserve increases by 2.</li>\n<li><strong>Improved Chakra Control:</strong> The Chakra Control bonus increases to +3 and his chakra reserve bonus increases to 4.</li>\n<p> <strong>Prerequisite:</strong> Chakra Control.</p>\n<li><strong>Advanced Chakra Control:</strong> And finally, the Control bonus increases to +5 and his chakra reserve bonus increases to 6. In addition, the Hero gains a +2 bonus to his Learn checks with Chakra Control techniques and a +1 enhancement bonus to his effective skill threshold with Chakra Control techniques.</li>\n<p> <strong>Prerequisite:</strong> Chakra Control, Improved Chakra Control.</p>\n<li><strong>Sense Chakra:</strong> The Dedicated Hero gains the ability to Suppress Chakra normally, as per shinobi skill.</li>\n<p> <strong>Prerequisite:</strong> One talent from the Chakra Control talent tree.</p>\n<li><strong>Suppress Chakra:</strong> The Dedicated Hero gains the ability to Suppress Chakra normally, as per shinobi skill.</li>\n<p> <strong>Prerequisite:</strong> One talent from the Chakra Control talent tree.</p>\n</ul>\n<h3>Empathic Talent Tree</h3>\n<p>The Dedicated hero's innate talents give him a great capacity for empathy.</p>\n<ul>\n<li><strong>Empathy:</strong> The Dedicated hero has a knack for being sensitive to the feelings and thoughts of others without having those feelings and thoughts communicated in any objectively explicit manner. This innate talent provides a bonus on checks involving interaction skills (Bluff, Diplomacy, Handle Animal, Intimidate, Perform, and Sense Motive), provided the hero spends at least 1 minute observing his target prior to making the skill check. The bonus is equal to the hero's Dedicated level.</li>\n<li><strong>Improved Aid Another:</strong> The Dedicated hero's bonus on attempts to aid another increases by +1 on a successful aid another check. This talent can be selected multiple times, each time increasing the bonus by +1.</li>\n<p> <strong>Prerequisite:</strong> Empathy.</p>\n<li><strong>Intuition:</strong> The Dedicated hero has an innate ability to sense trouble in the air. The Dedicated hero can make a Will saving throw (DC 15). On a successful save, the hero gets a hunch that everything is all right, or the hero gets a bad feeling about a specific situation, based on the GM's best guess relating to the circumstances. This talent is usable a number of times per day equal to the character's Dedicated level.</li>\n<p> <strong>Prerequisite:</strong> Empathy.</p>\n</ul>\n<h3>Healing Talent Tree</h3>\n<p>The Dedicated hero has a talent for healing.</p>\n<ul>\n<li><strong>Healing Knack:</strong> The hero has a knack for the healing arts. The hero receives a +2 bonus on all Treat Injury skill checks.</li>\n<li><strong>Healing Touch 1:</strong> The Dedicated hero's ability to restore damage with a medical kit or perform surgery with a surgery kit increases by +2 hit points.</li>\n<p> <strong>Prerequisite:</strong> Healing knack.</p>\n<li><strong>Healing Touch 2:</strong> The Dedicated hero's ability to restore damage with a medical kit or perform surgery with a surgery kit increases by +2 hit points, which stacks with healing touch 1 for a total of +4 hit points.</li>\n<p> <strong>Prerequisites:</strong> Healing knack, healing touch 1.</p>\n</ul>\n<h3>Insightful Talent Tree</h3>\n<p>The Dedicated hero's innate insightfulness serves her well.</p>\n<ul>\n<li><strong>Skill Emphasis:</strong> The Dedicated hero chooses a single skill and receives a +3 bonus on all checks with that skill. This bonus does not allow the hero to make checks for a trained-only skill if the hero has no ranks in the skill.</li>\n<li><strong>Aware:</strong> The Dedicated hero is intuitively aware of his surroundings. The hero adds his base Will saving throw bonus to Listen or Spot checks to avoid surprise.</li>\n<p> <strong>Prerequisite:</strong> Skill emphasis.</p>\n<li><strong>Faith:</strong> The Dedicated hero has a great deal of faith. It might be faith in self, in a higher power, or in both. This unswerving belief allows the Dedicated hero to add his Wisdom modifier to the die roll whenever the hero spends 1 action point to improve the result of an attack roll, skill check, saving throw, or ability check.</li>\n<p> <strong>Prerequisite:</strong> Skill emphasis.</p>\n<li><strong>Cool Under Pressure:</strong> The Dedicated hero selects a number of skills equal to 3 + the hero's Wisdom modifier. When making a check with one of these skills, the Dedicated hero can take 10 even when distracted or under duress.</li>\n<p> <strong>Prerequisite:</strong> Skill emphasis plus either faith or aware.</p>\n</ul>\n<h3>Bonus Feats</h3>\n<p>At 2nd, 4th, 6th, 8th, and 10th level, the Dedicated hero gains a bonus feat. This feat must be from this list, and the Dedicated hero must meet any prerequisites. Advanced Firearms Proficiency, Alertness, Archaic Weapons Proficiency, Attentive, Blind-Fight, Deceptive, Educated, Far Shot, Genin, Retrieval Expert, Harmony, Improved Chakra Pool, Iron Will, Medical Expert, Meticulous, Nin Weapons Proficiency, Surgery, Talented Shinobi, Track, Training, Weapon Focus.</p>\n</article>"
       },
-      "alt": {
-        "value": 0,
-        "notes": ""
-      }
-    },
-    "wealth": "",
-    "alignment": "",
-    "classSkills": {
-      "acr": false,
-      "apr": false,
-      "art": false,
-      "blf": false,
-      "clm": false,
-      "crf": true,
-      "dip": false,
-      "dev": false,
-      "dis": false,
-      "esc": false,
-      "fly": false,
-      "han": false,
-      "hea": true,
-      "int": false,
-      "kar": true,
-      "kdu": false,
-      "ken": true,
-      "kge": false,
-      "khi": true,
-      "klo": true,
-      "kna": true,
-      "kno": true,
-      "kpl": false,
-      "kre": true,
-      "lin": true,
-      "lor": false,
-      "per": true,
-      "prf": false,
-      "pro": true,
-      "rid": false,
-      "sen": true,
-      "slt": false,
-      "spl": false,
-      "ste": false,
-      "sur": true,
-      "swm": false,
-      "umd": false,
-      "ckc": true,
-      "fui": false,
-      "gnj": false,
-      "nin": true,
-      "tai": false
-    },
-    "customHD": "",
-    "casting": {
-      "type": ""
-    },
-    "sources": []
-  },
-  "img": "systems/pf1/icons/feats/alertness.jpg",
-  "effects": [],
-  "flags": {
-    "scene-packer": {
-      "hash": "3614bf73bf2de6bc2bf6155258607007af4e9679"
-    }
-  },
-  "_stats": {
-    "compendiumSource": null,
-    "duplicateSource": null,
-    "exportSource": null,
-    "coreVersion": "13.351",
-    "systemId": "pf1",
-    "systemVersion": "11.11",
-    "createdTime": 1780757278144,
-    "modifiedTime": 1780757278144,
-    "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
-  },
-  "_id": "50NvjYGRa8eOPxue",
-  "ownership": {
-    "default": 2,
-    "vTUJ4X3yMMGO4o4P": 3
-  },
-  "sort": 0,
-  "_key": "!items!50NvjYGRa8eOPxue"
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "1+(@level/2.5)",
+            "value" : "low"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
 }

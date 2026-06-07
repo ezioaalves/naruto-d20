@@ -1,166 +1,166 @@
 {
-  "folder": "g5V1of75mbSgYu0b",
-  "type": "class",
-  "name": "Tough Ninja",
-  "system": {
-    "description": {
-      "value": "<p>The elements of a tough hero can enable one to run for great distances without tiring, concentrate on a tough jutsu, utilize a higher level of chakra reserve, or simply out last your opponents with sheer vitality. Taijutsu perfectly augments this type of hero who would follow the meaning of the ninja to endure through their endeavors.</p><p>Although lacking in offensive capabilities, their defensive qualities and endurance openly out class those of the fast or strong hero.</p><h3 data-heading=\"Examples of Tough Heroes\">Examples of Tough Heroes</h3><p>Brawlers, sprinter or any type of shinobi that believes having a fit body and being in good health before training his mind is the thing to do. A tough hero is highly resistant to the whims of nature, poisons and tends to be able to take more of a hit than your ordinary shinobi.</p><h3 data-heading=\"Class Information\">Class Information</h3><p>The following information pertains to the Tough Hero basic class.</p><p><strong>Ability</strong><br />For a Tough hero, Constitution is the primary ability score. It is also important to have a good Strength and Dexterity score to fare well in combat, which is usually their main affectation. A good Wisdom is also helpful for a Tough hero that wishes to resist the effects of torture or Genjutsu, the bane of many ninja.</p><p><strong>Hit Die</strong><br />The Tough Hero gains 1d10 hit points per level. The Constitution modifier applies.</p><p><strong>Action Points</strong><br />The Tough Hero gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</p><p><strong>Class Skills</strong><br />The Tough Hero's class skills, and the key ability for each are as follows.<br />Chakra Control (Con), Climb (Str), Craft (mechanical, structural) (Int), Intimidate (Cha), Knowledge (arcana, local) (Int), Linguistics (—), Ninjutsu (Int), Perception (Wis), Profession (Wis), Ride (Dex), Survival (Wis), Taijutsu (Str).<br />Also, the starting occupation the hero selects can provide additional class skills to choose from.<br /><strong>Skill Points at First Level:</strong> (3 + Int modifier) × 4.<br /><strong>Skill Points at Each Level:</strong> 3 + Int modifier.</p><h3 data-heading=\"TABLE 3-3: TOUGH HERO\">TABLE 3-3: TOUGH HERO</h3><table><thead><tr><th>Level</th><th>Base Attack Bonus</th><th>Fort Save</th><th>Ref Save</th><th>Will Save</th><th>Special</th><th>Defense Bonus</th><th>Reputation Bonus</th></tr></thead><tbody><tr><td>1st</td><td>+0</td><td>+1</td><td>+0</td><td>+0</td><td>Talent</td><td>+1</td><td>+0</td></tr><tr><td>2nd</td><td>+1</td><td>+2</td><td>+0</td><td>+0</td><td>Bonus feat</td><td>+2</td><td>+0</td></tr><tr><td>3rd</td><td>+2</td><td>+2</td><td>+1</td><td>+1</td><td>Talent</td><td>+2</td><td>+1</td></tr><tr><td>4th</td><td>+3</td><td>+2</td><td>+1</td><td>+1</td><td>Bonus feat</td><td>+3</td><td>+1</td></tr><tr><td>5th</td><td>+3</td><td>+3</td><td>+1</td><td>+1</td><td>Talent</td><td>+3</td><td>+1</td></tr><tr><td>6th</td><td>+4</td><td>+3</td><td>+2</td><td>+2</td><td>Bonus feat</td><td>+3</td><td>+2</td></tr><tr><td>7th</td><td>+5</td><td>+4</td><td>+2</td><td>+2</td><td>Talent</td><td>+4</td><td>+2</td></tr><tr><td>8th</td><td>+6/+1</td><td>+4</td><td>+2</td><td>+2</td><td>Bonus feat</td><td>+4</td><td>+2</td></tr><tr><td>9th</td><td>+6/+1</td><td>+4</td><td>+3</td><td>+3</td><td>Talent</td><td>+5</td><td>+3</td></tr><tr><td>10th</td><td>+7/+2</td><td>+5</td><td>+3</td><td>+3</td><td>Bonus feat</td><td>+5</td><td>+3</td></tr></tbody></table><h3 data-heading=\"Starting Feats\">Starting Feats</h3><p>In addition to the two feats all characters get at first level, a Tough hero begins play<em> </em>with proficiency in light, medium and heavy armors.</p>",
-      "instructions": ""
-    },
-    "tags": [],
-    "changes": [
-      {
-        "type": "untyped",
-        "operator": "add",
-        "priority": 0,
-        "formula": "floor((@item.level+1)/2)",
-        "_id": "meT3u1Tx",
-        "target": "ac"
+   "_id" : "QCnjlxL46CsOgu4c",
+   "_key" : "!items!QCnjlxL46CsOgu4c",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780757278144,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764795730,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "scene-packer" : {
+         "hash" : "8c08e78a07c1ee9eec9c260b87a5e2586d6ad504"
       }
-    ],
-    "changeFlags": {
-      "immuneToMorale": false,
-      "loseDexToAC": false,
-      "noMediumEncumbrance": false,
-      "noHeavyEncumbrance": false,
-      "mediumArmorFullSpeed": false,
-      "heavyArmorFullSpeed": false,
-      "lowLightVision": false,
-      "seeInvisibility": false,
-      "seeInDarkness": false
-    },
-    "contextNotes": [],
-    "links": {
-      "children": [],
-      "classAssociations": []
-    },
-    "tag": "",
-    "armorProf": [
-      "lgt",
-      "med",
-      "hvy"
-    ],
-    "weaponProf": [],
-    "languages": [],
-    "flags": {
-      "boolean": {},
-      "dictionary": {}
-    },
-    "scriptCalls": [
-      {
-        "category": "changeLevel",
-        "type": "script",
-        "_id": "OKrh0k9n",
-        "name": "New Script Call",
-        "img": null,
-        "value": "",
-        "hidden": false
-      }
-    ],
-    "subType": "base",
-    "level": 1,
-    "hd": 10,
-    "hp": null,
-    "bab": "med",
-    "skillsPerLevel": 2,
-    "savingThrows": {
-      "fort": {
-        "value": "custom",
-        "custom": "floor((2 * @level + 6) / 5)"
+   },
+   "folder" : "g5V1of75mbSgYu0b",
+   "img" : "systems/pf1/icons/feats/intimidating-prowess.jpg",
+   "name" : "Tough Ninja",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [
+         "lgt",
+         "med",
+         "hvy"
+      ],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
       },
-      "ref": {
-        "value": "low"
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
       },
-      "will": {
-        "value": "low"
-      }
-    },
-    "fc": {
-      "hp": {
-        "value": 0
+      "changes" : [
+         {
+            "_id" : "meT3u1Tx",
+            "formula" : "floor((@item.level+1)/2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : false,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : true,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : true,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : true,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
       },
-      "skill": {
-        "value": 0
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Tough Ninja</h1>\n<p>The elements of a tough hero can enable one to run for great distances without tiring, concentrate on a tough jutsu, utilize a higher level of chakra reserve, or simply out last your opponents with sheer vitality. Taijutsu perfectly augments this type of hero who would follow the meaning of the ninja to endure through their endeavors.</p>\n<p>Although lacking in offensive capabilities, their defensive qualities and endurance openly out class those of the fast or strong hero.</p>\n<h2>Examples of Tough Heroes</h2>\n<p>Brawlers, sprinter or any type of shinobi that believes having a fit body and being in good health before training his mind is the thing to do. A tough hero is highly resistant to the whims of nature, poisons and tends to be able to take more of a hit than your ordinary shinobi.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Tough Hero basic class.</p>\n<ul>\n<li><strong>Ability</strong>: For a Tough hero, Constitution is the primary ability score. It is also important to have a good Strength and Dexterity score to fare well in combat, which is usually their main affectation. A good Wisdom is also helpful for a Tough hero that wishes to resist the effects of torture or Genjutsu, the bane of many ninja.</li>\n<li><strong>Hit Die</strong>: The Tough Hero gains 1d10 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Tough Hero gains a number of action points equal to 5 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Tough Hero's class skills, and the key ability for each are as follows. Chakra Control (Con), Climb (Str), Craft (mechanical, structural) (Int), Intimidate (Cha), Knowledge (arcana, local) (Int), Linguistics (—), Ninjutsu (Int), Perception (Wis), Profession (Wis), Ride (Dex), Survival (Wis), Taijutsu (Str). Also, the starting occupation the hero selects can provide additional class skills to choose from.</li>\n<li><strong>Skill Points at First Level</strong>: (3 + Int modifier) × 4.</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Tough Ninja</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+0</td>\n<td>+0</td>\n<td>Talent</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+0</td>\n<td>+0</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+1</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+2</td>\n<td>+1</td>\n<td>+1</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+3</td>\n<td>+2</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+2</td>\n<td>+2</td>\n<td>Talent</td>\n<td>+4</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6/+1</td>\n<td>+4</td>\n<td>+2</td>\n<td>+2</td>\n<td>Bonus feat</td>\n<td>+4</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6/+1</td>\n<td>+4</td>\n<td>+3</td>\n<td>+3</td>\n<td>Talent</td>\n<td>+5</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7/+2</td>\n<td>+5</td>\n<td>+3</td>\n<td>+3</td>\n<td>Bonus feat</td>\n<td>+5</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Starting Feats</h2>\n<p>In addition to the two feats all characters get at first level, a Tough hero begins play with the Simple Weapon Proficiency feat. _Optional Rule: Tough Heroes may begin play with proficiency in light, medium and heavy armors. Taking this class after level 1 grants no armor proficiency._</p>\n<h2>Class Features</h2>\n<p>All of the following are class features of the Tough hero.</p>\n<h3>Talents</h3>\n<p>At 1st, 3rd, 5th, 7th, and 9th level, the Tough hero selects a talent from the following talent trees. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the hero qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p>\n<h3>Damage Reduction Talent Tree</h3>\n<p>The Tough hero has an innate talent to ignore a set amount of damage from most weapons, but not from energy or special attack forms (which may or may not exist, depending on the campaign). Before the hero can select a talent from this tree the hero must have previously selected at least one talent from the Energy Resistance or Unbreakable Talent Tree.</p>\n<ul>\n<li><strong>Damage Reduction 1/–:</strong> The Tough hero ignores 1 point of damage from melee and ranged weapons.</li>\n<p> <strong>Prerequisite:</strong> One other talent from either the Endurance, Energy Resistance Talent Tree or the Unbreakable Talent Tree.</p>\n<li><strong>Damage Reduction 2/−:</strong> The Tough hero ignores an additional 1 point of damage from melee and ranged weapons (DR 2/– total).</li>\n<p> <strong>Prerequisites:</strong> Damage reduction 1/–, one other talent from either the Endurance, Energy Resistance Talent Tree or the Unbreakable Talent Tree.</p>\n<li><strong>Damage Reduction 3/–:</strong> The Tough hero ignores an additional 1 point of damage from melee and ranged weapons (DR 3/– total).</li>\n<p> <strong>Prerequisites:</strong> Damage reduction 1/–, damage reduction 2/–, one other talent from either the Endurance, Energy Resistance Talent Tree or the Unbreakable Talent Tree.</p>\n</ul>\n<h3>Stamina Talent Tree</h3>\n<p>By selecting a talent from this talent tree, the Tough Hero can increase his Chakra pool.</p>\n<ul>\n<li><strong>Endurance:</strong> The Tough Hero's chakra pool increases by 5.</li>\n<li><strong>Improved Endurance:</strong> The Tough Hero's chakra pool increases by 5 (total 10).</li>\n<p> <strong>Prerequisite:</strong> Endurance.</p>\n<li><strong>Advanced Endurance:</strong> The Tough Hero's chakra pool increases by 5 (total 15) and he gains a +2 bonus to saving throws against chakra exhaustion and chakra drain.</li>\n<p> <strong>Prerequisite:</strong> Endurance, Improved Endurance.</p>\n<li><strong>Sense Chakra:</strong> The Tough Hero gains the ability to Sense Chakra normally, as per shinobi skill.</li>\n<p> <strong>Prerequisite:</strong> One talent from the Stamina talent tree.</p>\n<li><strong>Suppress Chakra:</strong> The Tough Hero gains the ability to Suppress Chakra normally, as per shinobi skill.</li>\n<p> <strong>Prerequisite:</strong> One talent from the Stamina talent tree.</p>\n</ul>\n<h3>Energy Resistance Talent Tree</h3>\n<p>The Tough hero is particularly resistant to certain kinds of deadly energy effects. These talents can be selected in any order.</p>\n<ul>\n<li><strong>Acid Resistance:</strong> The Tough hero ignores an amount of acid damage equal to his Constitution modifier.</li>\n<li><strong>Cold Resistance:</strong> The Tough hero ignores an amount of cold damage equal to his Constitution modifier.</li>\n<li><strong>Earth Resistance:</strong> The Tough hero ignores an amount of earth damage equal to his Constitution modifier.</li>\n<li><strong>Electricity Resistance:</strong> The Tough hero ignores an amount of electricity damage equal to his Constitution modifier.</li>\n<li><strong>Fire Resistance:</strong> The Tough hero ignores an amount of fire damage equal to his Constitution modifier.</li>\n<li><strong>Sonic/Concussion Resistance:</strong> The Tough hero ignores an amount of sonic or concussion damage equal to his Constitution modifier.</li>\n<li><strong>Water Resistance:</strong> The Tough hero ignores an amount of water damage equal to his Constitution modifier.</li>\n<li><strong>Wind Resistance:</strong> The Tough hero ignores an amount of wind damage equal to his Constitution modifier.</li>\n</ul>\n<h3>Unbreakable Talent Tree</h3>\n<p>The Tough hero is particularly resilient thanks to the following talents.</p>\n<ul>\n<li><strong>Remain Conscious:</strong> The Tough hero gains the ability to continue to perform actions when he would otherwise be considered unconscious and dying. When the Tough hero's hit points reach –1, the hero can perform as though he were disabled, making either an attack action or a move action every round until the hero reaches –10 hit points (and dies) or the hero's hit points return to 1 or higher. The hero can choose to succumb to unconsciousness if he thinks that doing so might prevent him from taking more damage.</li>\n<li><strong>Robust:</strong> The Tough hero becomes especially robust, gaining a number of hit points equal to his Tough level as soon as he selects this talent. Thereafter, the hero gains +1 hit point with each level of Tough he gains.</li>\n<li><strong>Second Wind:</strong> The Tough hero can spend 1 action point to gain a second wind. When the hero does this, he recovers a number of hit points equal to his Constitution modifier. This talent does not increase the Tough hero's hit points beyond the character's full normal total.</li>\n<li><strong>Stamina:</strong> The Tough hero recovers twice as fast as normal. So, the hero recovers 2 hit points per character level per evening of rest, 2 points of temporary ability damage per evening of rest, and awakens in half the normal time after being knocked unconscious.</li>\n<p> <strong>Prerequisite:</strong> Robust.</p>\n<li><strong>Second Chance:</strong> The Tough hero can spend 1 action point to gain a second chance. Once this talent is activated, the Tough Hero will gain the benefits of a short rest (5 minutes) and recover twice his Constitution modifier in chakra. The Tough Hero may not exceed his maximum Chakra Pool by this mean.</li>\n<p> <strong>Prerequisite:</strong> Second Wind, Robust.</p>\n</ul>\n<h3>Bonus Feats</h3>\n<p>At 2nd, 4th, 6th, 8th, and 10th level, the Tough hero gains a bonus feat. This feat must be selected from the following list, and the Tough hero must meet any prerequisites. Alertness, Athletic, Brawl, Confident, Empowered Resilience, Endurance, Genin, Retrieval Expert, Great Fortitude, Improved Brawl, Powerful Maneuvers, Improved Chakra Pool, Deft Maneuvers, Knockout Punch, Nin Weapons Proficiency, [Universal: Risky Strike], Streetfighting, Taijutsu Adept, Talented Shinobi, Toughness, Training, Vehicle Expert.</p>\n</article>"
       },
-      "alt": {
-        "value": 0,
-        "notes": ""
-      }
-    },
-    "wealth": "",
-    "alignment": "",
-    "classSkills": {
-      "acr": false,
-      "apr": false,
-      "art": false,
-      "blf": false,
-      "clm": true,
-      "crf": true,
-      "dip": false,
-      "dev": false,
-      "dis": false,
-      "esc": false,
-      "fly": false,
-      "han": false,
-      "hea": false,
-      "int": true,
-      "kar": true,
-      "kdu": false,
-      "ken": false,
-      "kge": false,
-      "khi": false,
-      "klo": true,
-      "kna": false,
-      "kno": false,
-      "kpl": false,
-      "kre": false,
-      "lin": true,
-      "lor": false,
-      "per": true,
-      "prf": false,
-      "pro": true,
-      "rid": true,
-      "sen": false,
-      "slt": false,
-      "spl": false,
-      "ste": false,
-      "sur": true,
-      "swm": false,
-      "umd": false,
-      "ckc": true,
-      "fui": false,
-      "gnj": false,
-      "nin": true,
-      "tai": true
-    },
-    "customHD": "",
-    "casting": {
-      "type": ""
-    },
-    "sources": []
-  },
-  "_id": "QCnjlxL46CsOgu4c",
-  "img": "systems/pf1/icons/feats/intimidating-prowess.jpg",
-  "effects": [],
-  "flags": {
-    "scene-packer": {
-      "hash": "8c08e78a07c1ee9eec9c260b87a5e2586d6ad504"
-    }
-  },
-  "_stats": {
-    "compendiumSource": null,
-    "duplicateSource": null,
-    "exportSource": null,
-    "coreVersion": "13.351",
-    "systemId": "pf1",
-    "systemVersion": "11.11",
-    "createdTime": 1780757278144,
-    "modifiedTime": 1780764795730,
-    "lastModifiedBy": "mIZLV3aRVXSMGsYi"
-  },
-  "ownership": {
-    "default": 0
-  },
-  "sort": 0,
-  "_key": "!items!QCnjlxL46CsOgu4c"
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "value" : "low"
+         },
+         "will" : {
+            "value" : "low"
+         }
+      },
+      "scriptCalls" : [
+         {
+            "_id" : "OKrh0k9n",
+            "category" : "changeLevel",
+            "hidden" : false,
+            "img" : null,
+            "name" : "New Script Call",
+            "type" : "script",
+            "value" : ""
+         }
+      ],
+      "skillsPerLevel" : 2,
+      "sources" : [],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
 }

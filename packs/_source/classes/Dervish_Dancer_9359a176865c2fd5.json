@@ -1,0 +1,171 @@
+{
+   "_id" : "9359a176865c2fd5",
+   "_key" : "!items!9359a176865c2fd5",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/items/weapons/scimitar.PNG",
+   "name" : "Dervish Dancer",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "fcb869d413068f3d",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "cad84751f2de0a32",
+            "formula" : "floor(@item.level / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "dd57585ee2f98b83",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : false,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : true,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Dervish Dancer</h1>\n<p>Wild, exotic, and as dangerous as her whirling blades, the Dervish Dancer epitomizes speed, quickness, and abandon. Her motions appear to be as random as they are graceful, but the steps of her lethal dance play out according to their own rhythm.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a dervish dancer, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +5</li>\n<li><strong>Skills</strong>: Perform (dance) 5 ranks, Tumble 5 ranks</li>\n<li><strong>Feats</strong>: Combat Expertise, Dodge, Weapon Focus (any slashing weapon).</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Dervish Dancer prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d10</li>\n<li><strong>Action Points</strong>: 7 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Balance (Dex), Chakra Control (Wis), Craft (Int), Escape Artist (Dex), Genjutsu (Cha), Jump (Str), Listen (Wis), Ninjutsu (Int), Perform (Cha), Profession (Wis), Swim (Str), Taijutsu (Str), and Tumble (Dex)</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Dervish Dancer</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n<th>Chakra</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+2</td>\n<td>Dervish Dance 1, Movement Mastery, Quick Draw</td>\n<td>+1</td>\n<td>+0</td>\n<td>- / +1</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+0</td>\n<td>+3</td>\n<td>+3</td>\n<td>Fast Movement +5 ft. Spring Attack</td>\n<td>+2</td>\n<td>+1</td>\n<td>+1 / +2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+3</td>\n<td>Dance of Death, Fast Movement +10 ft., Dervish Dance 2</td>\n<td>+2</td>\n<td>+1</td>\n<td>+1 / +3</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+1</td>\n<td>+4</td>\n<td>+4</td>\n<td>Improved Reaction</td>\n<td>+3</td>\n<td>+1</td>\n<td>+2 / +4</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+1</td>\n<td>+4</td>\n<td>+4</td>\n<td>Fast Movement +15 ft., Dervish Dance 3</td>\n<td>+4</td>\n<td>+2</td>\n<td>+2 / +5</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+6</td>\n<td>+2</td>\n<td>+5</td>\n<td>+5</td>\n<td>Elaborate Parry, Tireless Dance</td>\n<td>+4</td>\n<td>+2</td>\n<td>+3 / +6</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+7</td>\n<td>+2</td>\n<td>+5</td>\n<td>+5</td>\n<td>A Thousand Cuts, Dervish Dance 4</td>\n<td>+5</td>\n<td>+2</td>\n<td>+3 / +7</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Dervish Dancer prestige class.</p>\n<p>If a Dervish Dancer wields a slashing weapon while in a Dervish Dance, she gains a bonus on her attack, damage rolls, and Defense as a Dodge bonus. This bonus is +1 at 1st level, and it increases by an extra +1 at every odd-numbered level thereafter. A Dervish Dancer may only perform a Dervish Dance while wielding a slashing weapon (she may use a double weapon, or multiple weapons, only if both ends of the weapon or all weapons are of the slashing type) or unarmed if she possesses the Shifting Fist feat and uses slashing damage. She cannot perform a Dervish Dance in any armor heavier than light or if she is using a shield. While dancing, a Dervish Dancer cannot use skills or abilities that involve concentration or require her to remain still, such as Move Silently, Hide, or Search. A Dervish Dancer can also use the Combat Expertise feat while in a dance. A Dervish Dancer cannot perform a Dervish Dance while under the effect of a rage or frenzy ability. A Dervish Dancer can perform a Dervish Dance only once per encounter. A Dervish Dance lasts 1 round for every two ranks of Perform (dance) that the character has. At the end of a Dervish Dance, the character becomes fatigued for the duration of the encounter (unless she is a 6th level Dervish Dancer, at which point this limitation no longer applies).</p>\n<h3>Dervish Dance</h3>\n<h3>Movement Mastery</h3>\n<p>A Dervish Dancer can become a whirling dancer of death a certain number of times per day. While in this Dervish Dance, she can take a full attack action (for melee attacks only) and still move up to her speed. However, the Dervish Dancer must move a minimum of 5 feet between each attack when using this ability, and she cannot return to a square she just exited (though she may return to that square later during her full attack). The Dervish Dancer is subject to attacks of opportunity while dancing, but may tumble normally as part of her move. A Dervish Dancer prevented from completing her move is also prevented from finishing her full attack.</p>\n<h3>Slashing Blades</h3>\n<p>A Dervish Dancer is so certain of her movements that she is unaffected by adverse conditions. When making a Balance, Jump, Perform (dance), or Tumble check, she may take 10 even if stress and distraction would normally prevent her from doing so. At 1st level, a Dervish Dancer gains the Quick Draw feat.</p>\n<h3>Fast Movement</h3>\n<p>At 2nd level and higher, a Dervish Dancer gains an enhancement bonus to her speed. A Dervish Dancer in any armor heavier than light or carrying a medium or heavy load loses this bonus.</p>\n<h3>Spring Attack</h3>\n<p>At 2nd level, a Dervish Dancer gains the Spring Attack feat, even if she does not meet the prerequisites.</p>\n<h3>Dance Of Death</h3>\n<p>At 3rd level, a Dervish Dancer gains the benefit of the Cleave feat while performing a Dervish Dance, even if she does not meet the prerequisites for the feat. She does not have to move 5 feet before making the extra attack granted by this ability.</p>\n<h3>Improved Reaction</h3>\n<p>When she attains 4th level, a Dervish Dancer gains a +2 bonus on initiative rolls.</p>\n<h3>Elaborate Parry</h3>\n<p>When she attains 6th level, a Dervish Dancer gains an extra +4 bonus to Armor Class when she chooses to fight defensively or use all-out defense in melee combat, this is on top of her normal bonuses for these actions.</p>\n<h3>Tireless Dance</h3>\n<p>When a Dervish Dancer reaches 6th level, the character no longer becomes fatigued for the duration of the encounter at the end of a Dervish Dancer dance.</p>\n<h3>A Thousand Cuts</h3>\n<p>When a Dervish Dancer reaches 7th level, once per day she may double the number of melee attacks she makes while performing a full attack action (whether in a Dervish Dancer dance or not). If a Dervish Dancer uses this ability in conjunction with her Dervish Dancer dance, she can make up to two attacks between moves. The Dervish Dancer also gains the benefit of the Great Cleave feat with slashing weapons while performing a thousand cuts, even if she does not meet the prerequisites. She does not have to move 5 feet before making any extra attacks granted by this ability. A Dervish Dancer using this ability can receive an extra attack action.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

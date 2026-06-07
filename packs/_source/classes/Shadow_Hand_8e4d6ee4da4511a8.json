@@ -4,23 +4,17 @@
    "_stats" : {
       "compendiumSource" : null,
       "coreVersion" : "13.351",
-      "createdTime" : 1780757309682,
+      "createdTime" : 1780850000000,
       "duplicateSource" : null,
       "exportSource" : null,
-      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
-      "modifiedTime" : 1780764836276,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
       "systemId" : "pf1",
       "systemVersion" : "11.11"
    },
    "effects" : [],
-   "flags" : {
-      "pf1" : {
-         "links" : {
-            "classAssociations" : {}
-         }
-      }
-   },
-   "folder" : "Ai9gJMf1XW9zrD8G",
+   "flags" : {},
+   "folder" : "Ei6uGmYukb9vCaYd",
    "img" : "systems/pf1/icons/feats/stealthy.jpg",
    "name" : "Shadow Hand",
    "ownership" : {

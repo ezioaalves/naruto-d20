@@ -1,180 +1,180 @@
 {
-  "type": "class",
-  "system": {
-    "description": {
-      "value": "<h2>Strong Paragon</h2><p>The Strong paragon is a shinobi who favors Strength over all other attributes, but does not suffer for it. Taking levels in this class dramatically improves a character's potential for melee combat of all types, though with greater ease for styles that put emphasis on raw strength and physical power.</p><p>The Strong paragon is best used in situations that places him in melee combat.</p><h3>Examples of Strong Paragons</h3><p>Samurai and beastmasters all make good examples of Strong paragons. Any character who favors power over speed or booksmarts makes an excellent candidate for this class.</p><h3>Class Information</h3><p>The following information pertains to the Strong Paragon basic class.</p><h3>Ability</h3><p>Strength is the ability associated with this class of shinobi. Strong paragons tend to have higher Dexterity and Constitution to aid them in battle, as they increase saving throws, defense and hit points.</p><h3>Hit Die</h3><p>The Strong Paragon gains 1d8 hit points per level. The Constitution modifier applies.</p><h3>Action Points</h3><p>The Strong Paragon gains a number of action points equal to 5 + one-half his character level, rounded down, every time he attains a new level in this class.</p><h3>Class Skills</h3><p>The Strong Paragon's class skills, and the key ability for each are as follows. Climb (Str), Craft (structural) (Int), Genjutsu (Cha), Handle Animal (Cha), Jump (Str), Knowledge (current events, ninja lore, popular culture, streetwise, tactics) (Int), Profession (Wis), Read/Write Language (none), Repair (Int), Speak Language (none), Swim (Str) and Taijutsu (Str).</p><p>Also, the starting occupation the character selects can provide additional class skills to choose from.</p><p><strong>Skill Points at First Level:</strong> (3 + Int modifier) × 4.</p><p><strong>Skill Points at Each Level:</strong> 3 + Int modifier.</p><table><caption>Table: Strong Paragon</caption><thead><tr><th>Level</th><th>Base Attack Bonus</th><th>Fort Save</th><th>Ref Save</th><th>Will Save</th><th>Special</th><th>Defense Bonus</th><th>Reputation Bonus</th></tr></thead><tbody><tr><td>1st</td><td>+1</td><td>+2</td><td>+0</td><td>+0</td><td>Talent</td><td>+1</td><td>+0</td></tr><tr><td>2nd</td><td>+2</td><td>+3</td><td>+0</td><td>+0</td><td>Bonus feat</td><td>+2</td><td>+0</td></tr><tr><td>3rd</td><td>+3</td><td>+3</td><td>+1</td><td>+1</td><td>Talent</td><td>+2</td><td>+0</td></tr><tr><td>4th</td><td>+4</td><td>+4</td><td>+1</td><td>+1</td><td>Bonus feat</td><td>+3</td><td>+0</td></tr><tr><td>5th</td><td>+5</td><td>+4</td><td>+1</td><td>+1</td><td>Strength boost</td><td>+3</td><td>+1</td></tr></tbody></table><h3>Starting Feats</h3><p>In addition to the two feats all characters get at first level, a Strong paragon begins play with the Simple Weapon Proficiency feat.</p><p><em>Optional Rule:</em> Strong Paragons may begin play with proficiency in light and medium armors. Taking this class after first level grants no armor proficiency.</p><h3>Class Features</h3><p>The following features pertain to the Strong Paragon basic class.</p><h3>Talents</h3><p>At 1st and 3rd level, the Strong paragon selects a talent from the Strong hero base class' talent trees, or the following talent tree. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the paragon qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p><h3>Strong Prodigy Talent Tree</h3><p>The following talents can only be selected by the Strong paragon.</p><p><strong>Strong Prodigy:</strong> You can spend an action point once per encounter after making a successful melee attack. Instead of rolling damage, the attack automatically deals maximum damage. Only damage dice directly pertinent to the Strong paragon's basic melee attack obtain a maximum result.<br /><em>Prerequisite:</em> Genius Ninja, any Strong Hero talent.</p><h3>Bonus Feats</h3><p>At 2nd and 4th level, the Strong paragon gains a bonus feat. This feat must be selected from the Strong hero list of bonus feats, and the Strong paragon must meet any prerequisites.</p><h3>Strength Boost</h3><p>At 5th level, the Strong paragon's Strength score increases by 2 points.</p>",
-      "instructions": ""
-    },
-    "tags": [],
-    "changes": [
-      {
-        "type": "untyped",
-        "_id": "SgAc4P1x",
-        "operator": "add",
-        "priority": 0,
-        "target": "ac",
-        "formula": "floor(@item.level / 2) + 1"
+   "_id" : "sP7kR2mN8vQ4xL6a",
+   "_key" : "!items!sP7kR2mN8vQ4xL6a",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780759500000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "mIZLV3aRVXSMGsYi",
+      "modifiedTime" : 1780764836276,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {
+      "pf1" : {
+         "links" : {
+            "classAssociations" : {}
+         }
       }
-    ],
-    "changeFlags": {
-      "immuneToMorale": false,
-      "loseDexToAC": false,
-      "noMediumEncumbrance": false,
-      "noHeavyEncumbrance": false,
-      "mediumArmorFullSpeed": false,
-      "heavyArmorFullSpeed": false,
-      "lowLightVision": false,
-      "seeInvisibility": false,
-      "seeInDarkness": false
-    },
-    "contextNotes": [],
-    "links": {
-      "children": [],
-      "classAssociations": []
-    },
-    "tag": "",
-    "armorProf": [
-      "lgt",
-      "med"
-    ],
-    "weaponProf": [
-      "simple",
-      "Nin Weapon"
-    ],
-    "languages": [],
-    "flags": {
-      "boolean": {},
-      "dictionary": {}
-    },
-    "scriptCalls": [
-      {
-        "category": "changeLevel",
-        "type": "script",
-        "_id": "SgSc8V2m",
-        "name": "New Script Call",
-        "img": null,
-        "value": "",
-        "hidden": false
-      }
-    ],
-    "subType": "base",
-    "level": 1,
-    "hd": 8,
-    "hp": null,
-    "bab": "high",
-    "skillsPerLevel": 2,
-    "savingThrows": {
-      "fort": {
-        "value": "high"
+   },
+   "folder" : "e9v8Q2OS0jswXEGE",
+   "img" : "systems/pf1/icons/feats/athletic.jpg",
+   "name" : "Strong Paragon",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [
+         "lgt",
+         "med"
+      ],
+      "bab" : "high",
+      "casting" : {
+         "ability" : "int",
+         "cantrips" : false,
+         "domain" : null,
+         "offset" : null,
+         "progression" : "high",
+         "spells" : "arcane",
+         "type" : ""
       },
-      "ref": {
-        "value": "low"
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
       },
-      "will": {
-        "value": "low"
-      }
-    },
-    "fc": {
-      "hp": {
-        "value": 0
+      "changes" : [
+         {
+            "_id" : "SgAc4P1x",
+            "formula" : "floor(@item.level / 2) + 1",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : true,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : false,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
       },
-      "skill": {
-        "value": 0
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Strong Paragon</h1>\n<p>The Strong paragon is a shinobi who favors Strength over all other attributes, but does not suffer for it. Taking levels in this class dramatically improves a character's potential for melee combat of all types, though with greater ease for styles that put emphasis on raw strength and physical power.</p>\n<p>The Strong paragon is best used in situations that places him in melee combat.</p>\n<h2>Examples of Strong Paragons</h2>\n<p>Samurai and beastmasters all make good examples of Strong paragons. Any character who favors power over speed or booksmarts makes an excellent candidate for this class.</p>\n<h2>Class Information</h2>\n<p>The following information pertains to the Strong Paragon basic class.</p>\n<ul>\n<li><strong>Ability</strong>: Strength is the ability associated with this class of shinobi. Strong paragons tend to have higher Dexterity and Constitution to aid them in battle, as they increase saving throws, defense and hit points.</li>\n<li><strong>Hit Die</strong>: The Strong Paragon gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Strong Paragon gains a number of action points equal to 5 + one-half his character level, rounded down, every time he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: The Strong Paragon's class skills, and the key ability for each are as follows. Climb (Str), Craft (structural) (Int), Genjutsu (Cha), Handle Animal (Cha), Jump (Str), Knowledge (current events, ninja lore, popular culture, streetwise, tactics) (Int), Profession (Wis), Read/Write Language (none), Repair (Int), Speak Language (none), Swim (Str) and Taijutsu (Str). Also, the starting occupation the character selects can provide additional class skills to choose from.</li>\n<li><strong>Skill Points at First Level</strong>: (3 + Int modifier) × 4.</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Strong Paragon</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+2</td>\n<td>+0</td>\n<td>+0</td>\n<td>Talent</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+0</td>\n<td>+0</td>\n<td>Bonus feat</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>+1</td>\n<td>Talent</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+1</td>\n<td>+1</td>\n<td>Bonus feat</td>\n<td>+3</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+1</td>\n<td>+1</td>\n<td>Strength boost</td>\n<td>+3</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n<h2>Starting Feats</h2>\n<p>In addition to the two feats all characters get at first level, a Strong paragon begins play with the Simple Weapon Proficiency feat. <em>Optional Rule:</em> Strong Paragons may begin play with proficiency in light and medium armors. Taking this class after first level grants no armor proficiency.</p>\n<h2>Class Features</h2>\n<p>The following features pertain to the Strong Paragon basic class.</p>\n<h3>Talents</h3>\n<p>At 1st and 3rd level, the Strong paragon selects a talent from the Strong hero base class' talent trees, or the following talent tree. Some trees have a set order that must be followed, while others provide a list to choose from. As long as the paragon qualifies, he can select freely from any and all talent trees. No talent can be selected more than once unless expressly indicated.</p>\n<h3>Strong Prodigy Talent Tree</h3>\n<p>The following talents can only be selected by the Strong paragon.</p>\n<p><strong>Strong Prodigy:</strong> You can spend an action point once per encounter after making a successful melee attack. Instead of rolling damage, the attack automatically deals maximum damage. Only damage dice directly pertinent to the Strong paragon's basic melee attack obtain a maximum result. <em>Prerequisite:</em> Genius Ninja, any Strong Hero talent.</p>\n<h3>Bonus Feats</h3>\n<p>At 2nd and 4th level, the Strong paragon gains a bonus feat. This feat must be selected from the Strong hero list of bonus feats, and the Strong paragon must meet any prerequisites.</p>\n<h3>Strength Boost</h3>\n<p>At 5th level, the Strong paragon's Strength score increases by 2 points.</p>\n</article>"
       },
-      "alt": {
-        "value": 0,
-        "notes": ""
-      }
-    },
-    "wealth": "",
-    "alignment": "",
-    "classSkills": {
-      "acr": true,
-      "apr": false,
-      "art": false,
-      "blf": false,
-      "clm": true,
-      "crf": true,
-      "dip": false,
-      "dev": false,
-      "dis": false,
-      "esc": false,
-      "fly": false,
-      "han": true,
-      "hea": false,
-      "int": false,
-      "kar": true,
-      "kdu": false,
-      "ken": false,
-      "kge": false,
-      "khi": false,
-      "klo": true,
-      "kna": false,
-      "kno": false,
-      "kpl": false,
-      "kre": false,
-      "lin": true,
-      "lor": false,
-      "per": false,
-      "prf": false,
-      "pro": true,
-      "rid": false,
-      "sen": false,
-      "slt": false,
-      "spl": false,
-      "ste": false,
-      "sur": false,
-      "swm": true,
-      "umd": false,
-      "ckc": false,
-      "fui": false,
-      "gnj": true,
-      "nin": false,
-      "tai": true
-    },
-    "customHD": "",
-    "casting": {
-      "type": "",
-      "progression": "high",
-      "ability": "int",
-      "spells": "arcane",
-      "domain": null,
-      "offset": null,
-      "cantrips": false
-    },
-    "sources": [
-      {
-        "title": "Prodigy to Paragon",
-        "pages": ""
-      }
-    ]
-  },
-  "name": "Strong Paragon",
-  "_id": "sP7kR2mN8vQ4xL6a",
-  "img": "systems/pf1/icons/feats/athletic.jpg",
-  "effects": [],
-  "folder": "e9v8Q2OS0jswXEGE",
-  "flags": {
-    "pf1": {
-      "links": {
-        "classAssociations": {}
-      }
-    }
-  },
-  "_stats": {
-    "compendiumSource": null,
-    "duplicateSource": null,
-    "exportSource": null,
-    "coreVersion": "13.351",
-    "systemId": "pf1",
-    "systemVersion": "11.11",
-    "createdTime": 1780759500000,
-    "modifiedTime": 1780764836276,
-    "lastModifiedBy": "mIZLV3aRVXSMGsYi"
-  },
-  "ownership": {
-    "default": 0
-  },
-  "sort": 0,
-  "_key": "!items!sP7kR2mN8vQ4xL6a"
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "value" : "high"
+         },
+         "ref" : {
+            "value" : "low"
+         },
+         "will" : {
+            "value" : "low"
+         }
+      },
+      "scriptCalls" : [
+         {
+            "_id" : "SgSc8V2m",
+            "category" : "changeLevel",
+            "hidden" : false,
+            "img" : null,
+            "name" : "New Script Call",
+            "type" : "script",
+            "value" : ""
+         }
+      ],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Prodigy to Paragon"
+         }
+      ],
+      "subType" : "base",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : [
+         "simple",
+         "Nin Weapon"
+      ]
+   },
+   "type" : "class"
 }
