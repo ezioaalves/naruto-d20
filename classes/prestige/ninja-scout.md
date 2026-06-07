@@ -18,6 +18,21 @@ The following information pertains to the Ninja Scout advanced class.
 *   **Class Skills**: The Ninja Scout's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Disable Device (Int), Drive (Dex), Fuinjutsu (Int), Gather Information (Cha), Genjutsu (Cha), Hide (Dex), Jump (Str), Knowledge (current events, ninja lore, popular culture) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Pilot (Dex), Profession (Wis), Read Language (None), Ride (Dex), Search (Int), Sleight of Hand (Dex), Speak Language (None), Spot (Wis), Survival (Wis), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Ninja Scout
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +0 | +2 | +1 | Track | +1 | +0 | 1 / 2 |
+| 2nd | +1 | +0 | +3 | +2 | Sneak attack +1d6 | +2 | +0 | 2 / 4 |
+| 3rd | +2 | +1 | +3 | +2 | Bonus feat | +2 | +0 | 3 / 6 |
+| 4th | +3 | +1 | +4 | +2 | Increase speed (5 feet) | +3 | +0 | 4 / 8 |
+| 5th | +3 | +1 | +4 | +3 | Hide in plain sight | +4 | +1 | 5 / 10 |
+| 6th | +4 | +2 | +5 | +3 | Sneak attack +2d6, bonus feat | +4 | +1 | 6 / 12 |
+| 7th | +5 | +2 | +5 | +4 | Evasion X | +5 | +1 | 7 / 14 |
+| 8th | +6 | +2 | +6 | +4 | Increase speed (10 feet) | +6 | +1 | 8 / 16 |
+| 9th | +6 | +3 | +6 | +4 | Bonus feat | +6 | +2 | 9 / 18 |
+| 10th | +7 | +3 | +7 | +5 | Sneak attack +3d6, quicken technique | +7 | +2 | 10 / 20 |
+
 ## Class Features
 
 The following features pertain to the Ninja Scout advanced class.
@@ -25,25 +40,6 @@ The following features pertain to the Ninja Scout advanced class.
 ### Track
 
 A ninja must be proficient at tracking his foe down; losing one's pray means failure. At first level, the Ninja Scout gains the Track feat for free. In addition, the Ninja Scout can Track at his normal speed without taking a -5 penalty to his Survival check.
-
-### Bonus Chakra
-
-The Ninja Scout gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
-| 4th | 4 | 8 |
-| 5th | 5 | 10 |
-| 6th | 6 | 12 |
-| 7th | 7 | 14 |
-| 8th | 8 | 16 |
-| 9th | 9 | 18 |
-| 10th | 10 | 20 |
 
 ### Sneak Attack
 
@@ -74,18 +70,3 @@ At 7th level, the Ninja Scout is able to easily avoid traps, falling ceiling or 
 ### Quicken Technique
 
 At 10th level, the Ninja Scout gains the ability to perform quickened techniques. Once per day every odd-numbered level, the Ninja Scout can spend an action point to gain a quickened action to perform a Chakra Control, Genjutsu or Ninjutsu technique with a perform time no longer than 1 attack action. The Ninja Scout does not provoke an attack of opportunity for performing a quickened technique, and may take another action in the same round, even performing a second technique. The Ninja Scout can use this ability without spending an action point once per day, but can only gain one quickened action per round, no matter the type (see Basic Game Mechanics for rules on Quickened Actions).
-
-## Table: The Ninja Scout
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +2 | +1 | Track, bonus chakra | +1 | +0 |
-| 2nd | +1 | +0 | +3 | +2 | Sneak attack +1d6 | +2 | +0 |
-| 3rd | +2 | +1 | +3 | +2 | Bonus feat | +2 | +0 |
-| 4th | +3 | +1 | +4 | +2 | Increase speed (5 feet) | +3 | +0 |
-| 5th | +3 | +1 | +4 | +3 | Hide in plain sight | +4 | +1 |
-| 6th | +4 | +2 | +5 | +3 | Sneak attack +2d6, bonus feat | +4 | +1 |
-| 7th | +5 | +2 | +5 | +4 | Evasion X | +5 | +1 |
-| 8th | +6 | +2 | +6 | +4 | Increase speed (10 feet) | +6 | +1 |
-| 9th | +6 | +3 | +6 | +4 | Bonus feat | +6 | +2 |
-| 10th | +7 | +3 | +7 | +5 | Sneak attack +3d6, quicken technique | +7 | +2 |

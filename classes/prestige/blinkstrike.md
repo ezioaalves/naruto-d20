@@ -19,6 +19,16 @@ The following information pertains to the Blinkstrike prestige class.
 *   **Class Skills**: The Blinkstrike's class skills are as follows. Balance (Dex), Chakra Control (Wis), Jump (Str), Knowledge (current events, ninja lore, popular culture, tactics) (Int), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Speak Language (None), Spot (Wis), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Blinkstrike
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +1 | +0 | +2 | +0 | Blinkstrike +1 | +1 | +0 | 1 / 2 |
+| 2nd | +2 | +0 | +3 | +0 | Blink step 2/day | +2 | +0 | 2 / 4 |
+| 3rd | +3 | +1 | +3 | +1 | Blinkstrike +3 | +2 | +0 | 3 / 6 |
+| 4th | +4 | +1 | +4 | +1 | Evasion X, blink step 4/day | +3 | +0 | 4 / 8 |
+| 5th | +5 | +1 | +4 | +1 | Blinkstrike +5, warp charge | +4 | +0 | 5 / 10 |
+
 ## Class Features
 
 The following features pertain to the Blinkstrike prestige class.
@@ -32,20 +42,6 @@ While in the Blinkstrike stance, the character gains a dodge bonus to defense an
 The character may also spend 2 points of chakra as a swift action once per round to gain a bonus to his next attack roll equal to his Blinkstrike bonus halved, rounded up.
 
 This stance cannot be used when the character is sickened, staggered, exhausted, encumbered or wearing armor.
-
-### Bonus Chakra
-
-The Blinkstrike gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
-| 4th | 4 | 8 |
-| 5th | 5 | 10 |
 
 ### Blink Step
 
@@ -64,13 +60,3 @@ The Blinkstrike is able to charge using his astounding abilities. He appears to 
 The Blinkstrike is able to charge without provoking attacks of opportunity for moving in and out of threatened areas, and is also able to turn while charging, avoiding opponents or obstacles in his path and charge over difficult terrain while using this ability. The ability can also be coupled with techniques having a "Charge" range.
 
 Once per day, the blinkstrike can designate a warp charge as a powerful charge, and deal +3d6 points of bonus damage on a successful hit, not multiplied on a critical hit.
-
-## Table: The Blinkstrike
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +1 | +0 | +2 | +0 | Blinkstrike +1, bonus chakra | +1 | +0 |
-| 2nd | +2 | +0 | +3 | +0 | Blink step 2/day | +2 | +0 |
-| 3rd | +3 | +1 | +3 | +1 | Blinkstrike +3 | +2 | +0 |
-| 4th | +4 | +1 | +4 | +1 | Evasion X, blink step 4/day | +3 | +0 |
-| 5th | +5 | +1 | +4 | +1 | Blinkstrike +5, warp charge | +4 | +0 |

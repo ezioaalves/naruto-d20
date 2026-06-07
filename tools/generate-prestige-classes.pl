@@ -166,7 +166,7 @@ for my $path (@files) {
     will => identify_save($table->{will}, "$name Will"),
   };
   my $defense_formula = identify_defense($table->{defense}, $name);
-  my $chakra = extract_chakra($markdown, $name);
+  my $chakra = extract_chakra($markdown, $name, $table);
 
   my $id = $fixed_ids{$name} // substr(sha256_hex("naruto-d20 class $name"), 0, 16);
   my $slug = $name;
@@ -322,6 +322,7 @@ sub extract_main_table {
     $indexes{ref} = $index if $header eq "ref save";
     $indexes{will} = $index if $header eq "will save";
     $indexes{defense} = $index if $header eq "defense bonus";
+    $indexes{chakra} = $index if $header eq "chakra";
   }
   for my $column (qw(bab fort ref will defense)) {
     die "Missing $column column in main table for $name\n"
@@ -334,6 +335,8 @@ sub extract_main_table {
     ref => [],
     will => [],
     defense => [],
+    chakra_pool => [],
+    chakra_reserve => [],
   );
   for my $line (@lines) {
     next unless $line =~ /^\|\s*\d+(?:st|nd|rd|th)\s*\|/i;
@@ -342,6 +345,11 @@ sub extract_main_table {
       unless @cells == @headers;
     for my $column (qw(bab fort ref will defense)) {
       push @{$columns{$column}}, numeric_cell($cells[$indexes{$column}]);
+    }
+    if (defined $indexes{chakra}) {
+      my ($pool, $reserve) = chakra_cell($cells[$indexes{chakra}]);
+      push @{$columns{chakra_pool}}, $pool;
+      push @{$columns{chakra_reserve}}, $reserve;
     }
   }
   die "No main table levels for $name\n" unless @{$columns{bab}};
@@ -425,7 +433,11 @@ sub sequence_matches {
 }
 
 sub extract_chakra {
-  my ($markdown, $name) = @_;
+  my ($markdown, $name, $table) = @_;
+  if (@{$table->{chakra_pool}} && @{$table->{chakra_reserve}}) {
+    return identify_chakra($table->{chakra_pool}, $table->{chakra_reserve}, $name);
+  }
+
   return undef unless $markdown =~ /^###\s+Bonus Chakra\s*$/mi;
   my ($block) =
     $markdown =~ /^###\s+Bonus Chakra\s*\n.*?(\|[^\n]*Bonus Chakra[^\n]*(?:Bonus )?Reserve[^\n]*\n(?:\|[^\n]*\n)+)/msi;
@@ -445,6 +457,29 @@ sub extract_chakra {
     push @reserve, numeric_cell($cells[2]);
   }
 
+  return identify_chakra(\@pool, \@reserve, $name);
+}
+
+sub chakra_cell {
+  my ($cell) = @_;
+  $cell =~ s/^\s+|\s+$//g;
+  my ($pool, $reserve) = $cell =~ /([+-]?\d+|-)\s*\/\s*([+-]?\d+|-)/;
+  die "Expected Chakra table cell in 'pool / reserve' format, got '$cell'\n"
+    unless defined $pool && defined $reserve;
+  return (chakra_value($pool), chakra_value($reserve));
+}
+
+sub chakra_value {
+  my ($value) = @_;
+  return 0 if $value eq "-";
+  $value =~ /([+-]?\d+)/ or die "Expected numeric Chakra value, got '$value'\n";
+  return 0 + $1;
+}
+
+sub identify_chakra {
+  my ($pool_values, $reserve_values, $name) = @_;
+  my @pool = @$pool_values;
+  my @reserve = @$reserve_values;
   my @patterns = (
     [
       '@item.level',
@@ -463,6 +498,12 @@ sub extract_chakra {
       'max(2, @item.level)',
       sub { my $v = int($_[0] / 2); $v > 1 ? $v : 1 },
       sub { $_[0] > 2 ? $_[0] : 2 },
+    ],
+    [
+      'floor(@item.level / 2)',
+      '@item.level',
+      sub { int($_[0] / 2) },
+      sub { $_[0] },
     ],
   );
   for my $pattern (@patterns) {

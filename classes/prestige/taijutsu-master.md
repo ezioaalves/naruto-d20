@@ -20,6 +20,21 @@ The following information pertains to the Taijutsu Master advanced class.
 *   **Class Skills**: The Taijutsu Master's class skills are as follows. Balance (Dex), Climb (Str), Drive (Dex), Jump (Str), Knowledge (ninja lore) (Int), Profession (Wis), Read Language (None), Speak Language (None), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Taijutsu Master
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +1 | +2 | +1 | +0 | Unarmed attack | +1 | +0 |
+| 2nd | +2 | +3 | +2 | +0 | Taijutsu mastery | +2 | +0 |
+| 3rd | +3 | +3 | +2 | +1 | Bonus feat | +2 | +0 |
+| 4th | +4 | +4 | +2 | +1 | Unarmed attack, taijutsu mastery | +3 | +0 |
+| 5th | +5 | +4 | +3 | +1 | Sneak attack +1d6 | +4 | +1 |
+| 6th | +6 | +5 | +3 | +2 | Taijutsu mastery | +4 | +1 |
+| 7th | +7 | +5 | +4 | +2 | Unarmed attack | +5 | +1 |
+| 8th | +8 | +6 | +4 | +2 | Taijutsu mastery | +6 | +1 |
+| 9th | +9 | +6 | +4 | +3 | Bonus feat | +6 | +2 |
+| 10th | +10 | +7 | +5 | +3 | Taijutsu mastery, unarmed attack | +7 | +2 |
+
 ## Class Features
 
 The following features pertain to the Taijutsu Master advanced class.
@@ -62,18 +77,3 @@ At 3rd and 9th level, the Taijutsu Master gets a bonus feat. The bonus feat must
 This ability functions as the Ninja Scout sneak attack ability. If he can catch an opponent when he is unable to defend himself effectively from his attack, he can strike a vital spot for extra damage. Creatures immune to critical hits and sneak attacks, or who have concealment, do not suffer extra damage.
 
 This extra damage is 1d6 at 5th level and it does not increase from taking levels in this class. If the taijutsu gains a bonus to sneak attack from another source, the bonuses stack.
-
-## Table: The Taijutsu Master
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +1 | +2 | +1 | +0 | Unarmed attack | +1 | +0 |
-| 2nd | +2 | +3 | +2 | +0 | Taijutsu mastery | +2 | +0 |
-| 3rd | +3 | +3 | +2 | +1 | Bonus feat | +2 | +0 |
-| 4th | +4 | +4 | +2 | +1 | Unarmed attack, taijutsu mastery | +3 | +0 |
-| 5th | +5 | +4 | +3 | +1 | Sneak attack +1d6 | +4 | +1 |
-| 6th | +6 | +5 | +3 | +2 | Taijutsu mastery | +4 | +1 |
-| 7th | +7 | +5 | +4 | +2 | Unarmed attack | +5 | +1 |
-| 8th | +8 | +6 | +4 | +2 | Taijutsu mastery | +6 | +1 |
-| 9th | +9 | +6 | +4 | +3 | Bonus feat | +6 | +2 |
-| 10th | +10 | +7 | +5 | +3 | Taijutsu mastery, unarmed attack | +7 | +2 |

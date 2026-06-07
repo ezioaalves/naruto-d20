@@ -19,6 +19,18 @@ The following information pertains to the Master Strategist prestige class.
 *   **Class Skills**: The Master Strategist's class skills are as follows. Chakra Control (Wis), Concentration (Con), Craft (calligraphy, chemical) (Int), Decipher Script (Int), Demolitions (Int), Diplomacy (Cha), Forgery (Int), Fuinjutsu (Int), Gather Information (Cha), Genjutsu (Cha), Intimidate (Cha), Investigate (Int), Knowledge (all skills, taken individually) (Int), Listen (Wis), Navigate (Int), Ninjutsu (Int), Profession (Wis), Read/Write Language (none), Research (Int), Search (Int), Sense Motive (Wis), Speak Language (none), Spot (Wis), Taijutsu (Str).
 *   **Skill Points at Each Level**: 9 + Int modifier.
 
+## Table: The Master Strategist
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +0 | +2 | Improved plans | +1 | +1 | 1 / 2 |
+| 2nd | +1 | +2 | +0 | +3 | Strategic timing, bonus feat | +2 | +1 | 2 / 4 |
+| 3rd | +1 | +2 | +1 | +3 | Swift planning 1/day | +2 | +1 | 3 / 6 |
+| 4th | +2 | +2 | +1 | +4 | Declaration of war, tactical assessment, bonus feat | +3 | +2 | 4 / 8 |
+| 5th | +2 | +3 | +1 | +4 | Swift planning 2/day | +3 | +2 | 5 / 10 |
+| 6th | +3 | +3 | +2 | +5 | Tactical focus, bonus feat | +4 | +2 | 6 / 12 |
+| 7th | +3 | +4 | +2 | +5 | Checkmate | +4 | +3 | 7 / 14 |
+
 ## Class Features
 
 The following features pertain to the Master Strategist prestige class.
@@ -26,22 +38,6 @@ The following features pertain to the Master Strategist prestige class.
 ### Improved Plans
 
 When using the Plan ability, the master strategist adds any levels in this class to Smart Hero or Ninja Opertations Counter levels when making an Intelligence check. Increase the result of the plan by 1, regardless of the result of the Intelligence check. This ability does not stack with the Plan X ability.
-
-### Bonus Chakra
-
-The Master Strategist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
-| 4th | 4 | 8 |
-| 5th | 5 | 10 |
-| 6th | 6 | 12 |
-| 7th | 7 | 14 |
 
 ### Strategic Timing
 
@@ -74,15 +70,3 @@ This ability is a swift action and requires an action point to be activated, and
 ### Bonus Feat
 
 At 2nd, 4th and 6th level, the Master Strategist gets a bonus feat. The bonus feat must be selected from the following list, and the Master Strategist must meet all the prerequisites of the feat to select it. Chakra Penetration, Chuunin, Combat Tactics, Combat Throw, Deceptive, Defensive Martial Arts, Educated, Genin, Great Fortitude, Improved [Universal: Defensive Stance], Improved Avoidance, Deft Maneuvers, Improved Initiative, Insightful Reflexes, Iron Will, Jounin, Technique Focus, Training, Trustworthy, Unbalance Opponent, [Universal / Finesse Category].
-
-## Table: The Master Strategist
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +1 | +0 | +2 | Improved plans, bonus chakra | +1 | +1 |
-| 2nd | +1 | +2 | +0 | +3 | Strategic timing, bonus feat | +2 | +1 |
-| 3rd | +1 | +2 | +1 | +3 | Swift planning 1/day | +2 | +1 |
-| 4th | +2 | +2 | +1 | +4 | Declaration of war, tactical assessment, bonus feat | +3 | +2 |
-| 5th | +2 | +3 | +1 | +4 | Swift planning 2/day | +3 | +2 |
-| 6th | +3 | +3 | +2 | +5 | Tactical focus, bonus feat | +4 | +2 |
-| 7th | +3 | +4 | +2 | +5 | Checkmate | +4 | +3 |

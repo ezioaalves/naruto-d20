@@ -410,8 +410,16 @@ Naruto d20:
 - texto `gains 1dN hit points`;
 - lista iniciada por `class skills are as follows`;
 - linha `Skill Points at Each Level`;
-- tabela principal com `Base Attack Bonus`, saves e `Defense Bonus`;
-- seção `### Bonus Chakra` com tabela de pool e reserve, quando aplicável.
+- tabela principal `## Table: The Nome da classe`, antes de `## Class Features`,
+  com `Base Attack Bonus`, saves, `Defense Bonus` e `Reputation Bonus`;
+- coluna `Chakra` na tabela principal quando a classe conceder bônus de chakra,
+  usando o formato `Pool / Reserve` por nível, por exemplo `1 / 2` ou `- / +1`;
+- não usar uma seção separada `### Bonus Chakra` em novos documentos; o gerador
+  ainda aceita esse formato apenas como fallback para fontes antigas.
+
+Na coluna `Special`, não liste `bonus chakra` quando a mesma linha já tiver
+valor na coluna `Chakra`. O bônus é tratado como progressão mecânica da classe,
+não como feature textual separada.
 
 Antes de usar o gerador para um novo lote, revise no início do script:
 

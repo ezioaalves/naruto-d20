@@ -19,6 +19,16 @@ The following information pertains to the Devastator prestige class.
 *   **Class Skills**: The Devastator's class skills are as follows. Chakra Control (Wis), Concentration (Con), Craft (all skills taken individually) (Int), Decipher Script (Int), Diplomacy (Cha), Disable Device (Int), Drive (Dex), Demolitions (Int), Fuinjutsu (Int), Genjutsu (Cha), Intimidate (Cha), Investigate (Int), Knowledge (all skills taken individually) (Int), Ninjutsu (Int), Perform (sing, string instruments) (Cha), Profession (Wis), Read Language (None), Search (Int), Sign Language (None), Speak Language (None).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Devastator
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +0 | +1 | +2 | Unleashed power | +1 | +1 | 1 / 4 |
+| 2nd | +1 | +0 | +2 | +3 | Succession technique | +2 | +1 | 3 / 8 |
+| 3rd | +2 | +1 | +2 | +3 | Succession technique | +2 | +1 | 5 / 12 |
+| 4th | +3 | +1 | +2 | +4 | Succession technique | +3 | +2 | 7 / 16 |
+| 5th | +3 | +1 | +3 | +4 | Force of nature | +3 | +2 | 9 / 20 |
+
 ## Class Features
 
 The following features pertain to the Devastator prestige class.
@@ -26,20 +36,6 @@ The following features pertain to the Devastator prestige class.
 ### Unleashed Power
 
 The devastator is able to fire a blast of raw chakra as an attack action. The blast is a ranged touch attack with a long range (30 feet plus 15 feet every 2 levels) that deals 1d6 points of force damage per devastator level, plus 1d6 every point of chakra spent in it. The devastator cannot spend more than 1 point of chakra every 2 levels.
-
-### Bonus Chakra
-
-The Devastator gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
-| 4th | 7 | 16 |
-| 5th | 9 | 20 |
 
 ### Succession Technique
 
@@ -70,13 +66,3 @@ The devastator is able to spend a meta-chakra charge to deliver the full effects
 Once per day, the Devastator can activate this ability to become a vessel for immense power for a short duration by spending an action point to regain chakra. He taps his reserves for seemingly unlimited energy and can perform techniques without drawing from his chakra pool or chakra reserves.
 
 The Devastator is able to do so for 1 round × one-half the result of his action point (round down, minimum 1). At the end of the encounter or after 1 minute, his chakra reserve is reduced to 0 and his current chakra pool halved (minimum 1). The character may spend a second action point to lose only half his chakra reserve. This ability cannot be used while suffering from chakra depletion or while exhausted.
-
-## Table: The Devastator
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +1 | +2 | Unleashed power, bonus chakra | +1 | +1 |
-| 2nd | +1 | +0 | +2 | +3 | Succession technique | +2 | +1 |
-| 3rd | +2 | +1 | +2 | +3 | Succession technique | +2 | +1 |
-| 4th | +3 | +1 | +2 | +4 | Succession technique | +3 | +2 |
-| 5th | +3 | +1 | +3 | +4 | Force of nature | +3 | +2 |

@@ -21,6 +21,21 @@ The following information pertains to the Medical Specialist advanced class.
 *   **Class Skills**: The Medical Specialist's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con) Craft (chemical, pharmaceutical) (Int), Fuinjutsu (Int), Genjutsu (Cha), Hide (Dex), Jump (Str), Knowledge (earth and life science, current events, ninja lore, popular culture) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Speak Language (None), Spot (Wis), Survival (Wis), Treat Injury (Wis), Tumble (Dex).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Medical Specialist
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +0 | +1 | +2 | Medical ability, chakra scalpel 1d4 | +1 | +1 | 1 / 4 |
+| 2nd | +1 | +0 | +2 | +3 | Expert healer, bonus feat | +1 | +1 | 3 / 8 |
+| 3rd | +2 | +1 | +2 | +3 | Sneak attack +1d6 | +2 | +1 | 5 / 12 |
+| 4th | +3 | +1 | +2 | +4 | Bonus feat | +2 | +2 | 7 / 16 |
+| 5th | +3 | +1 | +3 | +4 | Chakra scalpel expertise | +3 | +2 | 9 / 20 |
+| 6th | +4 | +2 | +3 | +5 | Bonus feat | +3 | +2 | 11 / 24 |
+| 7th | +5 | +2 | +4 | +5 | Medical mastery | +4 | +3 | 13 / 28 |
+| 8th | +6 | +2 | +4 | +6 | Sneak attack +2d6 | +4 | +3 | 15 / 32 |
+| 9th | +6 | +3 | +4 | +6 | Chakra scalpel 1d6 | +5 | +3 | 17 / 36 |
+| 10th | +7 | +3 | +5 | +7 | Empower healing | +5 | +4 | 19 / 40 |
+
 ## Class Features
 
 The following features pertain to the Medical Specialist advanced class.
@@ -32,25 +47,6 @@ This ability of the Medical Specialist enables him to learn Medical techniques w
 In addition, the Medical Specialist, when using any of the *Iryou Ninjutsu: Chiyu* techniques, heals the target every 5 rounds rather than every minute. The duration of the techniques change accordingly (see *Iryou Ninjutsu: Chiyu - Shodan Jutsu* for details).
 
 A medical specialist of level 2, 4, 6 and 8 gains greater proficiency with the *Chiyu* techniques and is able to "discharge" the technique in one large burst of healing energy. See *Iryou Ninjutsu: Chiyu - Shodan, Nidan, Sandan and Yondan Jutsu* for details.
-
-### Bonus Chakra
-
-The Medical Specialist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
-| 4th | 7 | 16 |
-| 5th | 9 | 20 |
-| 6th | 11 | 24 |
-| 7th | 13 | 28 |
-| 8th | 15 | 32 |
-| 9th | 17 | 36 |
-| 10th | 19 | 40 |
 
 ### Chakra Scalpel
 
@@ -89,18 +85,3 @@ When making a Treat Injury skill check, a Medical Specialist of 7th level or hig
 ### Empower Healing
 
 For a Medical Specialist, focus and control enables him to go one step farther and exceed his limit. At 10th level, the Medical Specialist may, at the expenses of an action point, perform a Medical technique as though empowered by the meta-chakra feat of the same name. The perform requirements are automatically met with empowered healing.
-
-## Table: The Medical Specialist
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +1 | +2 | Medical ability, chakra scalpel 1d4, bonus chakra | +1 | +1 |
-| 2nd | +1 | +0 | +2 | +3 | Expert healer, bonus feat | +1 | +1 |
-| 3rd | +2 | +1 | +2 | +3 | Sneak attack +1d6 | +2 | +1 |
-| 4th | +3 | +1 | +2 | +4 | Bonus feat | +2 | +2 |
-| 5th | +3 | +1 | +3 | +4 | Chakra scalpel expertise | +3 | +2 |
-| 6th | +4 | +2 | +3 | +5 | Bonus feat | +3 | +2 |
-| 7th | +5 | +2 | +4 | +5 | Medical mastery | +4 | +3 |
-| 8th | +6 | +2 | +4 | +6 | Sneak attack +2d6 | +4 | +3 |
-| 9th | +6 | +3 | +4 | +6 | Chakra scalpel 1d6 | +5 | +3 |
-| 10th | +7 | +3 | +5 | +7 | Empower healing | +5 | +4 |

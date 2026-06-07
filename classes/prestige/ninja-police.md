@@ -18,6 +18,21 @@ The following information pertains to the Ninja Police advanced class.
 *   **Class Skills**: The Ninja Police's class skills are as follows. Balance (Dex), Bluff (Cha), Chakra Control (Wis), Concentration (Con), Drive (Dex), Forgery (Int), Fuinjutsu (Int), Genjutsu (Cha), Gather Information (Cha), Hide (Dex), Intimidate (Cha), Investigate (Wis), Jump (Str), Knowledge (all skills taken individually) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Pilot (Dex), Profession (Wis), Read Language (None), Research (Int), Ride (Dex), Search (Int), Sense Motive (Wis), Sleight of Hand (Dex), Speak Language (None), Spot (Wis), Survival (Wis), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 7 + Int modifier.
 
+## Table: The Ninja Police
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +1 | +1 | Profile, street savvy | +1 | +1 | 1 / 2 |
+| 2nd | +1 | +2 | +2 | +2 | Contact, low level | +1 | +1 | 2 / 4 |
+| 3rd | +2 | +2 | +2 | +2 | Bonus feat | +2 | +1 | 3 / 6 |
+| 4th | +3 | +2 | +2 | +2 | Sneak attack +1d6 | +2 | +2 | 4 / 8 |
+| 5th | +3 | +3 | +3 | +3 | Bonus feat | +3 | +2 | 5 / 10 |
+| 6th | +4 | +3 | +3 | +3 | Contact, med-level | +3 | +2 | 6 / 12 |
+| 7th | +5 | +4 | +4 | +4 | Bonus feat | +4 | +3 | 7 / 14 |
+| 8th | +6 | +4 | +4 | +4 | Sneak attack +2d6 | +4 | +3 | 8 / 16 |
+| 9th | +6 | +4 | +4 | +4 | Contact, high level | +5 | +3 | 9 / 18 |
+| 10th | +7 | +5 | +5 | +5 | Anticipate | +5 | +4 | 10 / 20 |
+
 ## Class Features
 
 The following features pertain to the Ninja Police advanced class.
@@ -44,25 +59,6 @@ The GM may determine that having 5 or more ranks in a Knowledge check grants the
 | 20 | Uncommon but available, known by only a few people legends. |
 | 25 | Obscure, known by few, hard to come by. |
 | 30 | Extremely obscure, known by very few, possibly forgotten by most who once knew it, possibly known only by those who don't understand the significance of the knowledge. |
-
-### Bonus Chakra
-
-The Ninja Police gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
-| 4th | 4 | 8 |
-| 5th | 5 | 10 |
-| 6th | 6 | 12 |
-| 7th | 7 | 14 |
-| 8th | 8 | 16 |
-| 9th | 9 | 18 |
-| 10th | 10 | 20 |
 
 ### Contact
 
@@ -91,18 +87,3 @@ This extra damage is 1d6 at 4th level, and it increases by 1d6 every 4 levels th
 At 10th level, the Ninja Police is so adept at predicting the enemies reaction that he can easily react appropriately to counter it. At the beginning of a round, the Ninja Police may spend an action point to act at the same time as the enemy in the initiative grid; he must declare the enemy when he uses this ability, and must have been fighting said enemy for more than 3 rounds or be well acquainted with him.
 
 The Ninja Police gains a +4 insight bonus to attack and damage rolls, defense and any skill checks made to intercept the opponent. On the next round, the initiative order returns to normal. Using this ability is a free action that does not provoke an attack of opportunity.
-
-## Table: The Ninja Police
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +1 | +1 | +1 | Profile, street savvy, bonus chakra | +1 | +1 |
-| 2nd | +1 | +2 | +2 | +2 | Contact, low level | +1 | +1 |
-| 3rd | +2 | +2 | +2 | +2 | Bonus feat | +2 | +1 |
-| 4th | +3 | +2 | +2 | +2 | Sneak attack +1d6 | +2 | +2 |
-| 5th | +3 | +3 | +3 | +3 | Bonus feat | +3 | +2 |
-| 6th | +4 | +3 | +3 | +3 | Contact, med-level | +3 | +2 |
-| 7th | +5 | +4 | +4 | +4 | Bonus feat | +4 | +3 |
-| 8th | +6 | +4 | +4 | +4 | Sneak attack +2d6 | +4 | +3 |
-| 9th | +6 | +4 | +4 | +4 | Contact, high level | +5 | +3 |
-| 10th | +7 | +5 | +5 | +5 | Anticipate | +5 | +4 |

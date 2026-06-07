@@ -19,6 +19,18 @@ The following information pertains to the Genjutsu Master prestige class.
 *   **Class Skills**: The Genjutsu Master's class skills are as follows. Bluff (Cha), Chakra Control (Wis), Concentration (Con), Craft (calligraphy, chemical) (Int), Decipher Script (Int), Genjutsu (Cha), Hide (Dex), Knowledge (behavioral science, current events, earth and life science, history, ninja lore, physical science, popular culture) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Read Language (None), Research (Int), Search (Int), Speak Language (None), Spot (Wis), Tumble (Dex).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Genjutsu Master
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +0 | +2 | Genjutsu mastery | +1 | +1 | 1 / 4 |
+| 2nd | +1 | +2 | +0 | +3 | Bonus feat | +2 | +1 | 3 / 8 |
+| 3rd | +2 | +2 | +1 | +3 | Genjutsu mastery, sneak attack +1d6 | +2 | +1 | 5 / 12 |
+| 4th | +3 | +2 | +1 | +4 | Bonus feat | +3 | +2 | 7 / 16 |
+| 5th | +3 | +3 | +1 | +4 | Genjutsu mastery | +3 | +2 | 9 / 20 |
+| 6th | +4 | +3 | +2 | +5 | Quicken illusion | +4 | +2 | 11 / 24 |
+| 7th | +5 | +4 | +2 | +5 | Genjutsu mastery, sneak attack +2d6 | +4 | +3 | 13 / 28 |
+
 ## Class Features
 
 The following features pertain to the Genjutsu Master prestige class.
@@ -39,22 +51,6 @@ As per his very name, the Genjutsu Master specializes in Genjutsu and all the fi
 *   **Resilient Genjutsu (requires 1 other Genjutsu Mastery)**: The dispel check DC to dispel the genjutsu master's Genjutsu technique increases by 1 every odd-numbered levels.
 *   **Subdued Illusion (requires 1 other Genjutsu Mastery)**: The Genjutsu Master is able to increase the Genjutsu check DC made to identify his genjutsu techniques by 5.
 
-### Bonus Chakra
-
-The Genjutsu Master gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
-| 4th | 7 | 16 |
-| 5th | 9 | 20 |
-| 6th | 11 | 24 |
-| 7th | 13 | 28 |
-
 ### Sneak Attack
 
 This ability functions as the Ninja Scout sneak attack ability. If he can catch an opponent when he is unable to defend himself effectively from his attack, he can strike a vital spot for extra damage. Creatures immune to critical hits and sneak attacks, or who have concealment, do not suffer extra damage.
@@ -68,15 +64,3 @@ At 2nd and 4th level, the Genjutsu Master gets a bonus feat. The bonus feat must
 ### Quicken Illusion
 
 Three times per day, the Genjutsu Master can perform a Genjutsu technique as a quickened action, provided the technique's perform time is no longer than 1 full-round action. The perform requirements of the technique are automatically met, and performing the technique does not provoke an attack of opportunity. This enables the genjutsu master to take other actions, even performing a second technique, in the same round as he performed a quickened technique. The genjutsu master can only gain one quickened action per round, no matter the type (see Basic Game Mechanics for rules on Quickened Actions).
-
-## Table: The Genjutsu Master
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +1 | +0 | +2 | Genjutsu mastery, bonus chakra | +1 | +1 |
-| 2nd | +1 | +2 | +0 | +3 | Bonus feat | +2 | +1 |
-| 3rd | +2 | +2 | +1 | +3 | Genjutsu mastery, sneak attack +1d6 | +2 | +1 |
-| 4th | +3 | +2 | +1 | +4 | Bonus feat | +3 | +2 |
-| 5th | +3 | +3 | +1 | +4 | Genjutsu mastery | +3 | +2 |
-| 6th | +4 | +3 | +2 | +5 | Quicken illusion | +4 | +2 |
-| 7th | +5 | +4 | +2 | +5 | Genjutsu mastery, sneak attack +2d6 | +4 | +3 |

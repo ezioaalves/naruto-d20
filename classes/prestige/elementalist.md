@@ -19,6 +19,18 @@ The following information pertains to the Elementalist prestige class.
 *   **Class Skills**: The Elementalist's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Craft (chemical) (Int), Hide (Dex), Knowledge (current events, history, ninja lore, physical science, popular culture) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Search (Int), Speak Language (None), Spot (Wis), Tumble (Dex).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Elementalist
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +0 | +1 | +2 | Element specialization | +1 | +1 | 1 / 4 |
+| 2nd | +1 | +0 | +2 | +3 | Elemental fury | +1 | +1 | 3 / 8 |
+| 3rd | +2 | +1 | +2 | +3 | Limitless fury | +2 | +1 | 5 / 12 |
+| 4th | +3 | +1 | +2 | +4 | Bonus feat | +2 | +2 | 7 / 16 |
+| 5th | +3 | +1 | +3 | +4 | Rage of the elements | +3 | +2 | 9 / 20 |
+| 6th | +4 | +2 | +3 | +5 | Elemental focus | +3 | +2 | 11 / 24 |
+| 7th | +5 | +2 | +4 | +5 | Elemental surge | +4 | +3 | 13 / 28 |
+
 ## Class Features
 
 The following features pertain to the Elementalist prestige class.
@@ -30,22 +42,6 @@ A character may take this class more than once. Its effects don't stack, but he 
 ### Element Specialization
 
 At first level, the elementalist may chose one element he wishes to Specialize in. He may chose from any of his elemental affinities. He gains a +2 bonus to his Ninjutsu checks and +1 enhancement bonus to his effective skill threshold with techniques with the appropriate descriptor. Because of his deficiency with the opposed element, he suffers a -2 penalty to his Ninjutsu and Learn checks and perform requirements with techniques of the element his chosen element isweak against (see Elemental Chakra Nature for details).
-
-### Bonus Chakra
-
-The Elementalist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
-| 4th | 7 | 16 |
-| 5th | 9 | 20 |
-| 6th | 11 | 24 |
-| 7th | 13 | 28 |
 
 ### Elemental Fury
 
@@ -72,15 +68,3 @@ At 6th level, the elementalist becomes so focused in his specialized element tha
 ### Elemental Surge
 
 Three times per day, the Elementalist can perform a Ninjutsu technique from his chosen element as a quickened action, provided the technique's perform time is no longer than 1 full-round action. The perform requirements of the technique are automatically met, and performing the technique does not provoke an attack of opportunity. This enables the elementalist to take other actions, even performing a second technique, in the same round as he performed a quickened technique. The elementalist can only gain one quickened action per round, no matter the type (see Basic Game Mechanics for rules on Quickened Actions).
-
-## Table: The Elementalist
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +1 | +2 | Element specialization, bonus chakra | +1 | +1 |
-| 2nd | +1 | +0 | +2 | +3 | Elemental fury | +1 | +1 |
-| 3rd | +2 | +1 | +2 | +3 | Limitless fury | +2 | +1 |
-| 4th | +3 | +1 | +2 | +4 | Bonus feat | +2 | +2 |
-| 5th | +3 | +1 | +3 | +4 | Rage of the elements | +3 | +2 |
-| 6th | +4 | +2 | +3 | +5 | Elemental focus | +3 | +2 |
-| 7th | +5 | +2 | +4 | +5 | Elemental surge | +4 | +3 |

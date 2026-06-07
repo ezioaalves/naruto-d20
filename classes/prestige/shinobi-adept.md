@@ -18,6 +18,14 @@ The following information pertains to the Shinobi Adept advanced class.
 *   **Class Skills**: The Shinobi Adept's class skills are as follows. Chakra Control (Wis), Concentration (Con), Decipher Script (Int), Disable Device (Int), Drive (Dex), Demolitions (Int), Fuinjutsu (Int), Genjutsu (Cha), Hide (Dex), Listen (Wis), Knowledge (behavioral sciences, earth and life science, history, ninja lore, physical sciences, popular culture, tactics, theology and phylosophy) (Int), Move Silently (Dex), Ninjutsu (Int), Perform (sing, string instruments) (Cha), Profession (Wis), Read Language (None), Search (Int), Sign Language (None), Sleight of Hand (Dex), Speak Language (None), Spot (Wis), Taijutsu (Str).
 *   **Skill Points at Each Level**: 7 + Int modifier.
 
+## Table: The Shinobi Adept
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +1 | +1 | Combat tactics | +1 | +1 | 1 / 4 |
+| 2nd | +1 | +2 | +2 | +2 | Technique adept, bonus feat | +1 | +1 | 3 / 8 |
+| 3rd | +1 | +2 | +2 | +2 | Chakra endurance, evasion | +2 | +1 | 5 / 12 |
+
 ## Class Features
 
 The following features pertain to the Shinobi Adept advanced class.
@@ -25,18 +33,6 @@ The following features pertain to the Shinobi Adept advanced class.
 ### Combat Tactics
 
 The Shinobi Adept gains the Combat Tactics feat for free. If he already has the Combat Tactics feat, he may select a feat from his list of bonus feats instead.
-
-### Bonus Chakra
-
-The Shinobi Adept gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
 
 ### Technique Adept
 
@@ -55,11 +51,3 @@ The Shinobi Adept gains a +2 bonus to Chakra Control checks made to tap reserves
 ### Evasion
 
 The Shinobi Adept is proficient in his own weapons and seldom gets grieviously wounded by it. When exposed to an ability that allows the shinobi adept to attempt a Reflex save for half damage, he takes no damage instead. This ability can only be used when wearing light armor or no armor.
-
-## Table: The Shinobi Adept
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +1 | +1 | +1 | Combat tactics, bonus chakra | +1 | +1 |
-| 2nd | +1 | +2 | +2 | +2 | Technique adept, bonus feat | +1 | +1 |
-| 3rd | +1 | +2 | +2 | +2 | Chakra endurance, evasion | +2 | +1 |

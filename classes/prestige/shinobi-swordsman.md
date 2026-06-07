@@ -22,6 +22,21 @@ The following information pertains to the Shinobi Swordsman advanced class.
 *   **Class Skills**: The Shinobi Swordsman's class skills are as follows. Balance (Dex), Climb (Str), Concentration (Con), Drive (Dex), Hide (Dex), Jump (Str), Knowledge (ninja lore, streetwise, tactics) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Read Language (None), Ride (Dex), Sleight of Hands (Dex), Speak Language (None), Spot (Wis), Survival (Wis), Swim (Str), Taijutsu (Str) and Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Shinobi Swordsman
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +1 | +2 | +0 | +0 | Weapon focus | +1 | +0 |
+| 2nd | +2 | +3 | +0 | +0 | Quick draw | +1 | +0 |
+| 3rd | +3 | +3 | +1 | +1 | Invisible strike, bonus feat | +2 | +0 |
+| 4th | +4 | +4 | +1 | +1 | Sneak attack +1d6 | +2 | +0 |
+| 5th | +5 | +4 | +1 | +1 | Weapon specialization | +3 | +1 |
+| 6th | +6 | +5 | +2 | +2 | Greater weapon focus, bonus feat | +3 | +1 |
+| 7th | +7 | +5 | +2 | +2 | Power of the elite | +4 | +1 |
+| 8th | +8 | +6 | +2 | +2 | Sneak attack +2d6 | +4 | +1 |
+| 9th | +9 | +6 | +3 | +3 | Improved critical, bonus feat | +5 | +2 |
+| 10th | +10 | +7 | +3 | +3 | Greater weapon specialization | +5 | +2 |
+
 ## Class Features
 
 The following features pertain to the Shinobi Swordsman advanced class.
@@ -73,18 +88,3 @@ The affinity between the Shinobi Swordsman and his weapon is taken to further he
 ### Greater Weapon Specialization
 
 As per ability obtained on 5th level, the Shinobi Swordsman's bonus to damage with his chosen weapon increases to +4.
-
-## Table: The Shinobi Swordsman
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +1 | +2 | +0 | +0 | Weapon focus | +1 | +0 |
-| 2nd | +2 | +3 | +0 | +0 | Quick draw | +1 | +0 |
-| 3rd | +3 | +3 | +1 | +1 | Invisible strike, bonus feat | +2 | +0 |
-| 4th | +4 | +4 | +1 | +1 | Sneak attack +1d6 | +2 | +0 |
-| 5th | +5 | +4 | +1 | +1 | Weapon specialization | +3 | +1 |
-| 6th | +6 | +5 | +2 | +2 | Greater weapon focus, bonus feat | +3 | +1 |
-| 7th | +7 | +5 | +2 | +2 | Power of the elite | +4 | +1 |
-| 8th | +8 | +6 | +2 | +2 | Sneak attack +2d6 | +4 | +1 |
-| 9th | +9 | +6 | +3 | +3 | Improved critical, bonus feat | +5 | +2 |
-| 10th | +10 | +7 | +3 | +3 | Greater weapon specialization | +5 | +2 |

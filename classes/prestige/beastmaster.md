@@ -19,6 +19,21 @@ The following information pertains to the Beastmaster advanced class.
 *   **Class Skills**: The Beastmaster's class skills are as follows. Balance (Dex), Climb (Str), Handle Animal (Cha), Hide (Dex), Intimidate (Cha), Jump (Str), Listen (Wis), Move Silently (Dex), Profession (Wis), Spot (Wis), Survival (Wis), Swim (Str), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Beastmaster
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +1 | +2 | +1 | +0 | Frenzy 1/day | +1 | +0 |
+| 2nd | +2 | +3 | +2 | +0 | Feral combat 1d6, inspire frenzy | +1 | +0 |
+| 3rd | +3 | +3 | +2 | +1 | Speak with animals | +2 | +0 |
+| 4th | +4 | +4 | +2 | +1 | Amazing tricks +2 | +2 | +0 |
+| 5th | +5 | +4 | +3 | +1 | Frenzy 2/day | +3 | +1 |
+| 6th | +6 | +5 | +3 | +2 | Feral combat 1d8 | +3 | +1 |
+| 7th | +7 | +5 | +4 | +2 | Greater frenzy | +4 | +1 |
+| 8th | +8 | +6 | +4 | +2 | Amazing tricks +4 | +4 | +1 |
+| 9th | +9 | +6 | +4 | +3 | Frenzy 3/day | +5 | +2 |
+| 10th | +10 | +7 | +5 | +3 | Feral combat 1d10, animal aspect | +5 | +2 |
+
 ## Class Features
 
 The following features pertain to the Beastmaster advanced class.
@@ -78,18 +93,3 @@ At 10th level, the beastmaster is able to manifest an aspect of his animal compa
 *   **Wolf**: The Beastmaster gains the Scent exceptional ability, and a +4 bonus to Survival checks made when tracking.
 
 If the beastmaster has more than one animal companion, the animal aspect can be changed once per day. It requires the beastmaster to meditate for 1 minute.
-
-## Table: The Beastmaster
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +1 | +2 | +1 | +0 | Frenzy 1/day | +1 | +0 |
-| 2nd | +2 | +3 | +2 | +0 | Feral combat 1d6, inspire frenzy | +1 | +0 |
-| 3rd | +3 | +3 | +2 | +1 | Speak with animals | +2 | +0 |
-| 4th | +4 | +4 | +2 | +1 | Amazing tricks +2 | +2 | +0 |
-| 5th | +5 | +4 | +3 | +1 | Frenzy 2/day | +3 | +1 |
-| 6th | +6 | +5 | +3 | +2 | Feral combat 1d8 | +3 | +1 |
-| 7th | +7 | +5 | +4 | +2 | Greater frenzy | +4 | +1 |
-| 8th | +8 | +6 | +4 | +2 | Amazing tricks +4 | +4 | +1 |
-| 9th | +9 | +6 | +4 | +3 | Frenzy 3/day | +5 | +2 |
-| 10th | +10 | +7 | +5 | +3 | Feral combat 1d10, animal aspect | +5 | +2 |

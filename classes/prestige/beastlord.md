@@ -20,6 +20,14 @@ The following information pertains to the Beastlord prestige class.
 *   **Class Skills**: The Beastlord's class skills are as follows. Balance (Dex), Climb (Str), Handle Animal (Cha), Intimidate (Cha), Jump (Str), Listen (Wis), Profession (Wis), Spot (Wis), Survival (Wis), Swim (Str), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Beastlord
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +1 | +2 | +2 | +0 | Extra animal companion -3 | +1 | +0 |
+| 2nd | +2 | +3 | +3 | +0 | Aspect of the pack | +1 | +0 |
+| 3rd | +3 | +3 | +3 | +1 | Extra animal companion -6, low-light vision | +2 | +0 |
+
 ## Class Features
 
 The following features pertain to the Beastlord prestige class.
@@ -37,11 +45,3 @@ The Beastlord and his animal companions gain a +3 circumstance bonus to attack r
 ### Low-light Vision
 
 The Beastlord gains a low-light vision that allows him to see twice as far as normal in conditions of shadowy illumination (torchlight, starlight, etc).
-
-## Table: The Beastlord
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special                                     | Defense Bonus | Reputation Bonus |
-| :---- | :---------------- | :-------- | :------- | :-------- | :------------------------------------------ | :------------ | :--------------- |
-| 1st   | +1                | +2        | +2       | +0        | Extra animal companion -3                   | +1            | +0               |
-| 2nd   | +2                | +3        | +3       | +0        | Aspect of the pack                          | +1            | +0               |
-| 3rd   | +3                | +3        | +3       | +1        | Extra animal companion -6, low-light vision | +2            | +0               |

@@ -3,33 +3,31 @@
 The rising star is a legend in the making. Though he isn't excellent at any one thing, he is good at virtually everything. He can inspire his allies, come up with effective battle strategies and make the most out of his enemy's weaknesses. This class is easily accessible from any of the basic classes, but requires the Genius Ninja feat taken at first level.
 
 ## Requirements
+
 To qualify to become a rising star, a character must fulfill all the following criteria.
-**Skills:** Any two of the following skills: Chakra Control 9 ranks, Fuinjutsu 9 ranks, Genjutsu 9 ranks, Knowledge (ninja lore) 9 ranks, Ninjutsu 9 ranks, Taijutsu 9 ranks.
-**Feats:** Genius Ninja.
+
+*   **Skills**: Any two of the following skills: Chakra Control 9 ranks, Fuinjutsu 9 ranks, Genjutsu 9 ranks, Knowledge (ninja lore) 9 ranks, Ninjutsu 9 ranks, Taijutsu 9 ranks.
+*   **Feats**: Genius Ninja.
 
 ## Class Information
+
 The following information pertains to the Rising Star prestige class.
 
-**Hit Die**
-The Rising Star gains 1d6 hit points per level. The Constitution modifier applies.
+*   **Hit Die**: The Rising Star gains 1d6 hit points per level. The Constitution modifier applies.
+*   **Action Points**: The Rising Star gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.
+*   **Class Skills**: The Rising Star's class skills are as follows. Balance (Dex), Bluff (Cha), Chakra Control (Wis), Concentration (Con), Craft (calligraphy, chemical, mechanical, pharmaceutical) (Int), Decipher Script (Int), Demolitions (Int), Forgery (Int), Fuinjutsu (Int), Gather Information (Cha), Genjutsu (Cha), Hide (Dex), Intimidate (Cha), Knowledge (all skills, taken individually) (Int), Listen (Wis), Move Silently (Dex), Navigate (Int), Ninjutsu (Int), Perform (Cha), Profession (Wis), Read/Write Language (none), Repair (Int), Research (Int), Search (Int), Speak Language (none), Spot (Wis), Taijutsu (Str), Tumble (Dex).
+*   **Skill Points at Each Level**: 7 + Int modifier.
 
-**Action Points**
-The Rising Star gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.
+## Table: The Rising Star
 
-**Class Skills**
-The Rising Star's class skills are as follows.
-Balance (Dex), Bluff (Cha), Chakra Control (Wis), Concentration (Con), Craft (calligraphy, chemical, mechanical, pharmaceutical) (Int), Decipher Script (Int), Demolitions (Int), Forgery (Int), Fuinjutsu (Int), Gather Information (Cha), Genjutsu (Cha), Hide (Dex), Intimidate (Cha), Knowledge (all skills, taken individually) (Int), Listen (Wis), Move Silently (Dex), Navigate (Int), Ninjutsu (Int), Perform (Cha), Profession (Wis), Read/Write Language (none), Repair (Int), Research (Int), Search (Int), Speak Language (none), Spot (Wis), Taijutsu (Str), Tumble (Dex).
-**Skill Points at Each Level:** 7 + Int modifier.
-
-### TABLE: THE RISING STAR
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :---: | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
-| 1st | +0 | +1 | +1 | +1 | Show-off, bonus chakra | +1 | +2 |
-| 2nd | +1 | +2 | +2 | +2 | Bonus feat | +2 | +2 |
-| 3rd | +2 | +2 | +2 | +2 | Legend in the making | +2 | +2 |
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +1 | +1 | Show-off | +1 | +2 | 1 / 2 |
+| 2nd | +1 | +2 | +2 | +2 | Bonus feat | +2 | +2 | 2 / 4 |
+| 3rd | +2 | +2 | +2 | +2 | Legend in the making | +2 | +2 | 3 / 6 |
 
 ## Class Features
+
 The following features pertain to the Rising Star prestige class.
 
 ### Show-Off
@@ -38,17 +36,6 @@ At 1st level, the rising star gains the ability to make his successes in anythin
 Any affected ally gains a bonus equal to one-half the result of the action point, rounded down, on his next attack roll, saving throw, skill check or ability check (whichever triggered the ability). The bonus cannot exceed the rising star's level in this class and applies to any roll that fits the description (a successful Balance check, for example, would affect all skill checks). The effects fade at the end of the encounter if not used before then.
 
 The GM should note, however, that while any success can trigger this ability, Show-Off should not be used outside the context of an otherwise normal activity. Any action which has no purpose other than to make use of Show-Off fails automatically.
-
-### Bonus Chakra
-The Rising Star gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :---: | :---: | :---: |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
 
 ### Bonus Feat
 At 2nd level, the Rising Star gets a bonus feat. The bonus feat must be selected from the following list or any previous list of bonus feats from existing class levels, and the Rising Star must meet all the prerequisites of the feat to select it.

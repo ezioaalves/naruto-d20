@@ -18,6 +18,16 @@ The following information pertains to the Technique Analyst prestige class.
 *   **Class Skills**: The Technique Analyst's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Fuinjutsu (Int), Genjutsu (Cha), Knowledge (earth and life science, history, ninja lore, physical science) (Int), Listen (Wis), Ninjutsu (Int), Profession (Wis), Read Language (None), Research (Int), Search (Int), Speak Language (None), Spot (Wis), Taijutsu (Str).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Technique Analyst
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +0 | +0 | +2 | Meta-chakra specialization, chakra theory | +1 | +1 | 1 / 4 |
+| 2nd | +1 | +0 | +0 | +3 | Bonus feat | +2 | +1 | 3 / 8 |
+| 3rd | +1 | +1 | +1 | +3 | Meta-chakra specialization | +2 | +1 | 5 / 12 |
+| 4th | +2 | +1 | +1 | +4 | Bonus feat | +3 | +2 | 7 / 16 |
+| 5th | +2 | +1 | +1 | +4 | Meta-chakra specialization, meta-chakra application | +3 | +2 | 9 / 20 |
+
 ## Class Features
 
 The following features pertain to the Technique Analyst prestige class.
@@ -57,20 +67,6 @@ The analyst must have taken the meta-chakra feat to specialize in it. Some speci
 
 The technique analyst gains a +1 enhancement bonus to his skill threshold to perform Genjutsu and Ninjutsu techniques. This does not stack with other enhancement bonuses.
 
-### Bonus Chakra
-
-The Technique Analyst gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
-| 4th | 7 | 16 |
-| 5th | 9 | 20 |
-
 ### Bonus Feat
 
 At 2nd and 4th level, the Technique Analyst gets a bonus feat. The bonus feat must be selected from the following list, and the Technique Analyst must meet all the prerequisites of the feat to select it. Alertness, Chakra Weaving, Chuunin, Critical Stare, Efficient Technique, Elemental Shaping, Empower Technique, Enlarge Technique, Extend Technique, Flawless Form, Heighten Technique, Jounin, Maximize Technique, Sturdy Illusion, Technical Knowledge, Widen Technique.
@@ -81,13 +77,3 @@ Once per encounter, the Technique Analyst can use this ability to one of the two
 
 *   Negate the need to spend a meta-chakra charge when applying a meta-chakra feat to a single technique.
 *   Spend double the required amounts of meta-chakra charges when applying a meta-chakra feat to a single technique and spend only half the modified chakra cost after applying the meta-chakra feat (minimum 1).
-
-## Table: The Technique Analyst
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +0 | +2 | Meta-chakra specialization, chakra theory, bonus chakra | +1 | +1 |
-| 2nd | +1 | +0 | +0 | +3 | Bonus feat | +2 | +1 |
-| 3rd | +1 | +1 | +1 | +3 | Meta-chakra specialization | +2 | +1 |
-| 4th | +2 | +1 | +1 | +4 | Bonus feat | +3 | +2 |
-| 5th | +2 | +1 | +1 | +4 | Meta-chakra specialization, meta-chakra application | +3 | +2 |

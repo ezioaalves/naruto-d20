@@ -19,6 +19,14 @@ The following information pertains to the Livewire prestige class.
 *   **Class Skills**: The Livewire's class skills are as follows. Balance (Dex), Chakra Control (Wis), Drive (Dex), Hide (Dex), Listen (Wis), Move Silently (Dex), Perform (sing, string instruments) (Cha), Profession (Wis), Read Language (None), Sleight of Hand (Dex), Speak Language (None), Spot (Wis), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Livewire
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +1 | +0 | +2 | +0 | Livewire, wire trick | +1 | +1 |
+| 2nd | +2 | +0 | +3 | +0 | Wire trick, bonus feat | +2 | +1 |
+| 3rd | +3 | +1 | +3 | +1 | Wire trick | +2 | +1 |
+
 ## Class Features
 
 The following features pertain to the Livewire prestige class.
@@ -42,11 +50,3 @@ At 1st, 2nd and 3rd level, the Livewire gains a Wire Trick, which is an ability 
 ### Bonus Feats
 
 At 2nd level, the Livewire gets a bonus feat. The bonus feat must be selected from the following list, and the Livewire must meet all the prerequisites of the feat to select it. Defensive Martial Arts, Dodge, Improved Initiative, Greater Two-Weapon Fighting, Two-Weapon Fighting.
-
-## Table: The Livewire
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +1 | +0 | +2 | +0 | Livewire, wire trick | +1 | +1 |
-| 2nd | +2 | +0 | +3 | +0 | Wire trick, bonus feat | +2 | +1 |
-| 3rd | +3 | +1 | +3 | +1 | Wire trick | +2 | +1 |

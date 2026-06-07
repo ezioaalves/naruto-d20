@@ -19,6 +19,21 @@ The following information pertains to the Shuriken Expert advanced class.
 *   **Class Skills**: The Shuriken Expert's class skills are as follows. Balance (Dex), Climb (Str), Disable Device (Int), Drive (Dex), Escape Artist (Dex), Hide (Dex), Jump (Str), Knowledge (behavioral science, civics, ninja lore, popular culture, streetwise) (Int), Listen (Wis), Move Silently (Dex), Pilot (Dex), Profession (Wis), Read Language (None), Ride (Dex), Search (Int), Sleight of Hand (Dex), Speak Language (None), Spot (Wis), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Shuriken Expert
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +0 | +0 | +2 | +0 | Thrown weapon focus | +1 | +0 |
+| 2nd | +1 | +0 | +3 | +0 | Rapid shot | +2 | +0 |
+| 3rd | +2 | +1 | +3 | +1 | Sneak attack +1d6, bonus feat | +2 | +0 |
+| 4th | +3 | +1 | +4 | +1 | Quick draw | +3 | +0 |
+| 5th | +3 | +1 | +4 | +1 | Precision +1d4 | +4 | +1 |
+| 6th | +4 | +2 | +5 | +2 | Greater thrown weapon focus, bonus feat | +4 | +1 |
+| 7th | +5 | +2 | +5 | +2 | Thrown weapon specialization | +5 | +1 |
+| 8th | +6 | +2 | +6 | +2 | Sneak attack +2d6 | +6 | +1 |
+| 9th | +6 | +3 | +6 | +3 | Precise throw, bonus feat | +6 | +2 |
+| 10th | +7 | +3 | +7 | +3 | Precision +2d4, bullseye | +7 | +2 |
+
 ## Class Features
 
 The following features pertain to the Shuriken Expert advanced class.
@@ -80,18 +95,3 @@ Once per encounter, the shuriken expert is able to gain one of the three followi
 *   ignoring all cover and concealment penalties with ranged attacks (save for total concealment and full cover) for 1 round
 
 This benefit does not apply when using a technique of some sort, only when attacking with thrown weapons.
-
-## Table: The Shuriken Expert
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +2 | +0 | Thrown weapon focus | +1 | +0 |
-| 2nd | +1 | +0 | +3 | +0 | Rapid shot | +2 | +0 |
-| 3rd | +2 | +1 | +3 | +1 | Sneak attack +1d6, bonus feat | +2 | +0 |
-| 4th | +3 | +1 | +4 | +1 | Quick draw | +3 | +0 |
-| 5th | +3 | +1 | +4 | +1 | Precision +1d4 | +4 | +1 |
-| 6th | +4 | +2 | +5 | +2 | Greater thrown weapon focus, bonus feat | +4 | +1 |
-| 7th | +5 | +2 | +5 | +2 | Thrown weapon specialization | +5 | +1 |
-| 8th | +6 | +2 | +6 | +2 | Sneak attack +2d6 | +6 | +1 |
-| 9th | +6 | +3 | +6 | +3 | Precise throw, bonus feat | +6 | +2 |
-| 10th | +7 | +3 | +7 | +3 | Precision +2d4, bullseye | +7 | +2 |

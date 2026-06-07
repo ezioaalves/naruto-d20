@@ -20,6 +20,21 @@ The following information pertains to the Soul Edge advanced class.
 *   **Class Skills**: The Soul Edge's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Craft (calligraphy) (Int), Jump (Str), Listen (Wis), Move Silently (Dex), Profession (Wis), Read Language (None), Ride (Dex), Speak Language (None), Spot (Int), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Soul Edge
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +1 | +0 | +1 | +2 | Soul edge, weapon focus (soul edge) | +1 | +0 | 1 / 2 |
+| 2nd | +2 | +0 | +2 | +3 | Empower soul edge (minor) | +1 | +0 | 1 / 2 |
+| 3rd | +3 | +1 | +2 | +3 | Bonus feat | +2 | +0 | 1 / 3 |
+| 4th | +4 | +1 | +2 | +4 | Increase speed (5 feet) | +2 | +0 | 2 / 4 |
+| 5th | +5 | +1 | +3 | +4 | Swift blade, shape soul edge (longsword) | +3 | +1 | 2 / 5 |
+| 6th | +6 | +2 | +3 | +5 | Bonus feat, empower soul edge (superior) | +3 | +1 | 3 / 6 |
+| 7th | +7 | +2 | +4 | +5 | Shape soul edge (bastard sword) | +4 | +1 | 3 / 7 |
+| 8th | +8 | +2 | +4 | +6 | Increase speed (10 feet) | +4 | +1 | 4 / 8 |
+| 9th | +9 | +3 | +4 | +6 | Bonus feat, empower soul edge (greater) | +5 | +2 | 4 / 9 |
+| 10th | +10 | +3 | +5 | +7 | Ghost edge | +5 | +2 | 5 / 10 |
+
 ## Class Features
 
 The following features pertain to the Soul Edge advanced class.
@@ -37,25 +52,6 @@ The soul edge is always considered a chakra-enhanced weapon for the purpose of b
 ### Weapon Focus (soul edge)
 
 The Soul Edge gains the weapon focus feat for his soul edge. It cannot be retrained. If the soul edge already had the weapon focus feat for his soul edge, he may choose a feat from his bonus feat list instead.
-
-### Bonus Chakra
-
-The Soul Edge gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 1 | 2 |
-| 3rd | 1 | 3 |
-| 4th | 2 | 4 |
-| 5th | 2 | 5 |
-| 6th | 3 | 6 |
-| 7th | 3 | 7 |
-| 8th | 4 | 8 |
-| 9th | 4 | 9 |
-| 10th | 5 | 10 |
 
 ### Empower Soul Edge
 
@@ -84,18 +80,3 @@ If the Soul Edge shapes his soul edge in the form of a longsword or bastard swor
 ### Ghost Edge
 
 The Soul Edge is able to empower his soul edge to suffer no penalty to hit incorporeal creatures as long as his Chakra pool is at least 50% full. If lower than 50%, the soul edge can still be empowered as a free action at the cost of 2 points of chakra. This bonus lasts for the duration of the encounter or until the soul edge is dismissed or destroyed.
-
-## Table: The Soul Edge
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +1 | +0 | +1 | +2 | Soul edge, weapon focus (soul edge), bonus chakra | +1 | +0 |
-| 2nd | +2 | +0 | +2 | +3 | Empower soul edge (minor) | +1 | +0 |
-| 3rd | +3 | +1 | +2 | +3 | Bonus feat | +2 | +0 |
-| 4th | +4 | +1 | +2 | +4 | Increase speed (5 feet) | +2 | +0 |
-| 5th | +5 | +1 | +3 | +4 | Swift blade, shape soul edge (longsword) | +3 | +1 |
-| 6th | +6 | +2 | +3 | +5 | Bonus feat, empower soul edge (superior) | +3 | +1 |
-| 7th | +7 | +2 | +4 | +5 | Shape soul edge (bastard sword) | +4 | +1 |
-| 8th | +8 | +2 | +4 | +6 | Increase speed (10 feet) | +4 | +1 |
-| 9th | +9 | +3 | +4 | +6 | Bonus feat, empower soul edge (greater) | +5 | +2 |
-| 10th | +10 | +3 | +5 | +7 | Ghost edge | +5 | +2 |

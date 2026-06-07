@@ -19,6 +19,16 @@ The following information pertains to the Exarch prestige class.
 *   **Class Skills**: The Exarch's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Craft (all skills taken individually) (Int), Fuinjutsu (Int), Genjutsu (Cha), Hide (Dex), Jump (Str), Knowledge (all skills taken individually) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Speak Language (None), Spot (Wis), Survival (Wis), Treat Injury (Wis), Tumble (Dex).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Exarch
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +0 | +2 | +2 | Chakra scalpel overchannel, medical specialist abilities | +1 | +1 | 1 / 4 |
+| 2nd | +1 | +0 | +3 | +3 | Exarch arcana | +2 | +1 | 3 / 8 |
+| 3rd | +1 | +1 | +3 | +3 | Exarch arcana | +2 | +1 | 5 / 12 |
+| 4th | +2 | +1 | +4 | +4 | Exarch arcana | +3 | +2 | 7 / 16 |
+| 5th | +2 | +1 | +4 | +4 | Exarch's blessing | +3 | +2 | 9 / 20 |
+
 ## Class Features
 
 The following features pertain to the Exarch prestige class.
@@ -30,20 +40,6 @@ The exarch's chakra scalpel deals an additional dice of damage. In addition, whe
 ### Medical Specialist abilities
 
 Each level in the exarch class stacks with levels in the Medical Specialist advanced class for the purpose of determining chakra scalpel damage and the ability to discharge or concentrate on Medical Ninjutsu techniques.
-
-### Bonus Chakra
-
-The Exarch gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
-| 4th | 7 | 16 |
-| 5th | 9 | 20 |
 
 ### Exarch Arcana
 
@@ -63,13 +59,3 @@ At 2nd, 3rd and 4th level, the exarch gains a special ability chosen from the fo
 The exarch's medical chakra lingers within the characters healed by him. Each time he automatically discharges a Medical ninjutsu technique, the tagret gains a fast healing quality for 5 rounds. Multiple use of medical techniques does not grant stacking fast healing, but the duration is refreshed each time.
 
 The fast healing gained varies depending on the technique used. *Chiyu - Shodan* grants fast healing 2; *Nidan* grants fast healing 3; *Sandan* grants fast healing 4; *Yondan* grants fast healing 5; *Godan* grants fast healing 8.
-
-## Table: The Exarch
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +2 | +2 | Chakra scalpel overchannel, medical specialist abilities, bonus chakra | +1 | +1 |
-| 2nd | +1 | +0 | +3 | +3 | Exarch arcana | +2 | +1 |
-| 3rd | +1 | +1 | +3 | +3 | Exarch arcana | +2 | +1 |
-| 4th | +2 | +1 | +4 | +4 | Exarch arcana | +3 | +2 |
-| 5th | +2 | +1 | +4 | +4 | Exarch's blessing | +3 | +2 |

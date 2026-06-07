@@ -19,6 +19,18 @@ The following information pertains to the Shade prestige class.
 *   **Class Skills**: The Shade's class skills are as follows. Balance (Dex), Bluff (Cha), Climb (Str), Craft (chemical, pharmaceutical) (Int), Disable Device (Int), Disguise (Cha), Escape Artist (Dex), Forgery (Int), Gather Information (Cha), Hide (Dex), Jump (Str), Knowledge (ninja lore, streetwise, tactics) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Search (Int), Sense Motive (Wis), Sleight of Hand (Dex), Spot (Wis), Swim (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Shade
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +0 | +0 | +2 | +0 | Death attack, poison expert, sneak attack +1d6 | +1 | +0 |
+| 2nd | +1 | +0 | +3 | +0 | +1 save against poison | +1 | +0 |
+| 3rd | +2 | +1 | +3 | +1 | Sneak attack +2d6 | +2 | +0 |
+| 4th | +3 | +1 | +4 | +1 | +3 save against poison | +2 | +0 |
+| 5th | +3 | +1 | +4 | +1 | Sneak attack +3d6 | +3 | +1 |
+| 6th | +4 | +2 | +5 | +2 | +5 save against poison | +3 | +1 |
+| 7th | +5 | +2 | +5 | +2 | Sneak attack +4d6, sure kill | +4 | +1 |
+
 ## Class Features
 
 The following features pertain to the Shade prestige class.
@@ -54,15 +66,3 @@ This extra damage is 1d6 at 1st level, and it increases by 1d6 every odd-numbere
 ### Sure Kill
 
 The shade, if he misses on a death attack, may make a Concentration check (DC 20) to which he gains a bonus equal to his shade level. If the check is successful, he may retains his attempt to a death attack until his next successful sneak attack, so long as it happens within 3 rounds. This ability cannot be used twice in a row if the shade fails again.
-
-## Table: The Shade
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +2 | +0 | Death attack, poison expert, sneak attack +1d6 | +1 | +0 |
-| 2nd | +1 | +0 | +3 | +0 | +1 save against poison | +1 | +0 |
-| 3rd | +2 | +1 | +3 | +1 | Sneak attack +2d6 | +2 | +0 |
-| 4th | +3 | +1 | +4 | +1 | +3 save against poison | +2 | +0 |
-| 5th | +3 | +1 | +4 | +1 | Sneak attack +3d6 | +3 | +1 |
-| 6th | +4 | +2 | +5 | +2 | +5 save against poison | +3 | +1 |
-| 7th | +5 | +2 | +5 | +2 | Sneak attack +4d6, sure kill | +4 | +1 |

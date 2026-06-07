@@ -30,6 +30,8 @@ The following information pertains to the [Class Name] prestige class.
 | 4th | +[X] | +[X] | +[X] | +[X] | [Feature Name] | +[X] | +[X] |
 | 5th | +[X] | +[X] | +[X] | +[X] | [Feature Name] | +[X] | +[X] |
 
+When a class grants bonus chakra pool and reserve, add a `Chakra` column to the main table instead of creating a separate `Bonus Chakra` table. Use `Pool / Reserve` values, for example `1 / 2` or `- / +1`, and do not list `bonus chakra` in the `Special` column.
+
 ## Class Features
 
 The following features pertain to the [Class Name] prestige class.

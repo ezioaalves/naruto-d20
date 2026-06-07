@@ -18,6 +18,21 @@ The following information pertains to the Puppeteer advanced class.
 *   **Class Skills**: The Puppeteer's class skills are as follows. Chakra Control (Wis), Craft (chemical, mechanical) (Int), Concentration (Con), Disable Device (Int), Drive (Dex), Escape Artist (Dex), Hide (Dex), Knowledge (earth and life science, ninja lore, popular culture, streetwise, technology) (Int), Listen (Wis), Ninjutsu (Int), Perform (Cha), Pilot (Dex), Profession (Wis), Read Language (None), Repair (Int), Ride (Dex), Search (Int), Speak Language (None), Spot (Wis).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Puppeteer
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +1 | +1 | Puppetry | +1 | +0 | 1 / 2 |
+| 2nd | +1 | +2 | +2 | +2 | Puppeteer skill | +1 | +0 | 2 / 4 |
+| 3rd | +1 | +2 | +2 | +2 | Advanced puppetry | +2 | +0 | 3 / 6 |
+| 4th | +2 | +2 | +2 | +2 | Puppeteer skill | +2 | +0 | 4 / 8 |
+| 5th | +2 | +3 | +3 | +3 | Advanced puppetry II | +3 | +1 | 5 / 10 |
+| 6th | +3 | +3 | +3 | +3 | Puppeteer skill | +3 | +1 | 6 / 12 |
+| 7th | +3 | +4 | +4 | +4 | Advanced puppetry III | +4 | +1 | 7 / 14 |
+| 8th | +4 | +4 | +4 | +4 | Puppeteer skill | +4 | +1 | 8 / 16 |
+| 9th | +4 | +4 | +4 | +4 | Advanced puppetry IV | +5 | +2 | 9 / 18 |
+| 10th | +5 | +5 | +5 | +5 | Puppeteer skill | +5 | +2 | 10 / 20 |
+
 ## Class Features
 
 The following features pertain to the Puppeteer advanced class.
@@ -31,25 +46,6 @@ The puppet is animated with 1 hit dice per chakra spent, and has a chakra pool e
 The puppeteer must make a Concentration check at the beginning of each turn if he has taken damage in the previous turn. The check is DC 10+damage taken, and causes the puppet to be disabled when failed.
 
 The puppet is animated for 5 minutes, plus 1 minute per character level. See the Puppets section of the Ninja Tools chapter for detail on controlling puppets and puppet components. Using this ability can provoke an attack of opportunity.
-
-### Bonus Chakra
-
-The Puppeteer gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
-| 4th | 4 | 8 |
-| 5th | 5 | 10 |
-| 6th | 6 | 12 |
-| 7th | 7 | 14 |
-| 8th | 8 | 16 |
-| 9th | 9 | 18 |
-| 10th | 10 | 20 |
 
 ### Advanced Puppetry
 
@@ -94,18 +90,3 @@ At 2nd, 4th, 6th, 8th and 10th level, the Puppeteer gets the chance to improves 
 *   **Skilled Puppeteer (requires [Universal / Finesse Category] feat or Exploit Weakness class ability)**: The puppeteer may confer the bonuses of either the [Universal / Finesse Category] feat or Exploit Weakness class ability upon his puppet. In place of its Strength modifier, the puppeteer uses his own Dexterity modifier (with [Universal / Finesse Category]) or Intelligence modifier (with Exploit Weakness) to make attack rolls. This does not affect damage rolls.
 *   **Trap Expert (any 1 Puppeteer skills)**: The puppet components' save DC increase by 1. The puppeteer also gains a +4 bonus to Repair checks made to reload or install components.
 *   **Resilient Puppets (any Puppeteer skills)**: All of the puppeteer's puppets, when animated, gain an additional hit points per hit dice.
-
-## Table: The Puppeteer
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +1 | +1 | +1 | Puppetry, bonus chakra | +1 | +0 |
-| 2nd | +1 | +2 | +2 | +2 | Puppeteer skill | +1 | +0 |
-| 3rd | +1 | +2 | +2 | +2 | Advanced puppetry | +2 | +0 |
-| 4th | +2 | +2 | +2 | +2 | Puppeteer skill | +2 | +0 |
-| 5th | +2 | +3 | +3 | +3 | Advanced puppetry II | +3 | +1 |
-| 6th | +3 | +3 | +3 | +3 | Puppeteer skill | +3 | +1 |
-| 7th | +3 | +4 | +4 | +4 | Advanced puppetry III | +4 | +1 |
-| 8th | +4 | +4 | +4 | +4 | Puppeteer skill | +4 | +1 |
-| 9th | +4 | +4 | +4 | +4 | Advanced puppetry IV | +5 | +2 |
-| 10th | +5 | +5 | +5 | +5 | Puppeteer skill | +5 | +2 |

@@ -19,6 +19,21 @@ The following information pertains to the Sacred Fist advanced class.
 *   **Class Skills**: The Sacred Fist's class skills are as follows. Balance (Dex), Concentration (Con), Chakra Control (Wis), Craft (calligraphy) (Int), Fuinjutsu (Int), Knowledge (ninja lore, theology and philosophy) (Int), Profession (Wis), Move Silently (Dex), Read Language (None), Ride (Dex), Sense Motive (Wis), Speak Language (None), Spot (Wis), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Sacred Fist
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +2 | +2 | +2 | Sacred fist stance (1d6) | +1 | +0 | 1 / 2 |
+| 2nd | +1 | +3 | +3 | +3 | Bonus feat | +1 | +0 | 1 / 2 |
+| 3rd | +2 | +3 | +3 | +3 | Enlightened defense | +2 | +0 | 1 / 3 |
+| 4th | +3 | +4 | +4 | +4 | Evasion | +2 | +0 | 2 / 4 |
+| 5th | +3 | +4 | +4 | +4 | Sacred fist stance (1d8) | +3 | +1 | 2 / 5 |
+| 6th | +4 | +5 | +5 | +5 | Buddhist palm (chakra) | +3 | +1 | 3 / 6 |
+| 7th | +5 | +5 | +5 | +5 | Devotion | +4 | +1 | 3 / 7 |
+| 8th | +6 | +6 | +6 | +6 | Bonus feat | +4 | +1 | 4 / 8 |
+| 9th | +6 | +6 | +6 | +6 | Sacred fist stance (1d10), buddhist palm (dark iron) | +5 | +2 | 4 / 9 |
+| 10th | +7 | +7 | +7 | +7 | Ageless body | +5 | +2 | 5 / 10 |
+
 ## Class Features
 
 The following features pertain to the Sacred Fist advanced class.
@@ -30,25 +45,6 @@ The sacred fist stance is the signature ability of the Sacred Fist and an open-p
 The sacred fist ability counts as a Stance taijutsu technique the character may enter any time as a free action. When attacking with the sacred fist, the character counts as armed and does not provoke attacks of opportunity. The sacred fist may also deal nonlethal damage without penalty.
 
 The sacred fist increases a character's unarmed strike damage increases to 1d6 at first level, then 1d8 at 5th level and 1d10 at 9th level.
-
-### Bonus Chakra
-
-The Sacred Fist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 1 | 2 |
-| 3rd | 1 | 3 |
-| 4th | 2 | 4 |
-| 5th | 2 | 5 |
-| 6th | 3 | 6 |
-| 7th | 3 | 7 |
-| 8th | 4 | 8 |
-| 9th | 4 | 9 |
-| 10th | 5 | 10 |
 
 ### Bonus Feats
 
@@ -73,18 +69,3 @@ The sacred fist gains a +2 bonus to Will saves against compulsion and phantasm e
 ### Ageless Body
 
 The sacred fist no longer ages when attaining this ability. He no longer suffers penalty for aging, and is not subject to artificial or magical aging. Penalties he has already taken, however, remain. The sacred fist still dies of old age when his time is up.
-
-## Table: The Sacred Fist
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +2 | +2 | +2 | Sacred fist stance (1d6), bonus chakra | +1 | +0 |
-| 2nd | +1 | +3 | +3 | +3 | Bonus feat | +1 | +0 |
-| 3rd | +2 | +3 | +3 | +3 | Enlightened defense | +2 | +0 |
-| 4th | +3 | +4 | +4 | +4 | Evasion | +2 | +0 |
-| 5th | +3 | +4 | +4 | +4 | Sacred fist stance (1d8) | +3 | +1 |
-| 6th | +4 | +5 | +5 | +5 | Buddhist palm (chakra) | +3 | +1 |
-| 7th | +5 | +5 | +5 | +5 | Devotion | +4 | +1 |
-| 8th | +6 | +6 | +6 | +6 | Bonus feat | +4 | +1 |
-| 9th | +6 | +6 | +6 | +6 | Sacred fist stance (1d10), buddhist palm (dark iron) | +5 | +2 |
-| 10th | +7 | +7 | +7 | +7 | Ageless body | +5 | +2 |

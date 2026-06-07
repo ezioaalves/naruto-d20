@@ -20,6 +20,18 @@ The following information pertains to the Sword Savant prestige class.
 *   **Class Skills**: The Sword Savant's class skills are as follows. Balance (Dex), Chakra Control (Wis), Climb (Str), Concentration (Con), Genjutsu (Cha), Jump (Str), Knowledge (ninja lore, tactics) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Speak Language (None), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Sword Savant
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +0 | +1 | +1 | Chakra state, weapon focus | +1 | +0 | 1 / 2 |
+| 2nd | +1 | +0 | +2 | +2 | Bonus feat | +1 | +0 | 2 / 4 |
+| 3rd | +2 | +1 | +2 | +2 | Sword weaving | +2 | +0 | 3 / 6 |
+| 4th | +3 | +1 | +2 | +2 | Sealing sword (minor) | +2 | +0 | 4 / 8 |
+| 5th | +3 | +1 | +3 | +3 | Weapon specialization | +3 | +1 | 5 / 10 |
+| 6th | +4 | +2 | +3 | +3 | Heightened chakra state, bonus feat | +3 | +1 | 6 / 12 |
+| 7th | +5 | +2 | +4 | +4 | Sealing sword (superior) | +4 | +1 | 7 / 14 |
+
 ## Class Features
 
 The following features pertain to the Sword Savant prestige class.
@@ -31,22 +43,6 @@ The sword savant can focus for 1 hour and spend 1 point of chakra per sword sava
 The chakra state weapon is treated as a chakra weapon to overcome damage reduction.
 
 If the Sword Savant has the two-weapon fighting feat, he may apply the benefits of his chakra state ability to two weapons.
-
-### Bonus Chakra
-
-The Sword Savant gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
-| 4th | 4 | 8 |
-| 5th | 5 | 10 |
-| 6th | 6 | 12 |
-| 7th | 7 | 14 |
 
 ### Sword Weaving
 
@@ -73,15 +69,3 @@ If the sword savant already has this ability with his chosen weapon, he may appl
 The sword savant gains a +2 bonus to all attack rolls with his chakra state weapons. In addition, he gains extra attacks as though his base attack bonus was 2 points higher than it is. To benefit from the extra attacks, the sword savant must only use his chakra state weapon to attack that round.
 
 The sword savant does not gain the benefits of this ability if it is obtained at 21st level or higher.
-
-## Table: The Sword Savant
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +1 | +1 | Chakra state, weapon focus, bonus chakra | +1 | +0 |
-| 2nd | +1 | +0 | +2 | +2 | Bonus feat | +1 | +0 |
-| 3rd | +2 | +1 | +2 | +2 | Sword weaving | +2 | +0 |
-| 4th | +3 | +1 | +2 | +2 | Sealing sword (minor) | +2 | +0 |
-| 5th | +3 | +1 | +3 | +3 | Weapon specialization | +3 | +1 |
-| 6th | +4 | +2 | +3 | +3 | Heightened chakra state, bonus feat | +3 | +1 |
-| 7th | +5 | +2 | +4 | +4 | Sealing sword (superior) | +4 | +1 |

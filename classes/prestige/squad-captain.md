@@ -19,6 +19,21 @@ The following information pertains to the Squad Captain advanced class.
 *   **Class Skills**: The Squad Captain's class skills are as follows. Chakra Control (Wis), Craft (calligraphy, chemical, pharmaceutical) (Int), Diplomacy (Cha), Disguise (Cha), Gather Information (Cha), Genjutsu (Cha), Hide (Dex), Intimidate (Cha), Jump (Str), Knowledge (all skills taken individually) (Int), Move Silently (Dex), Listen (Wis), Ninjutsu (Int), Profession (Wis), Read Language (None), Sense Motive (Wis), Sign Language (None), Speak Language (None), Spot (Wis), Taijutsu (Str).
 *   **Skill Points at Each Level**: 5 + Int modifier.
 
+## Table: The Squad Captain
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +0 | +1 | +0 | +1 | Command | +1 | +1 |
+| 2nd | +1 | +2 | +0 | +2 | Force march, sneak attack +1d6 | +1 | +1 |
+| 3rd | +2 | +2 | +1 | +2 | Bonus feat | +2 | +1 |
+| 4th | +3 | +2 | +1 | +2 | Tactical expertise | +2 | +2 |
+| 5th | +3 | +3 | +1 | +3 | Sneak attack +2d6 | +3 | +2 |
+| 6th | +4 | +3 | +2 | +3 | Bonus feat | +3 | +2 |
+| 7th | +5 | +4 | +2 | +4 | Improved command, mettle | +4 | +3 |
+| 8th | +6 | +4 | +2 | +4 | Tactical mastery, sneak attack +3d6 | +4 | +3 |
+| 9th | +6 | +4 | +3 | +4 | Bonus feat | +5 | +3 |
+| 10th | +7 | +5 | +3 | +5 | Leading by example | +5 | +4 |
+
 ## Class Features
 
 The following features pertain to the Squad Captain advanced class.
@@ -72,18 +87,3 @@ When the squad captain makes a successful Fortitude or Will save against any spe
 The squad captain can spend an action point to ignore the effects of the following conditions: cowering, dazed, exhaustion, fatigue, nausea, panicked and shaken, and delay the secondary effects of poison.
 
 This ability lasts up to for the duration of the encounter, until the character falls unconscious or 5 minutes (whichever comes first), and up to 3 times per day. It can be used without spending an action point once per day.
-
-## Table: The Squad Captain
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +1 | +0 | +1 | Command | +1 | +1 |
-| 2nd | +1 | +2 | +0 | +2 | Force march, sneak attack +1d6 | +1 | +1 |
-| 3rd | +2 | +2 | +1 | +2 | Bonus feat | +2 | +1 |
-| 4th | +3 | +2 | +1 | +2 | Tactical expertise | +2 | +2 |
-| 5th | +3 | +3 | +1 | +3 | Sneak attack +2d6 | +3 | +2 |
-| 6th | +4 | +3 | +2 | +3 | Bonus feat | +3 | +2 |
-| 7th | +5 | +4 | +2 | +4 | Improved command, mettle | +4 | +3 |
-| 8th | +6 | +4 | +2 | +4 | Tactical mastery, sneak attack +3d6 | +4 | +3 |
-| 9th | +6 | +4 | +3 | +4 | Bonus feat | +5 | +3 |
-| 10th | +7 | +5 | +3 | +5 | Leading by example | +5 | +4 |

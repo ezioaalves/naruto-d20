@@ -3,56 +3,41 @@
 The sage posses frightening abilities completely outside the reach of most shinobi. Aided by its frightening senjutsu techniques, the sage is a legend in the making.
 
 ## Requirements
+
 To qualify to become a sage, a character must fulfill all the following criteria.
-**Skills:** Balance 12, Chakra Control 12, Concentration 6 ranks.
-**Feats:** Sage's Wisdom.
-**Special (Optional):** The character must be or have been in possession of a Sage's Artifact or have a Sage mentor. If the Sage has a mentor, that mentor may influence his patron spirit (see Sage Affinity.)
+
+*   **Skills**: Balance 12, Chakra Control 12, Concentration 6 ranks.
+*   **Feats**: Sage's Wisdom.
+*   **Special (Optional)**: The character must be or have been in possession of a Sage's Artifact or have a Sage mentor. If the Sage has a mentor, that mentor may influence his patron spirit (see Sage Affinity.)
 
 ## Class Information
+
 The following information pertains to the Sage prestige class.
 
-**Hit Die**
-The Sage gains 1d6 hit points per level. The Constitution modifier applies.
+*   **Hit Die**: The Sage gains 1d6 hit points per level. The Constitution modifier applies.
+*   **Action Points**: The Sage gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.
+*   **Class Skills**: The Sage's class skills are as follows. Balance (Dex), Chakra Control (Wis), Concentration (Con), Genjutsu (Cha), Hide (Dex), Knowledge (all skills taken individually) (Int), Listen (Wis), Ninjutsu (Int), Move Silently (Dex), Read Language (None), Speak Language (None), Spot (Wis), Survival (Wis), Taijutsu (Str).
+*   **Skill Points at Each Level**: 5 + Int modifier.
 
-**Action Points**
-The Sage gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.
+## Table: The Sage
 
-**Class Skills**
-The Sage's class skills are as follows.
-Balance (Dex), Chakra Control (Wis), Concentration (Con), Genjutsu (Cha), Hide (Dex), Knowledge (all skills taken individually) (Int), Listen (Wis), Ninjutsu (Int), Move Silently (Dex), Read Language (None), Speak Language (None), Spot (Wis), Survival (Wis), Taijutsu (Str).
-**Skill Points at Each Level:** 5 + Int modifier.
-
-### TABLE: THE SAGE
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :---: | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
-| 1st | +0 | +1 | +1 | +1 | Sageblooded, Bonus Chakra | +1 | +0 |
-| 2nd | +1 | +2 | +2 | +2 | Sage Affinity | +2 | +0 |
-| 3rd | +2 | +2 | +2 | +2 | Senjutsu Reserves | +2 | +0 |
-| 4th | +3 | +2 | +2 | +2 | Sage Affinity | +3 | +0 |
-| 5th | +3 | +3 | +3 | +3 | Master Sage | +4 | +0 |
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +1 | +1 | Sageblooded | +1 | +0 | 1 / 4 |
+| 2nd | +1 | +2 | +2 | +2 | Sage Affinity | +2 | +0 | 3 / 8 |
+| 3rd | +2 | +2 | +2 | +2 | Senjutsu Reserves | +2 | +0 | 5 / 12 |
+| 4th | +3 | +2 | +2 | +2 | Sage Affinity | +3 | +0 | 7 / 16 |
+| 5th | +3 | +3 | +3 | +3 | Master Sage | +4 | +0 | 9 / 20 |
 
 ## Class Features
+
 The following features pertain to the Sage prestige class.
 
 ### Sageblooded
 The sage gains the Sageblooded feat for free.
 
-### Bonus Chakra
-The Sage gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :---: | :---: | :---: |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
-| 4th | 7 | 16 |
-| 5th | 9 | 20 |
-
 ### Sage Affinity
-At 2nd and 4th levels, the sage gains an affinity with a specific spirit type, as chosen below. If the sage also has the Blood Pact feat, his affinity is the same as his blood pact. 
+At 2nd and 4th levels, the sage gains an affinity with a specific spirit type, as chosen below. If the sage also has the Blood Pact feat, his affinity is the same as his blood pact.
 
 The Sage Affinities manifest while the sage's *senjutsu chakra* pool is 1 or higher, as well as some traits of his particular affinity (such as froglike eyes, webbed hands, etc.)
 
@@ -65,7 +50,7 @@ The Sage Affinities manifest while the sage's *senjutsu chakra* pool is 1 or hig
 *   **Dog:**
     *   *2nd:* The sage gains the Scent ability.
     *   *4th:* The sage may make a free trip attempt once per encounter after hitting with a melee attack. The attempt does not provoke an attack of opportunity.
-*   **Dragon:** 
+*   **Dragon:**
     *   *2nd:* +1 natural armor bonus to Defense (stacks with natural armor from other sources).
     *   *4th:* The sage gains a cold, earth, electricity, fire, water or wind resistance 5, or his existing resistance increases by 5 (choose one).
 *   **Hare:**

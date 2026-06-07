@@ -20,6 +20,18 @@ The following information pertains to the Summoner prestige class.
 *   **Class Skills**: The Summoner's class skills are as follows. Chakra Control (Wis), Concentration (Con), Craft (calligraphy) (Int), Diplomacy (Cha), Drive (Dex), Ninjutsu (Int), Knowledge (behavioral science, current events, ninja lore, theology and philosophy) (Int), Profession (Wis), Read Language (None), Ride (Dex), Speak Language (None), Search (Int), Spot (Int).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Summoner
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +1 | +2 | Empower summoning | +1 | +1 | 1 / 4 |
+| 2nd | +1 | +2 | +2 | +3 | Might of the summoner +1 | +1 | +1 | 3 / 8 |
+| 3rd | +1 | +2 | +2 | +3 | Bonus feat | +2 | +1 | 5 / 12 |
+| 4th | +2 | +2 | +2 | +4 | Extend summoning | +2 | +2 | 7 / 16 |
+| 5th | +2 | +3 | +3 | +4 | Bonus feat | +3 | +2 | 9 / 20 |
+| 6th | +3 | +3 | +3 | +5 | Might of the summoner +2, will of the summoner | +3 | +2 | 11 / 24 |
+| 7th | +3 | +4 | +4 | +5 | Pride of the summoner, bonus feat | +4 | +3 | 13 / 28 |
+
 ## Class Features
 
 The following features pertain to the Summoner prestige class.
@@ -27,22 +39,6 @@ The following features pertain to the Summoner prestige class.
 ### Empower Summoning
 
 The Summoner gains the Empower Summoning meta-chakra feat.
-
-### Bonus Chakra
-
-The Summoner gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 4 |
-| 2nd | 3 | 8 |
-| 3rd | 5 | 12 |
-| 4th | 7 | 16 |
-| 5th | 9 | 20 |
-| 6th | 11 | 24 |
-| 7th | 13 | 28 |
 
 ### Might of the Summoner
 
@@ -65,15 +61,3 @@ The summoner pays less chakra per level of each creature he summons: a soldier, 
 Three times per day, the summoner can perform a Spacetime ninjutsu technique with the Summoning descriptor with a perform time no longer than 1 full-round action as an attack action. The perform requirements of the technique are automatically met, and performing the technique does not provoke an attack of opportunity. This ability can only be used once per round.
 
 Additionally, this ability can be used to perform a Spacetime ninjutsu technique with the Summoning descriptor as a quickened action, provided the technique's perform time is no longer than 1 attack action. The ability otherwise functions as described above, but the summoner can only gain one quickened action per round, no matter the type (see Basic Game Mechanics for rules on Quickened Actions).
-
-## Table: The Summoner
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +1 | +1 | +2 | Empower summoning, bonus chakra | +1 | +1 |
-| 2nd | +1 | +2 | +2 | +3 | Might of the summoner +1 | +1 | +1 |
-| 3rd | +1 | +2 | +2 | +3 | Bonus feat | +2 | +1 |
-| 4th | +2 | +2 | +2 | +4 | Extend summoning | +2 | +2 |
-| 5th | +2 | +3 | +3 | +4 | Bonus feat | +3 | +2 |
-| 6th | +3 | +3 | +3 | +5 | Might of the summoner +2, will of the summoner | +3 | +2 |
-| 7th | +3 | +4 | +4 | +5 | Pride of the summoner, bonus feat | +4 | +3 |

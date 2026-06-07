@@ -19,6 +19,16 @@ The following information pertains to the Exemplar prestige class.
 *   **Class Skills**: The Exemplar's class skills are as follows. Balance (Dex), Climb (Str), Drive (Dex), Jump (Str), Knowledge (history, ninja lore, tactics) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Read Language (None), Ride (Dex), Speak Language (None), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Exemplar
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +1 | +2 | +1 | +0 | Master strike | +1 | +1 |
+| 2nd | +2 | +3 | +2 | +0 | High mastery | +2 | +1 |
+| 3rd | +3 | +3 | +2 | +1 | High mastery | +2 | +1 |
+| 4th | +4 | +4 | +2 | +1 | High mastery | +3 | +2 |
+| 5th | +5 | +4 | +3 | +1 | Last stand | +4 | +2 |
+
 ## Class Features
 
 The following features pertain to the Exemplar prestige class.
@@ -45,13 +55,3 @@ At 2nd, 3rd and 4th level, the exemplar gains a high mastery, a special ability 
 ### Last Stand
 
 Once per day when taking damage that would reduce the Exemplar to -10 hit points or lower, this ability activates. The Exemplar is able to remain conscious and survive any amount of damage, as well as become immune to ability damage, ability drain, daze, death effects, disease, negative level, poison, sleep and stunning effects, as well as any effect that causes the loss of a turn for 1 round. While the ability lasts, the exemplar's attacks ignore all hardness and damage reduction and do not automatically miss on a natural roll of 1. All chakra cost of abilities and techniques are reduced by 50%. At the end of the attacker's next turn, the Exemplar rolls a percentile die and adds his total character level. On a roll of 90 or more, the character is instantly returned to -9 hit points and stable. On a natural roll of 99 or 100, the ability lasts for an additional round. Percentile dice is rolled each round the ability lasts to determine if it will last a round longer, but the consequences of failure are eliminated after the first success.
-
-## Table: The Exemplar
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +1 | +2 | +1 | +0 | Master strike | +1 | +1 |
-| 2nd | +2 | +3 | +2 | +0 | High mastery | +2 | +1 |
-| 3rd | +3 | +3 | +2 | +1 | High mastery | +2 | +1 |
-| 4th | +4 | +4 | +2 | +1 | High mastery | +3 | +2 |
-| 5th | +5 | +4 | +3 | +1 | Last stand | +4 | +2 |

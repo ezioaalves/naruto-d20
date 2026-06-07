@@ -18,6 +18,18 @@ The following information pertains to the Ninja Hunter prestige class.
 *   **Class Skills**: The Ninja Hunter's class skills are as follows. Balance (Dex), Chakra Control (Wis), Climb (Str), Concentration (Con), Disable Device (Int), Drive (Dex), Escape Artist (Dex), Fuinjutsu (Int), Genjutsu (Cha), Hide (Dex), Investigate (Wis), Jump (Str), Knowledge (current events, ninja lore, popular culture, streetwise, tactics) (Int), Listen (Wis), Ninjutsu (Int), Move Silently (Dex), Read Language (None), Pilot (Dex), Sleight of Hand (Dex), Speak Language (None), Spot (Wis), Survival (Wis), Swim (Str), Taijutsu (Str), Tumble (Dex).
 *   **Skill Points at Each Level**: 7 + Int modifier.
 
+## Table: The Ninja Hunter
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| 1st | +0 | +1 | +1 | +1 | Sense chakra, ninja hunter +2 | +1 | +1 | 1 / 2 |
+| 2nd | +1 | +2 | +2 | +2 | Combat support, battle analysis +2, plan X | +1 | +1 | 2 / 4 |
+| 3rd | +2 | +2 | +2 | +2 | Uncanny dodge, trap sense | +2 | +1 | 3 / 6 |
+| 4th | +3 | +2 | +2 | +2 | Technique counter | +2 | +2 | 4 / 8 |
+| 5th | +3 | +3 | +3 | +3 | Ninja hunter +4 | +3 | +2 | 5 / 10 |
+| 6th | +4 | +3 | +3 | +3 | Evasion X, battle analysis +4 | +3 | +2 | 6 / 12 |
+| 7th | +5 | +4 | +4 | +4 | Improved uncanny dodge, greater technique counter | +4 | +3 | 7 / 14 |
+
 ## Class Features
 
 The following features pertain to the Ninja Hunter prestige class.
@@ -29,22 +41,6 @@ At 1st level, the ninja hunter gains the Sense Chakra ability.
 ### Ninja Hunter
 
 At 1st level, the ninja hunter gains a +2 bonus on Bluff, Listen, Sense Motive, Spot and Survival checks made against shinobi. A shinobi is any creature with 4 or more ranks in any of the following skills: Chakra Control, Fuinjutsu, Genjutsu, Ninjutsu or Taijutsu. This bonus also applies to checks made using the Technique Counter ability. At 5th level, this bonus increases to +4.
-
-### Bonus Chakra
-
-The Ninja Hunter gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
-| 4th | 4 | 8 |
-| 5th | 5 | 10 |
-| 6th | 6 | 12 |
-| 7th | 7 | 14 |
 
 ### Combat Support
 
@@ -87,15 +83,3 @@ At 7th level, the ninja hunter can no longer be flanked. This defense denies opp
 ### Greater Technique Counter
 
 At 7th level, the ninja hunter gains his ultimate ability. After successfully using his technique counter ability, the ninja hunter can spend an action point each time it would come into play to grant allies within 30 feet a the benefits of this ability as well.
-
-## Table: The Ninja Hunter
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +1 | +1 | +1 | Sense chakra, ninja hunter +2, bonus chakra | +1 | +1 |
-| 2nd | +1 | +2 | +2 | +2 | Combat support, battle analysis +2, plan X | +1 | +1 |
-| 3rd | +2 | +2 | +2 | +2 | Uncanny dodge, trap sense | +2 | +1 |
-| 4th | +3 | +2 | +2 | +2 | Technique counter | +2 | +2 |
-| 5th | +3 | +3 | +3 | +3 | Ninja hunter +4 | +3 | +2 |
-| 6th | +4 | +3 | +3 | +3 | Evasion X, battle analysis +4 | +3 | +2 |
-| 7th | +5 | +4 | +4 | +4 | Improved uncanny dodge, greater technique counter | +4 | +3 |

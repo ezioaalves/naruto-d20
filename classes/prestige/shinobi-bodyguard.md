@@ -19,6 +19,21 @@ The following information pertains to the Shinobi Bodyguard advanced class.
 *   **Class Skills**: The Shinobi Bodyguard's class skills are as follows. Climb (Str), Concentration (Con), Drive (Dex), Hide (Dex), Jump (Str), Intimidate, Knowledge (ninja lore) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Read Language (None), Search (Int), Sense Motive (Wis), Speak Language (None), Spot (Wis), Swim (Str), and Taijutsu (Str).
 *   **Skill Points at Each Level**: 3 + Int modifier.
 
+## Table: The Shinobi Bodyguard
+
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
+| 1st | +0 | +2 | +1 | +0 | Remain conscious | +1 | +1 |
+| 2nd | +1 | +3 | +2 | +0 | Harm's way | +1 | +1 |
+| 3rd | +2 | +3 | +2 | +1 | Damage reduction 1/–, bonus feat | +2 | +1 |
+| 4th | +3 | +4 | +2 | +1 | Uncanny dodge | +2 | +2 |
+| 5th | +3 | +4 | +3 | +1 | Cover | +3 | +2 |
+| 6th | +4 | +5 | +3 | +2 | Damage reduction 2/– | +3 | +2 |
+| 7th | +5 | +5 | +4 | +2 | Mettle | +4 | +3 |
+| 8th | +6 | +6 | +4 | +2 | Improved uncanny dodge | +4 | +3 |
+| 9th | +6 | +6 | +4 | +3 | Damage reduction 3/–, bonus feat | +5 | +3 |
+| 10th | +7 | +7 | +5 | +3 | Adapt, undying shinobi | +5 | +4 |
+
 ## Class Features
 
 The following features pertain to the Shinobi Bodyguard advanced class.
@@ -68,18 +83,3 @@ At 10th level, the shinobi bodyguard gains the ability to act normally and witho
 ### Bonus Feats
 
 At 3rd and 9th level, the Shinobi Bodyguard gets a bonus feat. The bonus feat must be selected from the following list, and the Shinobi Bodyguard must meet all the prerequisites of the feat to select it. Blood Pact, Chuunin, Cleave, Focused, Jounin, [Universal: Risky Strike], Toughness.
-
-## Table: The Shinobi Bodyguard
-
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +2 | +1 | +0 | Remain conscious | +1 | +1 |
-| 2nd | +1 | +3 | +2 | +0 | Harm's way | +1 | +1 |
-| 3rd | +2 | +3 | +2 | +1 | Damage reduction 1/–, bonus feat | +2 | +1 |
-| 4th | +3 | +4 | +2 | +1 | Uncanny dodge | +2 | +2 |
-| 5th | +3 | +4 | +3 | +1 | Cover | +3 | +2 |
-| 6th | +4 | +5 | +3 | +2 | Damage reduction 2/– | +3 | +2 |
-| 7th | +5 | +5 | +4 | +2 | Mettle | +4 | +3 |
-| 8th | +6 | +6 | +4 | +2 | Improved uncanny dodge | +4 | +3 |
-| 9th | +6 | +6 | +4 | +3 | Damage reduction 3/–, bonus feat | +5 | +3 |
-| 10th | +7 | +7 | +5 | +3 | Adapt, undying shinobi | +5 | +4 |
