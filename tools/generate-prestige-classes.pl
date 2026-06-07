@@ -136,6 +136,28 @@ my %associations = (
   ],
 );
 
+# Per-class custom progressions for tables the source prints irregularly, so no
+# shared preset reproduces them. Each entry pairs the exact PF1e formula with a
+# Perl check that must match the parsed table at every level, keeping the
+# "fail loud on drift" guarantee instead of trusting the formula blindly.
+my %bab_override = (
+  # Community Compendium v2 p.99 — BaB 0,0,1,1,2,2,3,4,4,5
+  "Master Thrower" => [
+    'floor((@hitDice - 1) / 6) + floor(2 * @hitDice / 5)',
+    sub { int(($_[0] - 1) / 6) + int(2 * $_[0] / 5) },
+  ],
+);
+
+my %save_override = (
+  "Shadow Adept" => {
+    # Community Compendium v2 p.110 — Fort 0,0,1,1,1,2,3
+    fort => [
+      'floor(@level / 3) + floor((@level - 1) / 6)',
+      sub { int($_[0] / 3) + int(($_[0] - 1) / 6) },
+    ],
+  },
+);
+
 my @skill_keys = qw(
   acr apr art blf clm crf dip dev dis esc fly han hea int kar kdu ken kge khi
   klo kna kno kpl kre lin lor per prf pro rid sen slt spl ste sur swm umd ckc
@@ -216,11 +238,21 @@ for my $path (@files) {
     next;
   }
 
-  my $bab = identify_bab($table->{bab}, $name);
+  my $bab_formula;
+  my $bab;
+  if (my $ov = $bab_override{$name}) {
+    my ($formula, $fn) = @$ov;
+    die "BAB override for $name does not match its table\n"
+      unless sequence_matches($table->{bab}, $fn);
+    $bab = "custom";
+    $bab_formula = $formula;
+  } else {
+    $bab = identify_bab($table->{bab}, $name);
+  }
   my $saves = {
-    fort => identify_save($table->{fort}, "$name Fort"),
-    ref => identify_save($table->{ref}, "$name Ref"),
-    will => identify_save($table->{will}, "$name Will"),
+    fort => resolve_save($name, "fort", $table->{fort}, "$name Fort"),
+    ref => resolve_save($name, "ref", $table->{ref}, "$name Ref"),
+    will => resolve_save($name, "will", $table->{will}, "$name Will"),
   };
   my $defense_formula = identify_defense($table->{defense}, $name);
   my $chakra = extract_chakra($markdown, $name, $table);
@@ -271,7 +303,11 @@ for my $path (@files) {
   $system->{hd} = 0 + $hd;
   $system->{hp} = undef;
   $system->{bab} = $bab;
-  delete $system->{babFormula};
+  if (defined $bab_formula) {
+    $system->{babFormula} = $bab_formula;
+  } else {
+    delete $system->{babFormula};
+  }
   $system->{skillsPerLevel} = $skills_per_level;
   $system->{savingThrows} = $saves;
   $system->{fc} = {
@@ -439,12 +475,26 @@ sub identify_bab {
   die "Unsupported BAB progression for $name: " . join(",", @$values) . "\n";
 }
 
+sub resolve_save {
+  my ($name, $key, $values, $label) = @_;
+  if (my $ov = $save_override{$name} && $save_override{$name}{$key}) {
+    my ($formula, $fn) = @$ov;
+    die "Save override for $label does not match its table\n"
+      unless sequence_matches($values, $fn);
+    return { value => "custom", custom => $formula };
+  }
+  return identify_save($values, $label);
+}
+
 sub identify_save {
   my ($values, $label) = @_;
   my @patterns = (
     ['2 + floor(@level / 2)', sub { 2 + int($_[0] / 2) }],
     ['floor((2 * @level + 6) / 5)', sub { int((2 * $_[0] + 6) / 5) }],
+    ['floor((@level + 2) / 2)', sub { int(($_[0] + 2) / 2) }],
     ['floor((@level + 1) / 2)', sub { int(($_[0] + 1) / 2) }],
+    ['floor((@level - 1) / 2)', sub { int(($_[0] - 1) / 2) }],
+    ['floor((2 * @level + 2) / 3)', sub { int((2 * $_[0] + 2) / 3) }],
     ['floor((@level + 1) / 3)', sub { int(($_[0] + 1) / 3) }],
     ['floor(@level / 3)', sub { int($_[0] / 3) }],
     ['floor((@level - 1) / 3)', sub { int(($_[0] - 1) / 3) }],
