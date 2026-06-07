@@ -350,10 +350,11 @@ features em níveis específicos:
 ```
 
 O `uuid` deve apontar para um documento existente e `level` define quando ele é
-concedido. Ao alterar associações, mantenha coerente o espelho interno em
-`flags.pf1.links.classAssociations` produzido pelo PF1e. A forma mais segura de
-criar associações complexas é configurá-las na ficha da classe no Foundry,
-exportar com `npm run unpack:classes` e revisar o diff.
+concedido. Nos sources, deixe `flags.pf1.links.classAssociations` vazio. Esse
+flag armazena os IDs dos itens concedidos no ator e é preenchido pelo PF1e
+quando a classe cria as associações. A forma mais segura de criar associações
+complexas é configurá-las na ficha da classe no Foundry, exportar com
+`npm run unpack:classes` e revisar o diff.
 
 Não crie associações para talentos escolhidos pelo jogador. Associe apenas
 features fixas concedidas automaticamente pela tabela.
@@ -386,12 +387,82 @@ Copiar o item mais próximo reduz o risco de omitir campos, mas não torna os
 valores copiados corretos. Revise individualmente subtype, HP, progressões,
 skills, proficiências, changes, associações, fonte, IDs e pasta.
 
+## Gerador de classes Markdown
+
+[`generate-prestige-classes.pl`](../tools/generate-prestige-classes.pl) converte
+um diretório de classes em Markdown para JSONs de classe. Ele foi criado para o
+lote em `Classes/Prestige/`, mas aceita outros diretórios e destinos.
+
+O gerador:
+
+- extrai nome, HD, skill points, class skills e a tabela de progressão;
+- converte a descrição Markdown completa para HTML;
+- converte class skills usando as regras deste documento;
+- identifica fórmulas conhecidas de BAB, saves, Defesa e Bonus Chakra;
+- gera IDs determinísticos a partir do nome da classe;
+- adiciona associações fixas configuradas no próprio script;
+- falha quando uma progressão não corresponde a uma fórmula suportada.
+
+O Markdown de entrada deve manter os cabeçalhos e tabelas usados pelas fontes
+Naruto d20:
+
+- um título `# Nome da classe`;
+- texto `gains 1dN hit points`;
+- lista iniciada por `class skills are as follows`;
+- linha `Skill Points at Each Level`;
+- tabela principal com `Base Attack Bonus`, saves e `Defense Bonus`;
+- seção `### Bonus Chakra` com tabela de pool e reserve, quando aplicável.
+
+Antes de usar o gerador para um novo lote, revise no início do script:
+
+| Configuração | Finalidade |
+|---|---|
+| `%fixed_ids` | IDs que precisam ser preservados em vez de gerados pelo nome. |
+| `%advanced` | Classes que devem usar `system.subType: "base"`. |
+| `%icons` | Imagem específica de cada classe; ausências usam o livro roxo. |
+| `%associations` | Feats fixos concedidos automaticamente e seus níveis. |
+| `$template_path` | Item de classe usado como modelo estrutural. |
+| `$folder_id` | Pasta editorial de destino no compêndio. |
+
+Classes não listadas em `%advanced` são tratadas como `prestige`. Não adicione
+bonus feats escolhidos pelo jogador em `%associations`.
+
+Primeiro valide a conversão sem escrever:
+
+```sh
+perl tools/generate-prestige-classes.pl --check
+```
+
+O comando retorna status diferente de zero se um JSON estiver ausente ou se a
+saída gerada divergir do source existente. Para gerar ou atualizar os JSONs:
+
+```sh
+perl tools/generate-prestige-classes.pl
+```
+
+Para outro lote, informe os caminhos e a pasta explicitamente:
+
+```sh
+perl tools/generate-prestige-classes.pl \
+  --source-dir Classes/Outro-Lote \
+  --output-dir packs/_source/classes \
+  --template packs/_source/classes/Classe_Modelo_ID.json \
+  --folder-id ID_DA_PASTA
+```
+
+Os IDs dependem do nome da classe; renomear um título cria outro ID e deve ser
+tratado como migração ou registrado em `%fixed_ids`. Ownership, `_stats` e os
+blocos estruturais são preservados do template. O script não remove JSONs
+antigos nem decide proficiências. Depois da geração, revise manualmente subtype,
+proficiências, sources, ícones, associações e todas as fórmulas antes de
+reconstruir o pack.
+
 ## Fluxo de implementação
 
 1. Transcreva a classe e identifique tabela, HD, BAB, saves, skill points,
    class skills, proficiências, Defesa, Chakra e features fixas.
 2. Escolha um item-base com subtype e comportamento semelhantes.
-3. Crie o JSON em `packs/_source/classes/` com ID e nome de arquivo únicos.
+3. Crie o JSON em `packs/_source/classes/` manualmente ou com o gerador.
 4. Configure `folder`, `subType`, `level`, `hd`, `hp`, BAB, saves e skills.
 5. Adicione changes e associações somente para mecânicas suportadas.
 6. Compare os valores calculados em todos os níveis com a tabela original.
