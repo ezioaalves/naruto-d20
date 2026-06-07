@@ -1,8 +1,9 @@
 # Grand Scholar
 
 The grand scholar is a master of the more technical aspect of techniques. His unique  abilities enable him to uncover secrets none other have access to, and make him  particularly suited to imparting their craft on others.
-## Requirements:
-To qualify to become a grand scholar, a character must fulfill all the following criteria. 
+## Requirements
+
+To qualify to become a grand scholar, a character must fulfill all the following criteria.
 * **Skills:** Knowledge (arcana) 3 ranks, Linguistics 3 ranks, and at least 1 ranks in any four of the following skills: Chakra Control, Fuinjutsu, Genjutsu, Knowledge (any), Ninjutsu or Taijutsu.
 * **Feats:** Grand Master.
 * **Techniques:** The grand scholar must know at least 10 techniques from three different technique types, four of which must be rank 3 or higher.
@@ -12,23 +13,23 @@ The following information pertains to the Grand Scholar advanced class.
 
 * **Hit Die**: The Grand Scholar gains 1d6 hit points per level. The Constitution modifier applies.
 * **Action Points**: The Grand Scholar gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.
-* **Class Skills**:The Grand Scholar's class skills are as follows. Chakra Control (Wis), Craft (Int), Diplomacy (Cha), Fuinjutsu (Int), Genjutsu (Cha),  Knowledge (any) (Int), Linguistics (Int), Ninjutsu (Int), Perception (Wis), Perform (Cha), Profession (Wis), Sense Motive (Wis), Survival (wis), Taijutsu (Str).
+* **Class Skills**: The Grand Scholar's class skills are as follows. Chakra Control (Wis), Craft (Int), Diplomacy (Cha), Fuinjutsu (Int), Genjutsu (Cha), Knowledge (any) (Int), Linguistics (Int), Ninjutsu (Int), Perception (Wis), Perform (Cha), Profession (Wis), Sense Motive (Wis), Survival (wis), Taijutsu (Str).
 * **Skill Points at Each Level:** 9 + Int modifier.
 
-TABLE: THE GRAND SCHOLAR
+## Table: The Grand Scholar
 
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special                 | Defense Bonus | Reputation Bonus |
-| :---- | :---------------- | :-------- | :------- | :-------- | :---------------------- | :------------ | :--------------- |
-| 1st   | +0                | +1        | +1       | +1        | Discovery, bonus chakra | +0            | +0               |
-| 2nd   | +1                | +2        | +2       | +2        | Loremaster              | +1            | +0               |
-| 3rd   | +1                | +2        | +2       | +2        | Discovery, bonus feat   | +1            | +1               |
-| 4th   | +2                | +2        | +2       | +2        | Research technique      | +1            | +1               |
-| 5th   | +2                | +3        | +3       | +3        | Discovery               | +2            | +1               |
-| 6th   | +3                | +3        | +3       | +3        | Grandmaster, bonus feat | +2            | +2               |
-| 7th   | +3                | +4        | +4       | +4        | Discovery               | +2            | +2               |
-| 8th   | +4                | +4        | +4       | +4        | Chakra reader           | +3            | +2               |
-| 9th   | +4                | +4        | +4       | +4        | Discovery, bonus feat   | +3            | +3               |
-| 10th  | +5                | +5        | +5       | +5        | Grand discovery         | +3            | +3               |
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1st | +0 | +1 | +1 | +1 | Discovery | +0 | +0 | 1 / 4 |
+| 2nd | +1 | +2 | +2 | +2 | Loremaster | +1 | +0 | 3 / 8 |
+| 3rd | +1 | +2 | +2 | +2 | Discovery, bonus feat | +1 | +1 | 5 / 12 |
+| 4th | +2 | +2 | +2 | +2 | Research technique | +1 | +1 | 7 / 16 |
+| 5th | +2 | +3 | +3 | +3 | Discovery | +2 | +1 | 9 / 20 |
+| 6th | +3 | +3 | +3 | +3 | Grandmaster, bonus feat | +2 | +2 | 11 / 24 |
+| 7th | +3 | +4 | +4 | +4 | Discovery | +2 | +2 | 13 / 28 |
+| 8th | +4 | +4 | +4 | +4 | Chakra reader | +3 | +2 | 15 / 32 |
+| 9th | +4 | +4 | +4 | +4 | Discovery, bonus feat | +3 | +3 | 17 / 36 |
+| 10th | +5 | +5 | +5 | +5 | Grand discovery | +3 | +3 | 19 / 40 |
 
 ## Class Features
 The following features pertain to the Grand Scholar advanced class.
@@ -49,22 +50,6 @@ At 1st level, and every odd-numbered level afterward, the grand scholar gains a 
 | 9                       | Technique mastery         | Gain a +2 bonus to Learn checks                                 |
 | 10                      | Chakra mastery            | Gain 2 bonus chakra and 4 bonus reserves                        |
 
-### Bonus Chakra
-The grand scholar gains a certain amount of bonus chakra and bonus reserve from taking  levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Reserve |
-| :----------- | :----------- | :------ |
-| 1st          | 1            | 4       |
-| 2nd          | 3            | 8       |
-| 3rd          | 5            | 12      |
-| 4th          | 7            | 16      |
-| 5th          | 9            | 20      |
-| 6th          | 11           | 24      |
-| 7th          | 13           | 28      |
-| 8th          | 15           | 32      |
-| 9th          | 17           | 36      |
-| 10th         | 19           | 40      |
 ### Loremaster
 At 2nd level, the grand scholar gains a bonus to all Knowledge and Research checks equal to one-half his grand scholar level.
 

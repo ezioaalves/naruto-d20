@@ -2,10 +2,11 @@
 
 The interrogator is a macabre element of warfare, but a highly efficient one. A master of acquiring information, he will stop at nothing to get his way, satisfied that the ends justify the means. 
 
-## Requirements:
+## Requirements
 To qualify to become an interrogator, a character must fulfill all the following criteria.
 * **Skills:** Bluff 3 ranks, Diplomacy 3 ranks, Intimidate 3 ranks, Sense Motive 6 ranks, Knowledge (Nature) 3 ranks.
 * **Feats:** Confident.
+
 ## Class Information
 The following information pertains to the Interrogator prestige class.
 * **Hit Die**: The Interrogator gains 1d8 hit points per level. The Constitution modifier applies.
@@ -13,10 +14,10 @@ The following information pertains to the Interrogator prestige class.
 * **Class Skills**: The Interrogator's class skills are as follows. Bluff (Cha), Chakra Control (Wis), Diplomacy (Cha), Disguise (Cha), Genjutsu (Cha), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Linguistics (Int), Ninjutsu (Int), Perception (Wis), Profession (Wis), Sense Motive (Wis), Stealth (Dex).
 * **Skill Points at Each Level:** 7 + Int modifier.
 
-TABLE: THE INTERROGATOR
+## Table: The Interrogator
 
 | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special                                 | Defense Bonus | Reputation Bonus |
-| :---- | :---------------- | :-------- | :------- | :-------- | :-------------------------------------- | :------------ | :--------------- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1st   | +0                | +0        | +0       | +2        | Frightful presence, commanding presence | +1            | +2               |
 | 2nd   | +1                | +0        | +0       | +3        | Interrogation, sneak attack +1d6        | +2            | +2               |
 | 3rd   | +2                | +0        | +0       | +3        | Bonus feat                              | +2            | +2               |
@@ -24,6 +25,7 @@ TABLE: THE INTERROGATOR
 | 5th   | +3                | +1        | +1       | +4        | Sneak attack +2d6                       | +3            | +3               |
 | 6th   | +4                | +1        | +1       | +5        | Bonus feat                              | +4            | +3               |
 | 7th   | +5                | +2        | +2       | +5        | Thought reform                          | +4            | +4               |
+
 ## Class Features
 The following features pertain to the Interrogator prestige class.
 

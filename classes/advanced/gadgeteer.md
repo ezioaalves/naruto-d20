@@ -2,7 +2,7 @@
 
 The gadgeteer is the ultimate polymath. While his toolkit is fairly limited on its own, his  creative ability allows him to expand his horizons enormously, using gadgets and clever  tricks to complete virtually any task. The gadgeteer class is suited to almost any roll, and can the fastest path to it is through the Smart Hero base class.
 
-## Requirements:
+## Requirements
 To qualify to become a gadgeteer, a character must fulfill all the following criteria.
 * **Skills**: Craft (chemical) 3  ranks, Craft (electronics) 3 ranks, Craft (mechanical) 3 ranks or Craft (structural) 3 ranks.
 * Feats: Builder, Educated.
@@ -15,10 +15,10 @@ The following information pertains to the Gadgeteer advanced class.
 * **Class Skills**: The Gadgeteer's class skills are as follows. Acrobatics (Dex), Craft (Int), Disable Device (Int), Knowledge (all skills, taken individually) (Int), Perception (Wis), Stealth (Dex).
 * **Skill Points at Each Level**: 9 + Int modifier.
 
-TABLE: THE GADGETEER
+## Table: The Gadgeteer
 
 | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special                             | Gadget Points/Day | Defense Bonus | Reputation Bonus |
-| :---- | :---------------- | :-------- | :------- | :-------- | :---------------------------------- | :---------------- | :------------ | :--------------- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1st   | +0                | +1        | +1       | +1        | Gadget (basic), gadgeteer skill     | 3                 | +1            | +0               |
 | 2nd   | +1                | +2        | +2       | +2        | Gadget, gadgeteer secret            | 5                 | +1            | +0               |
 | 3rd   | +2                | +2        | +2       | +2        | Gadgeteer skill, bonus feat         | 8                 | +2            | +1               |
@@ -43,7 +43,7 @@ Most gadgets must be drawn in the gadgeteer's hand and require the use of gadget
 There are four types of gadgets: basic, intermediate, advanced and ultimate. At 1st level, a gadgeteer can select from basic gadgets. At 6th level, the gadgeteer gains access to intermediate gadgets, to advanced gadgets at 8th level and to ultimate gadgets at 10th level. Any time the gadgeteer learns a new type of gadget, he can replace an existing gadget with a new one. The gadget that was replaced immediately stops working.
 
 ### Gadget Points/Day
-The gadgeteer gains a number of gadget points per day as shown on TABLE: THE GADGETEER, plus a number of bonus gadget points equal to his Intelligence modifier × his gadgeteer level, divided by two (round down). The gadgeteers can regain gadget points once per day by tuning up his gadgets. This process takes 1 hour to complete, and does not require rest.
+The gadgeteer gains a number of gadget points per day as shown on Table: The Gadgeteer, plus a number of bonus gadget points equal to his Intelligence modifier × his gadgeteer level, divided by two (round down). The gadgeteers can regain gadget points once per day by tuning up his gadgets. This process takes 1 hour to complete, and does not require rest.
 
 ### Gadgeteer Skill
 At 1st level, and every odd-numbered level afterwards, the gadgeteer gains a gadgeteer skill. These skills can be chosen from the list below, and additional gadgeteer skills are listed under their pertinent gadget in Chapter IV. Unless specified otherwise, a gadgeteer cannot be selected twice. If the skill mentions a gadget in parentheses, the gadgeteer must have selected that gadget first before leaning the associated gadgeteer skill.
@@ -74,24 +74,24 @@ At 2nd, 5th and 8th level, the Gadgeteer learns a gadgeteer secret. This gadgete
 ### Bonus Feat
 At 3rd, 6th and 9th level, the Gadgeteer gets a bonus feat. The bonus feat must be selected an item creation feat, and the Gadgeteer must meet all the prerequisites of the feat to select it.
 
-# SECTION V: TINKERER'S SECRETS
+## Section V: Tinkerer's Secrets
 A gadgeteer's true strength lies in his ability to make the best use of gadgets, which can enable him to do things only shinobi can do, and even things they can't. An index of gadgets by type and level is provided at the end of this section, as well as a brief description for each one.
 
-## Name
+### Name
 The first line of each gadget entry is its name. Some gadgeteers are known to personalize  the name of their gadgets, but this doesn't affect the mechanical effects or description of the gadget.
-## Type
+### Type
 Below the name is the gadget's type, which can be basic, intermediate, advanced or ultimate. This determines whether the gadgeteer is high enough level to craft and use the gadget, as shown in the Gadgets ability of the gadgeteer.
 
-## Class
+### Class
 Following the gadget's type is the gadget class, which determines the skill used in crafting the gadget. Chemical gadgets use Craft (chemical), Electronic gadgets use Craft (electronical), and Mechanical gadgets use Craft (chemical).
 
-## Prepared Gadgets
+### Prepared Gadgets
 A few gadgets require advance preparation before being used. Prepared gadgets can be readied with1 hour of uninterrupted work once per day using seemingly innocuous reagents, or when tuning up his gadgets to regain gadget points. If a gadgeteer has multiple gadgets can require preparation, they are all prepared at the same time. Each typeof prepared gadget has a maximum number of uses that can be prepared each day. Any gadget prepared beyond that limit causes existing gadgets to lose potency.
 
-## Gadgeteer Skills
+### Gadgeteer Skills
 The last entry following a gadget's description details the various gadgeteer skills a gadgeteer can learn that modify or improve the effects of any given gadget. A gadgeteer can typically only be selected once, unless it specifically says otherwise.
 
-## Gadget Descriptions
+### Gadget Descriptions
 The individual gadgets are listed in the section below. Unless specifically mentioned otherwise, the save DC of a given gadget is DC equal to 10 + gadgeteer class levels + the gadgeteer's Intelligence modifier.
 
 ### Chakra Blaster
@@ -265,7 +265,7 @@ This exoskeleton is worn over clothing and armor, attached to the wearer's limbs
 *Basic electronic gadget.*
 This two-part device consist of a receiver that looks like a compass, called the wayfinder, and a transmitter the size of a small coin. It can be activated for 1 minute per gadgeteer level by spending 1 gadget points, enabling the gadgeteer to know the exact direction of the transmitter as long as it was activated within 10 feet of the wayfinder and remains within a range of 100 feet per gadgeteer level. The transmitter can easily be concealed on another creature by means of the Sleight of Hand skill, and any attempt to do so gains a +4 bonus.
 
-## Gadgets Index
+### Gadgets Index
 The index below contains all techniques found in this section, organized by rank, type and subtype.
 
 ### Basic Gadgets

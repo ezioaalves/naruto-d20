@@ -19,13 +19,13 @@ The following information pertains to the Specialist advanced class.
 
 ## Table: The Specialist
 
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1st | +0 | +0 | +1 | +1 | Ninja lore, bonus chakra | +1 | +1 |
-| 2nd | +1 | +0 | +2 | +2 | Demolitionist | +2 | +1 |
-| 3rd | +2 | +1 | +2 | +2 | Grenadier, bonus feat | +2 | +1 |
-| 4th | +3 | +1 | +2 | +2 | Specialist's cunning | +3 | +2 |
-| 5th | +3 | +1 | +3 | +3 | Demolitions expert, ninja tool mastery | +3 | +2 |
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1st | +0 | +0 | +1 | +1 | Ninja lore | +1 | +1 | 1 / 2 |
+| 2nd | +1 | +0 | +2 | +2 | Demolitionist | +2 | +1 | 2 / 4 |
+| 3rd | +2 | +1 | +2 | +2 | Grenadier, bonus feat | +2 | +1 | 3 / 6 |
+| 4th | +3 | +1 | +2 | +2 | Specialist's cunning | +3 | +2 | 4 / 8 |
+| 5th | +3 | +1 | +3 | +3 | Demolitions expert, ninja tool mastery | +3 | +2 | 5 / 10 |
 
 ## Class Features
 
@@ -33,19 +33,6 @@ The following features pertain to the Specialist advanced class.
 
 ### Ninja Lore
 When examining a device, enhancement seal or sealed item, the specialist can attempt to determine its function. The specialist can make a Knowledge (ninja lore) check to determine how to use a foreign object, or to identify one property or enhancement bonus of an enhancement seal or sealed item. The difficulty of this check is equal to the object's purchase DC.
-
-### Bonus Chakra
-The Specialist gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Bonus Reserve |
-| :--- | :--- | :--- |
-| 1st | 1 | 2 |
-| 2nd | 2 | 4 |
-| 3rd | 3 | 6 |
-| 4th | 4 | 8 |
-| 5th | 5 | 10 |
 
 ### Demolitionist
 The specialist gains a competence bonus to charge or activate paper bombs, sealing tags and sunburst tags equal to his specialist class levels. In addition, he adds his specialist class level as a bonus to the total damage dealt when using ice bombs and paper bombs.

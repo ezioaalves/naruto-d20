@@ -2,12 +2,13 @@
 
 The commando is a master of surprise and group tactics. He excels with a small team,  surrounded on all sides in a situation that seems hopeless until, with a short command, he and his team turn the tide and cut out a victory from the cusp of total defeat. The fastest path to this class is through the Strong Hero basic class.
 
-## Requirements:
+## Requirements
 
 To qualify to become a commando, a character must fulfill all the following criteria.
 * **Base Attack Bonus:** +3.
 * **Skills:** Knowledge (Arcana) 3 ranks, a total of 8 ranks in the following skills: Acrobatics, Climb, Perception, Stealth and Swim.
 * **Feats:** Any one of the following: Archaic Weapons Proficiency, Nin Weapons Proficiency or Personal Firearms Proficiency.
+
 ## Class Information
 
 The following information pertains to the Commando advanced class.
@@ -17,10 +18,10 @@ The following information pertains to the Commando advanced class.
 * **Class Skills**: The Commando's class skills are as follows. Acrobatics (Dex), Climb (Str), Craft (Int), Intimidate (Cha), Knowledge (arcane, history, local) (Int), Linguistic (Int), Perception (Wis), Profession (Wis), Spot (Wis), Stealth (Dex), Survival (Wis), and Swim (Str).
 * **Skill Points at Each Level**: 5 + Int modifier.
 
-TABLE: THE COMMANDO
+## Table: The Commando
 
 | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special                      | Defense Bonus | Reputation Bonus |
-| :---- | :---------------- | :-------- | :------- | :-------- | :--------------------------- | :------------ | :--------------- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1st   | +1                | +1        | +1       | +0        | Weapon focus, bonus tactic   | +1            | +0               |
 | 2nd   | +2                | +2        | +2       | +0        | Teamwork, bonus feat         | +1            | +0               |
 | 3rd   | +3                | +2        | +2       | +1        | Weapon specialization        | +2            | +0               |
@@ -49,14 +50,18 @@ At 10th level, the commando becomes so in tune with his team that he is aware of
 At 3rd level, the commando gains a +2 bonus to damage rolls with his chosen weapon.
 
 ### Team Leader
-At 4th level, the commando's training enables him to effectively manage his team's  efforts. All allies within 30 feet of the commando gain a +2 competence bonus on Climb, Jump, Hide, Listen, Move Silently, Spot and Swim checks. Allies must be able to see the commando to gain this bonus. At 8th level, this bonus increases to +4. Improved Reactions
+At 4th level, the commando's training enables him to effectively manage his team's efforts. All allies within 30 feet of the commando gain a +2 competence bonus on Climb, Jump, Hide, Listen, Move Silently, Spot and Swim checks. Allies must be able to see the commando to gain this bonus. At 8th level, this bonus increases to +4.
+
+### Improved Reactions
 At 5th level, the commando's ability to react to confrontation improves, and he gains a +2 competence bonus to Initiative checks.
 
 ### Opportunist
 At 6th level, the commando can spend an action point to make an attack of opportunity  once per round against an opponent who has just been injured in melee by an ally. If the commando already has the Opportunist talent or ability, it can be used without spending an action point.
 
 ### Improved Critical
-At 7th level, the commando's threat range with his chosen weapon is increased by 1. Greater Weapon Specialization
+At 7th level, the commando's threat range with his chosen weapon is increased by 1.
+
+### Greater Weapon Specialization
 At 9th level, the commando's bonus to damage rolls with his chosen weapon from 
 Weapon Specialization improves to +4.
 

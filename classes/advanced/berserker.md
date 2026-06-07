@@ -5,7 +5,7 @@ of his ability to be completely rational one moment, then fly into a screaming, 
 rage and carve a swath of death and devastation across the battlefield the next. He masters
 and embraces his rage, and turns it lethal weapon that merits respect—and fear.
 
-## Requirements:
+## Requirements
 To qualify to become a berserker, a character must fulfill all the following criteria.
 * Base Attack Bonus: +5.
 * Feats: [Universal: Risky Strike], Cleave.
@@ -17,12 +17,12 @@ The following information pertains to the Berserker prestige class.
 * **Hit Die**: The Berserker gains 1d12 hit points per level. The Constitution modifier applies.
 * **Action Points**: The Berserker gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.
 * **Class Skills**: The Berserker's class skills are as follows. Acrobatics (Dex), Climb (Str), Craft (Int), Intimidate (Cha), Knowledge (Local) (Int), Perception (Wis), Profession (Wis), Ride (Dex), Swim (Str).
- * **Skill Points at Each Level**: 3 + Int modifier.
+* **Skill Points at Each Level**: 3 + Int modifier.
 
-## TABLE: THE BERSERKER
+## Table: The Berserker
 
 | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special                   | Defense Bonus | Reputation Bonus |
-| :---- | :---------------- | :-------- | :------- | :-------- | :------------------------ | :------------ | :--------------- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1st   | +1                | +2        | +0       | +0        | Rage 1/day                | +1            | +1               |
 | 2nd   | +2                | +3        | +0       | +0        | Bonus Feat                | +2            | +1               |
 | 3rd   | +3                | +3        | +1       | +1        | Rage 2/day, uncanny dodge | +2            | +1               |

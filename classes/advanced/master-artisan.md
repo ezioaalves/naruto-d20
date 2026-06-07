@@ -3,40 +3,34 @@
 A true master of his art or craft, the master artisan is capable of crafting objects with such finesse that they, along with their creator, often make their mark in history. 
 
 ## Requirements
+
 To qualify to become a master artisan, a character must fulfill all the following criteria.
 * **Skills:** Craft (chemical, electronical or mechanical) 6 ranks or Fuinjutsu 6 ranks
 * **Feats:** Any item creation feat and either Craft Armor Seals or Craft Weapon Seals.
 
 ## Class Information
+
 The following information pertains to the Master Artisan prestige class.
 * **Hit Die**: The Master Artisan gains 1d8 hit points per level. The Constitution modifier applies.
 * **Action Points**: The Master Artisan gains a number of action points equal to 7 + one-half his character level, rounded down, everytime he attains a new level in this class.
 * **Class Skills**: The Master Artisan's class skills are as follows. Chakra Control (Wis), Craft (Int), Diplomacy (Cha), Disable Device (Dex), Fuinjutsu (Int), Knowledge (any) (Int), Linguistics (Int), Ninjutsu (Int), Perception (Wis), Profession (Wis), Sense Motive (Wis)
 * **Skill Points at Each Level:** 7 + Int modifier.
 
-TABLE: THE MASTER ARTISAN
+## Table: The Master Artisan
 
-| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special                      | Defense Bonus | Reputation Bonus |
-| :---- | :---------------- | :-------- | :------- | :-------- | :--------------------------- | :------------ | :--------------- |
-| 1st   | +0                | +1        | +0       | +1        | Master at work, bonus chakra | +1            | +2               |
-| 2nd   | +1                | +2        | +0       | +2        | Renown, bonus feat           | +1            | +2               |
-| 3rd   | +1                | +2        | +1       | +2        | Specialty                    | +2            | +3               |
+| Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus | Chakra |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1st | +0 | +1 | +0 | +1 | Master at work | +1 | +2 | 1 / 4 |
+| 2nd | +1 | +2 | +0 | +2 | Renown, bonus feat | +1 | +2 | 3 / 8 |
+| 3rd | +1 | +2 | +1 | +2 | Specialty | +2 | +3 | 5 / 12 |
 
 ## Class Features
+
 The following features pertain to the Master Artisan prestige class.
 
 ### Master at Work
 The Master Artisan adds his class level as a bonus to determine his effective level when crafting enhancement seals and sealed items and to Craft checks when creating objects with the Craft skill.
 
-### Bonus Chakra
-The Master Artisan gains a certain amount of bonus chakra and bonus reserve from taking levels in this class. The amount of bonus chakra or chakra reserve gained is shown on the table below. It is not influenced by ability scores, and is in addition to the standard amount gained every level from gaining an additional hit dice.
-The amount of bonus chakra or reserve doesn't stack, simply choose the appropriate value based on the character's class levels. Multiple instances of Bonus Chakra and Reserve, such as from various classes, do stack with each other.
-
-| Class Levels | Bonus Chakra | Reserve |
-| :----------- | :----------- | :------ |
-| 1st          | 1            | 4       |
-| 2nd          | 3            | 8       |
-| 3rd          | 5            | 12      |
 ### Renown
 The Master Artisan gains the Renown feat for free at 2nd level.
 
