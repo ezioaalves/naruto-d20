@@ -1,0 +1,171 @@
+{
+   "_id" : "ccdf12ead07e361f",
+   "_key" : "!items!ccdf12ead07e361f",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/items/inventory/book-purple.jpg",
+   "name" : "Sensory Shinobi",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "42f36d485a198280",
+            "formula" : "floor((@item.level + 2) / 2) - (floor(@item.level / 6) - floor((@item.level - 1) / 6)) - (floor(@item.level / 8) - floor((@item.level - 1) / 8)) - (floor(@item.level / 10) - floor((@item.level - 1) / 10))",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "eb15975429f1d200",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "e8d482444c63cd0a",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : true,
+         "kno" : true,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Sensory Shinobi</h1>\n<p>A Sensory Shinobi’s job is to track and perceive everything around them. Their specialty is long distance tracking and being able to pursue those who normally are impossible to track or catch. Few can escape the Sensory Shinobi once they’ve got the trail.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a sensory shinobi, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Listen or Spot 6 ranks</li>\n<li><strong>Special</strong>: Must be able to Sense Chakra.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Sensory Shinobi prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: The Sensory Shinobi gains 1d8 hit points per level. The Constitution modifier applies.</li>\n<li><strong>Action Points</strong>: The Sensory Shinobi gains a number of action points equal to 6 + one-half his character level, rounded down, everytime he attains a new level in this class.</li>\n<li><strong>Class Skills</strong>: Balance (Dex), Chakra Control (Wis), Craft (calligraphy, pharmaceutical, visual art, writing) (Int), Escape Artist (Dex), Genjutsu (Cha), Hide (Dex), Investigate (Int), Knowledge (arcane lore, art, behavioral sciences, business, civics, current events, earth and life sciences, history, ninja lore, physical sciences, popular culture, streetwise, tactics, technology, theology and philosophy) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read/Write Language (none), Sense Motive (Wis), Speak Language (none), Spot (Wis), Survival (Wis), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Sensory Shinobi</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n<th>Chakra</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1</td>\n<td>Enhanced Sense Chakra, Ever Perceptive</td>\n<td>+1</td>\n<td>+0</td>\n<td>+1 / +2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Light Sleeper, Track</td>\n<td>+2</td>\n<td>+0</td>\n<td>+2 / +4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Ever Perceptive, Increase speed (5 feet)</td>\n<td>+2</td>\n<td>+1</td>\n<td>+3 / +6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Hide in Plain Sight</td>\n<td>+3</td>\n<td>+1</td>\n<td>+4 / +8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Ever Perceptive, Increase speed (10 feet)</td>\n<td>+3</td>\n<td>+1</td>\n<td>+5 / +10</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Cunning Tracker, Run</td>\n<td>+3</td>\n<td>+2</td>\n<td>+6 / +12</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Ever Perceptive</td>\n<td>+4</td>\n<td>+2</td>\n<td>+7 / +14</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Sensory Shinobi prestige class.</p>\n<h3>Enhanced Sense Chakra</h3>\n<p>The Sensory Shinobi is able to memorize every chakra signature they encounter with a DC Spot check of 20. The user receives a bonus to tell if a signature they sense and have previously memorized is real or if someone is impersonating that signature. This bonus is equal to the user’s levels in Sensory Shinobi.</p>\n<h3>Ever Perceptive</h3>\n<p>Choose one of the following Masteries. A Mastery cannot be chosen twice unless specified:</p>\n<ul>\n<li><strong>Advanced Sight</strong> (Requires Enhanced Sight and 1 other Talent): The user is now able to See Through Chakra whenever he concentrates to Sense Chakra.</li>\n<li><strong>Analyze Signature</strong>: The Sensory Shinobi is able to discern the primary affinity of those who are within the range of their Sense Chakra. This talent may be taken additional times; each time allows the user to discern an additional nature a person is able to use of the five main natures. If a target has access to anything beyond those the user senses the base natures that make up those.</li>\n<li><strong>Boosted Perception</strong> (Requires 1 Talent): The Sensory Shinobi treats each level in Sensory Shinobi as 2 levels for the purpose of Sense Chakra range based on per level or hit dice.</li>\n<li><strong>Enhanced Sight</strong> (Requires 1 other Talent): The user is now able to See Chakra whenever he concentrates to Sense Chakra.</li>\n<li><strong>Extended Senses</strong>: While Sensing Chakra the user’s range is now 10 feet per Sensory Shinobi level. This talent may be selected twice; the second time you may count all class levels from all classes to determine distance.</li>\n<li><strong>Sensory Proficiency</strong>: While Sensing Chakra the user can continue to Sense Chakra for as long as he concentrates, plus 1d3 + his Sensory Shinobi levels in rounds.</li>\n<li><strong>Pinpoint Senses</strong> (Requires 1 other Talent): The Sensory Shinobi is now able to use Sense Chakra to pinpoint the location of a creature to within a 5 ft. square. This does not allow the user to mitigate being flat-footed by an invisible enemy or the penalty for attacking invisible enemies either.</li>\n<li><strong>Unphased Perception</strong>: Whenever the user would sense a Godlike chakra signature they do not need to make a Will save to become dazed. The user also adds an additional number of rounds to their ability to Sense Chakra equal to their Wisdom modifier.</li>\n</ul>\n<h3>Light Sleeper</h3>\n<p>The Sensory Shinobi is used to functioning on the least amount of sleep possible and has been so thoroughly trained that he receives the Light Sleeper feat for free but heals 3/4ths of his hit points and chakra pool when resting using the feat, instead of half (rounded down).</p>\n<h3>Cunning Tracker</h3>\n<p>The Sensory Shinobi has become so proficient when tracking that he gains a bonus to his Survival checks equal to his levels in Sensory Shinobi. Furthermore, he treats all tracks as though they were a number of days fresher equal to his levels in Sensory Shinobi.</p>\n<h3>Track</h3>\n<p>A ninja must be proficient at tracking his foe down; losing one's pray means failure. At first level, the Sensory Shinobi gains the Track feat for free. In addition, the Sensory Shinobi can Track at his normal speed without taking a -5 penalty to his Survival check.</p>\n<h3>Hide In Plain Sight</h3>\n<p>A Sensory Shinobi can use the Hide skill even while being observed. As long as he is within 10 feet of some sort of shadow, a he can hide himself from view in the open without anything to actually hide behind. He cannot, however, hide in his own shadow.</p>\n<h3>Increase Speed</h3>\n<p>At 3rd level, the Sensory Shinobi's base speed increases by 5 feet as long as he doesn't carry heavier than a light load. This bonus increases to 10 feet at 5th level, and stacks with the Fast Hero's Increase Speed talent tree.</p>\n<h3>Run</h3>\n<p>The Sensory Shinobi who is used to chasing after his targets and catching up to them long after most would consider the trail cold gains the Run feat for free.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

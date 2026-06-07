@@ -1,0 +1,155 @@
+{
+   "_id" : "8ea5ff6abf6dcc73",
+   "_key" : "!items!8ea5ff6abf6dcc73",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/items/inventory/book-purple.jpg",
+   "name" : "Chemist",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "054d3f1f855b5d57",
+            "formula" : "floor((@item.level + 1) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : true,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : true,
+         "han" : false,
+         "hea" : true,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : true,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : true,
+         "rid" : false,
+         "sen" : false,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : false,
+         "tai" : false,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Chemist</h1>\n<h2>Requirements</h2>\n<p>To qualify to become a chemist, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Craft (Pharmaceutical) 8 ranks, Knowledge (Earth and Life Sciences) 8 ranks.</li>\n<li><strong>Feats</strong>: Craft Poisons, Craft Shinobi Drugs</li>\n<li><strong>Special</strong>: Must have crafted at least four different poisons and successfully used them.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Chemist prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d6</li>\n<li><strong>Action Points</strong>: 6 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Balance (Dex), Chakra Control (Wis), Concentration (Con), Craft (chemical, pharmaceutical) (Int), Fuinjutsu (Int), Genjutsu (Cha), Hide (Dex), Jump (Str), Knowledge (earth and life science, current events, ninja lore, popular culture) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Profession (Wis), Read Language (None), Speak Language (None), Spot (Wis), Survival (Wis), Treat Injury (Wis), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Chemist</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+2</td>\n<td>+0</td>\n<td>+0</td>\n<td>Poison Crafter, Sneak Attack (+1d6)</td>\n<td>+0</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+3</td>\n<td>+0</td>\n<td>+0</td>\n<td>Potent Poisoner (+1)</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+1</td>\n<td>+1</td>\n<td>Potion Crafter</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+1</td>\n<td>+1</td>\n<td>Potent Poisoner (+2)</td>\n<td>+1</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+1</td>\n<td>+1</td>\n<td>Master Poison Maker, Sneak Attack (+2d6)</td>\n<td>+2</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+5</td>\n<td>+2</td>\n<td>+2</td>\n<td>Potent Poisoner (+3)</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+5</td>\n<td>+2</td>\n<td>+2</td>\n<td>Master Potion Maker</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6</td>\n<td>+6</td>\n<td>+2</td>\n<td>+2</td>\n<td>Potent Poisoner (+4)</td>\n<td>+3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6</td>\n<td>+6</td>\n<td>+3</td>\n<td>+3</td>\n<td>Sneak Attack (+3d6)</td>\n<td>+3</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7</td>\n<td>+7</td>\n<td>+3</td>\n<td>+3</td>\n<td>Potent Poisoner (+5), Apotheosis of the Yonbi, Elixir of the Yonbi</td>\n<td>+3</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Chemist prestige class.</p>\n<h3>Poison Crafter</h3>\n<p>The chemist gains the ability to craft poisons with exceptional skill. She gains a +4 bonus to Craft (Chemical) checks in order to create poisons. She further reduces the Purchase DC for materials by 5 for all poisons he crafts.</p>\n<h3>Sneak Attack</h3>\n<p>This ability functions as the Ninja Scout sneak attack ability. If she can catch an opponent when he is unable to defend himself effectively from her attack, she can strike a vital spot for extra damage. Creatures immune to critical hits and sneak attacks, or who have concealment, do not suffer extra damage. This extra damage is 1d6 at 1st level, and it increases to 2d6 at 5th level, and 3d6 at 9th level. If the chemist gains a bonus to sneak attack from another source, the bonuses stack.</p>\n<h3>Potion Crafter</h3>\n<p>Not all chemistry is dangerous, and some can be beneficial--at least, beneficial after the pain goes away. The chemist gains a +4 bonus to Craft (Pharmaceutical) checks made to create shinobi drugs or Cure Potions. She also reduces the XP Cost of creating either of these items by 1/2.</p>\n<h3>Master Poison Maker</h3>\n<p>The chemists' skill with poison making grows greater, and she gains another +4 bonus to Craft (Chemical) checks to create poisons. She reduces the purchase DC for material costs of poisons she crafted by another 5. The chemist, through trial and error, learns how to craft a great and dangerous poison: Black Widow Venom.</p>\n<h3>Master Potion Maker</h3>\n<p>Where there is death, there is also life. The chemists' skill with potion making allows her to craft Cure Potions with Craft (Pharmaceutical) checks in the place of Craft (Calligraphy) checks. Further, she gains another +4 bonus to Craft (Pharmaceutical) checks to create shinobi drugs or Cure Potions. Finally, she reduces the purchase DC for material costs of drugs or Cure Potions by 5.</p>\n<h3>Apotheosis Of The Yonbi</h3>\n<p>The chemist, having either accidentally or intentionally poisoned herself thousands of times, becomes capable of drinking the most dangerous poisons as if they were afternoon tea. The chemist becomes immune to poison, and no longer suffers any negative side effects of shinobi drugs she ingests. She still gains the positive benefits of such drugs.</p>\n<h3>Elixir Of The Yonbi</h3>\n<p>A secret formula unearthed only by the insane chemists willing to use their own life essence in a truly grand poison. Once per day, the chemist may use this ability. Using this ability requires the chemist to provide a vial of poison or a Cure Potion, and the poison or potion is destroyed in the process. The poison or potion converts into a bubbling vial of green liquid that will either slay another creature outright, or bring a creature back to its peak physical condition. The chemist chooses to either craft a Healing Elixir or Poisonous Elixir, and once she has chosen the choice is irreversible. A healing or poisonous elixir lasts a number of weeks equal to the creators' chemist level divided by 2. A healing elixir provides 1 dose that wipes away injury and afflictions. It immediately ends any and all of the following adverse conditions affecting the Target: ability damage, blinded, confused, dazed, dazzled, deafened, diseased, exhausted, fatigued, feebleminded, insanity, nauseated, sickened, stunned, and poisoned. It also cures 10 hit points of damage per level of the creator, to a maximum of 150 points at 15th level. Creatures are allowed a Will Save to resist the effect of a Yonbi Elixir at a DC equal to 10+1/2 the Chemists' level + the Chemists' Wisdom modifier. A poisonous elixir provides 1 dose of an injury and ingested poison that deals 10 points of damage per creator level (to a maximum of 150 points at 15th level). If the creature successfully saves, harm deals half this amount, but it cannot reduce the target’s hit points to less than 1. Creatures are allowed a Will Save to resist the effect of a Yonbi Elixir at a DC equal to 10+1/2 the Chemists' level + the Chemists' Wisdom modifier. An Elixir of the Yonbi bypasses all poison immunity, and may poison creatures normally immune to those methods or who lack discernible anatomy.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 6,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

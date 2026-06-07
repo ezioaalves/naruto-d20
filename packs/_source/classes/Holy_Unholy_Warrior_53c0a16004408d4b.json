@@ -1,0 +1,171 @@
+{
+   "_id" : "53c0a16004408d4b",
+   "_key" : "!items!53c0a16004408d4b",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/items/inventory/book-purple.jpg",
+   "name" : "Holy/Unholy Warrior",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "ab8162f9e19fee71",
+            "formula" : "floor((@item.level + 1) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "4a593cc2a99dbfb1",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "bf010ce3c202b92a",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : true,
+         "hea" : true,
+         "int" : true,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : false,
+         "prf" : false,
+         "pro" : true,
+         "rid" : true,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Holy/Unholy Warrior</h1>\n<p>The fastest path into this prestige class is from the Strong and Fast hero basic classes.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a holy/unholy warrior, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +8</li>\n<li><strong>Skills</strong>: Diplomacy 9 ranks, Gather Information 9 ranks, Knowledge (any one) 9 ranks.</li>\n<li><strong>Feats</strong>: Weapon Focus in a melee weapon.</li>\n<li><strong>Special</strong>: At the time that the character receives his first level in the Holy/Unholy Warrior prestige class, he must decide whether his faith leans toward the positive (good) or negative (evil) universe. This choice adds either the good or evil allegiance to the character, and determines how the Holy/Unholy Warrior uses certain aspects of his faith.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Holy/Unholy Warrior prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d10</li>\n<li><strong>Action Points</strong>: 7 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Chakra Control (Wis), Climb (Str), Concentration (Con), Diplomacy (Cha), Handle Animal (Cha), Intimidate (Cha), Jump (Str), Knowledge (arcane lore, current events, history, ninja lore, tactics, theology and philosophy) (Int), Ninjutsu (Int), Profession (Wis), Read/Write Language (none), Ride (Dex), Sense Motive (Wis), Speak Language (none), Taijutsu (Str), Treat Injury (Wis).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Holy/Unholy Warrior</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n<th>Chakra</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+2</td>\n<td>+0</td>\n<td>+2</td>\n<td>Divine Grace, Sense Allegiance</td>\n<td>+0</td>\n<td>+1</td>\n<td>+1 / +2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+0</td>\n<td>+3</td>\n<td>Smite Allegiance 1/day</td>\n<td>+1</td>\n<td>+1</td>\n<td>+2 / +4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>Divine Touch, Power of Allegiance</td>\n<td>+1</td>\n<td>+1</td>\n<td>+3 / +6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+1</td>\n<td>+4</td>\n<td>Smite Allegiance 2/day</td>\n<td>+1</td>\n<td>+2</td>\n<td>+4 / +8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+1</td>\n<td>+4</td>\n<td>Extended Influence</td>\n<td>+2</td>\n<td>+2</td>\n<td>+5 / +10</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Holy/Unholy Warrior prestige class.</p>\n<h3>Divine Grace</h3>\n<p>At 1st level, a Holy/Unholy Warrior applies his Charisma modifier (if positive) as a bonus on all saving throws.</p>\n<h3>Sense Allegiance</h3>\n<p>At 1st level, The Holy/Unholy Warrior can sense the presence of characters, creatures, and items of both his chosen allegiance, and his opposing allegiance (the Holy Warrior has “good” as a chosen allegiance, and “evil” as an opposing allegiance, while the Unholy Warrior has the reverse). The sense allegiance ability extends in a 60foot radius around the Warrior, but may be concentrated to a quarter circle emanating forward from the Warrior. You can pinpoint allegiance more finely with a successful Wisdom check (DC 15), if the user has Sense Chakra they receive a +4 bonus while it is active. If the Chakra Signature of the target is completely suppressed, then this ability will not function on that target.</p>\n<h3>Smite Allegiance (Su)</h3>\n<p>At 2nd level, the Holy/Unholy Warrior gains the ability to smite characters, creatures, or items of opposing allegiance with a single melee attack (the Holy Warrior has “evil” as an opposing allegiance, the Unholy Warrior has “good” as an opposing allegiance). The Holy/Unholy Warrior may use this for free a number of times per day (see table) or spends an action point and, in addition to the normal benefit of the action point, gains a bonus to the attack equal to his Charisma modifier (if positive) and deals 1 extra point of damage per total character levels of the Holy/Unholy Warrior. Should the attack miss, the action point is wasted. Similarly, the action point is expended if the Holy/Unholy Warrior uses it and strikes a target that does not have an opposing allegiance.</p>\n<h3>Divine Touch</h3>\n<p>At 3rd level, the Holy/Unholy Warrior gains the ability to channel divine energy through his body and apply it directly to himself or another character. With this ability, the Warrior can restore lost hit points with a single touch; he may also choose to deal holy damage to a target with a simple a touch attack. Each day the Holy/Unholy Warrior may cure or deal a number of points of damage equal to his Charisma bonus times his total character level. The Holy Warrior is not limited to curing wounds, nor is the Unholy Warrior restricted to inflicting them. It is possible to combine this ability with smite allegiance to increase the amount of damage dealt by a touch attack. Massive damage rules apply. Use of this ability may be guided by the Holy/Unholy Warrior’s allegiance, and widespread abuse may cause the Holy/Unholy Warrior to lose his chosen allegiance.</p>\n<h3>Power Of Allegiance</h3>\n<p>At 3rd level, the Holy/Unholy Warrior gains a +2 to the Perform DC and save DC of any jutsu that shares the subtype of his allegiance, either [Good] or [Evil], as well as the a -1 to chakra cost for those jutsu.</p>\n<h3>Extended Influence</h3>\n<p>At 5th level, the Holy/Unholy Warrior increases the range of his relevant jutsus by one-half. Techniques with a “Touch”, “Melee”, or “Personal” range are unaffected.</p>\n<h3>Former Holy/Unholy Warriors</h3>\n<p>A Holy/Unholy Warrior who loses his chosen allegiance, intentionally or not, loses all Holy/Unholy Warrior special abilities. He may no longer progress in levels of Holy/Unholy Warrior, but can regain use of those abilities if he atones for his actions. The Holy/Unholy Warrior may switch sides entirely, taking its former opposed allegiance. In this case, none of the Warrior’s abilities are lost, and the Warrior merely changes his designation from Holy to Unholy (being a Fallen Warrior) or Unholy to Holy (being a Redeemed Warrior). Such a switch of allegiance is dramatic, such that the Fallen/Redeemed Warrior automatically kicks off the sense allegiance ability for Warriors of its now-opposed allegiance.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

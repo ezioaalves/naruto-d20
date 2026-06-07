@@ -1,0 +1,171 @@
+{
+   "_id" : "e463450835498ea5",
+   "_key" : "!items!e463450835498ea5",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/items/inventory/book-purple.jpg",
+   "name" : "Iaijutsu Master",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "ba16aba5535b7fc1",
+            "formula" : "floor((@item.level + 2) / 2) - (floor(@item.level / 6) - floor((@item.level - 1) / 6)) - (floor(@item.level / 8) - floor((@item.level - 1) / 8)) - (floor(@item.level / 10) - floor((@item.level - 1) / 10))",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "fdf561f517c585a9",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "84a35ca1da2ae1f7",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : true,
+         "clm" : true,
+         "crf" : true,
+         "dev" : false,
+         "dip" : true,
+         "dis" : false,
+         "esc" : true,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : true,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : false,
+         "lor" : false,
+         "nin" : true,
+         "per" : false,
+         "prf" : true,
+         "pro" : true,
+         "rid" : true,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : false,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Iaijutsu Master</h1>\n<p>Iaijutsu is the martial art of drawing a weapon (almost always a katana) and attacking with it in the same fluid motion. It is the foundation of Iaijutsu Duels, and its masters are feared and respected throughout the lands and other lands where iaijutsu is practiced. Iaijutsu Masters harness their ki energy to strike with blinding speed and devastating power.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a iaijutsu master, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +3</li>\n<li><strong>Skills</strong>: Iaijutsu Focus 5 ranks.</li>\n<li><strong>Feats</strong>: Improved Initiative, Quick Draw, Weapon Focus (katana)</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Iaijutsu Master prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d10</li>\n<li><strong>Action Points</strong>: 6 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Balance (Dex), Bluff (Cha), Chakra Control (Wis), Climb (Str), Craft (Int), Diplomacy (Cha), Escape Artist (Dex), Genjutsu (Cha), Iaijutsu Focus (Cha), Jump (Str), Ninjutsu (Int), Perform (Cha), Profession (Wis), Ride (Dex), Sense Motive (Wis), Taijutsu (Str), and Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Iaijutsu Master</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n<th>Chakra</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+0</td>\n<td>+2</td>\n<td>+1</td>\n<td>Weapon Finesse, Bonus Feat, Canny Defense</td>\n<td>+1</td>\n<td>+0</td>\n<td>+1 / +2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+0</td>\n<td>+3</td>\n<td>+2</td>\n<td>Lightning Blade</td>\n<td>+2</td>\n<td>+0</td>\n<td>+2 / +4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+1</td>\n<td>+3</td>\n<td>+2</td>\n<td>Bonus Feat</td>\n<td>+2</td>\n<td>+1</td>\n<td>+3 / +6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+1</td>\n<td>+4</td>\n<td>+2</td>\n<td>Cut Arrow</td>\n<td>+3</td>\n<td>+1</td>\n<td>+4 / +8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+1</td>\n<td>+4</td>\n<td>+3</td>\n<td>Strike from the Void</td>\n<td>+3</td>\n<td>+1</td>\n<td>+5 / +10</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+6</td>\n<td>+2</td>\n<td>+5</td>\n<td>+3</td>\n<td>Bonus Feat</td>\n<td>+3</td>\n<td>+2</td>\n<td>+6 / +12</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+7</td>\n<td>+2</td>\n<td>+5</td>\n<td>+4</td>\n<td>Devastating Strike</td>\n<td>+4</td>\n<td>+2</td>\n<td>+7 / +14</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+8</td>\n<td>+2</td>\n<td>+6</td>\n<td>+4</td>\n<td>One Strike, Two Cuts</td>\n<td>+4</td>\n<td>+2</td>\n<td>+8 / +16</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+9</td>\n<td>+3</td>\n<td>+6</td>\n<td>+4</td>\n<td>Bonus Feat</td>\n<td>+5</td>\n<td>+3</td>\n<td>+9 / +18</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+10</td>\n<td>+3</td>\n<td>+7</td>\n<td>+5</td>\n<td>Strike with no Thought</td>\n<td>+5</td>\n<td>+3</td>\n<td>+10 / +20</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Iaijutsu Master prestige class.</p>\n<h3>Weapon Finesse</h3>\n<p>At 1st level, an Iaijutsu Master may use her Dexterity modifier instead of her Strength modifier on attack rolls with her katana. This works like the Weapon Finesse feat, except that it applies to the katana, a weapon to which the feat cannot normally be applied.</p>\n<h3>Canny Defense</h3>\n<p>When not wearing armor, Iaijutsu Masters add their Intelligence bonus to their Dexterity bonus to modify Armor Class while wielding a katana. As with normal Dexterity AC modifications, positive modifiers are lost when the Iaijutsu Master is caught flat-footed.</p>\n<h3>Lightning Blade</h3>\n<p>An Iaijutsu Master of 2nd level or higher adds her Charisma modifier to her initiative checks, as well as her Dexterity modifier.</p>\n<h3>Cut Arrow</h3>\n<p>Once per round when an Iaijutsu Master of 4th level would normally be hit by a ranged weapon, they may attack the object so that they take no damage from it, this happens and functions automatically, similar to the Deflect Arrows feat. They must be aware of the attack and not flatfooted. Attempting to attack a ranged attack doesn’t count as an action. Unusually massive ranged weapons and ranged attacks generated by jutsus (with the exception of created or summoned weapons) can’t be attacked.</p>\n<h3>Strike From The Void</h3>\n<p>An Iaijutsu Master of 5th level or higher adds her Charisma modifier to each extra damage die gained from using the Iaijutsu Focus skill.</p>\n<h3>Devastating Strike</h3>\n<p>An Iaijutsu Master of 7th level adds +1 to the DC per bonus die from Iaijutsu Focus to any opponent whom suffers Massive Damage from her attacks using Iaijutsu Focus.</p>\n<h3>One Strike, Two Cuts</h3>\n<p>At 8th level and above, an Iaijutsu Master can make two attacks with a katana as a standard action. This means she can strike twice and move in the same round, or attack twice in the strike phase of an Iaijutsu duel.</p>\n<h3>Strike With No Thought</h3>\n<p>If an Iaijutsu Master of 10th level begins combat (not an Iaijutsu duel) within melee range of an opponent, she gains a free surprise round, even though her opponents are aware of her presence. The only action the Iaijutsu Master can take in this surprise round is an attack action using a katana. For example, if the Iaijutsu Master Kakita Timoshiko and Bayushi Koro are standing on the street hurling insults at each other and the situation erupts into combat, Timoshiko can attack with his katana before Koro even rolls initiative, catching his opponent flat- footed. This ability reflects the Iaijutsu Master’s ability to apply the principles of the Iaijutsu duel in normal melee combat. It does not give the Iaijutsu Master any additional benefit within an Iaijutsu duel.</p>\n<h3>Bonus Feats</h3>\n<p>Choose a feat from among the following, for which you must meet any prerequisites: Dodge (Mobility, Spring Attack), Combat Expertise (Improved Combat Expertise, Improved Disarm, Improved Trip, Whirlwind Attack), Skill Focus (Iaijutsu Focus), Taijutsu Adept, Toughness.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

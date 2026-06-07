@@ -1,0 +1,155 @@
+{
+   "_id" : "49295a1c339f22dc",
+   "_key" : "!items!49295a1c339f22dc",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/items/inventory/book-purple.jpg",
+   "name" : "Sannin",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "b69f722d8f31711f",
+            "formula" : "floor((@item.level + 1) / 2)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : true,
+         "clm" : false,
+         "crf" : false,
+         "dev" : false,
+         "dip" : true,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : true,
+         "gnj" : true,
+         "han" : false,
+         "hea" : true,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : true,
+         "kge" : false,
+         "khi" : true,
+         "klo" : true,
+         "kna" : true,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : false,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : false,
+         "rid" : false,
+         "sen" : true,
+         "slt" : false,
+         "spl" : false,
+         "ste" : true,
+         "sur" : false,
+         "swm" : false,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Sannin</h1>\n<p>The rank of Sannin is given only to those worthy of being called the best shinobi of their generation. These ninja have worked tirelessly to become some of the strongest people the world has ever seen.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a sannin, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +15</li>\n<li><strong>Skills</strong>: Concentration, Chakra Control, Knowledge (Ninja Lore) 16 ranks. Genjutsu, Ninjutsu and Taijutsu 20 ranks.</li>\n<li><strong>Feats</strong>: Any two feats: Ninjutsu Adept, Taijutsu Adept, or Genjutsu Adept.</li>\n<li><strong>Special</strong>: Must know at least 20 techniques total and must also have at least two 18s as ability scores.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Sannin prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d10</li>\n<li><strong>Action Points</strong>: 7 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Balance (Dex), Bluff (Cha), Concentration (Con), Chakra Control (Wis), Diplomacy (Cha), Fuinjutsu (Int), Genjutsu (Cha), Hide (Dex), Jump (Str), Knowledge (behavioral science, current events, earth and life science, history, ninja lore, physical science, popular culture) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Sense Motive (Wis), Spot (Wis), Taijutsu (Str), Treat Injury (Wis), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 7 + Int modifier.</li>\n</ul>\n<h2>Table: The Sannin</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+2</td>\n<td>+2</td>\n<td>+2</td>\n<td>Powerful Finish</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Rigorous Training</td>\n<td>+1</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>+3</td>\n<td>Ninja Way, Ultimate Kuchiyose</td>\n<td>+2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>No Jutsu Left Unturned</td>\n<td>+2</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+4</td>\n<td>+4</td>\n<td>+4</td>\n<td>Sannin Prowess, Ultimate Finish</td>\n<td>+3</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Sannin prestige class.</p>\n<h3>Powerful Finish</h3>\n<p>The Sannin may reach into his inner power to unleash a devastating blow to his enemies. Three times per day, the Sannin may treat a particular technique as if it was empowered by the Empower Technique meta-chakra feat at no cost. If that technique also has an Empower of its own, the user may empower it using half the normal chakra needed, rounded up.</p>\n<h3>Rigorous Training</h3>\n<p>After years of tough training, the Sannin has improved his natural abilities significantly. The Sannin may allocate 2 points to any of his ability scores.</p>\n<h3>Ninja Way</h3>\n<p>The Sannin is granted a +2 bonus to all Chakra Control, Fuinjutsu, Genjutsu, Ninjutsu, Senjutsu and Taijutsu checks.</p>\n<h3>No Jutsu Left Unturned</h3>\n<p>The Sannin, being a ninja that has seen the world, may learn all Kinjutsu freely with only half the normal penalty or negative consequences.</p>\n<h3>Ultimate Kuchiyose</h3>\n<p>This ability allows the Sannin to call upon the aide of the mightiest of creatures in battle. If the Sannin does not have the Blood Pact feat, he is automatically given it as a bonus feat. The Sannin gains a Paragon of their new Blood Pact. Once per day, the Sannin may use Kuchiyose no Jutsu to summon the Paragon version of his blood pact animal at one quarter cost (rounded down). This cost may not be further reduced by any other ability.</p>\n<h3>Sannin Prowess</h3>\n<p>The Sannin may pick two epic level techniques without the need for taking the feat Epic Technique. The character must still put in the time to learn the techniques and fulfil the other requirements of the techniques.</p>\n<h3>Ultimate Finish</h3>\n<p>Similarly, to the Powerful Finish, the Sannin can unleash a disastrous and devastating attack; this time, even more powerful than before. Once per day, the Sannin may treat a particular technique as if it were affected by the Maximize Technique meta-chakra feat. If that technique also has an Empower of its own, the user may empower it using one-half the normal chakra needed, rounded up.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 10,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 6,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

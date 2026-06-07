@@ -1,0 +1,155 @@
+{
+   "_id" : "cdc214d6b23f688b",
+   "_key" : "!items!cdc214d6b23f688b",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/items/inventory/book-purple.jpg",
+   "name" : "Ryukyu Swordsman",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "high",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "5978f9fac1770df6",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : true,
+         "ckc" : false,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : false,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : true,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : false,
+         "per" : true,
+         "prf" : false,
+         "pro" : false,
+         "rid" : true,
+         "sen" : false,
+         "slt" : true,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Ryukyu Swordsman</h1>\n<p>The Ryukyu Islands harbour the fugitives and lowlife criminals that once plagued mainland, until the a Daiymo forced them out entirely. It is here that the Ryukyu Swordsman is born; into a life of poverty and danger, where every day could be his last. He is not a man of discipline, but instead a killing machine who relies on his natural instincts and reflexes to win battles.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a ryukyu swordsman, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Base Attack Bonus</strong>: +7 Saves: Reflex +5</li>\n<li><strong>Skills</strong>: Bluff 10 ranks, Survival 10 ranks, Taijutsu 12 ranks.</li>\n<li><strong>Special</strong>: Must be proficient in his chosen weapon. Must know at least 4 Strike or Stance Taijutsu techniques.</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Ryukyu Swordsman prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d8</li>\n<li><strong>Action Points</strong>: 7 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Bluff (Cha), Climb (Str), Hide (Dex), Iaijutsu Focus (Cha), Jump (Str), Knowledge (Streetwise) (Int), Listen (Wis), Move Silently (Dex), Ride (Dex), Sleight of Hands (Dex), Speak Language (None), Spot (Wis), Survival (Wis), Swim (Str), Taijutsu (Str), and Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 3 + Int modifier.</li>\n</ul>\n<h2>Table: The Ryukyu Swordsman</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+1</td>\n<td>+1</td>\n<td>+2</td>\n<td>+0</td>\n<td>Ryukyu Style, Quick Draw</td>\n<td>+1</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>+2</td>\n<td>+3</td>\n<td>+0</td>\n<td>Weapon Focus</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+3</td>\n<td>+2</td>\n<td>+3</td>\n<td>+1</td>\n<td>Unrelenting Attack, Bonus Feat</td>\n<td>+2</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+4</td>\n<td>+2</td>\n<td>+4</td>\n<td>+1</td>\n<td>Weapon Specialization, Bonus Feat</td>\n<td>+3</td>\n<td>+0</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+5</td>\n<td>+3</td>\n<td>+4</td>\n<td>+1</td>\n<td>Evasion X, Increase Speed +5</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+6</td>\n<td>+3</td>\n<td>+5</td>\n<td>+2</td>\n<td>Greater Weapon Focus, Bonus Feat</td>\n<td>+4</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+7</td>\n<td>+4</td>\n<td>+5</td>\n<td>+2</td>\n<td>Bonus Feat</td>\n<td>+5</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+8</td>\n<td>+4</td>\n<td>+6</td>\n<td>+2</td>\n<td>Greater Weapon Specialization</td>\n<td>+6</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+9</td>\n<td>+4</td>\n<td>+6</td>\n<td>+3</td>\n<td>Improved Critical, Bonus Feat</td>\n<td>+6</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+10</td>\n<td>+5</td>\n<td>+7</td>\n<td>+3</td>\n<td>Force of Will, Increase Speed +10</td>\n<td>+7</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Ryukyu Swordsman prestige class.</p>\n<h3>Ryukyu Style</h3>\n<p>The Ryukyu Style of fighting is a blend of unorthodox swordplay, quick reflexes, “breaking” and innate resourcefulness. The character is quick on his feet and will use anything and everything around him as a means to defeating his foes. While his attacks are random and undisciplined in nature, he is still a dangerous individual with enough prowess to take down whole platoons single-handedly. The character takes a -2 penalty to Chakra Control, Ninjutsu, Genjutsu and Fuinjutsu checks, but gains a +2 to Taijutsu checks as well as a +1 to his attack rolls, both armed and unarmed. In addition, the Ryukyu Swordsman may spend an action point to fight defensively without suffering any penalties to his attack rolls. This ability may not be used in conjunction with the Combat Expertise feat.</p>\n<h3>Quick Draw</h3>\n<p>The Ryukyu Swordsman is incredibly quick to act when he senses danger. He gains the Quick Draw feat at 1st level.</p>\n<h3>Weapon Focus</h3>\n<p>At 2nd level, the Ryukyu Swordsman chooses a weapon in which he will spend the rest of his levels as a Ryukyu swordsman specializing into. The Ryukyu Swordsman will gain a +1 competence bonus to attack rolls with the chosen weapon as per the Weapon Focus feat. The weapon will henceforth be referred to as “chosen weapon.” If the Ryukyu Swordsman already has the weapon focus feat in his chosen weapon, he may instead choose a feat from the bonus feats list.</p>\n<h3>Unrelenting Attack</h3>\n<p>The Ryukyu Swordsman is an incredibly aggressive fighter who will stop at nothing to defeat his enemies. When the Ryukyu Swordsman makes a full attack against his target, he may make an additional attack at his highest attack bonus, minus 5.</p>\n<h3>Weapon Specialization</h3>\n<p>At 4rd level, the Ryukyu Swordsman’s proficiency with his chosen weapon is taken further, and he gains a +2 bonus to damage rolls with it. The affinity between the Ryukyu Swordsman and his weapon is taken to further height. The threat range of his chosen weapon is increased by one.</p>\n<h3>Evasion X</h3>\n<h3>Force Of Will</h3>\n<p>At 5th level, the Ryukyu Swordsman is able to easily avoid traps, falling ceiling or fireballs. If the Ryukyu Swordsman is subject to an attack that allows him a Reflex save to take only half damage, the Ryukyu Swordsman takes no damage from the attack. If the Ryukyu Swordsman already possesses the Evasion ability, he takes half damage on a failed save, and no damage if the Reflex save succeeds. This ability is nullified if he carries gear that is heavier than a light load. Once per day, if the Ryukyu Swordsman would be knocked unconscious or fall below 0 hit points, he may instantly stabilize and gain 2d6 temporary health for 1d4+1 rounds. He is able to move and act normally for the duration of this ability. Once he has reached his limit, he will automatically fall unconscious again and his health will return to its previous state. The Ryukyu Swordsman must make a Fortitude save (DC 20) to stabilize, and bring his total health points up to 0. However, he remains unconscious until he has had 24 uninterrupted hours of sleep or is healed by some other means.</p>\n<h3>Increase Speed</h3>\n<p>At 5th level, the Ryukyu Swordsman is able to move 5 feet faster than he could previously. At 10th level, this bonus is increased to 10 feet.</p>\n<h3>Greater Weapon Focus</h3>\n<p>At 6th level, the Ryukyu Swordsman gains greater proficiency with his chosen weapon, and the bonus granted by Weapon Focus feat increases to +2.</p>\n<h3>Greater Weapon Specialization</h3>\n<p>As per the ability obtained on 4th level, the Ryukyu Swordsman's bonus to damage with his chosen weapon increases to +4.</p>\n<h3>Improved Critical</h3>\n<h3>Bonus Feats</h3>\n<p>Choose a feat from among the following, for which you must meet any prerequisites: Acrobatic, Advanced Two-Weapon Fighting, Alertness, Archaic Weapons Proficiency, Athletic, Blind-Fight, Cleave, Defensive Martial Arts, Dodge, Elusive Target, Exotic Melee Weapon Proficiency, Guide, Improved Initiative, Improved Two-Weapon Defense, Improved TwoWeapon Fighting, Mobility, Power Attack, Spring Attack, Streetfighting, Taijutsu Adept, Two-Weapon Defense, Two- Weapon Fighting, Weapon Finesse.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor(@level / 3)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 2,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}

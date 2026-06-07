@@ -1,0 +1,171 @@
+{
+   "_id" : "bf195537ae1b1de9",
+   "_key" : "!items!bf195537ae1b1de9",
+   "_stats" : {
+      "compendiumSource" : null,
+      "coreVersion" : "13.351",
+      "createdTime" : 1780850000000,
+      "duplicateSource" : null,
+      "exportSource" : null,
+      "lastModifiedBy" : "vTUJ4X3yMMGO4o4P",
+      "modifiedTime" : 1780850000000,
+      "systemId" : "pf1",
+      "systemVersion" : "11.11"
+   },
+   "effects" : [],
+   "flags" : {},
+   "folder" : "aTQhlt1n8zon1BvO",
+   "img" : "systems/pf1/icons/items/inventory/book-purple.jpg",
+   "name" : "Clansman",
+   "ownership" : {
+      "default" : 0
+   },
+   "sort" : 0,
+   "system" : {
+      "alignment" : "",
+      "armorProf" : [],
+      "bab" : "med",
+      "casting" : {
+         "type" : ""
+      },
+      "changeFlags" : {
+         "heavyArmorFullSpeed" : false,
+         "immuneToMorale" : false,
+         "loseDexToAC" : false,
+         "lowLightVision" : false,
+         "mediumArmorFullSpeed" : false,
+         "noHeavyEncumbrance" : false,
+         "noMediumEncumbrance" : false,
+         "seeInDarkness" : false,
+         "seeInvisibility" : false
+      },
+      "changes" : [
+         {
+            "_id" : "1b726831eeee8832",
+            "formula" : "floor((2 * @item.level + 2) / 3)",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "ac",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "5b758789b21d0ca9",
+            "formula" : "@item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraPool",
+            "type" : "untyped"
+         },
+         {
+            "_id" : "752ff51e5ab239af",
+            "formula" : "2 * @item.level",
+            "operator" : "add",
+            "priority" : 0,
+            "target" : "chakraReserve",
+            "type" : "untyped"
+         }
+      ],
+      "classSkills" : {
+         "acr" : true,
+         "apr" : false,
+         "art" : false,
+         "blf" : false,
+         "ckc" : true,
+         "clm" : true,
+         "crf" : false,
+         "dev" : false,
+         "dip" : false,
+         "dis" : false,
+         "esc" : false,
+         "fly" : false,
+         "fui" : false,
+         "gnj" : false,
+         "han" : false,
+         "hea" : false,
+         "int" : false,
+         "kar" : true,
+         "kdu" : false,
+         "ken" : false,
+         "kge" : false,
+         "khi" : false,
+         "klo" : false,
+         "kna" : false,
+         "kno" : false,
+         "kpl" : false,
+         "kre" : false,
+         "lin" : true,
+         "lor" : false,
+         "nin" : true,
+         "per" : true,
+         "prf" : false,
+         "pro" : false,
+         "rid" : true,
+         "sen" : false,
+         "slt" : true,
+         "spl" : false,
+         "ste" : true,
+         "sur" : true,
+         "swm" : true,
+         "tai" : true,
+         "umd" : false
+      },
+      "contextNotes" : [],
+      "customHD" : "",
+      "description" : {
+         "instructions" : "",
+         "value" : "<article class=\"naruto-d20-class\">\n<h1>Clansman</h1>\n<p>Before the Five Great Nations formed, the ninja world was shaped by individual clans that were essentially isolated groups that constantly warred with one another. The elderly still remember the days when clans were entirely separated and villages hadn’t been formed. Even today, clans are still prevalent. And the members of these clans are skilled individuals who lead a life of dedication to their respective clans.</p>\n<h2>Requirements</h2>\n<p>To qualify to become a clansman, a character must fulfill all the following criteria.</p>\n<ul>\n<li><strong>Skills</strong>: Knowledge (Nin Lore) 15 ranks, Survival 15 ranks, and 12 ranks in either Diplomacy or Intimidate.</li>\n<li><strong>Feats</strong>: Chuunin, Nin Weapons Proficiency, and one of the following: Fuinjutsu Adept, Genjutsu Adept, Harmony, Ninjutsu Adept or Taijutsu Adept.</li>\n<li><strong>Special</strong>: Must be a member of a specific clan. (See Starting Occupations)</li>\n</ul>\n<h2>Class Information</h2>\n<p>The following information pertains to the Clansman prestige class.</p>\n<ul>\n<li><strong>Hit Die</strong>: d8</li>\n<li><strong>Action Points</strong>: 7 + ½ character level, rounded down.</li>\n<li><strong>Class Skills</strong>: Balance (Dex), Chakra Control (Wis), Climb (Str), Concentration (Con), Hide (Dex), Jump (Str), Knowledge (ninja lore) (Int), Listen (Wis), Move Silently (Dex), Ninjutsu (Int), Read Language (Any), Ride (Dex), Search (Int), Sleight of Hand (Dex), Speak Language (Any), Spot (Wis), Survival (Wis), Swim (Str), Taijutsu (Str), Tumble (Dex).</li>\n<li><strong>Skill Points at Each Level</strong>: 5 + Int modifier.</li>\n</ul>\n<h2>Table: The Clansman</h2>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Base Attack Bonus</th>\n<th>Fort Save</th>\n<th>Ref Save</th>\n<th>Will Save</th>\n<th>Special</th>\n<th>Defense Bonus</th>\n<th>Reputation Bonus</th>\n<th>Chakra</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+0</td>\n<td>+2</td>\n<td>+1</td>\n<td>+0</td>\n<td>Track</td>\n<td>+1</td>\n<td>+1</td>\n<td>+1 / +2</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+1</td>\n<td>+3</td>\n<td>+2</td>\n<td>+0</td>\n<td>Clan Reputation</td>\n<td>+2</td>\n<td>+1</td>\n<td>+2 / +4</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>+3</td>\n<td>+2</td>\n<td>+1</td>\n<td>Bonus Feat</td>\n<td>+2</td>\n<td>+1</td>\n<td>+3 / +6</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+2</td>\n<td>+1</td>\n<td>Tribal Instincts</td>\n<td>+3</td>\n<td>+2</td>\n<td>+4 / +8</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>+4</td>\n<td>+3</td>\n<td>+2</td>\n<td>Commanding Presence</td>\n<td>+4</td>\n<td>+2</td>\n<td>+5 / +10</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+4</td>\n<td>+5</td>\n<td>+3</td>\n<td>+2</td>\n<td>Bonus Feat</td>\n<td>+4</td>\n<td>+2</td>\n<td>+6 / +12</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+5</td>\n<td>+5</td>\n<td>+4</td>\n<td>+3</td>\n<td>Clan Technique Prowess</td>\n<td>+5</td>\n<td>+3</td>\n<td>+7 / +14</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+6</td>\n<td>+6</td>\n<td>+4</td>\n<td>+3</td>\n<td>Power of the Clan</td>\n<td>+6</td>\n<td>+3</td>\n<td>+8 / +16</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+6</td>\n<td>+6</td>\n<td>+4</td>\n<td>+4</td>\n<td>Bonus Feat</td>\n<td>+6</td>\n<td>+3</td>\n<td>+9 / +18</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+7</td>\n<td>+7</td>\n<td>+5</td>\n<td>+4</td>\n<td>Clan Elite</td>\n<td>+7</td>\n<td>+4</td>\n<td>+10 / +20</td>\n</tr>\n</tbody>\n</table>\n<h2>Class Features</h2>\n<p>The following features pertain to the Clansman prestige class.</p>\n<h3>Track</h3>\n<p>At first level, the Clansman gains the Track feat for free. In addition, the Clansman can Track at his normal speed without taking a -5 penalty to his Survival check.</p>\n<h3>Clan Reputation</h3>\n<p>The Clansman is granted a +2 circumstance bonus to all Diplomacy, Gather Information and Intimidate checks due to their renowned stature as a member of their respective clan.</p>\n<h3>Tribal Instincts</h3>\n<p>The Clansman is taught at a young age how to survive in any situation. Because of this, the Clansman gains a +2 on all Hide, Listen, Move Silently, Spot and Survival checks.</p>\n<h3>Commanding Presence</h3>\n<p>The Clansman acts a general to those around him and he commands a lot of respect. When in combat, the Clansman gives off an aura of strength and resolve that others will follow. The Clansman grants his comrades a +1 morale bonus to attack rolls, damage rolls, saves and skill checks while in combat.</p>\n<h3>Clan Technique Prowess</h3>\n<p>The power of your clan runs strong in your blood. The sacred techniques of your people come to you as naturally as breathing. Three times per day, the Clansman may use a clan-specific technique at no cost to the user. (This includes Village techniques if specified by the clan; see Starting Occupations or added supplements)</p>\n<h3>Power of the Clan</h3>\n<p>The Clansman trains extensively with the knowledge passed down from his fellow clan members. They become invariably strong in the ways of their people. The Clansman may allocate 2 points into his ability scores.</p>\n<h3>Clan Elite</h3>\n<p>The Clansman has worked his way up the proverbial ladder within his clan’s ranks. The Clansman’s strength is comparable to that of a Kage. The Clansman gains a +2 dodge bonus to defense, and a +1 bonus to attack and damage rolls and all saving throws.</p>\n<h3>Bonus Feats</h3>\n<p>Choose a feat from among the following, for which you must meet any prerequisites: Agile Riposte, Armor Proficiency (Any), Athletic, Brawl, Cleave, Combat Expertise, Combat Martial Arts, Combat Reflexes, Defensive Martial Arts, Dodge, Educated, Focused, Genjutsu Adept, Grand Master, Great Fortitude, Harmony, Iron Will, Retrieval Expert, Improved Brawl, Improved Chakra Pool, Improved Combat Martial Arts, Improved Disarm, Lightning Reflexes, Mobility, Ninjutsu Adept, Power Attack, Stealthy, Streetfighting, Taijutsu Adept, Talented Shinobi, Weapon Focus.</p>\n</article>"
+      },
+      "fc" : {
+         "alt" : {
+            "notes" : "",
+            "value" : 0
+         },
+         "hp" : {
+            "value" : 0
+         },
+         "skill" : {
+            "value" : 0
+         }
+      },
+      "flags" : {
+         "boolean" : {},
+         "dictionary" : {}
+      },
+      "hd" : 8,
+      "hp" : null,
+      "languages" : [],
+      "level" : 1,
+      "links" : {
+         "children" : [],
+         "classAssociations" : []
+      },
+      "savingThrows" : {
+         "fort" : {
+            "custom" : "2 + floor(@level / 2)",
+            "value" : "custom"
+         },
+         "ref" : {
+            "custom" : "floor((2 * @level + 6) / 5)",
+            "value" : "custom"
+         },
+         "will" : {
+            "custom" : "floor((@level - 1) / 2)",
+            "value" : "custom"
+         }
+      },
+      "scriptCalls" : [],
+      "skillsPerLevel" : 4,
+      "sources" : [
+         {
+            "pages" : "",
+            "title" : "Naruto d20"
+         }
+      ],
+      "subType" : "prestige",
+      "tag" : "",
+      "tags" : [],
+      "wealth" : "",
+      "weaponProf" : []
+   },
+   "type" : "class"
+}
