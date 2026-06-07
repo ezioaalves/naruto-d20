@@ -22,7 +22,7 @@ The following information pertains to the Akimichi Master prestige class.
 ## Table: The Akimichi Master
 
 | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
 | 1st | +0 | +1 | +0 | +0 | Akimichi Secret | +1 | +0 |
 | 2nd | +1 | +2 | +0 | +0 | Bonus Feat | +2 | +0 |
 | 3rd | +2 | +2 | +1 | +1 | Akimichi Secret | +2 | +1 |

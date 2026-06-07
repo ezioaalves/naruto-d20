@@ -22,7 +22,7 @@ The following information pertains to the Kaguya Marauder prestige class.
 ## Table: The Kaguya Marauder
 
 | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Defense Bonus | Reputation Bonus |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
 | 1st | +1 | +2 | +0 | +0 | Bone Armory | +1 | +0 |
 | 2nd | +2 | +3 | +0 | +0 | Bonus Feat | +2 | +0 |
 | 3rd | +3 | +3 | +1 | +1 | Bone Armory | +2 | +1 |
