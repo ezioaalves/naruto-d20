@@ -440,6 +440,7 @@
     "Cards": {
       "Block": "bloco",
       "Blocks": "blocos",
+      "TrainingHeader": "Treino",
       "ActionPointFlavor": "Ponto de Ação ({from} -> {to} restantes)",
       "Perform": {
         "Failed": "Teste de execução falhou (DC {dc}). Nenhum chakra gasto.",

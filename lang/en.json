@@ -440,6 +440,7 @@
     "Cards": {
       "Block": "block",
       "Blocks": "blocks",
+      "TrainingHeader": "Training",
       "ActionPointFlavor": "Action Point ({from} -> {to} remaining)",
       "Perform": {
         "Failed": "Perform check failed (DC {dc}). No chakra spent.",

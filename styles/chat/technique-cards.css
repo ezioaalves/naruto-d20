@@ -63,3 +63,15 @@
   padding-top: 4px;
   text-align: center;
 }
+
+/* Progression block appended onto the learn/master roll card. Reuses PF1e's
+   own property-group / tag styling for Info + Training footnotes. */
+.naruto-learn-progression {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(80, 80, 80, 0.25);
+}
+
+.naruto-learn-progression .property-group + .property-group {
+  margin-top: 4px;
+}

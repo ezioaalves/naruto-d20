@@ -122,8 +122,13 @@ async function updateMessageWithReroll(message, { content, rolls, flags }) {
   });
 }
 
-export async function updateMessageWithActionPoint(message, { oldRoll, apRoll, apBonus, total }) {
-  const content = `
+/**
+ * Build the inner HTML for an Action-Point comparison block (original roll + the
+ * 1d6 Action-Point roll + a summary). Exported so progression flows can combine
+ * it with their own appended content in a single message update.
+ */
+export async function buildActionPointContent({ oldRoll, apRoll, apBonus, total }) {
+  return `
     <div class="naruto-reroll-card">
       ${await renderRollBlock(oldRoll, "NarutoD20.Reroll.Original", "kept")}
       ${await renderRollBlock(apRoll, "NarutoD20.Reroll.ActionPointRoll", "kept")}
@@ -136,12 +141,38 @@ export async function updateMessageWithActionPoint(message, { oldRoll, apRoll, a
       </div>
     </div>
   `;
+}
 
+/** Build the reroll-flag patch for an applied Action Point. */
+export function buildActionPointFlags(message, apBonus) {
+  return buildFlags(message, { actionPointApplied: true, actionPointBonus: apBonus });
+}
+
+export async function updateMessageWithActionPoint(message, { oldRoll, apRoll, apBonus, total }) {
   await updateMessageWithReroll(message, {
-    content,
+    content: await buildActionPointContent({ oldRoll, apRoll, apBonus, total }),
     rolls: [oldRoll, apRoll],
-    flags: buildFlags(message, { actionPointApplied: true, actionPointBonus: apBonus }),
+    flags: buildActionPointFlags(message, apBonus),
   });
+}
+
+/**
+ * Build the inner HTML for a reroll comparison block (original vs rerolled roll
+ * plus a "kept" summary). Exported so progression flows can append their own
+ * content to it within the single reroll update.
+ */
+export async function buildRerollComparisonContent({ oldRoll, newRoll, keptRoll, keep, oldClass, newClass }) {
+  return `
+    <div class="naruto-reroll-card">
+      ${await renderRollBlock(oldRoll, "NarutoD20.Reroll.Original", oldClass)}
+      ${await renderRollBlock(newRoll, "NarutoD20.Reroll.Rerolled", newClass)}
+      <div class="naruto-reroll-summary">
+        ${game.i18n.format(`NarutoD20.Reroll.${({ new: "KeptNew", lower: "KeptLower", higher: "KeptHigher" })[keep ?? "new"] ?? "KeptNew"}`, {
+          total: Math.round(Number(keptRoll.total) * 100) / 100,
+        })}
+      </div>
+    </div>
+  `;
 }
 
 async function rerollMessage(message, options = {}) {
@@ -166,32 +197,36 @@ async function rerollMessage(message, options = {}) {
     newClass = "discarded";
   }
 
+  const keep = options.keep ?? "new";
+  const baseContent = await buildRerollComparisonContent({
+    oldRoll,
+    newRoll,
+    keptRoll,
+    keep,
+    oldClass,
+    newClass,
+  });
+
   const ctx = getRerollContext(message);
   const handler = getRerollHandler(ctx?.flags);
+  // A handler may fully own the final rendering by returning a content string
+  // (e.g. the comparison block plus its own appended progression block). `false`
+  // aborts; anything else falls back to the plain comparison content.
   const applied = await handler?.applyReroll?.(message, ctx, {
     oldRoll,
     newRoll,
     keptRoll,
-    keep: options.keep ?? "new",
+    keep,
+    baseContent,
   });
   if (applied === false) return;
 
-  const content = `
-    <div class="naruto-reroll-card">
-      ${await renderRollBlock(oldRoll, "NarutoD20.Reroll.Original", oldClass)}
-      ${await renderRollBlock(newRoll, "NarutoD20.Reroll.Rerolled", newClass)}
-      <div class="naruto-reroll-summary">
-        ${game.i18n.format(`NarutoD20.Reroll.${({ new: "KeptNew", lower: "KeptLower", higher: "KeptHigher" })[options.keep ?? "new"] ?? "KeptNew"}`, {
-          total: Math.round(Number(keptRoll.total) * 100) / 100,
-        })}
-      </div>
-    </div>
-  `;
+  const content = typeof applied === "string" ? applied : baseContent;
 
   await updateMessageWithReroll(message, {
     content,
     rolls: [keptRoll],
-    flags: buildFlags(message, { isReroll: true, keep: options.keep ?? "new" }),
+    flags: buildFlags(message, { isReroll: true, keep }),
   });
 }
 

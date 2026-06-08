@@ -14,8 +14,12 @@
 
 import { MODULE_ID } from "../constants.mjs";
 import { chakraPoolTempPath, chakraPoolValuePath } from "../flag-paths.mjs";
-import { applyChatVisibility, chatVisibilityFrom } from "../chat-visibility.mjs";
-import { registerNarutoRerollHandler, updateMessageWithActionPoint } from "../chat-rerolls.mjs";
+import { applyChatVisibility } from "../chat-visibility.mjs";
+import {
+  buildActionPointContent,
+  buildActionPointFlags,
+  registerNarutoRerollHandler,
+} from "../chat-rerolls.mjs";
 import { resolveSkillAbility } from "./skills.mjs";
 
 export const PROGRESSION_MODES = Object.freeze({
@@ -153,11 +157,77 @@ export async function applyTrainingChakraDeduction(actor, amount) {
   return { paid: true, deducted, fromTemp, fromPool };
 }
 
+// ── Progression block (appended onto the roll card) ──────────────────────────
+
+/** Sentinel class so re-appending the block onto a message is idempotent. */
+const PROGRESSION_BLOCK_CLASS = "naruto-learn-progression";
+
+/**
+ * Render the progression result as PF1e-style property groups (`item-notes.hbs`)
+ * to be appended onto the roll card's content — mirroring how native skill
+ * checks render footnotes/info. `lead` becomes the "Info" group; `footer` is
+ * split into a "Training" group of tags. Wrapped in a sentinel container.
+ *
+ * The attempt title is intentionally omitted: it duplicates the roll card's own
+ * flavor ("Learn: <name>" / "Master: <name>") already shown above the block.
+ */
+export async function renderProgressionBlock({ lead = "", footer = "", cssClass = "" }) {
+  const groups = [];
+
+  if (lead) {
+    groups.push(
+      await foundry.applications.handlebars.renderTemplate(
+        "systems/pf1/templates/chat/parts/item-notes.hbs",
+        {
+          header: game.i18n.localize("PF1.InfoShort"),
+          notes: [{ text: lead }],
+          css: "info-properties",
+          cssExtra: "general-notes",
+        },
+      ),
+    );
+  }
+
+  const footerTags = String(footer)
+    .split(/;\s*/)
+    .map((part) => part.trim().replace(/\.$/, "").trim())
+    .filter(Boolean)
+    .map((text) => ({ text }));
+  if (footerTags.length) {
+    groups.push(
+      await foundry.applications.handlebars.renderTemplate(
+        "systems/pf1/templates/chat/parts/item-notes.hbs",
+        {
+          header: game.i18n.localize("NarutoD20.Cards.TrainingHeader"),
+          notes: footerTags,
+          css: "training-properties",
+          cssExtra: "general-notes",
+        },
+      ),
+    );
+  }
+
+  return `<div class="${PROGRESSION_BLOCK_CLASS} ${cssClass}">${groups.join("")}</div>`;
+}
+
+/**
+ * Append `blockHtml` onto a message's existing content, first stripping any
+ * previously appended progression block so repeated updates stay idempotent.
+ */
+export function spliceProgressionBlock(currentContent, blockHtml) {
+  const content = String(currentContent ?? "").replace(
+    new RegExp(`<div class="${PROGRESSION_BLOCK_CLASS}[\\s\\S]*$`),
+    "",
+  );
+  return `${content}${blockHtml}`;
+}
+
 // ── Chat card ───────────────────────────────────────────────────────────────
 
 /**
- * Post a progression chat card (shared template). `flagKey` namespaces the
- * card flags so each flow's Action-Point context menu only sees its own cards.
+ * Post a standalone progression chat card (shared template), used by flows with
+ * no associated roll (Empathy learning, unmapped technique, interrupted
+ * training). Roll-driven attempts instead append a block onto the roll card.
  */
 export async function postProgressionCard(
   actor,
@@ -188,37 +258,13 @@ export async function postProgressionCard(
 }
 
 /**
- * Build the card flags that let a still-open run re-evaluate with an Action
- * Point. Returns null when the run has ended or an AP is already committed.
+ * Build the reroll flags that let a still-open run re-evaluate (reroll or Action
+ * Point) directly on the roll card. Returns null when the run has ended.
  */
-export function buildProgressionCardFlags(
-  item,
-  actor,
-  { skillKey, mode, baseState, result, chakraDeduction, now },
-) {
-  if (result.runEnded || result.apBonus !== 0) return null;
-
-  return {
-    itemId: item.id,
-    actorUuid: actor.uuid,
-    skillKey,
-    mode,
-    baseState: foundry.utils.deepClone(baseState),
-    baseTotalNoAp: result.total,
-    deducted: { fromTemp: chakraDeduction.fromTemp, fromPool: chakraDeduction.fromPool },
-    result: {
-      progress: result.progress,
-      attemptsUsed: result.finalAttemptsUsed,
-      failureInsight: result.nextFailureInsight,
-      lastTrainingAt: now,
-    },
-  };
-}
-
 export function buildProgressionRollRerollData(
   item,
   actor,
-  { skillKey, mode, baseState, result, chakraDeduction, now, resultCard = null },
+  { skillKey, mode, baseState, result, chakraDeduction, now },
 ) {
   if (result.runEnded) return null;
 
@@ -230,7 +276,6 @@ export function buildProgressionRollRerollData(
       baseState: foundry.utils.deepClone(baseState),
       apBonus: Number(result.apBonus ?? 0) || 0,
       deducted: { fromTemp: chakraDeduction.fromTemp, fromPool: chakraDeduction.fromPool },
-      resultCardUuid: resultCard?.uuid ?? null,
       result: {
         progress: result.progress,
         attemptsUsed: result.finalAttemptsUsed,
@@ -241,23 +286,7 @@ export function buildProgressionRollRerollData(
   };
 }
 
-// ── Action Point — post-roll commitment via the chat card context menu ───────
-
-function resolveMessageFromElement(li) {
-  const el = li instanceof HTMLElement ? li : li?.[0];
-  const id = el?.closest?.("[data-message-id]")?.dataset?.messageId;
-  return id ? game.messages.get(id) : null;
-}
-
-function getProgressionCardContext(message, config) {
-  const flags = message?.getFlag?.(MODULE_ID, config.flagKey);
-  if (!flags) return null;
-  const actor = fromUuidSync(flags.actorUuid);
-  if (!(actor instanceof Actor)) return null;
-  const item = actor.items.get(flags.itemId);
-  if (!item) return null;
-  return { flags, actor, item };
-}
+// ── Action Point / reroll — post-roll commitment on the roll card ────────────
 
 function getProgressionRollContext(flags, actor, config) {
   const progression = flags?.progression;
@@ -312,7 +341,7 @@ async function refundProgressionDeduction(actor, deducted) {
   if (!foundry.utils.isEmpty(update)) await actor.update(update);
 }
 
-async function applyProgressionRollReroll(message, ctx, { keptRoll }, config) {
+async function applyProgressionRollReroll(message, ctx, { keptRoll, baseContent }, config) {
   const rollCtx = getProgressionRollContext(ctx.flags, ctx.actor, config);
   if (!rollCtx || !progressionRollCanReroll(message, ctx, config)) {
     ui.notifications.warn(game.i18n.localize("NarutoD20.Reroll.CannotReroll"));
@@ -322,22 +351,19 @@ async function applyProgressionRollReroll(message, ctx, { keptRoll }, config) {
   const { progression, actor, item } = rollCtx;
   await refundProgressionDeduction(actor, progression.deducted);
 
-  const resultCard = progression.resultCardUuid
-    ? fromUuidSync(progression.resultCardUuid)
-    : null;
-
-  await config.resolveAttempt(item, actor, {
+  // Re-resolve the attempt and return the reroll comparison block plus the fresh
+  // progression block as the message's final content (single card, no extra message).
+  const outcome = await config.resolveAttempt(item, actor, {
     skillKey: progression.skillKey,
     mode: progression.mode,
     baseState: progression.baseState,
     total: Number(keptRoll.total) || 0,
     apBonus: Number(progression.apBonus ?? 0) || 0,
-    supersedes: resultCard instanceof ChatMessage ? resultCard : null,
-    progressionFlags: false,
-    visibility: chatVisibilityFrom(message),
+    returnBlock: true,
   });
+  if (!outcome) return false;
 
-  return true;
+  return `${baseContent}${outcome.html}`;
 }
 
 function progressionRollCanAddAp(message, ctx, config) {
@@ -381,23 +407,24 @@ async function addActionPointToProgressionRoll(message, ctx, config) {
   update[config.actionPointsPath] = currentAp - 1;
   await actor.update(update);
 
-  const resultCard = progression.resultCardUuid
-    ? fromUuidSync(progression.resultCardUuid)
-    : null;
-
-  await config.resolveAttempt(item, actor, {
+  // Re-resolve with the boosted total, then write the AP comparison block plus
+  // the fresh progression block onto the same card in a single update.
+  const outcome = await config.resolveAttempt(item, actor, {
     skillKey: progression.skillKey,
     mode: progression.mode,
     baseState: progression.baseState,
     total,
     apBonus,
-    supersedes: resultCard instanceof ChatMessage ? resultCard : null,
     apRollText: game.i18n.format(config.apRollTextKey, { value: apBonus }),
-    progressionFlags: false,
-    visibility: chatVisibilityFrom(message),
+    returnBlock: true,
   });
 
-  await updateMessageWithActionPoint(message, { oldRoll, apRoll, apBonus, total });
+  const apContent = await buildActionPointContent({ oldRoll, apRoll, apBonus, total });
+  await message.update({
+    content: outcome ? `${apContent}${outcome.html}` : apContent,
+    rolls: [oldRoll, apRoll],
+    flags: buildActionPointFlags(message, apBonus),
+  });
 }
 
 export function registerProgressionRollReroll(source, config) {
@@ -407,110 +434,4 @@ export function registerProgressionRollReroll(source, config) {
     addActionPoint: (message, ctx) => addActionPointToProgressionRoll(message, ctx, config),
     applyReroll: (message, ctx, data) => applyProgressionRollReroll(message, ctx, data, config),
   });
-}
-
-/** A card may offer "Add Action Point" only while it reflects the current,
- *  still-open run, no AP is committed yet, and the owner has an Action Point. */
-export function progressionCardCanAddAp(message, config) {
-  const ctx = getProgressionCardContext(message, config);
-  if (!ctx) return false;
-  const { flags, actor, item } = ctx;
-  if (!actor.isOwner) return false;
-
-  const state = config.getState(item);
-  if (config.isClosed?.(state)) return false;
-  if ((Number(state.actionPointBonus ?? 0) || 0) > 0) return false;
-
-  // Freshness: a newer roll would have moved these on — don't clobber it.
-  const res = flags.result ?? {};
-  if ((Number(state.progress ?? 0) || 0) !== (Number(res.progress ?? 0) || 0)) return false;
-  if ((Number(state.attemptsUsed ?? 0) || 0) !== (Number(res.attemptsUsed ?? 0) || 0)) return false;
-  if ((Number(state.failureInsight ?? 0) || 0) !== (Number(res.failureInsight ?? 0) || 0))
-    return false;
-  if ((Number(state.lastTrainingAt ?? 0) || 0) !== (Number(res.lastTrainingAt ?? 0) || 0))
-    return false;
-
-  return (Number(foundry.utils.getProperty(actor, config.actionPointsPath) ?? 0) || 0) >= 1;
-}
-
-/** Spend one Action Point: roll 1d6 once, re-evaluate the carded attempt with
- *  the boosted total, and persist the value so the rest of the run reuses it. */
-export async function addActionPointToProgressionCard(message, config) {
-  const ctx = getProgressionCardContext(message, config);
-  if (!ctx) return;
-  const { flags, actor, item } = ctx;
-
-  if (!progressionCardCanAddAp(message, config)) {
-    ui.notifications.warn(
-      game.i18n.format("NarutoD20.Notifications.CannotAddActionPoint", { name: item.name }),
-    );
-    return;
-  }
-
-  const currentAp = Number(foundry.utils.getProperty(actor, config.actionPointsPath) ?? 0) || 0;
-  if (currentAp < 1) {
-    ui.notifications.warn(
-      game.i18n.format("NarutoD20.Notifications.NoActionPoints", { actor: actor.name }),
-    );
-    return;
-  }
-
-  const apRoll = new Roll("1d6");
-  await apRoll.evaluate();
-  const apBonus = Math.max(0, Number(apRoll.total) || 0);
-  const visibility = chatVisibilityFrom(message);
-  await apRoll.toMessage(
-    applyChatVisibility(
-      {
-        speaker: ChatMessage.implementation.getSpeaker({ actor }),
-        flavor: game.i18n.format(config.apFlavorKey, {
-          name: item.name,
-          from: currentAp,
-          to: currentAp - 1,
-        }),
-      },
-      visibility,
-    ),
-  );
-
-  // Refund the superseded attempt's training chakra (no-op when none was deducted),
-  // then spend the Action Point — all in one actor update.
-  const update = { [config.actionPointsPath]: currentAp - 1 };
-  const fromTemp = Number(flags.deducted?.fromTemp ?? 0) || 0;
-  const fromPool = Number(flags.deducted?.fromPool ?? 0) || 0;
-  if (fromTemp) {
-    update[chakraPoolTempPath] =
-      (Number(foundry.utils.getProperty(actor, chakraPoolTempPath) ?? 0) || 0) + fromTemp;
-  }
-  if (fromPool) {
-    update[chakraPoolValuePath] =
-      (Number(foundry.utils.getProperty(actor, chakraPoolValuePath) ?? 0) || 0) + fromPool;
-  }
-  await actor.update(update);
-
-  await config.resolveAttempt(item, actor, {
-    skillKey: flags.skillKey,
-    mode: flags.mode,
-    baseState: flags.baseState,
-    total: (Number(flags.baseTotalNoAp) || 0) + apBonus,
-    apBonus,
-    supersedes: message,
-    apRollText: game.i18n.format(config.apRollTextKey, { value: apBonus }),
-    visibility,
-  });
-}
-
-/** Register the "Add Action Point" entry on a flow's chat card right-click menu.
- *  Mirrors PF1e by binding both the v12 and v13 hook names. */
-export function registerProgressionCardContextMenu(config) {
-  const addOption = (_html, options) => {
-    options.push({
-      name: "Add Action Point",
-      icon: '<i class="fa-solid fa-bolt"></i>',
-      condition: (li) => progressionCardCanAddAp(resolveMessageFromElement(li), config),
-      callback: (li) => addActionPointToProgressionCard(resolveMessageFromElement(li), config),
-    });
-  };
-  Hooks.on("getChatLogEntryContext", addOption);
-  Hooks.on("getChatMessageContextOptions", addOption);
 }
