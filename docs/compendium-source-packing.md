@@ -85,6 +85,11 @@ rolling the technique action directly. Configure this with
   provide the damage.
 - `weaponAttack.attackBonus`, `damageBonus`, and `nonCritDamageBonus` add
   technique-specific formulas to the selected action.
+- `weaponAttack.extraAttacks` adds semicolon-separated `formula|label` attack
+  entries, such as `-5|Second Attack;-10|Third Attack`.
+
+If the technique action defines `save.type`, the selected attack inherits that
+save and uses the Technique DC formula even when `damageMode` remains `add`.
 
 ## Transform scripts (`tools/`)
 

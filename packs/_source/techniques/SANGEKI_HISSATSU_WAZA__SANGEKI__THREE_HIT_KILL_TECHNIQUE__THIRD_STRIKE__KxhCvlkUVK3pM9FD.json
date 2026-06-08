@@ -31,7 +31,7 @@
     "target": "",
     "area": "",
     "duration": "",
-    "save": "",
+    "save": "Fortitude special",
     "compHandSeals": false,
     "compHalfSeals": false,
     "compConcentration": false,
@@ -61,6 +61,10 @@
         },
         "duration": {
           "units": "inst"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude special"
         },
         "ability": {
           "attack": "dex",
