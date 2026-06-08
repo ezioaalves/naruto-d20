@@ -179,9 +179,11 @@ export async function rollSelectedWeaponAttackWithTechnique({
     if (actionUse.item?.id !== selection.item.id) return;
     if (actionUse.action?.id !== selection.action.id) return;
 
+    decorateActionUseChatData(actionUse, technique, techniqueAction);
+
     actionUse.shared.rollData.cl = getTechniqueCasterLevel(technique, actor);
     if (config.damageMode === "replace") {
-      replaceActionDamage(actionUse, techniqueAction, cleanup);
+      replaceActionDetails(actionUse, techniqueAction, cleanup);
     }
     if (config.attackBonus) actionUse.shared.attackBonus.push(config.attackBonus);
     if (config.damageBonus) actionUse.shared.damageBonus.push(config.damageBonus);
@@ -212,7 +214,72 @@ export async function rollSelectedWeaponAttackWithTechnique({
   }
 }
 
-function replaceActionDamage(actionUse, techniqueAction, cleanup) {
+function decorateActionUseChatData(actionUse, technique, techniqueAction) {
+  if (actionUse.getMessageData.__narutoTechniqueDecorated) return;
+
+  const getMessageData = actionUse.getMessageData;
+  actionUse.getMessageData = async function narutoTechniqueGetMessageData(...args) {
+    const result = await getMessageData.apply(this, args);
+    await applyTechniqueChatData(this, technique, techniqueAction);
+    return result;
+  };
+  actionUse.getMessageData.__narutoTechniqueDecorated = true;
+}
+
+async function applyTechniqueChatData(actionUse, technique, techniqueAction) {
+  const templateData = actionUse.shared.templateData;
+  if (!templateData) return;
+
+  const itemChatData = await technique.getChatData({
+    actionId: techniqueAction.id,
+    chatcard: true,
+    rollData: actionUse.shared.rollData,
+  });
+
+  const identified = Boolean(actionUse.shared.rollData.item?.identified ?? true);
+  templateData.actionId = techniqueAction.id;
+  templateData.name = identified
+    ? `${technique.name} (${techniqueAction.name})`
+    : technique.getName(true);
+  templateData.description = identified
+    ? itemChatData.identifiedDescription
+    : itemChatData.unidentifiedDescription;
+  templateData.actionDescription = itemChatData.actionDescription;
+  templateData.item = technique.toObject();
+  templateData.action = techniqueAction;
+  templateData.header = {
+    ...(templateData.header ?? {}),
+    image: techniqueAction.img || technique.img,
+  };
+
+  const info = templateData.properties?.find((p) => p.css === "common-notes");
+  if (info) {
+    const techniqueProperties = (itemChatData.properties ?? []).map((text) => ({ text }));
+    const selectedOnly = (info.value ?? []).filter(
+      (note) => !techniqueProperties.some((p) => p.text === note.text),
+    );
+    info.value = [...techniqueProperties, ...selectedOnly];
+  }
+
+  const metadata = actionUse.shared.chatData?.system;
+  if (metadata) {
+    metadata.item = {
+      ...(metadata.item ?? {}),
+      id: technique.id,
+      name: technique.name,
+      description: itemChatData.identifiedDescription,
+      identified,
+    };
+    metadata.action = {
+      ...(metadata.action ?? {}),
+      id: techniqueAction.id,
+      name: techniqueAction.name,
+      description: itemChatData.actionDescription,
+    };
+  }
+}
+
+function replaceActionDetails(actionUse, techniqueAction, cleanup) {
   const selectedAction = actionUse.shared.action;
   const selectedRollAction = actionUse.shared.rollData?.action;
   if (!selectedAction || !selectedRollAction || !techniqueAction) return;
@@ -220,26 +287,36 @@ function replaceActionDamage(actionUse, techniqueAction, cleanup) {
   const actionSnapshot = {
     damage: cloneDamage(selectedAction.damage),
     ability: cloneDamageAbility(selectedAction.ability),
+    save: cloneSave(selectedAction.save),
+    notes: cloneNotes(selectedAction.notes),
+    range: foundry.utils.deepClone(selectedAction.range ?? {}),
+    target: foundry.utils.deepClone(selectedAction.target ?? {}),
     touch: selectedAction.touch,
   };
   const rollSnapshot = {
     damage: cloneDamage(selectedRollAction.damage),
     ability: cloneDamageAbility(selectedRollAction.ability),
+    save: cloneSave(selectedRollAction.save),
+    notes: cloneNotes(selectedRollAction.notes),
+    range: foundry.utils.deepClone(selectedRollAction.range ?? {}),
+    target: foundry.utils.deepClone(selectedRollAction.target ?? {}),
     touch: selectedRollAction.touch,
   };
 
-  applyDamageReplacement(selectedAction, techniqueAction);
-  applyDamageReplacement(selectedRollAction, techniqueAction);
+  applyActionReplacement(selectedAction, techniqueAction);
+  applyActionReplacement(selectedRollAction, techniqueAction);
 
   cleanup.push(() => {
-    restoreDamageReplacement(selectedAction, actionSnapshot);
-    restoreDamageReplacement(selectedRollAction, rollSnapshot);
+    restoreActionReplacement(selectedAction, actionSnapshot);
+    restoreActionReplacement(selectedRollAction, rollSnapshot);
   });
 }
 
-function applyDamageReplacement(targetAction, sourceAction) {
+function applyActionReplacement(targetAction, sourceAction) {
   targetAction.damage ??= {};
   targetAction.ability ??= {};
+  targetAction.save ??= {};
+  targetAction.notes ??= {};
 
   targetAction.damage.parts = foundry.utils.deepClone(sourceAction.damage?.parts ?? []);
   targetAction.damage.critParts = foundry.utils.deepClone(sourceAction.damage?.critParts ?? []);
@@ -253,11 +330,18 @@ function applyDamageReplacement(targetAction, sourceAction) {
   targetAction.ability.damageMult = sourceAbility.damageMult ?? null;
   targetAction.ability.critRange = sourceAbility.critRange ?? 20;
   targetAction.ability.critMult = sourceAbility.critMult ?? 2;
+
+  targetAction.save = foundry.utils.deepClone(sourceAction.save ?? {});
+  targetAction.notes.effect = foundry.utils.deepClone(sourceAction.notes?.effect ?? []);
+  targetAction.notes.footer = foundry.utils.deepClone(sourceAction.notes?.footer ?? []);
+  targetAction.range = foundry.utils.deepClone(sourceAction.range ?? {});
+  targetAction.target = foundry.utils.deepClone(sourceAction.target ?? {});
 }
 
-function restoreDamageReplacement(targetAction, snapshot) {
+function restoreActionReplacement(targetAction, snapshot) {
   targetAction.damage ??= {};
   targetAction.ability ??= {};
+  targetAction.notes ??= {};
 
   targetAction.damage.parts = foundry.utils.deepClone(snapshot.damage.parts);
   targetAction.damage.critParts = foundry.utils.deepClone(snapshot.damage.critParts);
@@ -268,6 +352,11 @@ function restoreDamageReplacement(targetAction, snapshot) {
   targetAction.ability.damageMult = snapshot.ability.damageMult;
   targetAction.ability.critRange = snapshot.ability.critRange;
   targetAction.ability.critMult = snapshot.ability.critMult;
+  targetAction.save = foundry.utils.deepClone(snapshot.save);
+  targetAction.notes.effect = foundry.utils.deepClone(snapshot.notes.effect);
+  targetAction.notes.footer = foundry.utils.deepClone(snapshot.notes.footer);
+  targetAction.range = foundry.utils.deepClone(snapshot.range);
+  targetAction.target = foundry.utils.deepClone(snapshot.target);
 }
 
 function cloneDamage(damage) {
@@ -286,6 +375,18 @@ function cloneDamageAbility(ability) {
     damageMult: ability.damageMult ?? null,
     critRange: ability.critRange ?? 20,
     critMult: ability.critMult ?? 2,
+  };
+}
+
+function cloneSave(save) {
+  return foundry.utils.deepClone(save ?? {});
+}
+
+function cloneNotes(notes) {
+  notes ??= {};
+  return {
+    effect: foundry.utils.deepClone(notes.effect ?? []),
+    footer: foundry.utils.deepClone(notes.footer ?? []),
   };
 }
 

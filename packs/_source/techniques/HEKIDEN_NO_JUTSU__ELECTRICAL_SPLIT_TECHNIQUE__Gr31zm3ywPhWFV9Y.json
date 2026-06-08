@@ -89,7 +89,11 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.damageMode": "replace"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false
