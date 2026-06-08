@@ -1,4 +1,5 @@
 import { getTechniqueCasterLevel } from "../data/technique-rolldata.mjs";
+import { setTechniqueSaveDCContext } from "../data/technique-save-dc.mjs";
 
 const CONFIG_PREFIX = "weaponAttack";
 const DEFAULT_FILTER = "meleeWeapon";
@@ -13,6 +14,7 @@ const KNOWN_KEYS = new Set([
   "attackBonus",
   "damageBonus",
   "nonCritDamageBonus",
+  "extraAttacks",
   "held",
   "charge",
 ]);
@@ -131,6 +133,17 @@ export function parseWeaponAttackConfig({ values, keys, malformed }) {
     );
   }
 
+  const rawExtra = str("extraAttacks");
+  const extraAttacks = rawExtra
+    ? rawExtra
+        .split(";")
+        .map((entry) => {
+          const [formula, name] = entry.split("|").map((s) => s.trim());
+          return { formula, name: name ?? "" };
+        })
+        .filter((e) => e.formula)
+    : [];
+
   return {
     config: {
       mode,
@@ -139,6 +152,7 @@ export function parseWeaponAttackConfig({ values, keys, malformed }) {
       attackBonus: str("attackBonus"),
       damageBonus: str("damageBonus"),
       nonCritDamageBonus: str("nonCritDamageBonus"),
+      extraAttacks,
       held: str("held"),
       charge: chargeRaw === "true",
     },
@@ -182,6 +196,7 @@ export async function rollSelectedWeaponAttackWithTechnique({
     decorateActionUseChatData(actionUse, technique, techniqueAction);
 
     actionUse.shared.rollData.cl = getTechniqueCasterLevel(technique, actor);
+    applyTechniqueSave(actionUse, technique, techniqueAction, cleanup);
     if (config.damageMode === "replace") {
       replaceActionDetails(actionUse, techniqueAction, cleanup);
     }
@@ -192,6 +207,20 @@ export async function rollSelectedWeaponAttackWithTechnique({
       const originalLength = nonCritParts.length;
       nonCritParts.push({ formula: config.nonCritDamageBonus, types: [] });
       cleanup.push(() => nonCritParts.splice(originalLength, 1));
+    }
+
+    if (config.extraAttacks?.length) {
+      const exAtk = actionUse.shared.action.extraAttacks;
+      const supportsManual = pf1.config.extraAttacks[exAtk?.type]?.manual === true;
+      const originalType = exAtk?.type;
+      if (!supportsManual) exAtk.type = "advanced";
+      const manual = (exAtk.manual ??= []);
+      const originalLength = manual.length;
+      for (const atk of config.extraAttacks) manual.push(atk);
+      cleanup.push(() => {
+        exAtk.type = originalType;
+        manual.splice(originalLength);
+      });
     }
   };
 
@@ -279,6 +308,33 @@ async function applyTechniqueChatData(actionUse, technique, techniqueAction) {
   }
 }
 
+function applyTechniqueSave(actionUse, technique, techniqueAction, cleanup) {
+  if (!techniqueAction?.save?.type) return;
+
+  const selectedAction = actionUse.shared.action;
+  const selectedRollAction = actionUse.shared.rollData?.action;
+  if (!selectedAction || !selectedRollAction) return;
+
+  const actionSave = cloneSave(selectedAction.save);
+  const rollSave = cloneSave(selectedRollAction.save);
+  selectedAction.save = cloneSave(techniqueAction.save);
+  selectedRollAction.save = cloneSave(techniqueAction.save);
+
+  const clearDCContext = setTechniqueSaveDCContext(
+    selectedAction,
+    technique,
+    techniqueAction,
+  );
+  const dcBonus = actionUse.shared.rollData.dcBonus ?? 0;
+  actionUse.shared.rollData.dc =
+    selectedAction.getDC(actionUse.shared.rollData) - dcBonus;
+  cleanup.push(() => {
+    clearDCContext();
+    selectedAction.save = actionSave;
+    selectedRollAction.save = rollSave;
+  });
+}
+
 function replaceActionDetails(actionUse, techniqueAction, cleanup) {
   const selectedAction = actionUse.shared.action;
   const selectedRollAction = actionUse.shared.rollData?.action;
@@ -287,7 +343,6 @@ function replaceActionDetails(actionUse, techniqueAction, cleanup) {
   const actionSnapshot = {
     damage: cloneDamage(selectedAction.damage),
     ability: cloneDamageAbility(selectedAction.ability),
-    save: cloneSave(selectedAction.save),
     notes: cloneNotes(selectedAction.notes),
     range: foundry.utils.deepClone(selectedAction.range ?? {}),
     target: foundry.utils.deepClone(selectedAction.target ?? {}),
@@ -296,7 +351,6 @@ function replaceActionDetails(actionUse, techniqueAction, cleanup) {
   const rollSnapshot = {
     damage: cloneDamage(selectedRollAction.damage),
     ability: cloneDamageAbility(selectedRollAction.ability),
-    save: cloneSave(selectedRollAction.save),
     notes: cloneNotes(selectedRollAction.notes),
     range: foundry.utils.deepClone(selectedRollAction.range ?? {}),
     target: foundry.utils.deepClone(selectedRollAction.target ?? {}),
@@ -315,7 +369,6 @@ function replaceActionDetails(actionUse, techniqueAction, cleanup) {
 function applyActionReplacement(targetAction, sourceAction) {
   targetAction.damage ??= {};
   targetAction.ability ??= {};
-  targetAction.save ??= {};
   targetAction.notes ??= {};
 
   targetAction.damage.parts = foundry.utils.deepClone(sourceAction.damage?.parts ?? []);
@@ -331,7 +384,6 @@ function applyActionReplacement(targetAction, sourceAction) {
   targetAction.ability.critRange = sourceAbility.critRange ?? 20;
   targetAction.ability.critMult = sourceAbility.critMult ?? 2;
 
-  targetAction.save = foundry.utils.deepClone(sourceAction.save ?? {});
   targetAction.notes.effect = foundry.utils.deepClone(sourceAction.notes?.effect ?? []);
   targetAction.notes.footer = foundry.utils.deepClone(sourceAction.notes?.footer ?? []);
   targetAction.range = foundry.utils.deepClone(sourceAction.range ?? {});
@@ -352,7 +404,6 @@ function restoreActionReplacement(targetAction, snapshot) {
   targetAction.ability.damageMult = snapshot.ability.damageMult;
   targetAction.ability.critRange = snapshot.ability.critRange;
   targetAction.ability.critMult = snapshot.ability.critMult;
-  targetAction.save = foundry.utils.deepClone(snapshot.save);
   targetAction.notes.effect = foundry.utils.deepClone(snapshot.notes.effect);
   targetAction.notes.footer = foundry.utils.deepClone(snapshot.notes.footer);
   targetAction.range = foundry.utils.deepClone(snapshot.range);

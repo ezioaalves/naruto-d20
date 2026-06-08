@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.20 - 2026-06-08
+
+- Fixed technique weapon-attack saves so selected PF1e attack items inherit the technique's save type and Technique DC instead of showing `DC 0` in chat.
+- Added missing Fortitude saves to `SANGEKI HISSATSU WAZA: NIGEKI` and `SANGEKI HISSATSU WAZA: SANGEKI`, and repacked the techniques compendium.
+- Updated contributor docs and QA notes for save propagation, `weaponAttack.extraAttacks`, and the selected-attack technique flow.
+
 ## v1.0.19 - 2026-06-08
 
 - Learn and mastery technique checks now post a single chat card. The progress result (Learn/Mastery check vs DC, successes, training blocks, and training chakra) is appended onto the roll card as PF1e-style **Info** / **Training** property groups, instead of a separate second card. Reroll and "Add Action Point" now act on that same card.

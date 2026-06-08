@@ -31,7 +31,7 @@
     "target": "",
     "area": "",
     "duration": "",
-    "save": "",
+    "save": "Fortitude special",
     "compHandSeals": false,
     "compHalfSeals": false,
     "compConcentration": false,
@@ -62,6 +62,10 @@
         "duration": {
           "units": "inst"
         },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude special"
+        },
         "ability": {
           "attack": "dex",
           "damage": "str",
@@ -82,7 +86,9 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly"
+        "weaponAttack.filter": "meleeOrUnarmed",
+        "weaponAttack.nonCritDamageBonus": "1d4[Igeki] + (1d6+1)[Nigeki]",
+        "weaponAttack.extraAttacks": "-5|Second Attack;-10|Third Attack"
       }
     },
     "showInQuickbar": false,

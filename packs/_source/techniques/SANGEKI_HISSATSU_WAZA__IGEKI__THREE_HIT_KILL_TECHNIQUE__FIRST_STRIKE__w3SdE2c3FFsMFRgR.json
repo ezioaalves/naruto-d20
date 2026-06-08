@@ -68,14 +68,6 @@
         "target": {
           "value": "One creature"
         },
-        "damage": {
-          "parts": [
-            {
-              "formula": "1d4",
-              "types": []
-            }
-          ]
-        },
         "save": {
           "type": "fort",
           "description": "Fortitude partial"
@@ -98,7 +90,11 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeOrUnarmed",
+        "weaponAttack.nonCritDamageBonus": "1d4[Igeki]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false

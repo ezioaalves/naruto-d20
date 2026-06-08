@@ -145,7 +145,11 @@ Feats` abrem.
    Resultado esperado: filtros selecionam os ataques corretos; `charge` aplica a
    penalidade temporaria de defesa no fluxo PF1e.
 
-9. Use uma tecnica com `weaponAttack` malformado em copia de teste.
+9. Use uma tecnica `weaponAttack` que tenha save, como Hekiden ou Igeki.
+   Resultado esperado: o card mostra o save da tecnica; a propriedade `DC N` e
+   o botao de save exibem a mesma Technique DC, nunca `DC 0`.
+
+10. Use uma tecnica com `weaponAttack` malformado em copia de teste.
    Resultado esperado: o uso nao quebra; aparece warning com o campo
    problematico e a tecnica cai no fallback documentado.
 
