@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.16 - 2026-06-08
+
+- Changed activation cost for all Speed Rank (Kousoku) and Strength Rank (Jouryoku) techniques (Ranks 1–5) from Standard Action to Free Action.
+- Fixed Zettai Bougyo's activation from Standard Action to Move Action.
+- Fixed technique card data (Hekiden) being lost when rolling through selected unarmed attacks.
+- Fixed the download URL in module.json to use `releases/latest/download/module.zip` instead of a hardcoded version tag.
+
 ## v1.0.15 - 2026-06-07
 
 - Fixed the technique weapon/attack selector so it honors each technique's descriptors. Techniques with an unarmed descriptor (Kick, Punch, Kick or Punch, Punch or Kick) now offer only unarmed natural attacks; Armed techniques offer only weapons; techniques carrying both offer both. Previously an unarmed technique such as Gouken: Konoha Reppuu also listed equipped weapons (Kunai, Daikunai) alongside the unarmed strikes.
