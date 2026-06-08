@@ -85,7 +85,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.filter": "meleeOrUnarmed",
         "weaponAttack.attackBonus": "1[Ryuutsuki]",
         "weaponAttack.charge": "true"
       }
