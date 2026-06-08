@@ -165,6 +165,33 @@ export function installChakraTabPatch() {
   };
 }
 
+let chatDataPatchInstalled = false;
+
+/**
+ * Wrap ItemPF.prototype.getChatData to inject a "Chakra Resistance" property
+ * tag into the item summary for techniques that have system.chakraResistance.
+ * This is how pf1's own SR "yes" pill appears for spells.
+ */
+export function installTechniqueGetChatDataPatch() {
+  if (chatDataPatchInstalled) return;
+  const ItemPF = pf1?.documents?.item?.ItemPF;
+  if (!ItemPF?.prototype?.getChatData) {
+    console.error("Naruto D20 | ItemPF.getChatData not found — chakra resistance pill skipped");
+    return;
+  }
+  chatDataPatchInstalled = true;
+
+  const original = ItemPF.prototype.getChatData;
+  ItemPF.prototype.getChatData = async function (...args) {
+    const data = await original.apply(this, args);
+    if (this.type === TECHNIQUE_ITEM_TYPE && this.system?.chakraResistance) {
+      data.properties ??= [];
+      data.properties.push(game.i18n.localize("NarutoD20.Technique.ChakraResistance.Label"));
+    }
+    return data;
+  };
+}
+
 let headerButtonInstalled = false;
 
 /**

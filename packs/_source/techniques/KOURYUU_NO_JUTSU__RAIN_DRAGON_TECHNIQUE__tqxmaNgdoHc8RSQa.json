@@ -102,7 +102,8 @@
       "dictionary": {}
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "chakraResistance": true
   },
   "effects": [],
   "folder": "YKs46qw0QmoMSkac",

@@ -88,7 +88,8 @@
       "dictionary": {}
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "chakraResistance": true
   },
   "effects": [],
   "folder": "UmEe4Gue0mQ0m4ue",

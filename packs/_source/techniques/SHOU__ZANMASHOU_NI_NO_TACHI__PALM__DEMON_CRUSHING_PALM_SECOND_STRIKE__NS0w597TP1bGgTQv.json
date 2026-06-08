@@ -89,7 +89,8 @@
       }
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "chakraResistance": true
   },
   "effects": [],
   "folder": "Y6G2KygqCgmo0wgw",

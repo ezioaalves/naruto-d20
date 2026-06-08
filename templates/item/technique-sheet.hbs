@@ -44,6 +44,9 @@
       <li class="property generic-tag">Perform DC {{derived.performDC}}</li>
       <li class="property generic-tag">Threshold {{derived.skillThreshold}}</li>
       <li class="property generic-tag">Successes {{learning.requiredSuccesses}}</li>
+      {{#if system.chakraResistance}}
+      <li class="property generic-tag">{{localize "NarutoD20.Technique.ChakraResistance.Label"}}</li>
+      {{/if}}
       {{#if learning.effectivelyLearned}}
       <li class="property generic-tag learning learned">Learned</li>
       {{#if learning.learnedViaEmpathy}}
@@ -292,6 +295,14 @@
             {{/each}}
           </ol>
         </ol>
+      </div>
+
+      {{!-- Chakra Resistance — mirrors PF1e system.sr --}}
+      <div class="form-group stacked spell-misc">
+        <label class="checkbox">
+          <input type="checkbox" name="system.chakraResistance" {{checked system.chakraResistance}}>
+          {{localize "NarutoD20.Technique.ChakraResistance.Label"}}
+        </label>
       </div>
 
       {{!-- Mastery — acts like a spell's caster level offset (see derived.masteryLevel) --}}

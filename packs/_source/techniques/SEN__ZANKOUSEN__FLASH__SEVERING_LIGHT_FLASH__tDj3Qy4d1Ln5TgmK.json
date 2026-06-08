@@ -104,7 +104,8 @@
       "dictionary": {}
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "chakraResistance": true
   },
   "effects": [],
   "folder": "iEw44g26KYEWeYcE",

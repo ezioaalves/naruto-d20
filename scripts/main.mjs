@@ -22,7 +22,7 @@ import { registerDamageTypes } from "./data/damage-types.mjs";
 import { normalizeActionIds } from "./data/action-ids.mjs";
 import { prepareBaseActorData, prepareDerivedActorData } from "./data/derived-data.mjs";
 import { registerNarutoSkills, ensureActorSkillEntries } from "./data/skills.mjs";
-import { installChakraTabPatch, installSynckitHeaderButton } from "./ui/render-patch.mjs";
+import { installChakraTabPatch, installSynckitHeaderButton, installTechniqueGetChatDataPatch } from "./ui/render-patch.mjs";
 import { installTechniqueSaveDCPatch } from "./data/technique-save-dc.mjs";
 import { installTechniqueRollDataPatch } from "./data/technique-rolldata.mjs";
 import { registerLearnCheckListeners } from "./ui/learn-checks.mjs";
@@ -193,6 +193,7 @@ Hooks.once("pf1RegisterDamageTypes", registerDamageTypes);
 Hooks.once("setup", () => {
   installChakraTabPatch(); // _renderInner wrap — must run before first render
   installSynckitHeaderButton(); // _getHeaderButtons wrap — "Sync Techniques" title-bar button
+  installTechniqueGetChatDataPatch(); // inject "Chakra Resistance" into item summary properties
   registerLearnCheckListeners(); // .shinobi-roll + learn-check tooltips + chakra max tooltips
   registerLearnCardContextMenu(); // learn chat card → right-click "Add Action Point"
   registerMasterCardContextMenu(); // mastery chat card → right-click "Add Action Point"

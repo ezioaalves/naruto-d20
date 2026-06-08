@@ -333,6 +333,7 @@ export function createTechniqueDataModel() {
         area: new fields.StringField({ ...opt, blank: true, initial: "" }),
         duration: new fields.StringField({ ...opt, blank: true, initial: "" }),
         save: new fields.StringField({ ...opt, blank: true, initial: "" }),
+        chakraResistance: new fields.BooleanField({ ...opt, initial: false }),
 
         compHandSeals: new fields.BooleanField({ ...opt, initial: false }),
         compHalfSeals: new fields.BooleanField({ ...opt, initial: false }),
