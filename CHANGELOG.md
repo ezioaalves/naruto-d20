@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.14 - 2026-06-07
+
+- Fixed the Community Compendium class descriptions where OCR conversion had mashed talent-tree options into single run-on paragraphs. Each talent, mastery, and feral power now reads as its own entry across Deft Skirmisher, Beast Tamer, Elemental Master, Master Thrower, Ninja Crafter, Shadow Adept, Shunjutsu Master, Space-Time Specialist, and Shinobi Squad Leader.
+- Rebuilt structure the OCR had broken: the Deft Skirmisher headings split mid-word, the Akatsuki Spy "DC Knowledge" table, and the Battle Maiden special-mount stat legend and abilities.
+- Regenerated the affected class compendium entries from the corrected sources; only the displayed descriptions changed, with all class mechanics, IDs, and feat grants left intact.
+
 ## v1.0.13 - 2026-06-07
 
 - Added 25 Community Compendium advanced classes to the classes compendium: Akatsuki Spy, Battle Maiden, Beast Tamer, Chakra Fighter, Chemist, Clansman, Dao Shi Monk, Dervish Dancer, Elemental Master, Hitokiri, Holy/Unholy Warrior, Iaijutsu Master, Master Thrower, Ninja Crafter, Ryukyu Swordsman, Sannin, Sensory Shinobi, Shadow Adept, Shinobi Scribe, Shinobi Squad Leader, Shunjutsu Master, Space-Time Specialist, Specialist Summoner, Sword Saint, Tora Oshiego.
