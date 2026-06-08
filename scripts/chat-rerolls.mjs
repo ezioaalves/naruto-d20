@@ -181,7 +181,7 @@ async function rerollMessage(message, options = {}) {
       ${await renderRollBlock(oldRoll, "NarutoD20.Reroll.Original", oldClass)}
       ${await renderRollBlock(newRoll, "NarutoD20.Reroll.Rerolled", newClass)}
       <div class="naruto-reroll-summary">
-        ${game.i18n.format("NarutoD20.Reroll.KeptTotal", {
+        ${game.i18n.format(`NarutoD20.Reroll.${({ new: "KeptNew", lower: "KeptLower", higher: "KeptHigher" })[options.keep ?? "new"] ?? "KeptNew"}`, {
           total: Math.round(Number(keptRoll.total) * 100) / 100,
         })}
       </div>

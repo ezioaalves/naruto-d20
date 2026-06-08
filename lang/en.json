@@ -417,6 +417,9 @@
       "Rerolled": "Reroll",
       "ActionPointRoll": "Action Point",
       "KeptTotal": "Kept result: {total}",
+      "KeptNew": "Kept new result: {total}",
+      "KeptLower": "Kept lower result: {total}",
+      "KeptHigher": "Kept higher result: {total}",
       "ActionPointTotal": "{base} {bonus} Action Point = {total}",
       "CannotReroll": "This roll cannot be rerolled.",
       "CannotAddActionPoint": "Cannot add an Action Point to this roll."

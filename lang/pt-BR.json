@@ -417,6 +417,9 @@
       "Rerolled": "Rerrolagem",
       "ActionPointRoll": "Ponto de Ação",
       "KeptTotal": "Resultado mantido: {total}",
+      "KeptNew": "Manteve o novo resultado: {total}",
+      "KeptLower": "Manteve o menor resultado: {total}",
+      "KeptHigher": "Manteve o maior resultado: {total}",
       "ActionPointTotal": "{base} {bonus} Ponto de Ação = {total}",
       "CannotReroll": "Esta rolagem não pode ser rerrolada.",
       "CannotAddActionPoint": "Não é possível adicionar um Ponto de Ação a esta rolagem."
