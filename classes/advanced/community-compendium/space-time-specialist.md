@@ -46,7 +46,13 @@ Avoiding an Attack: The character may use this ability as an instant action befo
 
 ### Space-Time Mastery
 
-The Space-Time Specialist has become a master of Space-Time manipulation, able to perform Space-Time techniques as if they were second nature. A number of times per day equal to his Intelligence modifier, the character can choose one of the following effects: Space-Time Extension: The character can triple the range of a Space-Time technique with the teleportation descriptor. Cost Reduction: The character can reduce the chakra cost of a Space-Time technique by half (rounded up). Quickened Space-Time Technique: The character gains a quickened action to perform a single Space-Time technique with a perform time no longer than 1 attack action. The Space-Time Specialist can only gain one quickened action per round, no matter the type (See Basic Game Mechanics for rules on Quickened Actions).
+The Space-Time Specialist has become a master of Space-Time manipulation, able to perform Space-Time techniques as if they were second nature. A number of times per day equal to his Intelligence modifier, the character can choose one of the following effects:
+
+**Space-Time Extension:** The character can triple the range of a Space-Time technique with the teleportation descriptor.
+
+**Cost Reduction:** The character can reduce the chakra cost of a Space-Time technique by half (rounded up).
+
+**Quickened Space-Time Technique:** The character gains a quickened action to perform a single Space-Time technique with a perform time no longer than 1 attack action. The Space-Time Specialist can only gain one quickened action per round, no matter the type (See Basic Game Mechanics for rules on Quickened Actions).
 
 ### Bonus Feat
 

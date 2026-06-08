@@ -45,7 +45,13 @@ On third level, the Shinobi Squad Leader can inspire his allies to even greater 
 
 ### Perfect Plan
 
-On this level, the planning abilities of the Shinobi Squad Leader are almost perfect. By spending an Action Point, the Shinobi Squad Leader can use the Plan X ability in one of the following ways: Fast Plan: The Plan requires only a full-round action, instead of one full minute. Perfect Plan: The character adds 2 to the final bonus provided by the Plan X ability. Long-lasting Plan: The character adds the result of the Action Point to the duration of the Plan ability, and the bonus provided by the Plan X ability is reduced by one for every two rounds (instead of every round).
+On this level, the planning abilities of the Shinobi Squad Leader are almost perfect. By spending an Action Point, the Shinobi Squad Leader can use the Plan X ability in one of the following ways:
+
+**Fast Plan:** The Plan requires only a full-round action, instead of one full minute.
+
+**Perfect Plan:** The character adds 2 to the final bonus provided by the Plan X ability.
+
+**Long-lasting Plan:** The character adds the result of the Action Point to the duration of the Plan ability, and the bonus provided by the Plan X ability is reduced by one for every two rounds (instead of every round).
 
 ### Bonus Feat
 

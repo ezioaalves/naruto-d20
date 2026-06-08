@@ -34,7 +34,17 @@ The following features pertain to the Ninja Crafter prestige class.
 
 ### Craft Mastery
 
-Choose one of the following Talents. A Talent cannot be chosen twice unless specified. Fast Crafting: The character can speed up their crafting or repair time. By taking a -5 penalty to their craft or repair check, the crafting or repair time is reduced to half (rounding up). Improvisation Crafting (any 2 Craft Mastery): A Ninja Crafter gains the ability to improvise solutions using common objects and scientific know-how. This ability lets the Ninja Crafter create objects in a dramatic situation quickly and cheaply, but that have a limited duration. By spending 1 action point and combining common objects with a Craft check that corresponds to the function desired, the Ninja Crafter can build a tool or device to deal with any situation. The DC for the Craft check is equal to 5 + the purchase DC of the object that most closely matches the desired function. Only objects that can normally be used more than once can be improvised. Electronic devices, special tools, weapons, mechanical devices, and more can be built with improvisation crafting. It takes a full-round action to make an object with improvisation crafting. The object, when put into use, lasts for a number of rounds equal to the Ninja Crafter's class level, or until the end of the current encounter, before it breaks down. It can't be repaired. Improvise Tools (any 1 Craft Mastery): When Ninja Crafter don’t have any access to kit or basic tools, they may use improvise tools. The Ninja Crafter don’t gain penalty when they don’t use the tools. Jury-Rig Expert: The Ninja Crafter gain bonus to JuryRig equal as Ninja Crafter’s class level. Material Expertise: The Ninja Crafter know the best material to use without spending too much money on it. Reduce the material purchase DC equal to the Ninja Crafter’s class level.
+Choose one of the following Talents. A Talent cannot be chosen twice unless specified.
+
+**Fast Crafting:** The character can speed up their crafting or repair time. By taking a -5 penalty to their craft or repair check, the crafting or repair time is reduced to half (rounding up).
+
+**Improvisation Crafting (any 2 Craft Mastery):** A Ninja Crafter gains the ability to improvise solutions using common objects and scientific know-how. This ability lets the Ninja Crafter create objects in a dramatic situation quickly and cheaply, but that have a limited duration. By spending 1 action point and combining common objects with a Craft check that corresponds to the function desired, the Ninja Crafter can build a tool or device to deal with any situation. The DC for the Craft check is equal to 5 + the purchase DC of the object that most closely matches the desired function. Only objects that can normally be used more than once can be improvised. Electronic devices, special tools, weapons, mechanical devices, and more can be built with improvisation crafting. It takes a full-round action to make an object with improvisation crafting. The object, when put into use, lasts for a number of rounds equal to the Ninja Crafter's class level, or until the end of the current encounter, before it breaks down. It can't be repaired.
+
+**Improvise Tools (any 1 Craft Mastery):** When Ninja Crafter don’t have any access to kit or basic tools, they may use improvise tools. The Ninja Crafter don’t gain penalty when they don’t use the tools.
+
+**Jury-Rig Expert:** The Ninja Crafter gain bonus to JuryRig equal as Ninja Crafter’s class level.
+
+**Material Expertise:** The Ninja Crafter know the best material to use without spending too much money on it. Reduce the material purchase DC equal to the Ninja Crafter’s class level.
 
 ### Bonus Feats
 

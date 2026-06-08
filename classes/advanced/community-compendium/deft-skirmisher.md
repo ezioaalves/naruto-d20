@@ -40,11 +40,37 @@ The Deft Skirmisher being able to react to almost any provocation, gains the Qui
 
 ### Elusive Talent Tree
 
-Choose one of the following Talents. A Talent cannot be chosen twice unless specified: Slippery: A Deft Skirmisher with this talent gains a +3 bonus to all Escape Artist checks, including those made to escape a grapple. Fancy Footwork: Each round, on his initiative, the Deft Skirmisher may choose to either gain a +1 Dodge bonus to his Defense against all attacks directed at her, or a +2 Dodge bonus against a single specific opponent. She cannot use this bonus when she is flat footed or otherwise denied her Dexterity bonus to Defense. In addition, a Deft Skirmisher with this talent can acquire feats and talents that have the Dodge feat as a prerequisite, even if the Deft Skirmisher does not possess the actual feat. Catlike Reflexes (Requires 1 other Talent): The Deft Skirmisher has remarkably keen reactions, enabling her to excel at certain skills. The Deft Skirmisher with this talent adds her base Reflex saving throw bonus to all Hide checks. Creeping Reflexes (Requires 2 other Talents): The Deft Skirmisher has remarkably keen reactions, enabling her to excel at certain skills. The Deft Skirmisher with this talent adds her base Reflex saving throw bonus to all Move Silently checks.
+Choose one of the following Talents. A Talent cannot be chosen twice unless specified:
 
-### Improved Fancy Footwork (Requires Fancy
+**Slippery:** A Deft Skirmisher with this talent gains a +3 bonus to all Escape Artist checks, including those made to escape a grapple.
 
-Footwork): The Deft Skirmisher gains a +2 dodge bonus against all attacks directed at him, provided he is not flat footed or otherwise denied his Dexterity bonus to Defense. Celeritous Skulking (Requires Slipper and Creeping Reflexes): The Deft Skirmisher with this talent can move at normal speed without suffering the –5 penalty to his Hide check. Redirecting Dodge (Requires Dodge (f) BaB +7): Should an opponent against whom the Deft Skirmisher is receiving the bonus from her Dodge feat (or the fancy footwork talent) attack her while flanking her, she may be able to turn the attack against the opponent’s flanking partner. If the attack against the Deft Skirmisher misses, she can spend an Action Point to dodge out of the way successfully. This tactic causes the opponent to skewer the ally who helps create the flank, imposing its result against that ally. The opponent does not reroll the attack. Use the result of the original attack roll against the flanking target. Note that the Deft Skirmisher decides to spend the Action Point after seeing the attack’s results, allowing her to gauge whether the strike has a chance to hit the enemy. Rapid Precision (Requires 1 other Talent): The swift melee blows of the Deft Skirmisher strike with such speed and accuracy that the damage is increased by the character’s Dexterity modifier in addition to his Strength modifier. Full Alert: The Deft Skirmisher gets a +4 circumstance bonus on initiative checks. This bonus stacks with the one provided by the Improved Initiative feat. Improved Evasion (Requires Full Alert, Evasion (a)): If the Deft Skirmisher is exposed to any effect that normally allows a character to attempt a Reflex saving throw for half damage (such as getting caught in a grenade blast), the Deft Skirmisher suffers no damage if they make a successful saving throw and only half damage on a failed save. Improved evasion can only be used when wearing light armor or no armor. Heightened Reflexes (Requires Full Alert, Improved Evasion (a)): The Deft Skirmisher can choose to take 10 on any Reflex saving throw. They may also spend 1 action point to gain a +10 bonus on a Reflex saving throw. They may choose to take 10, spend an action point to gain the +10 bonus, or both. Quick: By spending one Action Point, the Deft Skirmisher begins moving so rapidly that all attacks against him suffer a miss chance of 20%. This miss chance persists for 3 rounds plus 1 round per Deft Skirmisher level. Quicker (Requires Quick): When the hero spends an Action Point to gain a miss chance, that chance is increased by 10% (total 30%). Quickest (Requires Quicker): When the hero spends an Action Point to gain a miss chance, that chance is increased by 10% (total 40%). Quickest of Them All (Requires Quickest): When the hero spends an Action Point to gain a miss chance, that chance is increased by 10% (total 50%).
+**Fancy Footwork:** Each round, on his initiative, the Deft Skirmisher may choose to either gain a +1 Dodge bonus to his Defense against all attacks directed at her, or a +2 Dodge bonus against a single specific opponent. She cannot use this bonus when she is flat footed or otherwise denied her Dexterity bonus to Defense. In addition, a Deft Skirmisher with this talent can acquire feats and talents that have the Dodge feat as a prerequisite, even if the Deft Skirmisher does not possess the actual feat.
+
+**Catlike Reflexes (Requires 1 other Talent):** The Deft Skirmisher has remarkably keen reactions, enabling her to excel at certain skills. The Deft Skirmisher with this talent adds her base Reflex saving throw bonus to all Hide checks.
+
+**Creeping Reflexes (Requires 2 other Talents):** The Deft Skirmisher has remarkably keen reactions, enabling her to excel at certain skills. The Deft Skirmisher with this talent adds her base Reflex saving throw bonus to all Move Silently checks.
+
+**Improved Fancy Footwork (Requires Fancy Footwork):** The Deft Skirmisher gains a +2 dodge bonus against all attacks directed at him, provided he is not flat footed or otherwise denied his Dexterity bonus to Defense.
+
+**Celeritous Skulking (Requires Slipper and Creeping Reflexes):** The Deft Skirmisher with this talent can move at normal speed without suffering the –5 penalty to his Hide check.
+
+**Redirecting Dodge (Requires Dodge (f) BaB +7):** Should an opponent against whom the Deft Skirmisher is receiving the bonus from her Dodge feat (or the fancy footwork talent) attack her while flanking her, she may be able to turn the attack against the opponent’s flanking partner. If the attack against the Deft Skirmisher misses, she can spend an Action Point to dodge out of the way successfully. This tactic causes the opponent to skewer the ally who helps create the flank, imposing its result against that ally. The opponent does not reroll the attack. Use the result of the original attack roll against the flanking target. Note that the Deft Skirmisher decides to spend the Action Point after seeing the attack’s results, allowing her to gauge whether the strike has a chance to hit the enemy.
+
+**Rapid Precision (Requires 1 other Talent):** The swift melee blows of the Deft Skirmisher strike with such speed and accuracy that the damage is increased by the character’s Dexterity modifier in addition to his Strength modifier.
+
+**Full Alert:** The Deft Skirmisher gets a +4 circumstance bonus on initiative checks. This bonus stacks with the one provided by the Improved Initiative feat.
+
+**Improved Evasion (Requires Full Alert, Evasion (a)):** If the Deft Skirmisher is exposed to any effect that normally allows a character to attempt a Reflex saving throw for half damage (such as getting caught in a grenade blast), the Deft Skirmisher suffers no damage if they make a successful saving throw and only half damage on a failed save. Improved evasion can only be used when wearing light armor or no armor.
+
+**Heightened Reflexes (Requires Full Alert, Improved Evasion (a)):** The Deft Skirmisher can choose to take 10 on any Reflex saving throw. They may also spend 1 action point to gain a +10 bonus on a Reflex saving throw. They may choose to take 10, spend an action point to gain the +10 bonus, or both.
+
+**Quick:** By spending one Action Point, the Deft Skirmisher begins moving so rapidly that all attacks against him suffer a miss chance of 20%. This miss chance persists for 3 rounds plus 1 round per Deft Skirmisher level.
+
+**Quicker (Requires Quick):** When the hero spends an Action Point to gain a miss chance, that chance is increased by 10% (total 30%).
+
+**Quickest (Requires Quicker):** When the hero spends an Action Point to gain a miss chance, that chance is increased by 10% (total 40%).
+
+**Quickest of Them All (Requires Quickest):** When the hero spends an Action Point to gain a miss chance, that chance is increased by 10% (total 50%).
 
 ### Combat Flow
 
@@ -68,6 +94,4 @@ The Deft Skirmisher may use this ability once per day. At the beginning or end o
 
 ### Bonus Feat
 
-Choose a feat from among the following, for which you must meet any prerequisites: Action Boost, Action Point Recovery, Advanced Dodge, Combat Expertise, Combat Instincts, Combat Martial Arts, Combat Reflexes, Deflect Arrows, Flick of the Wrist, Improved Combat Expertise, Improved Two Weapon Defense, Improved Two Weapon Fighting, Neck Hairs Raise, Precise Strike, Smart Defense, Superior Combat Martial Arts, Supernatural Strike, Two Weapon Defense, Two
-
-### Weapon Fighting
+Choose a feat from among the following, for which you must meet any prerequisites: Action Boost, Action Point Recovery, Advanced Dodge, Combat Expertise, Combat Instincts, Combat Martial Arts, Combat Reflexes, Deflect Arrows, Flick of the Wrist, Improved Combat Expertise, Improved Two Weapon Defense, Improved Two Weapon Fighting, Neck Hairs Raise, Precise Strike, Smart Defense, Superior Combat Martial Arts, Supernatural Strike, Two Weapon Defense, Two Weapon Fighting.

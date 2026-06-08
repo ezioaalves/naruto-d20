@@ -45,19 +45,39 @@ Choose one of the following Masteries. A Mastery cannot be chosen twice unless s
 
 ### Meld Body Talent Tree
 
-The Shunjutsu Master has learned to manipulate Shunjutsu enough to move through solid objects. Meld Body I: The character can use Shunjutsu for the purpose of bypassing any solid for no chakra 3/day. Meld Body II (Requires Meld Body I): The character can use Shunjutsu for the purpose of bypassing any solid for no chakra 5/day.
+The Shunjutsu Master has learned to manipulate Shunjutsu enough to move through solid objects.
+
+**Meld Body I:** The character can use Shunjutsu for the purpose of bypassing any solid for no chakra 3/day.
+
+**Meld Body II (Requires Meld Body I):** The character can use Shunjutsu for the purpose of bypassing any solid for no chakra 5/day.
 
 ### Maximize Shunjutsu Talent Tree
 
-Through constant practice of Shunjutsu, the Shunjutsu Master is able to expend large amounts of chakra to travel even further distances than thought to be possible with the technique. Maximize Shunjutsu I: The character can pay 1.5x the cost of chakra (round up) to increase the distance by x2. Maximize Shunjutsu II (Requires Maximize Shunjutsu I): The character can pay 2x the cost of chakra to increase the distance by x3. Maximize Shunjutsu III (Requires Maximize Shunjutsu I & II): The character can pay 2.5x the cost of chakra (round up) to increase the distance by x4.
+Through constant practice of Shunjutsu, the Shunjutsu Master is able to expend large amounts of chakra to travel even further distances than thought to be possible with the technique.
+
+**Maximize Shunjutsu I:** The character can pay 1.5x the cost of chakra (round up) to increase the distance by x2.
+
+**Maximize Shunjutsu II (Requires Maximize Shunjutsu I):** The character can pay 2x the cost of chakra to increase the distance by x3.
+
+**Maximize Shunjutsu III (Requires Maximize Shunjutsu I & II):** The character can pay 2.5x the cost of chakra (round up) to increase the distance by x4.
 
 ### Ethereal Body Talent Tree
 
-The Shunjutsu Master learns to use Shunjutsu to shift only half of the atoms that make his body, turning himself partially insubstantial. Ethereal Body I (Any 2 other Shunjutsu Talents): Dematerializes on users turn and doesn’t materialize till user’s next turn. Gains 25% concealment. User is essentially Incorporeal for one round, but cannot attack, use above as override. Prerequisite: Any 2 other talents from the Shunjutsu Talent trees. Ethereal Body II (Requires Ethereal Body I): Dematerializes on users turn and doesn’t materialize till user’s next turn. Gains 50% concealment. Ethereal Body III (Requires Ethereal Body II): Dematerializes on users turn and doesn’t materialize till user’s next turn. Gains 75% concealment.
+The Shunjutsu Master learns to use Shunjutsu to shift only half of the atoms that make his body, turning himself partially insubstantial.
+
+**Ethereal Body I (Any 2 other Shunjutsu Talents):** Dematerializes on users turn and doesn’t materialize till user’s next turn. Gains 25% concealment. User is essentially Incorporeal for one round, but cannot attack, use above as override.
+*Prerequisite:* Any 2 other talents from the Shunjutsu Talent trees.
+
+**Ethereal Body II (Requires Ethereal Body I):** Dematerializes on users turn and doesn’t materialize till user’s next turn. Gains 50% concealment.
+
+**Ethereal Body III (Requires Ethereal Body II):** Dematerializes on users turn and doesn’t materialize till user’s next turn. Gains 75% concealment.
 
 ### Uncanny Ability Talent Tree
 
-The Shunjutsu Master has developed bizarre methods of manipulating the Shunjutsu and as a result is able to do things no other shinobi can. Switcheroo: If an enemy is using a Shunjutsu, the character may use one as well and switch channels. The enemy goes to your destination and you go to his, the enemy receives a Will save equal to 10 + 1/2 Shunjutsu Master levels + Intelligence Modifier. May only be used 1 times per day. This functions as an immediate action. Prerequisite: Any 4 other talents from the Shunjutsu Talent trees.
+The Shunjutsu Master has developed bizarre methods of manipulating the Shunjutsu and as a result is able to do things no other shinobi can.
+
+**Switcheroo:** If an enemy is using a Shunjutsu, the character may use one as well and switch channels. The enemy goes to your destination and you go to his, the enemy receives a Will save equal to 10 + 1/2 Shunjutsu Master levels + Intelligence Modifier. May only be used 1 times per day. This functions as an immediate action.
+*Prerequisite:* Any 4 other talents from the Shunjutsu Talent trees.
 
 ### Increased Speed
 

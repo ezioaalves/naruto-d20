@@ -34,7 +34,23 @@ The following features pertain to the Shadow Adept prestige class.
 
 ### Shadow Mastery
 
-Choose one of the following Masteries. A Mastery cannot be chosen twice unless specified: Hide in Plain Sight (Requires 2 other Shadow Mastery): A Shadow Adept can use the Hide skill even while being observed. As long as he is within 10 feet of some sort of shadow, a he can hide himself from view in the open without anything to actually hide behind. He cannot, however, hide in his own shadow. Sneak Attack (Requires 2 other Shadow Mastery): The shadow adept's sneak attack increases by +1d6. Unavoidable Shadow (Requires 2 other Shadow Mastery): The Shadow Adept increases the saving throw DC of his Shadow Arts techniques by 2. Shadow Proficiency: The Shadow Adept gains a +2 bonus to Chakra Control and Ninjutsu checks made to perform Shadow Arts techniques and subsequently convert the technique's cost to hit points. Expanded Shadow: The Shadow Adept is able to stretch the range of his specialized element. He may use any shadow art technique and increase its range by 1.5 times. Techniques with a "Touch," "Personal," or "Melee" range are unaffected. Darkvision (Requires 1 other Shadow Mastery): The Shadow Adept gains Darkvision up to 30ft. This mastery can be taken up to two times. Its effects stack. Shadow Jump (Requires 3 other Shadow Masteries): A Shadow Adept gains the ability to travel between shadows as if by means of a dimension door. The limitation is that the transport must begin and end in an area with at least some shadow. A Shadow Adept can jump up to a total of 20 feet each day in this way; this may be a single jump of 20 feet or two jumps of 10 feet each. Every two levels on this class (Rounded down), the distance a Shadow Adept can jump each day doubles (40 feet at 2th, 80 feet at 4th, and 160 feet at 6th). This amount can be split among many jumps, but each one, no matter how small, counts as a 10-foot increment. Slippery Mind (Requires 2 other Shadow Masteries): If a Shadow Adept is affected by a mind-affecting effect (Such as most Genjutsu) and fails her saving throw, 1 round later she can spend an action point to attempt her saving throw again. She only gets this one extra chance to succeed at her saving throw. If it fails as well, the effects occur normally.
+Choose one of the following Masteries. A Mastery cannot be chosen twice unless specified:
+
+**Hide in Plain Sight (Requires 2 other Shadow Mastery):** A Shadow Adept can use the Hide skill even while being observed. As long as he is within 10 feet of some sort of shadow, a he can hide himself from view in the open without anything to actually hide behind. He cannot, however, hide in his own shadow.
+
+**Sneak Attack (Requires 2 other Shadow Mastery):** The shadow adept's sneak attack increases by +1d6.
+
+**Unavoidable Shadow (Requires 2 other Shadow Mastery):** The Shadow Adept increases the saving throw DC of his Shadow Arts techniques by 2.
+
+**Shadow Proficiency:** The Shadow Adept gains a +2 bonus to Chakra Control and Ninjutsu checks made to perform Shadow Arts techniques and subsequently convert the technique's cost to hit points.
+
+**Expanded Shadow:** The Shadow Adept is able to stretch the range of his specialized element. He may use any shadow art technique and increase its range by 1.5 times. Techniques with a "Touch," "Personal," or "Melee" range are unaffected.
+
+**Darkvision (Requires 1 other Shadow Mastery):** The Shadow Adept gains Darkvision up to 30ft. This mastery can be taken up to two times. Its effects stack.
+
+**Shadow Jump (Requires 3 other Shadow Masteries):** A Shadow Adept gains the ability to travel between shadows as if by means of a dimension door. The limitation is that the transport must begin and end in an area with at least some shadow. A Shadow Adept can jump up to a total of 20 feet each day in this way; this may be a single jump of 20 feet or two jumps of 10 feet each. Every two levels on this class (Rounded down), the distance a Shadow Adept can jump each day doubles (40 feet at 2th, 80 feet at 4th, and 160 feet at 6th). This amount can be split among many jumps, but each one, no matter how small, counts as a 10-foot increment.
+
+**Slippery Mind (Requires 2 other Shadow Masteries):** If a Shadow Adept is affected by a mind-affecting effect (Such as most Genjutsu) and fails her saving throw, 1 round later she can spend an action point to attempt her saving throw again. She only gets this one extra chance to succeed at her saving throw. If it fails as well, the effects occur normally.
 
 ### Sneak Attack
 
