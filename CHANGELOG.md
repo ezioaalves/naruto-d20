@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.19 - 2026-06-08
+
+- Learn and mastery technique checks now post a single chat card. The progress result (Learn/Mastery check vs DC, successes, training blocks, and training chakra) is appended onto the roll card as PF1e-style **Info** / **Training** property groups, instead of a separate second card. Reroll and "Add Action Point" now act on that same card.
+- Added the `NarutoD20.Cards.TrainingHeader` label (English and pt-BR) and documented the design in `docs/learning-mastery-chat-cards.md`.
+
 ## v1.0.18 - 2026-06-08
 
 - Reroll cards now show which keep option was chosen: "Kept new result", "Kept lower result", or "Kept higher result" instead of the generic "Kept result" label. Localized in both English and pt-BR.
