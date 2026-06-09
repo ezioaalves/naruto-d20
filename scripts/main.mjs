@@ -35,6 +35,7 @@ import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
 import { registerExpiredBuffCleanup } from "./automation/buff-expiry.mjs";
+import { registerSpeedRankPenalties } from "./automation/speed-rank-penalties.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
@@ -204,6 +205,7 @@ Hooks.once("setup", () => {
   registerFeatGrantDeletion(); // cascade-delete feat supplements on feat removal
   registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn
   registerExpiredBuffCleanup(); // delete module automation buffs when their duration expires
+  registerSpeedRankPenalties(); // KOUSOKU armor/condition level correction
   registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog
 });
 
