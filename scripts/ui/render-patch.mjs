@@ -127,12 +127,21 @@ export function installChakraTabPatch() {
     // PF1 reopens expanded item summaries inside its own _renderInner, before
     // this wrapper can inject the Chakra tab. Drop entries from injected or
     // malformed tabs so PF1 never dereferences a missing `.tab[data-tab=...]`.
+    // Capture the technique item ids so technique-list.mjs can re-expand them
+    // after the tab is injected (rebuilt fresh each render to stay in sync with
+    // user collapses, which leave _expandedItems directly without a re-render).
+    const expandedTechniques = new Set();
     for (const expandedId of [...(this._expandedItems ?? [])]) {
-      const tab = String(expandedId).split(".")[0];
-      if (UNSUPPORTED_EXPANDED_TABS.has(tab)) {
+      const parts = String(expandedId).split(".");
+      if (UNSUPPORTED_EXPANDED_TABS.has(parts[0])) {
         this._expandedItems.delete(expandedId);
+        const itemId = parts[parts.length - 1];
+        if (this.actor.items.get(itemId)?.type === TECHNIQUE_ITEM_TYPE) {
+          expandedTechniques.add(itemId);
+        }
       }
     }
+    this._narutoExpandedTechniques = expandedTechniques;
 
     const $html = await original.apply(this, args);
     if (!["character", "npc"].includes(this.actor.type)) return $html;
