@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.21 - 2026-06-09
+
+- Automated KOUSOKU (Speed Rank) penalties: the effective rank applied to armor/encumbrance and immobilizing-condition penalties is now derived from PF1e roll data, preserving the stored base rank. Includes a migration pass for existing buffs and compendium updates.
+- Fixed Chakra tab state loss on re-render: discipline filter, search query, and expanded technique descriptions are now stored on the sheet instance and restored after every `actor.update()` re-render (e.g. after spending chakra), matching PF1e's own spell-list pattern.
+- Repaired corrupted LevelDB manifests in the classes, feats, and technique-buffs compendia caused by Foundry's runtime compaction leaving CURRENT pointing to a deleted MANIFEST. Includes a repacked technique-buffs compendium with the JOURYOKU buff source edit.
+
 ## v1.0.20 - 2026-06-08
 
 - Fixed technique weapon-attack saves so selected PF1e attack items inherit the technique's save type and Technique DC instead of showing `DC 0` in chat.
