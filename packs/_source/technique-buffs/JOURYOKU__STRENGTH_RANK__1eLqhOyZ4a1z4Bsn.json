@@ -63,6 +63,14 @@
         "priority": 0,
         "target": "skill.swm",
         "formula": "2*(@item.level -1)"
+      },
+      {
+        "type": "untyped",
+        "_id": "ZahYKxj2",
+        "operator": "add",
+        "priority": 0,
+        "target": "cmd",
+        "formula": "-ceil(@item.level/2)"
       }
     ],
     "changeFlags": {
@@ -124,7 +132,7 @@
     "systemId": "pf1",
     "systemVersion": "11.11",
     "createdTime": 1780546396809,
-    "modifiedTime": 1780546396838,
+    "modifiedTime": 1781015079659,
     "lastModifiedBy": "vTUJ4X3yMMGO4o4P"
   },
   "ownership": {
