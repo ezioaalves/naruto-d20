@@ -18,38 +18,75 @@ export function registerTechniqueListListeners() {
     const chakraTab = $html.find(".tab.chakra");
     if (!chakraTab.length) return;
 
-    registerFilterListeners(chakraTab);
-    registerSearchListeners(chakraTab);
+    registerFilterListeners(app, chakraTab);
+    registerSearchListeners(app, chakraTab);
     registerDropListeners(chakraTab, app.actor);
     registerCreateDuplicateDeleteListeners(chakraTab, app.actor);
     registerUseLearnOpenListeners(chakraTab, app.actor);
     registerBrowserListeners(chakraTab);
     registerEmpathyLearnListener(chakraTab, app.actor);
+    // Must run after the filter listener so the visible group is known.
+    restoreExpandedTechniques(app, chakraTab);
   });
 }
 
-function registerSearchListeners(chakraTab) {
+function registerSearchListeners(app, chakraTab) {
   const input = chakraTab.find(".technique-search-input");
+  // Restore the search text saved on the sheet instance before re-filtering, so
+  // a re-render (e.g. after using a technique) keeps the active query.
+  const stored = app._narutoTechniqueSearch ?? "";
+  if (stored) input.val(stored);
   input.off("input").on("input", function () {
+    app._narutoTechniqueSearch = this.value;
     updateSearchResults(chakraTab, this.value);
   });
   updateSearchResults(chakraTab, input.val() ?? "");
 }
 
-function registerFilterListeners(chakraTab) {
+function registerFilterListeners(app, chakraTab) {
   const groups = chakraTab.find(".technique-disc-group");
-  groups.not('[data-disc="all"]').hide();
+
+  // Re-apply the discipline filter saved on the sheet instance so a re-render
+  // doesn't snap the list back to "All".
+  const active = app._narutoTechniqueFilter ?? "all";
+  chakraTab.find(".technique-filter").removeClass("active");
+  chakraTab.find(`.technique-filter[data-disc="${active}"]`).addClass("active");
+  groups.hide();
+  groups.filter(`[data-disc="${active}"]`).show();
 
   chakraTab
     .find(".technique-filter")
     .off("click")
     .on("click", function () {
       const disc = this.dataset.disc;
+      app._narutoTechniqueFilter = disc;
       chakraTab.find(".technique-filter").removeClass("active");
       $(this).addClass("active");
       groups.hide();
-      groups.filter(`[data-disc="${disc === "all" ? "all" : disc}"]`).show();
+      groups.filter(`[data-disc="${disc}"]`).show();
     });
+}
+
+/**
+ * Re-open technique descriptions that were expanded before a re-render. PF1's
+ * item-summary mechanism is reused by the technique rows, but render-patch must
+ * strip the chakra-tab entries from `_expandedItems` before PF1's own
+ * restoration runs (it would null-deref the not-yet-injected tab). It hands the
+ * affected item ids back via `app._narutoExpandedTechniques`; here we re-expand
+ * them on the freshly rendered DOM, only within the currently visible group to
+ * avoid redundant async getChatData calls for the duplicate hidden rows.
+ */
+function restoreExpandedTechniques(app, chakraTab) {
+  const ids = app._narutoExpandedTechniques;
+  if (!ids?.size) return;
+  for (const id of ids) {
+    const row = chakraTab.find(
+      `.technique-disc-group:visible .technique-row[data-item-id="${id}"]`,
+    )[0];
+    if (row && !row.classList.contains("expanded")) {
+      app.openItemSummary(row, { instant: true });
+    }
+  }
 }
 
 function updateSearchResults(chakraTab, value) {
