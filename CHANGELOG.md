@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.22 - 2026-06-09
+
+- Fixed JOURYOKU (Strength Rank) progression formulas: replaced ad-hoc roll expressions with a lookup table injected via `pf1GetRollData`, correcting `carryMult` at ranks 4–5 and `strMod`/`actions` at ranks 6–10. Fixed KOUSOKU speed bonus at rank 10 (+60 ft, not +55 ft). Includes migration v7 to update existing world buff items.
+
 ## v1.0.21 - 2026-06-09
 
 - Automated KOUSOKU (Speed Rank) penalties: the effective rank applied to armor/encumbrance and immobilizing-condition penalties is now derived from PF1e roll data, preserving the stored base rank. Includes a migration pass for existing buffs and compendium updates.
