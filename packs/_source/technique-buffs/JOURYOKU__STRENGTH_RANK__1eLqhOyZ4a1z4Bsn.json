@@ -14,14 +14,14 @@
         "operator": "add",
         "priority": 0,
         "target": "strMod",
-        "formula": "ceil(@item.level/2)"
+        "formula": "@item.strRank.combat"
       },
       {
         "type": "untyped",
         "operator": "add",
         "priority": 0,
         "target": "strChecks",
-        "formula": "(@item.level-1)*2",
+        "formula": "@item.strRank.actions",
         "_id": "Tset2222"
       },
       {
@@ -29,7 +29,7 @@
         "_id": "Sn9K4o9C",
         "operator": "add",
         "priority": 0,
-        "formula": "@item.level/2+0.5",
+        "formula": "@item.strRank.carryMult",
         "target": "carryMult"
       },
       {
@@ -37,7 +37,7 @@
         "_id": "vgeKDbL4",
         "operator": "add",
         "priority": 0,
-        "formula": "2*(@item.level -1)",
+        "formula": "@item.strRank.actions",
         "target": "cmb"
       },
       {
@@ -46,14 +46,14 @@
         "operator": "add",
         "priority": 0,
         "target": "skill.acr",
-        "formula": "2*(@item.level -1)"
+        "formula": "@item.strRank.actions"
       },
       {
         "type": "untyped",
         "_id": "2TLF7mVN",
         "operator": "add",
         "priority": 0,
-        "formula": "2*(@item.level -1)",
+        "formula": "@item.strRank.actions",
         "target": "skill.clm"
       },
       {
@@ -62,7 +62,7 @@
         "operator": "add",
         "priority": 0,
         "target": "skill.swm",
-        "formula": "2*(@item.level -1)"
+        "formula": "@item.strRank.actions"
       },
       {
         "type": "untyped",
@@ -70,7 +70,7 @@
         "operator": "add",
         "priority": 0,
         "target": "cmd",
-        "formula": "-ceil(@item.level/2)"
+        "formula": "-@item.strRank.combat"
       }
     ],
     "changeFlags": {

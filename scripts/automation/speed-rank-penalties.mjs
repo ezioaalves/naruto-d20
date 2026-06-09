@@ -23,7 +23,7 @@ function _onGetRollData(item, data) {
     jump:   effectiveLevel > 0 ? Math.min(effectiveLevel + 1, 10) : 0,
     dodge:  effectiveLevel,
     attack: Math.floor(effectiveLevel / 2),
-    speed:  effectiveLevel > 0 ? effectiveLevel * 5 + 5 : 0,
+    speed:  effectiveLevel > 0 ? (effectiveLevel === 10 ? 60 : effectiveLevel * 5 + 5) : 0,
     hide:   effectiveLevel > 0 ? Math.min(effectiveLevel + 1, 10) : 0,
     cmb:    -Math.floor(effectiveLevel / 2),
   };

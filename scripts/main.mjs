@@ -36,11 +36,12 @@ import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
 import { registerExpiredBuffCleanup } from "./automation/buff-expiry.mjs";
 import { registerSpeedRankPenalties } from "./automation/speed-rank-penalties.mjs";
+import { registerStrRankBonuses } from "./automation/str-rank-bonuses.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
 
-const FLAG_MIGRATION_VERSION = 6;
+const FLAG_MIGRATION_VERSION = 7;
 
 // ── [1] init ──────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -206,6 +207,7 @@ Hooks.once("setup", () => {
   registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn
   registerExpiredBuffCleanup(); // delete module automation buffs when their duration expires
   registerSpeedRankPenalties(); // KOUSOKU armor/condition level correction
+  registerStrRankBonuses();    // JOURYOKU lookup-table bonuses
   registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog
 });
 
@@ -230,6 +232,7 @@ Hooks.once("ready", async () => {
   await _migrateTechniqueActionIds();
   await _migrateExistingTechniquesLearned();
   await _migrateKousokuBuffFormulas();
+  await _migrateJouryokuBuffFormulas();
   await game.settings.set(MODULE_ID, "flagMigrationVersion", FLAG_MIGRATION_VERSION);
 });
 
@@ -350,6 +353,48 @@ async function _migrateKousokuBuffFormulas() {
     if (needsLevelFix) update["system.level"] = flag.level;
 
     await buff.update(update);
+  };
+
+  for (const actor of game.actors) await migrateActor(actor);
+  for (const scene of game.scenes) {
+    for (const token of scene.tokens) {
+      if (token.actor && !token.actorLink) await migrateActor(token.actor);
+    }
+  }
+}
+
+async function _migrateJouryokuBuffFormulas() {
+  const { isRankBuffItem, getRankBuffFlag } = await import("./automation/rank-buffs.mjs");
+
+  const FORMULA_MAP = {
+    "YKdSsITe": "@item.strRank.combat",
+    "Tset2222": "@item.strRank.actions",
+    "Sn9K4o9C": "@item.strRank.carryMult",
+    "vgeKDbL4": "@item.strRank.actions",
+    "GpOlyjHo": "@item.strRank.actions",
+    "2TLF7mVN": "@item.strRank.actions",
+    "ypV9AbpK": "@item.strRank.actions",
+    "ZahYKxj2": "-@item.strRank.combat",
+  };
+
+  const migrateActor = async (actor) => {
+    if (!["character", "npc"].includes(actor.type)) return;
+    const buff = actor.items.find(
+      (i) => isRankBuffItem(i) && getRankBuffFlag(i)?.key === "JOURYOKU",
+    );
+    if (!buff) return;
+
+    const changes = buff.system.changes ?? [];
+    const needsFormulaFix = changes.some(
+      (c) => FORMULA_MAP[c._id] && c.formula !== FORMULA_MAP[c._id],
+    );
+    if (!needsFormulaFix) return;
+
+    await buff.update({
+      "system.changes": changes.map((c) =>
+        FORMULA_MAP[c._id] ? { ...c, formula: FORMULA_MAP[c._id] } : c,
+      ),
+    });
   };
 
   for (const actor of game.actors) await migrateActor(actor);
