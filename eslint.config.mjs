@@ -80,6 +80,33 @@ export default [
       "no-var": "error",
     },
   },
+  // Playwright E2E harness — Node test runner. `test`/`expect` are imported.
+  // The spec callbacks passed to page.evaluate run in the browser, so Foundry
+  // globals (game/ui/CONFIG/$) are referenced there too.
+  {
+    files: ["tests/e2e/**/*.mjs"],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: "module",
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        game: "readonly",
+        ui: "readonly",
+        CONFIG: "readonly",
+        pf1: "readonly",
+        $: "readonly",
+      },
+    },
+    rules: {
+      "no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" },
+      ],
+      "prefer-const": "warn",
+      "no-var": "error",
+    },
+  },
   // Node tooling — CLI scripts in tools/ run under Node.
   {
     files: ["tools/**/*.mjs", "*.config.mjs"],

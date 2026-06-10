@@ -149,6 +149,17 @@ Hooks.once("init", () => {
     name: "NarutoD20.Settings.DeductLearningChakra.Name",
     hint: "NarutoD20.Settings.DeductLearningChakra.Hint",
   });
+
+  // Hidden switch that exposes the internal rule functions + fixture/determinism
+  // helpers on game.modules.get("naruto-d20").api for the automated E2E suite
+  // (tests/e2e/). Off by default and not shown in the settings UI; the Playwright
+  // harness flips it on, then reloads. No effect on normal play.
+  game.settings.register(MODULE_ID, "testMode", {
+    scope: "world",
+    config: false,
+    type: Boolean,
+    default: false,
+  });
 });
 
 // ── [2] pf1PostInit ───────────────────────────────────────────────────────
@@ -217,6 +228,16 @@ Hooks.on("preCreateActor", (doc, data) => {
 // ── [9] pf1ActorRest ─────────────────────────────────────────────────────
 Hooks.on("pf1ActorRest", (actor, options) => {
   onActorRest(actor, options);
+});
+
+// ── [10] ready ─────────────────────────────────────────────────────────────
+Hooks.once("ready", async () => {
+  // Test switch: only expose the internal API when the hidden `testMode`
+  // setting is on. Dynamic import keeps the testing module out of normal play.
+  if (game.settings.get(MODULE_ID, "testMode")) {
+    const { installTestApi } = await import("./testing/test-api.mjs");
+    installTestApi();
+  }
 });
 
 // ─────────────────────────────────────────────────────────────────────────
