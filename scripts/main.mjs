@@ -10,8 +10,7 @@
  *  [6] "pf1RegisterDamageTypes"    → Register elemental damage types
  *  [7] Foundry "setup"             → Push Chakra tab, register UI hooks
  *  [8] "preCreateActor"            → Seed default flags on new actors
- *  [9] Foundry "ready"             → One-time flag migration for existing actors (GM only)
- * [10] "pf1ActorRest"              → Restore chakra pool, clear temp, recover reserve
+ *  [9] "pf1ActorRest"              → Restore chakra pool, clear temp, recover reserve
  */
 
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
@@ -19,7 +18,6 @@ import { BUFF_TARGETS, HERO_STAT_DEFAULTS, moduleFlagsPath } from "./flag-paths.
 import { createTechniqueDataModel } from "./data/technique-model.mjs";
 import { createTechniqueItemSheet } from "./ui/technique-sheet.mjs";
 import { registerDamageTypes } from "./data/damage-types.mjs";
-import { normalizeActionIds } from "./data/action-ids.mjs";
 import { prepareBaseActorData, prepareDerivedActorData } from "./data/derived-data.mjs";
 import { registerNarutoSkills, ensureActorSkillEntries } from "./data/skills.mjs";
 import { installChakraTabPatch, installSynckitHeaderButton, installTechniqueGetChatDataPatch } from "./ui/render-patch.mjs";
@@ -40,8 +38,6 @@ import { registerStrRankBonuses } from "./automation/str-rank-bonuses.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
-
-const FLAG_MIGRATION_VERSION = 7;
 
 // ── [1] init ──────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -81,13 +77,6 @@ Hooks.once("init", () => {
   Handlebars.registerHelper("nd20-chakra-nature-label", (value) =>
     game.i18n.localize(`NarutoD20.ChakraNature.${String(value ?? "").trim() || "None"}`),
   );
-
-  game.settings.register(MODULE_ID, "flagMigrationVersion", {
-    scope: "world",
-    config: false,
-    type: Number,
-    default: 0,
-  });
 
   game.settings.register(MODULE_ID, "automaticBuffs", {
     scope: "world",
@@ -224,19 +213,7 @@ Hooks.on("preCreateActor", (doc, data) => {
   }
 });
 
-// ── [9] ready — one-time migration ───────────────────────────────────────
-Hooks.once("ready", async () => {
-  if (!game.user.isGM) return;
-  if (game.settings.get(MODULE_ID, "flagMigrationVersion") >= FLAG_MIGRATION_VERSION) return;
-  await _migrateActorFlags();
-  await _migrateTechniqueActionIds();
-  await _migrateExistingTechniquesLearned();
-  await _migrateKousokuBuffFormulas();
-  await _migrateJouryokuBuffFormulas();
-  await game.settings.set(MODULE_ID, "flagMigrationVersion", FLAG_MIGRATION_VERSION);
-});
-
-// ── [10] pf1ActorRest — chakra recovery on rest ──────────────────────────
+// ── [9] pf1ActorRest ─────────────────────────────────────────────────────
 Hooks.on("pf1ActorRest", (actor, options) => {
   onActorRest(actor, options);
 });
@@ -267,168 +244,3 @@ function _registerBuffTargets() {
   }
 }
 
-async function _migrateActorFlags() {
-  const migrate = async (actor) => {
-    if (!["character", "npc"].includes(actor.type)) return;
-    const updates = {};
-    for (const { path } of HERO_STAT_DEFAULTS) {
-      if (foundry.utils.getProperty(actor, path) === undefined) {
-        updates[path] = 0;
-      }
-    }
-    if (!foundry.utils.isEmpty(updates)) await actor.update(updates);
-  };
-
-  for (const actor of game.actors) await migrate(actor);
-  for (const scene of game.scenes) {
-    for (const token of scene.tokens) {
-      if (token.actor && !token.actorLink) await migrate(token.actor);
-    }
-  }
-}
-
-async function _migrateTechniqueActionIds() {
-  const migrateItem = async (item) => {
-    if (item.type !== TECHNIQUE_ITEM_TYPE) return false;
-    const { actions, changed } = normalizeActionIds(item.system?.actions);
-    if (changed) await item.update({ "system.actions": actions });
-    return changed;
-  };
-
-  const migrateActorItems = async (actor) => {
-    const updates = [];
-    for (const item of actor.items) {
-      if (item.type !== TECHNIQUE_ITEM_TYPE) continue;
-      const { actions, changed } = normalizeActionIds(item.system?.actions);
-      if (changed) updates.push({ _id: item.id, "system.actions": actions });
-    }
-    if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
-  };
-
-  for (const item of game.items) await migrateItem(item);
-  for (const actor of game.actors) await migrateActorItems(actor);
-  for (const scene of game.scenes) {
-    for (const token of scene.tokens) {
-      if (token.actor && !token.actorLink) await migrateActorItems(token.actor);
-    }
-  }
-}
-
-async function _migrateKousokuBuffFormulas() {
-  const { isRankBuffItem, getRankBuffFlag } = await import("./automation/rank-buffs.mjs");
-
-  const FORMULA_MAP = {
-    "B5YddrZI": "@item.speedRank.jump",
-    "JfNd3IDk": "@item.speedRank.dodge",
-    "vkK43M8p": "@item.speedRank.attack",
-    "PDR8lbWh": "@item.speedRank.speed",
-    "RjMHVqgN": "@item.speedRank.hide",
-    "17OhbWVn": "@item.speedRank.dodge",
-    "YfxaAt5D": "@item.speedRank.cmb",
-  };
-
-  const migrateActor = async (actor) => {
-    if (!["character", "npc"].includes(actor.type)) return;
-    const buff = actor.items.find(
-      (i) => isRankBuffItem(i) && getRankBuffFlag(i)?.key === "KOUSOKU",
-    );
-    if (!buff) return;
-
-    const flag = getRankBuffFlag(buff);
-    const changes = buff.system.changes ?? [];
-    const needsFormulaFix = changes.some(
-      (c) => FORMULA_MAP[c._id] && c.formula !== FORMULA_MAP[c._id],
-    );
-    // Restore system.level to base — old event-driven code may have persisted a
-    // penalized value; new design reads from the flag and ignores system.level.
-    const needsLevelFix = flag?.level !== undefined && buff.system.level !== flag.level;
-    if (!needsFormulaFix && !needsLevelFix) return;
-
-    const update = {};
-    if (needsFormulaFix) {
-      update["system.changes"] = changes.map((c) =>
-        FORMULA_MAP[c._id] ? { ...c, formula: FORMULA_MAP[c._id] } : c,
-      );
-    }
-    if (needsLevelFix) update["system.level"] = flag.level;
-
-    await buff.update(update);
-  };
-
-  for (const actor of game.actors) await migrateActor(actor);
-  for (const scene of game.scenes) {
-    for (const token of scene.tokens) {
-      if (token.actor && !token.actorLink) await migrateActor(token.actor);
-    }
-  }
-}
-
-async function _migrateJouryokuBuffFormulas() {
-  const { isRankBuffItem, getRankBuffFlag } = await import("./automation/rank-buffs.mjs");
-
-  const FORMULA_MAP = {
-    "YKdSsITe": "@item.strRank.combat",
-    "Tset2222": "@item.strRank.actions",
-    "Sn9K4o9C": "@item.strRank.carryMult",
-    "vgeKDbL4": "@item.strRank.actions",
-    "GpOlyjHo": "@item.strRank.actions",
-    "2TLF7mVN": "@item.strRank.actions",
-    "ypV9AbpK": "@item.strRank.actions",
-    "ZahYKxj2": "-@item.strRank.combat",
-  };
-
-  const migrateActor = async (actor) => {
-    if (!["character", "npc"].includes(actor.type)) return;
-    const buff = actor.items.find(
-      (i) => isRankBuffItem(i) && getRankBuffFlag(i)?.key === "JOURYOKU",
-    );
-    if (!buff) return;
-
-    const changes = buff.system.changes ?? [];
-    const needsFormulaFix = changes.some(
-      (c) => FORMULA_MAP[c._id] && c.formula !== FORMULA_MAP[c._id],
-    );
-    if (!needsFormulaFix) return;
-
-    await buff.update({
-      "system.changes": changes.map((c) =>
-        FORMULA_MAP[c._id] ? { ...c, formula: FORMULA_MAP[c._id] } : c,
-      ),
-    });
-  };
-
-  for (const actor of game.actors) await migrateActor(actor);
-  for (const scene of game.scenes) {
-    for (const token of scene.tokens) {
-      if (token.actor && !token.actorLink) await migrateActor(token.actor);
-    }
-  }
-}
-
-async function _migrateExistingTechniquesLearned() {
-  const migrateActorItems = async (actor) => {
-    if (!["character", "npc"].includes(actor.type)) return;
-    const updates = [];
-    for (const item of actor.items) {
-      if (item.type !== TECHNIQUE_ITEM_TYPE) continue;
-      updates.push({
-        _id: item.id,
-        "system.learning.learned": true,
-        "system.learning.progress": Math.max(1, item.system?.derived?.successes ?? 1),
-        "system.learning.attemptsUsed": item.system?.learning?.attemptsUsed ?? 0,
-        "system.learning.failureInsight": 0,
-        "system.learning.trainingBlocks": item.system?.learning?.trainingBlocks ?? 0,
-        "system.learning.chakraSpent": item.system?.learning?.chakraSpent ?? 0,
-        "system.learning.lastTrainingAt": item.system?.learning?.lastTrainingAt ?? 0,
-      });
-    }
-    if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
-  };
-
-  for (const actor of game.actors) await migrateActorItems(actor);
-  for (const scene of game.scenes) {
-    for (const token of scene.tokens) {
-      if (token.actor && !token.actorLink) await migrateActorItems(token.actor);
-    }
-  }
-}
