@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.23 - 2026-06-10
+
+- Added support for **temporary** and **bonus** rank grants alongside the existing paid (technique-created) grants for Speed Rank (KOUSOKU) and Strength Rank (JOURYOKU). Temp grants do not stack with paid ranks (max wins); bonus grants add on top. The effective rank is computed once per key and only the designated carrier buff item applies it — all other active rank buffs of the same key zero out to prevent double-application.
+- Replaced the separate `speed-rank-penalties.mjs` and `str-rank-bonuses.mjs` hooks with a unified `rank-rolldata.mjs` on `pf1GetRollData`, and extracted rank combination logic into `rank-effective-level.mjs`.
+- Added a **Naruto Rank** section to PF1e buff sheets so GMs can configure grant type (paid / temp / bonus) directly on any rank buff item.
+- Added `SPEED_RANK_GRANT` and `STRENGTH_RANK_GRANT` entries to the `technique-buffs` compendium.
+
 ## v1.0.22 - 2026-06-09
 
 - Fixed JOURYOKU (Strength Rank) progression formulas: replaced ad-hoc roll expressions with a lookup table injected via `pf1GetRollData`, correcting `carryMult` at ranks 4–5 and `strMod`/`actions` at ranks 6–10. Fixed KOUSOKU speed bonus at rank 10 (+60 ft, not +55 ft). Includes migration v7 to update existing world buff items.
