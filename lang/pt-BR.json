@@ -424,6 +424,22 @@
       "CannotReroll": "Esta rolagem não pode ser rerrolada.",
       "CannotAddActionPoint": "Não é possível adicionar um Ponto de Ação a esta rolagem."
     },
+    "RankGrant": {
+      "Header": "Rank Naruto",
+      "Type": {
+        "Label": "Tipo de Rank",
+        "None": "Nenhum",
+        "Speed": "Rank de Velocidade (KOUSOKU)",
+        "Strength": "Rank de Força (JOURYOKU)"
+      },
+      "Mode": {
+        "Label": "Modo de Concessão",
+        "Temp": "Ranks Temporários (sem custo, não acumula)",
+        "Bonus": "Bônus de Rank (sem custo, acumula)"
+      },
+      "LevelHint": "O rank concedido é lido do campo Level deste buff no cabeçalho.",
+      "PaidNotice": "Pago — gerenciado pela automação de técnicas."
+    },
     "RankBuffMaintenance": {
       "Title": "Manter {name}?",
       "Message": "{name} de {actor} chegou ao ponto de manutenção. Gastar {cost} de chakra para manter ativo por mais {interval} rodada(s)?",

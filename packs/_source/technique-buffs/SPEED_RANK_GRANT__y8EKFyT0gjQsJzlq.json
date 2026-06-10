@@ -1,0 +1,140 @@
+{
+  "type": "buff",
+  "name": "SPEED RANK GRANT",
+  "system": {
+    "description": {
+      "value": "<p>Template for rank-granting abilities (e.g. the <strong>HIRAISHIN</strong> bloodline). Duplicate this buff onto the actor, rename it to the granting ability, and set its <strong>Level</strong> to the granted rank.</p><p><strong>Grant Mode</strong> (Details tab):</p><ul><li><em>Temporary Ranks</em> — full benefits, no chakra cost, does <strong>not</strong> stack with other ranks (the highest applies).</li><li><em>Rank Bonus</em> — stacks on top of your active rank (e.g. <strong>Order of Fujin</strong>), capped at Rank 10.</li></ul>",
+      "instructions": ""
+    },
+    "tags": [],
+    "changes": [
+      {
+        "type": "untyped",
+        "_id": "B5YddrZI",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.acr",
+        "formula": "@item.speedRank.jump"
+      },
+      {
+        "type": "dodge",
+        "_id": "JfNd3IDk",
+        "operator": "add",
+        "priority": 0,
+        "target": "ac",
+        "formula": "@item.speedRank.dodge"
+      },
+      {
+        "type": "untyped",
+        "_id": "vkK43M8p",
+        "operator": "add",
+        "priority": 0,
+        "target": "attack",
+        "formula": "@item.speedRank.attack"
+      },
+      {
+        "type": "untyped",
+        "_id": "PDR8lbWh",
+        "operator": "add",
+        "priority": 0,
+        "target": "allSpeeds",
+        "formula": "@item.speedRank.speed"
+      },
+      {
+        "type": "untyped",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.ste",
+        "formula": "@item.speedRank.hide",
+        "_id": "RjMHVqgN"
+      },
+      {
+        "type": "untyped",
+        "operator": "add",
+        "priority": 0,
+        "target": "ref",
+        "formula": "@item.speedRank.dodge",
+        "_id": "17OhbWVn"
+      },
+      {
+        "type": "untyped",
+        "_id": "YfxaAt5D",
+        "operator": "add",
+        "priority": 0,
+        "target": "cmb",
+        "formula": "@item.speedRank.cmb"
+      }
+    ],
+    "changeFlags": {
+      "immuneToMorale": false,
+      "loseDexToAC": false,
+      "noMediumEncumbrance": false,
+      "noHeavyEncumbrance": false,
+      "mediumArmorFullSpeed": false,
+      "heavyArmorFullSpeed": false,
+      "lowLightVision": false,
+      "seeInvisibility": false,
+      "seeInDarkness": false
+    },
+    "contextNotes": [],
+    "actions": [],
+    "attackNotes": [],
+    "effectNotes": [],
+    "uses": {
+      "value": null,
+      "per": "",
+      "autoDeductChargesCost": "",
+      "maxFormula": "",
+      "rechargeFormula": ""
+    },
+    "links": {
+      "children": []
+    },
+    "tag": "",
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "scriptCalls": [],
+    "subType": "perm",
+    "active": false,
+    "level": 1,
+    "duration": {
+      "value": "",
+      "units": "",
+      "end": "turnStart",
+      "start": 0
+    },
+    "conditions": [],
+    "hideFromToken": false,
+    "showInQuickbar": true
+  },
+  "img": "icons/skills/movement/feet-winged-boots-glowing-yellow.webp",
+  "effects": [],
+  "flags": {
+    "naruto-d20": {
+      "rankBuff": {
+        "key": "KOUSOKU",
+        "grantType": "temp"
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1781052135695,
+    "modifiedTime": 1781052135695,
+    "lastModifiedBy": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "y8EKFyT0gjQsJzlq",
+  "_key": "!items!y8EKFyT0gjQsJzlq"
+}

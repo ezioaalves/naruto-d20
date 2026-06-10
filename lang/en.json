@@ -424,6 +424,22 @@
       "CannotReroll": "This roll cannot be rerolled.",
       "CannotAddActionPoint": "Cannot add an Action Point to this roll."
     },
+    "RankGrant": {
+      "Header": "Naruto Rank",
+      "Type": {
+        "Label": "Rank Type",
+        "None": "None",
+        "Speed": "Speed Rank (KOUSOKU)",
+        "Strength": "Strength Rank (JOURYOKU)"
+      },
+      "Mode": {
+        "Label": "Grant Mode",
+        "Temp": "Temporary Ranks (no cost, does not stack)",
+        "Bonus": "Rank Bonus (no cost, stacks)"
+      },
+      "LevelHint": "The granted rank is read from this buff's Level field in the header.",
+      "PaidNotice": "Paid — managed by technique automation."
+    },
     "RankBuffMaintenance": {
       "Title": "Maintain {name}?",
       "Message": "{actor}'s {name} has reached its maintenance point. Spend {cost} chakra to keep it active for {interval} more round(s)?",

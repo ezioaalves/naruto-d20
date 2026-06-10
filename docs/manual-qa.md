@@ -180,6 +180,48 @@ Feats` abrem.
    Resultado esperado: o buff expirado e removido da ficha quando a expiracao
    veio por duracao PF1e.
 
+## Ranks temporarios e bonus de rank
+
+Baseline de paridade: use SANDAN KOUSOKU sozinho e anote os totais de AC,
+ataque, speed e skills antes de comecar — eles nao podem mudar com esta
+feature.
+
+1. Duplique SPEED RANK GRANT do pack `naruto-d20.technique-buffs` para um
+   ator, renomeie para HIRAISHIN, defina Level 2 e ative.
+   Resultado esperado: beneficios completos de Speed Rank 2 (dodge, speed,
+   skills), sem custo de chakra e sem dialog de manutencao em nenhum momento.
+
+2. Ative KOUSOKU pago rank 3 junto com HIRAISHIN temporario level 2.
+   Resultado esperado: totais identicos ao rank 3 sozinho (sem dupla
+   aplicacao). Com temporario 4 + pago 1, totais equivalem ao rank 4.
+
+3. Na aba Details do buff HIRAISHIN, troque o Modo de Concessao para Bonus.
+   Resultado esperado: pago 3 + bonus 2 = valores de rank 5; bonus 2 sozinho =
+   valores de rank 2; pago 10 + bonus 5 trava em rank 10.
+
+4. Equipe armadura media e depois aplique a condicao paralyzed.
+   Resultado esperado: armadura media reduz o rank efetivo de velocidade em 1;
+   paralyzed zera os totais de KOUSOKU; JOURYOKU nao e afetado por nenhum dos
+   dois.
+
+5. Com pago + grant ativos, deixe o buff pago expirar (ou desative).
+   Resultado esperado: os valores do grant assumem na proxima preparacao de
+   dados, sem rastro do buff pago.
+
+6. Repita os passos 1-3 e 5 com STRENGTH RANK GRANT (JOURYOKU), incluindo
+   capacidade de carga.
+   Resultado esperado: carga e demais bonus vem de exatamente um buff.
+
+7. Abra o sheet de um buff comum, de um grant e de um rank buff criado por
+   tecnica.
+   Resultado esperado: a secao Naruto Rank aparece na aba Details; o buff de
+   tecnica mostra o aviso read-only de gerenciado pela automacao; Tipo de Rank
+   "Nenhum" faz o buff voltar a se comportar como buff comum; editar o Level
+   no header muda o rank concedido.
+
+8. Recarregue o mundo e prepare um ator com grants ativos.
+   Resultado esperado: console sem erros no load e na preparacao do ator.
+
 ## Synckit
 
 1. Abra o Synckit pelo botao Sync Techniques na barra de titulo em um ator com tecnicas sincronizadas.

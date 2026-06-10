@@ -1,0 +1,33 @@
+<div class="naruto-rank-grant">
+  <h3 class="form-header">{{localize "NarutoD20.RankGrant.Header"}}</h3>
+
+  {{#if isPaid}}
+  <div class="form-group">
+    <label>{{localize "NarutoD20.RankGrant.Mode.Label"}}</label>
+    <div class="form-fields">
+      <span>{{localize "NarutoD20.RankGrant.PaidNotice"}}</span>
+    </div>
+  </div>
+  {{else}}
+  <div class="form-group">
+    <label>{{localize "NarutoD20.RankGrant.Type.Label"}}</label>
+    <div class="form-fields">
+      <select name="{{flagPath}}.key" {{#unless editable}}disabled{{/unless}}>
+        {{selectOptions typeOptions selected=key localize=true}}
+      </select>
+    </div>
+  </div>
+
+  {{!-- Always submitted together with the key — an absent grantType means
+        "paid" (legacy technique buffs), which manual grants must never be. --}}
+  <div class="form-group">
+    <label>{{localize "NarutoD20.RankGrant.Mode.Label"}}</label>
+    <div class="form-fields">
+      <select name="{{flagPath}}.grantType" {{#unless editable}}disabled{{/unless}}>
+        {{selectOptions modeOptions selected=grantType localize=true}}
+      </select>
+    </div>
+  </div>
+  <p class="hint">{{localize "NarutoD20.RankGrant.LevelHint"}}</p>
+  {{/if}}
+</div>

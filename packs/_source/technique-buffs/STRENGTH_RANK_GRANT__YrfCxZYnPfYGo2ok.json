@@ -1,0 +1,148 @@
+{
+  "type": "buff",
+  "name": "STRENGTH RANK GRANT",
+  "system": {
+    "description": {
+      "value": "<p>Template for rank-granting abilities (e.g. the <strong>HIRAISHIN</strong> bloodline). Duplicate this buff onto the actor, rename it to the granting ability, and set its <strong>Level</strong> to the granted rank.</p><p><strong>Grant Mode</strong> (Details tab):</p><ul><li><em>Temporary Ranks</em> — full benefits, no chakra cost, does <strong>not</strong> stack with other ranks (the highest applies).</li><li><em>Rank Bonus</em> — stacks on top of your active rank (e.g. <strong>Order of Fujin</strong>), capped at Rank 10.</li></ul>",
+      "instructions": ""
+    },
+    "tags": [],
+    "changes": [
+      {
+        "type": "untyped",
+        "_id": "YKdSsITe",
+        "operator": "add",
+        "priority": 0,
+        "target": "strMod",
+        "formula": "@item.strRank.combat"
+      },
+      {
+        "type": "untyped",
+        "operator": "add",
+        "priority": 0,
+        "target": "strChecks",
+        "formula": "@item.strRank.actions",
+        "_id": "Tset2222"
+      },
+      {
+        "type": "untyped",
+        "_id": "Sn9K4o9C",
+        "operator": "add",
+        "priority": 0,
+        "formula": "@item.strRank.carryMult",
+        "target": "carryMult"
+      },
+      {
+        "type": "untyped",
+        "_id": "vgeKDbL4",
+        "operator": "add",
+        "priority": 0,
+        "formula": "@item.strRank.actions",
+        "target": "cmb"
+      },
+      {
+        "type": "untyped",
+        "_id": "GpOlyjHo",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.acr",
+        "formula": "@item.strRank.actions"
+      },
+      {
+        "type": "untyped",
+        "_id": "2TLF7mVN",
+        "operator": "add",
+        "priority": 0,
+        "formula": "@item.strRank.actions",
+        "target": "skill.clm"
+      },
+      {
+        "type": "untyped",
+        "_id": "ypV9AbpK",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.swm",
+        "formula": "@item.strRank.actions"
+      },
+      {
+        "type": "untyped",
+        "_id": "ZahYKxj2",
+        "operator": "add",
+        "priority": 0,
+        "target": "cmd",
+        "formula": "-@item.strRank.combat"
+      }
+    ],
+    "changeFlags": {
+      "immuneToMorale": false,
+      "loseDexToAC": false,
+      "noMediumEncumbrance": false,
+      "noHeavyEncumbrance": false,
+      "mediumArmorFullSpeed": false,
+      "heavyArmorFullSpeed": false,
+      "lowLightVision": false,
+      "seeInvisibility": false,
+      "seeInDarkness": false
+    },
+    "contextNotes": [],
+    "actions": [],
+    "attackNotes": [],
+    "effectNotes": [],
+    "uses": {
+      "value": null,
+      "per": "",
+      "autoDeductChargesCost": "",
+      "maxFormula": "",
+      "rechargeFormula": ""
+    },
+    "links": {
+      "children": []
+    },
+    "tag": "",
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "scriptCalls": [],
+    "subType": "perm",
+    "active": false,
+    "level": 1,
+    "duration": {
+      "value": "",
+      "units": "",
+      "end": "turnStart",
+      "start": 0
+    },
+    "conditions": [],
+    "hideFromToken": false,
+    "showInQuickbar": true
+  },
+  "img": "systems/pf1/icons/spells/haste-fire-3.jpg",
+  "effects": [],
+  "flags": {
+    "naruto-d20": {
+      "rankBuff": {
+        "key": "JOURYOKU",
+        "grantType": "temp"
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1781052135695,
+    "modifiedTime": 1781052135695,
+    "lastModifiedBy": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "YrfCxZYnPfYGo2ok",
+  "_key": "!items!YrfCxZYnPfYGo2ok"
+}

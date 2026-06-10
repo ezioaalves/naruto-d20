@@ -1,6 +1,9 @@
 import { MODULE_ID } from "../constants.mjs";
 
 export const RANK_BUFF_FLAG = "rankBuff";
+export const RANK_BUFF_FLAG_PATH = `flags.${MODULE_ID}.${RANK_BUFF_FLAG}`;
+export const RANK_KEYS = ["KOUSOKU", "JOURYOKU"];
+export const RANK_GRANT_TYPES = ["paid", "temp", "bonus"];
 export const RANK_MASTERY_FREE_ROUNDS = 5;
 export const RANK_MASTERY_REQUIRED_STEP = 5;
 
@@ -117,6 +120,7 @@ export function rankBuffFlagData(context) {
   if (!context) return null;
   return {
     key: context.key,
+    grantType: "paid",
     level: context.level,
     cost: context.cost,
     interval: context.interval,
@@ -125,9 +129,28 @@ export function rankBuffFlagData(context) {
 }
 
 export function getRankBuffFlag(item) {
-  return item?.flags?.[MODULE_ID]?.[RANK_BUFF_FLAG] ?? null;
+  const flag = item?.flags?.[MODULE_ID]?.[RANK_BUFF_FLAG] ?? null;
+  // key "" (sheet's "None" option) or anything malformed counts as no flag
+  if (!flag || !RANK_KEYS.includes(flag.key)) return null;
+  return flag;
 }
 
 export function isRankBuffItem(item) {
   return Boolean(getRankBuffFlag(item));
+}
+
+export function getRankGrantType(item) {
+  const flag = getRankBuffFlag(item);
+  if (!flag) return null;
+  return RANK_GRANT_TYPES.includes(flag.grantType) ? flag.grantType : "paid";
+}
+
+export function rankGrantLevel(item) {
+  const flag = getRankBuffFlag(item);
+  if (!flag) return 0;
+  const level =
+    getRankGrantType(item) === "paid"
+      ? flag.level ?? item.system?.level ?? 0
+      : item.system?.level ?? 0;
+  return Math.max(0, Number(level) || 0);
 }

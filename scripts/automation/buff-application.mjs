@@ -1,6 +1,7 @@
 import { MODULE_ID } from "../constants.mjs";
 import {
   RANK_BUFF_FLAG,
+  RANK_BUFF_FLAG_PATH,
   rankBuffDuration,
   rankBuffFlagData,
   resolveRankTechnique,
@@ -307,7 +308,7 @@ async function refreshExistingBuff(existing, { duration, level, rankBuff }) {
     updates["system.level"] = level;
   }
   if (rankBuff) {
-    updates[`flags.${MODULE_ID}.${RANK_BUFF_FLAG}`] = rankBuff;
+    updates[RANK_BUFF_FLAG_PATH] = rankBuff;
   }
   await existing.update(updates);
 }

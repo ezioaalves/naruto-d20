@@ -33,8 +33,8 @@ import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
 import { registerExpiredBuffCleanup } from "./automation/buff-expiry.mjs";
-import { registerSpeedRankPenalties } from "./automation/speed-rank-penalties.mjs";
-import { registerStrRankBonuses } from "./automation/str-rank-bonuses.mjs";
+import { registerRankRollData } from "./automation/rank-rolldata.mjs";
+import { registerRankGrantConfig } from "./ui/rank-grant-config.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
@@ -64,6 +64,7 @@ Hooks.once("init", () => {
     `modules/${MODULE_ID}/templates/actor/summary-stats.hbs`,
     `modules/${MODULE_ID}/templates/actor/tap-reserves-dialog.hbs`,
     `modules/${MODULE_ID}/templates/item/technique-sheet.hbs`,
+    `modules/${MODULE_ID}/templates/item/rank-grant-config.hbs`,
     `modules/${MODULE_ID}/templates/actor/technique-synckit.hbs`,
     `modules/${MODULE_ID}/templates/apps/technique-browser.hbs`,
     `modules/${MODULE_ID}/templates/apps/feat-browser.hbs`,
@@ -195,8 +196,8 @@ Hooks.once("setup", () => {
   registerFeatGrantDeletion(); // cascade-delete feat supplements on feat removal
   registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn
   registerExpiredBuffCleanup(); // delete module automation buffs when their duration expires
-  registerSpeedRankPenalties(); // KOUSOKU armor/condition level correction
-  registerStrRankBonuses();    // JOURYOKU lookup-table bonuses
+  registerRankRollData(); // KOUSOKU/JOURYOKU effective rank (paid/temp/bonus + armor/condition penalties)
+  registerRankGrantConfig(); // "Naruto Rank" grant section on PF1e buff sheets
   registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog
 });
 

@@ -4,6 +4,7 @@ import {
   ensureRankMasteryDailyUse,
   findRankTechniqueForBuff,
   getRankBuffFlag,
+  getRankGrantType,
   hasRankMasteryFreeUseAvailable,
   rankBuffDuration,
   rankMaintenanceForLevel,
@@ -15,7 +16,9 @@ const pendingMaintenance = new Set();
 export function queueRankBuffMaintenance(item) {
   const actor = item.actor;
   if (!actor?.isOwner) return false;
-  if (!getRankBuffFlag(item)) return false;
+  // Only technique-created (paid) rank buffs have chakra maintenance;
+  // temp/bonus grants are free and never expire into this flow.
+  if (getRankGrantType(item) !== "paid") return false;
 
   const key = `${actor.uuid}:${item.id}`;
   if (pendingMaintenance.has(key)) return true;
