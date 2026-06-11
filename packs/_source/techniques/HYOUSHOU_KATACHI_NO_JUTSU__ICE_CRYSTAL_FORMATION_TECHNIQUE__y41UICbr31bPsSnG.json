@@ -1,0 +1,101 @@
+{
+  "_id": "y41UICbr31bPsSnG",
+  "name": "HYOUSHOU KATACHI NO JUTSU (ICE CRYSTAL FORMATION TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-orange-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> H, F, E</p>\n\n<hr>\n\n<p>Using this technique, the user is able to freeze large quantities of water to create an advantage on the battlefield for the cost of 1 chakra per 10 liters frozen. This technique can be used for the purpose of freezing another character in place by targeting the water on its body. The opponent is allowed a Break check as soon as the technique effects it. If used in this manner the chakra cost increases to 2 chakra per 10 liters in order to strengthen the ice formed to adequately hold up against the opponent. When strengthened, the ice effectively has 10 hit points, a hardness of 4 and Break DC of 20 to avoid being shattered like glass. The ice cannot be melted by normal means, using Katon techniques will not decrease the duration. The amounts listed below figure for a Medium sized creature, to factor larger creatures, multiple the amount by 4 for each size category larger than Medium. For smaller creatures divide by 4.<br><br>10 liters: Will freeze the opponent's feet together, effectively halting their movement until the ice is broken. The opponent may still reflex save, but loses the ability to completely evade a technique, losing forms of Evasion.<br><br>20 liters: Will freeze the opponent's legs together. Causing them to roll a Balance check (DC 12) or fall prone. The opponent may crawl, but cannot effectively dodge techniques, losing forms of Evasion and their Dodge bonus.<br><br>30 liters: Freezes the opponents body up to his neck. It cannot move, perform any actions other than a free action and is immobilized, denying its ability to reflex save completely. A trapped creature suffers 1 point of Cold damage per round unless it succeeds a Fortitude save (DC 12) or wears warm, thick clothing or fur (or is under the effects of Unki Tate no Jutsu).<br><br>40 liters: The opponent will take the effects of being covered by 30 liters, but will now be completely submerged in ice, head and all. The targeted creature begins to Drown (as per Suffocation and Drowning) and will hold its breath for a number of round equal to its constitution score, after which it must succeed a Constitution check each round (DC 10, increase by 1 after every successful check). Once if fails a Constitution check, it is reduced to 0 hit points. After another failure, to -1 hit points and dying, and with a third failure, it dies.<br><br>If an object has lost half or more of its hit points, the DC to break it decreases by 2.</p>\n\n<hr><p><b>Effect:</b> Freezes water</p>\n<p><b>Material Focus:</b> A source of water, snow or ice nearby adequate to the specifics of this technique.</p>\n<p><b>Mastery:</b> At the first, third, and fifth step of mastery the ice's hit points increases by 2, hardness by 2, and break DC by 2.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Hyouton",
+    "descriptors": [
+      "Ice"
+    ],
+    "rank": 3,
+    "complexity": "A-Class",
+    "chakraCost": 0,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "1 minute/level (D)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "c6994b20d6273477",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "close"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "154"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "iqWYAqCk8acIOqms",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!y41UICbr31bPsSnG"
+}

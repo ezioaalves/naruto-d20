@@ -1,0 +1,119 @@
+{
+  "_id": "OhfUkftB0klPmEgW",
+  "name": "SHINRA KAMI SHURIKEN SHIGURE (HEAVENLY PAPER SHURIKEN SHOWER)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/slice-orange-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> E, F, Mas</p>\n\n<hr>\n\n<p>Upon completing this technique, the user sends a massive upheaval of paper and chakra towards his target. The paper projectiles pierce everything in the area of effect, dealing 7d6 point of piercing damage.<br><br>This technique cannot affect items bearing Chakra Symbols (such as an exploding tag or advanced seal)</p>\n\n<hr><p><b>Requires:</b> 9 ranks Craft (Visual Arts)</p>\n<p><b>Empower:</b> The user may increase the damage dealt by this technique by 1 die of damage, up to a maximum of 1d6 per level at the cost of 2 points of chakra per die of damage.</p>\n<p><b>Mastery:</b> At the third step of mastery, this technique can affect items bearing Chakra Symbols (such as an exploding tag or advanced seal).</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Kamiton",
+    "descriptors": [
+      "Paper"
+    ],
+    "rank": 7,
+    "complexity": "B-Class",
+    "chakraCost": 10,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "",
+    "area": "Cone-shaped burst from the user",
+    "duration": "Instant",
+    "save": "Reflex half",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": true,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "2b31baf7ac539c78",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "area": "Cone-shaped burst from the user",
+        "measureTemplate": {
+          "type": "cone",
+          "size": "30"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "7d6",
+              "types": [
+                "piercing"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "182"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "FCPhnE16W5c5gTV3",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!OhfUkftB0klPmEgW"
+}

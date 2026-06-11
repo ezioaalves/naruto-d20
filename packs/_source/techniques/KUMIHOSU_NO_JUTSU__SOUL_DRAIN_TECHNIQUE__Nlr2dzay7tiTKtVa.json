@@ -1,0 +1,111 @@
+{
+  "_id": "Nlr2dzay7tiTKtVa",
+  "name": "KUMIHOSU NO JUTSU (SOUL DRAIN TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>This low-level Ninjutsu is used by Kuiarasu clan members to absorb the remaining energy from a dead body and to \"feed\" from its soul to calm their hunger. Every round this technique is maintained the user gains 1 Soul Unit. The amount of time before a corpse can no longer be used is based on the time of death, once a body dies the corpse can be used within 12 hours time before it cannot provide Soul Units. For every hit dice the creature possessed the time is increased by another hour. The user is able to harvest a number of Soul Units equal to the number of hit dice the creature had.</p>\n\n<hr><p><b>Material Focus:</b> A corpse of a sentient creature.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Kuiarasu Clan Hijutsu"
+    ],
+    "rank": 2,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "full",
+    "range": "Touch",
+    "target": "1 corpse",
+    "area": "",
+    "duration": "1 round/level (D)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "bd6da001ffb8ea21",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "1 corpse"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "165"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "CSU208goeGQok08K",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Nlr2dzay7tiTKtVa"
+}

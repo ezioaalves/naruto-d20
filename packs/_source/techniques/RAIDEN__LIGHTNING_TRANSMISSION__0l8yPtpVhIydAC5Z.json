@@ -1,0 +1,126 @@
+{
+  "_id": "0l8yPtpVhIydAC5Z",
+  "name": "RAIDEN (LIGHTNING TRANSMISSION)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-fire-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 32</p>\n\n<p><b>Components:</b> C, H, E</p>\n\n<hr>\n\n<p>The user must have at least one active Kage Bunshin within 10 feet in order to use this technique. The user and clone form a Raikiri and connect the two techniques together. This creates a chain of lightning between the user and the clone that is able to slice through objects with ease. Once the chain is formed, the user and clone may not stray more than 10 feet away from each other or else the technique will dissipate. For the duration of this technique, the user and clone act simultaneously during the user's turn. The clone loses its individual turn for the purposes of this technique.<br><br>While active, the user may make charge attacks in which the user and clone move past, or on either side of, a target creature. This results in the lightning chain passing through the target thus dealing 2d8+2 slashing damage, 2d6+2 electricity damage and 2d4+2 sonic damage that can halved with a successful Reflex save. If the user and clone remain on either side of the target, the target may make a Tumble check (DC 25) to safely move up to one-half its movement speed away from the technique. If the target fails this check, it still moves normally, but suffers half the original damage dealt by the technique. If the target remains in the affected square and does not move, it suffers half the original damage each round until either the user moves, the technique expires, or the target makes the aforementioned Tumble check.<br><br>If the user is dealt damage while this technique is active, he must make a Concentration check (DC 10 + damage taken) to maintain the technique. If the clone is dealt damage while this technique is active and isn't destroyed as a result, it must succeed the same check at a -4 penalty. As a swift action that does not provoke an attack of opportunity, the user may split from the clone while retaining his initial Raikiri. Doing this causes the user's Kage Bunshin to disappear. The user's Raikiri will only remain active for its duration minus the number of rounds this technique was active. (See Raikiri for details).</p>\n\n<hr><p><b>Requires:</b> Raikiri (5), Kage Bunshin no Jutsu</p>\n<p><b>Effect:</b> Creates link between user and clone</p>\n<p><b>Empower:</b> The user may spend an additional 2 chakra to increase the electricity and sonic damage by 1d6 and 1d4, up to 1 die each per 4 levels (Maximum 7d6+2 and 7d4+2). The slashing damage is not subject to empowerment.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Raiton",
+    "descriptors": [
+      "Electric"
+    ],
+    "rank": 12,
+    "complexity": "S-Class",
+    "chakraCost": 12,
+    "activation": "full",
+    "range": "Personal",
+    "target": "",
+    "area": "",
+    "duration": "1 round/ 4 levels",
+    "save": "Reflex half (See Text)",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "eb5978634329dec0",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d8+2",
+              "types": [
+                "slashing"
+              ]
+            },
+            {
+              "formula": "2d6+2",
+              "types": [
+                "electric"
+              ]
+            },
+            {
+              "formula": "2d4+2",
+              "types": [
+                "sonic"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "173"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "y2OAyMCy4yYW6Mos",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!0l8yPtpVhIydAC5Z"
+}

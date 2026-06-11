@@ -1,0 +1,113 @@
+{
+  "_id": "DGuhISJi76fs6HT1",
+  "name": "SAN TARON SUTORAIKU (THREE TALON STRIKE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/improved-vital-strike.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, M, F, Mas</p>\n\n<hr>\n\n<p>The user makes a full attack action gains an additional attack at his highest attack bonus, each of which must be made against a single target. Each hit deals an additional point of damage, and if the target is hit three or more times he must make a Fortitude save or be stunned for 1d4 rounds and knocked prone.</p>\n\n<hr><p><b>Requires:</b> BAB +12, Soujutsu: Juugeki (3)</p>\n<p><b>Material Focus:</b> The user's spear, naginata or quarterstaff.</p>\n<p><b>Mastery:</b> The third and fifth step of mastery in this technique increase the bonus damage by 1.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Armed"
+    ],
+    "rank": 9,
+    "complexity": "B-Class",
+    "chakraCost": 5,
+    "activation": "full",
+    "range": "Melee",
+    "target": "One Creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Fortitude partial (see text)",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "aa95c93bddbc5d62",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One Creature"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude partial"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "202"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "yecyI4G0k4q2MY4a",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!DGuhISJi76fs6HT1"
+}

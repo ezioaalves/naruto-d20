@@ -1,0 +1,104 @@
+{
+  "_id": "u7N285tMiTZz0Wle",
+  "name": "MUSHI DAMA NO JUTSU (BUG BALL TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>The user surrounds his target with kikaichuu and swiftly sucks their chakra dry.<br><br>The target of this jutsu is immediately caught by the bugs, which are practically impossible to dodge, and takes each swarms normal chakra drain each round, plus 1, per swarm. The Target must also make a Fortitude save each round lest he be rendered stunned until the following round. A successful save means the target is nauseated instead and doesn't take the additional point of chakra drain. After he is caught, the target can attempt to make an escape artist check (DC 30) in order to escape from the Mushi Dama.</p>\n\n<hr><p><b>Requires:</b> ; Symbiote (a)</p>\n<p><b>Effect:</b> Creates and attacks with 1 Mushi Dama</p>\n<p><b>Material Focus:</b> Minimum 3 kikaichuu.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Aburame Hijutsu"
+    ],
+    "rank": 8,
+    "complexity": "A-Class",
+    "chakraCost": 8,
+    "activation": "full",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "1 round/2 levels",
+    "save": "Fortitude partial",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "99ab33258e90cfbe",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "close"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "172"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "iEiiWuCgYEeq6w6y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!u7N285tMiTZz0Wle"
+}

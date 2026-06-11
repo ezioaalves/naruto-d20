@@ -1,0 +1,117 @@
+{
+  "_id": "CjHjlGWHoko0NsPE",
+  "name": "DAI KIBAKU HITODAMA NO JUTSU (GREAT EXPLODING DISEMBODIED SOUL TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-eerie-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H, X</p>\n\n<hr>\n\n<p>With this technique the user draws energy from the souls he previously absorbed and uses it to attack an objective. The energy takes the form of a ghostly skull and strikes the objective without a chance of missing its target. When the energy hits said target, it explodes dealing 4d10 points of damage to everything in a 20 ft. radius, half of it being sonic and half force damage. Other creatures caught in the area of effect must make a Reflex save for half damage. The target must be a human being.</p>\n\n<hr><p><b>Expendable Component:</b> Expendable Component -2 Soul Units.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Kuiarasu Clan Hijutsu"
+    ],
+    "rank": 8,
+    "complexity": "A-Class",
+    "chakraCost": 10,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "1 object",
+    "area": "",
+    "duration": "Instant",
+    "save": "(see text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": true,
+    "compPhysical": false,
+    "compXpCost": true,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "13fb7d443bd42845",
+        "name": "Use",
+        "actionType": "rwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "target": {
+          "value": "1 object"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "4d10",
+              "types": []
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "143"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "iEiiWuCgYEeq6w6y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!CjHjlGWHoko0NsPE"
+}

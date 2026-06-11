@@ -1,0 +1,107 @@
+{
+  "_id": "ZmODc2WkFA1ep92w",
+  "name": "KUSARI ROKKINGU BURYAKU (CHAIN LOCKING TACTICS)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/lunge.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This stance serves to quicken and improve the capabilities of a kusari-gama. The stance focuses on constant spinning motions instead of targeted sweeps and is able to use the weapon in a much deadlier fashion.<br><br>In the hands of a Rokkingu Buryaku user a kusari-gama is a whirling dance of death, locking in and entrapping nearby foes.<br><br>While the user maintains this stance the Kusari-gama ignores the normal listed mechanics for the weapon in favor of the mechanics listed here. In the Kusari Rokkingu Buryaku stance the Kusari-gama is treated as a thrown weapon with a range increment of 10' and a maximum range of 10' allowing the weapon to benefit from some shuriken expert Class Features. In addition, the user must choose one end each round to attack with, either the blade or the chain, not both. The weapon may still perform special attacks (i.e. trip, disarm) at range and make full round attacks with the kusari-gama at range, recovering the thrown weapon at the end of each round as a free action as mentioned in the kusari-gama style feat.<br><br>In addition, the Kusari-gama is still treated as a reach 10' weapon for the sake of threatening attacks of opportunity on opponents and gains +2 on attacks of opportunity.</p>\n\n<hr><p><b>Requires:</b> Kusari-gama Style</p>\n<p><b>Material Focus:</b> The user's Kusari-gama.</p>\n<p><b>Mastery:</b> With the first step of mastery, the user gains a bonus to special attack types that stacks with the natural bonuses of the weapon equal to +2 (i.e. disarm, trip, etc.).<br><br>With the third step of mastery, the user gains +1 to Attack &amp; Damage with the kusari-gama.<br><br>With the fifth step of mastery, the user is treated as having improved trip for the chain end of the kusarigama.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Stance",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "swift",
+    "range": "Personal",
+    "target": "You",
+    "area": "",
+    "duration": "Stance (D)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "1e8a7f9be8a81b85",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "swift",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "200"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "QyK6EcaOmKW2q2ye",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!ZmODc2WkFA1ep92w"
+}

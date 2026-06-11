@@ -1,0 +1,110 @@
+{
+  "_id": "9kbs1s2KIBb8PBp4",
+  "name": "INSUTANTO KE HARI KOUKENNIN (INSTANT HAIR NEEDLE GUARDIAN)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fire-arrows-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>Once a day the user may activate this jutsu as an instantaneous action to gain an armor bonus of +6 plus any bonuses depending on the technique used against the user. The effects do stack with lightning shield. When a touch or melee attack using a small/tiny weapon or attacking unarmed hits the user when the technique is active the target takes 1d6 points of damage. If the user has another type of shield up, e.g. lightning shield, they take that damage also.</p>\n\n<hr><p><b>Requires:</b> Hari Jizou (t)</p>\n<p><b>Mastery:</b> Each step of mastery increases the number of uses by 1 per day.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 6,
+    "activation": "immediate",
+    "range": "Personal",
+    "target": "You",
+    "area": "",
+    "duration": "1 round",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "49cd5bfa3625d294",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "immediate",
+          "unchained": {
+            "type": "reaction",
+            "cost": 0
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "1"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d6",
+              "types": []
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "151"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "c0muyEGyCeY26cWy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!9kbs1s2KIBb8PBp4"
+}

@@ -1,0 +1,102 @@
+{
+  "_id": "pWj9pBHwrAKtMfHd",
+  "name": "SHOUHEKI KUSHIN (WALL OF PAIN)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fire-arrows-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique creates a nearly invisible wall of chakra that can be up to 30 feet long. The wall does not directly prevent movement nor does it block attacks or objects going through it. Creatures that move through the Shouheki Kushin are stricken with an intense agony that reduces their effective Speed and Strength Ranks by 2, and causes them to suffer from a -2 penalty to attack and damage rolls, as well as a -4 penalty to Strength and Dexterity based skill checks. This effect lasts for 1d6+2<br><br>rounds. A successful Fortitude save halves the penalties, but not the duration.<br><br>The user can, at will, select targets to be immune to the Shouheki Kushin's effects.</p>\n\n<hr><p><b>Effect:</b> 30ft. wall</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "Concentration + 1 round/3 levels (max 1 round/level)",
+    "save": "Fortitude partial",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "7ab6207d4865b14d",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "182"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "c0muyEGyCeY26cWy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!pWj9pBHwrAKtMfHd"
+}

@@ -1,0 +1,99 @@
+{
+  "_id": "y3Ay9hOQxNubXFbZ",
+  "name": "INDOU DAI SHINI (REQUIEM FOR THE DEAD)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 22</p>\n<p><b>Chakra Cost:</b> 35</p>\n\n<p><b>Learn DC:</b> 47 | <b>Successes:</b> 10</p>\n<p><b>Perform:</b> 28 | <b>Perform DC:</b> 52</p>\n\n<p><b>Components:</b> C, V</p>\n\n<hr>\n\n<p>This technique was said to have been developed by crazed lunatic who wanted to extinguish all life. His village, which was in an isolated swamp, was destroyed overnight. The man was never seen again, but travellers in the swamp tell tales of dirges being sung at night by an unknown voice on the wind.<br><br>To begin properly performing this technique, the user must begin chanting the Indou Dai Shini for one full round. All living creatur es within the technique's range will hear the user as a whisper in their mind, and must make a Will save or be Fascinated for one round. The Will save DC is equal to the result of the user's Perform (Sing) check. A creature can only be affected by the initial effect once in a 24 hour period.<br><br>After the round is completed, the user may choose to continue chanting for an additional round to increase the technique's range by 1,000 ft. and chakra cost by 10 (up to a maximum of 5 rounds total).<br><br>When the user finishes his chant, he may spend a fullattack action to complete the technique. Once fully performed, the technique deals damage to all living creatures in range with a Chakra Signature of Faint or higher equal in number and size to the user's total Hit Dice (Constitution modifier does not get applied) as their bodies are invaded by the user's pure malice and hatred. Creatures may attempt to make a Fortitude Save to halve the damage.</p>\n\n<hr><p><b>Requires:</b> Perform (Sing) 10 Ranks, Sense Chakra (a), Epic Technique: Requiem for the Dead (f)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Negative Energy",
+      "Lost Kinjutsu"
+    ],
+    "rank": 15,
+    "complexity": "Epic",
+    "chakraCost": 35,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "1,000 ft. radius (base, see text)",
+    "duration": "See Text",
+    "save": "See Text",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "f9a3f24caea91879",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "area": "1,000 ft. radius (base, see text)"
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "151"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "qKWW6MUoYAYE4gIM",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!y3Ay9hOQxNubXFbZ"
+}

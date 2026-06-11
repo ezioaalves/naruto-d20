@@ -1,0 +1,115 @@
+{
+  "_id": "gHsdtO01sXjwKRQr",
+  "name": "KOUSEN DAGEKI DENDOU NO JUTSU (ELECTRIC SHOCKING WIRES)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-red-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>One enemy caught in Kousen Shibari no Jutsu must make a Fortitude save; failure means that the enemy is dealt 4d4+1 Electrical damage and has a -3 to all Escape Artist and strength checks to get out of Kousen Shibari no Jutsu for the duration of the technique.</p>\n\n<hr><p><b>Requires:</b> Kousen Shibari no Jutsu (t)</p>\n<p><b>Empower:</b> You may spend extra chakra to increase the duration of the technique by 1 per 2 chakra spent, (Maximum +2 rounds).</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Raiton",
+    "descriptors": [
+      "Electric"
+    ],
+    "rank": 5,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "full",
+    "range": "Melee Touch",
+    "target": "Any enemy in Shibari no Jutsu",
+    "area": "",
+    "duration": "3 rounds",
+    "save": "Fortitude, partial (see text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "cc22af8bb71c297c",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "Any enemy in Shibari no Jutsu"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "4d4+1",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude, partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "162"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "O8oWqKUyeKeQeGYQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!gHsdtO01sXjwKRQr"
+}

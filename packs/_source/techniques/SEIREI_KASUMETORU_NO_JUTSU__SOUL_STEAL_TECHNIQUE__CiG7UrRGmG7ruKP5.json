@@ -1,0 +1,105 @@
+{
+  "_id": "CiG7UrRGmG7ruKP5",
+  "name": "SEIREI KASUMETORU NO JUTSU (SOUL STEAL TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rock-royal-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 16 | <b>Perform DC:</b> 32</p>\n\n<p><b>Components:</b> C, H, F</p>\n\n<hr>\n\n<p>The ninja must hold a physical mirror with both of his hands after completing the hand seals. So the user aim the mirror against the target and starts to drain his soul to the mirror. His shadow twists and enters in the mirror surface.<br><br>The subject gains 1d4 temporary negative levels (see Special Abilities) (Will Negates). Negative levels stack. Assuming the subject survives, it regains lost levels after a number of hours equal to user's shinobi level (maximum 15 hours). Usually, negative levels have a chance of becoming permanent, but the negative levels from Seirei Kasumetoru no Jutsu don't last long enough to do so.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> One Mirror.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mirror Arts",
+    "descriptors": [],
+    "rank": 12,
+    "complexity": "S-Class",
+    "chakraCost": 10,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant (see Text)",
+    "save": "Will negates",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "cf5dc03d3d6778f6",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "save": {
+          "type": "will",
+          "description": "Will negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "178"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "xjDzmJJzhuxmMkuc",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!CiG7UrRGmG7ruKP5"
+}

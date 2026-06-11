@@ -1,0 +1,95 @@
+{
+  "_id": "VgHwkp3I8yF7vYYd",
+  "name": "SHUUGYOU: KOUDO KOUSEN RYU (TRAINING: ADVANCED IRON WIRE STYLE )",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/improved-lighting-reflexes.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>Using this advanced training with a battle wire, the user is able to wrap his wires around the limbs of his foe or another object within range. Using a single battle wire on a foe, the user is able to Initiate a ranged grapple. The user is free to make attacks with his offhand. If the user has two battle wire, he is free to make normal ranged attacks or another ranged grapple against anyone within range with his offhand, including his grappled foe, if he can beat his grappled foe(s) grapple check per attack. If the user fails this grapple check he cannot make the attack (per normal grapple rules) against any foe, not just the one being grappled with. If both hands are occupied (both grappling for instance) the user is able to make unarmed attacks with his feet. (If he can beat both grapple checks per attack.)<br><br>While in such a grapple the user may spend the chakra to activate Kousen Shibari no Jutsu. The user does not have to make the touch attack against any foe already grappled, when using Kousen Shibari no Jutsu. In addition, if the user has two foes grappled when he activates Kousen Shibari no Jutsu, it effects both targets, not just one.<br><br>When grappling an inanimate object, the user is able to pull things of small size and up to 10 lb. to himself harmlessly. the user is also able to pull himself to an unmovable object with a strength check of 10, allowing for easier movement in a variety of directions without the need for climb or jump.<br><br>Special: This training also grants Kousen Shibari no Jutsu if the user does not already know it.<br><br>Material Focus: Battle wire.</p>\n\n<hr><p><b>Requires:</b> Sleight of Hand 10 Ranks</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Taijutsu",
+    "descriptors": [],
+    "rank": 8,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "6a48d1d9ba6010ac",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "211"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "eeygAqUWsyimSYKq",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!VgHwkp3I8yF7vYYd"
+}

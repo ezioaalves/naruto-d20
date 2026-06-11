@@ -1,0 +1,109 @@
+{
+  "_id": "9mJ0CmTR9gp3Cn1b",
+  "name": "WATOJUTSU: SENRAN TOU SEI (WATOJUTSU -THUNDERING HAMMER SWORD STRIKE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/skills/weapon_07.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 13</p>\n<p><b>Chakra Cost:</b> 13</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This advanced Wato technique consists of user sinking to the ground and then launching a seemingly endless series of slashes at the opponent using the advantage of centrifugal force. Using this technique, the user makes a full-attack action against a single creature, and gains an additional attack at his highest attack bonus against it and his attacks are so fierce that he ignores 1 point of damage reduction or hardness per 4 character levels (Up to 5 points). All attacks made during this round suffer a -2 penalty. This technique's effect does not stack with other nonpermanent bonus attacks (i.e. other techniques that grant additional attacks outside of speed ranks).<br><br>Additionally, all attack directed against the user provoke Attacks of Opportunity for the duration of the technique (remember that -2 penalty applies also to those attacks of opportunity).<br><br>After the technique ends the user must make fortitude save (DC 18) or be nauseated for one round.<br><br>Material Focus -The user's Wato, katana, double katana or hansori.</p>\n\n<hr><p><b>Requires:</b> : 2 nd step of mastery in three Watou Jutsu techniques</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Lost Hijutsu"
+    ],
+    "rank": 13,
+    "complexity": "A-Class",
+    "chakraCost": 13,
+    "activation": "full",
+    "range": "Melee Attack and Personal (see text)",
+    "target": "One creature and You (see text)",
+    "area": "",
+    "duration": "1 round (see text)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "a7b977738d4f9d50",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One creature and You (see text)"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "205"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "0QuayWE6UiA6KwSG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!9mJ0CmTR9gp3Cn1b"
+}

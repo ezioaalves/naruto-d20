@@ -1,0 +1,95 @@
+{
+  "_id": "EzgGKOTIPyeJAvI6",
+  "name": "SHUUGYOU: SAMUINNIN (TRAINING: COLD ENDURANCE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/improved-lighting-reflexes.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This strange training makes the character gain a resistance to cold and is mostly found in ninja villages with a lot of snow for a long time. The character goes through various tasks with little to no clothing on. Once this training is over the character gains a +4 on Fortitude saves to resist cold weather effects.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Chakra Control",
+    "descriptors": [],
+    "rank": 5,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "b994b5c1f257adcb",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "212"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "z7N5BnMT2Q7WIHpe",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!EzgGKOTIPyeJAvI6"
+}

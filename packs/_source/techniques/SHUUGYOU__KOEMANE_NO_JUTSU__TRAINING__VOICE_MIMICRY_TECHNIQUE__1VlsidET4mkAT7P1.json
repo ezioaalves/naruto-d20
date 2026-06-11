@@ -1,0 +1,95 @@
+{
+  "_id": "1VlsidET4mkAT7P1",
+  "name": "SHUUGYOU: KOEMANE NO JUTSU (TRAINING: VOICE MIMICRY TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/skill-focus.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You learn to mimic the voice, accent and speech patterns of another creature with near perfect accuracy. To do so, you spend 1 Chakra per minute, and other creatures can tell it's a fake voice by making a Listen check, opposed by your Bluff check, to which you gain a +8 bonus. It the creature knows the owner of the voice you imitate, it gains a +2 to +8 bonus based on how well they know them (GM's discretion)<br><br>This training can be completed multiple times, allowing the mimicry of one specific voice each time. If you are not familiar with the owner of the voice you attempt to mimic, the training takes ten times as long to learn.</p>\n\n<hr><p><b>Mastery:</b> At the first step of mastery you can spend 1 Chakra per 10 minutes.<br><br>At the third step of mastery the cost is per hour. At the fifth step of mastery the cost is per day.<br><br>Special -If you master this to the fifth step for 3 different people, you are considered to have mastered it for any future characters you relearn this technique for.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Ninjutsu",
+    "descriptors": [],
+    "rank": 4,
+    "complexity": "D-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "93d8e2969a66c732",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "211"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "200SmMcCOeyaskuI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!1VlsidET4mkAT7P1"
+}

@@ -1,0 +1,101 @@
+{
+  "_id": "tYIlcfR7dJl8qzZt",
+  "name": "HOMATSU HYO NO JUTSU (BUBBLE DRIFT TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-red-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>The user spends a full-round action to create a dense bubble. The bubble is considered a huge chakra construct and has a carrying capacity of 100 pounds of weight per level of the user. It can comfortably fit up to three medium-sized creatures provided their combined weight does not exceed the total mentioned above. The bubble remains active for as long as the user can concentrate, plus 1 round per 2 levels. While housed in the bubble, the user can manipulate it to fly over great distances with good maneuverability. It travels at a speed of 100 feet per round, or 1000 feet per minute. The bubble has a defense of 10, a hardness of 5, and hit points equal to the character 's level. If the bubble is destroyed, anyone who was previously in it begin falling.</p>\n\n<hr><p><b>Requires:</b> Concentration 12 ranks</p>\n<p><b>Effect:</b> Creates a huge bubble</p>\n<p><b>Mastery:</b> Each level of mastery in this technique increases the hardness of the bubble by 1.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water",
+      "Hijutsu"
+    ],
+    "rank": 8,
+    "complexity": "B-Class",
+    "chakraCost": 12,
+    "activation": "full",
+    "range": "Personal",
+    "target": "",
+    "area": "",
+    "duration": "Concentration, plus 1 round/2 levels",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": true,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "dd7ba1918d12cfbd",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "personal"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "153"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "sQyMqQ8wSw8cSCkc",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!tYIlcfR7dJl8qzZt"
+}

@@ -1,0 +1,109 @@
+{
+  "_id": "tGi144NuVMDe0REH",
+  "name": "RAIKURAI HARI DANPEN (LIGHTNING HAIR FRAGMENT)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-sky-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>The user imbues his strengthened hair with lightning from his lightning shield to increase the speed and damage of each senbon.<br><br>The technique works the same as Hari Senbon except that the user strengthens it by using his lightning shield. Lightning shield must be active for this technique to work. It does the same damage of Hari Senbon but with bonus 2d6 points of electrical damage. Due to the speed you cannot dodge the attack however they may still make a fortitude save against the lightning damage. You may increase the chakra cost by 3 to use this attack as a swift action, this can only be done if Hari Jizou or Insutanto Ke Hari Koukennin is still active.</p>\n\n<hr><p><b>Requires:</b> Hari Senbon (t) and Raidate no Jutsu (t)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Raiton",
+    "descriptors": [
+      "Electric"
+    ],
+    "rank": 8,
+    "complexity": "B-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "25 ft. + 5 ft./3 levels",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "1afddf999ec0dbd6",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "ft",
+          "value": "25"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d6",
+              "types": []
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "174"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "kmQEcKaeQMMkMWam",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!tGi144NuVMDe0REH"
+}

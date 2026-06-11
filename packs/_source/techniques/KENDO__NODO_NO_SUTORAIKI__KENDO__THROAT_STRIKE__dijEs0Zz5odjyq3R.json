@@ -1,0 +1,103 @@
+{
+  "_id": "dijEs0Zz5odjyq3R",
+  "name": "KENDO: NODO NO SUTORAIKI (KENDO: THROAT STRIKE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/scorpion-style.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This basic Kendo-style attack targets the throat in order to deal a stunning blow that can cause great pain to the foe.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the throat. The attack deals normal weapon damage and causes the target to become stunned for 1 round.</p>\n\n<hr><p><b>Material Focus:</b> The user's hel d Kendo Stick.</p>\n<p><b>Mastery:</b> At fifth level of mastery, the target becomes stunned for 1d4+1 rounds (instead of 1).</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Armed"
+    ],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "attack",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "9150de069b210dcf",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "198"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "iEw44g26KYEWeYcE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!dijEs0Zz5odjyq3R"
+}

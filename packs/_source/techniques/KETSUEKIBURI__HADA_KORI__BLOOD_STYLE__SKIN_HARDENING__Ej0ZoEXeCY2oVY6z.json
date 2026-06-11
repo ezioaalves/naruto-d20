@@ -1,0 +1,104 @@
+{
+  "_id": "Ej0ZoEXeCY2oVY6z",
+  "name": "KETSUEKIBURI: HADA KORI (BLOOD STYLE: SKIN HARDENING)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fireball-red-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H, P</p>\n\n<hr>\n\n<p>The user hardens the blood near the surface of his skin, making him more difficult to cut through. The user gain DR 5/Piercing for the duration of the technique.<br><br>Special: The user may use this technique as an instant action, using up one of his uses of Kawarimi no Jutsu.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Doton",
+    "descriptors": [
+      "Earth"
+    ],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Personal",
+    "target": "Self",
+    "area": "",
+    "duration": "1 round/level",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "7ba8958da77b2934",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "Self"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "160"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "Gaq8EmcAaAwAMw8c",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Ej0ZoEXeCY2oVY6z"
+}

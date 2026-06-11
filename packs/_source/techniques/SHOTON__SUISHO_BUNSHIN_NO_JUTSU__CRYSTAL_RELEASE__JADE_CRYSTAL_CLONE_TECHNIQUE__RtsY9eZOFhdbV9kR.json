@@ -1,0 +1,99 @@
+{
+  "_id": "RtsY9eZOFhdbV9kR",
+  "name": "SHOTON: SUISHO BUNSHIN NO JUTSU (CRYSTAL RELEASE: JADE CRYSTAL CLONE TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-orange-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H, F, Mas</p>\n\n<hr>\n\n<p>This Shoton technique allows the user to create a powerful construct from crystal in his own image. The clone weighs 8 times as much as the user (including equipment), and cannot swim (though neither can it drown). It is incapable of sentient thought, but shares a two-way bond with the user with which it can communicate thoughts and experiences as well as, in the user's case, orders; The Suisho Bunshin still follows the user's instructions to the letter and is its own person when caught in a genjutsu. The clone also cannot stray farther than 1 mile from the user or the technique ends. If the Suisho Bunshin is not within 100 feet of the source it was created from, it suffers a -2 penalty to attack rolls and skill checks.<br><br>The clone has 1 hit point per level of the user, and shares the user's saving throws, defense and attack bonus without penalty. It can make up to three attacks per round and has a hardness of 10, as well as an earth and water resistance 10, but sonic damage is doubled.<br><br>The Suisho Bunshin does not receive any of the user's temporary bonuses (such as Shodan Kousoku or Tadayou), but counts as though it was one size category larger for the purpose of grapple, bull rush, trip and disarm attempts.<br><br>The clone can use any feat, skills, talents and special abilities (excluding any templates or bloodlines other than the shoton) that the user may have without penalty, as well as any technique of the user up to Rank 4. The clone has a chakra pool of 10. In addition, all drawbacks coming from a technique used by a replication not only affects the clone, but also the user. A replica counts as the user if it uses a technique to create clones, and thus they are controlled by the user and his own limit is used.<br><br>The clone is genuine and carries the very same equipment as the user except chakra-dependent items such as exploding tags or sunburst tags. Any items carried by the Suisho Bunshin has 6 points of hardness but only half the original's hit points. Poison and mastercraft bonuses are not carried over to the clone's equipment.<br><br>Lastly, while the clone can use techniques, it cannot normally perform any activities requiring particular attention, such as sensing chakra, setting off an exploding tag or carrying a serious conversation. Once the clone reaches 0 hit points, strays too far from the user or the duration expires, it returns to crystal.<br><br>While the user can freely replace any clone lost by using this technique more than once, he cannot control more clones than his mastery allows. He can also choose to dissipate the clone at any time. He also cannot control any other sort of clone while using this technique (including simple Bunshins or Kage Bunshins). A creature that can see through chakra must pass a Spot check (DC 20) in order to discern the clone's nature and tell it apart from the original.</p>\n\n<hr><p><b>Effect:</b> Duplicate of the user</p>\n<p><b>Material Focus:</b> A mass of crystal equal to the user's weight. This may come from other techniques or abilities that the user has performed (for instance, the crystallization ability).</p>\n<p><b>Mastery:</b> At the third and fifth levels of mastery the number of clones the character can control at one time increases by one.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shoton",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 10,
+    "activation": "full",
+    "range": "Personal",
+    "target": "",
+    "area": "",
+    "duration": "1 minute/level",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "91a87b6baaadd8d4",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "personal"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "185"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "KvA4hIJxg0ZqJ88H",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!RtsY9eZOFhdbV9kR"
+}

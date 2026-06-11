@@ -1,0 +1,100 @@
+{
+  "_id": "DaOgBSvwyzNeAQly",
+  "name": "KAMI HIKOKI (PAPER PLANE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-blue-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> F</p>\n\n<hr>\n\n<p>This paper technique is used by messengers and scouts to pass around reports using a small paper airplane. The airplane travels to a specific location within range that is familiar to the user, provided that it can find a way to the location. The plane continues to ride the wind until it reaches its destination, at which point it grounds itself and unfolds to reveal any message written on it. The message is delivered regardless of whether there is someone present to take it or not.<br><br>A single activation will create a paper airplane from a standard sheet of paper that will hold the sheet of paper's normal amount of information (written on the paper before use of the technique) and cannot affect items bearing Chakra Symbols (such as an exploding tag or advanced seal).<br><br>The plane travels at 30 feet per round, but only if the user is conscious. Should the user lose consciousness, have his Chakra Pool reduced to 0, or die before the plane reaches its destination, the paper will only travel at 30 feet per minute.</p>\n\n<hr><p><b>Requires:</b> 6 ranks Craft (Visual Arts)</p>\n<p><b>Material Focus:</b> 1 page of paper per plane.</p>\n<p><b>Mastery:</b> Each step increases the distance by 1 additional mile.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Kamiton",
+    "descriptors": [
+      "Paper"
+    ],
+    "rank": 4,
+    "complexity": "B-Class",
+    "chakraCost": 6,
+    "activation": "full",
+    "range": "1 mile",
+    "target": "",
+    "area": "",
+    "duration": "Until discharged (destination is reached)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "d7da018f147717d9",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "seeText"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "158"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "oBXOKGbF8tSNE9Qa",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!DaOgBSvwyzNeAQly"
+}

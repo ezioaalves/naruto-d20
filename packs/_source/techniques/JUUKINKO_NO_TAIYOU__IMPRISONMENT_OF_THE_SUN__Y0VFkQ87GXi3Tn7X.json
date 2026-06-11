@@ -1,0 +1,101 @@
+{
+  "_id": "Y0VFkQ87GXi3Tn7X",
+  "name": "JUUKINKO NO TAIYOU (IMPRISONMENT OF THE SUN)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-sky-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 15</p>\n<p><b>Chakra Cost:</b> 34</p>\n\n<p><b>Learn DC:</b> 40 | <b>Successes:</b> 9</p>\n<p><b>Perform:</b> 23 | <b>Perform DC:</b> 45</p>\n\n<p><b>Components:</b> H, C</p>\n\n<hr>\n\n<p>Many would argue that this technique is not an actual shadow art due to the fact that it does not involve using shadows directly. However in reality this technique shows an almost god-like mastery of control over shadow, to the point that the user no longer manipulates mere shadows but the light that makes those shadows as well! Technically the technique's name is a misnomer as the user does not literally manipulate the sun at all. Instead the user dissipates all elements of darkness from the molecules of water in the earth's lowest layer of atmosphere so that any light at all, even the smallest increment, become a source of intense light. In practice, the entire sky-line becomes a source of near-blinding light. The technique takes up a circular patch of skyline of a certain area centered on the user (and which generally extends past where the eye can see).<br><br>On the turn this technique is used anyone not wearing protective eye-wear of some form must make a DC Fortitude check or be blinded and in addition must make a Concentration check every time they attempt to use a technique or loose it do to distraction. However, far more dangerous than this is the fact that when this technique is active all shadow arts become superaffective due to the intense shadows created by the technique. All numeric affects created by shadow arts techniques increase by 50% while this technique is active.</p>\n\n<hr><p><b>Requires:</b> ; Shadow Arts</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shadow",
+    "descriptors": [],
+    "rank": 15,
+    "complexity": "Epic",
+    "chakraCost": 34,
+    "activation": "full",
+    "range": "100 foot",
+    "target": "User",
+    "area": "",
+    "duration": "10 Rounds",
+    "save": "Yes (See Text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "c96094f9e3cd6821",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "User"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "152"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "2Tr4CkpdAAo4gA14",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Y0VFkQ87GXi3Tn7X"
+}

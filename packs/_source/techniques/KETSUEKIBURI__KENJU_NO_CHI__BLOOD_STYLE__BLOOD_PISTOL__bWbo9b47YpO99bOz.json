@@ -1,0 +1,117 @@
+{
+  "_id": "bWbo9b47YpO99bOz",
+  "name": "KETSUEKIBURI: KENJU NO CHI (BLOOD STYLE: BLOOD PISTOL)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-orange-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> S, P, 1 point of Constitution per bullet fired</p>\n\n<hr>\n\n<p>The user fires a blast of his blood towards the enemy. If cast as an attack action, the jutsu fires one bullet towards an enemy. This jutsu can be used as a full-attack action to fire as many bullets as the user would normally be able to attack with a full-attack. Each bullet requires a ranged attack roll to hit and deals 2d6 damage. The bullets count as the user's Blood Weapon for all purposes. When a bullet hits the target, you may have it dissipate and reform in your body, returning the Con, but you may not do this if the bullet misses.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Blood Training (a)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Fuuton",
+    "descriptors": [
+      "Wind"
+    ],
+    "rank": 8,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "standard",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One enemy",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": true,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "cd3d8652058e3a73",
+        "name": "Use",
+        "actionType": "rwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One enemy"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d6",
+              "types": []
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "160"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "QkUo4kWCgCmMoQa8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!bWbo9b47YpO99bOz"
+}

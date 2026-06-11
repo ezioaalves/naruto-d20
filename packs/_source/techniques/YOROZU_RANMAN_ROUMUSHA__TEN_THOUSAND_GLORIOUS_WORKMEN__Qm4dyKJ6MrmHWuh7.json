@@ -1,0 +1,100 @@
+{
+  "_id": "Qm4dyKJ6MrmHWuh7",
+  "name": "YOROZU RANMAN ROUMUSHA (TEN THOUSAND GLORIOUS WORKMEN)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-fire-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C (see text), H, Mas</p>\n\n<hr>\n\n<p>After the performance of this technique, the user creates 1d8+1/level workmen. Unlike the more advanced Kage Bunshin types, these clones are unable to execute complex actions such as performing techniques or attack; they can, however, carry out labor and other simple actions at the discretion of the user and avoid attacks. Each workman comes into existence with 1 hit point and 1 chakra point, and their outfits match the user but grant them no Defense bonus. They possess the user's attributes, skill ranks, and feats but not any bloodline abilities. Every workman also inherits the user's class defense bonus, saves, and special abilities. The maximum distance a workman can go from the user is 1 mile.<br><br>The user does suffer 1 damage per clone but there is no limit to the number of workmen the user can create. If the user should run out of chakra while performing this technique or reach 0 hit points, the technique produces no more workmen.<br><br>Because this technique has no limitations such as those present in the other Bunshin-related techniques, the user is unable to move or take any action as he concentrates to sustain the number of workmen created if the number of clones is more than 16 per character level. This means that if the user has more than 16 per character level clones, he must maintain Concentration, and adds that as a component to the technique when crossing that number, the DC for the Concentration check is 10 + 1 for every additional 4 workmen over the user's limit, the check must be made hourly while the number of workmen is higher than the user's normal limit. Failure to maintain Concentration causes all workmen to vanish. The user may choose to create less clones than what was rolled.<br><br>If the user breaks their concentration to maintain the workmen for any reason, they remain for 4 rounds before dissipating into nothingness. If the user resumes their concentration before the 4 th round after having previously broken concentration they can resume without losing any workmen.</p>\n\n<hr><p><b>Requires:</b> Kage Bunshin no Jutsu (t)</p>\n<p><b>Effect:</b> Duplicates the users</p>\n<p><b>Mastery:</b> At every even number step of mastery in this technique, the user increases the number of clones he creates with this technique by 1d8, in addition to the standard mastering increase; however, the limit of clones he can control while taking other actions does not increase with each step of mastery.<br><br>At the third step of mastery the user's workmen may use Henge no Jutsu upon creation at no cost to themselves or the user. This only may be used when the workmen are created.<br><br>At fifth step of mastery the maximum distance a clone can go from the user is 2 miles and the user no longer suffers damage from creating workmen.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "A-Class",
+    "chakraCost": 15,
+    "activation": "full",
+    "range": "50 ft. (see text)",
+    "target": "",
+    "area": "",
+    "duration": "1 hour/level",
+    "save": "hour/level",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "40fc11220b74f6a3",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "hour",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "ft",
+          "value": "50"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "187"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "c0muyEGyCeY26cWy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Qm4dyKJ6MrmHWuh7"
+}

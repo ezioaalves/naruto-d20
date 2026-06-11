@@ -1,0 +1,100 @@
+{
+  "_id": "0KDy6ecdlxwLSrxR",
+  "name": "KUSSETSU SEKI NO JUTSU (DISTORTION GATE TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fire-arrows-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique allows the user to form and place 2 gates anywhere within the range of this jutsu. Each gate covers a single 5 ft. by 5 ft. square, which only user can know the location of. The gates may be placed in any direction, they are capable of being placed and suspended in mid-air as well as in the ground or under water, as lon g as it is within the jutsu's range. No living matter may pass through either of these gates, but any elemental ninjutsu based attack such as a Godai Taigeki jutsu or a thrown weapon of any sort may pass through the entrance of 1 gate and exit from the other. The gates are static 1 way directional portals meaning when the user places the gates the enter and exit for each gate is decided at that moment and cannot be changed.<br><br>If an attack should pass through from one gate to another and the target is not aware either from being the first target in that encounter by this effect, or by being flat-footed or not facing the direction of the exit where the attack is coming, the target is considered flat-footed. If the user has Evasion they may benefit from that as normal and if the target has Uncanny Dodge they are not flat-footed.<br><br>If the source of the attack is from the target, the target is considered flat-footed reg ardless of abilities as they're completely caught unaware by their own attack because they are already performing an attack and unable to dodge at the same time. This can only function once per creature per encounter.</p>\n\n<hr><p><b>Requires:</b> Retrieval Expert (f), Shunda (3), Chakra Control 13 ranks, Ninjutsu 13 ranks, and 5 other Spacetime techniques</p>\n<p><b>Effect:</b> Creates 2 invisible gates</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Spacetime",
+    "descriptors": [
+      "Teleportation"
+    ],
+    "rank": 10,
+    "complexity": "S-Class",
+    "chakraCost": 8,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "(See text) (D)",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "80b6ddd4c4ea59a9",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "medium"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "167"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "8YakA6qiAo2Ke0ku",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!0KDy6ecdlxwLSrxR"
+}

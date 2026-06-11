@@ -1,0 +1,117 @@
+{
+  "_id": "UnPcYnRoye6Qam0K",
+  "name": "WATOJUTSU: SHUUGEKI TOU SEI (WATOJUTSU: KICKING SWORD RUSH)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/scorpion-style.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> M, F, Mas</p>\n\n<hr>\n\n<p>The most basic technique of Wato style, Shuugeki Tou Sei is a simple strike with blade kicked up to increase power. The user makes a single melee attack, that if hits deals an additional 1d4 damage per 2 levels of the user (maximum 5d4, not multiplied on critical hit).</p>\n\n<hr><p><b>Mastery:</b> With the third step of mastery in this technique the user can use it as a part of a charge, but doing so increases Perform DC by 5, and Chakra Cost by 1. If the technique is used this way, the user cannot convert the cost to hit points.<br><br>Material Focus -The user's watou, katana, double katana or hansori.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Lost Hijutsu"
+    ],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 3,
+    "activation": "attack",
+    "range": "Melee",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "b04cd7318b5e9592",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d4",
+              "types": []
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "206"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "iEw44g26KYEWeYcE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!UnPcYnRoye6Qam0K"
+}

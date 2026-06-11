@@ -1,0 +1,105 @@
+{
+  "_id": "9Cb8IevU3JOIRWiu",
+  "name": "SHISHI ENJIN (FOUR VIOLET FLAMES BATTLE FORMATION)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-eerie-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 60</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique requires four persons to be performed, each one standing adjacent to one of the four sides of the energy wall to be created. The technique also requires that all users perform this technique at the same initiative count (Possibly delaying one's action). For each missing person on the formation, the Perform DC increases by 5. The chakra cost of this technique is split evenly amongst the users, and if any of them fails the perform check or lacks the chakra necessary to use this technique, it fails and the chakra used by the others is wasted. When this technique is successfully used, it creates an energy barrier with the same properties as the one created by the Kekkai no In technique. In addition, any creature making contact with the barrier must succeed a fortitude save to avoid suffering 1d6 points of fire damage and be pushed back 1d3x5 feet. The barrier formed has four walls (Between 20ft to 80ft long, determined by the creators of the barrier and 40ft tall) and a roof on the top of it, making almost any tentative to escape from it impossible. This technique lasts for as long as the users concentrate on it or until the duration ends. To determine the duration of the technique, consider the highest character level amongst the users.</p>\n\n<hr><p><b>Requires:</b> Kekkai no In (t)</p>\n<p><b>Effect:</b> Energy barrier</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 9,
+    "complexity": "A-Class",
+    "chakraCost": 60,
+    "activation": "full",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "Concentration (Maximum of 1 minute per level) (D)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "a5d8ea1c714f1377",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d6",
+              "types": [
+                "fire"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "182"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "sMOkGcYscAAYkYyK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!9Cb8IevU3JOIRWiu"
+}

@@ -1,0 +1,103 @@
+{
+  "_id": "Gm0QpUouTzYANbY6",
+  "name": "TA SEKAI NO JUTSU (OTHER WORLD TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fire-arrows-sky-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The user creates a special mirror with a special space inside. This mirror can't be used for other ninjutsu with the Retrieval Expert requirement. Every time the character uses this mirror to remove or put an item, he pays 5 of chakra to distort the space and only the owner can add or remove items from his mirror.<br><br>The bonded mirror is an extradimensional space: its inside is larger than its outside dimensions. Regardless of what is put into the mirror, it weighs a fixed amount. The limit in weight and volume of the mirror's contents are 250 lbs. and 70 cubic ft.<br><br>If a mirror is overloaded, or broken (from inside or outside), all of its contents spill out, unharmed. If living creatures are placed within the mirror, they can survive for up to 10 minutes, after which time they suffocate. Retrieving a specific item from a mirror is a move action. Magic items placed inside the mirror do not offer any benefit to the character carrying the mirror. If someone tries to put a Ta Sekai inside to other Ta Sekai, both of them collapses and creates Genjitsu Gappei no Jutsu, except this is a 20 feet burst self-centered, and all items are lost.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f), Retrieval Expert (f), Advanced Seal: Kagami Shasai (t)</p>\n<p><b>Material Focus:</b> One Bonded Mirror.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Spacetime",
+    "descriptors": [
+      "Teleportation"
+    ],
+    "rank": 5,
+    "complexity": "B-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Personal",
+    "target": "A bonded mirror",
+    "area": "",
+    "duration": "",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "fe19b988d41b67da",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "A bonded mirror"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "186"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "QDZ9cZyXj0L33AGh",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Gm0QpUouTzYANbY6"
+}

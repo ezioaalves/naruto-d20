@@ -1,0 +1,108 @@
+{
+  "_id": "vIO22h5WFtHfe3md",
+  "name": "NI-SHI KOGEKI (TWO-LIMBED STRIKE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/skills/weapon_08.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>This technique utilizes the unorthodox Dangling Limb stance to both catch an opponent off guard while also striking with additional force.<br><br>While in the Taijutsu: Dachi - Kensui Teashi stance, the user makes melee attack at his highest attack bonus that uses both his limbs. The attack deals normal unarmed damage plus double the user's Strength modifier. If this technique was performed as part of a charge, the damage adds triple the user's Strength modifier.</p>\n\n<hr><p><b>Requires:</b> Kensui Teashi Dachi(t)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [],
+    "rank": 2,
+    "complexity": "C-Class",
+    "chakraCost": 1,
+    "activation": "attack",
+    "range": "Melee Attack",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "1144304f60e34908",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "202"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "yUI8Y6kUaMCw0mQw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!vIO22h5WFtHfe3md"
+}

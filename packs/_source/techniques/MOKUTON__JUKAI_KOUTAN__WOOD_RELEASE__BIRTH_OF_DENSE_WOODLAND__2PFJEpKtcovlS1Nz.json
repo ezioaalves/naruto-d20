@@ -1,0 +1,118 @@
+{
+  "_id": "2PFJEpKtcovlS1Nz",
+  "name": "MOKUTON: JUKAI KOUTAN (WOOD RELEASE: BIRTH OF DENSE WOODLAND)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/needles-fire-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 15</p>\n<p><b>Chakra Cost:</b> 45</p>\n\n<p><b>Learn DC:</b> 35 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 24 | <b>Perform DC:</b> 40</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>This technique was one of the most feared gifts of the Shodaime Hokage from Hidden Leaf. It is a vastly more advanced version of the Kantoku no Jutsu. Using all of his powers to manipulate the Mokuton element, Shodaime was able to create a colossal tree along with dozens of enormous roots spreading from nowhere. The tree and its roots are able to reach up to 50 ft. radius + 5 ft./2 levels (the tree itself is 120 ft. + 10 ft. per level tall), and every creature standing on the area of effect must succeed in a reflex saving throw to avoid receiving 10d6 points of damage from the roots brutally spreading out from nowhere and being immobilized. A creature immobilized by this technique can attempt to escape by succeeding in a Break check (DC 35) or three Escape Artist check in a row (DC 35), at the rate of one per round. Each failure on those checks deals 5d6 points of damage to the victim, due to the strangling roots of the giant tree trying to keep the creatures immobilized. After two successful checks the creature becomes entangled instead of immobilized, suffering a -2 penalty on attack rolls, -4 penalty to Dexterity, but still unable to move from his current location. Those penalties replace the penalties for being fully immobilized, and the DC of both checks to escape is reduced by 10.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (5)</p>\n<p><b>Material Focus:</b> Enough earth and water nearby for the tree to spread from.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mokuton",
+    "descriptors": [
+      "Wood",
+      "Hashirama Senju Hijutsu"
+    ],
+    "rank": 15,
+    "complexity": "Epic",
+    "chakraCost": 45,
+    "activation": "full",
+    "range": "Long (30 ft. + 15 ft./2 levels)",
+    "target": "",
+    "area": "50 feet burst of giant tree and roots spreading from the targeted point + 5 ft./2 levels (see text)",
+    "duration": "Permanent",
+    "save": "Reflex negates",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "d815e652cea4a679",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "perm"
+        },
+        "range": {
+          "units": "long"
+        },
+        "area": "50 feet burst of giant tree and roots spreading from the targeted point + 5 ft./2 levels (see text)",
+        "damage": {
+          "parts": [
+            {
+              "formula": "10d6",
+              "types": []
+            },
+            {
+              "formula": "5d6",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "169"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "9rSlDwcB3pcvkhx7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!2PFJEpKtcovlS1Nz"
+}

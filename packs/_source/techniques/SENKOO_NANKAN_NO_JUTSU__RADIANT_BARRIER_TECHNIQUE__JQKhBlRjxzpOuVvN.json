@@ -1,0 +1,98 @@
+{
+  "_id": "JQKhBlRjxzpOuVvN",
+  "name": "SENKOO NANKAN NO JUTSU (RADIANT BARRIER TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/vines-jade-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> H, F, Mas</p>\n\n<hr>\n\n<p>If the user ready a mirror, it can absorb the technique using the surface and deflect it against the original user. The user can use Senkoo Nankan no Jutsu even against an area attack, but first the user must succeed against the original Saving Throw (and does not take the \"half\" damage or effect).<br><br>To deflect it the user must pay the chakra costs that has been paid to perform the technique and win or equalize an opposed Chakra Control check if it is a Chakra Control technique, an opposed Ninjutsu check if it is a Ninjutsu or an opposed Genjutsu check if it is a Genjutsu against the performer of the technique. If the user beats the compared check by 10 Points he reflects the technique, and now it targets the original user. A taijutsu technique cannot be subject to this ability. (Some from this text is from \"Alternative Jinchuuriki Rules\" by: Infinitus). This technique can't be \"Quickened\".</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Effect:</b> Deflect a Chakra Move</p>\n<p><b>Material Focus:</b> One Mirror.</p>\n<p><b>Mastery:</b> The fifth step of mastery can reflect taijutsu too, but the target must miss a direct attack against the user.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mirror Arts",
+    "descriptors": [],
+    "rank": 10,
+    "complexity": "A-Class",
+    "chakraCost": 0,
+    "activation": "attack",
+    "range": "(See Text)",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "(See Text)",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "d97482ece15c6cf9",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "180"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "pDhy6MAinjuQtCiQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!JQKhBlRjxzpOuVvN"
+}

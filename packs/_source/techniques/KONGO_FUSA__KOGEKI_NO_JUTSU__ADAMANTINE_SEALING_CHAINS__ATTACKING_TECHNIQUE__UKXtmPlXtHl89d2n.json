@@ -1,0 +1,117 @@
+{
+  "_id": "UKXtmPlXtHl89d2n",
+  "name": "KONGO FUSA: KOGEKI NO JUTSU (ADAMANTINE SEALING CHAINS: ATTACKING TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/protect-red-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Fuinjutsu</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> E, H, M</p>\n\n<hr>\n\n<p>The user summons a hoard of adamantine sealing chains that pierce through enemies with ease.<br><br>The user may target up to one creature per 4 character levels, but may not target the same creature twice. The user makes ranged touch attacks against each target. For each successful attack, the user summons an adamantine sealing chain that pierces the targeted creature dealing 8d4 points of damage. Regardless of the success or failure of the user's touch attacks, a chain is formed for each creature he targets. They dissipate at the end of the technique. The base cost of this technique is 10, and each chain costs 2 additional points of chakra to form.</p>\n\n<hr><p><b>Requires:</b> Kongo Fusa (5), Chakra Control 14 ranks</p>\n<p><b>Empower:</b> The user may spend 1 additional point of chakra to increase the damage of a sealing chain by +1, up to 8d4+5. The user must empower each chain separately.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Fuinjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Uzumaki Clan Hijutsu"
+    ],
+    "rank": 10,
+    "complexity": "A-Class",
+    "chakraCost": 10,
+    "activation": "full",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "One creature/4 levels",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "967d3509f64700cf",
+        "name": "Use",
+        "actionType": "rwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "target": {
+          "value": "One creature/4 levels"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "8d4",
+              "types": []
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "131"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "sU0AUUqy0G8KMqiW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!UKXtmPlXtHl89d2n"
+}

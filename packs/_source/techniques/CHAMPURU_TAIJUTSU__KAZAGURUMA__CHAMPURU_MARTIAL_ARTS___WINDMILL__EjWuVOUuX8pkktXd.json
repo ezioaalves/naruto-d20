@@ -1,0 +1,108 @@
+{
+  "_id": "EjWuVOUuX8pkktXd",
+  "name": "CHAMPURU TAIJUTSU -KAZAGURUMA (CHAMPURU MARTIAL ARTS - WINDMILL)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/improved-trip.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>The user of this technique falls to the ground and begins to roll his torso continuously in a circular path on the floor, across the upper chest, shoulders, and back, while twirling his legs in a V-shape through the air.<br><br>He gains an unarmed attack against every enemy within his reach. This may not be used in conjunction with the cleave feat. At the end of the attack the user stands back up as a free action.</p>\n\n<hr><p><b>Requires:</b> Champuru (f)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Kick"
+    ],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "full",
+    "range": "Melee Attack",
+    "target": "",
+    "area": "Melee Reach",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "ea77556b9d32e04c",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "area": "Melee Reach",
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "194"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "iEw44g26KYEWeYcE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!EjWuVOUuX8pkktXd"
+}

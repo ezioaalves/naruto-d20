@@ -1,0 +1,101 @@
+{
+  "_id": "ofOvptmQCZHGkrwa",
+  "name": "JOKATON: SEISEI DOMU (PURIFICATION RELEASE: PURIFIED DOME)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-blue-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Jokaton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The user forms a dense 10-foot radius dome surrounding his person that is composed of purification chakra. The dome is impervious to melee and ranged attacks as well as techniques, and only those the user designates as purified allies may enter and exit freely. Designating purified allies is considered an instant action on the user's turn before the completion of the technique. Any undesignated creature standing within the technique's radius when the dome is formed is pushed back until it is no longer within the radius. However, this effect does not deal damage.<br><br>The user must fully concentrate in order to maintain this technique. He may not move, attack, or perform techniques. If the user stops concentrating for whatever reason, the technique immediately dispels.<br><br>On the user's next turn, while he's concentrating on the technique, he can spend a swift action and 8 points of chakra to enhance the dome for 1 round. The user and anyone else within the dome during that round gain 1d4+1 hit points and chakra. The user can use this ability once per round afterwards, but each subsequent use costs an additional 8 points of chakra.</p>\n\n<hr><p><b>Requires:</b> Purification Release (f)</p>\n<p><b>Effect:</b> Creates protective dome</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Jokaton",
+    "descriptors": [],
+    "rank": 8,
+    "complexity": "A-Class",
+    "chakraCost": 12,
+    "activation": "full",
+    "range": "Personal",
+    "target": "You",
+    "area": "",
+    "duration": "Concentration",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "3e8670900dbcfb37",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "152"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "RW8yZprYoIIxStdI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!ofOvptmQCZHGkrwa"
+}

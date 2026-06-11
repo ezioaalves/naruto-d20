@@ -1,0 +1,108 @@
+{
+  "_id": "AtxpYj40V4ulkiuG",
+  "name": "CHAMPURU TAIJUTSU - SUNACCHI (CHAMPURU MARTIAL ARTS - SWIPE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/gorgons-fist.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>Using this Champuru technique, the character falls to the ground, leans back, whips his arms to one side to the ground, and then swings his legs closely behind, twisting 360 degrees and landing on the ground once again. The character may then stand back up as a free action at the end of his turn.<br><br>This allows the user to disarm or trip it's opponent by swiping at its legs and then its weapon as it falls. The user gains a +2 to checks in order to trip and disarm while using this technique.</p>\n\n<hr><p><b>Requires:</b> Champuru (f)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Kick"
+    ],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "full",
+    "range": "Melee Attack",
+    "target": "",
+    "area": "Melee Reach",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "7d9397cf3c62eb27",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "area": "Melee Reach",
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "194"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "Oya4aCKe8kKAMKoa",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!AtxpYj40V4ulkiuG"
+}

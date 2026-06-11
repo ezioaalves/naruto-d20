@@ -1,0 +1,111 @@
+{
+  "_id": "IrdTW6fzjd2XCNs7",
+  "name": "MOKUTON: KIDZUCHI NO JUTSU (WOOD RELEASE: WOODEN MALLET TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-orange-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>The user spends a move-equivalent action to turn his arm into a size category large wooden mallet with a 10foot reach that he is proficient with. This provokes an attack of opportunity. The mallet deals 2d8 bludgeoning damage that adds the user's strength modifier to damage rolls. When the technique is dispelled or the duration has completed, the wood mallet seemingly recedes back into the user's bo dy similarly to its creation.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (t)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mokuton",
+    "descriptors": [
+      "Wood",
+      "Yamato Hijutsu"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "move",
+    "range": "Personal",
+    "target": "",
+    "area": "",
+    "duration": "1 round/2 levels",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "a3683427db9e2718",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "move",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d8",
+              "types": [
+                "bludgeoning"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "169"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "n4LVveTYu3ueajYg",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!IrdTW6fzjd2XCNs7"
+}

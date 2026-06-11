@@ -1,0 +1,95 @@
+{
+  "_id": "wOZ0y6ZQYELMzVMO",
+  "name": "SHUUGYOU: KYUUSHUU KOKOROGAKERU (TRAINING: REVENGE IN MIND)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/skill-focus.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (General)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>For weeks, you've trained and trained, determined to overcome (or kill) a single being. They may be a rival you hope to surpass, or a sensei you wish to impress. Most likely, it's someone you want to kill.<br><br>Every time you interact directly against that character, you add a +1 to every roll related to opposing them - to hit, damage, saves vs. their jutsu, intimidate checks anything the GM finds suitable.<br><br>Each time this technique is trained the user applies it to a new specific person.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "General",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "f3d9c11a1faf1ffd",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "212"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "krSTUx0jeXIvUukO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!wOZ0y6ZQYELMzVMO"
+}

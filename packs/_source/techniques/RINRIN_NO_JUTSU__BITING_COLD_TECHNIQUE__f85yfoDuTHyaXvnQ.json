@@ -1,0 +1,104 @@
+{
+  "_id": "f85yfoDuTHyaXvnQ",
+  "name": "RINRIN NO JUTSU (BITING COLD TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H, E, (see text)</p>\n\n<hr>\n\n<p>See Godai Taigeki: Yondan Jutsu technique.</p>\n\n<hr><p><b>Effect:</b> Ray</p>\n<p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or the maximum indicated per variant (whichever is lower).</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Hyouton",
+    "descriptors": [
+      "Cold"
+    ],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Long (30 ft. + 15 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "Fortitude or Reflex partial (see text)",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "b22d6698b2c698b7",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "long"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude or Reflex partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "149"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "8EYeO2GOSK2QOgWs",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!f85yfoDuTHyaXvnQ"
+}

@@ -1,0 +1,101 @@
+{
+  "_id": "gyYAeNIslRqH8emA",
+  "name": "SHIKAKU INPEI (DEAD SPACE CONCEALMENT)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-sky-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H, C, M</p>\n\n<hr>\n\n<p>Using this technique, the user delves into the shadow of a willing ally. The user can stay in the shadow for one hour per level before being forcibly removed from the shadow. While in the shadow, the user is effectively invincible, though not immortal. However, if his \"host\" dies, then the user is expelled from the shadow and takes damage equal to his hosts' Hit Die x 5.<br><br>The user can take a full round action during his own turn to step outside of the shadow and take a single melee or ranged sneak attack against any opponent within range with a bonus equal to +1d6 per four levels (maximum 5) which stacks with class bonuses from classes. The target of this technique also loses his Dexterity bonus to AC against this attack.<br><br>When the user leaves the host's shadow he may choose one square adjacent to the host to manifest in. If no space is available to manifest in, then the user may not leave the host's shadow.<br><br>If the user is forcibly ejected from the hosts shadow he is placed in the square directly behind the host or, if this square is unavailable, in any square adjacent to the host. If no space is available, the user manifests within the square of the host and incurs all the penalties thereof.<br><br>Attacks specifically targeting the shadow of the host, even shadow art attacks, do not harm the user. However, the user may not willingly exit the host's shadow if the host is under the effect of Kage Mane no Jutsu (they may still be forcibly ejected).</p>\n\n<hr><p><b>Requires:</b> Shadow Arts (f), Kage Mane no Jutsu (5), Kage Mane Yusou no Jutsu</p>\n<p><b>Mastery:</b> At the first step of mastery the duration increases to 2 hour per 2 levels.<br><br>At the third step of mastery the duration increases to 3 hours per 2 levels.<br><br>At the fifth step of mastery the duration increases to 4 hours per 2 levels.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shadow",
+    "descriptors": [],
+    "rank": 8,
+    "complexity": "B-Class",
+    "chakraCost": 5,
+    "activation": "full",
+    "range": "55 feet",
+    "target": "The shadow of one willing ally (See Text)",
+    "area": "",
+    "duration": "1 hour per 2 levels",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "3fb7a2cc68087ba4",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "The shadow of one willing ally (See Text)"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "180"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "Y6iuSyUEYkG6EGWo",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!gyYAeNIslRqH8emA"
+}

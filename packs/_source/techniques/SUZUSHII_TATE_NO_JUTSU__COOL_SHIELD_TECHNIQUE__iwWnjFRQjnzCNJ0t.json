@@ -1,0 +1,102 @@
+{
+  "_id": "iwWnjFRQjnzCNJ0t",
+  "name": "SUZUSHII TATE NO JUTSU (COOL SHIELD TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/enchant-blue-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Chakra Control</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>Using this technique, the user creates a thin layer of cooling chakra on his body that shield him against the effects of hot weather. For the duration of this technique, the user will keep himself cool and as though he was under moderate weather if the temperature is above 90°F, but below 110°F. Above 110°F, the technique does not function.</p>\n\n<hr><p><b>Requires:</b> Ryokujun no Jutsu (t)</p>\n<p><b>Mastery:</b> Every step of mastery in this technique allows the technique to be used 2°F higher, up to a<br><br>a maximum of 120°F.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Chakra Control",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 2,
+    "complexity": "D-Class",
+    "chakraCost": 2,
+    "activation": "attack",
+    "range": "Personal",
+    "target": "You",
+    "area": "",
+    "duration": "10 minutes/level (D)",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "451fa0fafdcb139a",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "10*@cl"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "130"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "acGq4KogWGgwEsYI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!iwWnjFRQjnzCNJ0t"
+}

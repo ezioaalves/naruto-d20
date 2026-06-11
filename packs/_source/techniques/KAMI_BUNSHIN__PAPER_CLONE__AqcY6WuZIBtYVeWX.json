@@ -1,0 +1,102 @@
+{
+  "_id": "AqcY6WuZIBtYVeWX",
+  "name": "KAMI BUNSHIN (PAPER CLONE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-red-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> H, Mas</p>\n\n<hr>\n\n<p>This technique has you creating paper clones which have real, physical substance. Paper clones appear at any location within range, and disappear if they move more than 1 mile away.<br><br>You cannot create paper clones if you have other types of physical clones under control, and cannot create any other type of physical clones while you have paper clones under your control.<br><br>Appearance: Paper clones are identical to you in appearance and personality, indistinguishable even to the most attentive inspector. To those sensing Chakra, a clone has your Chakra Signature, but its Signature's strength is only as strong as their cost to create them. At creation you may decide a different appearance or copy the appearance of another for your paper clone, to do so you make a Craft (Visual Appearance) roll in place of a Disguise roll.<br><br>Control: You control paper clones by thought, but the clones cannot send thoughts back to you to communicate. Shadow clones follow your instructions to the letter, and while they are individual creatures, they cannot act without orders. Even when ordered, shadow clones cannot perform actions requiring complex thought and attention such as setting off an explosive tag or carrying a conversation (thought they can relay messages).<br><br>Statistics: Paper clones' statistics are based on yours, as shown below. Temporary bonuses, such as from Speed Ranks and Strength Ranks, are not counted for these statistics. Paper clones have:<br><br>1 HP per 3 character levels (not modified by Con)<br><br>Your total attack bonus, at -4<br><br>Your Defense, at -5<br><br>Your saving throws, at -4<br><br>Your skills, feats, talents, racial and class abilities<br><br>None of your bloodline or template abilities<br><br>Equipment: Paper clones carry the same equipment you do, but any Chakra-based items become mundane versions without any special enhancements, powers or uses (a sealed item becomes a basic version with no powers or enhancements, explosive tags become pieces of paper, etc.). Any mastercraft bonuses are also lost on the clones' equipment.<br><br>Poisons and other complex chemical items are seemingly copied, but are non-functional.<br><br>Items copied on a clone have no hardness, and half as much HP as such an item would normally have.<br><br>Combat: Paper clones making a full-attack cannot make more than two attacks, and they can use techniques you know, up to Rank 4. Any Chakra costs it must pay are taken directly from your Chakra pool. If the technique it uses has any specific drawbacks, they affect both the clone and you.<br><br>If a clone creates clones, those are clones are treated as if created by you (counting towards your limit).<br><br>Defeat and Dismissal: You may dismiss one or more clones at will, and can freely choose exactly which clone(s) to dismiss when doing so. If a clone reaches 0 HP, goes beyond the maximum range, or dismissed, it disappears in a whirl of papers, leaving behind no evidence of its existence besides the pieces of paper. When it does, you become immediately aware of anything it experienced.<br><br>Special: Clones do not affect how much experience a character earns, and defeating clones in combat does not normally grant experience to players. Paper clones weigh 5 pounds.</p>\n\n<hr><p><b>Requires:</b> 7 ranks Craft (Visual Arts)</p>\n<p><b>Material Focus:</b> A mass of paper nearby containing at least 5 pounds of paper</p>\n<p><b>Empower:</b> Spend 3 Chakra to create one additional clone. You cannot control more than 1 paper clone per 3 levels at the same time. Trying to create more will immediately dismiss your oldest clones until you no longer control more clones than allowed.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Kamiton",
+    "descriptors": [
+      "Paper"
+    ],
+    "rank": 5,
+    "complexity": "B-Class",
+    "chakraCost": 2,
+    "activation": "full",
+    "range": "25 ft. / level",
+    "target": "",
+    "area": "",
+    "duration": "1 min / level",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "87e7d432adea925a",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "ft",
+          "value": "25"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "156"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "i0rnLBkIQmXIMCMu",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!AqcY6WuZIBtYVeWX"
+}

@@ -1,0 +1,103 @@
+{
+  "_id": "Fx1ICBcDLOo6FQ82",
+  "name": "MYUGAN SUTANSU: SO JUNBI (MYUGAN STANCE: TOTAL PREPARATION)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/skills/weapon_25.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>This incredibly advanced martial stance was created by the Myugan Monk Order and is designed to ready the combatant for any scenario presented in an encounter without having to resort to physical violence.<br><br>The user spends a full-round action to enter this stance. The user can no longer attack or use any other techniques until this stance is broken or replaced. The user may only make swift actions and move actions each round after activation.<br><br>While in this stance, the user gains a +10 bonus to his defense and a +5 bonus to saves and skill checks. He cannot be caught flat-footed or be flanked.<br><br>If an opponent still succeeds on an attack roll against the user, the user may spend an instant action to perform a counterattack at his highest attack bonus. He still takes damage from the attack normally.</p>\n\n<hr><p><b>Requires:</b> Shitatchi (a)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Stance",
+    "descriptors": [
+      "Myugan Hijutsu"
+    ],
+    "rank": 8,
+    "complexity": "B-Class",
+    "chakraCost": 5,
+    "activation": "full",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "52e3d8afa9e5663d",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "202"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "WCGumIW68ugqqQYe",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Fx1ICBcDLOo6FQ82"
+}

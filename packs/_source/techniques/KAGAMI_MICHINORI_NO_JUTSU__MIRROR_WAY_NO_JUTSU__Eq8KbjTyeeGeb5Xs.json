@@ -1,0 +1,99 @@
+{
+  "_id": "Eq8KbjTyeeGeb5Xs",
+  "name": "KAGAMI MICHINORI NO JUTSU (MIRROR WAY NO JUTSU)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-eerie-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H, M, F</p>\n\n<hr>\n\n<p>The user creates a gate between an original point (a mirror) and a bonded mirror. The character walks through the surface, and any creature of the same size or small can walk too, leading outside from the bonded mirror. If the user has more than one bonded mirror, he can choose one to be the destination.<br><br>You need a medium mirror to a medium creature enter and exit, a larger mirror to a large creature enter and exit, and so on.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f), Retrieval Expert (f), Advanced Seal: Kagami Shasai (t)</p>\n<p><b>Effect:</b> Creates a teleportation point</p>\n<p><b>Material Focus:</b> One Mirror that can handle the user's size.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Spacetime",
+    "descriptors": [],
+    "rank": 7,
+    "complexity": "B-Class",
+    "chakraCost": 7,
+    "activation": "move",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "3 rounds (D)",
+    "save": "Will negates (unwilling)",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "c71fc6058f875ed9",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "move",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "save": {
+          "type": "will",
+          "description": "Will negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "154"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "qeSC2qqo8CqyuQWo",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Eq8KbjTyeeGeb5Xs"
+}

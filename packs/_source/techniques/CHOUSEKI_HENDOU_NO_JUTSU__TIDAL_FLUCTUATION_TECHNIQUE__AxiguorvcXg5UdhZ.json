@@ -1,0 +1,101 @@
+{
+  "_id": "AxiguorvcXg5UdhZ",
+  "name": "CHOUSEKI HENDOU NO JUTSU (TIDAL FLUCTUATION TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-fire-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, H, F, Mas</p>\n\n<hr>\n\n<p>Using this technique, the user is more easily capable of carrying around a supply of water into areas where water may not be easy to come by. While the reasons are the user's own, such as for drinking purposes or for water based ninjutsu, this technique is a boon for anyone seeking to carry large quantities of water without weighing themselves down.<br><br>The user may command, direct, and manipulate up to 10 liters of water per level, though they may not attack with it. Water controlled in this way is completely supported by the user's chakra and does not count toward the user's carrying capacity for as long as the technique continues. Only water embedded with the uses chakra (that is, water in possession of the user at the time of performing the technique) may be manipulated by this technique. Any additional water in the area cannot be controlled unless the user performs the technique once again.<br><br>Should the user control less than his maximum amount of water, he user may perform this technique as per normal to add more, paying the cost only for the amount added. The user may not control more water than his maximum and the duration of control does not reset; use the duration of the earliest performance of the technique.<br><br>With sufficient mastery, the user may use the water to deliver attacks out to 30 feet. The user may perform multiple attacks, based on his base attack bonus, but does not benefit from speed or strength ranks or other nonpermanent bonuses. The character still only threatens squares adjacent to him despite his range of attack. Attacks made in this manner deal damage as a slam attack of an elemental of equal size as the character with a Strength score equal to the user's Intelligence score, plus one per four character levels of the user. All damage dealt this way is water damage.<br><br>Once per round, upon successfully striking an enemy within range, the user may make a grapple attempt by spending 3 chakra as a swift action. The user uses the base attack bonus of the attack that struck and the strength and size modifiers of the water. The user may not grapple more than one creature, nor may he use his water to drown the subject. The subject suffers no damage while within the grapple; simply, he is held in place by the force of the water as per the normal rules for grappling. A subject grappled in such a manner may qualify for Suiton techniques that require the subject to be fully or partially submerged.<br><br>Using the water in this way costs 1 point of chakra per round and 5 liters of water that cannot be used for any other reason than to attack.<br><br>When the duration of the technique ends, the user may, as a move action, spend 2 chakra per 10 liters (round up) to refresh the duration of the technique.<br><br>If, at any time, the user's chak ra pool becomes 0, or should he become unable to use chakra for any reason, the technique ends and all control of the water ceases.</p>\n\n<hr><p><b>Requires:</b> primary affinity (Water)</p>\n<p><b>Effect:</b> Manipulate up to 10 liters/level of water</p>\n<p><b>Mastery:</b> With the second and fourth step of mastery, the amount of water the user may controls increases by 10 liters per level (up to a maximum of 30 liters per level).<br><br>With the third step of mastery, the user may attack with the water as above. With the fourth step of mastery, the user may instigate a grapple once per round with the water.<br><br>With the fifth step of mastery, the user may spend an additional 2 points of chakra and 5 liters of water per round to increase the size of the attack by one size (from medium to large).</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water"
+    ],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 2,
+    "activation": "minute",
+    "range": "0 feet",
+    "target": "",
+    "area": "",
+    "duration": "1 hour/level (D",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "b1a195309b6e3cbb",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "hour",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "seeText"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "142"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "okYyKEAuqIQs6g6y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!AxiguorvcXg5UdhZ"
+}

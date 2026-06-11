@@ -1,0 +1,98 @@
+{
+  "_id": "qtxNAMpzVsOOrrWD",
+  "name": "KAIRAI ENGEKI: ERAI MINAOSHI (PUPPET THEATER: GREAT REVIEW)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/slice-orange-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, M, F, Mas</p>\n\n<hr>\n\n<p>Similar to Kairai Engeki: Gyakusenden, the user uses an active puppet in order to intercept an incoming attack. However, this technique differentiates in that the user is able to immediately activate the shield component on the puppet, thus increasing the chance that both the puppet and the user survive.</p>\n\n<hr><p><b>Requires:</b> Kairai Engeki: Gyakusenden (3), Force Shield Component</p>\n<p><b>Defensive Maneuver:</b> : The puppet acts as though it had the Harm's Way Shinobi Bodyguard ability for 1 round or until it is de-animated. The puppet can only protect the user as long as he is able to control it, and must otherwise meet the requirements of the Harm's Way ability.<br><br>During the time the user activates this ability, the puppet may have its Force Shield component activated. The cost is paid in full by the puppet. If the puppet does not have enough chakra to activate the component, the Force Shield will not be used and this technique will function as if it were Kairai Engeki: Gyakusenden.<br><br>Each use of a defensive maneuver stacks with all other techniques with a similar effect.</p>\n<p><b>Mastery:</b> Every step of mastery after the first allows the technique to be used an additional time per day, up to 5/day.<br><br>The third step of mastery allows the puppeteer to select an ally or himself within 30 feet so long as the user is aware of the incoming attack.<br><br>The fifth step of mastery increases the duration of the defensive maneuver by 1 round.<br><br>Material Focus -One puppet with a Force Shield component.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "immediate",
+    "range": "5 feet (see text)",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "8f32594eed499417",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "immediate",
+          "unchained": {
+            "type": "reaction",
+            "cost": 0
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "155"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "c0muyEGyCeY26cWy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!qtxNAMpzVsOOrrWD"
+}

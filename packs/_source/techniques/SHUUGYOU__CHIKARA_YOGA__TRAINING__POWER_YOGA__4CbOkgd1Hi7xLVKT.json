@@ -1,0 +1,95 @@
+{
+  "_id": "4CbOkgd1Hi7xLVKT",
+  "name": "SHUUGYOU: CHIKARA YOGA (TRAINING: POWER YOGA)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/great-fortitude.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This long training has the character doing advanced yoga for a long time to increase strength and flexibility. At the end of this training the character gains a +2 to Balance and Concentration.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Taijutsu",
+    "descriptors": [],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "bd9b3ac93b01af4d",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "209"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "nLRUOTIRUbZu84p7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!4CbOkgd1Hi7xLVKT"
+}

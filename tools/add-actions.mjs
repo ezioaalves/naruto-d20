@@ -1,7 +1,7 @@
 /**
  * tools/add-actions.mjs
  *
- * Reads every naruto-d20.technique JSON in packs/_source/,
+ * Reads every naruto-d20.technique JSON in packs/_source/techniques/,
  * generates system.actions[0] from the technique's own flat fields
  * (activation, range, duration, save, area, target, discipline, description),
  * and writes the file back.
@@ -21,7 +21,7 @@ import { dirname } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-const SRC_DIR = join(ROOT, "packs/_source");
+const SRC_DIR = join(ROOT, "packs/_source/techniques");
 
 const DRY_RUN = process.argv.includes("--dry-run");
 const FORCE = process.argv.includes("--force");

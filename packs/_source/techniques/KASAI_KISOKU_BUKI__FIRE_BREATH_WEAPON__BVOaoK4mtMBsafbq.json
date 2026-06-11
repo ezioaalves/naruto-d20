@@ -1,0 +1,113 @@
+{
+  "_id": "BVOaoK4mtMBsafbq",
+  "name": "KASAI KISOKU BUKI (FIRE BREATH WEAPON)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fireball-eerie-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>The Fire breath weapon can be formed into a Line 30 ft. long, 5 feet high, and 5 feet wide or into a Cone 15 ft. long. The character's breath weapon is able to affect a larger area as he progresses. The distance increases by 5 ft. per 2 HD of the Keeper beyond 4. The attack deals 3d6 damage to each creature in the cone or the first creature hit in a line attack and deals fire damage up to 11d6.</p>\n\n<hr><p><b>Requires:</b> Advanced Bloodline Flame Keeper (f)</p>\n<p><b>Empower:</b> The user may spend 1 point of chakra to increase the damage by 1 die, maximum 1 die per level</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Katon",
+    "descriptors": [
+      "Fire"
+    ],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 1,
+    "activation": "full",
+    "range": "15 ft. Cone, 30 ft. Ray",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "Reflex",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "e87816f1fb6625ba",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "ft",
+          "value": "15"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "3d6",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "159"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "yKkqcaYEokuqMOqs",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!BVOaoK4mtMBsafbq"
+}

@@ -1,0 +1,107 @@
+{
+  "_id": "iJGafDYBDEyIyieE",
+  "name": "TORA NO KOUGAKE (GAUNTLETS OF THE TIGER)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/link-blue-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>Though few have mastered the art of creating Soul Edges, even fewer people have been able to dedicate their fascination of tigers with their soul weapons. With this technique a user is able to manipulate their Soul Edges into claws of pure chakra that manifest around a user's hand. Though the damage is less than that compared to the average Soul Edge; Tora no Kougake's created claws rely more on precision and are thus able to strike weak spots on enemies easily.<br><br>For a Medium-sized character, the Tora no Kougake deals 1d4 damage plus the Dexterity bonus if any. The claws also score critical on 19-20/x2. The claws appear on one of the user's hand and will instantly dissipate if he is disarmed or if it ever leaves his grasp. Like the Soul Edge the claws count as chakra-enhanced and has a hardness of 6 and 4 hit points.<br><br>The performance of Tora no Kougake creates gauntlets for each hand that the user possesses. User's with more than two hands also gain gauntlets for each extra hand.</p>\n\n<hr><p><b>Requires:</b> Seireiha (3)</p>\n<p><b>Effect:</b> Creates 1 Tora no Kougake</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Chakra Control",
+    "subtype": "Spirit",
+    "descriptors": [],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "Personal",
+    "target": "",
+    "area": "",
+    "duration": "1 minute/level (D)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "250be68028367a24",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d4",
+              "types": []
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "130"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "yee0A0CCEuIUYEao",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!iJGafDYBDEyIyieE"
+}

@@ -1,0 +1,103 @@
+{
+  "_id": "6MUzyAN7IlnM9r5F",
+  "name": "MYUGAN SUTANSU: HANGEKI NO HAISHUTSU (MYUGAN STANCE: DRAINING COUNTERATTACK)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rip-acid-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>The user must have the Shitatchi bloodline ability activated in order to perform this technique.<br><br>In this special stance, the user is only able to make a single attack action each turn. The user cannot move other than to face a different direction, take attacks of opportunity or use any abilities that would enable him to make additional attacks. In addition, he may not perform any other techniques until this stance is broken or replaced by a different stance.<br><br>The user is granted a +2 insight bonus to his defense and cannot be caught flat-footed or be flanked. Once per round, the user may drain the chakra out of any Ninjutsu or Chakra Control technique that specifically targets him and that is of equal or lower rank to his character level. In order to drain the chakra, the user must make a chakra control check (DC 10 + chakra cost of the technique). If the user succeeds the check, then he instantly drains all of the chakra out of the technique and into his body. The technique will then cease and any element within the technique will dissipate.<br><br>Next, the user must make an additional chakra control check (DC 15) to force the excess chakra out of his body or else suffer 2d4 (+1 per chakra spent on the drained technique) points of damage.</p>\n\n<hr><p><b>Requires:</b> Shitatchi (a)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Stance",
+    "descriptors": [
+      "Myugan Hijutsu"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "5b1f0634869f3f2f",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "201"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "qII8Woe2A4w6qsie",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!6MUzyAN7IlnM9r5F"
+}

@@ -1,0 +1,101 @@
+{
+  "_id": "mA5D9vOTJQXbTXRE",
+  "name": "CHAMPURU SANBAN SUTANSU -INPUROVAIZEXISHON (CHAMPURU THIRD STANCE - IMPROVISATION)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/improved-trip.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, M, Mas</p>\n\n<hr>\n\n<p>The third stance coincides with normal the Champuru style and as such the user gains a +2 to tumble and trip checks and a +2 dodge bonus to defense. He must still move at least 10 feet every round, if movement is halted then the stance is broken.<br><br>While in this stance, the user becomes a master of improvisation. No longer does he take a -4 penalty to attack with improvised weapons, but instead gains a +2 to attack and damage when using them while coupled with the Champuru's normal erratic style.<br><br>He is in fact so truly masterful at improvisation that, when no items are within his grasps to be used, he may instead use his unarmed strikes to substitute his sword! Unarmed attacks while in this stance gain the above bonus to attack and damage and also are lethal, dealing slashing damage.<br><br>All attacks are modified by dexterity instead of strength.</p>\n\n<hr><p><b>Requires:</b> Champuru (f), Taijutsu Adept (f), Taijutsu 13 Ranks, Tumble 13 Ranks, BAB +10</p>\n<p><b>Mastery:</b> The third step in mastery of this technique allows the user to feint as a movement action.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Stance",
+    "descriptors": [],
+    "rank": 10,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "swift",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "6e96af3012963aca",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "swift",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "193"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "2WqOQm4MMw48AMKy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!mA5D9vOTJQXbTXRE"
+}

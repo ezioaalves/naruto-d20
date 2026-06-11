@@ -1,0 +1,114 @@
+{
+  "_id": "hXo7lH9mM07l4Y7C",
+  "name": "MOKUTON: KISUPAIKU NO JUTSU (WOOD RELEASE: WOOD SPIKE TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> H, M, E</p>\n\n<hr>\n\n<p>In order to use this technique, the user must be within 15 feet of a tree or have created trees around him through some means such as with Kantoku no Jutsu. The user forms the necessary hand seals and places his hands on the ground. From the chosen tree, will emerge a large wooden spike that is hurled at the target dealing 8d6 wood piercing damage. The target can make a reflex save to half the damage.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (3)</p>\n<p><b>Material Focus:</b> One or more trees.</p>\n<p><b>Empower:</b> The user can spend an additional 1 chakra to increase the damage of this technique by 1 die (maximum 12d6).</p>\n<p><b>Mastery:</b> For every odd level of mastery in this technique, the user can spend an additional 5 chakra to form another spike from another tree within range that deals 3d6 piercing damage. Each additional spike may target the same creature or an additional creature.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mokuton",
+    "descriptors": [
+      "Wood"
+    ],
+    "rank": 9,
+    "complexity": "A-Class",
+    "chakraCost": 12,
+    "activation": "attack",
+    "range": "Short",
+    "target": "(see text)",
+    "area": "15-foot radius (See text)",
+    "duration": "Instant",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "c97a6834df0473c7",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "(see text)"
+        },
+        "area": "15-foot radius (See text)",
+        "damage": {
+          "parts": [
+            {
+              "formula": "3d6",
+              "types": [
+                "piercing"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "169"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "5gdqOq0a6ITYnSad",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!hXo7lH9mM07l4Y7C"
+}

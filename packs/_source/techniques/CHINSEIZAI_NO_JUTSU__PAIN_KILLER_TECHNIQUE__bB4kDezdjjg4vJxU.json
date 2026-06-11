@@ -1,0 +1,107 @@
+{
+  "_id": "bB4kDezdjjg4vJxU",
+  "name": "CHINSEIZAI NO JUTSU (PAIN KILLER TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wild-eerie-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Genjutsu</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H, P</p>\n\n<hr>\n\n<p>Using this genjutsu, the user makes the subject believe that all its wounds have been healed. It can no longer smell blood, feel pain, or see open wounds on its body. The user grants 2 Temporary hit points per level + 1 additional point per 2 extra points of chakra spent. As soon as this technique ends, the subject loses an amount of hit points equal to what it gained (even if it would have less total hit points than it did before the technique).<br><br>The user may use this technique on up to his level in subjects without breaking concentration, though it reduces the time after concentrating by that amount, and the DC if attacked is increased by that many. You may make a save against this technique or dispel it as normal, if the subject does not wish to be healed.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Genjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Mind Affecting"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Touch",
+    "target": "",
+    "area": "",
+    "duration": "Concentration + 1 round/level",
+    "save": "Harmless (See Text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "367d895e3aaff6bf",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "133"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "0cssaAuwiwUkSKUi",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!bB4kDezdjjg4vJxU"
+}

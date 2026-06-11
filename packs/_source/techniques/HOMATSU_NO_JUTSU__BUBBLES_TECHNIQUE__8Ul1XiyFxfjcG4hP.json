@@ -1,0 +1,120 @@
+{
+  "_id": "8Ul1XiyFxfjcG4hP",
+  "name": "HOMATSU NO JUTSU (BUBBLES TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-sky-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>After blowing dozens of bubbles towards his targets, the user for the precise time to snap his fingers and cause the bubbles to explode.<br><br>Using this technique, the user is able to create exploding bubbles and blow them at his foes in the form of a deadly cone attack. Every creature caught in the cone-shaped burst suffers 7d6 points of water damage, which can be halved with a successful reflex save. In addition, any creature that fails the aforementioned reflex save must make a fortitude save or else be knocked prone from the explosive power.</p>\n\n<hr><p><b>Empower:</b> The user may spend an additional 1 point of chakra to increase the damage by 1 die, up to 1d6 per level or 15d6.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water",
+      "Hijutsu"
+    ],
+    "rank": 5,
+    "complexity": "B-Class",
+    "chakraCost": 8,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "",
+    "area": "Cone-shaped burst",
+    "duration": "Instant",
+    "save": "Reflex half, Fortitude partial",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": true,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "7cfb6ba8de51405e",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "area": "Cone-shaped burst",
+        "measureTemplate": {
+          "type": "cone",
+          "size": "30"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "7d6",
+              "types": [
+                "water"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half, Fortitude partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "153"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "E4W4cQEYAyqw6Wmy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!8Ul1XiyFxfjcG4hP"
+}

@@ -1,0 +1,109 @@
+{
+  "_id": "Zot5aeM1NuPjHsmb",
+  "name": "ADVANCED SEAL: KAGAMI SHASAI (ADVANCED SEAL: MIRROR BOND)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/shielding-acid-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, X (see text)</p>\n\n<hr>\n\n<p>The user makes a special seal and touches a mirror, transferring the seal to the object. The seal is invisible by naked eye, but See Chakra and similar techniques can see the seal. Some Mirror Arts techniques target a \"bonded mirror\".</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Expendable Component:</b> Expendable Components -One advanced seal.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Fuinjutsu",
+    "subtype": "Advanced Seal",
+    "descriptors": [],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "Melee Touch",
+    "target": "A mirror",
+    "area": "",
+    "duration": "1day/level",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": true,
+    "compPhysical": false,
+    "compXpCost": true,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "13cf532217b40926",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "day",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "A mirror"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "131"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "IgkEOYWCSkMEYEMi",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Zot5aeM1NuPjHsmb"
+}

@@ -1,0 +1,104 @@
+{
+  "_id": "cmq5tbKThqhXBOQD",
+  "name": "SHIKIGAMI NO MAI (DANCE OF THE SHIKIGAMI)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fireball-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>Using origami and Ninjutsu skills, you change your body and clothing into many sheets of paper allowing them to control and even reshape parts of your body with these sheets at will.<br><br>Your body and any items they currently possess may quickly be changed into tiny 8 x 11 in. pieces of paper. The paper is in the form of individual sheets and acts as normal paper for the duration of the technique except the user has control over the sheets. The paper is of equal weight as the user plus any items and gear he had with him at the time of activation. While in this form the user doesn't need to pay the material cost for any technique that requires paper.<br><br>The form enables the user to negate the cost of any Kamiton technique that requires a Material Focus of paper. The user is able to fly at a speed of 10 ft. per round with perfect maneuverability. While in this form the user takes half damage from ballistic, slashing, and piercing weapons.<br><br>The form also gives a -5 penalty on saving throws against techniques or effects that affect an area, such as many elemental techniques or grenade-like weapons. If the area effect attack does not allow a saving throw, the swarm takes double damage instead.<br><br>Avoiding an Attack (1/day): Minimum DC 21. If you succeed, you use the technique as normal, (though in this case the range is limited to 50 ft.) and you can make a Hide check to hide. You can use this technique to avoid an attack against a source with a CR of up to 15.<br><br>Success means that the user replaces himself with a mass of paper (see above) and reforms in any nonoccupied square within 30 feet away or his current land speed (whichever is shorter). Avoiding an attack must be declared before knowing the result of the attack roll. Failure means that the chakra spent trying to avoid the attack is wasted, and the technique fails. Each use of Avoiding an Attack stacks with all other techniques with effects that allow you to Avoid an Attack, such as Kawarimi no Jutsu or Shundou.</p>\n\n<hr><p><b>Requires:</b> 8 ranks Craft (Visual Arts)</p>\n<p><b>Mastery:</b> Each step allows you to use the technique to avoid an attack an additional time per day.<br><br>The first, third and fifth steps each increase the maximum CR you can avoid attacks from by 5.<br><br>The fifth step allows you to use this technique when not avoiding an attack as many times per encounter as you wish, though no more than once per round.<br><br>The fifth step of mastery allows the user to increase the cost to 6 when avoiding an attack, to avoid an attack from a CR up to his level or 25, whichever is lower. The fifth step in mastery also allows the user to leave any types of exploding tags in his possession intact as well as control them as if they were paper created by this technique.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Kamiton",
+    "descriptors": [
+      "Paper"
+    ],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 6,
+    "activation": "full",
+    "range": "Personal",
+    "target": "You",
+    "area": "",
+    "duration": "1 round / level or Instantaneous",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "13c2d98b0ef92753",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "181"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "4Piof4fIPi2kIP2N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!cmq5tbKThqhXBOQD"
+}

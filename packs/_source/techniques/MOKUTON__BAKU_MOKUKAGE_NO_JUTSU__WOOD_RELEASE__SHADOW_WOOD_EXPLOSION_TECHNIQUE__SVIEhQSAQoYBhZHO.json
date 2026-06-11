@@ -1,0 +1,119 @@
+{
+  "_id": "SVIEhQSAQoYBhZHO",
+  "name": "MOKUTON: BAKU MOKUKAGE NO JUTSU (WOOD RELEASE: SHADOW WOOD EXPLOSION TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 15</p>\n<p><b>Chakra Cost:</b> 40</p>\n\n<p><b>Learn DC:</b> 32 | <b>Successes:</b> </p>\n<p><b>Perform:</b> 17 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>This technique is one of the strongest and most feared mass destruction techniques ever created. This Mokuton technique concentrates a huge amount of chakra on a giant tree created by the Jukai Koutan technique, and ignites it on a massive explosion. The explosion covers the entire area affected by the Jukai Koutan technique is equal to the distance of the tree's roots, and deals 25d6 points of fire damage to any creature caught on the area of effect, which can be halved by a successful reflex saving throw. A creature immobilized by the Jukai Koutan is not allowed a Reflex save to halve the damage dealt by the explosion.</p>\n\n<hr><p><b>Requires:</b> Jukai Koutan (t)</p>\n<p><b>Material Focus:</b> One giant tree created by the Jukai Koutan technique.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mokuton",
+    "descriptors": [
+      "Wood",
+      "Hashirama Senju Hijutsu"
+    ],
+    "rank": 15,
+    "complexity": "SS-Class",
+    "chakraCost": 40,
+    "activation": "full",
+    "range": "Long (30 ft. + 15 ft./2 levels)",
+    "target": "Area affected by Jukai Koutan",
+    "area": "Special (See text)",
+    "duration": "Instant",
+    "save": "Reflex halves (See text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "b630dfd659e904af",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "long"
+        },
+        "target": {
+          "value": "Area affected by Jukai Koutan"
+        },
+        "area": "Special (See text)",
+        "damage": {
+          "parts": [
+            {
+              "formula": "25d6",
+              "types": [
+                "fire"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "168"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "9rSlDwcB3pcvkhx7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!SVIEhQSAQoYBhZHO"
+}

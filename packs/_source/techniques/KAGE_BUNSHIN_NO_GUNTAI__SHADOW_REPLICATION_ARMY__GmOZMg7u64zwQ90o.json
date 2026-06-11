@@ -1,0 +1,101 @@
+{
+  "_id": "GmOZMg7u64zwQ90o",
+  "name": "KAGE BUNSHIN NO GUNTAI (SHADOW REPLICATION ARMY)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/dodge.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> M, F, Mas</p>\n\n<hr>\n\n<p>The user has become adept at using his shadow clones in combat maneuvers and skilled in deceiving his opponents via these clones.<br><br>When the user has at least two clones (Kage Bunshin or Tajuu Kage Bunshin) active, he may enter this tactical style allowing him to add his bonus to feints equal to his mastery level in Kage Bunshin or Tajuu Kage Bunshin respectively (+1 for competence, +2 for proficiency, +5 for Mastery). The user also adds this same bonus to checks made to avoid being detected as the origin of the clones by his opponents.<br><br>The user also adds half of that bonus (rounded up, minimum of +1) as a cover bonus to defense when at least one clone stands directly between himself and his attack.<br><br>Also, if the user takes a full round action (Knowledge Tactics check, DC 15) to organize and lead his clones in battle, they all gain a bonus equal to half your mastery level (rounded down, minimum of +0) as a competence bonus to attacks that round.</p>\n\n<hr><p><b>Requires:</b> Kage Bunshin no jutsu (1) (t), Taijutsu 7 ranks, Knowledge (Tactics) 3 ranks</p>\n<p><b>Material Focus:</b> At least two active Kage Bunshin or Tajuu Kage Bunshin</p>\n<p><b>Mastery:</b> At the third level of mastery in this stance, the user can choose to increase the chakra cost by 1 to enter this stance as a move action.<br><br>At the fifth level of mastery in this stance, the user can choose to increase the chakra cost by 2 to enter this stance as a swift action.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Stance",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "07897cd1df1a76ca",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "197"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "QyK6EcaOmKW2q2ye",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!GmOZMg7u64zwQ90o"
+}

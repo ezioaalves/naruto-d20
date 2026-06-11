@@ -1,0 +1,103 @@
+{
+  "_id": "lKGlqJegI5cnxkSM",
+  "name": "SHUUGYOU: KAWASU (TRAINING: DODGE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/improved-lighting-reflexes.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Intensive full contact training between a student and a teacher. The student dodges as the teacher throws punches and tries to hit the student full force. This intensive training is reserved for medical ninja of Jounin level because of the training style and how medical ninja must not be hit so they can heal their comrades in battle. Upon completion of this training the student gains a +1 Dodge bonus to Defense and a +1 bonus to his Reflex saves. In addition, after every day of this training the character takes 6d6 lethal damage, which can kill the character.<br><br>Extended Training -A character who already has a base Reflex save of 10 or greater must double the amount of time to gain the training benefits of this technique.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Taijutsu",
+    "descriptors": [],
+    "rank": 9,
+    "complexity": "A-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "4dcd3071a02fbb28",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "6d6",
+              "types": []
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "210"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "19Bnagm71undFCv2",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!lKGlqJegI5cnxkSM"
+}

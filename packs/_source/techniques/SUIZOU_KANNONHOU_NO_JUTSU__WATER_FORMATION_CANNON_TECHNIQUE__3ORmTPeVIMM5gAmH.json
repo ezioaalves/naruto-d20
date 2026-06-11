@@ -1,0 +1,118 @@
+{
+  "_id": "3ORmTPeVIMM5gAmH",
+  "name": "SUIZOU KANNONHOU NO JUTSU (WATER FORMATION CANNON TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rip-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>This technique allows the user to spew out a large quantity of water and shoot it out at his opponent, effectively drenching him in it. The ray, if it hits, deals 1d4 points of water damage per 5 liters created and forces the target to make a Fortitude save or be knocked back 1d4x5 feet and fall prone. The water only last for 3 rounds, and cannot be used to quench thirst, but is otherwise pure and drinkable.<br><br>Using this technique in a hot, dry environment (such as a desert) deals 2d6 points of damage to the user. This technique can only be used once per day.</p>\n\n<hr><p><b>Effect:</b> Ray, creates 5 liters of water/level</p>\n<p><b>Mastery:</b> The second and fourth step of mastery in this technique each allow the technique to be used an additional time each day. The fifth step of mastery increases the damage die to 1d6 and the knock back effect to 1d6x5.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water"
+    ],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "3 rounds (D)",
+    "save": "Fortitude Partial",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "cf20ced218bb0ecc",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "close"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d4",
+              "types": [
+                "water"
+              ]
+            },
+            {
+              "formula": "2d6",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude Partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "186"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "okYyKEAuqIQs6g6y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!3ORmTPeVIMM5gAmH"
+}

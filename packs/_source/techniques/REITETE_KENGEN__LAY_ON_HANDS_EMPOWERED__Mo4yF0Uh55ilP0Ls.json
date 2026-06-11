@@ -1,0 +1,108 @@
+{
+  "_id": "Mo4yF0Uh55ilP0Ls",
+  "name": "REITETE KENGEN (LAY ON HANDS EMPOWERED)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/enchant-blue-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 16 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>This technique is an advanced form of the Reiki technique, allowing the user to funnel more chakra into the subject's chakra coils.<br><br>The subject gains 10 points of chakra, divided at the user's discretion between the subject's chakra pool and reserves. The user can prevent chakra depletion in the subject if this technique is used within 5 minutes of suffering the condition. This technique can only be used on a single creature at a time, and can be used no more than 2 times per day. A character with 5 or more levels in Elementalist (Doton) class can reverse petrification from a creature by using this technique.<br><br>While using Reitete no Jutsu, the user can perform this technique while possessing a target creature to transfer chakra to said target.</p>\n\n<hr><p><b>Requires:</b> Chakra Control 14 ranks</p>\n<p><b>Mastery:</b> The fifth step of mastery in this technique allows the user to double the amount of chakra he can provide the subject, but at triple the chakra cost. It can only be attained at ECL 16 or higher.<br><br>SEIREI HENKOU: KINZOKU MANE NO J UTSU (SOUL MODIFICATION: METAL MIMICRY TECHNIQUE)<br><br>Chakra Control (Spirit) (Requires Seireiha (3)) Rank: 3 (C); Learn DC: 18; 2 successes; Perform: 5 (DC 16); Time: 1 move action; Components: C; Range: Personal; Effect: Modifies 1 Soul Edge; Duration: 1 Round/level; Save: None; Cost: 2.<br><br>Most Soul Edges are said to be shapeless and formed by the concentration of chakra; however, few who master the Soul Edge Technique are able to change its own form and simulate different substances. With the Kinzoku Mane no Jutsu the user may select any type of special substance for his Soul Edge to simulate.<br><br>The Soul Edge remains weightless and considered Chakra-enhanced, but the technique also allows it to bypass certain damage reduction depending on substance chosen. Substances may include Silver, Adamantine, Cold Iron, Darkwood, etc. Certain substances may be disa llowed due to DM's discretion.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Chakra Control",
+    "subtype": "Spirit",
+    "descriptors": [
+      "Lost Hijutsu"
+    ],
+    "rank": 10,
+    "complexity": "A-Class",
+    "chakraCost": 10,
+    "activation": "minute",
+    "range": "Touch (See Text)",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instantaneous (see text)",
+    "save": "Will negates (harmless) (see text)",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "7ca0cf7d4812b6b2",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "save": {
+          "type": "will",
+          "description": "Will negates",
+          "harmless": true
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "128"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "CyScE8Q2WMIgaII8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Mo4yF0Uh55ilP0Ls"
+}

@@ -1,0 +1,119 @@
+{
+  "_id": "dPGA3xW3kcejkAkY",
+  "name": "KAMI SHURIKEN SHIGURE (PAPER SHURIKEN SHOWER)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fireball-eerie-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> F, Mas</p>\n\n<hr>\n\n<p>The user creates a small barrage of paper shuriken and kunai. Any creature and unattended object in the area of effect suffers 2d6 points of piercing damage, halved with a successful Reflex save. The cone's length cannot exceed 30 feet.<br><br>This technique cannot solidify more than one Chakrabearing object (like an exploding tag or advanced seal) among the objects it affects. If such an object is thrown and hits a creature, they have a -4 Reflex save against the object, unless it is removed before it activates.</p>\n\n<hr><p><b>Requires:</b> 4 ranks Craft (Visual Arts)</p>\n<p><b>Mastery:</b> Each step increases the damage by +1. Material Focus -4 pages of paper.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Kamiton",
+    "descriptors": [
+      "Paper"
+    ],
+    "rank": 2,
+    "complexity": "C-Class",
+    "chakraCost": 3,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "Cone-shaped burst from the user",
+    "duration": "Instant",
+    "save": "Reflex half",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "45d9e808e79c68fa",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "area": "Cone-shaped burst from the user",
+        "measureTemplate": {
+          "type": "cone",
+          "size": "30"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d6",
+              "types": [
+                "piercing"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "159"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "nQHzwnOnCQLlUq0X",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!dPGA3xW3kcejkAkY"
+}

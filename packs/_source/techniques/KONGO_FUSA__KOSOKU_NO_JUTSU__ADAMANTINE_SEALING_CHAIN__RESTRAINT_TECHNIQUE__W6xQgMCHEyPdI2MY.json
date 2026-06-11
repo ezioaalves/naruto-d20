@@ -1,0 +1,117 @@
+{
+  "_id": "W6xQgMCHEyPdI2MY",
+  "name": "KONGO FUSA: KOSOKU NO JUTSU (ADAMANTINE SEALING CHAIN: RESTRAINT TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/link-blue-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Fuinjutsu</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, F, M</p>\n\n<hr>\n\n<p>Using the adamantine sealing chains, the user can temporarily immobilize a target.<br><br>The user makes a touch attack against a target creature within range. If successful, the target is tightly bound by the chain and becomes immobilized. This technique last for as long as the user can concentrate, plus 1d3 rounds. However, the user must remain in contact with the chain for the duration of this technique. If the chain leaves the user's grasp for whatever reason, the chain instantly dissipates and the target is freed. Alternatively, the target can attempt to free himself each round by making a Strength check (DC 25).<br><br>Once per round as an attack action, the user can tighten the chain around the subject, dealing 2d4 damage. Doing this requires a Concentration check (DC 15). Failing the check means the attack does not occur and the Strength check requirement to break free is reduced by 5 until the next round.<br><br>If the user takes damage while concentrating on this technique, he must succeed a Concentration check equal to 10 + the damage taken in order to maintain the technique.</p>\n\n<hr><p><b>Requires:</b> Kongo Fusa (3), Chakra Control 9 ranks</p>\n<p><b>Material Focus:</b> An active adamantine sealing chain, as per Kongo Fusa.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Fuinjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Uzumaki Clan Hijutsu"
+    ],
+    "rank": 5,
+    "complexity": "B-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One creature",
+    "area": "",
+    "duration": "Concentration, plus 1d3 rounds (D)",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "5c647a7b60e9ccbe",
+        "name": "Use",
+        "actionType": "rwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d4",
+              "types": []
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "132"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "qYSm48IM6uAA6ggC",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!W6xQgMCHEyPdI2MY"
+}

@@ -1,0 +1,105 @@
+{
+  "_id": "qMeEssafnHzsx1ux",
+  "name": "SHOTON: KESSHO GOKAKURO (CRYSTAL RELEASE: CRYSTAL PENTAGONAL PRISON)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/vines-jade-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>As Shoton: Suisho Ro no Jutsu except as above.</p>\n\n<hr><p><b>Requires:</b> Suisho Ro no Jutsu (5)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shoton",
+    "descriptors": [],
+    "rank": 10,
+    "complexity": "S-Class",
+    "chakraCost": 15,
+    "activation": "full",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "20 ft. radius",
+    "area": "",
+    "duration": "1 round/2 levels",
+    "save": "Reflex Negate, Fortitude Half",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "d38084a44197b69f",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "target": {
+          "value": "20 ft. radius"
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex Negate, Fortitude Half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "183"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "ml4HjrneeFwnZydH",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!qMeEssafnHzsx1ux"
+}

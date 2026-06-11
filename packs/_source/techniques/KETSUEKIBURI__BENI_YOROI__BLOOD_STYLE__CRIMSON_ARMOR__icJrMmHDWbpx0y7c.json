@@ -1,0 +1,107 @@
+{
+  "_id": "icJrMmHDWbpx0y7c",
+  "name": "KETSUEKIBURI: BENI YOROI (BLOOD STYLE: CRIMSON ARMOR)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-blue-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> S, P (see text)</p>\n\n<hr>\n\n<p>Your blood is expelled from your skin and covers either you or a creature you touch. The blood hardens and gives the target a +3 armor bonus to Defense (This does not stack with any type of armor). If the recipient of the technique is not the caster they must make a Fortitude save (DC 20) or become sickened for the duration of the technique. When the duration expires, the blood becomes gaseous and flows harmlessly back to the caster where it re-liquefies.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Blood Training (a)</p>\n<p><b>Expendable Component:</b> Expendable Component -The user takes 2 points of Constitution damage when casting this technique and loses HP and Chakra accordingly. The ability damage, HP, and Chakra lost are regained when the user reobtains their blood.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 5,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "Touch (see text)",
+    "target": "One creature",
+    "area": "",
+    "duration": "1 round/level",
+    "save": "Will save resists (Harmless)",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": true,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": true,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "ee24b5f4e7a864be",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "save": {
+          "type": "will",
+          "description": "Will save resists",
+          "harmless": true
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "159"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "Ss6sEWui4m2KO0ag",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!icJrMmHDWbpx0y7c"
+}

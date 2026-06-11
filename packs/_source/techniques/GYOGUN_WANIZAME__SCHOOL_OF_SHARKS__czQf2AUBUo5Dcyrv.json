@@ -1,0 +1,102 @@
+{
+  "_id": "czQf2AUBUo5Dcyrv",
+  "name": "GYOGUN WANIZAME (SCHOOL OF SHARKS)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/slice-orange-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The user can summon any number of sharks to a maximum of one per two levels of the user. Each frilled shark in the school is proficient with whatever weapon it spawns with and has a 1d4 bite attack if disarmed. They can move 30 ft. in a round, have 6 HP, 12 AC, +1 to all saves, and +1 attack bonus with no other bonuses to speak of. They are small and can only perform basic movements and attacks, being fairly unintelligent and untrained in anything more advanced.<br><br>Each shark is summoned with a random weapon from the following chart:<br><br>Dagger<br><br>Kodachi<br><br>Kama<br><br>Knuckle Blade<br><br>Shortsword<br><br>Katana<br><br>Sabre<br><br>Hand Scythe</p>\n\n<hr><p><b>Requires:</b> Blood Pact (Sharks) (f) and Kuchiyose no Jutsu (t)</p>\n<p><b>Effect:</b> Up to 1 Summoned Shark per 2 levels</p>\n<p><b>Expendable Component:</b> Expendable Component -Some of the user's blood and a summoning scroll for the Shark blood pact.</p>\n<p><b>Mastery:</b> The third and fifth step of mastery grant a +1 bonus to the school of sharks' HP, AC, Saves, Attack, and Damage.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water",
+      "Hoshigaki Hijutsu"
+    ],
+    "rank": 10,
+    "complexity": "A-Class",
+    "chakraCost": 2,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "1 round / level",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": true,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "75eb41ef87cdeba1",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "close"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "149"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "QAKo8sWgAqkK8GyI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!czQf2AUBUo5Dcyrv"
+}

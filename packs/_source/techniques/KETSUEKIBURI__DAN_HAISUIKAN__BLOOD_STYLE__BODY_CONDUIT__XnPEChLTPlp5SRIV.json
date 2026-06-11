@@ -1,0 +1,103 @@
+{
+  "_id": "XnPEChLTPlp5SRIV",
+  "name": "KETSUEKIBURI: DAN HAISUIKAN (BLOOD STYLE: BODY CONDUIT)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-red-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>The user channels electricity through his body and fires it towards an enemy. This jutsu may be used when targeted by any Raton technique that deals damage. You may spend any amount of chakra to gain 1 point of electricity resistance per point spent (you must choose the amount of chakra you wish to spend after you know if the attack hits or after you make the save, but before you know how much damage it deals). After the attack is resolved, you may fire a bolt of electricity, a ranged touch attack, at an opponent within range, dealing 1 point of electricity damage for every point of damage prevented by this technique.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Raiton",
+    "descriptors": [
+      "Electric"
+    ],
+    "rank": 8,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "immediate",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One enemy",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "3e3fbc585b0d4f49",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "immediate",
+          "unchained": {
+            "type": "reaction",
+            "cost": 0
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One enemy"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "160"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "kmQEcKaeQMMkMWam",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!XnPEChLTPlp5SRIV"
+}

@@ -1,0 +1,114 @@
+{
+  "_id": "e9P5tQcQ0z1u3kUx",
+  "name": "KAMI NO ARASHI (PAPER STORM)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-sky-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, F, H</p>\n\n<hr>\n\n<p>This technique allows the user control over a mass of paper at his disposal. The swarm occupies a 5 ft. wide by 10 ft. long space. It moves at the user's will within the technique's range at a flying speed of 50 feet with Perfect maneuverability. If it flies through a square occupied by a creature(s), said creature suffers 2d6 points of slashing damage, and is allowed a reflex save to take only half damage.<br><br>The swarm is completely unaffected by attacks that target a single creature, has a Defense of 18 and 10 hit points. It cannot be caught flat-footed, entangled, stunned, poisoned, suffer ability drain or damage or affected by any effect requiring a will or fortitude save. It shares the user's Reflex save, however, and evasion or improved evasion if he has it.<br><br>The swarm will continue to move according to the user's will until it is either destroyed, leaves the technique's range, the user dies or stop concentrating.<br><br>This technique cannot solidify more than one Chakrabearing object (like an exploding tag or advanced seal) among the objects it affects. If such an object hits a creature, they have a -4 Reflex save against the object, unless it is removed before it activates.</p>\n\n<hr><p><b>Requires:</b> 7 ranks Craft (Visual Arts)</p>\n<p><b>Material Focus:</b> 25 pages of paper.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Kamiton",
+    "descriptors": [
+      "Paper"
+    ],
+    "rank": 5,
+    "complexity": "B-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "Concentration (up to 1 round/level)",
+    "save": "Reflex half, Reflex negates (see text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "61bc8e31249f570c",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d6",
+              "types": [
+                "slashing"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half, Reflex negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "156"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "i0rnLBkIQmXIMCMu",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!e9P5tQcQ0z1u3kUx"
+}

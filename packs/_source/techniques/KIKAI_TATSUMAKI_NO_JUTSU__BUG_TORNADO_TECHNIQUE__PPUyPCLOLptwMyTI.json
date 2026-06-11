@@ -1,0 +1,115 @@
+{
+  "_id": "PPUyPCLOLptwMyTI",
+  "name": "KIKAI TATSUMAKI NO JUTSU (BUG TORNADO TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fire-arrows-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H, F, E</p>\n\n<hr>\n\n<p>A deadly attack created by the Aburame as a way to quickly eliminate a single opponent by sending multiple swarms of symbiotes at the opponent where they attack in a swirling motion, much like a tornado. The opponent suffers 1d4 points of chakra damage per swarm, and must succeed a fortitude save or be nauseated for 1 round.<br><br>The cost is 8+2 chakra for each additional swarm, up to a max of 1 per 3 levels of the user.</p>\n\n<hr><p><b>Requires:</b> ; Kikai Host</p>\n<p><b>Mastery:</b> At first, third and fifth step mastery, gain +1 chakra damage per swarm.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Aburame Hijutsu"
+    ],
+    "rank": 5,
+    "complexity": "B-Class",
+    "chakraCost": 8,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One Creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Fort partial",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "6546d6fbc09b7ce3",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One Creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d4",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fort partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "162"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "Ss6sEWui4m2KO0ag",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!PPUyPCLOLptwMyTI"
+}

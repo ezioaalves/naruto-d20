@@ -1,0 +1,99 @@
+{
+  "_id": "xfWB0iaT2A5L2Mwi",
+  "name": "SHOTON: KURENAI NO KAJITSU (CRYSTAL RELEASE: CRIMSON FRUIT)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-sky-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>By way of this fairly simple technique, the user surrounds the target area with a crystal dome that can be used for protection. This dome has a hardness of 10, 30 hit points, Earth and Water resistance 5 but takes double damage from techniques or abilities with the Sonic descriptor.</p>\n\n<hr><p><b>Effect:</b> 10-ft. radius circle</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shoton",
+    "descriptors": [],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "1 minute/level",
+    "save": "None (willing)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "12aebe5e770e813f",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "close"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "183"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "4mApm0sFAM34k8x7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!xfWB0iaT2A5L2Mwi"
+}

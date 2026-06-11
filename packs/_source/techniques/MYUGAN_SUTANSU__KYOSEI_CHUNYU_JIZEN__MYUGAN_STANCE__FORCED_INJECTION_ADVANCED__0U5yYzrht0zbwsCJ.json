@@ -1,0 +1,113 @@
+{
+  "_id": "0U5yYzrht0zbwsCJ",
+  "name": "MYUGAN SUTANSU: KYOSEI CHUNYU JIZEN (MYUGAN STANCE: FORCED INJECTION ADVANCED)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/slice-sky-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>The user must have the Shitatchi bloodline ability activated in order to perform this technique.<br><br>This technique is simply stronger form of the original Kyosei Chunyu technique. The user makes an unarmed attack that deals normal damage. And like before, the user imbues chakra into an isolated body part.<br><br>However, the user may now imbue said chakra into a larger area of the body adequately. In addition to that, the user now imbues 1d6 (+1 per 4 levels) points of chakra into the opponent's body causing ld6 damage per chakra imbued. The chakra cost of this technique is 2 + 1 per point of imbued chakra.</p>\n\n<hr><p><b>Requires:</b> Shitatchi (a); Kyosei Chunyu</p>\n<p><b>Mastery:</b> At every odd level of mastery, the amount of chakra imbued increases by 1 die size. (d8, d10, d12) The damage die remains the same.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Myugan Hijutsu"
+    ],
+    "rank": 10,
+    "complexity": "A-Class",
+    "chakraCost": 2,
+    "activation": "attack",
+    "range": "Melee",
+    "target": "One Creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Fortitude half",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "d17bddc2e20a54ea",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One Creature"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude half"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "201"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "a2sUkKESAyk2K6mG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!0U5yYzrht0zbwsCJ"
+}

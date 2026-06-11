@@ -1,0 +1,112 @@
+{
+  "_id": "Da9tvCa1Uj9OXvb6",
+  "name": "HARI SENBON (NEEDLE HAIR SENBON)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-sky-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H, E</p>\n\n<hr>\n\n<p>This jutsu can be used whilst Hari Jizou is being used or other defensive hair techniques are being used. The user fires their strengthened hair like tiny needles in either a cone shape or an area of affect around the user. It can hit no more than 2 targets doing 3d6 + 5 points of damage to each target and no one can be targeted more than once.</p>\n\n<hr><p><b>Requires:</b> Hari Jizou (t)</p>\n<p><b>Empower:</b> You may increase the number of targets by increasing the chakra cost by one per added target.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "889d4aee39f81b95",
+        "name": "Use",
+        "actionType": "rwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "3d6+5",
+              "types": []
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "150"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "c0muyEGyCeY26cWy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Da9tvCa1Uj9OXvb6"
+}

@@ -1,0 +1,109 @@
+{
+  "_id": "Bnalys9mQ1nPcajJ",
+  "name": "WATOJUTSU: KAISHI TOU SEI (WATOJUTSU: SPIRAL PIERCE SWORD RUSH)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rip-acid-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b>  | <b>Successes:</b> </p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> M, F, Mas</p>\n\n<hr>\n\n<p>This sole counter technique of Wato style works by blocking the enemy's attack using end of the hilt, and then launching a counterattack empowered by strength of blocked attack. Kaishi Tou Sei can be used as an instant action, once per round just before an enemy attack or any effect that requires an attack roll (such as an attack or a grapple attempt), as long as the user isn't flat footed, denied his Dexterity bonus to Defense, unaware of the attacker and his opponent's ECL is not higher than 5. The Perform DC is equal to the opponent's attack roll (minimum 18), and the user may not convert the Chakra Cost into hit points. This must be declared before the opponent rolls his attack, and will not provoke an attack of opportunity. If the user cannot move, he can't use this technique. If the attack is a confirmed critical, the user suffers a -4 penalty to his Taijutsu check to evade the attack. Attacks originating from Chakra Control or Ninjutsu techniques can't be blocked this way.<br><br>If the user succeeds his perform check he completely evades the attack, though his sword suffers 50% of the damage he would normally suffer, and gains an immediate Attack of Opportunity on his opponent with a bonus to attack and damage ro lls equal to opponent's strength bonus. If the opponent used Power Attack during the blocked attack the Attack of Opportunity also gains 50% of bonus to damage opponent gained using this feat.<br><br>If the sword used wasn't a watou damage suffered from blocking the attack ignores weapons hardness. (If the sword is destroyed by the damage, the attack is still blocked but the cou nterattack can't be launched).</p>\n\n<hr><p><b>Requires:</b> : Any two Watou Jutsu techniques</p>\n<p><b>Mastery:</b> The user cannot attain a mastery in this technique above his own ECL category (see below). The first step of mastery in this technique allows the character to evade attacks from opponents whose ECL are up to 10 as an instant action, but evading a character from an ECL 6 to 10 costs 10 points of Chakra that can't be converted to hit points.<br><br>The second step of mastery in this technique allows the character to evade attacks from opponents whose ECL are up to 15 as an instant action, but evading a character from an ECL 11 to 15 costs 15 points of Chakra that can't be converted to hit points.<br><br>The third step of mastery in this technique allows the character to evade attacks from opponents whose ECL are up to 20 as an instant action, but evading a character from an ECL 16 to 20 costs 20 points of Chakra that can't be converted to hit points.<br><br>The fourth step of mastery in this technique allows the character to evade attacks from opponents whose ECL are up to 25 as an instant action, but evading a character from an ECL 21 to 25 costs 25 points of Chakra that can't be converted to hit points.<br><br>The fifth step of mastery in this technique increases users number of Attacks of Opportunity in round by 1 for purposes of performing this technique.<br><br>Material Focus -The user's Wato, katana, double katana or hansori.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Lost Hijutsu"
+    ],
+    "rank": 1,
+    "complexity": "A-Class",
+    "chakraCost": 5,
+    "activation": "immediate",
+    "range": "Melee",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "f03770a2c716fa2b",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "immediate",
+          "unchained": {
+            "type": "reaction",
+            "cost": 0
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "205"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "8cyAIs6keIieeOIE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Bnalys9mQ1nPcajJ"
+}

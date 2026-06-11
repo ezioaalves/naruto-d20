@@ -1,0 +1,107 @@
+{
+  "_id": "hN6yHV8WjgvuQXmR",
+  "name": "ENSHIN SENPU (CENTRIFUGAL WHIRLWIND)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/greater-trip.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>The final technique developed as part of the Dangling Limb stance, this powerful whirlwind attack utilizes centrifugal force to hit multiple foe with surprisingly strong strikes.<br><br>The user performs this technique as a full-attack action that is considered a charge. He is able to target one creature per 2 levels (maximum 5) that are within his base movement speed. The user initiates a spinning attack that provokes an attack of opportunity from any creatures threatening the point of origin. In what seems to be the blink of an eye, the user is able to make separate unarmed attacks against each targeted creature that all deal normal damage. After the technique ends, the user suffers the normal penalties to Defense as per a charge attack. The user is also dazed for one round after using this technique unless he succeeds a Fortitude save (DC 20) to regain his composure. The Kensui Teashi stance remains active after this technique ends regardless of the character being dazed or not.</p>\n\n<hr><p><b>Requires:</b> Taijutsu: DachiKensui Teashi</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [],
+    "rank": 5,
+    "complexity": "C-Class",
+    "chakraCost": 3,
+    "activation": "full",
+    "range": "Melee Attack (See Text)",
+    "target": "One or more creatures",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "380e3f1c1ee3797e",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One or more creatures"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "195"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "Y6G2KygqCgmo0wgw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!hN6yHV8WjgvuQXmR"
+}

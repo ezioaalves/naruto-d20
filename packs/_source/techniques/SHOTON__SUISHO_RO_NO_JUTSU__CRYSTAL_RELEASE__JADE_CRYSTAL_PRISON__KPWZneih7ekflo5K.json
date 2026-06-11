@@ -1,0 +1,115 @@
+{
+  "_id": "KPWZneih7ekflo5K",
+  "name": "SHOTON: SUISHO RO NO JUTSU (CRYSTAL RELEASE: JADE CRYSTAL PRISON)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 9</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>One of the most dangerous techniques in the Shoton style, Suishō Rō no Jutsu has the potential to instantly kill any creature unfortunate enough to be caught inside. After performing this technique successfully, the target must succeed on a Reflex Save or become completely entrapped in crystal. The crystal prison has no hardness and 20 hit points. If the prison is destroyed by an outside source or the duration expires, the target must make a Fortitude save or be immediately reduced to -10 hit points, their remains completely disintegrated. On a successful save, the target only takes 5d6 points of slashing damage from the crystal shards. At any time during the duration of this technique, the user can decide to prematurely destroy the prison and force the target to make the appropriate save. Enough damage from a technique or ability with the sonic descriptor to destroy the prison negates the need to make a save as the prison shatters harmlessly. However, the target of the prison is subject to the damage from the attack normally.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shoton",
+    "descriptors": [],
+    "rank": 7,
+    "complexity": "A-Class",
+    "chakraCost": 9,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One medium-sized or smaller creature",
+    "area": "",
+    "duration": "1 round/2 levels",
+    "save": "Reflex Negate, Fortitude Half",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "5087ccd5446a0524",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One medium-sized or smaller creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "5d6",
+              "types": [
+                "slashing"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex Negate, Fortitude Half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "184"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "ux8RU7l6MHKyoBhi",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!KPWZneih7ekflo5K"
+}

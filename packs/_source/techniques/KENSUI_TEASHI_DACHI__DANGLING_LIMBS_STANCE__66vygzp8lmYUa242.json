@@ -1,0 +1,101 @@
+{
+  "_id": "66vygzp8lmYUa242",
+  "name": "KENSUI TEASHI DACHI (DANGLING LIMBS STANCE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/blind-fight.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>The user enters this stance as a swift action that does not provoke an attack of opportunity. His arms will seemingly go limp and he will hunch over. His attacks will seem misguided and unorthodox, causing enemies to become confused by the tactic. While in this stance, the user gains a +2 to attack rolls and defense.<br><br>Any person attempting to identify the technique takes a -2 penalty to checks made to identify due to the stance's strange qualities.</p>\n\n<hr><p><b>Mastery:</b> At the 3rd and 5th stage of mastery, the user may increase the penalty from this technique by an additional -1 for an additional point of chakra to a maximum of -4.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Stance",
+    "descriptors": [],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 2,
+    "activation": "swift",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "91a2faddd6e70b43",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "swift",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "199"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "qII8Woe2A4w6qsie",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!66vygzp8lmYUa242"
+}

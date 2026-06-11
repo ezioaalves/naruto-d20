@@ -1,0 +1,104 @@
+{
+  "_id": "B8f1L3vdkIWGseBZ",
+  "name": "RESU YOUGAN KYUUTAI NO JUTSU (LESSER LAVA SPHERE TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-sky-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Yoton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> H, F</p>\n\n<hr>\n\n<p>The user spits out a series of dripping, super-heated balls of lava, which merge with pieces of earth from the terrain around them. These balls lift from the ground and surround the user, waiting to be directed.<br><br>Using their chakra, the user creates one or more spheres of lava. These spheres can then be thrown as a ranged touch attack, dealing 1d6 points of hybrid earth/fire damage. The spheres follow and surround the user, but do not hinder any attacks.</p>\n\n<hr><p><b>Material Focus:</b> 1 lb. of earth, sand, rock, or mud per projectile.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Yoton",
+    "descriptors": [
+      "Lava"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 2,
+    "activation": "move",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "(see text)",
+    "area": "",
+    "duration": "1 round/level",
+    "save": "",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "fcc37bbe9b833000",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "move",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "(see text)"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "176"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "tEFKw7m9cQS4T9KT",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!B8f1L3vdkIWGseBZ"
+}

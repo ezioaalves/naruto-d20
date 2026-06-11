@@ -1,0 +1,108 @@
+{
+  "_id": "zXdcO2ghZKKQeTHV",
+  "name": "KETSUEKIBURI: RYU REI GENSEI NO JUTSU (BLOOD STYLE: FLOWING LIFE JUTSU)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-eerie-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Medical)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H, P, E, 1 point of Constitution damage</p>\n\n<hr>\n\n<p>You use your own blood to close an ally's wounds. You take 1 point of Constitution damage and the target heals 1 Hit Point for each character level they have. At any time before either of you rest, you may forcefully regain your blood, the target loses Hit Points equal to the amount of HP this technique restored them, and you regain the Constitution damage dealt to you by this technique.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n<p><b>Empower:</b> You may spend an additional 5 chakra and 1 point of Constitution to heal the target for an additional 1 HP per character level.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Medical",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Touch",
+    "target": "One adjacent creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "abd76cf8b40d1094",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One adjacent creature"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "161"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "EeeukQUgESYoeOI6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!zXdcO2ghZKKQeTHV"
+}

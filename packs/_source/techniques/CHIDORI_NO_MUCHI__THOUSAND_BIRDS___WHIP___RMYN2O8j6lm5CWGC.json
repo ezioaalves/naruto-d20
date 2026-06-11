@@ -1,0 +1,117 @@
+{
+  "_id": "RMYN2O8j6lm5CWGC",
+  "name": "CHIDORI NO MUCHI (THOUSAND BIRDS ' WHIP )",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/air-burst-air-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, E, H, Mas</p>\n\n<hr>\n\n<p>Using considerable amounts of manipulation ability, the user extends 1 currently active Chidori or Raikiri effect into a whip creating a whole new world of possibilities. The whip does 1d6 electric damage per 2 points of chakra spent, also dealing an additional d4 of sonic damage per two electric die.<br><br>The user can use the weapon as a normal whip, with which he is automatically proficient in, except that the whip has the range nearly of a close range jutsu (maximum of 40 ft.). The whip uses a ranged touch attack to deliver its concussive blows. Also, those attempting to disarm metal weapons with the whip receive an additional +2 bonus to the disarm.<br><br>Also, the user has the option of once per round, at the expense of 1 point of chakra which cannot be converted, channeling paralyzing energy through the whip, provoking a fortitude save lest the target be paralyzed for one round. This must be declared before attacking.<br><br>Also, the user cannot have more than 1 electric die per 3 levels.</p>\n\n<hr><p><b>Requires:</b> Chidori (5), two other Chidori Jutsu, Ninjutsu 12 ranks, Chakra Control 12 ranks</p>\n<p><b>Mastery:</b> At the first level, the user receives a +1 competence bonus to attack rolls with the Chidori no Muchi.<br><br>At the third level, the user's stun effect increases its duration to d3 rounds.<br><br>At the fifth and final level of mastery, the user can take an attack of opportunity normally with the whip within half of its range (maximum of 20 feet). The user is still limited to his normal number of attack of opportunities per round.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Raiton",
+    "descriptors": [
+      "Electric"
+    ],
+    "rank": 6,
+    "complexity": "A-Class",
+    "chakraCost": 2,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One Chidori or Raikiri effect",
+    "area": "",
+    "duration": "1 round/2 level",
+    "save": "Fortitude (see text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "92b0e70caa18d473",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One Chidori or Raikiri effect"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d6",
+              "types": [
+                "electric"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "142"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "oWqc4WYc204Ye2EQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!RMYN2O8j6lm5CWGC"
+}

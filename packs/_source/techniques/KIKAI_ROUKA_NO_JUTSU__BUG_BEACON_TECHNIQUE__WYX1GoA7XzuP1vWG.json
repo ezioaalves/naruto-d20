@@ -1,0 +1,103 @@
+{
+  "_id": "WYX1GoA7XzuP1vWG",
+  "name": "KIKAI ROUKA NO JUTSU (BUG BEACON TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-orange-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> </p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> F</p>\n\n<hr>\n\n<p>It is said that the female Konchuu has a strong odor easily distinguishable to the male konchuu. With the aid of the user's Chakra, they are able, to a certain extent follow its scent over a lengthy distance without losing its trace.<br><br>By placing a female konchuu on a creature or object with a melee touch attack and a Sleight of Hand check DC 15 to hide it from view, or simply wait for the female to fly to the creatures body and hide itself, the user is able to know the direction he must go to find the creature as long as its within a mile of him. If the female Konchuu is noticed with a Spot check DC 25 and killed or the user no longer has a konchuumure in his body, the user loses any information about the location of the creature and the technique ends.<br><br>Material Focus: Once Konchuumure in his body</p>\n\n<hr><p><b>Requires:</b> ; Kikai Host(a)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Aburame Hijutsu"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 1,
+    "activation": "free",
+    "range": "1 mile",
+    "target": "You",
+    "area": "",
+    "duration": "Instant",
+    "save": "Harmless",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "e7e496ec0d7aa3db",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "free",
+          "unchained": {
+            "type": "free",
+            "cost": 0
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "You"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "161"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "MaA0ku20mCwSOc4g",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!WYX1GoA7XzuP1vWG"
+}

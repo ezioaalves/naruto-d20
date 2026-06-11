@@ -1,0 +1,99 @@
+{
+  "_id": "04gilKKQjntVbTQw",
+  "name": "YOGOSU (DEFILE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-sky-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The souls of the dead surround you, striking out against all that live.<br><br>For as long as the user concentrates solely on this technique, all living creatures within the technique's area take 1d8+1 negative energy damage at the beginning and end of their turn. The cost of this technique is paid again each round that he continues to concentrate.<br><br>If a creature dies while within the area of this technique, the user regains chakra equal to the number of Hit Dice that creature had.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Evil",
+      "Lost Kinjutsu"
+    ],
+    "rank": 9,
+    "complexity": "S-Class",
+    "chakraCost": 0,
+    "activation": "attack",
+    "range": "",
+    "target": "",
+    "area": "30 ft.",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "dbb356c6bc27890d",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "area": "30 ft."
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "186"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "sMOkGcYscAAYkYyK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!04gilKKQjntVbTQw"
+}

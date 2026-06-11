@@ -1,0 +1,105 @@
+{
+  "_id": "su4aTd3Yj1j3lrR2",
+  "name": "SHOTON: KYODAI ROKKAKU SHURIKEN (CRYSTAL: GIANT HEXAGONAL SHURIKEN)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-eerie-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>A more advanced version of Shoton: Rokkaku Shuriken, this technique creates a large shuriken, which is hurled at his opponent. The user makes a ranged attack roll with the thrown weapon at his highest attack bonus for each shuriken, dealing 2d8 points of slashing damage plus the user's strength modifier on a successful hit. The shuriken created by this technique dissolve into shimmering, fragments of crystal at the end of the round.</p>\n\n<hr><p><b>Requires:</b> Shoton: Rokkaku Shuriken (3)</p>\n<p><b>Effect:</b> Creates a large-sized shuriken</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shoton",
+    "descriptors": [],
+    "rank": 5,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "6b5bbe9d92f0fcb3",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d8",
+              "types": [
+                "slashing"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "184"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "gHDRPR6OpvaUkgvD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!su4aTd3Yj1j3lrR2"
+}

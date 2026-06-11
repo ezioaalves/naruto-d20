@@ -1,0 +1,108 @@
+{
+  "_id": "aynpdtEEAT9ka8WD",
+  "name": "NARCISSUS BACHI NO JUTSU (NARCISSUS CURSE TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-red-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> S, F, Mas</p>\n\n<hr>\n\n<p>The user forces the target looks to the mirror, catching his attention with a flow of chakra through the reflection. On a failed saving throw, the target is Fascinated and only looks to the mirror. The fascinated subject drops anything it is holding and can take no action unless threatened (see Fascinated condition). While fascinated, the user gains a +2 bonus to Charisma checks made against the subject. Rage and frenzy effects have a 5% chance per round of ending abruptly. The fascinated subject can make a Will save every round to break the effect. This technique can only work once per day on a target.<br><br>The user does not need to hold the mirror while Narcissus Bachi no Jutsu is active.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> One Mirror.</p>\n<p><b>Mastery:</b> The second and fourth step of this technique allow the user to use this technique an additional time per day against the same target.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mirror Arts",
+    "descriptors": [
+      "Mirror Arts"
+    ],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "30 feet",
+    "target": "One creature",
+    "area": "",
+    "duration": "1 round/level",
+    "save": "Will negates",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": true,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "f62978bc09d0f58f",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "save": {
+          "type": "will",
+          "description": "Will negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "173"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "6Z3F80PkTxRi021P",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!aynpdtEEAT9ka8WD"
+}

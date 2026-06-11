@@ -1,0 +1,115 @@
+{
+  "_id": "pWCsosmPjivk8SA5",
+  "name": "JOKATON: KAMI NO BAKUDAN (PURIFICATION RELEASE: DIVINE BOMB)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-red-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Jokaton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> H, E, Mas</p>\n\n<hr>\n\n<p>The user forms a giant orb of condensed purification chakra infused with normal chakra that quickly travels in a straight 10-foot-wide line and can pass through creatures and unattended objects as it moves until it has reached its maximum range. Any creature in the line of effect suffers 7d8 damage, which can be halved with a successful reflex save.</p>\n\n<hr><p><b>Requires:</b> Purification Release (f)</p>\n<p><b>Empower:</b> The user can spend an additional 1 point of chakra to increase the damage by 1, up to 1 die per level or 15d8.</p>\n<p><b>Mastery:</b> At fifth level of mastery in this technique, the user may designate up to 1 creature per 4 levels as purified allies that remain unaffected by this technique regardless of being in the line of effect. The user must spend an instant action to designate these creatures as allies before firing the orb.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Jokaton",
+    "descriptors": [],
+    "rank": 5,
+    "complexity": "B-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels) (20ft. + 5ft./2 levels)",
+    "target": "",
+    "area": "10ft.-wide line",
+    "duration": "Instant",
+    "save": "Reflex half (see text)",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "976c995df3977814",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "area": "10ft.-wide line",
+        "measureTemplate": {
+          "type": "ray",
+          "size": "30"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "7d8",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "151"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "EIwb2wxMAgSA8OUK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!pWCsosmPjivk8SA5"
+}

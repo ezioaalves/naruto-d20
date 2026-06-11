@@ -1,0 +1,113 @@
+{
+  "_id": "XfS2HQZgCVnpExLV",
+  "name": "SEISHUKU AME RYUU: MABOROSHI SENBON AME (SILENT RAIN STYLE: ILLUSIVE NEEDLE RAIN)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fire-arrows-sky-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H, F Range: Close</p>\n\n<hr>\n\n<p>The user of this technique makes rain water fall from the sky while having needles rain from the sky also, hidden by the rain. When the user uses the technique is creates a 10 ft. burst of rain from a square within range, the rain does not create enough water to fuel other Suiton Ninjutsu and dries within seconds at the end of the techniques duration. A creature caught within the burst takes 1d3+1 damage that can be increased by +1d3 per a point of additional chakra (maximum 5d3). By spending 2 points of chakra the user of the technique can have the burst increase in size by 5 ft. (to a maximum of 20 ft.).</p>\n\n<hr><p><b>Material Focus:</b> 10 Senbon/round.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "Burst 10 ft.",
+    "duration": "1 round/3 levels",
+    "save": "Reflex (half)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "24a44b4bb90085bb",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "close"
+        },
+        "area": "Burst 10 ft.",
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d3+1",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "178"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "YKs46qw0QmoMSkac",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!XfS2HQZgCVnpExLV"
+}

@@ -1,0 +1,109 @@
+{
+  "_id": "JVEKMLSyo8jDc3zG",
+  "name": "SEISHUKU AME RYUU: SENBON KAWARIMI (SILENT RAIN STYLE: NEEDLE BODY SUBSTITUTION)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/air-burst-air-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> H, F</p>\n\n<hr>\n\n<p>This technique functions in the same way as Kawarimi no Jutsu, except that the user leaves behinds a burst of throwing needles as well as the object he substitutes himself with.<br><br>When the user uses this technique, a 10 ft. burst of senbon dealing 2d4 damage plus any poison on the senbon appears where he once was along with object which he substituted himself with. For every additional point of chakra the user wishes to spend he can increase the damage by 2d4 (maximum 6d4). The user may move up to 30 ft. or his base land movement speed as part of this technique, whichever is lower.<br><br>Avoiding Attacks: The user performs Senbon Kawarimi as an instant action before an enemy attack roll (melee or ranged attack, touch attack, or grapple attempt) targeting him specifically. To do so, the user cannot be flat-footed or denied his Dexterity bonus to defense. Avoiding an attack costs 2 point of Chakra that can't be converted, and can be done up to 1 time per day. The attack avoided must be from a creature with of his ECL or 1, whichever is lower. The user cannot avoid an attack if he is immobilized in any way. To avoid the attack, the user must make a Perform check (as per Senbon Kawarimi, mastery counts) opposed to the opponent's attack roll (add 5 if the attack roll is a Chakra Control, Genjutsu or Ninjutsu effect, a natural 20 or a confirmed critical), minimum 17.<br><br>Success means that the user replaces himself, and the substituted object has the desired tag in the square he previously occupied. Avoiding an attack must be declared before knowing the result of the attack roll. Failure means that the chakra spent trying to avoid the attack is wasted, and the technique fails. The user requires both hands free to perform this technique. An opponent can choose to lower the value of its ECL for the purpose of allowing an opponent to evade the attack in this manner, but not increase it. Each use of Avoiding an Attack stacks with all other techniques with effects that allow you to Avoid an Attack, such as Kawarimi no Jutsu or Shundou.</p>\n\n<hr><p><b>Material Focus:</b> Senbon (10 + additional 10 for each extra point of chakra spent).</p>\n<p><b>Mastery:</b> Every step of mastery after the first allows the technique to be used an additional time per day, up to 5/day.<br><br>The first step of mastery allows the user to avoid an attack of up to his ECL or 5, whichever is lower.<br><br>The second step of mastery allows the user to increase the cost to 4 when avoiding an attack, to avoid an attack of up to his ECL or 10, whichever is lower.<br><br>The third step of mastery allows the user to increase the cost to 6 when avoiding an attack, to avoid an attack of up to his ECL or 15, whichever is lower.<br><br>The fifth step of mastery allows the user to increase the cost to 8 when avoiding an attack, to avoid an attack of up to his ECL or 20, whichever is lower.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 2,
+    "activation": "attack",
+    "range": "Personal",
+    "target": "You (See Text)",
+    "area": "",
+    "duration": "Instant",
+    "save": "(See Text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "6be1c1bb573584c5",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You (See Text)"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d4",
+              "types": []
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "179"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "IkQqUocW0qackOiK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!JVEKMLSyo8jDc3zG"
+}

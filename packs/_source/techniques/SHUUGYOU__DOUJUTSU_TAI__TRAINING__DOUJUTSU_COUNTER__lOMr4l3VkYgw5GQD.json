@@ -1,0 +1,97 @@
+{
+  "_id": "lOMr4l3VkYgw5GQD",
+  "name": "SHUUGYOU: DOUJUTSU TAI (TRAINING: DOUJUTSU COUNTER)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/great-fortitude.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>After learning this technique, the user must choose which of his eyes will develop the resistance against Doujutsu. For as long as only that eye is exposed to the effects of visual attacks, the user may spend an instant action and an action point to re-roll any failed saving throw against visual attacks, in addition to adding the result of the action point to the result of the second saving throw.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Ninjutsu",
+    "descriptors": [
+      "Deidara Hijutsu"
+    ],
+    "rank": 8,
+    "complexity": "A-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "2e30983fc0e91356",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "209"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "wCUrO8Sg5KTef9j2",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!lOMr4l3VkYgw5GQD"
+}

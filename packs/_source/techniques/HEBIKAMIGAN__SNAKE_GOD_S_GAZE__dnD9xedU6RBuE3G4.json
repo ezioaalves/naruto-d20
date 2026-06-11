@@ -1,0 +1,116 @@
+{
+  "_id": "dnD9xedU6RBuE3G4",
+  "name": "HEBIKAMIGAN (SNAKE GOD'S GAZE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-eerie-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Doton, Doujutsu)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>The curse of the snake god flows through the user's eyes and into the target. The target's blood thickens, senses dull and nerves deaden as they're afflicted with the user's poisonous chakra. The poisonous chakra deals 3d6 Doton damage to the target. If a target takes damage from this ability, then they must make a Fortitude saving throw. On a failure, the target is stunned for 1 round per 4 levels of the user.</p>\n\n<hr><p><b>Requires:</b> Petrifying Glare (a)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Doton, Doujutsu",
+    "descriptors": [
+      "Earth",
+      "Euryale Cybele Hijutsu"
+    ],
+    "rank": 7,
+    "complexity": "A-Class",
+    "chakraCost": 8,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One creature",
+    "area": "",
+    "duration": "1 round/4 levels",
+    "save": "Fortitude Partial",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "ea178c2d5110437f",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "3d6",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude Partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "153"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "8iyB1uiBXSmWZC18",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!dnD9xedU6RBuE3G4"
+}

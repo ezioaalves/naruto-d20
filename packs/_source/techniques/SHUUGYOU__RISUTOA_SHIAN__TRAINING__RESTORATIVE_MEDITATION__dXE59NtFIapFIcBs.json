@@ -1,0 +1,95 @@
+{
+  "_id": "dXE59NtFIapFIcBs",
+  "name": "SHUUGYOU: RISUTOA SHIAN (TRAINING: RESTORATIVE MEDITATION)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/improved-initiative.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Chakra is a ninja's most important tool, and as such, being able to regain chakra during sleep is very important. This training involves a special form of meditation used when sleeping. After finishing the training, the user can enter a deep REM-like sleep, that helps restore chakra reserves better than normal sleep. The user uses Constitution or Wisdom (whichever they derive their bonus chakra pool from) to determine chakra reserve recovered in addition to their normal recovery based on level.<br><br>The technique does not cost any chakra, but it does require the user have at least 1/10th of its original chakra.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Chakra Control",
+    "descriptors": [],
+    "rank": 8,
+    "complexity": "B-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "dc4ec8ff37421324",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "212"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "UUEQcmsiySwkiEyK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!dXE59NtFIapFIcBs"
+}

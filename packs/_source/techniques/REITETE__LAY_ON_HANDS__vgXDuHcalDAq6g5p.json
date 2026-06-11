@@ -1,0 +1,108 @@
+{
+  "_id": "vgXDuHcalDAq6g5p",
+  "name": "REITETE (LAY ON HANDS)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/heal-jade-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>The user lays his hand on the target's chest and gently allows his chakra to seep into its chakra coils and be absorbed.<br><br>The subject gains 2 points of chakra. This technique can only be used on a single creature once per day. A character with 5 or more levels in the Elementalist (Doton) advanced class can reverse the petrification from a creature by using this technique.<br><br>While using Reitete no Jutsu, the user can perform this technique while possessing a target creature to transfer chakra to said target.</p>\n\n<hr><p><b>Requires:</b> Chakra Control 9 ranks</p>\n<p><b>Mastery:</b> The fifth step of mastery in this technique allows the user to replenish the subject's chakra reserve by the same amount instead of its chakra pool, and prevent chakra depletion if used within 5 minutes of suffering the condition. It can only be obtained at ECL 15 or higher.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Chakra Control",
+    "subtype": "Spirit",
+    "descriptors": [
+      "Lost Hijutsu"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "minute",
+    "range": "Touch (See Text)",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instantaneous (see text)",
+    "save": "Will negates (harmless) (see text)",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "8070ddb658c6ef75",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "save": {
+          "type": "will",
+          "description": "Will negates",
+          "harmless": true
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "127"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "yee0A0CCEuIUYEao",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!vgXDuHcalDAq6g5p"
+}

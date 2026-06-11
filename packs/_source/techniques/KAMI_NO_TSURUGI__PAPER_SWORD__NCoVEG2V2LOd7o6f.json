@@ -1,0 +1,101 @@
+{
+  "_id": "NCoVEG2V2LOd7o6f",
+  "name": "KAMI NO TSURUGI (PAPER SWORD)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-eerie-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>The user crafts any melee weapon he is proficient with out of a mass of paper and chakra. The paper weapon is treated as properly sized to the user, and can only be sundered by chakra-enhanced attacks. The weapon will appear in the user's hand and will instantly dissipate if he is disarmed, the weapon is sundered, or it ever leaves his grasp. The weapon counts as chakra-enhanced and has a hardness of 10 and 10 hit points.<br><br>This technique cannot solidify more than one Chakrabearing object (like an exploding tag or advanced seal) among the objects it affects. If such an object is thrown and hits a creature, they have a -4 Reflex save against the object, unless it is removed before it activates.</p>\n\n<hr><p><b>Requires:</b> 8 ranks Craft (Visual Arts)</p>\n<p><b>Material Focus:</b> A mass of paper equal to that of the weapon to be created.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Kamiton",
+    "descriptors": [
+      "Paper"
+    ],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "Personal",
+    "target": "",
+    "area": "",
+    "duration": "1 round / level (D)",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "325f7708f94c1195",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "personal"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "159"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "4Piof4fIPi2kIP2N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!NCoVEG2V2LOd7o6f"
+}

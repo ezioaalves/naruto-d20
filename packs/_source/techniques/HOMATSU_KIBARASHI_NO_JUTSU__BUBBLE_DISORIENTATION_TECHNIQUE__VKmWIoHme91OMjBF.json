@@ -1,0 +1,118 @@
+{
+  "_id": "VKmWIoHme91OMjBF",
+  "name": "HOMATSU KIBARASHI NO JUTSU (BUBBLE DISORIENTATION TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-sky-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>The user blows a chakra-enhanced bubble and pops it in an opponent's face, causing a small explosion that disorients the foe.<br><br>The user blows a watery bubble and makes a ranged touch attack against a single creature within range. If successful, the bubble violently pops in the target's face and deals 1d6 water damage. The target must succeed a fortitude save to avoid becoming dazed for 1 round afterwards.</p>\n\n<hr><p><b>Empower:</b> The user may spend an additional 2 points of chakra to create additional bubbles each with a new target within range, up to 1 additional bubble per level or 3 bubbles. The user must roll separate touch attacks for each target.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water",
+      "Hijutsu"
+    ],
+    "rank": 2,
+    "complexity": "C-Class",
+    "chakraCost": 3,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One creature (see text)",
+    "area": "",
+    "duration": "Instant",
+    "save": "Fortitude partial",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": true,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "e3a6203a84b45603",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One creature (see text)"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d6",
+              "types": [
+                "water"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "154"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "OCC2M8aoIuMeo8iK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!VKmWIoHme91OMjBF"
+}

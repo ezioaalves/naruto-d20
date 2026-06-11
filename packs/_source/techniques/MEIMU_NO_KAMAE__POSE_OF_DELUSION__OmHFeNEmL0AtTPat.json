@@ -1,0 +1,111 @@
+{
+  "_id": "OmHFeNEmL0AtTPat",
+  "name": "MEIMU NO KAMAE (POSE OF DELUSION)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/skills/weapon_05.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, F, M, P</p>\n\n<hr>\n\n<p>To enter this stance, the user must exact several exact steps, causing both sight based dizziness and sound based because of the specially designed clothes used. The user of this technique starts to become blurred to any creature who can see or hear the illusion that this technique begins, although not quite at a genjutsu level as it is partially based on the character's own movements. Any creature within 30 feet of the user has a 20% miss chance when trying to hit a character in this stance. As the sound and ability caused, the penalty is reduced to 10% at 45 feet, and the ability is negated at<br><br>60 feet. This penalty is halved by anyone who succeeds a will save.</p>\n\n<hr><p><b>Requires:</b> 8 Ranks in Genjutsu</p>\n<p><b>Material Focus:</b> To accurately perform this technique, the user needs specially made clothes, usually equipped with whistles or bells that cause the illusion. These clothes usually have a Cost DC of 10.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Stance",
+    "descriptors": [],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "swift",
+    "range": "Personal",
+    "target": "You",
+    "area": "",
+    "duration": "Stance",
+    "save": "Will (Partial)",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "a1fc32e26436ae9f",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "swift",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You"
+        },
+        "save": {
+          "type": "will",
+          "description": "Will"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "200"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "6iy2kCwwaWYcUoA0",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!OmHFeNEmL0AtTPat"
+}

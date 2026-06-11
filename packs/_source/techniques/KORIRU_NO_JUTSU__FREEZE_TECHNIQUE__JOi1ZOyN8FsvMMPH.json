@@ -1,0 +1,100 @@
+{
+  "_id": "JOi1ZOyN8FsvMMPH",
+  "name": "KORIRU NO JUTSU (FREEZE TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-blue-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique turns 1 liter of water into ice or snow per round; you may control what source of water within the technique's range is a ffected by this technique. This technique generally converts water to ice or snow at a rate of 1 liter per round, per level over the course of 1 minute or until dispelled or interrupted by some other means. However, the user can choose to spend a fullround action to instantly convert 10 liters plus half his character level (up to 20 liters) at the expense of additional chakra.</p>\n\n<hr><p><b>Effect:</b> Turns up to 1 liter of water into ice or snow per level/round</p>\n<p><b>Material Focus:</b> At least 1 liter of water nearby.</p>\n<p><b>Mastery:</b> At 5th level of mastery, the character can increase the number of liters he can transform per round by 1.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Hyouton",
+    "descriptors": [
+      "Cold"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 2,
+    "activation": "full",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "2a81b0454376be30",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "162"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "iqWYAqCk8acIOqms",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!JOi1ZOyN8FsvMMPH"
+}

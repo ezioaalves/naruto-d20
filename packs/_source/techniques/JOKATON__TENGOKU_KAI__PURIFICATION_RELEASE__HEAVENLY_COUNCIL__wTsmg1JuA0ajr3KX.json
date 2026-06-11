@@ -1,0 +1,117 @@
+{
+  "_id": "wTsmg1JuA0ajr3KX",
+  "name": "JOKATON: TENGOKU KAI (PURIFICATION RELEASE: HEAVENLY COUNCIL)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rock-royal-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Jokaton)</p>\n<p><b>Rank:</b> 15</p>\n<p><b>Chakra Cost:</b> 25</p>\n\n<p><b>Learn DC:</b> 32 | <b>Successes:</b> 8</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> C, H, E</p>\n\n<hr>\n\n<p>To begin this technique, the user must designate which creatures in a 30-foot radius will be considered purified allies. Afterwards the user forms the proper hand seals, upon which the user's body glows brightly with purification chakra. In a sudden eruption of bright energy, the chakra bursts from the user in all directions, dealing 25d8 holy damage to all undesignated creatures within the burst radius, of which can be halved with a successful Fortitude save. Demonic or evil creatures suffer an additional 5d8 damage.<br><br>This technique is very taxing on the user, and thus should only be used once per day. Attempting to use this technique a second time in one day increases the perform requirements by 5 and, if successfully performed, results in the user becoming exhausted upon completion of the technique. A third attempt increases the perform requirements by an additional 5 and, if successfully performed, resu lts in the user's chakra pool being reduced to 0 and he suffers 1d4 points of temporary Constitution damage.</p>\n\n<hr><p><b>Requires:</b> Purification Release (f)</p>\n<p><b>Empower:</b> The user can spend an additional 10 chakra to double the burst radius (60-foot burst radius).</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Jokaton",
+    "descriptors": [
+      "Good",
+      "Kinjutsu"
+    ],
+    "rank": 15,
+    "complexity": "SS-Class",
+    "chakraCost": 25,
+    "activation": "full",
+    "range": "",
+    "target": "",
+    "area": "30-foot burst radius centered on the user",
+    "duration": "Instant",
+    "save": "Fort half",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": true,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "0e396d16ea1a823e",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "area": "30-foot burst radius centered on the user",
+        "damage": {
+          "parts": [
+            {
+              "formula": "25d8",
+              "types": [
+                "holy"
+              ]
+            },
+            {
+              "formula": "5d8",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fort half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "152"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "HTEI4WH8piLaYjnp",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!wTsmg1JuA0ajr3KX"
+}

@@ -1,0 +1,107 @@
+{
+  "_id": "XSoSMohoyeVIqNaT",
+  "name": "HEBIKAMI BATSUYOU (SNAKE GOD'S LAST DESCENDANT)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rock-royal-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Doton, Doujutsu)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 13</p>\n\n<p><b>Learn DC:</b>  | <b>Successes:</b> </p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 31</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>Calling on the deep curse of the snake god, Cybele focuses her energy into her eyes and releases it as a wave of petrifying chakra. Anything caught in the area of effect must make a Fortitude saving throw or be petrified instantly. Objects caught in the area of effect are petrified without saving throws.<br><br>A petrified creature cannot interact with the world and is considered helpless. A petrified creature is not dead, and may not be resurrected by any technique intended to resurrect the dead. A petrified creature is treated as having permanent Strength and Dexterity damage equal to its Strength and Dexterity scores. Once this damage is healed, a petrified creature is restored to flesh. This ability damage does not heal naturally, and can only be restored via Medical techniques.<br><br>Using this ability is both mentally and physically exhausting, as well as life-threatening. Each usage of this technique deals a point of Constitution and Wisdom damage to the user. On top of that, the user's Effective Age increases by 2 years with each use.</p>\n\n<hr><p><b>Requires:</b> Petrifying Glare(a), Medusa Eye 4d6</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Doton, Doujutsu",
+    "descriptors": [
+      "Earth",
+      "Euryale Cybele Hijutsu"
+    ],
+    "rank": 11,
+    "complexity": "S-Class",
+    "chakraCost": 13,
+    "activation": "full",
+    "range": "",
+    "target": "",
+    "area": "30ft Cone",
+    "duration": "Instant",
+    "save": "Fortitude Negates",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "e02c193cf8d78191",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "area": "30ft Cone",
+        "measureTemplate": {
+          "type": "cone",
+          "size": "30"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude Negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "153"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "2U4cVC5ZhDXL4lWt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!XSoSMohoyeVIqNaT"
+}

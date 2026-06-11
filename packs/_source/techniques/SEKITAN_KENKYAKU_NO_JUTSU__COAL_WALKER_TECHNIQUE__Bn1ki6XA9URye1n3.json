@@ -1,0 +1,102 @@
+{
+  "_id": "Bn1ki6XA9URye1n3",
+  "name": "SEKITAN KENKYAKU NO JUTSU (COAL-WALKER TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/light-blue-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>This technique allows the user to float on lava. The user is able to walk, run or charge normally and suffer no movement penalty while on calm lava. If the user uses this technique on rough lava (actively moving a quick pace), he must make a Balance check (DC 15) or move at half his normal speed until his next turn.<br><br>If the technique is used on stormy lava, the user must make a Balance check (DC 20) or move at one-quarter his normal speed and lose his dexterity bonus to defense until his next turn, where he must remake another check. On the round the technique should end, the user may spend a free action to sustain the technique and renew its effect on the same round, instead of having to spend another move-equivalent; doing so still costs the user the same Chakra Cost as it would if he used the technique normally.<br><br>Using this technique under lava has no effect until the user surfaces. When landing on lava, a character can use this technique as an instant action that does not provoke an attack of opportunity, but suffers a -20 penalty to meet the perform requirements, must pay double the chakra cost.</p>\n\n<hr><p><b>Requires:</b> Tadayou (t)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Chakra Control",
+    "subtype": "Body",
+    "descriptors": [],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 1,
+    "activation": "move",
+    "range": "Personal",
+    "target": "You",
+    "area": "",
+    "duration": "1 minute/level",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "086a7ea8deca2526",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "move",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "130"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "U0wWKici0A0IWCYs",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!Bn1ki6XA9URye1n3"
+}

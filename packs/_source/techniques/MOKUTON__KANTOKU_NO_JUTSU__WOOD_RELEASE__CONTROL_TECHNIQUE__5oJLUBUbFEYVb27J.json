@@ -1,0 +1,100 @@
+{
+  "_id": "5oJLUBUbFEYVb27J",
+  "name": "MOKUTON: KANTOKU NO JUTSU (WOOD RELEASE: CONTROL TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-fire-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, M, H, Mas, X</p>\n\n<hr>\n\n<p>This technique represents the basic ability to manipulate wood to create roots and tendrils to perform as the user wishes or even grow trees. This technique can be activated to perform one of two functions, as shown below.<br><br>Roots and Tendrils: This version of the technique costs 4 chakra and creates a construct of wood that occupies a 5 ft. square, has a strength score of 12, attacks as per the user's own base attack bonus, reaches 20 ft . and deals slam damage as a plant of its own size category. The construct has 8 hit points, defense 10, a hardness of 5 and resistance 15 against Earth and Water damage, but suffers double damage from Fire sources. It also receives a bonus of +4 on grapple checks.<br><br>The construct cannot move, but can attack, grapple enemies or perform any action permitted by its shape, size category, base attack bonus and strength score, but the user needs to concentrate in a round on which he wants to direct the actions of the construct (Such as making a full-attack action against an enemy or starting a grapple). However, the user can choose not to concentrate, and direct the c onstruct to 'stand still', performing the same action every round (such as holding a grappled opponent, holding a falling roof or performing other actions on which movements are not necessary).<br><br>Grow Trees: This version of the technique costs 6 chakra per tree created. The user may create a number of trees equal to 1 every 4 levels. The size of each tree depends on the user's level (including masteries), trees initially occupy a single 5 ft. square and 8 ft. tall. Every 5 levels the user may choose to increase the size by 1 category, large trees at 10 x 10 ft. and 16 ft. tall, huge trees at 15 x 15 ft. 32 ft. tall, gargantuan trees at 20 x 20 ft. and 64 ft. tall, and colossal trees at 30 x 30 ft. and 128 ft. tall. Each category beyond medium cost an additional 1 chakra per tree.</p>\n\n<hr><p><b>Effect:</b> One tendril or mobile root of wood in range</p>\n<p><b>Mastery:</b> First, third and fifth steps of mastery allow the user to create larger constructs of wood, as well as lower the cost of growing trees. The user needs to be of the required ECL to attain that step of mastery.<br><br>The first level of mastery (Requires ECL 10) allows the user to spend 8 points of chakra and create a construct of large size. The construct has the same characteristics as the basic version stated above, with the following changes: it occupies a 10ft square, has a strength score of 20, reaches 30 feet, has 16 hit points, defense 9, suffers a penalty of -1 on attack rolls due to its size and gains a bonus of +8 on grapple checks. Growing trees now cost 1 less chakra.<br><br>The third level of mastery (Requires ECL 13) allows the user to spend 12 points of chakra and create a construct of huge size. The construct has the same characteristics as the basic version stated above, with the following changes: it occupies a 15ft square, has a strength score of 28, reaches 40 feet, has 24 hit points, defense 8, suffers a penalty of -2 on attack rolls due to its size and gains a bonus of +12 on grapple checks. Growing trees now cost 2 less chakra.<br><br>The fifth level of mastery (Requires ECL 16) allows the user to spend 16 points of chakra and create a construct of gargantuan size. The construct has the same characteristics as the basic version stated above, with the following changes: it occupies a 20ft square, has a strength score of 36, reaches 40 feet, has 32 hit points, defense 6, suffers a penalty of -4 on attack rolls due to its size and gains a bonus of +16 on grapple checks. Growing trees now cost 3 less chakra.<br><br>Expendable Components -Either wood for the roots/tendrils or seeds to grow trees.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mokuton",
+    "descriptors": [
+      "Wood"
+    ],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "Concentration, max of 1 round/level + 1 round/level",
+    "save": "None (See text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": true,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "caa0223c174e3efd",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "medium"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "168"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "aEDwlVxArI3ein66",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!5oJLUBUbFEYVb27J"
+}

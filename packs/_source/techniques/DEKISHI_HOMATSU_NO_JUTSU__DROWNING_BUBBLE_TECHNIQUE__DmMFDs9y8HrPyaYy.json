@@ -1,0 +1,104 @@
+{
+  "_id": "DmMFDs9y8HrPyaYy",
+  "name": "DEKISHI HOMATSU NO JUTSU (DROWNING BUBBLE TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/slice-orange-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>This powerful technique forms a dense bubble formation that clings to the opponent's head causing them to drown almost instantly.<br><br>The user makes a ranged touch attack on a single creature within range. If successful, the user creates a dense bubble around the target's head. The bubble is not subject to any damage. The subject's head will be contained in the bubble for as long as the user concentrates. While the bubble is active, the subject begins drowning on his next turn. A drowning creature must make a Constitution check (DC 10, +1 every successful check) each round to avoid falling unconscious and to 0 hit points. Each round afterwards, the target loses 1 hit point. If the technique is dispelled before the creature dies, its hit points are restored. Otherwise, the creature dies at -10 hit points.<br><br>If the subject still has a turn in the same round that this technique was performed, he may act normally. However, he takes a -4 penalty to attack rolls and skill checks, and he may not perform techniques that require concentration. On subsequent turns, the penalty increases by 2 until either the subject dies or the technique ends.<br><br>Nothing can pass through the bubble, in or out. The creature can see outside of the bubble, but takes a penalty to spot and listen checks (above). If the user of this technique stops concentrating for whatever reason, the bubble instantly pops and the subject is freed.<br><br>If the user takes damage while concentrating on this technique, he must make a Concentration check equal to 10 + the damage dealt or else instantly lose control of the technique.</p>\n\n<hr><p><b>Requires:</b> Require Concentration 12 ranks</p>\n<p><b>Mastery:</b> At 3rd, 4th and 5th level of mastery in this technique, the user can create an additional bubble by spending an additional 6 chakra per bubble. Each bubble must target a different creature. While concentrating on this technique with more than one active bubble, the user must make a Concentration check equal to 15 + damage dealt whenever he takes damage.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water",
+      "Hijutsu"
+    ],
+    "rank": 9,
+    "complexity": "A-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One creature",
+    "area": "",
+    "duration": "Concentration",
+    "save": "None (See Text)",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": true,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "c294db9489a4bfdd",
+        "name": "Use",
+        "actionType": "heal",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One creature"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "144"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "C37N3CX54ICd9cKp",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!DmMFDs9y8HrPyaYy"
+}

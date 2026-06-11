@@ -1,0 +1,116 @@
+{
+  "_id": "trhPdS1mrWCA4RwI",
+  "name": "KETSUEKIBURI: YARI NO GENSE (BLOOD STYLE: SPEAR OF LIFE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-sky-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H, P, E, 2 points of Constitution damage</p>\n\n<hr>\n\n<p>The user freezes some of the blood in his hands and lets it seep into the ground. Any opponent who steps into the targeted square takes 3d6 damage, half cold damage, half piercing and is slowed as if affected by caltrops for the next 5 rounds. A successful Reflex save halves the damage and prevents the slow. A character may make a DC 22 Spot check to notice the trap</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f)</p>\n<p><b>Empower:</b> The user may spend an additional 3 chakra to increase the damage by 1d6 and the duration of the slow by 1 round (max 7d6 damage and 9 rounds of slow).</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Hyouton",
+    "descriptors": [
+      "Cold"
+    ],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "Touch",
+    "target": "One adjacent 5-foot square",
+    "area": "",
+    "duration": "1 round/level",
+    "save": "Reflex",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "8d3cdc5e70a38f56",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One adjacent 5-foot square"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "3d6",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "161"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "8EYeO2GOSK2QOgWs",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!trhPdS1mrWCA4RwI"
+}

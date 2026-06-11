@@ -1,0 +1,117 @@
+{
+  "_id": "XPNtPepmIo2KVFlC",
+  "name": "YOUGAN ENKA NO JUTSU (SWALLOWING LAVA TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fireball-red-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Yoton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>To properly perform this technique, there must be at least 2 feet of lava below the target if it is Tiny or smaller, 5 if it is Small or Medium size, 10 if it is Large, 20 if it is Huge, 30 if it is Gargantuan and 50 if it is Colossal. The lava underneath the target will open up and swallow the target unless it makes a Reflex save to avoid falling in the technique. A creature so buried is only partially exposed and cannot move, perform any actions other than a free action and is immobilized until it can succeed three Escape Artist or Dexterity check (DC 18) in a row. A trapped creature suffers 2d6 point of lava damage per round.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Yoton",
+    "descriptors": [
+      "Lava"
+    ],
+    "rank": 8,
+    "complexity": "B-Class",
+    "chakraCost": 1,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "e7ff5786f743c345",
+        "name": "Use",
+        "actionType": "rwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d6",
+              "types": []
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "187"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "3RcdhuMU90I1Ij18",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!XPNtPepmIo2KVFlC"
+}

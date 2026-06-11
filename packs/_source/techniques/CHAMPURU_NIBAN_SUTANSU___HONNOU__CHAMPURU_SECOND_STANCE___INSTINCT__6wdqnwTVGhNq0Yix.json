@@ -1,0 +1,101 @@
+{
+  "_id": "6wdqnwTVGhNq0Yix",
+  "name": "CHAMPURU NIBAN SUTANSU - HONNOU (CHAMPURU SECOND STANCE - INSTINCT)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/skills/weapon_04.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, M, Mas</p>\n\n<hr>\n\n<p>In this stance, the user takes the Champuru style to an additional level by incorporating his pure instincts to maximize the effectiveness of his choices in attacks.<br><br>All attacks in this stance are modified by dexterity. While in this form the user gains a +2 to attack and tumble checks and a +2 dodge bonus to defense against attacks of opportunity. Also, his ability to overpower an enemy is intact, as he also gains a +2 to damage and trip checks. He must still move at least 10 feet every round, if movement is halted then the stance is broken. All above modifications only apply to a user wielding a sword.</p>\n\n<hr><p><b>Requires:</b> Champuru (f), Taijutsu Adept (f), Taijutsu 9 ranks, Tumble 9 ranks</p>\n<p><b>Mastery:</b> The third step in mastery of this technique allows the user to feint as a movement action.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Stance",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 4,
+    "activation": "swift",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "abaccc9b916c8d2d",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "swift",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "193"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "QyK6EcaOmKW2q2ye",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!6wdqnwTVGhNq0Yix"
+}

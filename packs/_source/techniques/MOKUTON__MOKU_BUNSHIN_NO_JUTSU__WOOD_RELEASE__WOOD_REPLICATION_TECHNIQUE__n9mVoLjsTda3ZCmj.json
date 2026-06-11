@@ -1,0 +1,101 @@
+{
+  "_id": "n9mVoLjsTda3ZCmj",
+  "name": "MOKUTON: MOKU BUNSHIN NO JUTSU (WOOD RELEASE: WOOD REPLICATION TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/wind-red-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, E, H, Mas, X</p>\n\n<hr>\n\n<p>This advanced Jounin-level technique uses the natural ability to manipulate the Mokuton element to create a perfect duplicate of the user using nearby wood. While this technique creates only a single clone, it is noticeably stronger than a Kage Bunshin, Mizu Bunshin or even the Ishi Bunshin. The clone is sentient and can think and speak as the user would. The user can mentally control the clone as long as it stands on his line of sight. If the clone is out of the user's line of sight, it can act and think by himself, and will follow his last orders until told otherwise. The clone can't stray farther than 500 feet from the user, lest it returns to the earth and the technique ends. The user and his clone can communicate to each other using some kind of telepathic bond, as long as they remain within range.<br><br>The clone has 1 hit point per level of the user, and shares the user's saving throws and defense without penalty. It can make up to three attacks per round and has a hardness of 2, as well as an earth and water resistance of 15. The Moku Bunshin does not receive any of the user's temporary bonuses (such as Shodan Kousoku and Tadayou).<br><br>The clone can use any skills, feats, talents and special abilities of the user without penalty (excluding templates and bloodlines), as well as any Suiton, Doton or Mokuton technique known by the user of Rank 5 and lower. The clone has its own chakra pool, 12. The user can freely spend more chakra to increase the clone's chakra pool when using this technique (maximum chakra pool of 24). In addition, all drawbacks coming from a technique used by the clone not only affects the clone, but also the user. The Moku Bunshin counts as the user if it uses a technique to create clones, and thus they are controlled by the user and his own limit is used.<br><br>The clone is genuine and carries the same equipment as the user except chakra-dependent items such as exploding tags and sunburst tags. Poison and mastercraft bonuses are not carried over to the clone's equipment. Once the clone reaches 0 hit points, strays too far from the user or the duration expires, it turns back into wood and dirt. The user can also choose to dissipate this technique any time. Lastly, the user is free to replace any lost clone by using this technique again, but while controlling this clone, the user can't control any kind of clone (including simple Bunshins, Kage Bunshins or even another Moku Bunshin).<br><br>A creature able to see chakra or see through chakra will be able to notice that the clone is only mud and wood, and will be able to tell it apart from the original.</p>\n\n<hr><p><b>Effect:</b> Duplicate of the user</p>\n<p><b>Expendable Component:</b> Expendable Components -Enough wood to form the Moku Bunshin.</p>\n<p><b>Empower:</b> The user can spend up to 12 points of chakra in order to increase the chakra pool of Moku Bunshin.</p>\n<p><b>Mastery:</b> On the third step of mastery, the user is able to ignore the material focus of this technique by taking 1d4 points of hit points damage, as the clone sprouts from his own body. On the fifth step of mastery, the clone is able to use techniques up to rank 6.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mokuton",
+    "descriptors": [
+      "Wood"
+    ],
+    "rank": 8,
+    "complexity": "B-Class",
+    "chakraCost": 12,
+    "activation": "full",
+    "range": "Personal",
+    "target": "",
+    "area": "",
+    "duration": "1 minute/level",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": true,
+    "compExpendable": true,
+    "compPhysical": false,
+    "compXpCost": true,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "3e8bb20bf5ba5322",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "personal"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "170"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "w1JUB5HdAVI65xTK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!n9mVoLjsTda3ZCmj"
+}

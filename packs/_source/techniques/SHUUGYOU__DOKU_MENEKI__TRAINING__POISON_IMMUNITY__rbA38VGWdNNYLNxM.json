@@ -1,0 +1,95 @@
+{
+  "_id": "rbA38VGWdNNYLNxM",
+  "name": "SHUUGYOU: DOKU MENEKI (TRAINING: POISON IMMUNITY)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/improved-great-fortitude.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Medical, Ninjutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Each time the user takes this training jutsu he is able to build immunity to another type of poison granting the user a +1 to save DCs against that type if the Fortitude DC of the poison is under 22. Pick from Contact, Ingested, Inhaled, or Injury.</p>\n\n<hr><p><b>Requires:</b> Expert Healer (a)</p>\n<p><b>Mastery:</b> Each odd step of mastery after the first grants a +1 save to DCs of poisons of that kind.<br><br>Expendable Components -Poisons and antidotes equal to a purchase DC of 20.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Medical, Ninjutsu",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "A-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "152d296e4ea0f87e",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "209"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "f0aG2roAzOArlalS",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!rbA38VGWdNNYLNxM"
+}

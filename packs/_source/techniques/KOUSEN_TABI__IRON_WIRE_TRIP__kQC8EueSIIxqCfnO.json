@@ -1,0 +1,105 @@
+{
+  "_id": "kQC8EueSIIxqCfnO",
+  "name": "KOUSEN TABI (IRON WIRE TRIP)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/lunge.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> M, S, Mas</p>\n\n<hr>\n\n<p>This technique allows the user to make a trip attack as a ranged touch attack using the battle wire at +2 to the attack roll, the user may not be tripped if the attack fails this attack. The technique provokes an attack of opportunity, even if you are not within the opponent's range, this attack is provoked even if one is using the 3rd level of mastery for Kousen Ryu and is used as if the enemy was attacking with the battle wire and may use his Strength modifier to deal the damage.</p>\n\n<hr><p><b>Requires:</b> Kousen Ryu</p>\n<p><b>Mastery:</b> At Mastery level 1, The user may use his Dexterity instead of his Strength modifier for the Trip attack.<br><br>At Mastery level 3, The user no longer provokes an attack of opportunity when making the ranged trip attack.<br><br>At Mastery Level 5, the technique only requires a move-equivalent action.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 1,
+    "activation": "attack",
+    "range": "20 ft.",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "none",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": true,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "6c3f669eec7ab3c0",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "ft",
+          "value": "20"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "200"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "AWgE88aYiEo2a2MY",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!kQC8EueSIIxqCfnO"
+}

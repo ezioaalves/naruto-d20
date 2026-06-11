@@ -1,0 +1,103 @@
+{
+  "_id": "pjJ4078yGJkf9DjF",
+  "name": "MOKUTON: MOKUDOZA (WOOD RELEASE: WOOD ENTANGLEMENT)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-orange-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H, Mas, X</p>\n\n<hr>\n\n<p>The user of this technique is able to manipulate branches from nearby trees to ensnare a target creature. The user must physically touch the tree to activate this technique. In doing so, the branches will grapple and immobilize the targeted creature for as long as the user concentrates.<br><br>The creature is considered immobilized, and thus helpless for the duration of this technique. However, he can attempt to break the hold by performing a successful Strength check (DC 25). The target will be dazed for one round after breaking free of the entanglement. Maintaining the hold requires a Concentration check<br><br>(DC 15) each round. The user can concentrate on the technique for a number of rounds equal to 1 every 2 character levels. Each round after the first costs and additional one point of chakra. If the user takes damage while using this technique, he must make a Concentration check (DC 15 + damage dealt) to maintain the hold. If the attack would also knock the user back or prone, he instantly loses control of the technique.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (2)</p>\n<p><b>Expendable Component:</b> Expendable Component -A nearby tree with a trunk of equal size to the target being ensnared.</p>\n<p><b>Mastery:</b> At every odd level of mastery, the user can entangle an additional target within range at the cost of 5 chakra per target. The chakra cost for each round after the first also increases by 1 per round per target.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mokuton",
+    "descriptors": [
+      "Wood"
+    ],
+    "rank": 8,
+    "complexity": "A-Class",
+    "chakraCost": 10,
+    "activation": "full",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "One or more creatures. Duration: Concentration, plus 2 rounds",
+    "area": "",
+    "duration": "Concentration, plus 2 rounds",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": true,
+    "compPhysical": false,
+    "compXpCost": true,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "af78c59b90318a74",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "target": {
+          "value": "One or more creatures. Duration: Concentration, plus 2 rounds"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "171"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "w1JUB5HdAVI65xTK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!pjJ4078yGJkf9DjF"
+}

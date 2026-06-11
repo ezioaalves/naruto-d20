@@ -1,0 +1,123 @@
+{
+  "_id": "VMADWhWp9OxygTAb",
+  "name": "RAIKIRI NO DANGAN (LIGHTNING EDGE BULLET)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> H, E</p>\n\n<hr>\n\n<p>This advanced form of the Raikiri technique allows the user to charge and shoot his Raikiri at the target in a zigzag formation that strikes with the same vital precision of its parent technique, but with more power. The user makes a ranged touch attack that deals 6d6+1 electricity damage and 4d4+1 sonic damage. If the user rolls a natural 20 on the touch attack, the target must succeed a Fortitude save or become stunned for 1 round afterwards.</p>\n\n<hr><p><b>Requires:</b> Raikiri (3)</p>\n<p><b>Empower:</b> The user may spend an additional 1 point of chakra to increase both the electricity and sonic damage by 1, up to 6d6+5 and 4d4+5.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Raiton",
+    "descriptors": [
+      "Electric"
+    ],
+    "rank": 9,
+    "complexity": "S-Class",
+    "chakraCost": 10,
+    "activation": "full",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "One Creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Fortitude partial (See Text)",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "97f9c5619253d4a1",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "target": {
+          "value": "One Creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "6d6+1",
+              "types": [
+                "electric"
+              ]
+            },
+            {
+              "formula": "4d4+1",
+              "types": [
+                "sonic"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "174"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "aekCscEOIUu6eueQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!VMADWhWp9OxygTAb"
+}

@@ -1,0 +1,104 @@
+{
+  "_id": "85cHeMQ4YhFZidyr",
+  "name": "MOKUTON: SHICHURO NO JUTSU (WOOD RELEASE: FOUR PILLAR PRISON TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-royal-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 17</p>\n\n<p><b>Learn DC:</b> 29 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, E, H, Mas</p>\n\n<hr>\n\n<p>Shichuurou no Jutsu is a unique Ninjutsu technique using the Mokuton element. After forming the necessary hand seals, beams of wood will emerge from the ground. These beams will converge and combine to form a very resistant prison. The cubic prison is 25 feet large and 25 feet high. The DC to Break a \"bar\" of this prison is and escape is 30. It has a hardness of 10; an earth and water resistance of 10, a wood resistance of 30, and every section of 5 ft. has 50 hit points. A creature may also attempt to escape with an Escape Artist check (DC 30). A creature may avoid being trapped inside the prison by succeeding in a reflex saving throw. If the save is successful, the target stands adjacent to the prison after it is formed. The prison lasts for 1 hour per level, and can be dismissed if the user so wishes.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (3)</p>\n<p><b>Effect:</b> 1 cubic-shaped prison</p>\n<p><b>Expendable Component:</b> Expendable Component -Nearby wood to form the barrier.</p>\n<p><b>Mastery:</b> Each level of mastery on this technique increases the DC to break and escape artist checks by one, and the hit points of the prison by 5.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mokuton",
+    "descriptors": [
+      "Wood"
+    ],
+    "rank": 8,
+    "complexity": "A-Class",
+    "chakraCost": 17,
+    "activation": "full",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "1 hour per level (D)",
+    "save": "Reflex negates",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": true,
+    "compExpendable": true,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "fb8b09dade7d9b9e",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "close"
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "172"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "w1JUB5HdAVI65xTK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!85cHeMQ4YhFZidyr"
+}

@@ -1,0 +1,108 @@
+{
+  "_id": "rAuZ6hHbfwej3Ucb",
+  "name": "KETSUEKIBURI: AKAIRO KIRI NO JUTSU (BLOOD STYLE: RED MIST JUTSU)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-orange-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H, P, 1 point of Constitution damage</p>\n\n<hr>\n\n<p>The user expels a fog of blood from his veins. While inside this fog, your allies gain 20% concealment and any enemies must make a Fortitude save or be sickened for the duration of the jutsu (or until they have spent a full round outside of the fog). While inside the cloud, the Constitution cost for the user to form a blood weapon is reduced by 1 point. The cloud is a 5 ft. Radius and at least one square must be adjacent to the user when the cloud is formed.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Blood Weapon (Small) (a)</p>\n<p><b>Empower:</b> The user may increase the radius of the technique by 5 ft. by spending an extra 2 points of Constitution (the cloud cannot be more than 5 ft. in radius for every 4 levels the caster has, max 20 ft.).<br><br>Special -If the user is inside or adjacent to the cloud when the duration of the jutsu expires, he regains the Constitution lost when casting the technique.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water"
+    ],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 6,
+    "activation": "attack",
+    "range": "One square must be adjacent to the user",
+    "target": "See text",
+    "area": "",
+    "duration": "1 round/level",
+    "save": "Fortitude partial, see text",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "6beb49d05d590dbd",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "See text"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude partial, see text"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "160"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "okYyKEAuqIQs6g6y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!rAuZ6hHbfwej3Ucb"
+}

@@ -1,0 +1,107 @@
+{
+  "_id": "XQBdjuotpBkN04HQ",
+  "name": "GENJITSU GAPPEI NO JUTSU (REALITY MERGE TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fire-arrows-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> F, S, Mas, E</p>\n\n<hr>\n\n<p>When the shinobi completes the hand seal, he shows the mirror ahead and starts to sucking everything in the area inside to this. A whirlwind drags everything in the area, disintegrating anything. Every creature in area takes 7d6 without any energy resistance (reflex half), unattended objects can try a Fortitude check to halve the damage. The jutsu disintegrates only part of any very large object or structure in area. The jutsu affects even objects constructed entirely of chakra. If this damage reduces the creature or object to 0 or fewer hit points, it is entirely disintegrated. After the usage, the mirror is broken.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f), Retrieval Expert (f)</p>\n<p><b>Material Focus:</b> One Mirror</p>\n<p><b>Empower:</b> The user may spend 1 point of chakra to increase the damage by 1 die, up to 1d6 per level or 25d6.</p>\n<p><b>Mastery:</b> Every step of mastery in this technique increases the number of times the mirror can use this technique until break, up to 6 at the fifth step. Any technique that repair an object, restore the mirror resistance at full.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mirror Arts",
+    "descriptors": [],
+    "rank": 12,
+    "complexity": "A-Class",
+    "chakraCost": 12,
+    "activation": "attack",
+    "range": "20 feet",
+    "target": "",
+    "area": "Cone-shaped burst",
+    "duration": "Instant",
+    "save": "Reflex half or Fortitude partial (object)",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": true,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": true,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "5fa033e67554af22",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "area": "Cone-shaped burst",
+        "measureTemplate": {
+          "type": "cone",
+          "size": "30"
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half or Fortitude partial"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "146"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "xjDzmJJzhuxmMkuc",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!XQBdjuotpBkN04HQ"
+}

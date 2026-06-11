@@ -1,0 +1,104 @@
+{
+  "_id": "WoaMhunTXwGmO2LJ",
+  "name": "KURESENTO SUIPU (CRESCENT SWEEP)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/skills/weapon_15.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 9</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, M, F</p>\n\n<hr>\n\n<p>The user makes an attack at his highest attack bonus with his held weapon against all creatures in the area that deals double damage on a successful hit. While using this technique, the user does not suffer attack penalties from Combat Expertise or Defensive Fighting, but still gains the benefits.<br><br>If the user's weapon wasn't a mastercraft weapon, it is destroyed beyond repair after using this technique.</p>\n\n<hr><p><b>Requires:</b> Soujutsu: Hassun (3)</p>\n<p><b>Material Focus:</b> The user's spear, naginata or quarterstaff.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Armed"
+    ],
+    "rank": 12,
+    "complexity": "A-Class",
+    "chakraCost": 9,
+    "activation": "full",
+    "range": "",
+    "target": "",
+    "area": "10 ft. radius",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "a9dec779b3235670",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "area": "10 ft. radius",
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "200"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "uIEYEkwqMmeOcKau",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!WoaMhunTXwGmO2LJ"
+}

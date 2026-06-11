@@ -1,0 +1,101 @@
+{
+  "_id": "eXjMUqrIW0q9MFTN",
+  "name": "KUGUTSU FUZUI (PUPPET PARALYSIS)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rock-orange-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>When the Puppeteer further refines his skills with Kugutsu no Jutsu, he becomes able to stop the movements of even another Puppeteer's puppet by means of this technique. By succeeding in a ranged touch attack, the user can attach his chakra strings to a single puppet within range. If the user targeted a single limb, the cost of this technique is equal to one third of the cost used to animate the targeted puppet. For as long as the user concentrates on this technique, he can keep the target puppet from moving the targeted limb, unless the puppet succeeds in a Strength check (DC 20) to move normally that round. If the user targeted the entire puppet, the chakra cost of this technique is equal to the chakra paid for the controller of the targeted puppet to animate it. For as long as the user concentrates on this technique, he can keep the target puppet from moving or performing any action that round, unless the controller of the targeted puppet succeeds in a resisted concentration check against the user of this technique.<br><br>The controller of the targeted puppet won't realize that a chakra string has been attached to his puppet until he tries to move the puppet or the targeted limb, unless he can see chakra or see through chakra. This technique benefits from the range and perform bonuses granted by the Advanced Puppetry I ability.<br><br>Concentrating on this technique counts as if the user were controlling a small puppet (For a single limb) or a puppet of the same size as the targeted puppet (When targeting the puppet).</p>\n\n<hr><p><b>Requires:</b> Kugutsu no Jutsu (4), Puppeteer's insight (f) and Advanced Puppetry II (a)</p>\n<p><b>Mastery:</b> The first, second and third level of mastery on this technique adds +1 to the DC of the strength check.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "attack",
+    "range": "30 feet",
+    "target": "One puppet within range",
+    "area": "",
+    "duration": "Concentration (Maximum 1 round per level",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "934bed53d8612121",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One puppet within range"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "164"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "c0muyEGyCeY26cWy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!eXjMUqrIW0q9MFTN"
+}

@@ -1,0 +1,100 @@
+{
+  "_id": "EXuOEuboxcqMKyxl",
+  "name": "FUKAI TSUCHI NO JUTSU (DENSE EARTH TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/lighting-royal-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>This jutsu when performed increases the hardness of the rock around it permanently by 1, and an additional 1 for every 4 levels there after level 1. Rock affected by this jutsu may only be hardened in this manner once, unless anot her user would increase the rock's hardness, at which point it rises to this new amount.<br><br>Anyone besides the user of this jutsu trying to use Ishi Nanka no Jutsu on rock affected by this jutsu resist.</p>\n\n<hr><p><b>Requires:</b> Chi Katame no Jutsu (5)</p>\n<p><b>Effect:</b> Increases the hardness of rock 5 ft. cube per level/round</p>\n<p><b>Mastery:</b> At every odd level, lower the chakra cost by 1.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Doton",
+    "descriptors": [
+      "Earth"
+    ],
+    "rank": 7,
+    "complexity": "B-Class",
+    "chakraCost": 8,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "",
+    "area": "",
+    "duration": "Permanent",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "1d67b62faf4e1357",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "perm"
+        },
+        "range": {
+          "units": "close"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "145"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "QiWAyYyMi6Os0U0y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!EXuOEuboxcqMKyxl"
+}

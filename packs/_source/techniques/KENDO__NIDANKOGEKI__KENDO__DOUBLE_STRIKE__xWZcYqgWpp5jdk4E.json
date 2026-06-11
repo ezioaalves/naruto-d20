@@ -1,0 +1,110 @@
+{
+  "_id": "xWZcYqgWpp5jdk4E",
+  "name": "KENDO: NIDANKOGEKI (KENDO: DOUBLE STRIKE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/acrobatic.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>A master of Kendo arts is quick and precise enough to land consecutive blows on his foe with ease.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. During a full attack, the user makes an additional attack at his highest attack bonus, minus 2 (in addition to the user's normal number of attacks).</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stic k.</p>\n<p><b>Mastery:</b> At 2nd and 4th levels of mastery the user may make an additional attack at his highest attack bonus, minus 2, at the cost of 2 chakra per extra attack.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Armed"
+    ],
+    "rank": 5,
+    "complexity": "C-Class",
+    "chakraCost": 3,
+    "activation": "full",
+    "range": "Melee Attack",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "f1bbc1abc8938de2",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "198"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "Y6G2KygqCgmo0wgw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!xWZcYqgWpp5jdk4E"
+}

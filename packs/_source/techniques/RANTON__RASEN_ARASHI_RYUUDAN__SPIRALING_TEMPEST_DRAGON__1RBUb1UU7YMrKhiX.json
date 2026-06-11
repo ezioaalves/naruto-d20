@@ -1,0 +1,105 @@
+{
+  "_id": "1RBUb1UU7YMrKhiX",
+  "name": "RANTON: RASEN ARASHI RYUUDAN (SPIRALING TEMPEST DRAGON)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rock-royal-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton, Suiton)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 30 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 18 | <b>Perform DC:</b> 32</p>\n\n<p><b>Components:</b> C, S, Mas</p>\n\n<hr>\n\n<p>The user must have an active Rasen Arashi in his hand to perform this technique. By forming the necessary half seals and expending additional chakra, the user's Rasen Arashi transforms into a swirling dragon that erupts from the user's hand and swiftly flies at its intended target. The user may make a ranged touch attack with the Rasen Arashi within this technique's rang e. It deals normal damage on a successful hit and will push the target backwards a number of feet equal to half the damage, rounded to the nearest 5-foot unit. As per Ranton: Rasen Arashi, the target must succeed a Fortitude save or else fall prone and become stunned for one round.</p>\n\n<hr><p><b>Requires:</b> Ranton: Rasen Arashi (3); Chakra Control 18 ranks</p>\n<p><b>Mastery:</b> At fifth step of mastery, the user may quicken this technique to be used in conjunction with Ranton: Rasen Arashi . This ability acts as the character's quickened action for the round and can only be performed in this way once per encounter.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Raiton, Suiton",
+    "descriptors": [
+      "Electric",
+      "Water",
+      "Combination"
+    ],
+    "rank": 12,
+    "complexity": "S-Class",
+    "chakraCost": 10,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "One creature (See Text)",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": false,
+    "compHalfSeals": true,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": true,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "bac18d078f17e3c4",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "target": {
+          "value": "One creature (See Text)"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "175"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "Q7l6SWrUIaktRunk",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!1RBUb1UU7YMrKhiX"
+}

@@ -1,0 +1,108 @@
+{
+  "_id": "KWVroFfmA4D0CpZO",
+  "name": "NINPOU: GISUIKYOO NO JUTSU (NINJA ART: CEREMONIAL WATER MIRROR TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fireball-red-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>The character touches the surface of the clean water, and let the chakra flows toward it. For the duration of the jutsu, this water body can be used as \"Material Focus: Mirror\".</p>\n\n<hr><p><b>Material Focus:</b> A body of clean water.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Suiton",
+    "descriptors": [
+      "Water"
+    ],
+    "rank": 2,
+    "complexity": "C-Class",
+    "chakraCost": 3,
+    "activation": "full",
+    "range": "Touch",
+    "target": "",
+    "area": "One 5-ft square",
+    "duration": "Concentration (up to 1 round/level) plus 1 round/2 levels",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "da64fe2925657409",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "conc"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "area": "One 5-ft square",
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "173"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "OCC2M8aoIuMeo8iK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!KWVroFfmA4D0CpZO"
+}

@@ -1,0 +1,95 @@
+{
+  "_id": "oCBcahRK0VPL8ltZ",
+  "name": "SHUUGYOU: TAIKOU YADAMA (TRAINING: COUNTER PROJECTILE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/endurance.png",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>The user may intercept a projectile with his own. You may ready an action to intercept the projectile. Make an attack roll opposed to the opponent's attack roll. If you succeed, the attack misses. If you fail by less than 10, the attack receives a -5.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n<p><b>Defensive Maneuver:</b> : The Defensive Maneuver costs 1 point of chakra, and can be done up to 1 time per day. The attack avoided must be from a creature with a Challenge Rating equal or lesser than his level, or 1 (whichever is lower). The user cannot avoid an attack if he is unaware of the attack.<br><br>You suffer any range penalties to the attack roll as per the projectile used. It may not be any more than one size category smaller than the projectile it is intercepting.<br><br>This technique does not draw a weapon for you, the user must either have one in his hand or have the Quick Draw feat, or make use of the kunai and shuriken draw feature.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Taijutsu",
+    "descriptors": [],
+    "rank": 2,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "f2e69ead3643b85f",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "212"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "AQGQgcwOmwsooQIU",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!oCBcahRK0VPL8ltZ"
+}

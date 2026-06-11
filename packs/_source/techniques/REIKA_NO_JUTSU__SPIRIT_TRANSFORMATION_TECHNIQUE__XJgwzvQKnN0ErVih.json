@@ -1,0 +1,106 @@
+{
+  "_id": "XJgwzvQKnN0ErVih",
+  "name": "REIKA NO JUTSU (SPIRIT TRANSFORMATION TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rip-sky-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 13</p>\n<p><b>Chakra Cost:</b> 20</p>\n\n<p><b>Learn DC:</b> 29 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 17 | <b>Perform DC:</b> 33</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>This technique allows the user's spirit to materialize and leave the body, which is then able to take possession of a target, enabling the user to freely manipulate the target's body at will. The user spends a full -round action to manifest a spirit outside his body that shares his likeness. Once materialized the spirit appears translucent with a colored aura surrounding its person. For the duration of the tec hnique the user's physical body remains in the square he occupied before performing this technique. The user's physical body becomes an empty shell (treat as unconscious) for the duration of this technique or until the user dismisses the technique. If the user's physical body is harmed to the point that his hit points drop below -10, then the character is considered dead. His spirit form will continue to act for the duration of the technique, as it is the spiritual manifestation of the user's soul. However, upon completion of this technique, the character remains dead unless revived by some external means.<br><br>Performing this technique manifests the user's spiritual form only. His spirit form can begin performing actions on the user's next turn. It can attack no rmally, but not perform techniques. It can also move normally, or fly (with perfect maneuverability) up to the user's base land speed though it may not stray further than the range of the technique. The spirit is considered incorporeal (see Incorporeal for more details).<br><br>The most powerful aspect of this technique is the ability to possess a target creature while in the spirit form. The user targets a single creature within range to possess. The spirit spends an attack action to merge with the target's body and takes control of that creature's actions for the duration of the technique or until the user cancels possession, unless the target can succeed a Will save. If the target succeeds the save then the spirit is rejected and forced from the body, but the creature becomes dazed for 1 round. Each subsequent attempt to possess the same target grants the target a +1 bonus to the save. However, if the target fails the save, then the possession is successful and the user gains the following:<br><br>Strength, Dexterity, and Constitution score of the assumed body.<br><br>Natural armor, natural attacks, movement, and other simple physical characteristics of the assumed body.<br><br>Extraordinary special attacks and qualities of the assumed body, but not supernatural or spell-like abilities unless they were already active. Strength and speed ranks of the body are automatically suppressed and inaccessible.<br><br>Chakra signature of the assumed body.<br><br>Current Chakra Pool of the assumed body.<br><br>Elemental Affinity of the assumed body.<br><br>Current conditions (ill and good) of the assumed body. Equipment worn by the subject.<br><br>Despite being controlled by the user; the target retains its initiative if in combat. Cancellation of the possession can occur in three ways. First the user may willingly cancel the possession as a swift action that must occur on the subject's turn. Alternatively, if the target dies while under the effects of possession, then the possession is automatically cancelled. And finally, each round after the possession takes effect, the subject may make an additional Will save to reject the user's spirit and take back control of its body. Once the possession has been cancelled, the subject falls prone and the user's spirit will rematerialize in an adjacent square to the subject's body. The user of this technique may attempt to possess multiple creatures within the duration of this technique, but each subsequent attempt after the first costs an additional 5 chakra.</p>\n\n<hr><p><b>Requires:</b> Chakra Control 16 ranks</p>\n<p><b>Mastery:</b> Each level of mastery in this technique increases the technique's base ran ge by 10 feet.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 13,
+    "complexity": "S-Class",
+    "chakraCost": 20,
+    "activation": "full",
+    "range": "Long (30 ft. + 15 ft./2 levels)",
+    "target": "See Text",
+    "area": "",
+    "duration": "1 round/level (D)",
+    "save": "Will negates (See Text)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "8de5776868db6280",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "long"
+        },
+        "target": {
+          "value": "See Text"
+        },
+        "save": {
+          "type": "will",
+          "description": "Will negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "175"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "AasaamCGkyWeQq60",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!XJgwzvQKnN0ErVih"
+}

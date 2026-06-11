@@ -1,0 +1,123 @@
+{
+  "_id": "rIUMTYY7cmv6K89u",
+  "name": "SHOTON: HASHO KORYU (CRYSTAL RELEASE: TEARING CRYSTAL FALLING DRAGON)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> H, F, X</p>\n\n<hr>\n\n<p>Using this technique, the user is able to create a dragon of varying size from crystal which he uses to tear his enemy apart. Depending on the dragon's size, Small, Medium or Large, the range and damage may vary greatly.<br><br>A Small dragon costs 6 points of Chakra, has a Close range (10 ft. + 5 ft./2 levels) and deals 4d6+2 points of damage to creatures in a 5-ft. square. All damages caused by a dragon of any size can be halved with a successful Reflex save.<br><br>A Medium dragon costs 10 points of Chakra, has a Medium range (20 ft. + 10 ft./2 levels) and deals 7d6+5 points of earth damage to creatures in a 10-ft. square and increases the perform requirements by 2.<br><br>A Large dragon has a Long range (30 ft. + 15 ft./2 levels) and deals 10d6+7 points of earth damage to creatures in a 15-ft. square and increases the perform requirements by 4.<br><br>Expendable Components -At least 50, 100 or 150 pounds for a Small, Medium or Large dragon respectively, source of material nearby that can be crystallized to create the dragon.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shoton",
+    "descriptors": [],
+    "rank": 8,
+    "complexity": "A-Class",
+    "chakraCost": 7,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels) (small), Medium (medium) or Long (large)",
+    "target": "",
+    "area": "5-ft. square (small) or 10-ft. square (medium) or 15-ft. square (large)",
+    "duration": "Instant",
+    "save": "Reflex half",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": true,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "19fb93e5756d0c8d",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "area": "5-ft. square (small) or 10-ft. square (medium) or 15-ft. square (large)",
+        "damage": {
+          "parts": [
+            {
+              "formula": "4d6+2",
+              "types": []
+            },
+            {
+              "formula": "7d6+5",
+              "types": [
+                "earth"
+              ]
+            },
+            {
+              "formula": "10d6+7",
+              "types": [
+                "earth"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "183"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "UHcN7aXNJJoFWgOp",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!rIUMTYY7cmv6K89u"
+}

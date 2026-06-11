@@ -1,0 +1,110 @@
+{
+  "_id": "PDfEUG3fXQddfsx5",
+  "name": "KENDO: TEKUBI NO SUTORAIKI (KENDO: WRIST STRIKE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/combat-expertise.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This basic Kendo-style attack targets the wrist in an attempt to disarm the opponent.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the ene my's wrist. This attack deals normal weapon damage and has a 10% chance of making the enemy drop his weapon if armed.</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stick.</p>\n<p><b>Mastery:</b> At 2nd, 3rd, 4th and 5th levels of mastery the percentage of disarming the target creature increases by 10%.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Armed"
+    ],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 1,
+    "activation": "attack",
+    "range": "Melee Attack",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "e0b69284fda9c989",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "199"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "oMc6oOOISUkEMAUa",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!PDfEUG3fXQddfsx5"
+}

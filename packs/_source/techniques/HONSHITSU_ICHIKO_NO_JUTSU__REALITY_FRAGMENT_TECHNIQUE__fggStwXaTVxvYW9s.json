@@ -1,0 +1,119 @@
+{
+  "_id": "fggStwXaTVxvYW9s",
+  "name": "HONSHITSU ICHIKO NO JUTSU (REALITY FRAGMENT TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rock-orange-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> H, E, F</p>\n\n<hr>\n\n<p>The user holds his mirror against his targets, and fires a projectile made of light against him. The user makes a ranged attack roll at his maximum attack bonus for each shard. Said shard deal 1d4+1 points of slashing damage to the target; the user may target different creature for each shard, as long as they are within range. If the user creates more than 2 shards using this technique, he can shoot them against an Area 5-ft.-radius burst instead a target. Each shard deals 1d4+1, and reflex halves the damage.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> One Mirror</p>\n<p><b>Empower:</b> The user can fire an additional sphere at the cost of 2 additional points of chakra (maximum 1 every 2 levels).</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mirror Arts",
+    "descriptors": [
+      "Mirror Arts"
+    ],
+    "rank": 1,
+    "complexity": "D-Class",
+    "chakraCost": 1,
+    "activation": "attack",
+    "range": "Close (10 ft. + 5 ft./2 levels)",
+    "target": "One living creature (see text)",
+    "area": "",
+    "duration": "Instant",
+    "save": "None",
+    "chakraResistance": true,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "84eb602bf49355b7",
+        "name": "Use",
+        "actionType": "rwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "close"
+        },
+        "target": {
+          "value": "One living creature (see text)"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d4+1",
+              "types": [
+                "slashing"
+              ]
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "150"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "qYmtGqqXVLhEWy4l",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!fggStwXaTVxvYW9s"
+}

@@ -1,0 +1,101 @@
+{
+  "_id": "ehPsUzqqf8nLdiU4",
+  "name": "SHIKAKU SUPAIKOUI (DEAD SPACE ESPIONAGE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-eerie-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, M, Range: (See Text)</p>\n\n<hr>\n\n<p>In order to perform this technique, the user must take a full-round action in which he / she sets herself up for the technique without her opponent knowing. This full round action can also include one movement and one normal attack with no other techniques involved. This is called the Setup.<br><br>For the rest of the encounter, as an instant reaction to any attack or offensive technique, as long as one opponent is within 55 feet of the user, he / she can activate his / her setup and avoid the attack using the same rules as Kawarimi no Jutsu and benefitting from the user's masteries in Kawarimi for this portion of the technique. However, this special use of avoid the attack functions differently from regular avoid the attack techniques in that the user also performs an advanced replacement, replacing himself with a special body double.<br><br>This shadow art technique allows the user to use a sealed and pre-packaged selection of components that make up the human body (sulfur, iron, etc.) to create a physical clone of himself / herself, one that it biologically identical (at least on the surface) but that is actually an elaborate hoax. The body itself has no life whatsoever and never has. Making it an affective corpse. The body double takes the blow of the attack while the user disappears. In reality, the user uses his shadow arts to hide himself within his opponent's' shadow.<br><br>The user can remain in the shadow for up to 6 hours per level and benefits from rest the entire time he / she is in the shadow, though he / she is still fully conscious and capable of hearing what goes on in the outside world (though not seeing it). The user can decide to leave the shadow at any point, though if it stays inside until the maximum time he / she will be expelled regardless. While in the shadow, the user is considered to be functioning in a space of roughly 7 square feet and can perform any actions he would usually be allowed to do in this space, though there is no ground so things that would require balance such as crafting require a DC: 35 balance check.<br><br>Material Focus -A sealed container of biological elements: i.e. sulfur, iron, etc. Purchase DC: 10 Weight: 25 lb.</p>\n\n<hr><p><b>Requires:</b> Shadow Arts (f), Shikaku Inpei (t), Kawarimi no Jutsu (5)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shadow",
+    "descriptors": [],
+    "rank": 10,
+    "complexity": "A-Class",
+    "chakraCost": 16,
+    "activation": "full",
+    "range": "(See Text)",
+    "target": "One Creature's Shadow (See Text)",
+    "area": "",
+    "duration": "1 Day per four level",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "cf50db2bdcbe875c",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One Creature's Shadow (See Text)"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "181"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "bNJMxI8FT1XzyJW3",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!ehPsUzqqf8nLdiU4"
+}

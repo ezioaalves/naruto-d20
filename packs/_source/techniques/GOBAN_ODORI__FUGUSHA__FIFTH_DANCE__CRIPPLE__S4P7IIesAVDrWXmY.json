@@ -1,0 +1,116 @@
+{
+  "_id": "S4P7IIesAVDrWXmY",
+  "name": "GOBAN ODORI: FUGUSHA (FIFTH DANCE: CRIPPLE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/horror-acid-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 29 | <b>Successes:</b> </p>\n<p><b>Perform:</b> 25 | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> C, F, M, Mas, P</p>\n\n<hr>\n\n<p>This advanced dance technique is known by those with extreme talents in both genjutsu and taijutsu. This technique can only be used while the user is in the Meimu no Kamae stance. This dance affects a single target, which cannot be blind as it relies more on the dance than the other techniques. The creature in question will see the user rapidly approaching them, and the user will appear to be dancing in front of them. Each move connects, and the target feels as if it were actually attacked, despite the user using this at range. The target's mind feels the assault, dealing 4d6 damage, which can be halved with a successful Will save. Any creature farther than 30 ft., but in range will receive a +2 bonus to the save. The user of the technique, because of the unpredictable movements it uses, is considered to be moving at two speed ranks higher than normal.</p>\n\n<hr><p><b>Requires:</b> Taijutsu 12 ranks; Meimu no Kamae(t)</p>\n<p><b>Material Focus:</b> To accurately perform this technique, the user needs specially made clothes, usually equipped with whistles or bells that cause the illusion. These clothes usually have a Cost DC of 10.</p>\n<p><b>Mastery:</b> At the third step of mastery, for 4 chakra, the user can increase the damage by 1d6.<br><br>At the fifth step of mastery, for every 4 chakra, the user can increase the damage by 1d6 to a max of 2d6.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Genjutsu",
+    "subtype": "Phantasm",
+    "descriptors": [
+      "Mind-Affecting"
+    ],
+    "rank": 9,
+    "complexity": "A-Class",
+    "chakraCost": 10,
+    "activation": "attack",
+    "range": "45 ft.",
+    "target": "1 Creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Will Half",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": true,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "9d4b287eb634b9ac",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "ft",
+          "value": "45"
+        },
+        "target": {
+          "value": "1 Creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "4d6",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "will",
+          "description": "Will Half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "133"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "CMIuQWwkWKYiScwa",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!S4P7IIesAVDrWXmY"
+}

@@ -1,0 +1,107 @@
+{
+  "_id": "aGeIR1HnjDJCrTUh",
+  "name": "SEIHATAKI WARERU NO JUTSU (SOUL SHATTER TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fire-arrows-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 15</p>\n<p><b>Chakra Cost:</b> 30</p>\n\n<p><b>Learn DC:</b> 40 | <b>Successes:</b> 10</p>\n<p><b>Perform:</b> 23 | <b>Perform DC:</b> 45</p>\n\n<p><b>Components:</b> C, H, X, Mas, E</p>\n\n<hr>\n\n<p>After stealing half from the target essence, his shadow does not exist anymore until regains his levels. To use Seihataki Wareru no Jutsu the user must \"steal\" half of target's Hit Dices (levels) inside the same mirror, so forces his own chakra toward the object. The overflow breaks the mirror, and so the target soul does. This technique instantly delivers 10 points of damage per shinobi level. The target must try a Will saving throw die, even if the Will save is successful, the subject takes 3d6 points of damage but regains all the lost levels.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f), Seirei Kasumetoru no Jutsu(t)</p>\n<p><b>Effect:</b> One creature affected by Seirei Kasumetoru no Jutsu</p>\n<p><b>Expendable Component:</b> Expendable Components -One Mirror.</p>\n<p><b>Empower:</b> The user may spend 1 point of chakra to increase the damage by 1 die, up to 7d6.</p>\n<p><b>Mastery:</b> The fourth step of mastery in this technique can kill the target or just let him fall unconscious, up to user's choice.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mirror Arts",
+    "descriptors": [],
+    "rank": 15,
+    "complexity": "Epic",
+    "chakraCost": 30,
+    "activation": "full",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "Instant",
+    "save": "Will (partial)",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": true,
+    "compExpendable": true,
+    "compPhysical": false,
+    "compXpCost": true,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "5391203569536488",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "3d6",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "will",
+          "description": "Will"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "178"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "3kIBDErVHiChzwqJ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!aGeIR1HnjDJCrTUh"
+}

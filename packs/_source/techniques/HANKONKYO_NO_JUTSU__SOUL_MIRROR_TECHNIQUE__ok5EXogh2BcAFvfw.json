@@ -1,0 +1,107 @@
+{
+  "_id": "ok5EXogh2BcAFvfw",
+  "name": "HANKONKYO NO JUTSU (SOUL MIRROR TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/rock-orange-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H, F</p>\n\n<hr>\n\n<p>This technique is basically an advanced version of Bunshin no Jutsu that creates ethereal from the user own reflection, using no substance or matter as carrier for the user's chakra. Using this technique, the user is able to divide his essence to create several copies of himself. While the replications are not capable of sentient thought, they share a bond of sort that allows the user to communicate orders to his clones; the bond is only one way, though, and the clones cannot send orders, thoughts or images to the user. As such, the clones follow the user's instructions to the letter.<br><br>A clone is its own person and if caught in a genjutsu, only the replica will be affected, and not the user and/or the whole group of clone. Anything experienced by the clone will be remembered by the user when the technique expires, although it should be noted that no extra experience or game-wise bonus will be awarded from this, only the knowledge acquired by the clone.<br><br>The clones have 2 hit points per three levels of the user, saving throws equal to that of the user minus two, the same attack bonus as the user minus 2, though it may not have more than two attacks per round. It shares the user's defense as well, but ignores natural armor and armor from physical sources, but receives user's charisma as deflection, as well as all feats, talents and special abilities (though not templates and/or bloodlines) the user may have, but does not benefit from any temporary bonuses the user may currently have (such as Shodan Kousoku or Tadayou).<br><br>A bunshin may not stray further than 1 mile from the user, and may be created in any location that can hold it within 50 feet. It can use any technique the user may have under Rank 6, with the same skills modifier, but doing so requires the clone to borrow the user's chakra directly. In addition, all drawbacks coming from a technique used by a replication not only affects the clone, but also the user. A replica counts as the user if it uses a technique to create clones, and thus they are controlled by the user and his own limit is used. The clone is genuine and carry the very same equipment as the user except chakradependent items such as exploding tags or sunburst tags. Any items carried by the bunshin has no hardness and only half the original's hit points. Poison and mastercraft bonuses are not carried over to the clone's equipment.<br><br>Lastly, while the clone can use techniques, it cannot normally perform any activities requiring particular attention, such as sensing chakra, setting off an exploding tag or carrying a serious conversation. Once the clone reaches 0 hit points, strays too far from the user or the duration expires, it disappears in a puff of smoke. When Sensing Chakra, the clones count as though having half the user's Chakra Pool. Creating a clone not only costs Chakra, but also divides the user's essence. For each clone created by this technique, the user suffers 1d4+1 points of damage.<br><br>While the user can freely replace any clones lost by using this technique more than once, he cannot control a number greater of clone than the specified maximum. He can also choose to dissipate a single clone (or more) of his choice rather than the whole group. He also cannot control any other sort of clone while using this technique (including simple Bunshins or Tajuu Kage Bunshins). A simple usage of this technique without adding to the cost (2) creates one replica.<br><br>You can use Fuzen Shinrui Fuuin on Hankonkyo no Jutsu.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Effect:</b> Duplicates of the user</p>\n<p><b>Material Focus:</b> One Mirror</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mirror Arts",
+    "descriptors": [],
+    "rank": 5,
+    "complexity": "B-Class",
+    "chakraCost": 4,
+    "activation": "full",
+    "range": "50 feet (see text)",
+    "target": "",
+    "area": "",
+    "duration": "10 minute/level (D)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "74634c3140f2362d",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "10*@cl"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d4+1",
+              "types": []
+            }
+          ]
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "149"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "AhQhQuvtn4LG7g6g",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!ok5EXogh2BcAFvfw"
+}

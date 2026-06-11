@@ -1,0 +1,119 @@
+{
+  "_id": "RceH7XofHszqqLF2",
+  "name": "SHOTON: ROKKAKU SHURIKEN RANBU (CRYSTAL: HEXAGONAL SHURIKEN WILD DANCE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/explosion-sky-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>The user launches a barrage of crystal formed discs, bombarding a single area with dozens of projectiles with the intent to completely shred the opponent. The targets of this ability will be subject to 4d6 points of slashing damage that can be halved with a successful reflex save.</p>\n\n<hr><p><b>Requires:</b> Shoton: Rokkaku Shuriken (5)</p>\n<p><b>Empower:</b> The user may spend an additional point of chakra to increase the damage dealt by this technique by 1d6 to a maximum of 8d6.<br><br>SHOTON: SHOHARI (CRYSTAL RELEASE: CRYSTAL NEEDLES) Ninjutsu (Shoton)<br><br>Rank: 7 (A); Learn DC: 22, 4 successes; Perform: 10 (DC 24); Time: 1 attack action; Components: H, E; Range: Close; Area: 5-foot square (see text); Duration: Instant; Save: Reflex half; CR: Yes; Cost: 4.<br><br>The user creates crystal needles from the surrounding air. It surrounds the targeted square, and every creature caught in the targeted area suffers 3d6 points of piercing damage. In addition, the user may decide to target a 10foot square instead, but the damage dealt by the technique will be halved.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shoton",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "",
+    "area": "5 ft. radius",
+    "duration": "Instant",
+    "save": "Reflex half",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": true,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "6cc980f7caf95cda",
+        "name": "Use",
+        "actionType": "spellsave",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "area": "5 ft. radius",
+        "damage": {
+          "parts": [
+            {
+              "formula": "4d6",
+              "types": [
+                "slashing"
+              ]
+            },
+            {
+              "formula": "3d6",
+              "types": [
+                "piercing"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex half"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "184"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "KvA4hIJxg0ZqJ88H",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!RceH7XofHszqqLF2"
+}

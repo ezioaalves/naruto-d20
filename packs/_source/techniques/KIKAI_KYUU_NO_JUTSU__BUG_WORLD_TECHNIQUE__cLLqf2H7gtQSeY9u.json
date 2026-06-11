@@ -1,0 +1,119 @@
+{
+  "_id": "cLLqf2H7gtQSeY9u",
+  "name": "KIKAI KYUU NO JUTSU (BUG WORLD TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fireball-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 30</p>\n\n<p><b>Learn DC:</b> 34 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 38</p>\n\n<p><b>Components:</b> C, H, F</p>\n\n<hr>\n\n<p>Konchuu Kyuu no Jutsu is considered the epitome of their clan techniques as it makes escape for their target near impossible as it requires the user to possess a total of 8 swarms (bug reserve included). The character simply performs a series of hand seals as his symbiotes swarm around him and then gather to the targeted area where they attack only the targets the user wishes to attack. All opponents suffering from this technique suffers 8d10 chakra damage and a -5 penalty to attack, spot, defence, and reflex checks for 1d4 rounds. If the user so wishes he may spend another 7 chakra to gain +5 ft./per additional swarm.</p>\n\n<hr><p><b>Requires:</b> ; Kikai Host</p>\n<p><b>Mastery:</b> First step of master adds +8 to chakra damage.<br><br>Second step of mastery increases the damage by one increment (i.e. 8d10 to 8d12).<br><br>Third step of mastery increases the range by 30 ft.<br><br>Fourth step of mastery increases the technique save throw by 2.<br><br>Fifth step of mastery replaces the total damage to 10d12+10 chakra damage, replacing the first and second step's bonuses.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "",
+    "descriptors": [
+      "Aburame Hijutsu"
+    ],
+    "rank": 12,
+    "complexity": "S-Class",
+    "chakraCost": 30,
+    "activation": "full",
+    "range": "Medium (20 ft. + 10 ft./2 levels)",
+    "target": "",
+    "area": "30 ft. radius + 5 ft./swarm",
+    "duration": "1d4 rounds",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "2b1d9ddf77d4afae",
+        "name": "Use",
+        "actionType": "rwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "medium"
+        },
+        "area": "30 ft. radius + 5 ft./swarm",
+        "damage": {
+          "parts": [
+            {
+              "formula": "8d10",
+              "types": []
+            },
+            {
+              "formula": "10d12+10",
+              "types": []
+            }
+          ]
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "161"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "KeYcKYYSsqyI4SyM",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!cLLqf2H7gtQSeY9u"
+}

@@ -1,0 +1,109 @@
+{
+  "_id": "cxVL2Jdj5S9UT8uu",
+  "name": "KODOUGU AATISUTO JUNBI (THE PROP ARTIST ' S SETUP )",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/link-royal-1.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Fuinjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This sealing technique will camouflage any object that it is applied to. When attempting to hide an object, you gain a bonus as per Meisaigakure no Jutsu to your Hide check, the bonus from this jutsu and Meisaigakure no Jutsu do not stack. If the seal is applied and the object left as is, the base Spot DC increases by 10.</p>\n\n<hr><p><b>Requires:</b> Meisaigakure no Jutsu (5)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Fuinjutsu",
+    "subtype": "",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 8,
+    "activation": "attack",
+    "range": "Melee Touch",
+    "target": "One object",
+    "area": "",
+    "duration": "1 minute/level",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "14f944814c8156ac",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "minute",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One object"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "131"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "gQmkKQwAy2iSO4kq",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!cxVL2Jdj5S9UT8uu"
+}

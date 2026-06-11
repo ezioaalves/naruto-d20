@@ -1,0 +1,109 @@
+{
+  "_id": "MeUJYOF6iinJwRsB",
+  "name": "SEISHIN GARANDOU NO JUTSU (MIND VOID TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/horror-eerie-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>With this powerful Genjutsu technique, the user erases himself from existence to the senses of all those within range of the technique to allow himself to move around unhindered and unopposed for several seconds, then utilizes the surprise created by the effect to gain the upper hand on his opponents.<br><br>As soon as the technique is completed, all those within the area of effect make an immediate will save; those caught in its effects will experience a several-second gap during which their minds are put in complete stasis. Once the duration is over, they continue with their actions and thoughts from before; the transition is absolutely seamless to the subjects, and cannot be detected by any means. During this time, the user may move around at will and will not provoke Attacks of Opportunity from any subject that is caught in the Genjutsu.<br><br>If the user attempts to attack, the subject will get a second will save at a +10 bonus to resist the Genjutsu in time to defend themselves normally; otherwise the subject loses their Dexterity bonus to Defence for the attack. The Genjutsu will be cancelled for all subjects as soon as any attack succeeds. Each consecutive use of the jutsu on the same subject (or subjects) grants a +4 bonus to resist its effects, and after the third use the subject may also make a Spot check DC 18 to notice something about his environment moving to deduce that he 'missed' the last several seconds of time (this can be things like clouds instantly moving across the sky, or something that was falling before the Genjutsu having already hit the ground afterward). When the jutsu is over, the user seems to have moved faster than is humanly possible (even through ninja techniques) from one place to another without leaving a trail, making a sound, or even causing a blur of movement.<br><br>When in combat, as soon as this Genjutsu ends, the user can make a single move action to finish their turn (no swift or free actions). The user must use the move action for movement, not reloading a crossbow or other move-equivalent actions. After the Movement action, the user immediately loses 1 point in the Initiative possibly altering their turn order and acts again as though everyone else had delayed their actions until after his next turn. This second turn may be taken normally with no restrictions.<br><br>If this effect drops the user's initiative to equal to that of another participant in the battle, friend or foe, that character takes their turn before the user gets their second turn as though there had been a tie in rolling initiative and the other person won the tie. From that point on the user's initiative remains at its new value.</p>\n\n<hr><p><b>Requires:</b> Genjutsu 8 ranks</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Genjutsu",
+    "subtype": "Phantasm",
+    "descriptors": [
+      "MindAffecting",
+      "Lost Hijutsu"
+    ],
+    "rank": 8,
+    "complexity": "A-Class",
+    "chakraCost": 8,
+    "activation": "standard",
+    "range": "Long (30 ft. + 15 ft./2 levels)",
+    "target": "All",
+    "area": "Burst centered on user",
+    "duration": "Instant",
+    "save": "Will negates",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": true,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "473e7801e6b9260f",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "long"
+        },
+        "target": {
+          "value": "All"
+        },
+        "area": "Burst centered on user",
+        "save": {
+          "type": "will",
+          "description": "Will negates"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "135"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "MQuwAEI0eG0Q6Esw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!MeUJYOF6iinJwRsB"
+}

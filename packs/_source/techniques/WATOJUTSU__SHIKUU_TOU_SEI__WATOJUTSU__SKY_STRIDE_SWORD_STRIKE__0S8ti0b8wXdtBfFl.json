@@ -1,0 +1,121 @@
+{
+  "_id": "0S8ti0b8wXdtBfFl",
+  "name": "WATOJUTSU: SHIKUU TOU SEI (WATOJUTSU -SKY STRIDE SWORD STRIKE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/skills/weapon_07.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b>  | <b>Successes:</b> </p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>The advanced Wato jumping technique gets his strength from the second jump made during the attack. The user makes a jump check counted as if he had running start to launch himself upwards, and then proceeds to make a second jump at -5 penalty to propel himself higher and proceeds to make an attack. For every 10 feet upwards that he jumped he gains additional 1d8 damage (up to 1 die per 2 levels) and additionally the opponent must make a fortitude save with DC increased by 1 per 20 feet that user jumped or be knocked prone and stunned for one round.<br><br>This technique counts as rank 9 for purposes of determining how long it takes to learn and master<br><br>Material Focus -The user's Wato, katana, double katana or hansori.</p>\n\n<hr><p><b>Requires:</b> : Chouten Tou Sei (3) and Sarutobi no Jutsu (5)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Lost Hijutsu"
+    ],
+    "rank": 1,
+    "complexity": "S-Class",
+    "chakraCost": 6,
+    "activation": "full",
+    "range": "Melee",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Fortitude partial",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "b7982a7189471ee9",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "seeText"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "1d8",
+              "types": []
+            }
+          ]
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude partial"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "206"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "8cyAIs6keIieeOIE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!0S8ti0b8wXdtBfFl"
+}

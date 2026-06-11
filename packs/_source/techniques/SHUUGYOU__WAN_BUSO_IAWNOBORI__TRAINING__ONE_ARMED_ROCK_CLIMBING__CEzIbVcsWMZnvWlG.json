@@ -1,0 +1,95 @@
+{
+  "_id": "CEzIbVcsWMZnvWlG",
+  "name": "SHUUGYOU: WAN BUSO IAWNOBORI (TRAINING: ONE ARMED ROCK CLIMBING)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/self-suficient.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Through mountainous terrain you climb to the top. This training involves climbing dangerous cliffs with one hand tied behind your back. The character must be around mountainous terrain to learn this training. At the end of this training the character gains a +5 inherent bonus to Climb checks. Additionally, if the character is reduced to climbing with only one hand, they may continue to climb using one hand instead of being unable to move.</p>\n\n<hr><p><b>Requires:</b> Training (f) Climb 10 ranks</p>\n<p><b>Mastery:</b> Each step of mastery gives the user a +1 to the Reflex save.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Training",
+    "subtype": "Taijutsu",
+    "descriptors": [],
+    "rank": 6,
+    "complexity": "B-Class",
+    "chakraCost": 0,
+    "activation": "standard",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "39ffc63835d9f12d",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "213"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "ayYIiiWUKK026ygC",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!CEzIbVcsWMZnvWlG"
+}

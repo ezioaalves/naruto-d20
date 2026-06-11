@@ -1,0 +1,106 @@
+{
+  "_id": "EgxcsuLitrzBcptF",
+  "name": "SHOTON: SUISH Ō HEKI HACHI NO JIN (CRYSTAL RELEASE: JADE CRYSTAL WALL EIGHTH FORMATION)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/beam-sky-3.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique allows the user to entrap much larger creatures than Suishō Rō no Jutsu , but at the expense of the lethality. A creature that fails its save is trapped within an area of crystal, unable to perform any abilities or techniques that requires mobility or hand seals. The prison has a hardness of 10 and 40 hit points. A trapped creature can attempt to shatter the crystal with a Strength Check DC (35).</p>\n\n<hr><p><b>Requires:</b> Shoton Gokakuro (3)(t)</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Shoton",
+    "descriptors": [],
+    "rank": 7,
+    "complexity": "A-Class",
+    "chakraCost": 10,
+    "activation": "attack",
+    "range": "Long (30 ft. + 15 ft./2 levels)",
+    "target": "One creature of Gargantuan size or smaller",
+    "area": "",
+    "duration": "1 round / level",
+    "save": "Reflex Negate",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": true,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "997043642ee8dace",
+        "name": "Use",
+        "actionType": "save",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "round",
+          "value": "@cl"
+        },
+        "range": {
+          "units": "long"
+        },
+        "target": {
+          "value": "One creature of Gargantuan size or smaller"
+        },
+        "save": {
+          "type": "ref",
+          "description": "Reflex Negate"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "185"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "ux8RU7l6MHKyoBhi",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!EgxcsuLitrzBcptF"
+}

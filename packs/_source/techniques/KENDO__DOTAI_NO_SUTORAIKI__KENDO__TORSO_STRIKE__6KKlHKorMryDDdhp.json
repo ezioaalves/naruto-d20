@@ -1,0 +1,114 @@
+{
+  "_id": "6KKlHKorMryDDdhp",
+  "name": "KENDO: DOTAI NO SUTORAIKI (KENDO: TORSO STRIKE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/feats/spring-attack.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This basic Kendo-style attack targets the side torso area in an attempt to rupture or nauseate the foe.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the torso area. This attack deals normal weapon damage and causes the target to become nauseated for 1 round unless he succeeds a Fortitude save.</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stick.</p>\n<p><b>Mastery:</b> Each mastery in this technique increases the save DC by 1.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Armed"
+    ],
+    "rank": 2,
+    "complexity": "C-Class",
+    "chakraCost": 1,
+    "activation": "attack",
+    "range": "Melee Attack",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Fortitude partial",
+    "chakraResistance": false,
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": false,
+    "compMastery": false,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "f312569d7d111101",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "standard",
+          "unchained": {
+            "type": "action",
+            "cost": 2
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "save": {
+          "type": "fort",
+          "description": "Fortitude partial"
+        },
+        "touch": true,
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "198"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "yUI8Y6kUaMCw0mQw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!6KKlHKorMryDDdhp"
+}

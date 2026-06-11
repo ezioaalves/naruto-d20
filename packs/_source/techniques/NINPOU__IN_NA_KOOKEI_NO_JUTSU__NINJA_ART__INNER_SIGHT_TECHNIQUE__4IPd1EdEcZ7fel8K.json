@@ -1,0 +1,101 @@
+{
+  "_id": "4IPd1EdEcZ7fel8K",
+  "name": "NINPOU: IN'NA KOOKEI NO JUTSU (NINJA ART: INNER SIGHT TECHNIQUE)",
+  "type": "naruto-d20.technique",
+  "img": "modules/naruto-d20/icons/spells/fireball-red-2.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H, F, Mas, E</p>\n\n<hr>\n\n<p>The user looks at the mirror and try to recall any information, talking with himself against the mirror. The user can make any Knowledge check (even untrained), and receives +1 insight bonus for the duration of technique.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> One Mirror.</p>\n<p><b>Empower:</b> The user may spend 1 point of chakra to increase the bonus by +2, up to +2 per level or +10.</p>\n<p><b>Mastery:</b> Every step of mastery in this technique lets the user re-roll a Knowledge Check per day with Insight Bonus, up to 5/day.</p>\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Ninjutsu",
+    "subtype": "Mirror Arts",
+    "descriptors": [],
+    "rank": 3,
+    "complexity": "C-Class",
+    "chakraCost": 3,
+    "activation": "full",
+    "range": "Personal",
+    "target": "You",
+    "area": "",
+    "duration": "3 rounds (D)",
+    "save": "None",
+    "chakraResistance": false,
+    "compHandSeals": true,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": true,
+    "compEmpower": true,
+    "compMastery": true,
+    "compExpendable": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "62fae829dc9c5fa9",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "full",
+          "unchained": {
+            "type": "action",
+            "cost": 3
+          }
+        },
+        "duration": {
+          "units": "seeText"
+        },
+        "range": {
+          "units": "personal"
+        },
+        "target": {
+          "value": "You"
+        }
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "Community Compendium",
+        "pages": "173"
+      }
+    ]
+  },
+  "effects": [],
+  "folder": "2rlbt9z11bXOwqTt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!4IPd1EdEcZ7fel8K"
+}
