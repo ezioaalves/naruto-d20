@@ -2,7 +2,7 @@
   "_id": "z57C77PU83WOGtUH",
   "name": "NAMI-KAKUSHI NO JUTSU (WAVE SPLITTER TECHNIQUE)",
   "type": "naruto-d20.technique",
-  "img": "modules/naruto-d20/icons/spells/needles-fire-1.jpg",
+  "img": "systems/pf1/icons/spells/needles-fire-1.jpg",
   "_stats": {
     "coreVersion": "13.350",
     "systemId": "pf1",

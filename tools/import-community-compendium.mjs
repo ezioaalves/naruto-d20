@@ -131,7 +131,8 @@ function bodyHtml(text) {
 
 // ── Icon pools (from the original tools/convert-jutsus.mjs, commit dfa2f3d) ─
 
-const M = "modules/naruto-d20/icons";
+// Icons ship with the pf1 system — the module has no icons/{spells,skills,feats}.
+const M = "systems/pf1/icons";
 
 const DISC_ICON_POOLS = {
   Ninjutsu: [

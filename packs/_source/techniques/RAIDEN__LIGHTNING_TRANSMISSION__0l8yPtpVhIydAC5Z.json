@@ -2,7 +2,7 @@
   "_id": "0l8yPtpVhIydAC5Z",
   "name": "RAIDEN (LIGHTNING TRANSMISSION)",
   "type": "naruto-d20.technique",
-  "img": "modules/naruto-d20/icons/spells/lighting-fire-2.jpg",
+  "img": "systems/pf1/icons/spells/lighting-fire-2.jpg",
   "_stats": {
     "coreVersion": "13.350",
     "systemId": "pf1",

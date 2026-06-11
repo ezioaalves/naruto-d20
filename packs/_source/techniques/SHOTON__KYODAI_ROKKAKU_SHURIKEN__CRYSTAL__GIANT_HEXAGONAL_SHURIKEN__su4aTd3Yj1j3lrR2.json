@@ -2,7 +2,7 @@
   "_id": "su4aTd3Yj1j3lrR2",
   "name": "SHOTON: KYODAI ROKKAKU SHURIKEN (CRYSTAL: GIANT HEXAGONAL SHURIKEN)",
   "type": "naruto-d20.technique",
-  "img": "modules/naruto-d20/icons/spells/beam-eerie-1.jpg",
+  "img": "systems/pf1/icons/spells/beam-eerie-1.jpg",
   "_stats": {
     "coreVersion": "13.350",
     "systemId": "pf1",

@@ -2,7 +2,7 @@
   "_id": "AvULCJCesHIbaweS",
   "name": "BUKI TATSUJIN RYUU: DACHI (WEAPON MASTER STYLE: STANCE)",
   "type": "naruto-d20.technique",
-  "img": "modules/naruto-d20/icons/feats/cleave.jpg",
+  "img": "systems/pf1/icons/feats/cleave.jpg",
   "_stats": {
     "coreVersion": "13.350",
     "systemId": "pf1",

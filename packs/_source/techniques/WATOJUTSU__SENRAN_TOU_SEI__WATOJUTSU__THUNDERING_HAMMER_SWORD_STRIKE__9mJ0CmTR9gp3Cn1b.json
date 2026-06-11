@@ -2,7 +2,7 @@
   "_id": "9mJ0CmTR9gp3Cn1b",
   "name": "WATOJUTSU: SENRAN TOU SEI (WATOJUTSU -THUNDERING HAMMER SWORD STRIKE)",
   "type": "naruto-d20.technique",
-  "img": "modules/naruto-d20/icons/skills/weapon_07.jpg",
+  "img": "systems/pf1/icons/skills/weapon_07.jpg",
   "_stats": {
     "coreVersion": "13.350",
     "systemId": "pf1",

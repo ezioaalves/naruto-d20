@@ -2,7 +2,7 @@
   "_id": "0S8ti0b8wXdtBfFl",
   "name": "WATOJUTSU: SHIKUU TOU SEI (WATOJUTSU -SKY STRIDE SWORD STRIKE)",
   "type": "naruto-d20.technique",
-  "img": "modules/naruto-d20/icons/skills/weapon_07.jpg",
+  "img": "systems/pf1/icons/skills/weapon_07.jpg",
   "_stats": {
     "coreVersion": "13.350",
     "systemId": "pf1",
