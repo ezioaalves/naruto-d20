@@ -1,0 +1,103 @@
+{
+  "_id": "sXoSNewJhHdu70YZ",
+  "name": "Kanigakure Hiden Taijutsu: Yuki Yama (Kanigakure's Hidden Taijutsu: Snow Mountain/ Courageous Amount)",
+  "type": "naruto-d20.technique",
+  "img": "systems/pf1/icons/feats/greater-disarm.jpg",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Hijutsu)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 18</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You anchor yourself to the ground and exploit your opponent's momentum against them. When a creature charges, runs, or otherwise moves at greater than its base speed and enters your threatened square until your next round, you may make a touch attack against it as an immediate action. On a hit, the target must succeed on a Reflex save or be knocked prone 15ft ahead in its trajectory. On a successful save, the creature still moves 15ft on its path but remains upright.</p>\n<p>Creatures moving at or below their base speed are unaffected by this technique.</p>\n\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "",
+    "descriptors": [
+      "Hijutsu"
+    ],
+    "rank": 3,
+    "complexity": "B-Class",
+    "chakraCost": 4,
+    "activation": "attack",
+    "range": "Melee Attack",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Reflex or prone",
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": true,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": true,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "homebrew003a0001",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        },
+        "img": "systems/pf1/icons/feats/greater-disarm.jpg"
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": []
+  },
+  "effects": [],
+  "folder": "58aPZ0XGYDCo63Q5",
+  "sort": 200,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!sXoSNewJhHdu70YZ"
+}
