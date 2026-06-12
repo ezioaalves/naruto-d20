@@ -297,6 +297,9 @@
       "Enabled": {
         "Label": "Enable automatic buff application"
       },
+      "StanceMode": {
+        "Label": "Per-round mode-choice stance (Dex/Str)"
+      },
       "BuffName": {
         "Label": "Buff Item Name",
         "Placeholder": "Same as technique name"
@@ -445,6 +448,16 @@
       "Message": "{actor}'s {name} has reached its maintenance point. Spend {cost} chakra to keep it active for {interval} more round(s)?",
       "Maintain": "Maintain",
       "Deactivate": "Deactivate"
+    },
+    "StanceBuff": {
+      "Title": "{name} — choose stance mode",
+      "MessageInitial": "Entering {name}. Choose which mode to fight in this round:",
+      "Message": "{name} continues at the start of your turn. Keep your mode, switch, or break the stance:",
+      "Dexterity": "Dexterity",
+      "Strength": "Strength",
+      "Break": "Break stance",
+      "DexHint": "Dexterity: +2 attack and Acrobatics (tumble) this round.",
+      "StrHint": "Strength: +2 damage and CMB (trip) this round."
     },
     "RankMasteryFreeUse": {
       "Title": "Use mastery free rounds for {name}?",

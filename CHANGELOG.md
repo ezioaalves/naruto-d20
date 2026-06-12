@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.0.26 - 2026-06-12
+
+- Added **per-round Dex/Str mode-choice** for Champuru stances. Performing a mode-choice stance (e.g. `CHAMPURU DAICHI SUTANSU -AYAUI APPUKU`) applies a self-buff that expires at the start of the user's turn and prompts to keep the mode, switch between **Dexterity** (+2 attack / Acrobatics) and **Strength** (+2 damage / CMB), or break the stance. Maintenance is free — only the initial perform pays chakra. Both mode buffs carry a context note for the +2 dodge vs attacks of opportunity. Stances opt in via a new `system.automation.stanceMode` toggle on the technique's Automation tab.
+- Added `stance-buffs.mjs` + `stance-buff-maintenance.mjs` mirroring the rank-buff maintenance lifecycle, and two variant buffs (`(Dexterity)` / `(Strength)`) to the `technique-buffs` compendium.
+
+## v1.0.25 - 2026-06-11
+
+- Added **238 Community Compendium techniques** to the `naruto-d20.techniques` compendium, covering every technique from the Community Compendium source in narutod20_db. Includes a new `tools/import-community-compendium.mjs` converter and auto-generated actions for all new entries. 7 techniques already present under the same name were skipped.
+- Fixed icon paths on the 238 Community Compendium techniques: icons now point to `systems/pf1/icons/` (matching all pre-existing Redux techniques) instead of the non-existent `modules/naruto-d20/icons/` path.
+
+## v1.0.24 - 2026-06-11
+
+- Added **content source** support to technique items: the technique sheet now shows PF1e's standard source editor (title + page fields) and the `sources` ArrayField was added to `TechniqueDataModel` so Foundry's schema validation preserves the data at runtime.
+- Populated `system.sources` on all 1053 techniques in the `naruto-d20.techniques` compendium, referencing **NarutoD20 Redux v1.3** with the canonical page number from the narutod20_db database.
+- Synced page numbers across 436 techniques whose page references had drifted from the canonical narutod20_db source.
+
 ## v1.0.23 - 2026-06-10
 
 - Added support for **temporary** and **bonus** rank grants alongside the existing paid (technique-created) grants for Speed Rank (KOUSOKU) and Strength Rank (JOURYOKU). Temp grants do not stack with paid ranks (max wins); bonus grants add on top. The effective rank is computed once per key and only the designated carrier buff item applies it — all other active rank buffs of the same key zero out to prevent double-application.

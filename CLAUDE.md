@@ -132,7 +132,9 @@ scripts/
     summary-stats.mjs         # Hero Statistics block on Summary tab
   automation/
     buff-application.mjs      # Compendium lookup + buff create/refresh on perform success
-    buff-expiry.mjs           # Delete module-created automation buffs on PF1e expiry
+    buff-expiry.mjs           # Delete module-created automation buffs on PF1e expiry; dispatch rank/stance maintenance
+    stance-buffs.mjs          # Mode-choice stance (Champuru Dex/Str) helpers + flag schema
+    stance-buff-maintenance.mjs # Turn-start prompt to keep/switch mode or break a stance (free upkeep)
     charge-defense.mjs        # Charge AC penalty buff for PF1e charge attacks
     feat-grants.mjs           # Cascade-delete granted feat supplements
     technique-sync.mjs        # Synckit sync/diff helpers

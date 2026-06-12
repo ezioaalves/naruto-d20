@@ -95,7 +95,13 @@
       }
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "NarutoD20 Redux v1.3",
+        "pages": "244"
+      }
+    ]
   },
   "effects": [],
   "folder": "Oya4aCKe8kKAMKoa",

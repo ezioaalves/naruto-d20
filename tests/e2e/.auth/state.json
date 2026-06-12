@@ -1,0 +1,29 @@
+{
+  "cookies": [
+    {
+      "name": "session",
+      "value": "1751e3333ac2a0a3f56169b1",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1781154890.671964,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://localhost:30000",
+      "localStorage": [
+        {
+          "name": "core.performanceMode",
+          "value": "1"
+        },
+        {
+          "name": "pf1.changelogVersion",
+          "value": "\"11.11.0\""
+        }
+      ]
+    }
+  ]
+}

@@ -297,6 +297,9 @@
       "Enabled": {
         "Label": "Ativar aplicação automática de buff"
       },
+      "StanceMode": {
+        "Label": "Stance de escolha de modo por round (Dex/For)"
+      },
       "BuffName": {
         "Label": "Nome do Item de Buff",
         "Placeholder": "Mesmo nome da técnica"
@@ -445,6 +448,16 @@
       "Message": "{name} de {actor} chegou ao ponto de manutenção. Gastar {cost} de chakra para manter ativo por mais {interval} rodada(s)?",
       "Maintain": "Manter",
       "Deactivate": "Desativar"
+    },
+    "StanceBuff": {
+      "Title": "{name} — escolha o modo da stance",
+      "MessageInitial": "Entrando em {name}. Escolha em qual modo lutar neste round:",
+      "Message": "{name} continua no início do seu turno. Mantenha o modo, troque, ou quebre a stance:",
+      "Dexterity": "Destreza",
+      "Strength": "Força",
+      "Break": "Quebrar stance",
+      "DexHint": "Destreza: +2 em ataque e Acrobacia (tumble) neste round.",
+      "StrHint": "Força: +2 em dano e CMB (rasteira) neste round."
     },
     "RankMasteryFreeUse": {
       "Title": "Usar rounds grátis de maestria para {name}?",

@@ -95,7 +95,13 @@
     },
     "showInQuickbar": false,
     "showInCombat": false,
-    "chakraResistance": true
+    "chakraResistance": true,
+    "sources": [
+      {
+        "title": "NarutoD20 Redux v1.3",
+        "pages": "329"
+      }
+    ]
   },
   "effects": [],
   "folder": "0SCYq4q0c20wmIAe",

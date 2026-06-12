@@ -1,0 +1,114 @@
+{
+  "type": "buff",
+  "system": {
+    "description": {
+      "value": "<p>Champuru Second Stance — <b>Instinct</b>. All attacks modified by Dexterity; +2 to attack rolls, Acrobatics (tumble) checks, damage, and trip checks this round. Only while wielding a sword.</p>",
+      "instructions": ""
+    },
+    "tags": [],
+    "changes": [
+      {
+        "type": "untyped",
+        "_id": "nibanatk",
+        "operator": "add",
+        "priority": 0,
+        "target": "attack",
+        "formula": "2"
+      },
+      {
+        "type": "untyped",
+        "_id": "nibanacr",
+        "operator": "add",
+        "priority": 0,
+        "target": "skill.acr",
+        "formula": "2"
+      },
+      {
+        "type": "untyped",
+        "_id": "nibandmg",
+        "operator": "add",
+        "priority": 0,
+        "target": "damage",
+        "formula": "2"
+      },
+      {
+        "type": "untyped",
+        "_id": "nibancmb",
+        "operator": "add",
+        "priority": 0,
+        "target": "cmb",
+        "formula": "2"
+      }
+    ],
+    "changeFlags": {
+      "immuneToMorale": false,
+      "loseDexToAC": false,
+      "noMediumEncumbrance": false,
+      "noHeavyEncumbrance": false,
+      "mediumArmorFullSpeed": false,
+      "heavyArmorFullSpeed": false,
+      "lowLightVision": false,
+      "seeInvisibility": false,
+      "seeInDarkness": false
+    },
+    "contextNotes": [
+      {
+        "text": "+2 dodge bonus to AC against attacks of opportunity (move at least 10 ft this round or the stance breaks).",
+        "target": "ac"
+      }
+    ],
+    "actions": [],
+    "attackNotes": [],
+    "effectNotes": [],
+    "uses": {
+      "value": null,
+      "per": "",
+      "autoDeductChargesCost": "",
+      "maxFormula": "",
+      "rechargeFormula": ""
+    },
+    "links": {
+      "children": []
+    },
+    "tag": "",
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "scriptCalls": [],
+    "subType": "temp",
+    "active": false,
+    "level": 0,
+    "duration": {
+      "value": "",
+      "units": "perm",
+      "end": "turnStart",
+      "start": 0
+    },
+    "conditions": [],
+    "hideFromToken": false,
+    "showInQuickbar": false
+  },
+  "name": "CHAMPURU NIBAN SUTANSU - HONNOU (CHAMPURU SECOND STANCE - INSTINCT)",
+  "img": "systems/pf1/icons/skills/weapon_08.jpg",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780120000011,
+    "modifiedTime": 1780120000011,
+    "lastModifiedBy": null
+  },
+  "_id": "mXvQ8kLp2rTnYj5w",
+  "sort": 0,
+  "_key": "!items!mXvQ8kLp2rTnYj5w"
+}

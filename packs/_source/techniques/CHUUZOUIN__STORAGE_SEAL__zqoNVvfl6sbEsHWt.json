@@ -75,7 +75,13 @@
       "dictionary": {}
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "sources": [
+      {
+        "title": "NarutoD20 Redux v1.3",
+        "pages": "122"
+      }
+    ]
   },
   "effects": [],
   "folder": "e2W62uYwSkuU2yWC",

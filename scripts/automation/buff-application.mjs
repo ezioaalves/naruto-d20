@@ -6,6 +6,17 @@ import {
   rankBuffFlagData,
   resolveRankTechnique,
 } from "./rank-buffs.mjs";
+import {
+  STANCE_BUFF_FLAG,
+  STANCE_BUFF_FLAG_PATH,
+  STANCE_MODES,
+  findStanceBuffForTechnique,
+  isModeChoiceStance,
+  stanceBuffDuration,
+  stanceBuffFlagData,
+  stanceBuffName,
+  stanceModeById,
+} from "./stance-buffs.mjs";
 
 const SOURCE_FLAG = MODULE_ID;
 const DEFAULT_BUFF_PACK_ID = "naruto-d20.technique-buffs";
@@ -21,6 +32,12 @@ export async function applyTechniqueBuff(item, actor, action) {
   if (!auto?.enabled) return;
 
   if (game.settings.get(MODULE_ID, "buffTargetFiltering") === "off") return;
+
+  // Per-round Dex/Str mode-choice stances follow their own self-buff lifecycle.
+  if (isModeChoiceStance(item)) {
+    await applyStanceModeBuff(item, actor);
+    return;
+  }
 
   const context = resolveTechniqueBuffContext(item);
   const buffEntry = await resolveBuffMatch(context.buffName);
@@ -50,6 +67,106 @@ export async function applyTechniqueBuff(item, actor, action) {
 
 export function clearBuffLookupCache() {
   buffIndexCache.clear();
+}
+
+/**
+ * Apply (or switch) a mode-choice stance buff on the performer. Each mode maps to
+ * a "<technique> (Dexterity|Strength)" buff variant. Switching deletes the previous
+ * mode's buff so only one stance buff is ever active for the technique. No chakra is
+ * spent here — only the initial perform pays; round-to-round upkeep is free.
+ */
+export async function applyStanceModeBuff(item, actor, modeId = null) {
+  if (!actor?.isOwner) return;
+
+  const resolvedModeId = modeId ?? (await promptStanceMode(item, { initial: true }));
+  if (!resolvedModeId || resolvedModeId === "break") {
+    await removeStanceBuff(actor, item.id);
+    return;
+  }
+
+  const mode = stanceModeById(resolvedModeId);
+  if (!mode) return;
+
+  const buffEntry = await resolveBuffMatch(stanceBuffName(item, mode));
+  if (!buffEntry) {
+    console.warn(
+      `naruto-d20 | No stance buff found named "${stanceBuffName(item, mode)}" in technique-buffs compendia.`,
+    );
+    return;
+  }
+
+  const buffDoc = await resolveBuffDocument(buffEntry);
+  if (!buffDoc) return;
+
+  // Drop any previously applied mode buff for this technique before applying the new one.
+  const existing = findStanceBuffForTechnique(actor, item.id);
+  if (existing && existing.flags?.[SOURCE_FLAG]?.sourceId !== buffDoc.uuid) {
+    await removeStanceBuff(actor, existing.id);
+  }
+
+  await applyBuffToTarget(buffDoc, actor, {
+    duration: stanceBuffDuration(),
+    stanceBuff: stanceBuffFlagData({ sourceTechniqueId: item.id, modeId: mode.id }),
+  });
+}
+
+async function removeStanceBuff(actor, itemId) {
+  if (!actor.items.has(itemId)) return;
+  try {
+    await actor.deleteEmbeddedDocuments("Item", [itemId]);
+  } catch (err) {
+    if (actor.items.has(itemId)) {
+      console.error(`naruto-d20 | failed to delete stance buff "${itemId}":`, err);
+    }
+  }
+}
+
+/**
+ * Prompt the user to pick a stance mode (or break the stance). Reused for the initial
+ * activation and the per-turn maintenance prompt.
+ * Resolves to a mode id ("dex" / "str"), "break", or null (canceled initial activation).
+ */
+export function promptStanceMode(item, { current = null, allowBreak = false, initial = false } = {}) {
+  return new Promise((resolve) => {
+    let resolved = false;
+    const done = (value) => {
+      if (resolved) return;
+      resolved = true;
+      resolve(value);
+    };
+
+    const buttons = {};
+    for (const mode of STANCE_MODES) {
+      buttons[mode.id] = {
+        label: game.i18n.localize(mode.labelKey),
+        callback: () => done(mode.id),
+      };
+    }
+    if (allowBreak) {
+      buttons.break = {
+        icon: '<i class="fas fa-times"></i>',
+        label: game.i18n.localize("NarutoD20.StanceBuff.Break"),
+        callback: () => done("break"),
+      };
+    }
+
+    const messageKey = initial
+      ? "NarutoD20.StanceBuff.MessageInitial"
+      : "NarutoD20.StanceBuff.Message";
+
+    new Dialog({
+      title: game.i18n.format("NarutoD20.StanceBuff.Title", { name: item.name }),
+      content: `<p>${game.i18n.format(messageKey, { name: item.name })}</p>
+        <ul>
+          <li>${game.i18n.localize("NarutoD20.StanceBuff.DexHint")}</li>
+          <li>${game.i18n.localize("NarutoD20.StanceBuff.StrHint")}</li>
+        </ul>`,
+      buttons,
+      default: stanceModeById(current)?.id ?? STANCE_MODES[0].id,
+      // Closing the initial prompt cancels; closing maintenance breaks the stance.
+      close: () => done(initial ? null : allowBreak ? "break" : null),
+    }).render(true);
+  });
 }
 
 /**
@@ -265,14 +382,14 @@ export async function applyBuffToTarget(buffDoc, targetActor, options = null) {
     return;
   }
 
-  const { duration, level, rankBuff } = normalizeBuffApplyOptions(options);
+  const { duration, level, rankBuff, stanceBuff } = normalizeBuffApplyOptions(options);
   const sourceId = buffDoc.uuid;
   const existing = findExistingAppliedBuff(targetActor, sourceId);
 
   if (existing) {
-    await refreshExistingBuff(existing, { duration, level, rankBuff });
+    await refreshExistingBuff(existing, { duration, level, rankBuff, stanceBuff });
   } else {
-    await createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff });
+    await createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff, stanceBuff });
   }
 }
 
@@ -281,14 +398,16 @@ function normalizeBuffApplyOptions(options) {
     !options ||
     (!("duration" in Object(options)) &&
       !("level" in Object(options)) &&
-      !("rankBuff" in Object(options)))
+      !("rankBuff" in Object(options)) &&
+      !("stanceBuff" in Object(options)))
   ) {
-    return { duration: options ?? null, level: null, rankBuff: null };
+    return { duration: options ?? null, level: null, rankBuff: null, stanceBuff: null };
   }
   return {
     duration: options.duration ?? null,
     level: Number.isInteger(options.level) ? options.level : null,
     rankBuff: options.rankBuff ?? null,
+    stanceBuff: options.stanceBuff ?? null,
   };
 }
 
@@ -296,7 +415,7 @@ function findExistingAppliedBuff(targetActor, sourceId) {
   return targetActor.items.find((i) => i.flags?.[SOURCE_FLAG]?.sourceId === sourceId);
 }
 
-async function refreshExistingBuff(existing, { duration, level, rankBuff }) {
+async function refreshExistingBuff(existing, { duration, level, rankBuff, stanceBuff }) {
   const updates = { "system.active": true };
   if (duration) {
     updates["system.duration.units"] = duration.units;
@@ -310,10 +429,13 @@ async function refreshExistingBuff(existing, { duration, level, rankBuff }) {
   if (rankBuff) {
     updates[RANK_BUFF_FLAG_PATH] = rankBuff;
   }
+  if (stanceBuff) {
+    updates[STANCE_BUFF_FLAG_PATH] = stanceBuff;
+  }
   await existing.update(updates);
 }
 
-async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff }) {
+async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff, stanceBuff }) {
   const itemData = buffDoc.toObject();
   delete itemData._id;
 
@@ -321,6 +443,7 @@ async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, le
   itemData.flags[SOURCE_FLAG] ??= {};
   itemData.flags[SOURCE_FLAG].sourceId = sourceId;
   if (rankBuff) itemData.flags[SOURCE_FLAG][RANK_BUFF_FLAG] = rankBuff;
+  if (stanceBuff) itemData.flags[SOURCE_FLAG][STANCE_BUFF_FLAG] = stanceBuff;
 
   itemData.system ??= {};
   if (duration) {

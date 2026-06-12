@@ -17,6 +17,7 @@
     "fix-action-ids": "node tools/fix-action-ids.mjs",
     "fix-spell-attacks": "node tools/fix-spell-attacks.mjs",
     "sync-activation": "node tools/sync-technique-activation-from-db.mjs",
+    "add-sources": "node tools/add-sources.mjs",
     "release:local": "node tools/release-local.mjs",
     "validate:compendia": "node tools/validate-compendia.mjs",
     "validate:manifest": "node tools/validate-manifest.mjs",

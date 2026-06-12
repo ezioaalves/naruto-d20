@@ -82,7 +82,13 @@
       "per": "day",
       "autoDeductChargesCost": "0",
       "rechargeFormula": ""
-    }
+    },
+    "sources": [
+      {
+        "title": "NarutoD20 Redux v1.3",
+        "pages": "234"
+      }
+    ]
   },
   "effects": [],
   "folder": "2E8qMC4kYMOGQySW",

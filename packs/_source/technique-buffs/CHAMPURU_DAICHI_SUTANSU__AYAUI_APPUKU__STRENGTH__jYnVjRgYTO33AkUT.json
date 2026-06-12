@@ -1,0 +1,98 @@
+{
+  "type": "buff",
+  "system": {
+    "description": {
+      "value": "<p>Champuru stance — <b>Strength</b> mode. Attacks are modified by Strength; +2 to damage and CMB (trip) checks this round. Only while wielding a sword.</p>",
+      "instructions": ""
+    },
+    "tags": [],
+    "changes": [
+      {
+        "type": "untyped",
+        "_id": "champstra",
+        "operator": "add",
+        "priority": 0,
+        "target": "damage",
+        "formula": "2"
+      },
+      {
+        "type": "untyped",
+        "_id": "champstrb",
+        "operator": "add",
+        "priority": 0,
+        "target": "cmb",
+        "formula": "2"
+      }
+    ],
+    "changeFlags": {
+      "immuneToMorale": false,
+      "loseDexToAC": false,
+      "noMediumEncumbrance": false,
+      "noHeavyEncumbrance": false,
+      "mediumArmorFullSpeed": false,
+      "heavyArmorFullSpeed": false,
+      "lowLightVision": false,
+      "seeInvisibility": false,
+      "seeInDarkness": false
+    },
+    "contextNotes": [
+      {
+        "text": "+2 dodge bonus to AC against attacks of opportunity (move at least 10 ft this round or the stance breaks).",
+        "target": "ac"
+      }
+    ],
+    "actions": [],
+    "attackNotes": [],
+    "effectNotes": [],
+    "uses": {
+      "value": null,
+      "per": "",
+      "autoDeductChargesCost": "",
+      "maxFormula": "",
+      "rechargeFormula": ""
+    },
+    "links": {
+      "children": []
+    },
+    "tag": "",
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "scriptCalls": [],
+    "subType": "temp",
+    "active": false,
+    "level": 0,
+    "duration": {
+      "value": "1",
+      "units": "round",
+      "end": "turnStart",
+      "start": 0
+    },
+    "conditions": [],
+    "hideFromToken": false,
+    "showInQuickbar": false
+  },
+  "name": "CHAMPURU DAICHI SUTANSU -AYAUI APPUKU (CHAMPURU FIRST STANCE -ERRATICALLY OVERPOWER) (Strength)",
+  "img": "systems/pf1/icons/skills/weapon_08.jpg",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": 1780120000011,
+    "modifiedTime": 1780120000011,
+    "lastModifiedBy": null
+  },
+  "_id": "jYnVjRgYTO33AkUT",
+  "sort": 0,
+  "_key": "!items!jYnVjRgYTO33AkUT"
+}

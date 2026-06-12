@@ -181,6 +181,9 @@ export function createTechniqueItemSheet() {
       };
 
       // ── Advanced tab ───────────────────────────────────────────
+      // ── Content sources (mirrors ItemSheetPF._prepareContentSource) ──
+      this._prepareContentSource(context);
+
       context.tagList = Array.from(system.tags ?? []);
 
       // flags.boolean is ObjectField {key: true}, flags.dictionary is ObjectField {key: value}
@@ -232,6 +235,11 @@ export function createTechniqueItemSheet() {
       html.on("click", ".duplicate-action", this._onDuplicateAction.bind(this));
       html.on("change", ".descriptor-checkbox", this._onDescriptorToggle.bind(this));
 
+      // Content source editor
+      html.on("click", ".content-source .control a.edit", () =>
+        pf1.applications.ContentSourceEditor.open(this.item, { editable: this.isEditable }),
+      );
+
       // Links
       html.on("click", ".delete-link", this._onDeleteLink.bind(this));
       html.on("click", ".source-item", this._onOpenLink.bind(this));
@@ -246,6 +254,37 @@ export function createTechniqueItemSheet() {
       // Advanced — script calls
       html.on("click", ".script-calls .item-control", this._onScriptCallControl.bind(this));
       html.on("contextmenu", ".script-calls .item-list .item", this._onScriptCallEdit.bind(this));
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // Content source — mirrors ItemSheetPF._prepareContentSource
+    // ─────────────────────────────────────────────────────────────
+
+    _prepareContentSource(context) {
+      const rawSources = this.item.system.sources ?? [];
+      if (rawSources.length === 0) return;
+
+      const sources = rawSources.map((source) => {
+        const registry = pf1.registry?.sources?.get(source?.id) ?? {};
+        const { publisher, date, abbr, name, edition } = registry;
+        return {
+          publisher,
+          date,
+          abbr,
+          name,
+          edition,
+          ...source,
+          title: source.title || registry.name,
+          registry,
+          datestamp: Date.parse(source.date || registry.date),
+        };
+      });
+
+      sources.sort((a, b) => b.datestamp - a.datestamp);
+      const main = sources[0];
+
+      context.bookSources = { all: sources, main };
+      if (sources.length > 1) context.bookSources.extras = sources.filter((s) => s !== main);
     }
 
     // ─────────────────────────────────────────────────────────────
