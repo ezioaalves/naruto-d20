@@ -1,0 +1,103 @@
+{
+  "_id": "2kuqnChTcSrSklRX",
+  "name": "Kanigakure Hiden Taijutsu: Kani Giri (Crab Duty/ Crab Strike)",
+  "type": "naruto-d20.technique",
+  "img": "icons/skills/melee/strike-hammer-destructive-blue.webp",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "\n<p><b>Type:</b> Taijutsu (Hijutsu, Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 24</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>A signature Kanigakure grappling strike that exploits your opponent's balance. You make a single melee attack (unarmed or armed). On a hit, the attack deals damage as normal, and you immediately attempt a bull rush against the target as a free action. The target may make a Reflex save to resist being knocked prone if the bull rush succeeds; a successful save prevents the prone condition but does not stop the knockback movement.</p>\n\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Taijutsu",
+    "subtype": "Strike",
+    "descriptors": [
+      "Hijutsu"
+    ],
+    "rank": 4,
+    "complexity": "B-Class",
+    "chakraCost": 5,
+    "activation": "attack",
+    "range": "Melee Attack",
+    "target": "One creature",
+    "area": "",
+    "duration": "Instant",
+    "save": "Reflex or prone",
+    "compHandSeals": false,
+    "compHalfSeals": false,
+    "compConcentration": false,
+    "compMobility": true,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": true,
+    "isKinjutsu": false,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "homebrew002a0001",
+        "name": "Use",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "touch"
+        },
+        "target": {
+          "value": "One creature"
+        },
+        "ability": {
+          "attack": "dex",
+          "damage": "str",
+          "critRange": 20,
+          "critMult": 2
+        },
+        "img": "icons/skills/melee/strike-hammer-destructive-blue.webp"
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": []
+  },
+  "effects": [],
+  "folder": "58aPZ0XGYDCo63Q5",
+  "sort": 100,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!2kuqnChTcSrSklRX"
+}
