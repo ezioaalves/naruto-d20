@@ -50,7 +50,7 @@
       {
         "_id": "abaccc9b916c8d2d",
         "name": "Use",
-        "actionType": "mwak",
+        "actionType": "other",
         "activation": {
           "type": "swift",
           "unchained": {
@@ -60,12 +60,6 @@
         },
         "duration": {
           "units": "inst"
-        },
-        "ability": {
-          "attack": "dex",
-          "damage": "str",
-          "critRange": 20,
-          "critMult": 2
         }
       }
     ],
@@ -83,6 +77,10 @@
     },
     "showInQuickbar": false,
     "showInCombat": false,
+    "automation": {
+      "enabled": true,
+      "targetMode": "self"
+    },
     "sources": [
       {
         "title": "Community Compendium",

@@ -55,7 +55,7 @@
       {
         "_id": "7e30d68e96d7f0cd",
         "name": "Use",
-        "actionType": "mwak",
+        "actionType": "other",
         "activation": {
           "type": "swift",
           "unchained": {
@@ -65,12 +65,6 @@
         },
         "duration": {
           "units": "inst"
-        },
-        "ability": {
-          "attack": "dex",
-          "damage": "str",
-          "critRange": 20,
-          "critMult": 2
         }
       }
     ],
