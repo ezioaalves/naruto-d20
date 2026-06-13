@@ -38,17 +38,20 @@ ships broken code.
 
 | Source | What it is | Trust for v11.11 |
 |---|---|---|
-| `/systems/pf1/pf1.js` + `lang/en.json` (installed system) | The bundle Foundry actually loads. | ✅ Ground truth. |
-| context7 `/websites/foundryvtt_pathfinder1e_gitlab_io_foundryvtt-pathfinder1` | TypeDoc-generated API reference from the published docs site. Matches v11.11 class names (`pf1.components.ItemChange`, etc.). | ✅ Primary API reference. |
+| `foundryvtt-pathfinder1-v11.11/` (unbuilt source mirror, `system.json` = 11.11) | Clean per-module source for exactly the installed version. | ✅ **Ground truth** for API facts. |
+| `/systems/pf1/pf1.js` (installed bundle) | The 5 MB bundle Foundry loads. | ⚠️ Runtime only — do not grep for API spec; read the source mirror instead. |
+| context7 `/websites/foundryvtt_pathfinder1e_gitlab_io_foundryvtt-pathfinder1` | TypeDoc API reference — tracks a branch **newer** than 11.11. | ⚠️ Concept/cookbook only, NOT an API spec. The source mirror wins on any conflict. |
 | context7 `/gitlab_foundryvtt_pathfinder1e/foundryvtt-pathfinder1` | Help pages + curated llms.txt from the master (stable) branch. | ✅ Complementary — usage patterns / cookbook. |
 | `pf1/` → `../pf1-source/` (filesystem symlink) | **Dev branch source.** Used for editor autocomplete only. | ❌ Do NOT treat as API spec. Paths like `pf1.models.components.Change` only exist here. |
 
 **Before referencing any `pf1.*` global, `CONFIG.PF1.*` key, `system.*` field,
-or `"PF1.*"` i18n key, invoke the `pf1e-api-check` skill (`.claude/skills/`)
-to verify it exists in v11.11.** Or delegate to the `pf1e-api-verifier`
-subagent (`.claude/agents/`) for batch verification.
+or `"PF1.*"` i18n key, invoke the `pf1e-api-check` skill
+(`.claude/skills/pf1e-api-check/`).** It checks its verified-api cache first and,
+on a miss, reads the `foundryvtt-pathfinder1-v11.11/` source (never the built
+`pf1.js`, never context7), then records the fact.
 
-Known divergences are documented in the skill file. A few to keep in mind:
+Known divergences are seeded in `.claude/skills/pf1e-api-check/references/verified-api.md`
+(and grow as facts are verified). A few to keep in mind:
 - `pf1.components.ItemChange` (NOT `pf1.models.components.Change` — that's the dev-only path)
 - `system.changes` is an `ArrayField` in v11.11, not a `TypedObjectField` record
 - i18n keys are mostly flat in v11.11 (e.g. `PF1.Changes`, not `PF1.Changes.many`)
@@ -71,9 +74,9 @@ equivalent native PF1e class and confirm it uses V2. Only use V2 if:
 
 ## Context7 docs
 
-Library IDs (all v11.11-aligned unless noted):
-- `foundryvtt_api_v13` — Foundry core API
-- `foundryvtt_pathfinder1e_gitlab_io_foundryvtt-pathfinder1` — PF1e API class reference (primary)
+Library IDs:
+- `foundryvtt_api_v13` — Foundry core API (authoritative)
+- `foundryvtt_pathfinder1e_gitlab_io_foundryvtt-pathfinder1` — PF1e API class reference. ⚠️ Tracks a branch **newer** than 11.11 — concept/cookbook only, NOT a v11.11 API spec. For PF1e API facts use the `pf1e-api-check` skill (reads the `foundryvtt-pathfinder1-v11.11/` source).
 - `gitlab_foundryvtt_pathfinder1e/foundryvtt-pathfinder1` — PF1e help guides & cookbook
 
 ## Hook lifecycle (execution order)
