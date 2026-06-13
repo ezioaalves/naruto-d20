@@ -238,14 +238,6 @@
     {{!-- ══════════════════════════ Description ══════════════════════════ --}}
     <div class="tab description active" data-tab="description" data-group="primary">
 
-      <div class="technique-meta flexrow" style="gap:8px; padding:4px 0 8px; font-size:0.9em; color:#5a4830;">
-        <span><strong>{{system.discipline}}</strong></span>
-        <span>·</span>
-        <span>{{localize "NarutoD20.Technique.Rank.Label"}} {{system.rank}}</span>
-        <span>·</span>
-        <span>{{system.complexity}}</span>
-      </div>
-
       <h2>{{localize "PF1.Description"}}</h2>
       <div class="description-content">
         {{editor descriptionHTML target="system.description.value" button=editable engine="prosemirror" editable=editable}}
