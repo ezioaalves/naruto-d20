@@ -13,6 +13,7 @@ import { COMPLEXITY_TABLE, TECHNIQUE_DESCRIPTORS } from "../data/technique-model
 import { attemptLearnTechnique, buildLearningView } from "../learn-technique.mjs";
 import { attemptMasterTechnique, buildMasteryView } from "../master-technique.mjs";
 import { canAffordTechnique, performTechnique } from "../use-technique.mjs";
+import { renderTechniqueHeader } from "./technique-header.mjs";
 import { resolveDroppedItem } from "../utils/drag-drop.mjs";
 
 const SPECIAL_DESCRIPTOR_FLAGS = {
@@ -74,35 +75,7 @@ export function createTechniqueItemSheet() {
         rollData,
       });
 
-      // Build component abbreviation string (e.g. "H, C, M")
-      const compAbbr = [];
-      if (system.compHandSeals)    compAbbr.push(loc("NarutoD20.Technique.Components.HandSeals.Label"));
-      if (system.compHalfSeals)    compAbbr.push(loc("NarutoD20.Technique.Components.HalfSeals.Label"));
-      if (system.compConcentration) compAbbr.push(loc("NarutoD20.Technique.Components.Concentration.Label"));
-      if (system.compMobility)     compAbbr.push(loc("NarutoD20.Technique.Components.Mobility.Label"));
-      if (system.compFocus)        compAbbr.push(loc("NarutoD20.Technique.Components.MaterialFocus.Label"));
-      if (system.compEmpower)      compAbbr.push(loc("NarutoD20.Technique.Components.Empower.Label"));
-      if (system.compMastery)      compAbbr.push(loc("NarutoD20.Technique.Components.Mastery.Label"));
-      if (system.compExpendable)   compAbbr.push(loc("NarutoD20.Technique.Components.Expendable.Label"));
-      if (system.compPhysical)     compAbbr.push(loc("NarutoD20.Technique.Components.PhysicalHealth.Label"));
-      if (system.compXpCost)       compAbbr.push(loc("NarutoD20.Technique.Components.XpCost.Label"));
-
-      const headerData = {
-        discipline: system.discipline || "—",
-        rank: system.rank,
-        complexity: system.complexity || "—",
-        chakraCost: system.chakraCost ?? 0,
-        learnDC: derived.learnDC,
-        successes: derived.successes,
-        hasPerform: !!DISCIPLINE_SKILL_MAP[system.discipline],
-        threshold: derived.skillThreshold,
-        performDC: derived.performDC,
-        components: compAbbr.join(", "),
-      };
-      context.topDescription = await foundry.applications.handlebars.renderTemplate(
-        `modules/${MODULE_ID}/templates/item/technique-header.hbs`,
-        headerData,
-      );
+      context.topDescription = await renderTechniqueHeader(item);
       context.instructionsHTML = await TextEditor.enrichHTML(
         system.description?.instructions ?? "",
         { async: true, rollData },
