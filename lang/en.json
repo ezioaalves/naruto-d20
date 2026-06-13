@@ -20,7 +20,8 @@
       "Temp": "Temp",
       "Max": "Max",
       "Total": "Total",
-      "Cancel": "Cancel"
+      "Cancel": "Cancel",
+      "Confirm": "Confirm"
     },
     "ChakraNature": {
       "None": "None",
@@ -303,6 +304,21 @@
       "StanceMode": {
         "Label": "Per-round mode-choice stance (Dex/Str)"
       },
+      "StanceUpkeep": {
+        "Label": "HP-upkeep stance (pay HP each turn or break)"
+      },
+      "ElementChoice": {
+        "Label": "Choose damage element(s) on entry"
+      },
+      "UpkeepFormula": {
+        "Label": "Upkeep HP cost (formula)"
+      },
+      "UpkeepWaiverStep": {
+        "Label": "Mastery step that waives the HP cost"
+      },
+      "ElementDoubleStep": {
+        "Label": "Mastery step that allows two elements"
+      },
       "BuffName": {
         "Label": "Buff Item Name",
         "Placeholder": "Same as technique name"
@@ -460,7 +476,22 @@
       "Strength": "Strength",
       "Break": "Break stance",
       "DexHint": "Dexterity: +2 attack and Acrobatics (tumble) this round.",
-      "StrHint": "Strength: +2 damage and CMB (trip) this round."
+      "StrHint": "Strength: +2 damage and CMB (trip) this round.",
+      "UpkeepTitle": "{name} — upkeep",
+      "UpkeepMessage": "{name} is active. Pay {formula} HP to maintain the stance, or break it.",
+      "PayHp": "Pay {formula} HP",
+      "HpCostFlavor": "Stance upkeep: {amount} HP lost."
+    },
+    "StanceElement": {
+      "Title": "{name} — choose element",
+      "Prompt": "Choose the damage element(s) for this stance.",
+      "SlotLabel": "Element {n}",
+      "Cold": "Cold",
+      "Earth": "Earth",
+      "Electric": "Electricity",
+      "Fire": "Fire",
+      "Water": "Water",
+      "Wind": "Wind"
     },
     "RankMasteryFreeUse": {
       "Title": "Use mastery free rounds for {name}?",
@@ -478,6 +509,7 @@
         "Failed": "Perform check failed (DC {dc}). No chakra spent.",
         "Spent": "Spent {cost} chakra ({summary}).",
         "FreeUse": "Used mastery free rounds ({rounds} rounds, no chakra spent).",
+        "StanceFree": "Stance already active — no chakra spent.",
         "MasteryNote": " (+{value} mastery)",
         "AutoBypass": "Ranks {ranks}{mastery} ≥ threshold {threshold} — auto-perform.",
         "NoCheckRequired": "No perform check required."

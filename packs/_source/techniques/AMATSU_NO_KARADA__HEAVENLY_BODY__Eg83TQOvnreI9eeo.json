@@ -66,10 +66,6 @@
             {
               "formula": "2d6",
               "types": []
-            },
-            {
-              "formula": "1d4",
-              "types": []
             }
           ]
         },
@@ -81,6 +77,16 @@
         }
       }
     ],
+    "automation": {
+      "enabled": true,
+      "targetMode": "self",
+      "stanceMode": false,
+      "stanceUpkeep": true,
+      "elementChoice": true,
+      "upkeepFormula": "1d4",
+      "upkeepWaiverStep": 2,
+      "elementDoubleStep": 5
+    },
     "scriptCalls": [],
     "links": {
       "prerequisites": [],

@@ -12,6 +12,7 @@ import {
   STANCE_MODES,
   findStanceBuffForTechnique,
   isModeChoiceStance,
+  isUpkeepStance,
   stanceBuffDuration,
   stanceBuffFlagData,
   stanceBuffName,
@@ -36,6 +37,12 @@ export async function applyTechniqueBuff(item, actor, action) {
   // Per-round Dex/Str mode-choice stances follow their own self-buff lifecycle.
   if (isModeChoiceStance(item)) {
     await applyStanceModeBuff(item, actor);
+    return;
+  }
+
+  // HP-upkeep stances (Amatsu) apply a self-buff carrying the chosen element(s).
+  if (isUpkeepStance(item)) {
+    await applyUpkeepStanceBuff(item, actor);
     return;
   }
 
@@ -107,6 +114,36 @@ export async function applyStanceModeBuff(item, actor, modeId = null) {
   await applyBuffToTarget(buffDoc, actor, {
     duration: stanceBuffDuration(),
     stanceBuff: stanceBuffFlagData({ sourceTechniqueId: item.id, modeId: mode.id }),
+  });
+}
+
+/**
+ * Apply (or refresh) an HP-upkeep stance buff (Amatsu) on the performer. The buff
+ * is the per-turn tracker: it expires at turn start and carries the chosen damage
+ * element(s) so re-uses and the turn-start maintenance can read them back. The
+ * companion buff is looked up by the technique's exact name. No chakra is spent
+ * here — entry pays once and round-to-round upkeep is HP (handled in maintenance).
+ */
+export async function applyUpkeepStanceBuff(item, actor) {
+  if (!actor?.isOwner) return;
+
+  const { getActiveStanceElements } = await import("./stance-element-damage.mjs");
+  const elements = getActiveStanceElements(actor, item) ?? [];
+
+  const buffEntry = await resolveBuffMatch(item.name);
+  if (!buffEntry) {
+    console.warn(
+      `naruto-d20 | No upkeep stance buff found named "${item.name}" in technique-buffs compendia.`,
+    );
+    return;
+  }
+
+  const buffDoc = await resolveBuffDocument(buffEntry);
+  if (!buffDoc) return;
+
+  await applyBuffToTarget(buffDoc, actor, {
+    duration: stanceBuffDuration(),
+    stanceBuff: stanceBuffFlagData({ sourceTechniqueId: item.id, elements }),
   });
 }
 

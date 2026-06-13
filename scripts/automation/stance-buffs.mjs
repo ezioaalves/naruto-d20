@@ -13,12 +13,36 @@ export const STANCE_MODES = [
   { id: "str", suffix: "Strength", labelKey: "NarutoD20.StanceBuff.Strength" },
 ];
 
+/**
+ * Selectable damage elements for element-selection stances (Amatsu no Karada).
+ * Ids are the bare PF1e damage-type keys — core `cold`/`electric`/`fire` plus the
+ * module-registered `earth`/`water`/`wind` (registered bare, NOT namespaced).
+ */
+export const STANCE_ELEMENTS = [
+  { id: "cold", labelKey: "NarutoD20.StanceElement.Cold" },
+  { id: "earth", labelKey: "NarutoD20.StanceElement.Earth" },
+  { id: "electric", labelKey: "NarutoD20.StanceElement.Electric" },
+  { id: "fire", labelKey: "NarutoD20.StanceElement.Fire" },
+  { id: "water", labelKey: "NarutoD20.StanceElement.Water" },
+  { id: "wind", labelKey: "NarutoD20.StanceElement.Wind" },
+];
+
+export const STANCE_ELEMENT_IDS = STANCE_ELEMENTS.map((e) => e.id);
+
 export function stanceModeById(id) {
   return STANCE_MODES.find((mode) => mode.id === id) ?? null;
 }
 
 export function isModeChoiceStance(item) {
   return item?.system?.automation?.stanceMode === true;
+}
+
+export function isUpkeepStance(item) {
+  return item?.system?.automation?.stanceUpkeep === true;
+}
+
+export function isElementStance(item) {
+  return item?.system?.automation?.elementChoice === true;
 }
 
 export function stanceBuffName(item, mode) {
@@ -36,13 +60,32 @@ export function stanceBuffDuration() {
   };
 }
 
-export function stanceBuffFlagData({ sourceTechniqueId, modeId }) {
-  return { sourceTechniqueId: sourceTechniqueId ?? null, modeId };
+/**
+ * Build the stanceBuff flag payload. Two discriminated kinds:
+ * - mode  (Champuru): `{ sourceTechniqueId, kind:"mode", modeId }`
+ * - upkeep (Amatsu):  `{ sourceTechniqueId, kind:"upkeep", elements:[ids] }`
+ */
+export function stanceBuffFlagData({ sourceTechniqueId, modeId, elements }) {
+  if (Array.isArray(elements)) {
+    return { sourceTechniqueId: sourceTechniqueId ?? null, kind: "upkeep", elements };
+  }
+  return { sourceTechniqueId: sourceTechniqueId ?? null, kind: "mode", modeId };
+}
+
+/**
+ * Resolve a flag's kind. A flag predating the discriminator (only `modeId`) is a
+ * mode stance for back-compat.
+ */
+export function stanceBuffKind(flag) {
+  if (!flag) return null;
+  if (flag.kind === "upkeep" && Array.isArray(flag.elements)) return "upkeep";
+  if (flag.kind === "mode" || stanceModeById(flag.modeId)) return "mode";
+  return null;
 }
 
 export function getStanceBuffFlag(item) {
   const flag = item?.flags?.[MODULE_ID]?.[STANCE_BUFF_FLAG] ?? null;
-  if (!flag || !stanceModeById(flag.modeId)) return null;
+  if (!flag || !stanceBuffKind(flag)) return null;
   return flag;
 }
 

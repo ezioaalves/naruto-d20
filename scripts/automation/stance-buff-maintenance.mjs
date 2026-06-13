@@ -1,5 +1,6 @@
-import { applyStanceModeBuff, promptStanceMode } from "./buff-application.mjs";
-import { getStanceBuffFlag } from "./stance-buffs.mjs";
+import { applyStanceModeBuff, applyUpkeepStanceBuff, promptStanceMode } from "./buff-application.mjs";
+import { getStanceBuffFlag, stanceBuffKind } from "./stance-buffs.mjs";
+import { applyHpCost } from "../data/hp-cost.mjs";
 
 const pendingMaintenance = new Set();
 
@@ -47,6 +48,11 @@ async function maintainStanceBuff(actor, itemId) {
     return;
   }
 
+  if (stanceBuffKind(flag) === "upkeep") {
+    await maintainUpkeepStance(actor, itemId, technique);
+    return;
+  }
+
   const choice = await promptStanceMode(technique, {
     current: flag.modeId,
     allowBreak: true,
@@ -59,6 +65,66 @@ async function maintainStanceBuff(actor, itemId) {
 
   // Switching/keeping re-applies the chosen mode buff (and drops the old mode buff).
   await applyStanceModeBuff(technique, actor, choice);
+}
+
+/**
+ * Turn-start upkeep for an HP-upkeep stance (Amatsu). At mastery >= upkeepWaiverStep
+ * the cost is waived and the stance auto-maintains silently. Otherwise prompt to pay
+ * the HP cost (re-apply on pay) or break the stance.
+ */
+async function maintainUpkeepStance(actor, itemId, technique) {
+  const auto = technique.system?.automation ?? {};
+  const waiverStep = Number(auto.upkeepWaiverStep ?? 2) || 0;
+  const mastery = Number(technique.system?.mastery ?? 0) || 0;
+
+  if (mastery >= waiverStep) {
+    // HP cost waived — keep the stance going without prompting.
+    await applyUpkeepStanceBuff(technique, actor);
+    return;
+  }
+
+  const choice = await promptUpkeep(technique, auto.upkeepFormula ?? "1d4");
+  if (choice !== "pay") {
+    await deleteStanceBuff(actor, itemId);
+    return;
+  }
+
+  await applyHpCost(actor, auto.upkeepFormula ?? "1d4");
+  await applyUpkeepStanceBuff(technique, actor);
+}
+
+function promptUpkeep(technique, formula) {
+  return new Promise((resolve) => {
+    let resolved = false;
+    const done = (value) => {
+      if (resolved) return;
+      resolved = true;
+      resolve(value);
+    };
+
+    new Dialog({
+      title: game.i18n.format("NarutoD20.StanceBuff.UpkeepTitle", { name: technique.name }),
+      content: `<p>${game.i18n.format("NarutoD20.StanceBuff.UpkeepMessage", {
+        name: technique.name,
+        formula,
+      })}</p>`,
+      buttons: {
+        pay: {
+          icon: '<i class="fas fa-heart-broken"></i>',
+          label: game.i18n.format("NarutoD20.StanceBuff.PayHp", { formula }),
+          callback: () => done("pay"),
+        },
+        break: {
+          icon: '<i class="fas fa-times"></i>',
+          label: game.i18n.localize("NarutoD20.StanceBuff.Break"),
+          callback: () => done("break"),
+        },
+      },
+      default: "pay",
+      // Closing the prompt breaks the stance.
+      close: () => done("break"),
+    }).render(true);
+  });
 }
 
 async function deleteStanceBuff(actor, itemId) {

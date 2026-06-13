@@ -19,6 +19,23 @@ Append new verified facts under the matching section. Never add a guessed entry.
 
 - `CONFIG.PF1.buffTargets` → `module/config.mjs:2623` → exported `buffTargets` const.
 
+## Damage types & damage-roll hook
+
+- Core energy damage-type ids (the strings in `action.damage.parts[].types[]`):
+  `fire`, `cold`, `electric` (note: `_id:"electric"` though its label is "electricity"),
+  `acid`, `sonic` → `module/registry/damage-types.mjs:106-159`.
+- Registry `register(namespace, id, value)` keys by the **bare** `id`, NOT
+  `namespace.id` → `module/registry/base-registry.mjs:131`
+  (`set(id, new model({...value, namespace, _id:id}))`); `namespace` is only used by
+  `unregister`. So module-registered custom damage types are looked up bare — naruto-d20's
+  are `earth`/`water`/`wind`/`holy` (NOT `naruto-d20.earth`). Confirmed by existing content:
+  every technique stores bare ids in `types[]`.
+- `Hooks.call("pf1PreDamageRoll", action, rollData, parts, changes)` →
+  `module/components/action.mjs:1704`. `parts` is a mutable array; each entry is
+  `{ base: <formula>, extra: [], damageType: <types array>, type }`
+  (`action.mjs:1651-1659`). Mutate `parts` here to inject/retype damage at roll time without
+  editing stored `item.system.actions`.
+
 ## Data models (`system.*`)
 
 - `system.changes` is an `ArrayField` in v11.11 (NOT a `TypedObjectField` record —

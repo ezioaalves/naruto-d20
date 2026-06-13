@@ -38,6 +38,7 @@ import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
 import { registerExpiredBuffCleanup } from "./automation/buff-expiry.mjs";
+import { registerStanceElementDamage } from "./automation/stance-element-damage.mjs";
 import { registerRankRollData } from "./automation/rank-rolldata.mjs";
 import { registerRankGrantConfig } from "./ui/rank-grant-config.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
@@ -203,6 +204,7 @@ Hooks.once("setup", () => {
   registerFeatGrantDeletion(); // cascade-delete feat supplements on feat removal
   registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn
   registerExpiredBuffCleanup(); // delete module automation buffs when their duration expires
+  registerStanceElementDamage(); // type element-stance (Amatsu) attack damage at roll time
   registerRankRollData(); // KOUSOKU/JOURYOKU effective rank (paid/temp/bonus + armor/condition penalties)
   registerRankGrantConfig(); // "Naruto Rank" grant section on PF1e buff sheets
   registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog

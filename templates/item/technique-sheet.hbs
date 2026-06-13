@@ -593,6 +593,35 @@
       </div>
 
       <div class="form-group">
+        <label class="checkbox">
+          <input type="checkbox" name="system.automation.stanceUpkeep" {{checked system.automation.stanceUpkeep}}>
+          {{localize "NarutoD20.Automation.StanceUpkeep.Label"}}
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox">
+          <input type="checkbox" name="system.automation.elementChoice" {{checked system.automation.elementChoice}}>
+          {{localize "NarutoD20.Automation.ElementChoice.Label"}}
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Automation.UpkeepFormula.Label"}}</label>
+        <input type="text" name="system.automation.upkeepFormula" value="{{system.automation.upkeepFormula}}">
+      </div>
+
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Automation.UpkeepWaiverStep.Label"}}</label>
+        <input type="number" step="1" min="0" name="system.automation.upkeepWaiverStep" value="{{system.automation.upkeepWaiverStep}}">
+      </div>
+
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Automation.ElementDoubleStep.Label"}}</label>
+        <input type="number" step="1" min="0" name="system.automation.elementDoubleStep" value="{{system.automation.elementDoubleStep}}">
+      </div>
+
+      <div class="form-group">
         <label>{{localize "NarutoD20.Automation.TargetMode.Label"}}</label>
         <select name="system.automation.targetMode">
           {{selectOptions buffTargetModeChoices selected=system.automation.targetMode}}

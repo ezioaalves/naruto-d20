@@ -20,7 +20,8 @@
       "Temp": "Temp",
       "Max": "Máx",
       "Total": "Total",
-      "Cancel": "Cancelar"
+      "Cancel": "Cancelar",
+      "Confirm": "Confirmar"
     },
     "ChakraNature": {
       "None": "Nenhum",
@@ -303,6 +304,21 @@
       "StanceMode": {
         "Label": "Stance de escolha de modo por round (Dex/For)"
       },
+      "StanceUpkeep": {
+        "Label": "Stance com custo de PV (pagar PV por turno ou encerrar)"
+      },
+      "ElementChoice": {
+        "Label": "Escolher elemento(s) de dano ao entrar"
+      },
+      "UpkeepFormula": {
+        "Label": "Custo de PV por turno (fórmula)"
+      },
+      "UpkeepWaiverStep": {
+        "Label": "Passo de maestria que dispensa o custo de PV"
+      },
+      "ElementDoubleStep": {
+        "Label": "Passo de maestria que permite dois elementos"
+      },
       "BuffName": {
         "Label": "Nome do Item de Buff",
         "Placeholder": "Mesmo nome da técnica"
@@ -460,7 +476,22 @@
       "Strength": "Força",
       "Break": "Quebrar stance",
       "DexHint": "Destreza: +2 em ataque e Acrobacia (tumble) neste round.",
-      "StrHint": "Força: +2 em dano e CMB (rasteira) neste round."
+      "StrHint": "Força: +2 em dano e CMB (rasteira) neste round.",
+      "UpkeepTitle": "{name} — manutenção",
+      "UpkeepMessage": "{name} está ativa. Pague {formula} de PV para manter a stance, ou encerre-a.",
+      "PayHp": "Pagar {formula} de PV",
+      "HpCostFlavor": "Manutenção da stance: {amount} de PV perdidos."
+    },
+    "StanceElement": {
+      "Title": "{name} — escolha o elemento",
+      "Prompt": "Escolha o(s) elemento(s) de dano desta stance.",
+      "SlotLabel": "Elemento {n}",
+      "Cold": "Frio",
+      "Earth": "Terra",
+      "Electric": "Eletricidade",
+      "Fire": "Fogo",
+      "Water": "Água",
+      "Wind": "Vento"
     },
     "RankMasteryFreeUse": {
       "Title": "Usar rounds grátis de maestria para {name}?",
@@ -478,6 +509,7 @@
         "Failed": "Teste de execução falhou (DC {dc}). Nenhum chakra gasto.",
         "Spent": "Gastou {cost} de chakra ({summary}).",
         "FreeUse": "Usou rounds grátis de maestria ({rounds} rounds, nenhum chakra gasto).",
+        "StanceFree": "Stance já ativa — nenhum chakra gasto.",
         "MasteryNote": " (+{value} maestria)",
         "AutoBypass": "Ranks {ranks}{mastery} ≥ limiar {threshold} — execução automática.",
         "NoCheckRequired": "Nenhum teste de execução necessário."

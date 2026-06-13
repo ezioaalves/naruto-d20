@@ -15,6 +15,14 @@ import {
   isRankMasteryFreeUseEligible,
   RANK_MASTERY_FREE_ROUNDS,
 } from "./automation/rank-buffs.mjs";
+import { findStanceBuffForTechnique, isElementStance, isUpkeepStance } from "./automation/stance-buffs.mjs";
+import {
+  clearPendingCastElements,
+  getActiveStanceElements,
+  promptStanceElements,
+  setPendingCastElements,
+  stanceElementCount,
+} from "./automation/stance-element-damage.mjs";
 
 export function canAffordTechnique(actor, item) {
   return canPayChakra(actor, item.system.chakraCost ?? 0);
@@ -32,7 +40,13 @@ export async function performTechnique(item, actionId, event = null) {
   if (freeUseChoice === null) return;
   if (freeUseChoice?.item) currentItem = freeUseChoice.item;
 
-  if (!freeUseChoice?.useFree && !canAffordTechnique(actor, currentItem)) {
+  // Using an upkeep stance (Amatsu) that is already active is free — only the
+  // initial entry pays chakra; round-to-round upkeep is HP (handled at turn start).
+  const stanceFree =
+    isUpkeepStance(currentItem) && Boolean(findStanceBuffForTechnique(actor, currentItem.id));
+  const chakraFree = freeUseChoice?.useFree === true || stanceFree;
+
+  if (!chakraFree && !canAffordTechnique(actor, currentItem)) {
     ui.notifications.warn(
       game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", {
         actor: actor.name,
@@ -49,58 +63,79 @@ export async function performTechnique(item, actionId, event = null) {
     return;
   }
 
-  const current = resolveCurrentTechniqueAction(
-    actor,
-    currentItem,
-    actionId,
-    actionIndex,
-    "after perform check",
-  );
-  if (!current) return;
+  try {
+    // Element stances pick their damage element(s) before the attack rolls so the
+    // pf1PreDamageRoll hook can type the damage. On entry we prompt; while the stance
+    // is already active we reuse the element(s) stored on the buff.
+    if (isElementStance(currentItem)) {
+      const active = getActiveStanceElements(actor, currentItem);
+      if (active?.length) {
+        setPendingCastElements(actor, currentItem, active);
+      } else {
+        const elements = await promptStanceElements(currentItem, stanceElementCount(currentItem));
+        if (!elements) return;
+        setPendingCastElements(actor, currentItem, elements);
+      }
+    }
 
-  const useResult = await useTechniqueAction(current.item, current.action, actor, event);
-  if (!useResult || useResult.err) return;
-
-  if (!freeUseChoice?.useFree && !canAffordTechnique(actor, current.item)) {
-    ui.notifications.warn(
-      game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", {
-        actor: actor.name,
-        name: current.item.name,
-      }),
+    const current = resolveCurrentTechniqueAction(
+      actor,
+      currentItem,
+      actionId,
+      actionIndex,
+      "after perform check",
     );
-    return;
-  }
+    if (!current) return;
 
-  let spend = null;
-  if (freeUseChoice?.useFree) {
-    const spent = await consumeRankMasteryFreeUse(current.item);
-    if (!spent) {
+    const useResult = await useTechniqueAction(current.item, current.action, actor, event);
+    if (!useResult || useResult.err) return;
+
+    if (!chakraFree && !canAffordTechnique(actor, current.item)) {
       ui.notifications.warn(
-        game.i18n.format("NarutoD20.Notifications.RankMasteryFreeUseUnavailable", {
+        game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", {
+          actor: actor.name,
           name: current.item.name,
         }),
       );
       return;
     }
-  } else {
-    cost = current.item.system.chakraCost ?? cost;
-    spend = calculateChakraSpend(actor, cost);
-    await applyChakraSpend(actor, spend);
+
+    let spend = null;
+    if (stanceFree) {
+      // Active-stance re-use: the attack costs no chakra.
+    } else if (freeUseChoice?.useFree) {
+      const spent = await consumeRankMasteryFreeUse(current.item);
+      if (!spent) {
+        ui.notifications.warn(
+          game.i18n.format("NarutoD20.Notifications.RankMasteryFreeUseUnavailable", {
+            name: current.item.name,
+          }),
+        );
+        return;
+      }
+    } else {
+      cost = current.item.system.chakraCost ?? cost;
+      spend = calculateChakraSpend(actor, cost);
+      await applyChakraSpend(actor, spend);
+    }
+    await postTechniqueSuccessCard(actor, current.item, cost, spend?.summary ?? null, perform, {
+      freeUse: freeUseChoice?.useFree === true,
+      stanceFree,
+    });
+
+    const updated = resolveCurrentTechniqueAction(
+      actor,
+      current.item,
+      current.action.id,
+      actionIndex,
+      freeUseChoice?.useFree ? "after daily use update" : "after chakra update",
+    );
+    if (!updated) return;
+
+    await applyPostUseAutomation(updated.item, actor, updated.action);
+  } finally {
+    if (isElementStance(currentItem)) clearPendingCastElements(actor, currentItem);
   }
-  await postTechniqueSuccessCard(actor, current.item, cost, spend?.summary ?? null, perform, {
-    freeUse: freeUseChoice?.useFree === true,
-  });
-
-  const updated = resolveCurrentTechniqueAction(
-    actor,
-    current.item,
-    current.action.id,
-    actionIndex,
-    freeUseChoice?.useFree ? "after daily use update" : "after chakra update",
-  );
-  if (!updated) return;
-
-  await applyPostUseAutomation(updated.item, actor, updated.action);
 }
 
 function validateTechniqueUse(item, actionId) {
@@ -300,6 +335,16 @@ async function postTechniqueSuccessCard(actor, item, cost, spendSummary, perform
   // nothing useful — skip it. Only post the outcome card when the perform was actually rolled,
   // matching the roll's visibility so a self/GM roll stays private.
   if (perform.bypassNote) return;
+  let footer;
+  if (options.stanceFree) {
+    footer = game.i18n.localize("NarutoD20.Cards.Perform.StanceFree");
+  } else if (options.freeUse) {
+    footer = game.i18n.format("NarutoD20.Cards.Perform.FreeUse", {
+      rounds: RANK_MASTERY_FREE_ROUNDS,
+    });
+  } else {
+    footer = game.i18n.format("NarutoD20.Cards.Perform.Spent", { cost, summary: spendSummary });
+  }
   await postPerformCard(
     actor,
     {
@@ -307,11 +352,7 @@ async function postTechniqueSuccessCard(actor, item, cost, spendSummary, perform
       cssClass: "success",
       message: "",
       messageClass: "",
-      footer: options.freeUse
-        ? game.i18n.format("NarutoD20.Cards.Perform.FreeUse", {
-            rounds: RANK_MASTERY_FREE_ROUNDS,
-          })
-        : game.i18n.format("NarutoD20.Cards.Perform.Spent", { cost, summary: spendSummary }),
+      footer,
     },
     perform.rollVisibility,
   );

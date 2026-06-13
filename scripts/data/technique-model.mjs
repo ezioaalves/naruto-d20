@@ -380,6 +380,21 @@ export function createTechniqueDataModel() {
             // performing applies a self-buff that expires at turn start and
             // prompts the user to keep/switch the mode or break the stance.
             stanceMode: new fields.BooleanField({ ...opt, initial: false }),
+            // Marks an HP-upkeep stance (Amatsu no Karada). Entering costs chakra
+            // once; while active the technique's attack is free, but at the start
+            // of each turn the user is prompted to pay `upkeepFormula` HP or break
+            // the stance (the cost is waived at mastery >= upkeepWaiverStep).
+            stanceUpkeep: new fields.BooleanField({ ...opt, initial: false }),
+            // When on, entering an element stance prompts for the damage element(s)
+            // that the attack deals. One element normally, two (duplicates allowed)
+            // at mastery >= elementDoubleStep.
+            elementChoice: new fields.BooleanField({ ...opt, initial: false }),
+            // Per-round HP cost formula for an upkeep stance.
+            upkeepFormula: new fields.StringField({ ...opt, blank: false, initial: "1d4" }),
+            // Mastery step at/above which the upkeep HP cost is ignored.
+            upkeepWaiverStep: new fields.NumberField({ ...opt, integer: true, initial: 2, min: 0 }),
+            // Mastery step at/above which two elements are chosen (1d6 + 1d6).
+            elementDoubleStep: new fields.NumberField({ ...opt, integer: true, initial: 5, min: 0 }),
           },
           opt,
         ),
