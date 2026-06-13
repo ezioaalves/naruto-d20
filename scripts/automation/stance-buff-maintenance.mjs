@@ -4,7 +4,7 @@ import {
   promptStanceMode,
 } from "./buff-application.mjs";
 import { getStanceBuffFlag, stanceBuffKind } from "./stance-buffs.mjs";
-import { applyHpCost } from "../data/hp-cost.mjs";
+import { applyHpCost, rollHpCost, commitHpCost } from "../data/hp-cost.mjs";
 
 const pendingMaintenance = new Set();
 
@@ -72,12 +72,34 @@ async function maintainStanceBuff(actor, itemId) {
 }
 
 /**
- * Turn-start upkeep for an HP-upkeep stance (Amatsu). At mastery >= upkeepWaiverStep
- * the cost is waived and the stance auto-maintains silently. Otherwise prompt to pay
- * the HP cost (re-apply on pay) or break the stance.
+ * Turn-start upkeep for an HP-upkeep stance. Two modes:
+ * - "forced" (Kai-Mon): auto-pay the HP cost with no prompt; if it would drop HP
+ *   below 1, end the stance instead. Never waived by mastery.
+ * - "prompt" (Amatsu, default): at mastery >= upkeepWaiverStep the cost is waived and
+ *   the stance auto-maintains silently; otherwise prompt to pay the HP cost (re-apply
+ *   on pay) or break the stance.
  */
 async function maintainUpkeepStance(actor, itemId, technique) {
   const auto = technique.system?.automation ?? {};
+  const formula = auto.upkeepFormula ?? "1d4";
+
+  if (auto.upkeepMode === "forced") {
+    // Mandatory cost (Kai-Mon): roll, guard against dropping below 1 HP, otherwise
+    // pay and re-apply the stance. Never waived by mastery.
+    const { roll, amount } = await rollHpCost(actor, formula);
+    const currentHp = Number(actor.system?.attributes?.hp?.value ?? 0) || 0;
+    if (currentHp - amount < 1) {
+      await deleteStanceBuff(actor, itemId);
+      ui.notifications.info(
+        game.i18n.format("NarutoD20.StanceBuff.UpkeepEnded", { name: technique.name }),
+      );
+      return;
+    }
+    await commitHpCost(actor, roll, amount);
+    await applyUpkeepStanceBuff(technique, actor);
+    return;
+  }
+
   const waiverStep = Number(auto.upkeepWaiverStep ?? 2) || 0;
   const mastery = Number(technique.system?.mastery ?? 0) || 0;
 
@@ -87,13 +109,13 @@ async function maintainUpkeepStance(actor, itemId, technique) {
     return;
   }
 
-  const choice = await promptUpkeep(technique, auto.upkeepFormula ?? "1d4");
+  const choice = await promptUpkeep(technique, formula);
   if (choice !== "pay") {
     await deleteStanceBuff(actor, itemId);
     return;
   }
 
-  await applyHpCost(actor, auto.upkeepFormula ?? "1d4");
+  await applyHpCost(actor, formula);
   await applyUpkeepStanceBuff(technique, actor);
 }
 

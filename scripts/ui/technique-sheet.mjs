@@ -153,6 +153,11 @@ export function createTechniqueItemSheet() {
         selected: loc("NarutoD20.Automation.TargetMode.Selected"),
       };
 
+      context.upkeepModeChoices = {
+        prompt: loc("NarutoD20.Automation.UpkeepMode.Prompt"),
+        forced: loc("NarutoD20.Automation.UpkeepMode.Forced"),
+      };
+
       // ── Links tab — structured for PF1e's table/sub-nav layout ──
       const linkCat = (id, labelKey, helpKey) => ({
         id,

@@ -313,6 +313,11 @@
       "UpkeepFormula": {
         "Label": "Upkeep HP cost (formula)"
       },
+      "UpkeepMode": {
+        "Label": "Upkeep mode",
+        "Prompt": "Prompt (pay or break)",
+        "Forced": "Forced (auto, ends if lethal)"
+      },
       "UpkeepWaiverStep": {
         "Label": "Mastery step that waives the HP cost"
       },
@@ -480,7 +485,8 @@
       "UpkeepTitle": "{name} — upkeep",
       "UpkeepMessage": "{name} is active. Pay {formula} HP to maintain the stance, or break it.",
       "PayHp": "Pay {formula} HP",
-      "HpCostFlavor": "Stance upkeep: {amount} HP lost."
+      "HpCostFlavor": "Stance upkeep: {amount} HP lost.",
+      "UpkeepEnded": "{name} ends — the upkeep cost would have dropped you below 1 HP."
     },
     "StanceElement": {
       "Title": "{name} — choose element",

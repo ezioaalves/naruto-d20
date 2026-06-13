@@ -612,6 +612,13 @@
       </div>
 
       <div class="form-group">
+        <label>{{localize "NarutoD20.Automation.UpkeepMode.Label"}}</label>
+        <select name="system.automation.upkeepMode">
+          {{selectOptions upkeepModeChoices selected=system.automation.upkeepMode}}
+        </select>
+      </div>
+
+      <div class="form-group">
         <label>{{localize "NarutoD20.Automation.UpkeepWaiverStep.Label"}}</label>
         <input type="number" step="1" min="0" name="system.automation.upkeepWaiverStep" value="{{system.automation.upkeepWaiverStep}}">
       </div>

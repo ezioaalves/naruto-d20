@@ -43,6 +43,17 @@
     "isCombination": false,
     "performMiscBonus": 0,
     "active": false,
+    "automation": {
+      "enabled": true,
+      "targetMode": "self",
+      "stanceMode": false,
+      "stanceUpkeep": true,
+      "elementChoice": false,
+      "upkeepFormula": "2",
+      "upkeepMode": "forced",
+      "upkeepWaiverStep": 99,
+      "elementDoubleStep": 5
+    },
     "changes": [],
     "actions": [
       {
