@@ -74,9 +74,9 @@ equivalent native PF1e class and confirm it uses V2. Only use V2 if:
 
 ## Context7 docs
 
-Library IDs (all v11.11-aligned unless noted):
-- `foundryvtt_api_v13` — Foundry core API
-- `foundryvtt_pathfinder1e_gitlab_io_foundryvtt-pathfinder1` — PF1e API class reference (primary)
+Library IDs:
+- `foundryvtt_api_v13` — Foundry core API (authoritative)
+- `foundryvtt_pathfinder1e_gitlab_io_foundryvtt-pathfinder1` — PF1e API class reference. ⚠️ Tracks a branch **newer** than 11.11 — concept/cookbook only, NOT a v11.11 API spec. For PF1e API facts use the `pf1e-api-check` skill (reads the `foundryvtt-pathfinder1-v11.11/` source).
 - `gitlab_foundryvtt_pathfinder1e/foundryvtt-pathfinder1` — PF1e help guides & cookbook
 
 ## Hook lifecycle (execution order)
