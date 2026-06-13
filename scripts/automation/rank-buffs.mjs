@@ -1,6 +1,5 @@
 import { getRankMaintenanceFlag } from "./maintenance-buffs.mjs";
 
-export const RANK_KEYS = ["KOUSOKU", "JOURYOKU"];
 export const RANK_GRANT_TYPES = ["paid", "temp", "bonus"];
 export const RANK_MASTERY_FREE_ROUNDS = 5;
 export const RANK_MASTERY_REQUIRED_STEP = 5;
