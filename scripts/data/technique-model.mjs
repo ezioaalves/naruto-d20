@@ -394,7 +394,12 @@ export function createTechniqueDataModel() {
             // Mastery step at/above which the upkeep HP cost is ignored.
             upkeepWaiverStep: new fields.NumberField({ ...opt, integer: true, initial: 2, min: 0 }),
             // Mastery step at/above which two elements are chosen (1d6 + 1d6).
-            elementDoubleStep: new fields.NumberField({ ...opt, integer: true, initial: 5, min: 0 }),
+            elementDoubleStep: new fields.NumberField({
+              ...opt,
+              integer: true,
+              initial: 5,
+              min: 0,
+            }),
           },
           opt,
         ),
@@ -403,10 +408,7 @@ export function createTechniqueDataModel() {
         // PF1e-compatible content-source array. Each entry is a
         // freeform object with optional title, pages, edition, id,
         // publisher, date, errata fields.
-        sources: new fields.ArrayField(
-          new fields.ObjectField(),
-          { ...opt, initial: [] },
-        ),
+        sources: new fields.ArrayField(new fields.ObjectField(), { ...opt, initial: [] }),
       };
     }
 

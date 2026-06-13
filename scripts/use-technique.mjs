@@ -15,7 +15,11 @@ import {
   isRankMasteryFreeUseEligible,
   RANK_MASTERY_FREE_ROUNDS,
 } from "./automation/rank-buffs.mjs";
-import { findStanceBuffForTechnique, isElementStance, isUpkeepStance } from "./automation/stance-buffs.mjs";
+import {
+  findStanceBuffForTechnique,
+  isElementStance,
+  isUpkeepStance,
+} from "./automation/stance-buffs.mjs";
 import {
   clearPendingCastElements,
   getActiveStanceElements,
