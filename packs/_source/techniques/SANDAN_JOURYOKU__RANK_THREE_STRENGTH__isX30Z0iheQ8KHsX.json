@@ -88,7 +88,24 @@
         "title": "NarutoD20 Redux v1.3",
         "pages": "236"
       }
-    ]
+    ],
+    "automation": {
+      "enabled": true,
+      "targetMode": "auto",
+      "maintenance": {
+        "enabled": true,
+        "resource": "chakra",
+        "cost": "3",
+        "policy": "prompt",
+        "interval": 5,
+        "waiver": "freeUse",
+        "waiverStep": 5,
+        "freeRounds": 5,
+        "choice": "",
+        "element": false,
+        "elementDoubleStep": 5
+      }
+    }
   },
   "effects": [],
   "folder": "ayYIiiWUKK026ygC",

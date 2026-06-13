@@ -11,7 +11,9 @@ function resolveMessageFromElement(li) {
 }
 
 function isMessageController(message, actor) {
-  return !!message && !!actor && actor.isOwner && (message.isAuthor || message.isOwner || game.user.isGM);
+  return (
+    !!message && !!actor && actor.isOwner && (message.isAuthor || message.isOwner || game.user.isGM)
+  );
 }
 
 function canSeeMessageContent(message) {
@@ -161,15 +163,25 @@ export async function updateMessageWithActionPoint(message, { oldRoll, apRoll, a
  * plus a "kept" summary). Exported so progression flows can append their own
  * content to it within the single reroll update.
  */
-export async function buildRerollComparisonContent({ oldRoll, newRoll, keptRoll, keep, oldClass, newClass }) {
+export async function buildRerollComparisonContent({
+  oldRoll,
+  newRoll,
+  keptRoll,
+  keep,
+  oldClass,
+  newClass,
+}) {
   return `
     <div class="naruto-reroll-card">
       ${await renderRollBlock(oldRoll, "NarutoD20.Reroll.Original", oldClass)}
       ${await renderRollBlock(newRoll, "NarutoD20.Reroll.Rerolled", newClass)}
       <div class="naruto-reroll-summary">
-        ${game.i18n.format(`NarutoD20.Reroll.${({ new: "KeptNew", lower: "KeptLower", higher: "KeptHigher" })[keep ?? "new"] ?? "KeptNew"}`, {
-          total: Math.round(Number(keptRoll.total) * 100) / 100,
-        })}
+        ${game.i18n.format(
+          `NarutoD20.Reroll.${{ new: "KeptNew", lower: "KeptLower", higher: "KeptHigher" }[keep ?? "new"] ?? "KeptNew"}`,
+          {
+            total: Math.round(Number(keptRoll.total) * 100) / 100,
+          },
+        )}
       </div>
     </div>
   `;

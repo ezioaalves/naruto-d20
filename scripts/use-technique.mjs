@@ -16,17 +16,16 @@ import {
   RANK_MASTERY_FREE_ROUNDS,
 } from "./automation/rank-buffs.mjs";
 import {
-  findStanceBuffForTechnique,
-  isElementStance,
-  isUpkeepStance,
-} from "./automation/stance-buffs.mjs";
+  findMaintenanceBuffForTechnique,
+  maintenanceFacets,
+} from "./automation/maintenance-buffs.mjs";
 import {
   clearPendingCastElements,
-  getActiveStanceElements,
-  promptStanceElements,
+  elementCount,
+  getActiveElements,
+  promptElements,
   setPendingCastElements,
-  stanceElementCount,
-} from "./automation/stance-element-damage.mjs";
+} from "./automation/maintenance-element-damage.mjs";
 
 export function canAffordTechnique(actor, item) {
   return canPayChakra(actor, item.system.chakraCost ?? 0);
@@ -46,9 +45,10 @@ export async function performTechnique(item, actionId, event = null) {
 
   // Using an upkeep stance (Amatsu) that is already active is free — only the
   // initial entry pays chakra; round-to-round upkeep is HP (handled at turn start).
-  const stanceFree =
-    isUpkeepStance(currentItem) && Boolean(findStanceBuffForTechnique(actor, currentItem.id));
-  const chakraFree = freeUseChoice?.useFree === true || stanceFree;
+  const upkeepFree =
+    maintenanceFacets(currentItem)?.resource === "hp" &&
+    Boolean(findMaintenanceBuffForTechnique(actor, currentItem.id));
+  const chakraFree = freeUseChoice?.useFree === true || upkeepFree;
 
   if (!chakraFree && !canAffordTechnique(actor, currentItem)) {
     ui.notifications.warn(
@@ -71,12 +71,12 @@ export async function performTechnique(item, actionId, event = null) {
     // Element stances pick their damage element(s) before the attack rolls so the
     // pf1PreDamageRoll hook can type the damage. On entry we prompt; while the stance
     // is already active we reuse the element(s) stored on the buff.
-    if (isElementStance(currentItem)) {
-      const active = getActiveStanceElements(actor, currentItem);
+    if (currentItem.system.automation.maintenance?.element === true) {
+      const active = getActiveElements(actor, currentItem);
       if (active?.length) {
         setPendingCastElements(actor, currentItem, active);
       } else {
-        const elements = await promptStanceElements(currentItem, stanceElementCount(currentItem));
+        const elements = await promptElements(currentItem, elementCount(currentItem));
         if (!elements) return;
         setPendingCastElements(actor, currentItem, elements);
       }
@@ -105,7 +105,7 @@ export async function performTechnique(item, actionId, event = null) {
     }
 
     let spend = null;
-    if (stanceFree) {
+    if (upkeepFree) {
       // Active-stance re-use: the attack costs no chakra.
     } else if (freeUseChoice?.useFree) {
       const spent = await consumeRankMasteryFreeUse(current.item);
@@ -124,7 +124,7 @@ export async function performTechnique(item, actionId, event = null) {
     }
     await postTechniqueSuccessCard(actor, current.item, cost, spend?.summary ?? null, perform, {
       freeUse: freeUseChoice?.useFree === true,
-      stanceFree,
+      upkeepFree,
     });
 
     const updated = resolveCurrentTechniqueAction(
@@ -138,7 +138,8 @@ export async function performTechnique(item, actionId, event = null) {
 
     await applyPostUseAutomation(updated.item, actor, updated.action);
   } finally {
-    if (isElementStance(currentItem)) clearPendingCastElements(actor, currentItem);
+    if (currentItem.system.automation.maintenance?.element === true)
+      clearPendingCastElements(actor, currentItem);
   }
 }
 
@@ -340,8 +341,8 @@ async function postTechniqueSuccessCard(actor, item, cost, spendSummary, perform
   // matching the roll's visibility so a self/GM roll stays private.
   if (perform.bypassNote) return;
   let footer;
-  if (options.stanceFree) {
-    footer = game.i18n.localize("NarutoD20.Cards.Perform.StanceFree");
+  if (options.upkeepFree) {
+    footer = game.i18n.localize("NarutoD20.Cards.Perform.UpkeepFree");
   } else if (options.freeUse) {
     footer = game.i18n.format("NarutoD20.Cards.Perform.FreeUse", {
       rounds: RANK_MASTERY_FREE_ROUNDS,

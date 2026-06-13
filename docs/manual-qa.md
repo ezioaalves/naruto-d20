@@ -180,6 +180,32 @@ Feats` abrem.
    Resultado esperado: o buff expirado e removido da ficha quando a expiracao
    veio por duracao PF1e.
 
+## Manutencao no inicio do turno
+
+1. Ative KAI-MON KAI e avance ate o inicio do proximo turno.
+   Resultado esperado: perde 2 PV com o flavor "Manutencao: 2 PV perdidos.";
+   nenhuma mensagem chama a tecnica de stance.
+
+2. Repita KAI-MON KAI com 2 PV.
+   Resultado esperado: o buff termina sem aplicar o custo e o ator permanece com
+   pelo menos 1 PV.
+
+3. Ative AMATSU NO KARADA abaixo da maestria 2.
+   Resultado esperado: escolhe o elemento na entrada e, no inicio do turno,
+   oferece pagar 1d4 PV ou encerrar.
+
+4. Repita AMATSU NO KARADA com maestria 2 ou maior.
+   Resultado esperado: a manutencao renova silenciosamente, sem custo de PV, e o
+   elemento escolhido continua tipando o dano.
+
+5. Ative CHAMPURU DAICHI SUTANSU.
+   Resultado esperado: no inicio do turno permite manter, trocar Destreza/Forca
+   ou encerrar; apenas uma variante do buff permanece ativa.
+
+6. Deixe expirar um buff comum criado pela automacao e desative outro manualmente.
+   Resultado esperado: a expiracao natural remove o primeiro; a desativacao
+   manual deixa o segundo inativo na ficha.
+
 ## Ranks temporarios e bonus de rank
 
 Baseline de paridade: use SANDAN KOUSOKU sozinho e anote os totais de AC,

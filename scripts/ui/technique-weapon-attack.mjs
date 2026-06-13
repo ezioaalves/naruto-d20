@@ -320,14 +320,9 @@ function applyTechniqueSave(actionUse, technique, techniqueAction, cleanup) {
   selectedAction.save = cloneSave(techniqueAction.save);
   selectedRollAction.save = cloneSave(techniqueAction.save);
 
-  const clearDCContext = setTechniqueSaveDCContext(
-    selectedAction,
-    technique,
-    techniqueAction,
-  );
+  const clearDCContext = setTechniqueSaveDCContext(selectedAction, technique, techniqueAction);
   const dcBonus = actionUse.shared.rollData.dcBonus ?? 0;
-  actionUse.shared.rollData.dc =
-    selectedAction.getDC(actionUse.shared.rollData) - dcBonus;
+  actionUse.shared.rollData.dc = selectedAction.getDC(actionUse.shared.rollData) - dcBonus;
   cleanup.push(() => {
     clearDCContext();
     selectedAction.save = actionSave;

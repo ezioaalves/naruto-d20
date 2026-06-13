@@ -91,11 +91,7 @@ for (const filename of files) {
 
   // Skip if already has sources (unless --force)
   const existing = doc.system?.sources;
-  if (
-    !FORCE &&
-    Array.isArray(existing) &&
-    existing.length > 0
-  ) {
+  if (!FORCE && Array.isArray(existing) && existing.length > 0) {
     skipped++;
     continue;
   }

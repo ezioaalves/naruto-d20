@@ -28,7 +28,7 @@ export async function commitHpCost(actor, roll, amount) {
 
   await roll.toMessage({
     speaker: ChatMessage.implementation.getSpeaker({ actor }),
-    flavor: game.i18n.format("NarutoD20.StanceBuff.HpCostFlavor", { amount }),
+    flavor: game.i18n.format("NarutoD20.Maintenance.HpCostFlavor", { amount }),
   });
 
   return roll;

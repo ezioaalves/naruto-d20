@@ -120,7 +120,7 @@
   "effects": [],
   "flags": {
     "naruto-d20": {
-      "rankBuff": {
+      "maintenanceBuff": {
         "key": "KOUSOKU",
         "grantType": "temp"
       }

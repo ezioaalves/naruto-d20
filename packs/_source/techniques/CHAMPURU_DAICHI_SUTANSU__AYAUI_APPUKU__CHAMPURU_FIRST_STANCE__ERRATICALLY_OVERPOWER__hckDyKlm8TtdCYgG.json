@@ -48,7 +48,19 @@
     "automation": {
       "enabled": true,
       "targetMode": "auto",
-      "stanceMode": true
+      "maintenance": {
+        "enabled": true,
+        "resource": "",
+        "cost": "",
+        "policy": "prompt",
+        "interval": 1,
+        "waiver": "",
+        "waiverStep": 2,
+        "freeRounds": 5,
+        "choice": "mode",
+        "element": false,
+        "elementDoubleStep": 5
+      }
     },
     "changes": [],
     "actions": [

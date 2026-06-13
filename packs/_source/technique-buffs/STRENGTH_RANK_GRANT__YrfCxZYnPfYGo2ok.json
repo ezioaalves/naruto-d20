@@ -129,7 +129,7 @@
   "effects": [],
   "flags": {
     "naruto-d20": {
-      "rankBuff": {
+      "maintenanceBuff": {
         "key": "JOURYOKU",
         "grantType": "temp"
       }

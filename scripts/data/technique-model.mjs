@@ -11,7 +11,10 @@
  */
 
 import { createActionId, isValidActionId } from "./action-ids.mjs";
-import { applyTechniqueSystemDefaults } from "./technique-defaults.mjs";
+import {
+  applyTechniqueSystemDefaults,
+  legacyAutomationToMaintenance,
+} from "./technique-defaults.mjs";
 
 /** Complexity lookup — Appendix B, Table B-1. */
 export const COMPLEXITY_TABLE = {
@@ -376,40 +379,59 @@ export function createTechniqueDataModel() {
               initial: "auto",
               choices: ["auto", "self", "selected"],
             }),
-            // Marks a per-round Dex/Str mode-choice stance (Champuru). When on,
-            // performing applies a self-buff that expires at turn start and
-            // prompts the user to keep/switch the mode or break the stance.
-            stanceMode: new fields.BooleanField({ ...opt, initial: false }),
-            // Marks an HP-upkeep stance (Amatsu no Karada). Entering costs chakra
-            // once; while active the technique's attack is free, but at the start
-            // of each turn the user is prompted to pay `upkeepFormula` HP or break
-            // the stance (the cost is waived at mastery >= upkeepWaiverStep).
-            stanceUpkeep: new fields.BooleanField({ ...opt, initial: false }),
-            // When on, entering an element stance prompts for the damage element(s)
-            // that the attack deals. One element normally, two (duplicates allowed)
-            // at mastery >= elementDoubleStep.
-            elementChoice: new fields.BooleanField({ ...opt, initial: false }),
-            // Per-round HP cost formula for an upkeep stance.
-            upkeepFormula: new fields.StringField({ ...opt, blank: false, initial: "1d4" }),
-            // "prompt" (default) prompts pay/break each turn (Amatsu). "forced"
-            // auto-applies the HP cost with no prompt and ends the stance if the
-            // cost would drop HP below 1 (Kai-Mon). Forced upkeep is never waived
-            // by mastery.
-            upkeepMode: new fields.StringField({
-              ...opt,
-              blank: false,
-              initial: "prompt",
-              choices: ["prompt", "forced"],
-            }),
-            // Mastery step at/above which the upkeep HP cost is ignored.
-            upkeepWaiverStep: new fields.NumberField({ ...opt, integer: true, initial: 2, min: 0 }),
-            // Mastery step at/above which two elements are chosen (1d6 + 1d6).
-            elementDoubleStep: new fields.NumberField({
-              ...opt,
-              integer: true,
-              initial: 5,
-              min: 0,
-            }),
+            maintenance: new fields.SchemaField(
+              {
+                // Turn-start maintenance on/off. A maintained buff expires at turn start;
+                // the engine then runs cost/waiver/choice before refreshing or ending it.
+                enabled: new fields.BooleanField({ ...opt, initial: false }),
+                // Cost resource paid each turn to keep the buff. "" = no cost (e.g. Champuru).
+                resource: new fields.StringField({
+                  ...opt,
+                  blank: true,
+                  initial: "",
+                  choices: ["", "chakra", "hp"],
+                }),
+                // Cost amount: an HP roll formula ("1d4", "2") or a flat chakra amount ("1").
+                cost: new fields.StringField({ ...opt, blank: true, initial: "1d4" }),
+                // "prompt": dialog to pay or end. "forced": auto-pay with a guard (end if it
+                // would drop HP below 1 / chakra cannot be paid). Never waived under "forced".
+                policy: new fields.StringField({
+                  ...opt,
+                  blank: false,
+                  initial: "prompt",
+                  choices: ["prompt", "forced"],
+                }),
+                // Rounds the refresh duration lasts (ranks use 5/2/1; HP/mode use 1).
+                interval: new fields.NumberField({ ...opt, integer: true, initial: 1, min: 1 }),
+                // Mastery waiver: "step" waives the cost silently at mastery >= waiverStep;
+                // "freeUse" offers a daily charge of `freeRounds` free rounds as a prompt button.
+                waiver: new fields.StringField({
+                  ...opt,
+                  blank: true,
+                  initial: "",
+                  choices: ["", "step", "freeUse"],
+                }),
+                waiverStep: new fields.NumberField({ ...opt, integer: true, initial: 2, min: 0 }),
+                freeRounds: new fields.NumberField({ ...opt, integer: true, initial: 5, min: 1 }),
+                // Per-turn choice. "mode": keep/switch/break between named variant buffs (Dex/Str).
+                choice: new fields.StringField({
+                  ...opt,
+                  blank: true,
+                  initial: "",
+                  choices: ["", "mode"],
+                }),
+                // Entry-time element selection (chosen once on entry, reused while active).
+                element: new fields.BooleanField({ ...opt, initial: false }),
+                // Mastery step at/above which two elements are chosen (1d6 + 1d6).
+                elementDoubleStep: new fields.NumberField({
+                  ...opt,
+                  integer: true,
+                  initial: 5,
+                  min: 0,
+                }),
+              },
+              opt,
+            ),
           },
           opt,
         ),
@@ -423,6 +445,22 @@ export function createTechniqueDataModel() {
     }
 
     static migrateData(source) {
+      const automation = source.automation ?? {};
+      const maintenance = legacyAutomationToMaintenance(automation);
+      if (maintenance && !automation.maintenance) automation.maintenance = maintenance;
+      for (const key of [
+        "stanceMode",
+        "stanceUpkeep",
+        "elementChoice",
+        "upkeepFormula",
+        "upkeepMode",
+        "upkeepWaiverStep",
+        "elementDoubleStep",
+      ]) {
+        delete automation[key];
+      }
+      source.automation = automation;
+
       // Legacy: description was a plain HTMLField string.
       if (typeof source.description === "string") {
         source.description = { value: source.description, summary: "", instructions: "" };

@@ -309,8 +309,7 @@ function progressionRollCanReroll(_message, ctx, config) {
 
   const res = progression.result ?? {};
   if ((Number(state.progress ?? 0) || 0) !== (Number(res.progress ?? 0) || 0)) return false;
-  if ((Number(state.attemptsUsed ?? 0) || 0) !== (Number(res.attemptsUsed ?? 0) || 0))
-    return false;
+  if ((Number(state.attemptsUsed ?? 0) || 0) !== (Number(res.attemptsUsed ?? 0) || 0)) return false;
   if ((Number(state.failureInsight ?? 0) || 0) !== (Number(res.failureInsight ?? 0) || 0))
     return false;
   if ((Number(state.lastTrainingAt ?? 0) || 0) !== (Number(res.lastTrainingAt ?? 0) || 0))

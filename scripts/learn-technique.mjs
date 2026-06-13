@@ -552,7 +552,16 @@ async function rollLearnCheck(item, actor, skillKey, activeLearning) {
 async function resolveLearnAttempt(
   item,
   actor,
-  { skillKey, mode, baseState, total, apBonus = 0, apRollText = "", rollMessage = null, returnBlock = false },
+  {
+    skillKey,
+    mode,
+    baseState,
+    total,
+    apBonus = 0,
+    apRollText = "",
+    rollMessage = null,
+    returnBlock = false,
+  },
 ) {
   const result = buildLearnAttemptResult(item, actor, {
     skillKey,

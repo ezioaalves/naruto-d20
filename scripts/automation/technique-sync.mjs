@@ -162,11 +162,11 @@ export function diffTechnique(embeddedSystem, sourceSystem) {
 function hasLimitedUseConfig(uses) {
   return Boolean(
     uses &&
-      ((uses.max !== null && uses.max !== undefined) ||
-        uses.maxFormula ||
-        uses.per ||
-        uses.autoDeductChargesCost ||
-        uses.rechargeFormula),
+    ((uses.max !== null && uses.max !== undefined) ||
+      uses.maxFormula ||
+      uses.per ||
+      uses.autoDeductChargesCost ||
+      uses.rechargeFormula),
   );
 }
 

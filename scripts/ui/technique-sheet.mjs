@@ -153,9 +153,31 @@ export function createTechniqueItemSheet() {
         selected: loc("NarutoD20.Automation.TargetMode.Selected"),
       };
 
-      context.upkeepModeChoices = {
-        prompt: loc("NarutoD20.Automation.UpkeepMode.Prompt"),
-        forced: loc("NarutoD20.Automation.UpkeepMode.Forced"),
+      context.maintenanceResourceChoices = {
+        "": loc("NarutoD20.Automation.Maintenance.Resource.None"),
+        chakra: loc("NarutoD20.Automation.Maintenance.Resource.Chakra"),
+        hp: loc("NarutoD20.Automation.Maintenance.Resource.Hp"),
+      };
+      context.maintenancePolicyChoices = {
+        prompt: loc("NarutoD20.Automation.Maintenance.Policy.Prompt"),
+        forced: loc("NarutoD20.Automation.Maintenance.Policy.Forced"),
+      };
+      context.maintenanceWaiverChoices = {
+        "": loc("NarutoD20.Automation.Maintenance.Waiver.None"),
+        step: loc("NarutoD20.Automation.Maintenance.Waiver.Step"),
+        freeUse: loc("NarutoD20.Automation.Maintenance.Waiver.FreeUse"),
+      };
+      context.maintenanceChoiceChoices = {
+        "": loc("NarutoD20.Automation.Maintenance.Choice.None"),
+        mode: loc("NarutoD20.Automation.Maintenance.Choice.Mode"),
+      };
+      const maintenance = system.automation?.maintenance ?? {};
+      context.maintenanceFields = {
+        show: maintenance.enabled === true,
+        hasCost: Boolean(maintenance.resource),
+        showWaiverStep: maintenance.waiver === "step",
+        showFreeRounds: maintenance.waiver === "freeUse",
+        showElementDoubleStep: maintenance.element === true,
       };
 
       // ── Links tab — structured for PF1e's table/sub-nav layout ──

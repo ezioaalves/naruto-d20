@@ -4,9 +4,26 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, it } from "node:test";
 
-import { applyTechniqueSystemDefaults } from "../scripts/data/technique-defaults.mjs";
+import {
+  applyTechniqueSystemDefaults,
+  legacyAutomationToMaintenance,
+} from "../scripts/data/technique-defaults.mjs";
+import { maintenanceMigrationPatch } from "../scripts/data/maintenance-migration.mjs";
 import { computeTechniqueDerived } from "../scripts/data/technique-model.mjs";
 import { calculateChakraSpend, canPayChakra } from "../scripts/data/chakra-spend.mjs";
+import {
+  getRankMaintenanceFlag,
+  maintenanceBuffFlagData,
+  maintenanceFacets,
+  maintenanceModeBuffName,
+  maintenanceModeById,
+} from "../scripts/automation/maintenance-buffs.mjs";
+import { getRankGrantType, rankGrantLevel } from "../scripts/automation/rank-buffs.mjs";
+import {
+  legacyRankBuffToMaintenance,
+  rankMaintenanceFromContext,
+} from "../scripts/data/maintenance-migration.mjs";
+import { elementCount } from "../scripts/automation/maintenance-element-damage.mjs";
 import { diffTechnique, normalizeSystem } from "../scripts/automation/technique-sync.mjs";
 import {
   LEARNING_MODES,
@@ -80,6 +97,19 @@ describe("technique defaults", () => {
     assert.equal(system.learning.learned, false);
     assert.equal(system.automation.enabled, true);
     assert.equal(system.automation.targetMode, "auto");
+    assert.deepEqual(system.automation.maintenance, {
+      enabled: false,
+      resource: "",
+      cost: "1d4",
+      policy: "prompt",
+      interval: 1,
+      waiver: "",
+      waiverStep: 2,
+      freeRounds: 5,
+      choice: "",
+      element: false,
+      elementDoubleStep: 5,
+    });
     assert.deepEqual(system.links.prerequisites, []);
     assert.deepEqual(system.tags, ["combat"]);
     assert.deepEqual(system.descriptors, ["Fire", "Hijutsu", "Combination"]);
@@ -93,6 +123,117 @@ describe("technique defaults", () => {
 
     assert.ok(system.descriptors instanceof Set);
     assert.deepEqual([...system.descriptors], ["Kinjutsu"]);
+  });
+
+  it("maps legacy stance automation to maintenance without changing behavior", () => {
+    assert.deepEqual(
+      legacyAutomationToMaintenance({
+        stanceMode: false,
+        stanceUpkeep: true,
+        elementChoice: true,
+        upkeepFormula: "1d4",
+        upkeepMode: "prompt",
+        upkeepWaiverStep: 2,
+        elementDoubleStep: 5,
+      }),
+      {
+        enabled: true,
+        resource: "hp",
+        cost: "1d4",
+        policy: "prompt",
+        interval: 1,
+        waiver: "step",
+        waiverStep: 2,
+        freeRounds: 5,
+        choice: "",
+        element: true,
+        elementDoubleStep: 5,
+      },
+    );
+    assert.equal(legacyAutomationToMaintenance({ enabled: true, targetMode: "auto" }), null);
+  });
+});
+
+describe("maintenance facets", () => {
+  const tech = (maintenance) => ({ name: "T", system: { automation: { maintenance } } });
+
+  it("returns null when maintenance is disabled", () => {
+    assert.equal(maintenanceFacets(tech({ enabled: false })), null);
+  });
+
+  it("reads a forced HP upkeep with no waiver/choice (Kai-Mon)", () => {
+    const f = maintenanceFacets(
+      tech({
+        enabled: true,
+        resource: "hp",
+        cost: "2",
+        policy: "forced",
+        interval: 1,
+        waiver: "",
+        choice: "",
+      }),
+    );
+    assert.deepEqual(f, {
+      resource: "hp",
+      cost: "2",
+      policy: "forced",
+      interval: 1,
+      waiver: "",
+      waiverStep: 2,
+      freeRounds: 5,
+      choice: "",
+    });
+  });
+
+  it("reads a prompt HP upkeep with step waiver (Amatsu)", () => {
+    const f = maintenanceFacets(
+      tech({
+        enabled: true,
+        resource: "hp",
+        cost: "1d4",
+        policy: "prompt",
+        interval: 1,
+        waiver: "step",
+        waiverStep: 2,
+        choice: "",
+      }),
+    );
+    assert.equal(f.waiver, "step");
+    assert.equal(f.waiverStep, 2);
+  });
+
+  it("reads a no-cost mode choice (Champuru)", () => {
+    const f = maintenanceFacets(tech({ enabled: true, resource: "", choice: "mode", interval: 1 }));
+    assert.equal(f.resource, "");
+    assert.equal(f.choice, "mode");
+  });
+
+  it("builds mode-variant buff names and resolves mode ids", () => {
+    assert.equal(maintenanceModeBuffName({ name: "Champuru" }, "dex"), "Champuru (Dexterity)");
+    assert.equal(maintenanceModeById("str").suffix, "Strength");
+    assert.equal(maintenanceModeById("nope"), null);
+  });
+
+  it("builds a unified rank maintenance flag without storing the rank level", () => {
+    assert.deepEqual(
+      maintenanceBuffFlagData({
+        sourceTechniqueId: "tech1",
+        grantType: "paid",
+        key: "KOUSOKU",
+      }),
+      { sourceTechniqueId: "tech1", grantType: "paid", key: "KOUSOKU" },
+    );
+  });
+});
+
+describe("maintenance element count", () => {
+  const tech = (mastery, elementDoubleStep) => ({
+    system: { mastery, automation: { maintenance: { element: true, elementDoubleStep } } },
+  });
+
+  it("is 1 below the double step and 2 at/above it", () => {
+    assert.equal(elementCount(tech(1, 5)), 1);
+    assert.equal(elementCount(tech(5, 5)), 2);
   });
 });
 
@@ -372,31 +513,38 @@ describe("synckit normalization", () => {
     assert.equal(diffTechnique(embedded, source), true);
   });
 
-  it("treats a no-op sheet open/close as up-to-date for non-stance techniques", () => {
+  it("treats a no-op sheet open/close as up-to-date for techniques without maintenance automation", () => {
     // Opening a technique sheet submits the whole form on close: the DataModel
-    // cleans `system.automation` and persists every schema field. A non-stance
-    // technique's compendium source JSON predates the upkeep/element fields and
-    // only carries the original three. The normalizer must backfill the new
-    // fields on both sides so the diff stays equal.
+    // cleans `system.automation` and persists every schema field. A technique's
+    // compendium source JSON predates the `maintenance` block and
+    // only carries the top-level automation fields. The normalizer must
+    // backfill the nested maintenance defaults on both sides so the diff stays
+    // equal.
     const embedded = {
       description: { value: "" },
       descriptors: [],
       automation: {
         enabled: true,
         targetMode: "auto",
-        stanceMode: false,
-        stanceUpkeep: false,
-        elementChoice: false,
-        upkeepFormula: "1d4",
-        upkeepMode: "prompt",
-        upkeepWaiverStep: 2,
-        elementDoubleStep: 5,
+        maintenance: {
+          enabled: false,
+          resource: "",
+          cost: "1d4",
+          policy: "prompt",
+          interval: 1,
+          waiver: "",
+          waiverStep: 2,
+          freeRounds: 5,
+          choice: "",
+          element: false,
+          elementDoubleStep: 5,
+        },
       },
     };
     const source = {
       description: { value: "" },
       descriptors: [],
-      automation: { enabled: true, targetMode: "auto", stanceMode: false },
+      automation: { enabled: true, targetMode: "auto" },
     };
 
     assert.equal(diffTechnique(embedded, source), true);
@@ -429,6 +577,102 @@ describe("synckit normalization", () => {
     };
 
     assert.equal(diffTechnique(embedded, source), false);
+  });
+});
+
+describe("maintenance migration", () => {
+  it("persists prepared maintenance and deletes every legacy automation key", () => {
+    assert.deepEqual(
+      maintenanceMigrationPatch({
+        enabled: true,
+        resource: "hp",
+        cost: "2",
+        policy: "forced",
+        interval: 1,
+        waiver: "",
+        waiverStep: 2,
+        freeRounds: 5,
+        choice: "",
+        element: false,
+        elementDoubleStep: 5,
+      }),
+      {
+        "system.automation.maintenance": {
+          enabled: true,
+          resource: "hp",
+          cost: "2",
+          policy: "forced",
+          interval: 1,
+          waiver: "",
+          waiverStep: 2,
+          freeRounds: 5,
+          choice: "",
+          element: false,
+          elementDoubleStep: 5,
+        },
+        "system.automation.-=stanceMode": null,
+        "system.automation.-=stanceUpkeep": null,
+        "system.automation.-=elementChoice": null,
+        "system.automation.-=upkeepFormula": null,
+        "system.automation.-=upkeepMode": null,
+        "system.automation.-=upkeepWaiverStep": null,
+        "system.automation.-=elementDoubleStep": null,
+      },
+    );
+  });
+});
+
+describe("unified rank maintenance metadata", () => {
+  const buff = {
+    flags: {
+      "naruto-d20": {
+        maintenanceBuff: { key: "KOUSOKU", grantType: "bonus" },
+      },
+    },
+    system: { level: 2 },
+  };
+
+  it("reads rank type and granted level from the unified flag", () => {
+    assert.equal(getRankMaintenanceFlag(buff).key, "KOUSOKU");
+    assert.equal(getRankGrantType(buff), "bonus");
+    assert.equal(rankGrantLevel(buff), 2);
+  });
+
+  it("maps a legacy rankBuff payload without storing level/cost/interval", () => {
+    assert.deepEqual(
+      legacyRankBuffToMaintenance({
+        key: "JOURYOKU",
+        grantType: "paid",
+        level: 3,
+        cost: 3,
+        interval: 5,
+        sourceTechniqueId: "tech1",
+      }),
+      {
+        key: "JOURYOKU",
+        grantType: "paid",
+        sourceTechniqueId: "tech1",
+      },
+    );
+  });
+
+  it("builds actor-owned rank maintenance from name-derived context", () => {
+    assert.deepEqual(
+      rankMaintenanceFromContext({ cost: 4, interval: 5 }),
+      {
+        enabled: true,
+        resource: "chakra",
+        cost: "4",
+        policy: "prompt",
+        interval: 5,
+        waiver: "freeUse",
+        waiverStep: 5,
+        freeRounds: 5,
+        choice: "",
+        element: false,
+        elementDoubleStep: 5,
+      },
+    );
   });
 });
 

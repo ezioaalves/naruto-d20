@@ -46,13 +46,19 @@
     "automation": {
       "enabled": true,
       "targetMode": "self",
-      "stanceMode": false,
-      "stanceUpkeep": true,
-      "elementChoice": false,
-      "upkeepFormula": "2",
-      "upkeepMode": "forced",
-      "upkeepWaiverStep": 99,
-      "elementDoubleStep": 5
+      "maintenance": {
+        "enabled": true,
+        "resource": "hp",
+        "cost": "2",
+        "policy": "forced",
+        "interval": 1,
+        "waiver": "",
+        "waiverStep": 2,
+        "freeRounds": 5,
+        "choice": "",
+        "element": false,
+        "elementDoubleStep": 5
+      }
     },
     "changes": [],
     "actions": [
