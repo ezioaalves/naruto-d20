@@ -2,6 +2,10 @@
 
 ## v1.0.28 - 2026-06-13
 
+- Added an **auto-generated technique stat block** above the description: discipline, rank, complexity, chakra cost, learn DC, successes, threshold, perform DC and components now render automatically from the technique's structured fields (mirroring PF1e's spell header), so descriptions no longer need those values typed by hand. Stripped the hand-typed Type/Rank/Chakra Cost/Learn DC/Perform DC/Components block from all 1297 technique descriptions accordingly.
+- The technique stat block now also appears in the **chat card** produced by `item.use()`, matching how spells render their header. Achieved by wrapping `ItemPF#getDescription` for technique items and sharing a `renderTechniqueHeader` helper between the sheet and the card.
+- Removed the **redundant discipline/rank/complexity line** that was duplicated at the top of the technique sheet's Description tab.
+- Fixed a **Synckit false positive**: opening and closing a technique sheet (a no-op) wrote `system.automation.stanceMode` onto the embedded item, which the diff normalizer didn't backfill, making techniques wrongly report **out-of-date**. `applyTechniqueSystemDefaults` now backfills `automation.stanceMode` on both sides of the diff.
 - Normalized the **Kanigakure Hiden: Raiton - Denki Shokku** technique/buff name to ALL CAPS so it matches the casing of every other technique-buff (it was the only Title-Case entry).
 - Shortened the bonus-source label shown in **damage/attack roll breakdowns** to the **Japanese name only** (e.g. `CHAMPURU DAICHI SUTANSU -AYAUI APPUKU` instead of the full `JAPANESE (ENGLISH)` string). Done purely in data by setting an explicit `flavor` on every technique-buff change — PF1e labels each roll-breakdown change with `change.flavor`. Buff names themselves (both languages) are unchanged. Already-applied buffs pick up the short label when re-applied.
 - Added `tools/normalize-buff-display-names.mjs`.
