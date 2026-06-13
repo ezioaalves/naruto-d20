@@ -163,7 +163,10 @@ async function removeStanceBuff(actor, itemId) {
  * activation and the per-turn maintenance prompt.
  * Resolves to a mode id ("dex" / "str"), "break", or null (canceled initial activation).
  */
-export function promptStanceMode(item, { current = null, allowBreak = false, initial = false } = {}) {
+export function promptStanceMode(
+  item,
+  { current = null, allowBreak = false, initial = false } = {},
+) {
   return new Promise((resolve) => {
     let resolved = false;
     const done = (value) => {
@@ -426,7 +429,12 @@ export async function applyBuffToTarget(buffDoc, targetActor, options = null) {
   if (existing) {
     await refreshExistingBuff(existing, { duration, level, rankBuff, stanceBuff });
   } else {
-    await createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff, stanceBuff });
+    await createBuffOnTarget(buffDoc, targetActor, sourceId, {
+      duration,
+      level,
+      rankBuff,
+      stanceBuff,
+    });
   }
 }
 
@@ -472,7 +480,12 @@ async function refreshExistingBuff(existing, { duration, level, rankBuff, stance
   await existing.update(updates);
 }
 
-async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff, stanceBuff }) {
+async function createBuffOnTarget(
+  buffDoc,
+  targetActor,
+  sourceId,
+  { duration, level, rankBuff, stanceBuff },
+) {
   const itemData = buffDoc.toObject();
   delete itemData._id;
 

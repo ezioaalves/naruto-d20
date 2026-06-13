@@ -253,4 +253,3 @@ function _registerBuffTargets() {
     CONFIG.PF1.buffTargets[key] = { label: game.i18n.localize(label), category, sort };
   }
 }
-

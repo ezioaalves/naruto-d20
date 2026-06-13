@@ -1,4 +1,8 @@
-import { applyStanceModeBuff, applyUpkeepStanceBuff, promptStanceMode } from "./buff-application.mjs";
+import {
+  applyStanceModeBuff,
+  applyUpkeepStanceBuff,
+  promptStanceMode,
+} from "./buff-application.mjs";
 import { getStanceBuffFlag, stanceBuffKind } from "./stance-buffs.mjs";
 import { applyHpCost } from "../data/hp-cost.mjs";
 
