@@ -208,11 +208,6 @@ export function promptModeChoice(
   });
 }
 
-// Removed with stance-buff-maintenance.mjs in Task 6.
-export const applyStanceModeBuff = applyModeBuff;
-export const applyUpkeepStanceBuff = applyUpkeepBuff;
-export const promptStanceMode = promptModeChoice;
-
 /**
  * Personal techniques always affect their performer. Other technique buffs
  * require an explicit canvas target so debuffs are not accidentally self-applied.

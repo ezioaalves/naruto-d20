@@ -11,33 +11,8 @@ import {
   RANK_MASTERY_FREE_ROUNDS,
 } from "./rank-buffs.mjs";
 
-const pendingMaintenance = new Set();
-
 export function isRankMaintenanceBuff(item) {
   return Boolean(item?.actor?.isOwner) && getRankGrantType(item) === "paid";
-}
-
-export function queueRankBuffMaintenance(item) {
-  const actor = item.actor;
-  if (!actor?.isOwner) return false;
-  // Only technique-created (paid) rank buffs have chakra maintenance;
-  // temp/bonus grants are free and never expire into this flow.
-  if (getRankGrantType(item) !== "paid") return false;
-
-  const key = `${actor.uuid}:${item.id}`;
-  if (pendingMaintenance.has(key)) return true;
-  pendingMaintenance.add(key);
-
-  const itemId = item.id;
-  window.setTimeout(async () => {
-    try {
-      await maintainRankBuff(actor, itemId);
-    } finally {
-      pendingMaintenance.delete(key);
-    }
-  }, 0);
-
-  return true;
 }
 
 export async function maintainRankBuff(actor, itemId) {
