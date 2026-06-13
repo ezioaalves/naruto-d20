@@ -86,9 +86,7 @@
 
 /* Auto-generated stat block above description (mirrors PF1e .spell-description) */
 .pf1.sheet.item .technique-description {
-  border-bottom: 1px solid #c0b89a;
   margin-bottom: 8px;
-  padding-bottom: 6px;
   font-size: 0.9em;
   line-height: 1.5;
   color: #4b3b1e;
