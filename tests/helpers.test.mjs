@@ -16,6 +16,7 @@ import {
   maintenanceModeBuffName,
   maintenanceModeById,
 } from "../scripts/automation/maintenance-buffs.mjs";
+import { elementCount } from "../scripts/automation/maintenance-element-damage.mjs";
 import { diffTechnique, normalizeSystem } from "../scripts/automation/technique-sync.mjs";
 import {
   LEARNING_MODES,
@@ -215,6 +216,17 @@ describe("maintenance facets", () => {
       }),
       { sourceTechniqueId: "tech1", grantType: "paid", key: "KOUSOKU" },
     );
+  });
+});
+
+describe("maintenance element count", () => {
+  const tech = (mastery, elementDoubleStep) => ({
+    system: { mastery, automation: { maintenance: { element: true, elementDoubleStep } } },
+  });
+
+  it("is 1 below the double step and 2 at/above it", () => {
+    assert.equal(elementCount(tech(1, 5)), 1);
+    assert.equal(elementCount(tech(5, 5)), 2);
   });
 });
 
