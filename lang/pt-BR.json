@@ -313,6 +313,11 @@
       "UpkeepFormula": {
         "Label": "Custo de PV por turno (fórmula)"
       },
+      "UpkeepMode": {
+        "Label": "Modo de manutenção",
+        "Prompt": "Perguntar (pagar ou encerrar)",
+        "Forced": "Forçado (automático, encerra se letal)"
+      },
       "UpkeepWaiverStep": {
         "Label": "Passo de maestria que dispensa o custo de PV"
       },
@@ -480,7 +485,8 @@
       "UpkeepTitle": "{name} — manutenção",
       "UpkeepMessage": "{name} está ativa. Pague {formula} de PV para manter a stance, ou encerre-a.",
       "PayHp": "Pagar {formula} de PV",
-      "HpCostFlavor": "Manutenção da stance: {amount} de PV perdidos."
+      "HpCostFlavor": "Manutenção da stance: {amount} de PV perdidos.",
+      "UpkeepEnded": "{name} termina — o custo de manutenção te deixaria abaixo de 1 PV."
     },
     "StanceElement": {
       "Title": "{name} — escolha o elemento",

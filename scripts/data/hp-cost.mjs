@@ -5,10 +5,23 @@
  */
 export async function applyHpCost(actor, formula) {
   if (!actor) return null;
+  const { roll, amount } = await rollHpCost(actor, formula);
+  return commitHpCost(actor, roll, amount);
+}
 
-  const roll = await RollPF.safeRoll(String(formula ?? "0"), actor.getRollData?.() ?? {});
-  const amount = Math.max(0, Number(roll?.total) || 0);
-  if (amount <= 0) return roll;
+/**
+ * Roll the HP-cost formula without applying it. Split from the commit so callers
+ * (e.g. the forced Kai-Mon upkeep) can roll, check a lethal guard, and only then
+ * subtract the HP. Returns the roll and its clamped (>= 0) amount.
+ */
+export async function rollHpCost(actor, formula) {
+  const roll = await RollPF.safeRoll(String(formula ?? "0"), actor?.getRollData?.() ?? {});
+  return { roll, amount: Math.max(0, Number(roll?.total) || 0) };
+}
+
+/** Subtract a pre-rolled HP cost from the actor and post the upkeep chat message. */
+export async function commitHpCost(actor, roll, amount) {
+  if (!actor || amount <= 0) return roll;
 
   const current = Number(actor.system?.attributes?.hp?.value ?? 0) || 0;
   await actor.update({ "system.attributes.hp.value": current - amount });

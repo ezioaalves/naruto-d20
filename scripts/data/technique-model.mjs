@@ -391,6 +391,16 @@ export function createTechniqueDataModel() {
             elementChoice: new fields.BooleanField({ ...opt, initial: false }),
             // Per-round HP cost formula for an upkeep stance.
             upkeepFormula: new fields.StringField({ ...opt, blank: false, initial: "1d4" }),
+            // "prompt" (default) prompts pay/break each turn (Amatsu). "forced"
+            // auto-applies the HP cost with no prompt and ends the stance if the
+            // cost would drop HP below 1 (Kai-Mon). Forced upkeep is never waived
+            // by mastery.
+            upkeepMode: new fields.StringField({
+              ...opt,
+              blank: false,
+              initial: "prompt",
+              choices: ["prompt", "forced"],
+            }),
             // Mastery step at/above which the upkeep HP cost is ignored.
             upkeepWaiverStep: new fields.NumberField({ ...opt, integer: true, initial: 2, min: 0 }),
             // Mastery step at/above which two elements are chosen (1d6 + 1d6).
