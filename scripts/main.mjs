@@ -10,7 +10,8 @@
  *  [6] "pf1RegisterDamageTypes"    → Register elemental damage types
  *  [7] Foundry "setup"             → Push Chakra tab, register UI hooks
  *  [8] "preCreateActor"            → Seed default flags on new actors
- *  [9] "pf1ActorRest"              → Restore chakra pool, clear temp, recover reserve
+ *  [9] Foundry "ready"             → GM-only one-time migrations
+ * [10] "pf1ActorRest"              → Restore chakra pool, clear temp, recover reserve
  */
 
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
@@ -44,6 +45,10 @@ import { registerRankGrantConfig } from "./ui/rank-grant-config.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
+import {
+  MAINTENANCE_MIGRATION_SETTING,
+  runMaintenanceMigrations,
+} from "./data/maintenance-migration.mjs";
 
 // ── [1] init ──────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -156,6 +161,13 @@ Hooks.once("init", () => {
     name: "NarutoD20.Settings.DeductLearningChakra.Name",
     hint: "NarutoD20.Settings.DeductLearningChakra.Hint",
   });
+
+  game.settings.register(MODULE_ID, MAINTENANCE_MIGRATION_SETTING, {
+    scope: "world",
+    config: false,
+    type: Number,
+    default: 0,
+  });
 });
 
 // ── [2] pf1PostInit ───────────────────────────────────────────────────────
@@ -223,7 +235,12 @@ Hooks.on("preCreateActor", (doc, data) => {
   }
 });
 
-// ── [9] pf1ActorRest ─────────────────────────────────────────────────────
+// ── [9] ready ────────────────────────────────────────────────────────────
+Hooks.once("ready", async () => {
+  await runMaintenanceMigrations();
+});
+
+// ── [10] pf1ActorRest ────────────────────────────────────────────────────
 Hooks.on("pf1ActorRest", (actor, options) => {
   onActorRest(actor, options);
 });

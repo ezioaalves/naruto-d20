@@ -80,12 +80,19 @@
     "automation": {
       "enabled": true,
       "targetMode": "self",
-      "stanceMode": false,
-      "stanceUpkeep": true,
-      "elementChoice": true,
-      "upkeepFormula": "1d4",
-      "upkeepWaiverStep": 2,
-      "elementDoubleStep": 5
+      "maintenance": {
+        "enabled": true,
+        "resource": "hp",
+        "cost": "1d4",
+        "policy": "prompt",
+        "interval": 1,
+        "waiver": "step",
+        "waiverStep": 2,
+        "freeRounds": 5,
+        "choice": "",
+        "element": true,
+        "elementDoubleStep": 5
+      }
     },
     "scriptCalls": [],
     "links": {

@@ -8,6 +8,7 @@ import {
   applyTechniqueSystemDefaults,
   legacyAutomationToMaintenance,
 } from "../scripts/data/technique-defaults.mjs";
+import { maintenanceMigrationPatch } from "../scripts/data/maintenance-migration.mjs";
 import { computeTechniqueDerived } from "../scripts/data/technique-model.mjs";
 import { calculateChakraSpend, canPayChakra } from "../scripts/data/chakra-spend.mjs";
 import {
@@ -570,6 +571,48 @@ describe("synckit normalization", () => {
     };
 
     assert.equal(diffTechnique(embedded, source), false);
+  });
+});
+
+describe("maintenance migration", () => {
+  it("persists prepared maintenance and deletes every legacy automation key", () => {
+    assert.deepEqual(
+      maintenanceMigrationPatch({
+        enabled: true,
+        resource: "hp",
+        cost: "2",
+        policy: "forced",
+        interval: 1,
+        waiver: "",
+        waiverStep: 2,
+        freeRounds: 5,
+        choice: "",
+        element: false,
+        elementDoubleStep: 5,
+      }),
+      {
+        "system.automation.maintenance": {
+          enabled: true,
+          resource: "hp",
+          cost: "2",
+          policy: "forced",
+          interval: 1,
+          waiver: "",
+          waiverStep: 2,
+          freeRounds: 5,
+          choice: "",
+          element: false,
+          elementDoubleStep: 5,
+        },
+        "system.automation.-=stanceMode": null,
+        "system.automation.-=stanceUpkeep": null,
+        "system.automation.-=elementChoice": null,
+        "system.automation.-=upkeepFormula": null,
+        "system.automation.-=upkeepMode": null,
+        "system.automation.-=upkeepWaiverStep": null,
+        "system.automation.-=elementDoubleStep": null,
+      },
+    );
   });
 });
 
