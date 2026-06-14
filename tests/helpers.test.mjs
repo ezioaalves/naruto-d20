@@ -23,6 +23,7 @@ import {
   maintenanceModeBuffName,
   maintenanceModeById,
   maintenanceRoundsRemaining,
+  realMaintenanceBuffDuration,
   resolveMaintenanceModel,
   shouldChargeUpkeep,
 } from "../scripts/automation/maintenance-buffs.mjs";
@@ -1046,5 +1047,25 @@ describe("maintenance duration model", () => {
   it("omits duration-model fields for toggle buffs", () => {
     const flag = maintenanceBuffFlagData({ sourceTechniqueId: "abc", modeId: "dex" });
     assert.deepEqual(flag, { sourceTechniqueId: "abc", modeId: "dex" });
+  });
+});
+
+describe("realMaintenanceBuffDuration", () => {
+  it("builds a round duration ending at turnStart with the given worldTime start", () => {
+    assert.deepEqual(realMaintenanceBuffDuration({ totalRounds: 5, worldTime: 120 }), {
+      units: "round",
+      value: "5",
+      end: "turnStart",
+      start: 120,
+    });
+  });
+
+  it("clamps totalRounds to at least 1", () => {
+    assert.deepEqual(realMaintenanceBuffDuration({ totalRounds: 0, worldTime: 0 }), {
+      units: "round",
+      value: "1",
+      end: "turnStart",
+      start: 0,
+    });
   });
 });

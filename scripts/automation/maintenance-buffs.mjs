@@ -28,6 +28,20 @@ export function maintenanceBuffDuration(interval = 1) {
   };
 }
 
+/**
+ * Buff system.duration for the duration model: the technique's real round count,
+ * ending at turnStart so PF1e expires it (and triggers teardown) at the owner's turn.
+ * `worldTime` is the start stamp PF1e uses to compute remaining seconds.
+ */
+export function realMaintenanceBuffDuration({ totalRounds, worldTime }) {
+  return {
+    units: "round",
+    value: String(Math.max(1, Number(totalRounds) || 1)),
+    end: "turnStart",
+    start: worldTime,
+  };
+}
+
 /** True when a resolved duration is a finite, positive, round-based duration. */
 export function isFiniteRoundDuration(duration) {
   if (!duration || duration.units !== "round") return false;
