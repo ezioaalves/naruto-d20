@@ -77,7 +77,8 @@
           }
         },
         "duration": {
-          "units": "inst"
+          "units": "round",
+          "value": "@cl"
         },
         "range": {
           "units": "personal"
