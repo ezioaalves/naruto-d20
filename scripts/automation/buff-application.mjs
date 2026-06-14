@@ -11,6 +11,8 @@ import {
   maintenanceFacets,
   maintenanceModeBuffName,
   maintenanceModeById,
+  realMaintenanceBuffDuration,
+  resolveMaintenanceModel,
 } from "./maintenance-buffs.mjs";
 
 const SOURCE_FLAG = MODULE_ID;
@@ -48,7 +50,8 @@ export async function applyTechniqueBuff(item, actor, action) {
       facets.resource === "chakraDamage" ||
       item.system.automation.maintenance.element
     ) {
-      await applyUpkeepBuff(item, actor, facets.interval);
+      const duration = resolveBuffDurationFromAction(action);
+      await applyUpkeepBuff(item, actor, facets.interval, duration);
       return;
     }
   }
@@ -131,7 +134,7 @@ export async function applyModeBuff(item, actor, modeId = null, interval = 1) {
  * companion buff is looked up by the technique's exact name. No chakra is spent
  * here — entry pays once and round-to-round upkeep is HP (handled in maintenance).
  */
-export async function applyUpkeepBuff(item, actor, interval = 1) {
+export async function applyUpkeepBuff(item, actor, interval = 1, duration = null) {
   if (!actor?.isOwner) return;
 
   const { getActiveElements } = await import("./maintenance-element-damage.mjs");
@@ -148,12 +151,33 @@ export async function applyUpkeepBuff(item, actor, interval = 1) {
   const buffDoc = await resolveBuffDocument(buffEntry);
   if (!buffDoc) return;
 
+  const facets = maintenanceFacets(item);
+  const model = resolveMaintenanceModel(facets, duration);
+
+  if (model === "duration") {
+    const totalRounds = Number(duration.value);
+    const startRound = game.combat?.round ?? null;
+    await applyBuffToTarget(buffDoc, actor, {
+      duration: realMaintenanceBuffDuration({ totalRounds, worldTime: game.time.worldTime }),
+      maintenanceBuff: maintenanceBuffFlagData({
+        sourceTechniqueId: item.id,
+        elements,
+        hasHeal: !!facets?.heal,
+        model: "duration",
+        totalRounds,
+        startRound,
+        interval,
+      }),
+    });
+    return;
+  }
+
   await applyBuffToTarget(buffDoc, actor, {
     duration: maintenanceBuffDuration(interval),
     maintenanceBuff: maintenanceBuffFlagData({
       sourceTechniqueId: item.id,
       elements,
-      hasHeal: !!maintenanceFacets(item)?.heal,
+      hasHeal: !!facets?.heal,
     }),
   });
 }
@@ -523,7 +547,10 @@ async function createBuffOnTarget(
   await targetActor.createEmbeddedDocuments("Item", [itemData]);
 
   if (temporaryChakraGrant > 0) {
-    const currentTemp = Math.max(0, Number(targetActor.flags?.[MODULE_ID]?.chakra?.pool?.temp ?? 0) || 0);
+    const currentTemp = Math.max(
+      0,
+      Number(targetActor.flags?.[MODULE_ID]?.chakra?.pool?.temp ?? 0) || 0,
+    );
     await targetActor.update({ [chakraPoolTempPath]: currentTemp + temporaryChakraGrant });
   }
 }
