@@ -1,4 +1,5 @@
 import { MODULE_ID } from "../constants.mjs";
+import { chakraPoolTempPath } from "../flag-paths.mjs";
 import { rollHpCost, commitHpCost, applyHpCost } from "../data/hp-cost.mjs";
 import {
   getMaintenanceBuffFlag,
@@ -48,14 +49,25 @@ export function registerTurnMaintenance() {
   Hooks.on("deleteItem", (item, options, userId) => {
     if (userId !== game.user.id) return;
     if (item.type !== "buff") return;
-    const flag = getMaintenanceBuffFlag(item);
-    if (!flag?.sourceTechniqueId) return;
     const actor = item.actor;
     if (!actor?.isOwner) return;
-    if (!flag.hasHeal) return;
-    if (!actor.system?.traits?.fastHealing) return;
+    const flag = getMaintenanceBuffFlag(item);
+    const shouldClearHealing = flag?.sourceTechniqueId && flag.hasHeal && !!actor.system?.traits?.fastHealing;
+    const remainingTemp = Math.max(
+      0,
+      Number(item.flags?.[MODULE_ID]?.temporaryChakra?.remaining ?? 0) || 0,
+    );
+    if (!shouldClearHealing && remainingTemp <= 0) return;
     window.setTimeout(() => {
-      actor.update({ "system.traits.fastHealing": "" }).catch((err) => {
+      const updates = {};
+      if (shouldClearHealing) {
+        updates["system.traits.fastHealing"] = "";
+      }
+      if (remainingTemp > 0) {
+        const currentTemp = Math.max(0, Number(actor.flags?.[MODULE_ID]?.chakra?.pool?.temp ?? 0) || 0);
+        updates[chakraPoolTempPath] = Math.max(0, currentTemp - remainingTemp);
+      }
+      actor.update(updates).catch((err) => {
         console.error(`naruto-d20 | failed to clear fastHealing for "${actor.name}":`, err);
       });
     }, 0);
@@ -120,9 +132,10 @@ async function runMaintenance(actor, itemId) {
 
 async function maintainHpUpkeep(actor, itemId, technique, facets, flag) {
   const formula = facets.cost || "0";
+  const rollData = masteryRollData(actor, technique);
 
   if (facets.policy === "forced") {
-    const { roll, amount } = await rollHpCost(actor, formula);
+    const { roll, amount } = await rollHpCost(actor, formula, rollData);
     const hp = Number(actor.system?.attributes?.hp?.value ?? 0) || 0;
     if (hp - amount < 1) {
       await deleteMaintenanceBuff(actor, itemId);
@@ -147,7 +160,7 @@ async function maintainHpUpkeep(actor, itemId, technique, facets, flag) {
 
   const choice = await promptHpUpkeep(technique, formula);
   if (choice !== "pay") return deleteMaintenanceBuff(actor, itemId);
-  await applyHpCost(actor, formula);
+  await applyHpCost(actor, formula, rollData);
   await completeMaintenance(actor, itemId, technique, facets, flag);
 }
 

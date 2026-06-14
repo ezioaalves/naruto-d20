@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.30 - 2026-06-14
+
+- Added **Heal Gate** (`KYU-MON KAI`) start-of-turn automation (#119): a reusable `chakraDamage` maintenance path now spends temporary chakra first, then chakra pool, doubles any unabsorbed remainder into HP damage, and leaves chakra reserve untouched. The gate also applies mastery-scaling Fast Healing each turn, clears fatigued/exhausted while active, and ends itself if upkeep overflow would be lethal.
+- Added **Life Gate** (`SEI-MON KAI`) automation: the technique now uses forced HP upkeep through the unified maintenance engine, the companion buff grants **8 temporary chakra**, and any unused portion of that grant is cleaned up when the buff ends instead of lingering on the actor.
+- Fixed **Life Gate mastery step 5** upkeep scaling: HP-upkeep formulas now evaluate with injected `@mastery` roll data, so `4 - floor(@mastery / 5)` correctly becomes **3 HP/round** at mastery 5 instead of always dealing 4.
+
 ## v1.0.29 - 2026-06-13
 
 - Added **Amatsu no Karada** stance machinery (#114): a new stance archetype where a technique enters for chakra once and then each turn prompts to pay an HP cost or break it. Mastery waiver at the configured step silences the prompt from that point on. Element stances built on this archetype allow picking the attack's damage element(s) on entry — single element or two elements (1d6+1d6) at the double-element mastery step — injected at roll time via `pf1PreDamageRoll`.

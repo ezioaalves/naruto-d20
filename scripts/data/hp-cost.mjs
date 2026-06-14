@@ -3,9 +3,9 @@
  * Karada stance, which costs 1d4 HP each round). Rolls the formula, subtracts it
  * from the actor's current HP, and posts a short chat message as feedback.
  */
-export async function applyHpCost(actor, formula) {
+export async function applyHpCost(actor, formula, rollData = null) {
   if (!actor) return null;
-  const { roll, amount } = await rollHpCost(actor, formula);
+  const { roll, amount } = await rollHpCost(actor, formula, rollData);
   return commitHpCost(actor, roll, amount);
 }
 
@@ -14,8 +14,8 @@ export async function applyHpCost(actor, formula) {
  * (e.g. the forced Kai-Mon upkeep) can roll, check a lethal guard, and only then
  * subtract the HP. Returns the roll and its clamped (>= 0) amount.
  */
-export async function rollHpCost(actor, formula) {
-  const roll = await RollPF.safeRoll(String(formula ?? "0"), actor?.getRollData?.() ?? {});
+export async function rollHpCost(actor, formula, rollData = null) {
+  const roll = await RollPF.safeRoll(String(formula ?? "0"), rollData ?? (actor?.getRollData?.() ?? {}));
   return { roll, amount: Math.max(0, Number(roll?.total) || 0) };
 }
 
