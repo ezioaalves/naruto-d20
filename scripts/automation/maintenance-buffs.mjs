@@ -86,7 +86,8 @@ export function shouldChargeUpkeep({
   if (!(Number(remaining) > 0)) return false;
   if (Number(lastUpkeepRound) === Number(currentRound)) return false;
   const step = Math.max(1, Number(interval) || 1);
-  const base = startRound === null || startRound === undefined ? Number(currentRound) : Number(startRound);
+  const base =
+    startRound === null || startRound === undefined ? Number(currentRound) : Number(startRound);
   const elapsed = Number(currentRound) - base;
   if (!Number.isFinite(elapsed)) return true;
   return elapsed % step === 0;

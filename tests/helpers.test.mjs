@@ -878,22 +878,19 @@ describe("unified rank maintenance metadata", () => {
   });
 
   it("builds actor-owned rank maintenance from name-derived context", () => {
-    assert.deepEqual(
-      rankMaintenanceFromContext({ cost: 4, interval: 5 }),
-      {
-        enabled: true,
-        resource: "chakra",
-        cost: "4",
-        policy: "prompt",
-        interval: 5,
-        waiver: "freeUse",
-        waiverStep: 5,
-        freeRounds: 5,
-        choice: "",
-        element: false,
-        elementDoubleStep: 5,
-      },
-    );
+    assert.deepEqual(rankMaintenanceFromContext({ cost: 4, interval: 5 }), {
+      enabled: true,
+      resource: "chakra",
+      cost: "4",
+      policy: "prompt",
+      interval: 5,
+      waiver: "freeUse",
+      waiverStep: 5,
+      freeRounds: 5,
+      choice: "",
+      element: false,
+      elementDoubleStep: 5,
+    });
   });
 });
 
@@ -991,37 +988,73 @@ describe("maintenance duration model", () => {
     assert.equal(maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 1 }), 5);
     assert.equal(maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 2 }), 4);
     assert.equal(maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 6 }), 0);
-    assert.equal(maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 7 }), -1);
+    assert.equal(
+      maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 7 }),
+      -1,
+    );
   });
 
   it("treats a null startRound as not-yet-started (full duration remaining)", () => {
-    assert.equal(maintenanceRoundsRemaining({ totalRounds: 5, startRound: null, currentRound: 3 }), 5);
+    assert.equal(
+      maintenanceRoundsRemaining({ totalRounds: 5, startRound: null, currentRound: 3 }),
+      5,
+    );
   });
 
   it("charges upkeep only while rounds remain, on interval, once per round", () => {
     // round 2, interval 1, not yet charged this round -> charge
     assert.equal(
-      shouldChargeUpkeep({ remaining: 4, currentRound: 2, startRound: 1, interval: 1, lastUpkeepRound: 1 }),
+      shouldChargeUpkeep({
+        remaining: 4,
+        currentRound: 2,
+        startRound: 1,
+        interval: 1,
+        lastUpkeepRound: 1,
+      }),
       true,
     );
     // already charged this round -> skip
     assert.equal(
-      shouldChargeUpkeep({ remaining: 4, currentRound: 2, startRound: 1, interval: 1, lastUpkeepRound: 2 }),
+      shouldChargeUpkeep({
+        remaining: 4,
+        currentRound: 2,
+        startRound: 1,
+        interval: 1,
+        lastUpkeepRound: 2,
+      }),
       false,
     );
     // ending turn (remaining 0) -> skip (teardown handles it)
     assert.equal(
-      shouldChargeUpkeep({ remaining: 0, currentRound: 6, startRound: 1, interval: 1, lastUpkeepRound: 5 }),
+      shouldChargeUpkeep({
+        remaining: 0,
+        currentRound: 6,
+        startRound: 1,
+        interval: 1,
+        lastUpkeepRound: 5,
+      }),
       false,
     );
     // interval 2: charged at round 1, next charge at round 3 (since (3-1) % 2 === 0)
     assert.equal(
-      shouldChargeUpkeep({ remaining: 3, currentRound: 3, startRound: 1, interval: 2, lastUpkeepRound: 1 }),
+      shouldChargeUpkeep({
+        remaining: 3,
+        currentRound: 3,
+        startRound: 1,
+        interval: 2,
+        lastUpkeepRound: 1,
+      }),
       true,
     );
     // interval 2: charged at round -1, next charge at round 1 (since (1-0) % 2 !== 0), then round 2 (since (2-0) % 2 === 0)
     assert.equal(
-      shouldChargeUpkeep({ remaining: 4, currentRound: 2, startRound: 0, interval: 2, lastUpkeepRound: -1 }),
+      shouldChargeUpkeep({
+        remaining: 4,
+        currentRound: 2,
+        startRound: 0,
+        interval: 2,
+        lastUpkeepRound: -1,
+      }),
       true,
     );
   });

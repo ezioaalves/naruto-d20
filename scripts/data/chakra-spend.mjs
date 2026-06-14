@@ -8,7 +8,10 @@ export function allocateTemporaryChakraGrantSpend(items, amount) {
 
   for (const item of items ?? []) {
     if (remaining <= 0) break;
-    const grant = Math.max(0, Number(item?.flags?.[MODULE_ID]?.temporaryChakra?.remaining ?? 0) || 0);
+    const grant = Math.max(
+      0,
+      Number(item?.flags?.[MODULE_ID]?.temporaryChakra?.remaining ?? 0) || 0,
+    );
     if (grant <= 0) continue;
 
     const spent = Math.min(remaining, grant);

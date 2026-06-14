@@ -52,3 +52,27 @@ Append new verified facts under the matching section. Never add a guessed entry.
   `module/documents/actor/actor-pf.mjs:3528-3531`). PF1e does **NOT** auto-apply fast healing
   each round, and there is **no numeric buff change target** for it — to actually heal HP per
   round you must run your own turn hook. `system.traits.regen` is the analogous string field.
+
+## Combat / per-turn hooks & buff duration expiry
+
+- `actor.expireActiveEffects({ combat, worldTime, timeOffset, event, initiative }, context)` →
+  `module/documents/actor/actor-pf.mjs:253`. Filters `_effectsWithDuration` whose remaining
+  duration ≤ 0 (rounds compared against `combat.round - startRound`), respects each buff's
+  `system.duration.end` (`turnStart` / `turnEnd` / `initiative`), then sets expired **buffs**
+  to `{ "system.active": false }` via `updateEmbeddedDocuments("Item", ...)`. It stamps
+  `context.pf1.reason = "duration"` (`actor-pf.mjs:334`) — this is the exact signal
+  naruto-d20's turn-maintenance hook listens for.
+- Driver: `Combat._onUpdate` → `_onNewTurn` → `_processTurnStart` / `_processEndTurn`
+  (`module/documents/combat.mjs:234,271,411,382`). `_processTurnStart` calls
+  `expireActiveEffects({ event: "turnStart" })` for the **current** combatant only, and
+  `_processEndTurn` calls it with `event: "turnEnd"` for the **previous** combatant.
+- Both run **only on the actor's active owner client**: guarded by
+  `actor.activeOwner?.isSelf` (`combat.mjs:387,416`). Skipped turns expire via
+  `_handleSkippedTurns` on the active GM (`combat.mjs:343`).
+- `_processTurnStart` also calls `actor.rechargeItems({ period: "round", exact: true })`
+  (`combat.mjs:434`) — PF1e's native per-round item processing, a model for per-turn upkeep.
+- **No `pf1CombatTurnStart`/`pf1CombatTurnEnd` hook exists.** The only PF1e combat hook is
+  `Hooks.callAll("pf1CombatTurnSkip", combat, skippedSet, context)` (`combat.mjs:331`). For a
+  per-turn trigger independent of buff expiry, listen to core Foundry `updateCombat` (check
+  `changed.turn`/`changed.round`) or core `combatTurn`/`combatRound` hooks and read
+  `combat.combatant.actor`.
