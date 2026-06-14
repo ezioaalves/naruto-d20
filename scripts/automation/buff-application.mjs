@@ -1,4 +1,5 @@
 import { MODULE_ID } from "../constants.mjs";
+import { chakraPoolTempPath } from "../flag-paths.mjs";
 import { resolveRankTechnique } from "./rank-buffs.mjs";
 import {
   MAINTENANCE_BUFF_FLAG,
@@ -15,6 +16,15 @@ import {
 const SOURCE_FLAG = MODULE_ID;
 const DEFAULT_BUFF_PACK_ID = "naruto-d20.technique-buffs";
 const buffIndexCache = new Map();
+
+export function extractTemporaryChakraGrant(changes = []) {
+  return changes.reduce((total, change) => {
+    if (change?.target !== "temporaryChakra") return total;
+    if ((change.operator ?? "add") !== "add") return total;
+    const amount = Math.max(0, Number(change.formula ?? change.value ?? 0) || 0);
+    return total + amount;
+  }, 0);
+}
 
 /**
  * Entry point: orchestrate buff lookup → target resolution → application.
@@ -487,11 +497,15 @@ async function createBuffOnTarget(
 ) {
   const itemData = buffDoc.toObject();
   delete itemData._id;
+  const temporaryChakraGrant = extractTemporaryChakraGrant(itemData.system?.changes ?? []);
 
   itemData.flags ??= {};
   itemData.flags[SOURCE_FLAG] ??= {};
   itemData.flags[SOURCE_FLAG].sourceId = sourceId;
   if (maintenanceBuff) itemData.flags[SOURCE_FLAG][MAINTENANCE_BUFF_FLAG] = maintenanceBuff;
+  if (temporaryChakraGrant > 0) {
+    itemData.flags[SOURCE_FLAG].temporaryChakra = { remaining: temporaryChakraGrant };
+  }
 
   itemData.system ??= {};
   if (duration) {
@@ -507,4 +521,9 @@ async function createBuffOnTarget(
   itemData.system.active = true;
 
   await targetActor.createEmbeddedDocuments("Item", [itemData]);
+
+  if (temporaryChakraGrant > 0) {
+    const currentTemp = Math.max(0, Number(targetActor.flags?.[MODULE_ID]?.chakra?.pool?.temp ?? 0) || 0);
+    await targetActor.update({ [chakraPoolTempPath]: currentTemp + temporaryChakraGrant });
+  }
 }

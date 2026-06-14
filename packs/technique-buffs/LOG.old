@@ -1,14 +1,14 @@
-2026/06/13-17:08:30.590187 7f4c83fff6c0 Recovering log #83
-2026/06/13-17:08:30.598719 7f4c83fff6c0 Delete type=0 #83
-2026/06/13-17:08:30.598804 7f4c83fff6c0 Delete type=3 #81
-2026/06/13-17:08:30.607345 7f4c827fc6c0 Level-0 table #89: started
-2026/06/13-17:08:30.610735 7f4c827fc6c0 Level-0 table #89: 34249 bytes OK
-2026/06/13-17:08:30.613305 7f4c827fc6c0 Delete type=0 #87
-2026/06/13-17:08:30.613692 7f4c827fc6c0 Manual compaction at level-0 from '!items!161241d44c78aaee' @ 72057594037927935 : 1 .. '!items!y8EKFyT0gjQsJzlq' @ 0 : 0; will stop at '!items!y8EKFyT0gjQsJzlq' @ 814 : 1
-2026/06/13-17:08:30.613713 7f4c827fc6c0 Compacting 1@0 + 1@1 files
-2026/06/13-17:08:30.617338 7f4c827fc6c0 Generated table #90@0: 54 keys, 34249 bytes
-2026/06/13-17:08:30.617385 7f4c827fc6c0 Compacted 1@0 + 1@1 files => 34249 bytes
-2026/06/13-17:08:30.619460 7f4c827fc6c0 compacted to: files[ 0 1 0 0 0 0 0 ]
-2026/06/13-17:08:30.619763 7f4c827fc6c0 Delete type=2 #85
-2026/06/13-17:08:30.619988 7f4c827fc6c0 Delete type=2 #89
-2026/06/13-17:08:30.620520 7f4c827fc6c0 Manual compaction at level-0 from '!items!y8EKFyT0gjQsJzlq' @ 814 : 1 .. '!items!y8EKFyT0gjQsJzlq' @ 0 : 0; will stop at (end)
+2026/06/13-23:57:12.635881 7f4e253fd6c0 Recovering log #88
+2026/06/13-23:57:12.640970 7f4e253fd6c0 Delete type=0 #88
+2026/06/13-23:57:12.641031 7f4e253fd6c0 Delete type=3 #86
+2026/06/13-23:57:12.648486 7f4e07fff6c0 Level-0 table #94: started
+2026/06/13-23:57:12.651493 7f4e07fff6c0 Level-0 table #94: 34367 bytes OK
+2026/06/13-23:57:12.653496 7f4e07fff6c0 Delete type=0 #92
+2026/06/13-23:57:12.653699 7f4e07fff6c0 Manual compaction at level-0 from '!items!161241d44c78aaee' @ 72057594037927935 : 1 .. '!items!y8EKFyT0gjQsJzlq' @ 0 : 0; will stop at '!items!y8EKFyT0gjQsJzlq' @ 868 : 1
+2026/06/13-23:57:12.653730 7f4e07fff6c0 Compacting 1@0 + 1@1 files
+2026/06/13-23:57:12.656309 7f4e07fff6c0 Generated table #95@0: 54 keys, 34367 bytes
+2026/06/13-23:57:12.656326 7f4e07fff6c0 Compacted 1@0 + 1@1 files => 34367 bytes
+2026/06/13-23:57:12.658181 7f4e07fff6c0 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/06/13-23:57:12.658333 7f4e07fff6c0 Delete type=2 #90
+2026/06/13-23:57:12.658520 7f4e07fff6c0 Delete type=2 #94
+2026/06/13-23:57:12.658710 7f4e07fff6c0 Manual compaction at level-0 from '!items!y8EKFyT0gjQsJzlq' @ 868 : 1 .. '!items!y8EKFyT0gjQsJzlq' @ 0 : 0; will stop at (end)

@@ -30,6 +30,7 @@ export const techniqueDCBuffPath = (k) => `${moduleFlagsPath}.techniqueDC.${k}.b
 export const chakraPoolMaxBonusPath = `${moduleFlagsPath}.chakra.pool.maxBonus`;
 export const chakraReserveMaxBonusPath = `${moduleFlagsPath}.chakra.reserve.maxBonus`;
 export const chakraTapReservesBuffPath = `${moduleFlagsPath}.chakra.tapReserves.buffBonus`;
+export const chakraPoolTempBonusPath = `${moduleFlagsPath}.chakra.pool.tempBonus`;
 export const chakraPoolValuePath = `${moduleFlagsPath}.chakra.pool.value`;
 export const chakraPoolTempPath = `${moduleFlagsPath}.chakra.pool.temp`;
 export const chakraReserveValuePath = `${moduleFlagsPath}.chakra.reserve.value`;
@@ -57,16 +58,21 @@ export const BUFF_TARGETS = {
     path: chakraReserveMaxBonusPath,
     sort: 90001,
   },
+  temporaryChakra: {
+    label: "NarutoD20.BuffTargets.TemporaryChakra",
+    path: chakraPoolTempBonusPath,
+    sort: 90002,
+  },
   tapReserves: {
     label: "NarutoD20.BuffTargets.TapReserves",
     path: chakraTapReservesBuffPath,
-    sort: 90002,
+    sort: 90003,
   },
-  learnCkc: { label: "NarutoD20.BuffTargets.Learn.ckc", path: learnBuffPath("ckc"), sort: 90003 },
-  learnGnj: { label: "NarutoD20.BuffTargets.Learn.gnj", path: learnBuffPath("gnj"), sort: 90004 },
-  learnNin: { label: "NarutoD20.BuffTargets.Learn.nin", path: learnBuffPath("nin"), sort: 90005 },
-  learnTai: { label: "NarutoD20.BuffTargets.Learn.tai", path: learnBuffPath("tai"), sort: 90006 },
-  learnFui: { label: "NarutoD20.BuffTargets.Learn.fui", path: learnBuffPath("fui"), sort: 90007 },
+  learnCkc: { label: "NarutoD20.BuffTargets.Learn.ckc", path: learnBuffPath("ckc"), sort: 90004 },
+  learnGnj: { label: "NarutoD20.BuffTargets.Learn.gnj", path: learnBuffPath("gnj"), sort: 90005 },
+  learnNin: { label: "NarutoD20.BuffTargets.Learn.nin", path: learnBuffPath("nin"), sort: 90006 },
+  learnTai: { label: "NarutoD20.BuffTargets.Learn.tai", path: learnBuffPath("tai"), sort: 90007 },
+  learnFui: { label: "NarutoD20.BuffTargets.Learn.fui", path: learnBuffPath("fui"), sort: 90008 },
 
   techDcAll: {
     label: "NarutoD20.BuffTargets.TechDc.All",

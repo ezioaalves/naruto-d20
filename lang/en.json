@@ -69,6 +69,7 @@
       "Category": "Technique",
       "ChakraPool": "Chakra Pool Max",
       "ChakraReserve": "Chakra Reserve Max",
+      "TemporaryChakra": "Temporary Chakra",
       "TapReserves": "Tap Reserves",
       "Learn": {
         "ckc": "Learn: Chakra Control",

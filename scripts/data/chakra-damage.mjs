@@ -1,5 +1,6 @@
 import { MODULE_ID } from "../constants.mjs";
 import { chakraPoolTempPath, chakraPoolValuePath } from "../flag-paths.mjs";
+import { allocateTemporaryChakraGrantSpend } from "./chakra-spend.mjs";
 import { checkAndUpdateConditions } from "./chakra-conditions.mjs";
 
 /**
@@ -27,6 +28,8 @@ export function calculateChakraDamage(actor, amount) {
     pool: poolValue - fromPool,
     absorbed,
     hpOverflow,
+    fromTemp,
+    fromPool,
   };
 }
 
@@ -49,6 +52,12 @@ export async function commitChakraDamage(actor, technique, calc, amount) {
     updates["system.attributes.hp.value"] = hp - calc.hpOverflow;
   }
   await actor.update(updates);
+
+  const grantSpend = allocateTemporaryChakraGrantSpend(actor.items, calc.fromTemp);
+  if (grantSpend.updates.length && actor.updateEmbeddedDocuments) {
+    await actor.updateEmbeddedDocuments("Item", grantSpend.updates);
+  }
+
   await checkAndUpdateConditions(actor);
 
   let flavor = game.i18n.format("NarutoD20.Maintenance.ChakraDamageFlavor", {

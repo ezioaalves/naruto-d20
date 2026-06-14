@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, it } from "node:test";
@@ -10,7 +10,11 @@ import {
 } from "../scripts/data/technique-defaults.mjs";
 import { maintenanceMigrationPatch } from "../scripts/data/maintenance-migration.mjs";
 import { computeTechniqueDerived } from "../scripts/data/technique-model.mjs";
-import { calculateChakraSpend, canPayChakra } from "../scripts/data/chakra-spend.mjs";
+import {
+  allocateTemporaryChakraGrantSpend,
+  calculateChakraSpend,
+  canPayChakra,
+} from "../scripts/data/chakra-spend.mjs";
 import {
   getRankMaintenanceFlag,
   maintenanceBuffFlagData,
@@ -18,6 +22,7 @@ import {
   maintenanceModeBuffName,
   maintenanceModeById,
 } from "../scripts/automation/maintenance-buffs.mjs";
+import { extractTemporaryChakraGrant } from "../scripts/automation/buff-application.mjs";
 import { getRankGrantType, rankGrantLevel } from "../scripts/automation/rank-buffs.mjs";
 import {
   legacyRankBuffToMaintenance,
@@ -38,6 +43,7 @@ import {
 } from "../scripts/ui/technique-weapon-attack.mjs";
 import { validateCompendia } from "../tools/validate-compendia.mjs";
 import { calculateChakraDamage } from "../scripts/data/chakra-damage.mjs";
+import { BUFF_TARGETS } from "../scripts/flag-paths.mjs";
 
 globalThis.foundry = {
   utils: {
@@ -69,6 +75,10 @@ function techniqueDoc(overrides = {}) {
 
 function writeJson(path, data) {
   writeFileSync(path, `${JSON.stringify(data, null, 2)}\n`);
+}
+
+function readJson(path) {
+  return JSON.parse(readFileSync(path, "utf8"));
 }
 
 function makeSourceRoot(filesByPack) {
@@ -507,6 +517,8 @@ describe("chakra spending", () => {
       temp: 0,
       pool: 1,
       reserve: 0,
+      fromTemp: 2,
+      fromPool: 3,
       summary: "2 temp, 3 pool",
     });
   });
@@ -523,6 +535,8 @@ describe("chakra damage", () => {
       pool: 1,
       absorbed: 4,
       hpOverflow: 0,
+      fromTemp: 2,
+      fromPool: 2,
     });
   });
 
@@ -533,6 +547,8 @@ describe("chakra damage", () => {
       pool: 0,
       absorbed: 1,
       hpOverflow: 4,
+      fromTemp: 0,
+      fromPool: 1,
     });
   });
 
@@ -542,6 +558,8 @@ describe("chakra damage", () => {
       pool: 0,
       absorbed: 0,
       hpOverflow: 6,
+      fromTemp: 0,
+      fromPool: 0,
     });
   });
 
@@ -557,7 +575,87 @@ describe("chakra damage", () => {
       pool: 5,
       absorbed: 0,
       hpOverflow: 0,
+      fromTemp: 0,
+      fromPool: 0,
     });
+  });
+});
+
+describe("temporary chakra buff grants", () => {
+  it("registers a dedicated buff target for temporary chakra", () => {
+    assert.equal(BUFF_TARGETS.temporaryChakra.label, "NarutoD20.BuffTargets.TemporaryChakra");
+  });
+
+  it("extracts a flat temporary chakra grant from buff changes", () => {
+    assert.equal(
+      extractTemporaryChakraGrant([
+        { target: "temporaryChakra", operator: "add", formula: "8" },
+        { target: "str", operator: "add", formula: "4" },
+      ]),
+      8,
+    );
+  });
+
+  it("spends granted temporary chakra before leaving leftover removal on the buff", () => {
+    assert.deepEqual(
+      allocateTemporaryChakraGrantSpend(
+        [
+          { id: "buffA", flags: { "naruto-d20": { temporaryChakra: { remaining: 8 } } } },
+          { id: "buffB", flags: { "naruto-d20": { temporaryChakra: { remaining: 3 } } } },
+        ],
+        9,
+      ),
+      {
+        updates: [
+          { _id: "buffA", "flags.naruto-d20.temporaryChakra.remaining": 0 },
+          { _id: "buffB", "flags.naruto-d20.temporaryChakra.remaining": 2 },
+        ],
+        remaining: 0,
+      },
+    );
+  });
+});
+
+describe("Life Gate source data", () => {
+  it("uses forced hp upkeep with mastery-based damage reduction", () => {
+    const technique = readJson(
+      new URL(
+        "../packs/_source/techniques/SEI_MON_KAI__LIFE_GATE_RELEASE__rr5ej5Vyiy2U4q7w.json",
+        import.meta.url,
+      ),
+    );
+
+    assert.deepEqual(technique.system.automation.maintenance, {
+      enabled: true,
+      resource: "hp",
+      cost: "4 - floor(@mastery / 5)",
+      policy: "forced",
+      interval: 1,
+      waiver: "",
+      waiverStep: 2,
+      freeRounds: 5,
+      choice: "",
+      element: false,
+      elementDoubleStep: 5,
+    });
+  });
+
+  it("grants 8 temporary chakra on the companion buff", () => {
+    const buff = readJson(
+      new URL(
+        "../packs/_source/technique-buffs/SEI_MON_KAI__LIFE_GATE_RELEASE__2e9f4c5b8d7a0132.json",
+        import.meta.url,
+      ),
+    );
+
+    assert.ok(
+      buff.system.changes.some(
+        (change) =>
+          change.target === "temporaryChakra" &&
+          change.operator === "add" &&
+          change.formula === "8",
+      ),
+    );
   });
 });
 
