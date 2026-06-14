@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You hypnotize yourself, becoming convinced you are completely invincible and indestructible, standing up to any enemy, fearless and confident. You gain a +6 morale bonus to Will saves against feat effects, and a +2 morale bonus to attack and weapon damage rolls, De- fense and skill checks.</p>\n\n\n\n",
+      "value": "<p>You hypnotize yourself, becoming convinced you are completely invincible and indestructible, standing up to any enemy, fearless and confident. You gain a +6 morale bonus to Will saves against feat effects, and a +2 morale bonus to attack and weapon damage rolls, De- fense and skill checks.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

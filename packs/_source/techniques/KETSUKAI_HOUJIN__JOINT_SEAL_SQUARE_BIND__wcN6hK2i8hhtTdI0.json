@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>You lay out a web of connected exploding tags, ready to trigger upon the first unfortunate soul to pass too close. The target area is now occupied by a CR 3 Exploding Tag Trap (p400), which is destroyed after triggering.</p>\n\n\n\n",
+      "value": "<p>You lay out a web of connected exploding tags, ready to trigger upon the first unfortunate soul to pass too close. The target area is now occupied by a CR 3 Exploding Tag Trap (p400), which is destroyed after triggering.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

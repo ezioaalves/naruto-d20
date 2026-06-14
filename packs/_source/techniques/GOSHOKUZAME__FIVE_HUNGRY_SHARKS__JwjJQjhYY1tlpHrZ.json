@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You must be in direct contact with water to use this technique, which allows you to send your Chakra into the water and create five large sharks of water that swim to the target, which must be (partially) submerged in the same body of water, and attack. Each shark has a single bite attack with an attack modifier of +15, and deals 2d6+5 water damage on hit. Each shark that hits also drags the target down 5 ft. if it was already fully submerged.<br><br>The sharks cannot be harmed or destroyed, and disappear once they have made their attack.</p>\n\n\n\n",
+      "value": "<p>You must be in direct contact with water to use this technique, which allows you to send your Chakra into the water and create five large sharks of water that swim to the target, which must be (partially) submerged in the same body of water, and attack. Each shark has a single bite attack with an attack modifier of +15, and deals 2d6+5 water damage on hit. Each shark that hits also drags the target down 5 ft. if it was already fully submerged.<br><br>The sharks cannot be harmed or destroyed, and disappear once they have made their attack.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

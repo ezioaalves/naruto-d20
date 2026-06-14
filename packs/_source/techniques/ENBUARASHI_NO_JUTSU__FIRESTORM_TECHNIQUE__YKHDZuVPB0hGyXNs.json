@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 18</p>\n\n<p><b>Learn DC:</b> 31 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> H, E</p>\n\n<hr>\n\n<p>You conjure a storm of firebolts that rains down on an area, dealing 16d6 fire damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 24d6, whichever is lower.</p>\n\n",
+      "value": "<p>You conjure a storm of firebolts that rains down on an area, dealing 16d6 fire damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 24d6, whichever is lower.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

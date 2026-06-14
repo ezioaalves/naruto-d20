@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>The targets become bonded, and become instantly familiar with each other. They can detect each other as though using Sense Chakra and Detect Emotion without needing to make a check, and they gain a +4 bonus to all Charisma- and Wisdom-based checks made against each other. When flanking or making a skill check to aid another with their bonded partner, the bonus granted increases by +1.<br><br>The seal cannot be removed unless both seals are broken at the same time (such as by the Gekata no Fuukatsu technique). A creature cannot be bonded to more than two creatures at a time. If a creature's bonded partner dies, it is very likely to become depressed, and suicide is very common.</p>\n\n\n\n",
+      "value": "<p>The targets become bonded, and become instantly familiar with each other. They can detect each other as though using Sense Chakra and Detect Emotion without needing to make a check, and they gain a +4 bonus to all Charisma- and Wisdom-based checks made against each other. When flanking or making a skill check to aid another with their bonded partner, the bonus granted increases by +1.<br><br>The seal cannot be removed unless both seals are broken at the same time (such as by the Gekata no Fuukatsu technique). A creature cannot be bonded to more than two creatures at a time. If a creature's bonded partner dies, it is very likely to become depressed, and suicide is very common.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

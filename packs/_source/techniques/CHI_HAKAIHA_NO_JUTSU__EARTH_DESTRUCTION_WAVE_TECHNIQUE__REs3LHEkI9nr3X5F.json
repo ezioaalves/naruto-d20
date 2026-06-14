@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>You part the earth and open up a pit that is 10 ft. wide, and has a depth of 5 ft. per level (up to 100 ft.). Crea- tures must save to avoid falling down the hole and suffering fall damage. Structures take 10d10 damage. After 30 minutes, the earth returns to its previous state, closing the pit and killing any creature inside (no save).<br><br>This technique can only be used on firm or soft earth.</p>\n\n\n<p><b>Mastery:</b> Each step allows you to extend the duration of the pit by 3 minutes if you wish, and increases the damage dealt to structures by 1d10.</p>\n",
+      "value": "<p>You part the earth and open up a pit that is 10 ft. wide, and has a depth of 5 ft. per level (up to 100 ft.). Crea- tures must save to avoid falling down the hole and suffering fall damage. Structures take 10d10 damage. After 30 minutes, the earth returns to its previous state, closing the pit and killing any creature inside (no save).<br><br>This technique can only be used on firm or soft earth.</p>\n\n\n<p><b>Mastery:</b> Each step allows you to extend the duration of the pit by 3 minutes if you wish, and increases the damage dealt to structures by 1d10.</p>\n",
       "summary": "",
       "instructions": ""
     },

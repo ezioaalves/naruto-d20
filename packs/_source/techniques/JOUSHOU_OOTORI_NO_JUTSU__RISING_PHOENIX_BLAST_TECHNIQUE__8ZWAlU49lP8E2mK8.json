@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>You place your hand on the ground and send your Chakra forth, causing a devastating column of fire to explode upward, dealing 8d6 fire damage to creatures caught inside the blast.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 15d6.</p>\n\n",
+      "value": "<p>You place your hand on the ground and send your Chakra forth, causing a devastating column of fire to explode upward, dealing 8d6 fire damage to creatures caught inside the blast.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 15d6.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

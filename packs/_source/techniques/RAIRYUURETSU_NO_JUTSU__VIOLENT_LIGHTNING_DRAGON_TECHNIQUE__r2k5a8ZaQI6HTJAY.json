@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H, F</p>\n\n<hr>\n\n<p>This technique functions as Daikodan no Jutsu (p153). The projectile is the shape of a yellow dragon of lightning, dealing 8d6 electric damage to primary targets, and half that to secondary targets.</p>\n\n\n\n",
+      "value": "<p>This technique functions as Daikodan no Jutsu (p153). The projectile is the shape of a yellow dragon of lightning, dealing 8d6 electric damage to primary targets, and half that to secondary targets.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

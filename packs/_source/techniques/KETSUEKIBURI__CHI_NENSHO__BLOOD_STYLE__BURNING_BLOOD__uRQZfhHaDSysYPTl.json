@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> S, P</p>\n\n<hr>\n\n<p>The user infuses his blood weapon with his fire elemental chakra, causing it to boil. The user's blood weapon deals an extra 1d6 fire damage on a successful attack. This jutsu can be discharged as a swift action to give your blood weapon +5 ft. reach until the end of the turn (the weapon continues to deal the extra fire damage while the reach is active).</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Blood Weapon (Small) (a)</p>\n",
+      "value": "<p>The user infuses his blood weapon with his fire elemental chakra, causing it to boil. The user's blood weapon deals an extra 1d6 fire damage on a successful attack. This jutsu can be discharged as a swift action to give your blood weapon +5 ft. reach until the end of the turn (the weapon continues to deal the extra fire damage while the reach is active).</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Blood Weapon (Small) (a)</p>\n",
       "summary": "",
       "instructions": ""
     },

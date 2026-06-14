@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Your hair hardens and expands, encasing you in a protective shell granting you a +4 natural armor bonus to Defense. Any creature in your square takes 2d6 piercing damage. If a creature misses you with an unarmed attack, natural melee weapon, or a Small or smaller melee weapon, it suffers 2d6 piercing damage.<br><br>While encased, you cannot attack or perform techniques, but you can make a touch attack when you move through an occupied square to deal 2d6 piercing damage.</p>\n\n\n\n",
+      "value": "<p>Your hair hardens and expands, encasing you in a protective shell granting you a +4 natural armor bonus to Defense. Any creature in your square takes 2d6 piercing damage. If a creature misses you with an unarmed attack, natural melee weapon, or a Small or smaller melee weapon, it suffers 2d6 piercing damage.<br><br>While encased, you cannot attack or perform techniques, but you can make a touch attack when you move through an occupied square to deal 2d6 piercing damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

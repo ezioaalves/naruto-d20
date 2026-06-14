@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>A basic technique taught to most academy students, granting you a +4 enhancement bonus to Jump checks and a 5 ft. movement speed increase, which does not stack with other non-permanent movement speed increases. If you benefit from a running start, the Jump bonus increases to +5.</p>\n\n\n\n",
+      "value": "<p>A basic technique taught to most academy students, granting you a +4 enhancement bonus to Jump checks and a 5 ft. movement speed increase, which does not stack with other non-permanent movement speed increases. If you benefit from a running start, the Jump bonus increases to +5.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

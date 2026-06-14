@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> H, E</p>\n\n<hr>\n\n<p>You expel Chakra from your body, turning it into a wave of searing flames dealing 6d6+6 fire damage.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6+1, up to1d6+1 per level or 10d6+10 total.</p>\n\n",
+      "value": "<p>You expel Chakra from your body, turning it into a wave of searing flames dealing 6d6+6 fire damage.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6+1, up to1d6+1 per level or 10d6+10 total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

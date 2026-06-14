@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, S</p>\n\n<hr>\n\n<p>On activation, you gain a +8 bonus to a single opposed roll when being attacked by a bull rush, overrun or grapple attempt. This technique takes up one seal slot, and you deal yourself 1 damage when performing it. The seal's effects do not stack with itself.</p>\n\n\n\n",
+      "value": "<p>On activation, you gain a +8 bonus to a single opposed roll when being attacked by a bull rush, overrun or grapple attempt. This technique takes up one seal slot, and you deal yourself 1 damage when performing it. The seal's effects do not stack with itself.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

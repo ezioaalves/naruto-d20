@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 31</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>1d6 Minutes after this technique is used outside, clouds form over the area and pouring rain falls down.</p>\n\n\n\n",
+      "value": "<p>1d6 Minutes after this technique is used outside, clouds form over the area and pouring rain falls down.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

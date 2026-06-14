@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You launch a dragon of yellow lightning, which charges to the area to deal 7d6+5 electric damage.</p>\n\n\n\n",
+      "value": "<p>You launch a dragon of yellow lightning, which charges to the area to deal 7d6+5 electric damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

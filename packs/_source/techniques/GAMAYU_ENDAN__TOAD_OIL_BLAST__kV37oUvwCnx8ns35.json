@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>To use this collaborative technique, you must have summoned a Toad with the Spit Oil ability, and said summon must be within 5 ft. of you, both of you ready to act on the same initiative. The toad spits out a long cone of oil, which you ignite with your Chakra to create a blazing cone of destruction. Any creature in the area suffers 8d8 fire damage. If the Toad is Gargantuan, this technique deals 8d10 damage instead, and a Colossal one increases it further to 8d12.<br><br>The cone's length is based on the Toad's size: Medium (30 ft.), Large (50 ft.), Huge (80 ft.), Gargantuan (100 ft.) or Colossal (120 ft.).</p>\n\n\n\n",
+      "value": "<p>To use this collaborative technique, you must have summoned a Toad with the Spit Oil ability, and said summon must be within 5 ft. of you, both of you ready to act on the same initiative. The toad spits out a long cone of oil, which you ignite with your Chakra to create a blazing cone of destruction. Any creature in the area suffers 8d8 fire damage. If the Toad is Gargantuan, this technique deals 8d10 damage instead, and a Colossal one increases it further to 8d12.<br><br>The cone's length is based on the Toad's size: Medium (30 ft.), Large (50 ft.), Huge (80 ft.), Gargantuan (100 ft.) or Colossal (120 ft.).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

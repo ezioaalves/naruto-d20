@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You temporarily change the flexibility of your bones and skin, gaining a +4 bonus to Escape Artist and opposed Grapple checks. You may also spend a full-round action to deliver a melee touch attack at a range of up to 30 ft, stretching your limb temporarily.</p>\n\n\n\n",
+      "value": "<p>You temporarily change the flexibility of your bones and skin, gaining a +4 bonus to Escape Artist and opposed Grapple checks. You may also spend a full-round action to deliver a melee touch attack at a range of up to 30 ft, stretching your limb temporarily.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

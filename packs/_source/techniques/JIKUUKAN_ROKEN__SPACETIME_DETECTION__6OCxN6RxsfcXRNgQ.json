@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>You detect the use of any Spacetime Ninjutsu with the Teleportation descriptor within range, even if you do not have direct line of sight or line of effect. You also detect any creatures teleporting into the area. You can detect an effect's direction, but not the exact distance, nor what technique was used.</p>\n\n\n<p><b>Mastery:</b> The second and fourth steps increase the radius of the Spread by 10 ft each.<br><br>The third step allows you to detect the use of techniques with the Summoning descriptor as well.</p>\n",
+      "value": "<p>You detect the use of any Spacetime Ninjutsu with the Teleportation descriptor within range, even if you do not have direct line of sight or line of effect. You also detect any creatures teleporting into the area. You can detect an effect's direction, but not the exact distance, nor what technique was used.</p>\n\n\n<p><b>Mastery:</b> The second and fourth steps increase the radius of the Spread by 10 ft each.<br><br>The third step allows you to detect the use of techniques with the Summoning descriptor as well.</p>\n",
       "summary": "",
       "instructions": ""
     },

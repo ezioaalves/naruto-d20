@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Juuryu Nage: Tsuriotoshi, except as above, and the target can also be one size category larger than you. The bonus damage improves to 6d6, and if you throw the target, the distance and additional damage are doubled (to 20 ft and 2d6). You may choose to perform this technique if you are not currently grappling the target. If you do, replace the opposed grapple check with initi- ating a grapple attempt which will not provoke attacks of opportunity.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the bonus damage by 1d6, up to 1d6 per level or 12d6 total bonus damage, whichever is lower.</p>\n\n",
+      "value": "<p>As Juuryu Nage: Tsuriotoshi, except as above, and the target can also be one size category larger than you. The bonus damage improves to 6d6, and if you throw the target, the distance and additional damage are doubled (to 20 ft and 2d6). You may choose to perform this technique if you are not currently grappling the target. If you do, replace the opposed grapple check with initi- ating a grapple attempt which will not provoke attacks of opportunity.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the bonus damage by 1d6, up to 1d6 per level or 12d6 total bonus damage, whichever is lower.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

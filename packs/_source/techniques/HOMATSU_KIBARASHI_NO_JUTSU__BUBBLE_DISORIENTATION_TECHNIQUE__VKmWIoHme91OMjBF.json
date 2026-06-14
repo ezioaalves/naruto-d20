@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>The user blows a chakra-enhanced bubble and pops it in an opponent's face, causing a small explosion that disorients the foe.<br><br>The user blows a watery bubble and makes a ranged touch attack against a single creature within range. If successful, the bubble violently pops in the target's face and deals 1d6 water damage. The target must succeed a fortitude save to avoid becoming dazed for 1 round afterwards.</p>\n\n<hr><p><b>Empower:</b> The user may spend an additional 2 points of chakra to create additional bubbles each with a new target within range, up to 1 additional bubble per level or 3 bubbles. The user must roll separate touch attacks for each target.</p>\n",
+      "value": "<p>The user blows a chakra-enhanced bubble and pops it in an opponent's face, causing a small explosion that disorients the foe.<br><br>The user blows a watery bubble and makes a ranged touch attack against a single creature within range. If successful, the bubble violently pops in the target's face and deals 1d6 water damage. The target must succeed a fortitude save to avoid becoming dazed for 1 round afterwards.</p>\n\n<hr><p><b>Empower:</b> The user may spend an additional 2 points of chakra to create additional bubbles each with a new target within range, up to 1 additional bubble per level or 3 bubbles. The user must roll separate touch attacks for each target.</p>\n",
       "summary": "",
       "instructions": ""
     },

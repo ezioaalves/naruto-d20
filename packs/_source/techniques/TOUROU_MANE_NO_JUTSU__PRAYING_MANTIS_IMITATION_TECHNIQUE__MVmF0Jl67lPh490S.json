@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You gain the benefits from the Tourouken stance. Your unarmed attacks deal lethal slashing damage, and their attack rolls are modified by Dexterity.</p>\n\n\n\n",
+      "value": "<p>You gain the benefits from the Tourouken stance. Your unarmed attacks deal lethal slashing damage, and their attack rolls are modified by Dexterity.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

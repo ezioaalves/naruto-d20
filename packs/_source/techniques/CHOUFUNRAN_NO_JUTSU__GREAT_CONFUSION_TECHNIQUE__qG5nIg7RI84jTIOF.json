@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The subject's sense of balance is completely disrupted, and they must make a Concentration check (DC 11) each round. If they fail, they suffer a -4 penalty to attack rolls, ability checks and skill checks while the technique lasts. This is a sound-based illusion.</p>\n\n\n\n",
+      "value": "<p>The subject's sense of balance is completely disrupted, and they must make a Concentration check (DC 11) each round. If they fail, they suffer a -4 penalty to attack rolls, ability checks and skill checks while the technique lasts. This is a sound-based illusion.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

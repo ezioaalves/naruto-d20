@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You solidify air, forming a sword of air in your hand. The blade cannot be sundered or disarmed, and creatures lose their Dexterity bonus to Defense against it unless they can See (Through) Chakra. The blade is wielded as a chisa-gatana and deals 1d6 wind damage, +1 per 4 levels (up to 1d6+5), with a critical of (18-20, x2). You do not apply your Strength modifier to damage with the air blade.</p>\n\n\n\n",
+      "value": "<p>You solidify air, forming a sword of air in your hand. The blade cannot be sundered or disarmed, and creatures lose their Dexterity bonus to Defense against it unless they can See (Through) Chakra. The blade is wielded as a chisa-gatana and deals 1d6 wind damage, +1 per 4 levels (up to 1d6+5), with a critical of (18-20, x2). You do not apply your Strength modifier to damage with the air blade.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

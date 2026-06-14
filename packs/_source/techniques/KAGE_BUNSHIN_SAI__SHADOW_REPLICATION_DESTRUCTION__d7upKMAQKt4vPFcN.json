@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> E, S</p>\n\n<hr>\n\n<p>You cause a Kage Bunshin to explode, dealing 4d8 points of damage to creatures in the area. If a Tajuu Kage Bunshin is sacrificed, the explosion deals 4d6 damage, and the save DC is reduced by 2. If a creature is grappling with a clone that explodes, it takes a -4 penalty to its save. If it is @Condition[pinned]{pinned} by a clone that explodes, the penalty increases to -8.</p>\n\n<hr><p><b>Empower:</b> Spend 6 Chakra to target an additional clone to explode (up to 1 clone per 2 levels total).</p>\n\n",
+      "value": "<p>You cause a Kage Bunshin to explode, dealing 4d8 points of damage to creatures in the area. If a Tajuu Kage Bunshin is sacrificed, the explosion deals 4d6 damage, and the save DC is reduced by 2. If a creature is grappling with a clone that explodes, it takes a -4 penalty to its save. If it is @Condition[pinned]{pinned} by a clone that explodes, the penalty increases to -8.</p>\n\n<hr><p><b>Empower:</b> Spend 6 Chakra to target an additional clone to explode (up to 1 clone per 2 levels total).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

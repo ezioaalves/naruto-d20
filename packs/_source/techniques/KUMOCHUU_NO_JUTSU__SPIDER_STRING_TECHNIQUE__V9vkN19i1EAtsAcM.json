@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> M, S</p>\n\n<hr>\n\n<p>Using this technique, you create a length of spider silk to serve as a rope, which is attached to an anchor point, which must be an object, structure or surface of Medium-size or larger that can support your weight. The silk rope will support the weight of two Mediumsize creatures, has DR 5/fire and 6 HP.</p>\n\n\n\n",
+      "value": "<p>Using this technique, you create a length of spider silk to serve as a rope, which is attached to an anchor point, which must be an object, structure or surface of Medium-size or larger that can support your weight. The silk rope will support the weight of two Mediumsize creatures, has DR 5/fire and 6 HP.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

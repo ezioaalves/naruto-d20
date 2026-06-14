@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, E, F, Mob</p>\n\n<hr>\n\n<p>You gather Chakra into your weapon, refining it into a spiritual edge that you swing down, creating a shimmering, golden ray. If it hits an animal, elemental, humanoid, magical beast, monstrous humanoid or outsider, it deals 2d6 force damage. You may use this technique as a full-round action instead. If you do, instead of firing a ray, you swing your sword and make a melee attack that will deal 2d6 additional force damage if it hits a creature of the appropriate creature type.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 10d6 damage total.</p>\n\n",
+      "value": "<p>You gather Chakra into your weapon, refining it into a spiritual edge that you swing down, creating a shimmering, golden ray. If it hits an animal, elemental, humanoid, magical beast, monstrous humanoid or outsider, it deals 2d6 force damage. You may use this technique as a full-round action instead. If you do, instead of firing a ray, you swing your sword and make a melee attack that will deal 2d6 additional force damage if it hits a creature of the appropriate creature type.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 10d6 damage total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

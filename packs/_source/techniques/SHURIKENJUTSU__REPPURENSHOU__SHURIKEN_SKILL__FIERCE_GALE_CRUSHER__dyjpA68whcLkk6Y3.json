@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You throw a weapon at the target, immediately followed by a Reppushou to enhance its effectiveness, granting the attack 2d6 bonus damage (not multiplied on critical hits), as well as a +1 damage bonus, and its range increment increases by 50% (stacks with the Far Shot feat).</p>\n\n\n\n",
+      "value": "<p>You throw a weapon at the target, immediately followed by a Reppushou to enhance its effectiveness, granting the attack 2d6 bonus damage (not multiplied on critical hits), as well as a +1 damage bonus, and its range increment increases by 50% (stacks with the Far Shot feat).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You release a blast of sound, dealing 1d6 sonic damage per 2 levels (maximum 6d6, Fortitude halves). Creatures in the area are also thrown back 1d8 x 5 ft (Fortitude negates). If you wear a sound amplifier or a similar device that can amplify your voice, you can increase the Chakra cost to 12 to improve the damage dice to d8.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 14d6.</p>\n\n",
+      "value": "<p>You release a blast of sound, dealing 1d6 sonic damage per 2 levels (maximum 6d6, Fortitude halves). Creatures in the area are also thrown back 1d8 x 5 ft (Fortitude negates). If you wear a sound amplifier or a similar device that can amplify your voice, you can increase the Chakra cost to 12 to improve the damage dice to d8.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 14d6.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

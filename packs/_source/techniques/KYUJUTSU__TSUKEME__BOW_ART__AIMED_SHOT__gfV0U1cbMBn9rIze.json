@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> F, Mas, Mob</p>\n\n<hr>\n\n<p>Make a Spot check, followed by a single attack that gains a bonus to the attack and damage roll based on the result (as shown in the table).<br><br>| Spot   |   Attack | Damage   |<br>|--------|----------|----------|<br>| ≤ 10   |       +1 | 1d6      |<br>| 15     |       +2 | 2d6      |<br>| 20     |       +2 | 3d6      |<br>| 30     |       +3 | 4d6      |<br>| ≥ 40   |       +4 | 5d6      |<br><br>If you used the Dead Aim feat last round, you gain a +2 bonus on this Spot check.</p>\n\n\n\n",
+      "value": "<p>Make a Spot check, followed by a single attack that gains a bonus to the attack and damage roll based on the result (as shown in the table).<br><br>| Spot   |   Attack | Damage   |<br>|--------|----------|----------|<br>| ≤ 10   |       +1 | 1d6      |<br>| 15     |       +2 | 2d6      |<br>| 20     |       +2 | 3d6      |<br>| 30     |       +3 | 4d6      |<br>| ≥ 40   |       +4 | 5d6      |<br><br>If you used the Dead Aim feat last round, you gain a +2 bonus on this Spot check.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

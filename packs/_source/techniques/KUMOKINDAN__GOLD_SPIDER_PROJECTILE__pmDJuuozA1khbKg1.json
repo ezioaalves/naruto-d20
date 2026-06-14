@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> M,S</p>\n\n<hr>\n\n<p>You create projectiles of hardened, golden spider silk, up to 1 per 2 levels. Each projectile is immediately fired, requiring a ranged attack roll. The projectiles have a critical of (19-20, x2) and deal 1d4+1 piercing damage.</p>\n\n\n\n",
+      "value": "<p>You create projectiles of hardened, golden spider silk, up to 1 per 2 levels. Each projectile is immediately fired, requiring a ranged attack roll. The projectiles have a critical of (19-20, x2) and deal 1d4+1 piercing damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

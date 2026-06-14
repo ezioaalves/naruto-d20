@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "40",
-        "target": "skill.acr"
+        "target": "skill.acr",
+        "flavor": "HANTEN CHOUYAKU"
       }
     ],
     "changeFlags": {

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>While swimming, you do not need to make a skill check in calm waters, and move up to half your speed as a move action, or your full speed as a full-round action. If the waters are not calm, the Swim check DC is reduced by 5.</p>\n\n\n\n",
+      "value": "<p>While swimming, you do not need to make a skill check in calm waters, and move up to half your speed as a move action, or your full speed as a full-round action. If the waters are not calm, the Swim check DC is reduced by 5.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

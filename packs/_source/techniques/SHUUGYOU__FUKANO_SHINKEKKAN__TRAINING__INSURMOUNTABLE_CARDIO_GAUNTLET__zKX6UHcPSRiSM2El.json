@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> F, X.</p>\n\n<hr>\n\n<p>The user gains the feat Run and a +5 ft. increase to movement speed.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n<p><b>Expendable Component:</b> Expendable Components -Health drinks and lots of carbs. Purchase DC: 22</p>\n",
+      "value": "<p>The user gains the feat Run and a +5 ft. increase to movement speed.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n<p><b>Expendable Component:</b> Expendable Components -Health drinks and lots of carbs. Purchase DC: 22</p>\n",
       "summary": "",
       "instructions": ""
     },

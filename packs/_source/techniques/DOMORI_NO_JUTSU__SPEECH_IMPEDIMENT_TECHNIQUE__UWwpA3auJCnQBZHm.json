@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The subject slowly loses the ability to comprehend language in any way. They can attempt to speak, read or write languages they 'forgot', but the result is gibberish and cannot be understood. This technique progresses in stages based on the number of rounds since the subject was targeted.<br><br>- First Round: Subject loses the ability to read and write its non-native (not granted by race) language(s).<br>- Third Round: Subject loses the ability to speak and sign its non-native language(s).<br>- Fifth Round: Subject loses the ability to read and write its native language(s).<br>- Seventh Round: Subject loses the ability to speak and sign its native language(s).</p>\n\n\n\n",
+      "value": "<p>The subject slowly loses the ability to comprehend language in any way. They can attempt to speak, read or write languages they 'forgot', but the result is gibberish and cannot be understood. This technique progresses in stages based on the number of rounds since the subject was targeted.<br><br>- First Round: Subject loses the ability to read and write its non-native (not granted by race) language(s).<br>- Third Round: Subject loses the ability to speak and sign its non-native language(s).<br>- Fifth Round: Subject loses the ability to read and write its native language(s).<br>- Seventh Round: Subject loses the ability to speak and sign its native language(s).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

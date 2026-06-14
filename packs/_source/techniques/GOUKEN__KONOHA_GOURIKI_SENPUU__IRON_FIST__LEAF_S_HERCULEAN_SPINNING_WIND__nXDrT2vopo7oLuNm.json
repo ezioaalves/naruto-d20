@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions as Gouken: Konoha Senpuu, except as above. Your reach increases by 5 ft for these attacks, you count as one size category larger when determining your damage die, and creatures hit are knocked back 5 ft. You suffer a -4 penalty to Learn checks when learning this technique if you do not have the Gouken feat.</p>\n\n\n\n",
+      "value": "<p>This technique functions as Gouken: Konoha Senpuu, except as above. Your reach increases by 5 ft for these attacks, you count as one size category larger when determining your damage die, and creatures hit are knocked back 5 ft. You suffer a -4 penalty to Learn checks when learning this technique if you do not have the Gouken feat.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

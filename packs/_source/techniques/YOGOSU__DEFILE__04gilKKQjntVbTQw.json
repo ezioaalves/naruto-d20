@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The souls of the dead surround you, striking out against all that live.<br><br>For as long as the user concentrates solely on this technique, all living creatures within the technique's area take 1d8+1 negative energy damage at the beginning and end of their turn. The cost of this technique is paid again each round that he continues to concentrate.<br><br>If a creature dies while within the area of this technique, the user regains chakra equal to the number of Hit Dice that creature had.</p>\n",
+      "value": "<p>The souls of the dead surround you, striking out against all that live.<br><br>For as long as the user concentrates solely on this technique, all living creatures within the technique's area take 1d8+1 negative energy damage at the beginning and end of their turn. The cost of this technique is paid again each round that he continues to concentrate.<br><br>If a creature dies while within the area of this technique, the user regains chakra equal to the number of Hit Dice that creature had.</p>\n",
       "summary": "",
       "instructions": ""
     },

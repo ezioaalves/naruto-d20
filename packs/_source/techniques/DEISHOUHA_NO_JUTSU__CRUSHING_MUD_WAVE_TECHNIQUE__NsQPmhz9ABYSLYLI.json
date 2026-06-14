@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 31</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Suishouha no Jutsu, except as above and below. The wave consists of mud, earth and rock and deals earth damage. Rather than being empowered by an Electric technique, it is empowered if hit by a Fire technique, and the empowerment deals fire damage instead of electric damage. You must have your hands in direct contact with the ground while concentrating on this technique.</p>\n\n\n\n",
+      "value": "<p>As Suishouha no Jutsu, except as above and below. The wave consists of mud, earth and rock and deals earth damage. Rather than being empowered by an Electric technique, it is empowered if hit by a Fire technique, and the empowerment deals fire damage instead of electric damage. You must have your hands in direct contact with the ground while concentrating on this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

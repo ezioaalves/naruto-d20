@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is identical to Kenjutsu: Kodachi Ryu Kaiten Kenbu, except as above, and the target must either be flat-footed or be under the effect of your Ryuusui no Ugoki. You make a Full Attack with both your weapons, gaining a +3 bonus to attack and damage rolls. The target loses its Dexterity bonus to Defense only against the first attack from each weapon.</p>\n\n\n\n",
+      "value": "<p>This technique is identical to Kenjutsu: Kodachi Ryu Kaiten Kenbu, except as above, and the target must either be flat-footed or be under the effect of your Ryuusui no Ugoki. You make a Full Attack with both your weapons, gaining a +3 bonus to attack and damage rolls. The target loses its Dexterity bonus to Defense only against the first attack from each weapon.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

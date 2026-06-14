@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 20</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>You create a retrieval seal, which is bound to one or more objects that are present when creating it. As an attack action that provokes attacks of opportunity, any creature can touch the seal and summon each of its bound object(s) to an adjacent square. Soulbound objects (such as weapons with a Soulbound enhancement seal) cannot be summoned unless the one summoning it is bound to it, or if the creature it is bound to is either dead or hasn't touched it for at least one year. Sentient and held items can make a Will save to resist beind summoned.<br><br>The seal can be bound to one Huge, two Large, four Medium or eight Small or smaller sized objects.</p>\n\n\n\n",
+      "value": "<p>You create a retrieval seal, which is bound to one or more objects that are present when creating it. As an attack action that provokes attacks of opportunity, any creature can touch the seal and summon each of its bound object(s) to an adjacent square. Soulbound objects (such as weapons with a Soulbound enhancement seal) cannot be summoned unless the one summoning it is bound to it, or if the creature it is bound to is either dead or hasn't touched it for at least one year. Sentient and held items can make a Will save to resist beind summoned.<br><br>The seal can be bound to one Huge, two Large, four Medium or eight Small or smaller sized objects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

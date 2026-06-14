@@ -1,5 +1,6 @@
 import { MAIN_DISCIPLINES, MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
 import { TechniqueSynckitApp } from "./technique-synckit-app.mjs";
+import { renderTechniqueHeader } from "./technique-header.mjs";
 import { buildLearningView } from "../learn-technique.mjs";
 
 // pf1 11.11 uses V1 ApplicationV1. Its render flow is (foundry.mjs:37369–37406):
@@ -198,6 +199,32 @@ export function installTechniqueGetChatDataPatch() {
       data.properties.push(game.i18n.localize("NarutoD20.Technique.ChakraResistance.Label"));
     }
     return data;
+  };
+}
+
+let descriptionPatchInstalled = false;
+
+/**
+ * Wrap ItemPF.prototype.getDescription to prepend the technique stat-block header
+ * for technique items. This is how PF1e's ItemSpellPF.getDescription prepends
+ * spell-header.hbs — the base ItemPF returns the body only, so without this the
+ * header (rendered on the sheet) never reaches the chat card / item summary.
+ */
+export function installTechniqueGetDescriptionPatch() {
+  if (descriptionPatchInstalled) return;
+  const ItemPF = pf1?.documents?.item?.ItemPF;
+  if (!ItemPF?.prototype?.getDescription) {
+    console.error("Naruto D20 | ItemPF.getDescription not found — technique chat header skipped");
+    return;
+  }
+  descriptionPatchInstalled = true;
+
+  const original = ItemPF.prototype.getDescription;
+  ItemPF.prototype.getDescription = async function (options = {}) {
+    const body = await original.call(this, options);
+    if (this.type !== TECHNIQUE_ITEM_TYPE || options.header === false) return body;
+    const header = await renderTechniqueHeader(this, { chatcard: options.chatcard === true });
+    return header + body;
   };
 }
 

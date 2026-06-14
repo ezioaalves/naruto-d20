@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, X (see text)</p>\n\n<hr>\n\n<p>The user makes a special seal and touches a mirror, transferring the seal to the object. The seal is invisible by naked eye, but See Chakra and similar techniques can see the seal. Some Mirror Arts techniques target a \"bonded mirror\".</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Expendable Component:</b> Expendable Components -One advanced seal.</p>\n",
+      "value": "<p>The user makes a special seal and touches a mirror, transferring the seal to the object. The seal is invisible by naked eye, but See Chakra and similar techniques can see the seal. Some Mirror Arts techniques target a \"bonded mirror\".</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Expendable Component:</b> Expendable Components -One advanced seal.</p>\n",
       "summary": "",
       "instructions": ""
     },

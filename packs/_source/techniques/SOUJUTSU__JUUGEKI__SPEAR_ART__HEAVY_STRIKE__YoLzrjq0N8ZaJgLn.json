@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>Make an attack against the target that deals normal damage. If hit, the target is knoecked back 1d4 x 5 ft (Fortitude halves). Can be used on adjacent creatures even if you use a reach weapon.</p>\n\n\n\n",
+      "value": "<p>Make an attack against the target that deals normal damage. If hit, the target is knoecked back 1d4 x 5 ft (Fortitude halves). Can be used on adjacent creatures even if you use a reach weapon.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 0</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> M, Mob</p>\n\n<hr>\n\n<p>You set a Kunai Shower trap (see p400) in the target square, as long as there is something nearby to anchor the trap to. The perform time is reduced by 1 minute for every 3 points by which you beat the Perform Requirements (minimum 1 minute).<br><br>If you fail to meet the Perform Requirements, you will install the trap, but the trap will not function (you won't notice that the trap is faulty).</p>\n\n\n\n",
+      "value": "<p>You set a Kunai Shower trap (see p400) in the target square, as long as there is something nearby to anchor the trap to. The perform time is reduced by 1 minute for every 3 points by which you beat the Perform Requirements (minimum 1 minute).<br><br>If you fail to meet the Perform Requirements, you will install the trap, but the trap will not function (you won't notice that the trap is faulty).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

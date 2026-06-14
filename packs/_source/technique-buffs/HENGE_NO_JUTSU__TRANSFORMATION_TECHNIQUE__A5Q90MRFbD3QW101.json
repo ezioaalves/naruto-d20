@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "@attributes.hd.total",
-        "target": "skill.dis"
+        "target": "skill.dis",
+        "flavor": "HENGE NO JUTSU"
       }
     ],
     "changeFlags": {

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>Two ice dragons circle the area, creating a small tornado of freezing cold that deals 6d6 cold damage to creatures within the area.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 10d6 total.</p>\n\n",
+      "value": "<p>Two ice dragons circle the area, creating a small tornado of freezing cold that deals 6d6 cold damage to creatures within the area.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 10d6 total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

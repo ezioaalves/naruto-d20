@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The subject sees a swirl of cherry blossoms swarm around it, briefly obscuring sight before dissipating. When their vision clears, the appearance of all creatures it sees is changed into those of other creatures (as you direct), though a creature cannot change to something or someone of another size category.<br><br>You may decide to have the subject become unable to make sense of any speech in the area, having them hear it as gibberish. This technique can be dispelled, though counts as a Rank 9 technique for the purpose of being identified and/or dispelled.</p>\n\n\n\n",
+      "value": "<p>The subject sees a swirl of cherry blossoms swarm around it, briefly obscuring sight before dissipating. When their vision clears, the appearance of all creatures it sees is changed into those of other creatures (as you direct), though a creature cannot change to something or someone of another size category.<br><br>You may decide to have the subject become unable to make sense of any speech in the area, having them hear it as gibberish. This technique can be dispelled, though counts as a Rank 9 technique for the purpose of being identified and/or dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

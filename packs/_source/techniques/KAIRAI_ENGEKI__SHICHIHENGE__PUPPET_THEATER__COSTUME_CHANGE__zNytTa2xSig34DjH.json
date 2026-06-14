@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, Mas, S</p>\n\n<hr>\n\n<p>You change the appearance of the puppet into that of a humanoid or animal of the same size category. The transformation cannot add or remove limbs, equipment or clothing, but can change their appearance to something with the same rough shape. This technique functions like Henge no Jutsu in the sense that it is purely cosmetic, must be maintained and can be seen through.</p>\n\n\n<p><b>Mastery:</b> Each step grants a +1 bonus to the Concentration check made to prevent the transformation ending when the puppet takes damage.</p>\n",
+      "value": "<p>You change the appearance of the puppet into that of a humanoid or animal of the same size category. The transformation cannot add or remove limbs, equipment or clothing, but can change their appearance to something with the same rough shape. This technique functions like Henge no Jutsu in the sense that it is purely cosmetic, must be maintained and can be seen through.</p>\n\n\n<p><b>Mastery:</b> Each step grants a +1 bonus to the Concentration check made to prevent the transformation ending when the puppet takes damage.</p>\n",
       "summary": "",
       "instructions": ""
     },

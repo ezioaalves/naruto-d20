@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The subject's thoughts loop around, forcing it to repeat the actions it took on its previous turn during its next turn. If the situation no longer allows the subject to do so (no room, its previous target is dead or gone, etc.), it will simply take no action instead. The subject can still defend itself normally.</p>\n\n\n\n",
+      "value": "<p>The subject's thoughts loop around, forcing it to repeat the actions it took on its previous turn during its next turn. If the situation no longer allows the subject to do so (no room, its previous target is dead or gone, etc.), it will simply take no action instead. The subject can still defend itself normally.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

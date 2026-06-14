@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You gather and multiply air inside your lungs, expelling it as a nearly solid sphere that deals 7d8 wind damage.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d8, up to 1d8 per character level or 14d8 total. Each die also increases the burst radius by 5 ft (up to 50 ft).</p>\n\n",
+      "value": "<p>You gather and multiply air inside your lungs, expelling it as a nearly solid sphere that deals 7d8 wind damage.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d8, up to 1d8 per character level or 14d8 total. Each die also increases the burst radius by 5 ft (up to 50 ft).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

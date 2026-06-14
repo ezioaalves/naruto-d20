@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You fire a large ball of blazing flames, which detonates with a loud explosion, dealing 6d6 fire and 1d6 sonic damage which damages unattended objects and sets fire to combustibles.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6 fire or sonic damage, up to 12d6 fire and 7d6 sonic or 1d6 per level total.</p>\n\n",
+      "value": "<p>You fire a large ball of blazing flames, which detonates with a loud explosion, dealing 6d6 fire and 1d6 sonic damage which damages unattended objects and sets fire to combustibles.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6 fire or sonic damage, up to 12d6 fire and 7d6 sonic or 1d6 per level total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

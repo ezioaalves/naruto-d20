@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> F</p>\n\n<hr>\n\n<p>You gain a +1 insight bonus to saves against Ninjutsu techniques with you as their only target (does not apply against techniques with an area of effect).</p>\n\n\n\n",
+      "value": "<p>You gain a +1 insight bonus to saves against Ninjutsu techniques with you as their only target (does not apply against techniques with an area of effect).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

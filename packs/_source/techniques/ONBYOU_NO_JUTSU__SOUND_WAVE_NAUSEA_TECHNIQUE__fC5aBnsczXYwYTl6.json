@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You focus Chakra into your sound amplifier and touch the target with it, sending amplified sound waves into its body, nauseating them for 1d4 rounds.</p>\n\n\n\n",
+      "value": "<p>You focus Chakra into your sound amplifier and touch the target with it, sending amplified sound waves into its body, nauseating them for 1d4 rounds.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

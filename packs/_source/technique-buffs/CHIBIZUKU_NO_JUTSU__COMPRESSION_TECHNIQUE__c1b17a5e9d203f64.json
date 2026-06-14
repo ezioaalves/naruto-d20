@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-1",
-        "target": "size"
+        "target": "size",
+        "flavor": "CHIBIZUKU NO JUTSU"
       },
       {
         "type": "size",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "dex"
+        "target": "dex",
+        "flavor": "CHIBIZUKU NO JUTSU"
       },
       {
         "type": "size",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "str"
+        "target": "str",
+        "flavor": "CHIBIZUKU NO JUTSU"
       },
       {
         "type": "size",
@@ -37,7 +40,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "con"
+        "target": "con",
+        "flavor": "CHIBIZUKU NO JUTSU"
       },
       {
         "type": "untyped",
@@ -45,7 +49,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "1",
-        "target": "skill.ckc"
+        "target": "skill.ckc",
+        "flavor": "CHIBIZUKU NO JUTSU"
       },
       {
         "type": "untyped",
@@ -53,7 +58,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "1",
-        "target": "concentration"
+        "target": "concentration",
+        "flavor": "CHIBIZUKU NO JUTSU"
       }
     ],
     "changeFlags": {

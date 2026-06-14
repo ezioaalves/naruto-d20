@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>Make a Full Attack with your bone weapon against the target, gaining an additional attack at your highest attack bonus -5. For 1 round after the attacks, you gain a +1 bonus to Reflex saves, and a +1 dodge bonus to Defense.</p>\n\n\n\n",
+      "value": "<p>Make a Full Attack with your bone weapon against the target, gaining an additional attack at your highest attack bonus -5. For 1 round after the attacks, you gain a +1 bonus to Reflex saves, and a +1 dodge bonus to Defense.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

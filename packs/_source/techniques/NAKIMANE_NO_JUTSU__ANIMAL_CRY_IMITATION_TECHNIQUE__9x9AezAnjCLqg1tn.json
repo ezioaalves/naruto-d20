@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Genjutsu)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You learn to replicate basic animal sounds, and can do so once every three rounds by making a Bluff check with a +4 bonus. Any creature listening can make an opposed Listen check to realize the cry is an imitation.</p>\n\n\n\n",
+      "value": "<p>You learn to replicate basic animal sounds, and can do so once every three rounds by making a Bluff check with a +4 bonus. Any creature listening can make an opposed Listen check to realize the cry is an imitation.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

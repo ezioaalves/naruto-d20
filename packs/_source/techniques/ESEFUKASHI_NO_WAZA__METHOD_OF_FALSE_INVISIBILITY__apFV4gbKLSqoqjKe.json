@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>An illusionary field surrounds you, making you seem unimportant and unworthy of attention. Creatures automatically avert their gaze from you and subconsciously avoid contact with you. Creatures who are specifically looking for someone with your general appearance or creatures looking for any creature around them (such as someone on guard, does not count if in a crowd) suffer a -4 penalty to Spot checks made to detect you.<br><br>Creatures with an Intelligence score of 3 or lower and Ordinaries of level 10 or lower do not get a save.</p>\n\n\n\n",
+      "value": "<p>An illusionary field surrounds you, making you seem unimportant and unworthy of attention. Creatures automatically avert their gaze from you and subconsciously avoid contact with you. Creatures who are specifically looking for someone with your general appearance or creatures looking for any creature around them (such as someone on guard, does not count if in a crowd) suffer a -4 penalty to Spot checks made to detect you.<br><br>Creatures with an Intelligence score of 3 or lower and Ordinaries of level 10 or lower do not get a save.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>The subject feels and sees itself becoming bound by massive shackling stakes, and is frozen in place as though @Condition[paralyzed]{paralyzed}, though it does not drop what it may be holding. When the subject suffers total damage equal to your level or greater, the technique ends. This illusion can be dispelled.</p>\n\n\n\n",
+      "value": "<p>The subject feels and sees itself becoming bound by massive shackling stakes, and is frozen in place as though @Condition[paralyzed]{paralyzed}, though it does not drop what it may be holding. When the subject suffers total damage equal to your level or greater, the technique ends. This illusion can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

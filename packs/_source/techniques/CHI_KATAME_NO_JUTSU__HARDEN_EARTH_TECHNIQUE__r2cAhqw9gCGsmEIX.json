@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Your Chakra moves into the earth, hardening one cubic foot of earth or sand per level each round, turning it to stone. You direct precisely what area is affected. The technique has no effect on earth created by techniques, nor does it affect manufactured objects. You can only have one instance of this technique active at a time (including usage by clones).</p>\n\n\n\n",
+      "value": "<p>Your Chakra moves into the earth, hardening one cubic foot of earth or sand per level each round, turning it to stone. You direct precisely what area is affected. The technique has no effect on earth created by techniques, nor does it affect manufactured objects. You can only have one instance of this technique active at a time (including usage by clones).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

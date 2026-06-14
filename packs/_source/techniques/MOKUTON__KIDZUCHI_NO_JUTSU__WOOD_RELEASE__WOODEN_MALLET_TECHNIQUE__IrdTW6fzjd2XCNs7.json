@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>The user spends a move-equivalent action to turn his arm into a size category large wooden mallet with a 10foot reach that he is proficient with. This provokes an attack of opportunity. The mallet deals 2d8 bludgeoning damage that adds the user's strength modifier to damage rolls. When the technique is dispelled or the duration has completed, the wood mallet seemingly recedes back into the user's bo dy similarly to its creation.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (t)</p>\n",
+      "value": "<p>The user spends a move-equivalent action to turn his arm into a size category large wooden mallet with a 10foot reach that he is proficient with. This provokes an attack of opportunity. The mallet deals 2d8 bludgeoning damage that adds the user's strength modifier to damage rolls. When the technique is dispelled or the duration has completed, the wood mallet seemingly recedes back into the user's bo dy similarly to its creation.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (t)</p>\n",
       "summary": "",
       "instructions": ""
     },

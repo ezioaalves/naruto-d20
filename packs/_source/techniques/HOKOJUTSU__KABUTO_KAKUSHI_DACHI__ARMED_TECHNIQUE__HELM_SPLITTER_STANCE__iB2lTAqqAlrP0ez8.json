@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>While in this stance, any weapon attack made against a single creature (including Armed techniques) deals damage as though the weapon was one size larger. Applies only to attacks made with a melee weapon appropriately sized for you.</p>\n\n\n\n",
+      "value": "<p>While in this stance, any weapon attack made against a single creature (including Armed techniques) deals damage as though the weapon was one size larger. Applies only to attacks made with a melee weapon appropriately sized for you.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

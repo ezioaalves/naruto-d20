@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 13</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 29 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 17 | <b>Perform DC:</b> 33</p>\n\n<p><b>Components:</b> C, M *</p>\n\n<hr>\n\n<p>You make a touch attack in an attempt to leave a specially designed seal that merged with the target's body or substance, allowing them to be a subject for the Hiraishin no Jutsu technique. If the target moves at high speed or if a target object becomes damaged (it is thrown, or a melee weapon is blocked, for example), you immediately gain knowledge of it, as long as the target is within 1 mile.<br><br>In addition, you gain a +10 bonus to Spot checks to detect the target, or any creature wielding the target (if it is an object).</p>\n\n\n\n",
+      "value": "<p>You make a touch attack in an attempt to leave a specially designed seal that merged with the target's body or substance, allowing them to be a subject for the Hiraishin no Jutsu technique. If the target moves at high speed or if a target object becomes damaged (it is thrown, or a melee weapon is blocked, for example), you immediately gain knowledge of it, as long as the target is within 1 mile.<br><br>In addition, you gain a +10 bonus to Spot checks to detect the target, or any creature wielding the target (if it is an object).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>This technique functions as Zanganken, but you can make a second Zanganken attack against any inanimate object(s) in the square directly behind the target. You may choose to leave the target completely unharmed, only attacking the object(s) behind them.</p>\n\n\n\n",
+      "value": "<p>This technique functions as Zanganken, but you can make a second Zanganken attack against any inanimate object(s) in the square directly behind the target. You may choose to leave the target completely unharmed, only attacking the object(s) behind them.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

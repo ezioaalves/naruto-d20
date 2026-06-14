@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>The user channels electricity through his body and fires it towards an enemy. This jutsu may be used when targeted by any Raton technique that deals damage. You may spend any amount of chakra to gain 1 point of electricity resistance per point spent (you must choose the amount of chakra you wish to spend after you know if the attack hits or after you make the save, but before you know how much damage it deals). After the attack is resolved, you may fire a bolt of electricity, a ranged touch attack, at an opponent within range, dealing 1 point of electricity damage for every point of damage prevented by this technique.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n",
+      "value": "<p>The user channels electricity through his body and fires it towards an enemy. This jutsu may be used when targeted by any Raton technique that deals damage. You may spend any amount of chakra to gain 1 point of electricity resistance per point spent (you must choose the amount of chakra you wish to spend after you know if the attack hits or after you make the save, but before you know how much damage it deals). After the attack is resolved, you may fire a bolt of electricity, a ranged touch attack, at an opponent within range, dealing 1 point of electricity damage for every point of damage prevented by this technique.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n",
       "summary": "",
       "instructions": ""
     },

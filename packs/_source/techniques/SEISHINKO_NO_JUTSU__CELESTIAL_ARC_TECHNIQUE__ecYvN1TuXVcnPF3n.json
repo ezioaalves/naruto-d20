@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You send forth a surge of bright white electrical energy, dealing 6d6 electric damage (Reflex halves), and stunning any creature damaged for 1d3 rounds (Fortitude negates).</p>\n\n\n\n",
+      "value": "<p>You send forth a surge of bright white electrical energy, dealing 6d6 electric damage (Reflex halves), and stunning any creature damaged for 1d3 rounds (Fortitude negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

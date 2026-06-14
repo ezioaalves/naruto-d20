@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 11</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> H, E, Mas *</p>\n\n<hr>\n\n<p>See Godai Ransatsu: Nidan Jutsu technique (p158).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 20d6 (whichever is lower).</p>\n<p><b>Mastery:</b> Each step increases the number of possible targets by 1. The first, third and fifth step increase the radius by 5 ft each.</p>\n",
+      "value": "<p>See Godai Ransatsu: Nidan Jutsu technique (p158).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 20d6 (whichever is lower).</p>\n<p><b>Mastery:</b> Each step increases the number of possible targets by 1. The first, third and fifth step increase the radius by 5 ft each.</p>\n",
       "summary": "",
       "instructions": ""
     },

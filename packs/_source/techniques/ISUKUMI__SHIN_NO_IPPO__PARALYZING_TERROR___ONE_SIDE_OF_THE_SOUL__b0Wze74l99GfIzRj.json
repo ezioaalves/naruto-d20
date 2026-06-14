@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, Mas, E</p>\n\n<hr>\n\n<p>The user projects his chi through his eyes at his opponent. By doing this he hypnotizes his opponent's making their bodies paralyzed. The targets make a Will save, if they fail they are immobilized and helpless for the duration of the technique.</p>\n\n<hr><p><b>Empower:</b> The user may use this technique on an additional target in line of sight, for an additional 5 chakra per 4 levels.</p>\n",
+      "value": "<p>The user projects his chi through his eyes at his opponent. By doing this he hypnotizes his opponent's making their bodies paralyzed. The targets make a Will save, if they fail they are immobilized and helpless for the duration of the technique.</p>\n\n<hr><p><b>Empower:</b> The user may use this technique on an additional target in line of sight, for an additional 5 chakra per 4 levels.</p>\n",
       "summary": "",
       "instructions": ""
     },

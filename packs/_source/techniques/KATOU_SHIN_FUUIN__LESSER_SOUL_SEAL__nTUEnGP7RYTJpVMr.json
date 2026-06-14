@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 30</p>\n\n<p><b>Learn DC:</b> 31 | <b>Successes:</b> 8</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> C, F, H, M, XP</p>\n\n<hr>\n\n<p>This truly fearsome technique must be used when the target is still conscious, with its Chakra Pool and HP at least 80% of their maximum. The subject's soul is drawn into an object that resembles it well, and is sealed there. The subject's body dies, and its soul is bound to the item, unable to be called upon by effects such as Edo Tensei. If the seal or object is destroyed, the soul is freed.<br><br>XP Cost: 10,000 XP.</p>\n\n\n\n",
+      "value": "<p>This truly fearsome technique must be used when the target is still conscious, with its Chakra Pool and HP at least 80% of their maximum. The subject's soul is drawn into an object that resembles it well, and is sealed there. The subject's body dies, and its soul is bound to the item, unable to be called upon by effects such as Edo Tensei. If the seal or object is destroyed, the soul is freed.<br><br>XP Cost: 10,000 XP.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

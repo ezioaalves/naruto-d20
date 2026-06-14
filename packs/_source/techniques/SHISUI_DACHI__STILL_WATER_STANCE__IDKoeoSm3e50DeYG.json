@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You take a -2 penalty to weapon damage rolls and are unable to run or charge. In return, when an opponent uses the Unbalance Opponent feat against you, you retain one-half of your Strength bonus to attack rolls against them.</p>\n\n\n\n",
+      "value": "<p>You take a -2 penalty to weapon damage rolls and are unable to run or charge. In return, when an opponent uses the Unbalance Opponent feat against you, you retain one-half of your Strength bonus to attack rolls against them.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

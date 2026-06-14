@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, E, F, H</p>\n\n<hr>\n\n<p>You hurl a small stone object (a stone or a tile), making a ranged attack against the target at your highest attack bonus, which deals 1d6 earth damage and cannot score a critical hit.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to fire an additional shuriken (maximum 1 per 2 levels), which can target the same or a different target. You make an attack roll at your highest attack bonus for each shuriken.</p>\n\n",
+      "value": "<p>You hurl a small stone object (a stone or a tile), making a ranged attack against the target at your highest attack bonus, which deals 1d6 earth damage and cannot score a critical hit.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to fire an additional shuriken (maximum 1 per 2 levels), which can target the same or a different target. You make an attack roll at your highest attack bonus for each shuriken.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

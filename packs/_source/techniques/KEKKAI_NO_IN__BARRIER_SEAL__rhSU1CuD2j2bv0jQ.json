@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You create an invisible, indestructible barrier of force that hovers in the air as a horizontal or vertical barrier covering no more than 10 ft. by 10 ft. If its would-be surface is occupied by any creature or object, the barrier will avoid them. The barrier is solid, and blocks all material and ethereal objects, creatures and effects, though gaze attacks and teleportation techniques can easily pass though.<br><br>The barrier cannot be seen, but an advanced seal will seem to float at its center, on your side. If the seal is moved or destroyed, the barrier is dispelled.</p>\n\n\n\n",
+      "value": "<p>You create an invisible, indestructible barrier of force that hovers in the air as a horizontal or vertical barrier covering no more than 10 ft. by 10 ft. If its would-be surface is occupied by any creature or object, the barrier will avoid them. The barrier is solid, and blocks all material and ethereal objects, creatures and effects, though gaze attacks and teleportation techniques can easily pass though.<br><br>The barrier cannot be seen, but an advanced seal will seem to float at its center, on your side. If the seal is moved or destroyed, the barrier is dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

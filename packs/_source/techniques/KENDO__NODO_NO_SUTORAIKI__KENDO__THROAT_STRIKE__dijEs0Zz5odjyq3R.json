@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This basic Kendo-style attack targets the throat in order to deal a stunning blow that can cause great pain to the foe.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the throat. The attack deals normal weapon damage and causes the target to become stunned for 1 round.</p>\n\n<hr><p><b>Material Focus:</b> The user's hel d Kendo Stick.</p>\n<p><b>Mastery:</b> At fifth level of mastery, the target becomes stunned for 1d4+1 rounds (instead of 1).</p>\n",
+      "value": "<p>This basic Kendo-style attack targets the throat in order to deal a stunning blow that can cause great pain to the foe.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the throat. The attack deals normal weapon damage and causes the target to become stunned for 1 round.</p>\n\n<hr><p><b>Material Focus:</b> The user's hel d Kendo Stick.</p>\n<p><b>Mastery:</b> At fifth level of mastery, the target becomes stunned for 1d4+1 rounds (instead of 1).</p>\n",
       "summary": "",
       "instructions": ""
     },

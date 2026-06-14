@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>Your Animal Companion gains the Speed Rank 1 extraordinary ability. This technique must be learned for each of your animal companions separately.</p>\n\n\n\n",
+      "value": "<p>Your Animal Companion gains the Speed Rank 1 extraordinary ability. This technique must be learned for each of your animal companions separately.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

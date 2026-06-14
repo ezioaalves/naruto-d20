@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You close your eyes and embrace the flow of combat, letting your other senses guide your movements. You gain blindsense that extends 1 ft per level (rounded to the nearest 5 ft unit), and gain a +3 insight bonus to Defense against all creatures within that range.<br><br>You become immune to any effect a blind creature would be immune to, but any opponent beyond your blindsense has total concealment against you, and you lose your Dexterity modifier to Defense against their attacks.</p>\n\n\n\n",
+      "value": "<p>You close your eyes and embrace the flow of combat, letting your other senses guide your movements. You gain blindsense that extends 1 ft per level (rounded to the nearest 5 ft unit), and gain a +3 insight bonus to Defense against all creatures within that range.<br><br>You become immune to any effect a blind creature would be immune to, but any opponent beyond your blindsense has total concealment against you, and you lose your Dexterity modifier to Defense against their attacks.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

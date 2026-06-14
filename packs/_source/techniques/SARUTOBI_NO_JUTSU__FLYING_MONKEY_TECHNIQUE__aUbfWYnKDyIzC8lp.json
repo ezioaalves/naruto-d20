@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create a sudden updraft to guide you into the air. Make a Jump check, gaining a +10 competence bonus to the roll and ignoring the need for a 10 ft move before jumping. This technique can be used a second time while mid-air from jumping, jumping even further, but you cannot use this technique while falling.</p>\n\n\n\n",
+      "value": "<p>You create a sudden updraft to guide you into the air. Make a Jump check, gaining a +10 competence bonus to the roll and ignoring the need for a 10 ft move before jumping. This technique can be used a second time while mid-air from jumping, jumping even further, but you cannot use this technique while falling.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

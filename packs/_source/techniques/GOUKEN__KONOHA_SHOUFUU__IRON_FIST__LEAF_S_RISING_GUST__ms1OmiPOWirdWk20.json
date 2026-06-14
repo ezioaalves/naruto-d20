@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>Make an unarmed attack that, if it hits, deals normal damage and grants you a free disarm attempt against the target,without provoking an attack of opportunity. You suffer a -4 penalty to Learn checks when learning this technique if you do not have the Gouken feat.</p>\n\n\n\n",
+      "value": "<p>Make an unarmed attack that, if it hits, deals normal damage and grants you a free disarm attempt against the target,without provoking an attack of opportunity. You suffer a -4 penalty to Learn checks when learning this technique if you do not have the Gouken feat.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

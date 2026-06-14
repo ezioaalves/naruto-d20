@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>You disappear in a flash of lightning, and reappear at any location in range, as though you moved there with a flight speed with perfect maneuverability. Creatures adjacent to the square you arrive in take 4d6 electric damage.</p>\n\n\n\n",
+      "value": "<p>You disappear in a flash of lightning, and reappear at any location in range, as though you moved there with a flight speed with perfect maneuverability. Creatures adjacent to the square you arrive in take 4d6 electric damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

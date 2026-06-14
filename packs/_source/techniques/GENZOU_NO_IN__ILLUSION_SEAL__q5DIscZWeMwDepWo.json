@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You place the advanced seal within range, and cause it to radiate an illusory field. The illusion makes the seal look like a Medium-size or smaller creature or object. If the seal is moved or destroyed, the illusion immediately ends. While the illusion can be identified, analyzed and disbelieved as though it were a Genjutsu, it cannot be dispelled.</p>\n\n\n\n",
+      "value": "<p>You place the advanced seal within range, and cause it to radiate an illusory field. The illusion makes the seal look like a Medium-size or smaller creature or object. If the seal is moved or destroyed, the illusion immediately ends. While the illusion can be identified, analyzed and disbelieved as though it were a Genjutsu, it cannot be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

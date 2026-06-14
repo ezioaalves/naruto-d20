@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 9</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> H, F</p>\n\n<hr>\n\n<p>You raise a spire of lava to incinerate your enemies, making a touch attack against all targets in the area at a<br><br>+25 bonus. On hit, the attack deals 4d10 fire damage and causes targets to catch on fire unless they make a successful save.</p>\n\n\n\n",
+      "value": "<p>You raise a spire of lava to incinerate your enemies, making a touch attack against all targets in the area at a<br><br>+25 bonus. On hit, the attack deals 4d10 fire damage and causes targets to catch on fire unless they make a successful save.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

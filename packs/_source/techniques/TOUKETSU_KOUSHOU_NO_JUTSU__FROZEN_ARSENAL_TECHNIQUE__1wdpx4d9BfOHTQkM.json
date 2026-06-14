@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>You freeze a small amount of water, shaping it into any weapon of Large or smaller size, as long as you are proficient with it. The icy weapon carries all characteristics of the original, but deals 1 bonus cold damage on hit and has no hardness.</p>\n\n\n\n",
+      "value": "<p>You freeze a small amount of water, shaping it into any weapon of Large or smaller size, as long as you are proficient with it. The icy weapon carries all characteristics of the original, but deals 1 bonus cold damage on hit and has no hardness.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

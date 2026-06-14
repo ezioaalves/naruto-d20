@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, F, M, S</p>\n\n<hr>\n\n<p>You carve glowing runes into your skin, which you then rub with Chakra-imbued magnesium powder. This seal remains dormant until activated as a swift action, at which point it remains active for 5 rounds, after which it disappears. While active, your nervous system is supercharged, granting the Speed Rank 3 extraordinary ability, a +4 bonus to Will saves and Spot and Listen checks, a blindsense out to 30 ft, a +20 bonus to Balance checks and the ability to Sense Chakra passively, with 30 ft range. You also take 50% additional damage from physical attacks.<br><br>You take 12 damage every time you attempt to perform this technique.</p>\n\n\n\n",
+      "value": "<p>You carve glowing runes into your skin, which you then rub with Chakra-imbued magnesium powder. This seal remains dormant until activated as a swift action, at which point it remains active for 5 rounds, after which it disappears. While active, your nervous system is supercharged, granting the Speed Rank 3 extraordinary ability, a +4 bonus to Will saves and Spot and Listen checks, a blindsense out to 30 ft, a +20 bonus to Balance checks and the ability to Sense Chakra passively, with 30 ft range. You also take 50% additional damage from physical attacks.<br><br>You take 12 damage every time you attempt to perform this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

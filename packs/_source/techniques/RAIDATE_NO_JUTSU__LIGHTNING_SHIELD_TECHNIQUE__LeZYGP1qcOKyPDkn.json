@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You sheathe yourself with thunder and lightning, letting it form a protective shield over your body. You gain a +2 deflection bonus to Defense, and electricity resistance 5. If a creature hits you with an unarmed or melee attack, it takes 1d4 electric damage (CR applies). In addition, you gain a +4 bonus to saves against Electric effects, and if such an effect allows a Reflex save for half damage, you take no damage on a successful save instead.</p>\n\n\n\n",
+      "value": "<p>You sheathe yourself with thunder and lightning, letting it form a protective shield over your body. You gain a +2 deflection bonus to Defense, and electricity resistance 5. If a creature hits you with an unarmed or melee attack, it takes 1d4 electric damage (CR applies). In addition, you gain a +4 bonus to saves against Electric effects, and if such an effect allows a Reflex save for half damage, you take no damage on a successful save instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You focus your Chakra into the wires coiled around a creature trapped by Kousen Shibari no Jutsu, creating a powerful magnet that attracts all unattended metal objects of a Small or smaller size within 30 ft. Attracted objects deal damage as though the target was struck by falling objects.</p>\n\n\n\n",
+      "value": "<p>You focus your Chakra into the wires coiled around a creature trapped by Kousen Shibari no Jutsu, creating a powerful magnet that attracts all unattended metal objects of a Small or smaller size within 30 ft. Attracted objects deal damage as though the target was struck by falling objects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

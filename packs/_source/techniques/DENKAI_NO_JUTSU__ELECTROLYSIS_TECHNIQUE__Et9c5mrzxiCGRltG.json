@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You convert your Chakra into a consistent current, electrolysing up to 1 liter of water per level and turning it into a combustible gas (hydrogen) that ignites with the slightest spark or flame, and will continue to burn for up to an hour. This gas is not poisonous and lingers over the source of water used to create it. Cannot be used on creatures.</p>\n\n\n\n",
+      "value": "<p>You convert your Chakra into a consistent current, electrolysing up to 1 liter of water per level and turning it into a combustible gas (hydrogen) that ignites with the slightest spark or flame, and will continue to burn for up to an hour. This gas is not poisonous and lingers over the source of water used to create it. Cannot be used on creatures.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

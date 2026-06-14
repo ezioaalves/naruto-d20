@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>The touched subject begins to worry that something is wrong, though they cannot pinpoint what, and suffer a -1 penalty to attack rolls and skill checks due to this uncertainty. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>The touched subject begins to worry that something is wrong, though they cannot pinpoint what, and suffer a -1 penalty to attack rolls and skill checks due to this uncertainty. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

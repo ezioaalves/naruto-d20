@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>This technique can only be used while you are affected by Baika no Jutsu. You roll yourself up like an armadillo and spin, crushing enemies in the area for 2d6 bludgeoning damage, plus double your Strength modifier. At the end of your turn, you become @Condition[nauseated]{nauseated} until the end of your next turn (Fortitude DC 14 negates).</p>\n\n\n<p><b>Mastery:</b> The first four steps increase the range by 5 ft each. The fifth step adds the Shapeable (S) effect to the area.</p>\n",
+      "value": "<p>This technique can only be used while you are affected by Baika no Jutsu. You roll yourself up like an armadillo and spin, crushing enemies in the area for 2d6 bludgeoning damage, plus double your Strength modifier. At the end of your turn, you become @Condition[nauseated]{nauseated} until the end of your next turn (Fortitude DC 14 negates).</p>\n\n\n<p><b>Mastery:</b> The first four steps increase the range by 5 ft each. The fifth step adds the Shapeable (S) effect to the area.</p>\n",
       "summary": "",
       "instructions": ""
     },

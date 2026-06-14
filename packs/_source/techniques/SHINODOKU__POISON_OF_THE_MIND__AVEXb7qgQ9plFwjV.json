@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>The subject believes it has been poisoned, and acts as though it has suffered 2d6 ability damage to an ability score of your choice. The subject gains a +2 bonus to its save if you choose Constitution. If the subject's HP are reduced to 0 or lower due to this effect, it acts accordingly. If the subject takes damage while unconscious because of this effect, it will remain awake for 1 round before falling unconscious again.<br><br>There is no secondary damage, and the penalties fade immediately when the technique ends. A creature cannot be affected by more than one instance of this technique at the same time.</p>\n\n\n\n",
+      "value": "<p>The subject believes it has been poisoned, and acts as though it has suffered 2d6 ability damage to an ability score of your choice. The subject gains a +2 bonus to its save if you choose Constitution. If the subject's HP are reduced to 0 or lower due to this effect, it acts accordingly. If the subject takes damage while unconscious because of this effect, it will remain awake for 1 round before falling unconscious again.<br><br>There is no secondary damage, and the penalties fade immediately when the technique ends. A creature cannot be affected by more than one instance of this technique at the same time.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

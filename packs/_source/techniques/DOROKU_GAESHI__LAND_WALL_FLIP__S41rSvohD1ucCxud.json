@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>You touch your hands to the earth and cause a 10 ft high, 10 ft wide and 6' thick block of earth to rise up, creating useful cover.<br><br>The wall has 90 HP and a Hardness of 8, and can be destroyed by dealing enough damage or by making a Strength check (DC 30) against it.</p>\n\n\n\n",
+      "value": "<p>You touch your hands to the earth and cause a 10 ft high, 10 ft wide and 6' thick block of earth to rise up, creating useful cover.<br><br>The wall has 90 HP and a Hardness of 8, and can be destroyed by dealing enough damage or by making a Strength check (DC 30) against it.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>Using this technique, the user creates a thin layer of cooling chakra on his body that shield him against the effects of hot weather. For the duration of this technique, the user will keep himself cool and as though he was under moderate weather if the temperature is above 90°F, but below 110°F. Above 110°F, the technique does not function.</p>\n\n<hr><p><b>Requires:</b> Ryokujun no Jutsu (t)</p>\n<p><b>Mastery:</b> Every step of mastery in this technique allows the technique to be used 2°F higher, up to a<br><br>a maximum of 120°F.</p>\n",
+      "value": "<p>Using this technique, the user creates a thin layer of cooling chakra on his body that shield him against the effects of hot weather. For the duration of this technique, the user will keep himself cool and as though he was under moderate weather if the temperature is above 90°F, but below 110°F. Above 110°F, the technique does not function.</p>\n\n<hr><p><b>Requires:</b> Ryokujun no Jutsu (t)</p>\n<p><b>Mastery:</b> Every step of mastery in this technique allows the technique to be used 2°F higher, up to a<br><br>a maximum of 120°F.</p>\n",
       "summary": "",
       "instructions": ""
     },

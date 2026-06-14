@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> E, F, Mob</p>\n\n<hr>\n\n<p>Make a single attack with your held projectile weapon. If the attack hits, it deals normal damage and pushes the target back 5 ft. If the target is pushed back, you may immediately make a 5 ft step towards the target for free. A Samurai with at least 2 class levels may substi- tute this technique for a normal attack when they make a Full Attack (using the same attack bonus as the substituted attack), but only if they chose the Soujutsu path. If you substitute the technique this way, it cannot be empowered and the Perform Requirements are automatically met.</p>\n\n<hr><p><b>Empower:</b> Spend 4 Chakra to have the attack deal 1d6 bonus damage, plus 1d6 per 4 levels (up to 5d6).</p>\n\n",
+      "value": "<p>Make a single attack with your held projectile weapon. If the attack hits, it deals normal damage and pushes the target back 5 ft. If the target is pushed back, you may immediately make a 5 ft step towards the target for free. A Samurai with at least 2 class levels may substi- tute this technique for a normal attack when they make a Full Attack (using the same attack bonus as the substituted attack), but only if they chose the Soujutsu path. If you substitute the technique this way, it cannot be empowered and the Perform Requirements are automatically met.</p>\n\n<hr><p><b>Empower:</b> Spend 4 Chakra to have the attack deal 1d6 bonus damage, plus 1d6 per 4 levels (up to 5d6).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

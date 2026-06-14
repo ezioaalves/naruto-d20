@@ -14,7 +14,8 @@
         "operator": "add",
         "priority": 0,
         "target": "strMod",
-        "formula": "@item.strRank.combat"
+        "formula": "@item.strRank.combat",
+        "flavor": "JOURYOKU"
       },
       {
         "type": "untyped",
@@ -22,7 +23,8 @@
         "priority": 0,
         "target": "strChecks",
         "formula": "@item.strRank.actions",
-        "_id": "Tset2222"
+        "_id": "Tset2222",
+        "flavor": "JOURYOKU"
       },
       {
         "type": "untyped",
@@ -30,7 +32,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "@item.strRank.carryMult",
-        "target": "carryMult"
+        "target": "carryMult",
+        "flavor": "JOURYOKU"
       },
       {
         "type": "untyped",
@@ -38,7 +41,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "@item.strRank.actions",
-        "target": "cmb"
+        "target": "cmb",
+        "flavor": "JOURYOKU"
       },
       {
         "type": "untyped",
@@ -46,7 +50,8 @@
         "operator": "add",
         "priority": 0,
         "target": "skill.acr",
-        "formula": "@item.strRank.actions"
+        "formula": "@item.strRank.actions",
+        "flavor": "JOURYOKU"
       },
       {
         "type": "untyped",
@@ -54,7 +59,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "@item.strRank.actions",
-        "target": "skill.clm"
+        "target": "skill.clm",
+        "flavor": "JOURYOKU"
       },
       {
         "type": "untyped",
@@ -62,7 +68,8 @@
         "operator": "add",
         "priority": 0,
         "target": "skill.swm",
-        "formula": "@item.strRank.actions"
+        "formula": "@item.strRank.actions",
+        "flavor": "JOURYOKU"
       },
       {
         "type": "untyped",
@@ -70,7 +77,8 @@
         "operator": "add",
         "priority": 0,
         "target": "cmd",
-        "formula": "-@item.strRank.combat"
+        "formula": "-@item.strRank.combat",
+        "flavor": "JOURYOKU"
       }
     ],
     "changeFlags": {

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You ensnare the target's senses, making them completely unable to detect you by sight, hearing or smell. You are treated as invisible to the target. This technique can be dispelled, and the Kaigan technique completely nullifies its effects. If you attack or otherwise harm the target, the technique ends.</p>\n\n\n\n",
+      "value": "<p>You ensnare the target's senses, making them completely unable to detect you by sight, hearing or smell. You are treated as invisible to the target. This technique can be dispelled, and the Kaigan technique completely nullifies its effects. If you attack or otherwise harm the target, the technique ends.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

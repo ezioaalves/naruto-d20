@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H, F, E</p>\n\n<hr>\n\n<p>You charge an object with Chakra. If the object is touched by a Chakra Signature that is different from yours, it explodes, destroying and dealing 2d6 fire damage in a 10 ft. Burst around it (Reflex halves). When performing this technique, you may have the object ignore up to two other Chakra Signatures you are familiar with.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 5d6 total.</p>\n\n",
+      "value": "<p>You charge an object with Chakra. If the object is touched by a Chakra Signature that is different from yours, it explodes, destroying and dealing 2d6 fire damage in a 10 ft. Burst around it (Reflex halves). When performing this technique, you may have the object ignore up to two other Chakra Signatures you are familiar with.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 5d6 total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

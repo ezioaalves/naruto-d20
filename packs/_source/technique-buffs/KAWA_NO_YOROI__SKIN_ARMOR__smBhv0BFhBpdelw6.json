@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "1",
-        "target": "nac"
+        "target": "nac",
+        "flavor": "KAWA NO YOROI"
       }
     ],
     "changeFlags": {

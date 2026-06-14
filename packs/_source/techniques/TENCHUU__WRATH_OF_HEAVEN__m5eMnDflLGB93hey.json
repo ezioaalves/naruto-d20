@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This secret technique was widely used during the civil war in Kumogakure and the Thunder Country. Creatures caught in the area are struck by a bolt of lightning that deals 8d8 electric damage and applies a brand to them in the form of the Seal of Heaven (Ten no In), placed on their forehead. A successful Reflex save halves the damage and avoids the brand.<br><br>A branded creature suffers 1 damage per minute, and becomes immune to any Medical technique of Rank 9 or lower. The brand persists for 1 hour per level. If a branded creature dies, the brand becomes permanent and cannot be removed.</p>\n\n\n\n",
+      "value": "<p>This secret technique was widely used during the civil war in Kumogakure and the Thunder Country. Creatures caught in the area are struck by a bolt of lightning that deals 8d8 electric damage and applies a brand to them in the form of the Seal of Heaven (Ten no In), placed on their forehead. A successful Reflex save halves the damage and avoids the brand.<br><br>A branded creature suffers 1 damage per minute, and becomes immune to any Medical technique of Rank 9 or lower. The brand persists for 1 hour per level. If a branded creature dies, the brand becomes permanent and cannot be removed.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

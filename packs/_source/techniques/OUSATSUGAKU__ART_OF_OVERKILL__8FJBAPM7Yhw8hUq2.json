@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> C, E, Mas</p>\n\n<hr>\n\n<p>This technique is identical to Keirigan Jutsu: Hissatsugaku, except as above.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to affect another target creature, up to 1 target per 4 levels total.</p>\n\n",
+      "value": "<p>This technique is identical to Keirigan Jutsu: Hissatsugaku, except as above.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to affect another target creature, up to 1 target per 4 levels total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

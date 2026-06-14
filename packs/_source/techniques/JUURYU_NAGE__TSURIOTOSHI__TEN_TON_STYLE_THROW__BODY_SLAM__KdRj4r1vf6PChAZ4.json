@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> E, Mob</p>\n\n<hr>\n\n<p>This technique can only be performed if the target is your size category or smaller and you are in a grapple with them. Make an opposed grapple check. If you succeed, you deal your unarmed attack damage to the target, plus 3d6 bonus damage. In addition, you can either knock the target @Condition[prone]{prone} and initiate a pin OR throw the target up to 10 ft away and leave it prone, dealing 1d6 additional damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the bonus damage by 1d6, up to 6d6 total bonus damage.</p>\n\n",
+      "value": "<p>This technique can only be performed if the target is your size category or smaller and you are in a grapple with them. Make an opposed grapple check. If you succeed, you deal your unarmed attack damage to the target, plus 3d6 bonus damage. In addition, you can either knock the target @Condition[prone]{prone} and initiate a pin OR throw the target up to 10 ft away and leave it prone, dealing 1d6 additional damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the bonus damage by 1d6, up to 6d6 total bonus damage.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

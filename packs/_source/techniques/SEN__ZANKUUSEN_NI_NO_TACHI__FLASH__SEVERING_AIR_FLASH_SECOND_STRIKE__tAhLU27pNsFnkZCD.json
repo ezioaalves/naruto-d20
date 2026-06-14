@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>This technique functions like Zankuusen. The maximum number of rays is 1 per 4 levels, and each ray deals 1d6+2 force damage. The knockback increases to 15 ft and the DC to avoid being @Condition[stunned]{stunned} increases to 14. You may have the rays pass through any organic matter (including creatures) on their way to their intended target(s), though each creature they pass through will apply a cumulative -1 penalty to the attack roll for that ray attack.</p>\n\n\n\n",
+      "value": "<p>This technique functions like Zankuusen. The maximum number of rays is 1 per 4 levels, and each ray deals 1d6+2 force damage. The knockback increases to 15 ft and the DC to avoid being @Condition[stunned]{stunned} increases to 14. You may have the rays pass through any organic matter (including creatures) on their way to their intended target(s), though each creature they pass through will apply a cumulative -1 penalty to the attack roll for that ray attack.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

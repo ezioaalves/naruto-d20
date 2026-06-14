@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You place a simple illusion over your hands, obfuscating your hand seals. Choose blur or confusion.<br><br>Blur: You seem to perform hand seals at such an incredible rate that the movements blur, preventing opponents from identifying the technique you perform.<br><br>Confusion: You seem to perform a different technique you are familiar with, as long as it has a perform time within one step of the technique you actually use. This effect only applies if you use hand seals or half seals to perform the technique.<br><br>This technique can be dispelled and does not provoke attacks of opportunity.</p>\n\n\n\n",
+      "value": "<p>You place a simple illusion over your hands, obfuscating your hand seals. Choose blur or confusion.<br><br>Blur: You seem to perform hand seals at such an incredible rate that the movements blur, preventing opponents from identifying the technique you perform.<br><br>Confusion: You seem to perform a different technique you are familiar with, as long as it has a perform time within one step of the technique you actually use. This effect only applies if you use hand seals or half seals to perform the technique.<br><br>This technique can be dispelled and does not provoke attacks of opportunity.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

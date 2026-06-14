@@ -34,10 +34,7 @@ export function installTechniqueSaveDCPatch() {
     const ablMod = item.actor?.system.abilities?.[ability]?.mod ?? 0;
 
     const rollData = args[0] ?? item.actor?.getRollData?.() ?? {};
-    const offset = RollPF.safeRollSync(
-      sourceAction.save?.dc?.toString() || "0",
-      rollData,
-    ).total;
+    const offset = RollPF.safeRollSync(sourceAction.save?.dc?.toString() || "0", rollData).total;
     const dcBonus = rollData.dcBonus ?? 0;
 
     // Buff-driven DC: global ("all") + per-discipline (mirror of pf1's spell DC).

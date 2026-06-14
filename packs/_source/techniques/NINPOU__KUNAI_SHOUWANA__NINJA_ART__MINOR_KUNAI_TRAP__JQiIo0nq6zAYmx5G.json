@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Ninpou: Kunai Wana. You set a Minor Kunai Trap instead.</p>\n\n\n\n",
+      "value": "<p>As Ninpou: Kunai Wana. You set a Minor Kunai Trap instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

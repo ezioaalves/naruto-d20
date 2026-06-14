@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> S, E, F</p>\n\n<hr>\n\n<p>A basic Mirror Arts technique. After throwing a projectile the user illuminates with his mirror before touches his target. The light engulfs the object and creates a duplicate that deals +1d6 point of slashing damage, which can be halved with a successful Reflex save.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> 1 projectile, a Mirror.</p>\n<p><b>Empower:</b> The user can spend an additional point of chakra to deal an additional point of damage, up to a maximum of 1d6+5.</p>\n",
+      "value": "<p>A basic Mirror Arts technique. After throwing a projectile the user illuminates with his mirror before touches his target. The light engulfs the object and creates a duplicate that deals +1d6 point of slashing damage, which can be halved with a successful Reflex save.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> 1 projectile, a Mirror.</p>\n<p><b>Empower:</b> The user can spend an additional point of chakra to deal an additional point of damage, up to a maximum of 1d6+5.</p>\n",
       "summary": "",
       "instructions": ""
     },

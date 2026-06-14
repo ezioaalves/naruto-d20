@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 0 | <b>Perform DC:</b> 0</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>Used as a last resort to avoid the risk of leaking information once captured by your enemies, this technique reduces your HP to -10, killing you instantly.</p>\n\n\n\n",
+      "value": "<p>Used as a last resort to avoid the risk of leaking information once captured by your enemies, this technique reduces your HP to -10, killing you instantly.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

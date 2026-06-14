@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> F, Mas, Mob</p>\n\n<hr>\n\n<p>This technique functions as Soujutsu: Juugeki, except as above, and the knockback distance increases to 1d10 x 5 ft. If the target collides with a solid object, it takes 2d6 fall damage, as though it had fallen 20 ft.</p>\n\n\n<p><b>Mastery:</b> The third step increases the knockback to 2d6 x 5 ft.</p>\n",
+      "value": "<p>This technique functions as Soujutsu: Juugeki, except as above, and the knockback distance increases to 1d10 x 5 ft. If the target collides with a solid object, it takes 2d6 fall damage, as though it had fallen 20 ft.</p>\n\n\n<p><b>Mastery:</b> The third step increases the knockback to 2d6 x 5 ft.</p>\n",
       "summary": "",
       "instructions": ""
     },

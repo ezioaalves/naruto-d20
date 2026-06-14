@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "skill.sen"
+        "target": "skill.sen",
+        "flavor": "CHOUNOURYOKU"
       }
     ],
     "changeFlags": {

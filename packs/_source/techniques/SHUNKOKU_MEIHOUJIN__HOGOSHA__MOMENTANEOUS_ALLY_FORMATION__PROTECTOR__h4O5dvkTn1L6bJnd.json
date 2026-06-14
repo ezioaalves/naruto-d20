@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions as Shunkoku Meihoujin: Bushi, but instead summons a Protector rank summon.</p>\n\n\n\n",
+      "value": "<p>This technique functions as Shunkoku Meihoujin: Bushi, but instead summons a Protector rank summon.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

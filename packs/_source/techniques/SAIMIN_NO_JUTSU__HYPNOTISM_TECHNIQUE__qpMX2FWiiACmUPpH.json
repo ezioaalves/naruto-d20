@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You instill an idea into the subject that you are not threatening to it. You make a Diplomacy check against the target to improve its attitude towards you, and gain a +15 bonus to Diplomacy checks against the subject to do so, and while its attitude is still improved. The improved attitude is shaky at best, and will be undone as soon as you take any action that will obviously affect the subject in a negative manner, provided it has an Intelligence of 3 or greater.</p>\n\n\n\n",
+      "value": "<p>You instill an idea into the subject that you are not threatening to it. You make a Diplomacy check against the target to improve its attitude towards you, and gain a +15 bonus to Diplomacy checks against the subject to do so, and while its attitude is still improved. The improved attitude is shaky at best, and will be undone as soon as you take any action that will obviously affect the subject in a negative manner, provided it has an Intelligence of 3 or greater.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

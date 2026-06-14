@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "4",
-        "target": "skill.esc"
+        "target": "skill.esc",
+        "flavor": "KATSUTAI NO JUTSU"
       },
       {
         "type": "untyped",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "4",
-        "target": "cmb"
+        "target": "cmb",
+        "flavor": "KATSUTAI NO JUTSU"
       },
       {
         "type": "untyped",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "4",
-        "target": "cmd"
+        "target": "cmd",
+        "flavor": "KATSUTAI NO JUTSU"
       }
     ],
     "changeFlags": {

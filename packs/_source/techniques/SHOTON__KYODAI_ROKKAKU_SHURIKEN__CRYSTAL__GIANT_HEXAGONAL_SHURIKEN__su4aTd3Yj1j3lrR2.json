@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>A more advanced version of Shoton: Rokkaku Shuriken, this technique creates a large shuriken, which is hurled at his opponent. The user makes a ranged attack roll with the thrown weapon at his highest attack bonus for each shuriken, dealing 2d8 points of slashing damage plus the user's strength modifier on a successful hit. The shuriken created by this technique dissolve into shimmering, fragments of crystal at the end of the round.</p>\n\n<hr><p><b>Requires:</b> Shoton: Rokkaku Shuriken (3)</p>\n<p><b>Effect:</b> Creates a large-sized shuriken</p>\n",
+      "value": "<p>A more advanced version of Shoton: Rokkaku Shuriken, this technique creates a large shuriken, which is hurled at his opponent. The user makes a ranged attack roll with the thrown weapon at his highest attack bonus for each shuriken, dealing 2d8 points of slashing damage plus the user's strength modifier on a successful hit. The shuriken created by this technique dissolve into shimmering, fragments of crystal at the end of the round.</p>\n\n<hr><p><b>Requires:</b> Shoton: Rokkaku Shuriken (3)</p>\n<p><b>Effect:</b> Creates a large-sized shuriken</p>\n",
       "summary": "",
       "instructions": ""
     },

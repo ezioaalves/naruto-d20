@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You focus Chakra into your nostrils, gaining the Scent Extraordinary quality, when you come within 5 ft. of the source of a scent, you must make a Wisdom check (DC 15) to pinpoint it.</p>\n\n\n\n",
+      "value": "<p>You focus Chakra into your nostrils, gaining the Scent Extraordinary quality, when you come within 5 ft. of the source of a scent, you must make a Wisdom check (DC 15) to pinpoint it.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

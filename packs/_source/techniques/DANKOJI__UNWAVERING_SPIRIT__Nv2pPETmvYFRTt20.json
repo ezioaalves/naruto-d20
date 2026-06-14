@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Genjutsu)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You gain a +1 bonus to identify Genjutsu, and a +1 bonus to Will saves against Genjutsu.</p>\n\n\n\n",
+      "value": "<p>You gain a +1 bonus to identify Genjutsu, and a +1 bonus to Will saves against Genjutsu.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

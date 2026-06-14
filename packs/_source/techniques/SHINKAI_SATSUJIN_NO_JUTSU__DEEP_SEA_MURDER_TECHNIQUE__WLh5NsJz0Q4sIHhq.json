@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The target sees itself surrounded by clear water, and is able to hold its breath and act normally. If the target failed its save, the water turns dark, making the subject unaware of any creatures around it and causing it to start making Constitution checks to avoid drowning (D20 Modern, p213). If the subject falls unconscious, its HP drops by 1 each round until it dies. While drowning, the subject cannot speak.<br><br>If the technique ends or is dispelled before the subject dies, any HP lost because of this technique is instantly restored. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>The target sees itself surrounded by clear water, and is able to hold its breath and act normally. If the target failed its save, the water turns dark, making the subject unaware of any creatures around it and causing it to start making Constitution checks to avoid drowning (D20 Modern, p213). If the subject falls unconscious, its HP drops by 1 each round until it dies. While drowning, the subject cannot speak.<br><br>If the technique ends or is dispelled before the subject dies, any HP lost because of this technique is instantly restored. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

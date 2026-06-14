@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>One enemy caught in Kousen Shibari no Jutsu must make a Fortitude save; failure means that the enemy is dealt 4d4+1 Electrical damage and has a -3 to all Escape Artist and strength checks to get out of Kousen Shibari no Jutsu for the duration of the technique.</p>\n\n<hr><p><b>Requires:</b> Kousen Shibari no Jutsu (t)</p>\n<p><b>Empower:</b> You may spend extra chakra to increase the duration of the technique by 1 per 2 chakra spent, (Maximum +2 rounds).</p>\n",
+      "value": "<p>One enemy caught in Kousen Shibari no Jutsu must make a Fortitude save; failure means that the enemy is dealt 4d4+1 Electrical damage and has a -3 to all Escape Artist and strength checks to get out of Kousen Shibari no Jutsu for the duration of the technique.</p>\n\n<hr><p><b>Requires:</b> Kousen Shibari no Jutsu (t)</p>\n<p><b>Empower:</b> You may spend extra chakra to increase the duration of the technique by 1 per 2 chakra spent, (Maximum +2 rounds).</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>You send a volley of deadly sand pellets to rain down on an area for one round. Creatures within the area take 2d6 Piercing and 2d6 Earth damage, and have their land and flight movement speed halved, though it does not restrict them from running.</p>\n\n\n\n",
+      "value": "<p>You send a volley of deadly sand pellets to rain down on an area for one round. Creatures within the area take 2d6 Piercing and 2d6 Earth damage, and have their land and flight movement speed halved, though it does not restrict them from running.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

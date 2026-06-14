@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>You press your hand into the ground and cause tremors to shake the area, making creatures within fall @Condition[prone]{prone}.</p>\n\n\n\n",
+      "value": "<p>You press your hand into the ground and cause tremors to shake the area, making creatures within fall @Condition[prone]{prone}.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

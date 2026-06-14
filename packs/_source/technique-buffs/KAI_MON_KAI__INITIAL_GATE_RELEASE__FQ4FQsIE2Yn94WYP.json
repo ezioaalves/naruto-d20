@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "str"
+        "target": "str",
+        "flavor": "KAI-MON KAI"
       },
       {
         "type": "enh",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "dex"
+        "target": "dex",
+        "flavor": "KAI-MON KAI"
       },
       {
         "type": "untyped",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "10",
-        "target": "landSpeed"
+        "target": "landSpeed",
+        "flavor": "KAI-MON KAI"
       }
     ],
     "changeFlags": {

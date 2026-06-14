@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> F</p>\n\n<hr>\n\n<p>You use a camouflage to conceal yourself. As long as you are not observed and have at least one-quarter cover, you make a Hide check and gain a +4 bonus to the check. You will remain hidden until you take an action requiring exaggerated or vigorous movement.</p>\n\n\n\n",
+      "value": "<p>You use a camouflage to conceal yourself. As long as you are not observed and have at least one-quarter cover, you make a Hide check and gain a +4 bonus to the check. You will remain hidden until you take an action requiring exaggerated or vigorous movement.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

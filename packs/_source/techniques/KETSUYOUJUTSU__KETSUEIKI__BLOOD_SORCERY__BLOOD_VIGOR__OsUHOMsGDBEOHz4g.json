@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, E, F, S</p>\n\n<hr>\n\n<p>You carve glowing runes into your skin, creating a dormant seal that can be activated as an instant action to grant you 5 temporary HP for 1 minute. While activated, any fatigue effect on you is ignored, and any exhaustion effect becomes a fatigue effect instead. Once the activation ends, the conditions will return to normal, unless the effect causing them already ended. You take 5 damage every time you attempt to perform this technique.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra and deal 1 additional damage to yourself to increase the temporary HP granted by 1. Doing so requires additional seal slots: A single seal slot (including the original) can store 5 HP.</p>\n\n",
+      "value": "<p>You carve glowing runes into your skin, creating a dormant seal that can be activated as an instant action to grant you 5 temporary HP for 1 minute. While activated, any fatigue effect on you is ignored, and any exhaustion effect becomes a fatigue effect instead. Once the activation ends, the conditions will return to normal, unless the effect causing them already ended. You take 5 damage every time you attempt to perform this technique.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra and deal 1 additional damage to yourself to increase the temporary HP granted by 1. Doing so requires additional seal slots: A single seal slot (including the original) can store 5 HP.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

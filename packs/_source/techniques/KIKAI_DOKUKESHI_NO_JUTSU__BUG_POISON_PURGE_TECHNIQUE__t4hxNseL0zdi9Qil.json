@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>You imbue one of your kikaichuu with the ability to suck out poison from the target, reversing any damage and removing the need for any additional saves. The used kikaichuu returns to your body, where it must rest for 1 day until it can be used again. This technique can only be used on a creature that is also a host to kikaichuu.</p>\n\n\n\n",
+      "value": "<p>You imbue one of your kikaichuu with the ability to suck out poison from the target, reversing any damage and removing the need for any additional saves. The used kikaichuu returns to your body, where it must rest for 1 day until it can be used again. This technique can only be used on a creature that is also a host to kikaichuu.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

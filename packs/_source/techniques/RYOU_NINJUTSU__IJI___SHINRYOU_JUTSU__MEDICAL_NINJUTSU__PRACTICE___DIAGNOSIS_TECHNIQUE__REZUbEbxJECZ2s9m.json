@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Medical)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You analyze the touched creature, and will immediately know if it is suffering from blindness, dazed, deafness, exhaustion, fatigue, nausea, paralysis and/or stun. In addition, you know if the target is suffering from Chakra Overload (due to Iryou Ninjutsu: Chiyu techniques), poisons or diseases and whether any of the conditions detected are temporary or permanent.<br><br>You also detect the target's current HP and Chakra compared to its maximum, rounded to quarter units (for example, it may have ½ HP left).</p>\n\n\n\n",
+      "value": "<p>You analyze the touched creature, and will immediately know if it is suffering from blindness, dazed, deafness, exhaustion, fatigue, nausea, paralysis and/or stun. In addition, you know if the target is suffering from Chakra Overload (due to Iryou Ninjutsu: Chiyu techniques), poisons or diseases and whether any of the conditions detected are temporary or permanent.<br><br>You also detect the target's current HP and Chakra compared to its maximum, rounded to quarter units (for example, it may have ½ HP left).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

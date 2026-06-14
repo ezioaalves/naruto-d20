@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Hachimon Tonkou </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Kai-mon Kai, except as above, and you open the Heal Gate, gaining Fast Healing 2 in addition to the bonuses of Kai-mon Kai. You also ignore any fatigue or exhaustion you may suffer from while the Heal Gate is open, and any Strength or Dexterity damage is temporarily ineffective (it will return when this technique ends). You take 3 Chakra damage  (but no normal damage) per round while this gate is opened.</p>\n\n\n<p><b>Mastery:</b> The first, third and fifth steps increase the Fast Healing value by 1 (each). The fifth step also reduces the Chakra damage taken to 2 per round.<br><br>The second step allows you to activate this technique as part of opening a greater Gate. Doing so will not grant you its benefits, nor will it have you suffer from any of its penalties.</p>\n",
+      "value": "<p>As Kai-mon Kai, except as above, and you open the Heal Gate, gaining Fast Healing 2 in addition to the bonuses of Kai-mon Kai. You also ignore any fatigue or exhaustion you may suffer from while the Heal Gate is open, and any Strength or Dexterity damage is temporarily ineffective (it will return when this technique ends). You take 3 Chakra damage  (but no normal damage) per round while this gate is opened.</p>\n\n\n<p><b>Mastery:</b> The first, third and fifth steps increase the Fast Healing value by 1 (each). The fifth step also reduces the Chakra damage taken to 2 per round.<br><br>The second step allows you to activate this technique as part of opening a greater Gate. Doing so will not grant you its benefits, nor will it have you suffer from any of its penalties.</p>\n",
       "summary": "",
       "instructions": ""
     },
@@ -43,6 +43,25 @@
     "isCombination": false,
     "performMiscBonus": 0,
     "active": false,
+    "automation": {
+      "enabled": true,
+      "targetMode": "self",
+      "maintenance": {
+        "enabled": true,
+        "resource": "chakraDamage",
+        "cost": "3 - floor(@mastery / 5)",
+        "policy": "forced",
+        "interval": 1,
+        "waiver": "",
+        "waiverStep": 2,
+        "freeRounds": 5,
+        "choice": "",
+        "heal": "2 + ceil(@mastery / 2)",
+        "clearConditions": "fatigued,exhausted",
+        "element": false,
+        "elementDoubleStep": 5
+      }
+    },
     "changes": [],
     "actions": [
       {
@@ -58,7 +77,8 @@
           }
         },
         "duration": {
-          "units": "inst"
+          "units": "round",
+          "value": "@cl"
         },
         "range": {
           "units": "personal"

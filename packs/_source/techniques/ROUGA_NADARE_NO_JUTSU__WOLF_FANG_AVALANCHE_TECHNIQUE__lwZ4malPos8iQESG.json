@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>You send a pack of snow wolves tearing through the area, dealing 6d8 cold damage (Reflex halves), as well as 4d8 slashing damage. Creatures of Large or smaller size are pushed back 1d6 x 5 ft (Fortitude negates). The technique's range only limits the point where you can have the line start. The line can go in any direction you choose.</p>\n\n\n\n",
+      "value": "<p>You send a pack of snow wolves tearing through the area, dealing 6d8 cold damage (Reflex halves), as well as 4d8 slashing damage. Creatures of Large or smaller size are pushed back 1d6 x 5 ft (Fortitude negates). The technique's range only limits the point where you can have the line start. The line can go in any direction you choose.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

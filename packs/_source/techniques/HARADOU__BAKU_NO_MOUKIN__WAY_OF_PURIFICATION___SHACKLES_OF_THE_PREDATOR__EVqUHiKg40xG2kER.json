@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>Used by demon hunters to mark their prey, this technique leaves a cross-shaped seal on the target's body, which takes up a seal slot. While it lasts, the seal can be instantly detected and pinpointed by anyone sensing Chakra, as long as it is within range of the senses. Evil outsiders are unable to see, sense or feel the mark.</p>\n\n\n\n",
+      "value": "<p>Used by demon hunters to mark their prey, this technique leaves a cross-shaped seal on the target's body, which takes up a seal slot. While it lasts, the seal can be instantly detected and pinpointed by anyone sensing Chakra, as long as it is within range of the senses. Evil outsiders are unable to see, sense or feel the mark.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

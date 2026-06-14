@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H, Mas</p>\n\n<hr>\n\n<p>Your Katsugan deactivates: you no longer pay its cost or gain its benefits. You also become @Condition[blind]{blinded} for the technique's duration (Fortitude DC 20 negates).</p>\n\n\n<p><b>Mastery:</b> Each step grants a cumulative +2 bonus to the save to resist being blinded.</p>\n",
+      "value": "<p>Your Katsugan deactivates: you no longer pay its cost or gain its benefits. You also become @Condition[blind]{blinded} for the technique's duration (Fortitude DC 20 negates).</p>\n\n\n<p><b>Mastery:</b> Each step grants a cumulative +2 bonus to the save to resist being blinded.</p>\n",
       "summary": "",
       "instructions": ""
     },

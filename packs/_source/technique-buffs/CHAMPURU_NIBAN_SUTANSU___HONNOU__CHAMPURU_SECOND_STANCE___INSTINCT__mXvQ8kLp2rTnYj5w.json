@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "target": "attack",
-        "formula": "2"
+        "formula": "2",
+        "flavor": "CHAMPURU NIBAN SUTANSU - HONNOU"
       },
       {
         "type": "untyped",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "target": "skill.acr",
-        "formula": "2"
+        "formula": "2",
+        "flavor": "CHAMPURU NIBAN SUTANSU - HONNOU"
       },
       {
         "type": "untyped",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "target": "damage",
-        "formula": "2"
+        "formula": "2",
+        "flavor": "CHAMPURU NIBAN SUTANSU - HONNOU"
       },
       {
         "type": "untyped",
@@ -37,7 +40,8 @@
         "operator": "add",
         "priority": 0,
         "target": "cmb",
-        "formula": "2"
+        "formula": "2",
+        "flavor": "CHAMPURU NIBAN SUTANSU - HONNOU"
       }
     ],
     "changeFlags": {

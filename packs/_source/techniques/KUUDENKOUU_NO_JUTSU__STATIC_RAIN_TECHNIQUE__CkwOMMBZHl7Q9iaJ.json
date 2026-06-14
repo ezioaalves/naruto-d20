@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>The target must be reasonably wet (such as standing in the rain) or immersed in water. The subject suffers a -2 penalty to saves against Raiton techniques, and such techniques deal 1 bonus damage to him per 2 Ranks (minimum +1).</p>\n\n\n\n",
+      "value": "<p>The target must be reasonably wet (such as standing in the rain) or immersed in water. The subject suffers a -2 penalty to saves against Raiton techniques, and such techniques deal 1 bonus damage to him per 2 Ranks (minimum +1).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

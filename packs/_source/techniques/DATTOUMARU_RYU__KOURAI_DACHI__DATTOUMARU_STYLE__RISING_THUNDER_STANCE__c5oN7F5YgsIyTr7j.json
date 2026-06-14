@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You can only use this stance while your Hiraishin is active. Half your unarmed attack damage becomes electric, and you gain electric resistance 5. On a critical hit, unarmed attacks deal 1d10 bonus electricity damage.</p>\n\n\n\n",
+      "value": "<p>You can only use this stance while your Hiraishin is active. Half your unarmed attack damage becomes electric, and you gain electric resistance 5. On a critical hit, unarmed attacks deal 1d10 bonus electricity damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

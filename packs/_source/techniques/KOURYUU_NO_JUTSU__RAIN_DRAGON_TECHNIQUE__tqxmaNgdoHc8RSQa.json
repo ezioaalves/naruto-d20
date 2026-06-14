@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You infuse falling rain with Chakra, turning it into a dragon of rain that circles the area. Each round, you can direct the dragon to attack a creature within the area, making a touch attack at a +12 bonus, dealing 2d6+2 water damage. Creatures hit must save against poison (Fortitude DC 15, primary and secondary damage 1d4 temporary Wisdom damage). This technique can only be used in a rainy area.</p>\n\n\n\n",
+      "value": "<p>You infuse falling rain with Chakra, turning it into a dragon of rain that circles the area. Each round, you can direct the dragon to attack a creature within the area, making a touch attack at a +12 bonus, dealing 2d6+2 water damage. Creatures hit must save against poison (Fortitude DC 15, primary and secondary damage 1d4 temporary Wisdom damage). This technique can only be used in a rainy area.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

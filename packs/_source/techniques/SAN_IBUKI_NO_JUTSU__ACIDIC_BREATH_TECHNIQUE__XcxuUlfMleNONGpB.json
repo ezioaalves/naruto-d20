@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You expel a cloud of acid from your lungs, filling and adjacent 10 ft square. The cloud grows to a 15 ft square the second round, and a 20 ft square the third, and will disperse four rounds after that. A moderate wind (11+ mph) disperses it in three rounds, and a strong wind (21+ mph) disperses it in a single round. Creatures within the cloud take 3d8 acid damage each round they remain within.</p>\n\n\n\n",
+      "value": "<p>You expel a cloud of acid from your lungs, filling and adjacent 10 ft square. The cloud grows to a 15 ft square the second round, and a 20 ft square the third, and will disperse four rounds after that. A moderate wind (11+ mph) disperses it in three rounds, and a strong wind (21+ mph) disperses it in a single round. Creatures within the cloud take 3d8 acid damage each round they remain within.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

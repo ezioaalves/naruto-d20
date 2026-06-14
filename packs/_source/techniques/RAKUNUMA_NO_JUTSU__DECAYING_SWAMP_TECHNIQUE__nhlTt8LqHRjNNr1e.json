@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C, S, F</p>\n\n<hr>\n\n<p>You touch a swamp you've created with the Yomi Numa technique, reducing its duration to 1r/level and having it deal 1d6 acid damage each round to creatures trapped in it. Creatures walking on the swamp without protective footwear take only 1 acid damage per round. The swamp does not affect any creature with your Chakra signature.</p>\n\n\n\n",
+      "value": "<p>You touch a swamp you've created with the Yomi Numa technique, reducing its duration to 1r/level and having it deal 1d6 acid damage each round to creatures trapped in it. Creatures walking on the swamp without protective footwear take only 1 acid damage per round. The swamp does not affect any creature with your Chakra signature.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

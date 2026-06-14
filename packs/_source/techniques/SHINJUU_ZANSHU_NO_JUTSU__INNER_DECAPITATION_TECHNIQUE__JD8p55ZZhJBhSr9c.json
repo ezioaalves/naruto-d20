@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You must be moving underground with a burrow speed in order to use this technique. You grab the subject and pull it down into the earth, burying it up to its neck. The subject is immobilized until it can succeed three Escape Artist checks (DC 15) in a row, each requiring a move action.<br><br>As a result of this technique, you will be halfway out of the ground.</p>\n\n\n\n",
+      "value": "<p>You must be moving underground with a burrow speed in order to use this technique. You grab the subject and pull it down into the earth, burying it up to its neck. The subject is immobilized until it can succeed three Escape Artist checks (DC 15) in a row, each requiring a move action.<br><br>As a result of this technique, you will be halfway out of the ground.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

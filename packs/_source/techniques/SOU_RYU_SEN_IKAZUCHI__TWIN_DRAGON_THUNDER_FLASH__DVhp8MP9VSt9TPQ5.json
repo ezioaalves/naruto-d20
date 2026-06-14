@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> F, Mas, Mob</p>\n\n<hr>\n\n<p>This technique functions as Sou Ryu Sen, except as above, and you swap the attacks, making the sheath attack first. If the sheath attack hits, the target is denied its Dexterity bonus to Defense against the Iaido attack.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to increase the Perform Requirements by 8 and the Cost by 5 to have the Iaido attack also target any creatures adjacent to the target, though doing so will cause you to suffer a -4 penalty to hit with that attack. If you fail to meet the higher Perform Requirements but do meet the normal ones, you perform this technique as normal, without its enhanced effects (at the normal Cost).</p>\n",
+      "value": "<p>This technique functions as Sou Ryu Sen, except as above, and you swap the attacks, making the sheath attack first. If the sheath attack hits, the target is denied its Dexterity bonus to Defense against the Iaido attack.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to increase the Perform Requirements by 8 and the Cost by 5 to have the Iaido attack also target any creatures adjacent to the target, though doing so will cause you to suffer a -4 penalty to hit with that attack. If you fail to meet the higher Perform Requirements but do meet the normal ones, you perform this technique as normal, without its enhanced effects (at the normal Cost).</p>\n",
       "summary": "",
       "instructions": ""
     },

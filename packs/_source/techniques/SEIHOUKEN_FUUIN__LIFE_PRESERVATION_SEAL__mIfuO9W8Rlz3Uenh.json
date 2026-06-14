@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You touch a creature and apply a seal that prevents it from using any technique that ends its own life, such as Jisatsu no Jutsu or Bakuretsu Junjiru no Jutsu, and grants the subject a +2 bonus to saves against poisons and diseases.</p>\n\n\n\n",
+      "value": "<p>You touch a creature and apply a seal that prevents it from using any technique that ends its own life, such as Jisatsu no Jutsu or Bakuretsu Junjiru no Jutsu, and grants the subject a +2 bonus to saves against poisons and diseases.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -28,7 +28,9 @@ const DB_DIR = resolve(getArgValue("--source", DEFAULT_DB_DIR));
  * Empty string / "No" → false. "Yes*", "Yes (harmless)", "*" → true.
  */
 function parseCR(raw) {
-  const normalized = String(raw ?? "").trim().toLowerCase();
+  const normalized = String(raw ?? "")
+    .trim()
+    .toLowerCase();
   if (!normalized || normalized === "no") return false;
   return true;
 }

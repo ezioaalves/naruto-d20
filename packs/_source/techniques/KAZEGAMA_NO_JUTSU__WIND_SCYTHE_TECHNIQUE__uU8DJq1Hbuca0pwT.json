@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You fire a curved blade of wind, dealing 1d8 wind damage. The line cannot reach beyond 30 ft range.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1 (maximum 1d8+5 damage total).</p>\n\n",
+      "value": "<p>You fire a curved blade of wind, dealing 1d8 wind damage. The line cannot reach beyond 30 ft range.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1 (maximum 1d8+5 damage total).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

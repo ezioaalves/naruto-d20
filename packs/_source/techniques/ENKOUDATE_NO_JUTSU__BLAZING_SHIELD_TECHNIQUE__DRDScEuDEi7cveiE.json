@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You shroud yourself with a thick layer of hot air and flames, gaining a +2 deflection bonus to Defense, DR 2/- and +4 to all saves against fire effects, and if such effects allow for a save to take half damage, you take no damage on a successful save instead. If a creature attacks you with a natural or unarmed melee attack, it suffers 1d4 fire damage (CR applies).</p>\n\n\n\n",
+      "value": "<p>You shroud yourself with a thick layer of hot air and flames, gaining a +2 deflection bonus to Defense, DR 2/- and +4 to all saves against fire effects, and if such effects allow for a save to take half damage, you take no damage on a successful save instead. If a creature attacks you with a natural or unarmed melee attack, it suffers 1d4 fire damage (CR applies).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

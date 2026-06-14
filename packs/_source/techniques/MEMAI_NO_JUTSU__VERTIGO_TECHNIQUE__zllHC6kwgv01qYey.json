@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>The subject suddenly experiences itself being high up in the air, and suffers a sensation as though it were falling, becoming unable to act for one round, and must make a second Will save next round to avoid falling @Condition[prone]{prone} and becoming @Condition[nauseated;duration=1]{nauseated} for 1 round. This technique cannot be dispelled, and cannot be used on the same creature more than once per 24 hours.</p>\n\n\n\n",
+      "value": "<p>The subject suddenly experiences itself being high up in the air, and suffers a sensation as though it were falling, becoming unable to act for one round, and must make a second Will save next round to avoid falling @Condition[prone]{prone} and becoming @Condition[nauseated;duration=1]{nauseated} for 1 round. This technique cannot be dispelled, and cannot be used on the same creature more than once per 24 hours.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

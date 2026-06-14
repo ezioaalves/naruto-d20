@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You manipulate the target's brain, causing them to become violently ill and be @Condition[nauseated]{nauseated}. This effect can be dispelled.</p>\n\n\n\n",
+      "value": "<p>You manipulate the target's brain, causing them to become violently ill and be @Condition[nauseated]{nauseated}. This effect can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

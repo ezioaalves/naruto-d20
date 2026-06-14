@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Rainfall within the area turns to iron for a short time, dealing 6d8 damage to all creatures and structures in the area (if there is no rain, nothing happens). Structures cannot make a save for half damage, and they take double damage if their entire width is encompassed by the area.</p>\n\n\n\n",
+      "value": "<p>Rainfall within the area turns to iron for a short time, dealing 6d8 damage to all creatures and structures in the area (if there is no rain, nothing happens). Structures cannot make a save for half damage, and they take double damage if their entire width is encompassed by the area.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

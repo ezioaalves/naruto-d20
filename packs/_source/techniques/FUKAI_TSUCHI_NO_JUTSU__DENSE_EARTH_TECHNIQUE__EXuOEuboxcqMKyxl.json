@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>This jutsu when performed increases the hardness of the rock around it permanently by 1, and an additional 1 for every 4 levels there after level 1. Rock affected by this jutsu may only be hardened in this manner once, unless anot her user would increase the rock's hardness, at which point it rises to this new amount.<br><br>Anyone besides the user of this jutsu trying to use Ishi Nanka no Jutsu on rock affected by this jutsu resist.</p>\n\n<hr><p><b>Requires:</b> Chi Katame no Jutsu (5)</p>\n<p><b>Effect:</b> Increases the hardness of rock 5 ft. cube per level/round</p>\n<p><b>Mastery:</b> At every odd level, lower the chakra cost by 1.</p>\n",
+      "value": "<p>This jutsu when performed increases the hardness of the rock around it permanently by 1, and an additional 1 for every 4 levels there after level 1. Rock affected by this jutsu may only be hardened in this manner once, unless anot her user would increase the rock's hardness, at which point it rises to this new amount.<br><br>Anyone besides the user of this jutsu trying to use Ishi Nanka no Jutsu on rock affected by this jutsu resist.</p>\n\n<hr><p><b>Requires:</b> Chi Katame no Jutsu (5)</p>\n<p><b>Effect:</b> Increases the hardness of rock 5 ft. cube per level/round</p>\n<p><b>Mastery:</b> At every odd level, lower the chakra cost by 1.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H, F</p>\n\n<hr>\n\n<p>You create a ferocious tiger of ice and snow that lunges towards a primary target within the area, dealing 8d6 damage (half cold, half slashing) to it. Afterward, it dives toward up to one secondary target per 2 levels within the area, maximum 12 secondary targets total, dealing half the primary damage to each of them. The damage can be halved with a Reflex save. Creatures taking damage must make a second Reflex save to avoid suffering a -1 penalty to attack rolls and skill checks for 1 minute due to the freezing cold, which is removed if a target is healed for at least one HP by a medical technique.</p>\n\n\n\n",
+      "value": "<p>You create a ferocious tiger of ice and snow that lunges towards a primary target within the area, dealing 8d6 damage (half cold, half slashing) to it. Afterward, it dives toward up to one secondary target per 2 levels within the area, maximum 12 secondary targets total, dealing half the primary damage to each of them. The damage can be halved with a Reflex save. Creatures taking damage must make a second Reflex save to avoid suffering a -1 penalty to attack rolls and skill checks for 1 minute due to the freezing cold, which is removed if a target is healed for at least one HP by a medical technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

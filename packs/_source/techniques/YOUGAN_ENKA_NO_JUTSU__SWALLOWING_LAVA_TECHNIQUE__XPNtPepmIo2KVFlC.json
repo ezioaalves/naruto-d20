@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Yoton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>To properly perform this technique, there must be at least 2 feet of lava below the target if it is Tiny or smaller, 5 if it is Small or Medium size, 10 if it is Large, 20 if it is Huge, 30 if it is Gargantuan and 50 if it is Colossal. The lava underneath the target will open up and swallow the target unless it makes a Reflex save to avoid falling in the technique. A creature so buried is only partially exposed and cannot move, perform any actions other than a free action and is immobilized until it can succeed three Escape Artist or Dexterity check (DC 18) in a row. A trapped creature suffers 2d6 point of lava damage per round.</p>\n",
+      "value": "<p>To properly perform this technique, there must be at least 2 feet of lava below the target if it is Tiny or smaller, 5 if it is Small or Medium size, 10 if it is Large, 20 if it is Huge, 30 if it is Gargantuan and 50 if it is Colossal. The lava underneath the target will open up and swallow the target unless it makes a Reflex save to avoid falling in the technique. A creature so buried is only partially exposed and cannot move, perform any actions other than a free action and is immobilized until it can succeed three Escape Artist or Dexterity check (DC 18) in a row. A trapped creature suffers 2d6 point of lava damage per round.</p>\n",
       "summary": "",
       "instructions": ""
     },

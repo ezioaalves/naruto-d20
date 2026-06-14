@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 0</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>The target must be a creature you are grappling with and have pinned. Make a Grapple check against the target. If successful, the target can make a Reflex save (DC 20) to avoid being 'kissed' by you. If it does not, you may use the Chakra Vampire ability to drain 1d6 Chakra, though the target can make a Fortitude save (DC 15) to resist, having you drain only 1 Chakra if successful. Cannot be used two rounds in a row.</p>\n\n\n<p><b>Mastery:</b> The fifth step increases the Chakra drain to 1d8 on a successful kiss.</p>\n",
+      "value": "<p>The target must be a creature you are grappling with and have pinned. Make a Grapple check against the target. If successful, the target can make a Reflex save (DC 20) to avoid being 'kissed' by you. If it does not, you may use the Chakra Vampire ability to drain 1d6 Chakra, though the target can make a Fortitude save (DC 15) to resist, having you drain only 1 Chakra if successful. Cannot be used two rounds in a row.</p>\n\n\n<p><b>Mastery:</b> The fifth step increases the Chakra drain to 1d8 on a successful kiss.</p>\n",
       "summary": "",
       "instructions": ""
     },

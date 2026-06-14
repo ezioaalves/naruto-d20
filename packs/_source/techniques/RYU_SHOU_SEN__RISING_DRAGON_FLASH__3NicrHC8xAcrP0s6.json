@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>To use this technique, the target must be of the same size category as you, and you must wield the weapon used with two hands. The technique cannot be used on a moving (or falling) target. Make a melee attack against the target, which will deal 1d4 additional slashing damage per 2 levels (up to 5d4) on hit. In addition, the target is thrown upwards 1d3 x 5 ft, losing its Dexterity bonus to Defense and becoming unable to act until it starts falling on its next turn.</p>\n\n\n\n",
+      "value": "<p>To use this technique, the target must be of the same size category as you, and you must wield the weapon used with two hands. The technique cannot be used on a moving (or falling) target. Make a melee attack against the target, which will deal 1d4 additional slashing damage per 2 levels (up to 5d4) on hit. In addition, the target is thrown upwards 1d3 x 5 ft, losing its Dexterity bonus to Defense and becoming unable to act until it starts falling on its next turn.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

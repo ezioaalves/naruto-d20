@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 50</p>\n\n<p><b>Learn DC:</b> 31 | <b>Successes:</b> 8</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> C, H, P, X</p>\n\n<hr>\n\n<p>This seal must be applied to a creature with a Chakra Signature identical to your own, and isn't affected by ability damage, fatigue, exhaustion or movement impairing effects. The creature ignores any aging penalties it is currently suffering from. When the seal ends, its bearer suffers 1d6 temporary Strength, Dexterity and Constitution damage and becomes @Condition[nauseated]{nauseated} for 2d6+2 hours.</p>\n\n\n\n",
+      "value": "<p>This seal must be applied to a creature with a Chakra Signature identical to your own, and isn't affected by ability damage, fatigue, exhaustion or movement impairing effects. The creature ignores any aging penalties it is currently suffering from. When the seal ends, its bearer suffers 1d6 temporary Strength, Dexterity and Constitution damage and becomes @Condition[nauseated]{nauseated} for 2d6+2 hours.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

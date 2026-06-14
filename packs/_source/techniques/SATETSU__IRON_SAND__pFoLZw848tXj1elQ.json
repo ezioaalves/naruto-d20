@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 40</p>\n\n<p><b>Learn DC:</b> 30 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 18 | <b>Perform DC:</b> 34</p>\n\n<p><b>Components:</b> C, M *</p>\n\n<hr>\n\n<p>Inspired by the bearer of the Shukaku, this ritual was designed to grant similar powers by sealing a mass of sand and iron into your body. Upon completion, you gain the Satetsu Template (p353), and your weight increases by 40 lbs. You suffer 1d2 temporary negative levels (Fortitude DC 25 negates). If you fail the save, you must make a second save after 24 hours to avoid the negative levels becoming permanent. The seals cannot be broken or removed except by you.</p>\n\n\n\n",
+      "value": "<p>Inspired by the bearer of the Shukaku, this ritual was designed to grant similar powers by sealing a mass of sand and iron into your body. Upon completion, you gain the Satetsu Template (p353), and your weight increases by 40 lbs. You suffer 1d2 temporary negative levels (Fortitude DC 25 negates). If you fail the save, you must make a second save after 24 hours to avoid the negative levels becoming permanent. The seals cannot be broken or removed except by you.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

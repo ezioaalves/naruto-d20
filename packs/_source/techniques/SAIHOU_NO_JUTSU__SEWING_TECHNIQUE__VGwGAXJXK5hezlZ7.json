@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You repair torn or damaged fabric, recovering it for 1 HP each round while touching it. This technique cannot mend complex fabrics, nor can it restore clothing or fabric that was completely destroyed.</p>\n\n\n\n",
+      "value": "<p>You repair torn or damaged fabric, recovering it for 1 HP each round while touching it. This technique cannot mend complex fabrics, nor can it restore clothing or fabric that was completely destroyed.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

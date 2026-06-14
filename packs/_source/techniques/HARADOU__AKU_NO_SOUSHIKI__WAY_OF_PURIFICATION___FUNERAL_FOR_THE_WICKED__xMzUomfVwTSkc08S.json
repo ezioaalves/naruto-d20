@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, P</p>\n\n<hr>\n\n<p>You make a touch attack that has the power to reject evil influence. If the attack hits, the target must make a save to avoid being disintegrated, leaving behind only the items it was holding and/or wearing.</p>\n\n\n\n",
+      "value": "<p>You make a touch attack that has the power to reject evil influence. If the attack hits, the target must make a save to avoid being disintegrated, leaving behind only the items it was holding and/or wearing.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

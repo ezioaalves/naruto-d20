@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>As long as there is at least a breeze (3+ mph wind) in the area around you, you can determine which direction is North with perfect accuracy, though techniques that create an artificial airflow may disrupt that ability. This technique may aid you in detecting an environment-changing illusory effect (GM's discretion).</p>\n\n\n\n",
+      "value": "<p>As long as there is at least a breeze (3+ mph wind) in the area around you, you can determine which direction is North with perfect accuracy, though techniques that create an artificial airflow may disrupt that ability. This technique may aid you in detecting an environment-changing illusory effect (GM's discretion).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

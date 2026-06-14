@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Medical)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H, P, E, 1 point of Constitution damage</p>\n\n<hr>\n\n<p>You use your own blood to close an ally's wounds. You take 1 point of Constitution damage and the target heals 1 Hit Point for each character level they have. At any time before either of you rest, you may forcefully regain your blood, the target loses Hit Points equal to the amount of HP this technique restored them, and you regain the Constitution damage dealt to you by this technique.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n<p><b>Empower:</b> You may spend an additional 5 chakra and 1 point of Constitution to heal the target for an additional 1 HP per character level.</p>\n",
+      "value": "<p>You use your own blood to close an ally's wounds. You take 1 point of Constitution damage and the target heals 1 Hit Point for each character level they have. At any time before either of you rest, you may forcefully regain your blood, the target loses Hit Points equal to the amount of HP this technique restored them, and you regain the Constitution damage dealt to you by this technique.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n<p><b>Empower:</b> You may spend an additional 5 chakra and 1 point of Constitution to heal the target for an additional 1 HP per character level.</p>\n",
       "summary": "",
       "instructions": ""
     },

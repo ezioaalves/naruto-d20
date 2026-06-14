@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>The subjects see a murder of crows descend upon them and assault them. They suffer a -10 penalty to Spot and Listen checks, must make a Concentration check (DC 15) to use any action requiring concentration, and lose their Dexterity bonus to Defense against the first attack made against them. If attacked, the illusion immediately fades.<br><br>A creature cannot be affected by this technique more than once per hour.</p>\n\n\n\n",
+      "value": "<p>The subjects see a murder of crows descend upon them and assault them. They suffer a -10 penalty to Spot and Listen checks, must make a Concentration check (DC 15) to use any action requiring concentration, and lose their Dexterity bonus to Defense against the first attack made against them. If attacked, the illusion immediately fades.<br><br>A creature cannot be affected by this technique more than once per hour.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

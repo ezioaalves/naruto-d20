@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "1",
-        "target": "skill.ste"
+        "target": "skill.ste",
+        "flavor": "SHINOBI NO JUTSU"
       }
     ],
     "changeFlags": {

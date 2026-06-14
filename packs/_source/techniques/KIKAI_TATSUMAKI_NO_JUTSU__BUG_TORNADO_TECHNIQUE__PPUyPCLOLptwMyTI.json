@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H, F, E</p>\n\n<hr>\n\n<p>A deadly attack created by the Aburame as a way to quickly eliminate a single opponent by sending multiple swarms of symbiotes at the opponent where they attack in a swirling motion, much like a tornado. The opponent suffers 1d4 points of chakra damage per swarm, and must succeed a fortitude save or be nauseated for 1 round.<br><br>The cost is 8+2 chakra for each additional swarm, up to a max of 1 per 3 levels of the user.</p>\n\n<hr><p><b>Requires:</b> ; Kikai Host</p>\n<p><b>Mastery:</b> At first, third and fifth step mastery, gain +1 chakra damage per swarm.</p>\n",
+      "value": "<p>A deadly attack created by the Aburame as a way to quickly eliminate a single opponent by sending multiple swarms of symbiotes at the opponent where they attack in a swirling motion, much like a tornado. The opponent suffers 1d4 points of chakra damage per swarm, and must succeed a fortitude save or be nauseated for 1 round.<br><br>The cost is 8+2 chakra for each additional swarm, up to a max of 1 per 3 levels of the user.</p>\n\n<hr><p><b>Requires:</b> ; Kikai Host</p>\n<p><b>Mastery:</b> At first, third and fifth step mastery, gain +1 chakra damage per swarm.</p>\n",
       "summary": "",
       "instructions": ""
     },

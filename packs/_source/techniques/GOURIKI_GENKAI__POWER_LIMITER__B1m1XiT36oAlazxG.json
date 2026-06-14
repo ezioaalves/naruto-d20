@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, E</p>\n\n<hr>\n\n<p>A potent seal makes the subject take a -1 penalty to Speed and Strength Ranks. The seal can be dispelled by its bearer as a move action requiring half seals, which provokes attacks of opportunity.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the penalty by 1, up to -5. Each point of penalty takes up an additional seal slot.</p>\n\n",
+      "value": "<p>A potent seal makes the subject take a -1 penalty to Speed and Strength Ranks. The seal can be dispelled by its bearer as a move action requiring half seals, which provokes attacks of opportunity.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the penalty by 1, up to -5. Each point of penalty takes up an additional seal slot.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

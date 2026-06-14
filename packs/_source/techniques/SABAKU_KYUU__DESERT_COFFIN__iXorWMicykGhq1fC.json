@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>You can choose to trap a creature, or a creature's limb. A creature whose limb is trapped is @Condition[entangled]{Entangled}, while a creature who is entirely trapped becomes immobilized. A creature so held is a viable target for the Sabaku Sousou technique (further below). Creatures can attempt to free themselves by spending a full-round action making a Break check (DC 35).</p>\n\n\n\n",
+      "value": "<p>You can choose to trap a creature, or a creature's limb. A creature whose limb is trapped is @Condition[entangled]{Entangled}, while a creature who is entirely trapped becomes immobilized. A creature so held is a viable target for the Sabaku Sousou technique (further below). Creatures can attempt to free themselves by spending a full-round action making a Break check (DC 35).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

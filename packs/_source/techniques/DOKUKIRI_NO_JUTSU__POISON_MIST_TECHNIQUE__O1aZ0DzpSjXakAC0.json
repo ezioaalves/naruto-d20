@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You transform the air in your lungs, increasing its volume and turning it poisonous before breathing it out as a 15ft wide, 10 ft. high Spread of poison gas. The following round, the gas spreads to a 20 x 20 ft. Spread, and the third round it becomes a 30 x 30 ft. Spread. After 5 rounds, the gas disperses. A moderate wind (11+ mph) will disperse it in 3 rounds, and a strong wind (21+ mph) disperses it in a single round.<br><br>The cloud functions as an inhaled poison with 1d6 Constitution damage as both its primary and secondary damage, and a save DC equal to this technique's.</p>\n\n\n\n",
+      "value": "<p>You transform the air in your lungs, increasing its volume and turning it poisonous before breathing it out as a 15ft wide, 10 ft. high Spread of poison gas. The following round, the gas spreads to a 20 x 20 ft. Spread, and the third round it becomes a 30 x 30 ft. Spread. After 5 rounds, the gas disperses. A moderate wind (11+ mph) will disperse it in 3 rounds, and a strong wind (21+ mph) disperses it in a single round.<br><br>The cloud functions as an inhaled poison with 1d6 Constitution damage as both its primary and secondary damage, and a save DC equal to this technique's.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This strange training makes the character gain a resistance to cold and is mostly found in ninja villages with a lot of snow for a long time. The character goes through various tasks with little to no clothing on. Once this training is over the character gains a +4 on Fortitude saves to resist cold weather effects.</p>\n",
+      "value": "<p>This strange training makes the character gain a resistance to cold and is mostly found in ninja villages with a lot of snow for a long time. The character goes through various tasks with little to no clothing on. Once this training is over the character gains a +4 on Fortitude saves to resist cold weather effects.</p>\n",
       "summary": "",
       "instructions": ""
     },

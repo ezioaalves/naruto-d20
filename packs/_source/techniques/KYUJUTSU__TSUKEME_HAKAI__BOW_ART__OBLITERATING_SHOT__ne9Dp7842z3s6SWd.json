@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>| Spot   |   Attack | Damage   |<br>|--------|----------|----------|<br>| ≤ 10   |       +1 | 2d6      |<br>| 15     |       +2 | 3d6      |<br>| 20     |       +2 | 4d6      |<br>| 25     |       +3 | 5d6      |<br>| 30     |       +4 | 6d6      |<br>| 35     |       +4 | 7d6      |<br>| 40     |       +5 | 8d6      |<br>| ≥ 40   |       +6 | 9d6      |<br><br>This technique is identical to Kyujutsu: Tsukeme, but the bonuses (based on the result of the Spot check) are improved, as shown in the table.</p>\n\n\n\n",
+      "value": "<p>| Spot   |   Attack | Damage   |<br>|--------|----------|----------|<br>| ≤ 10   |       +1 | 2d6      |<br>| 15     |       +2 | 3d6      |<br>| 20     |       +2 | 4d6      |<br>| 25     |       +3 | 5d6      |<br>| 30     |       +4 | 6d6      |<br>| 35     |       +4 | 7d6      |<br>| 40     |       +5 | 8d6      |<br>| ≥ 40   |       +6 | 9d6      |<br><br>This technique is identical to Kyujutsu: Tsukeme, but the bonuses (based on the result of the Spot check) are improved, as shown in the table.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

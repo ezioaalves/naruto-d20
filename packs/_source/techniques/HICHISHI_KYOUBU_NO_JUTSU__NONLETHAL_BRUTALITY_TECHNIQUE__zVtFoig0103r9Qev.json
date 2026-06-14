@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>A powerful illusion causes the creature to believe it has sustained serious damage. The subject takes 8d10 nonlethal damage (or 8d6 if using the cumulative nonlethal damage variant).</p>\n\n\n\n",
+      "value": "<p>A powerful illusion causes the creature to believe it has sustained serious damage. The subject takes 8d10 nonlethal damage (or 8d6 if using the cumulative nonlethal damage variant).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>A technique almost exclusively used by ANBU forces, you send your Chakra into the target, mixing it with their own, causing the target to become @Condition[paralyzed]{paralyzed}, and allowing it a single save every round to break the effect.</p>\n\n<hr><p><b>Empower:</b> Spend 4 Chakra to target an additional creature, up to 1 per 5 levels or 5 (whichever is lower).</p>\n\n",
+      "value": "<p>A technique almost exclusively used by ANBU forces, you send your Chakra into the target, mixing it with their own, causing the target to become @Condition[paralyzed]{paralyzed}, and allowing it a single save every round to break the effect.</p>\n\n<hr><p><b>Empower:</b> Spend 4 Chakra to target an additional creature, up to 1 per 5 levels or 5 (whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

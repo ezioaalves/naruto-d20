@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> E, F, Mob</p>\n\n<hr>\n\n<p>This technique is identical to Kenjutsu: Iaido (p219). The attack and damage bonus increases by +1 per 6 levels, and the attack deals an additional 1d6 damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per 3 levels or 6d6 (whichever is lower).</p>\n\n",
+      "value": "<p>This technique is identical to Kenjutsu: Iaido (p219). The attack and damage bonus increases by +1 per 6 levels, and the attack deals an additional 1d6 damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per 3 levels or 6d6 (whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

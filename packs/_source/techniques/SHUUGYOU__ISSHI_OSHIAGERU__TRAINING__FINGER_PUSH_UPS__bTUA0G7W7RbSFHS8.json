@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You have attained the next level of pushups; you can do pushups with just your finger. Upon completion of this training the character gains a +2 bonus to Balance and Climb checks that stacks with the bonus from Katate Oshiageru.</p>\n\n<hr><p><b>Requires:</b> Training (f), Katate Oshiageru (5), Taijutsu 9 ranks</p>\n",
+      "value": "<p>You have attained the next level of pushups; you can do pushups with just your finger. Upon completion of this training the character gains a +2 bonus to Balance and Climb checks that stacks with the bonus from Katate Oshiageru.</p>\n\n<hr><p><b>Requires:</b> Training (f), Katate Oshiageru (5), Taijutsu 9 ranks</p>\n",
       "summary": "",
       "instructions": ""
     },

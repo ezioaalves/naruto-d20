@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Protective winds swirl around you, granting a +2 deflection bonus to Defense, wind resistance 5, and a +4 bonus to saves against Wind effects or attacks. If such an effect or attack allows for a Reflex save for half damage, you take no damage on a successful save instead. A creature making an attack against you with an unarmed strike or natural weapon suffers 1d4 wind damage, regardless of whether it hits (CR applies).</p>\n\n\n\n",
+      "value": "<p>Protective winds swirl around you, granting a +2 deflection bonus to Defense, wind resistance 5, and a +4 bonus to saves against Wind effects or attacks. If such an effect or attack allows for a Reflex save for half damage, you take no damage on a successful save instead. A creature making an attack against you with an unarmed strike or natural weapon suffers 1d4 wind damage, regardless of whether it hits (CR applies).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

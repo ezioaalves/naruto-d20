@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You center this technique on a living tree that still has plenty of leaves. You imbue the foliage with Chakra, turning the leaves hard and sharp and having them fall down, dealing 3d4+1 slashing damage each round. After the technique finishes, the tree is left completely devoid of foliage.</p>\n\n\n\n",
+      "value": "<p>You center this technique on a living tree that still has plenty of leaves. You imbue the foliage with Chakra, turning the leaves hard and sharp and having them fall down, dealing 3d4+1 slashing damage each round. After the technique finishes, the tree is left completely devoid of foliage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

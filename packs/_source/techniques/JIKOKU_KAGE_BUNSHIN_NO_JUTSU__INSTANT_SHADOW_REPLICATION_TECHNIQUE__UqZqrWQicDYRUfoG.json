@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>This technique functions like Kage Bunshin no Jutsu, except it creates a single clone that acts immediately, and disappears on your next turn. You can only create one such clone per round.</p>\n\n\n\n",
+      "value": "<p>This technique functions like Kage Bunshin no Jutsu, except it creates a single clone that acts immediately, and disappears on your next turn. You can only create one such clone per round.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>This technique has you make a series of quick, consecutive attacks that can leave a foe reeling. Make three unarmed attacks at a -5 penalty. Each attack deals 2d6 damage, plus your Strength modifier, on hit. If at least one attack hits, the target is @Condition[stunned]{stunned} for 1d4 rounds (Fortitude negates).<br><br>This technique can only be used if you've caught the target with Taijutsu: Ougi - Rendan Kidouki.</p>\n\n\n\n",
+      "value": "<p>This technique has you make a series of quick, consecutive attacks that can leave a foe reeling. Make three unarmed attacks at a -5 penalty. Each attack deals 2d6 damage, plus your Strength modifier, on hit. If at least one attack hits, the target is @Condition[stunned]{stunned} for 1d4 rounds (Fortitude negates).<br><br>This technique can only be used if you've caught the target with Taijutsu: Ougi - Rendan Kidouki.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

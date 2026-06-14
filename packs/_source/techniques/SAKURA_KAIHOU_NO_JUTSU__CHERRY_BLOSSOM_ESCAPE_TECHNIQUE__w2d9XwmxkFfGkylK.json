@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>You create the illusion that your body dissolves into a swarm of cherry petals that occupy the area, effectively acting as a smoke screen (as though it were a dense smoke that doesn't spread). You can immediately make a Hide check, even while being observed, against any creature affected by the illusion. Although the illusion itself covers only a small area, any creature that can see the area is affected by it, and such creatures cannot locate or detect you by any means while you remain within the technique's area. This technique cannot be dispelled.</p>\n\n\n\n",
+      "value": "<p>You create the illusion that your body dissolves into a swarm of cherry petals that occupy the area, effectively acting as a smoke screen (as though it were a dense smoke that doesn't spread). You can immediately make a Hide check, even while being observed, against any creature affected by the illusion. Although the illusion itself covers only a small area, any creature that can see the area is affected by it, and such creatures cannot locate or detect you by any means while you remain within the technique's area. This technique cannot be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

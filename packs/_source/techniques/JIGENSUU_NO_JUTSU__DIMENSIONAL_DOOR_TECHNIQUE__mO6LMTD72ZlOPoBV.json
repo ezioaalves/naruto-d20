@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H, Mob</p>\n\n<hr>\n\n<p>The target is teleported anywhere within Medium range, following the same limitations as Jigen Ugoku no Jutsu regarding moving through obstacles and potentially taking damage (above). The subject cannot be teleported underground if there is no space for it to appear.</p>\n\n\n\n",
+      "value": "<p>The target is teleported anywhere within Medium range, following the same limitations as Jigen Ugoku no Jutsu regarding moving through obstacles and potentially taking damage (above). The subject cannot be teleported underground if there is no space for it to appear.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

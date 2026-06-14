@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>This technique functions as Ryu Kan Sen, except as above. The penalty is reduced to -2 when used as an attack action. If used as an instant action, you suffer no penalties. The attack will deal an additional d6 damage on hit (of a type appropriate for the weapon used).</p>\n\n\n\n",
+      "value": "<p>This technique functions as Ryu Kan Sen, except as above. The penalty is reduced to -2 when used as an attack action. If used as an instant action, you suffer no penalties. The attack will deal an additional d6 damage on hit (of a type appropriate for the weapon used).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

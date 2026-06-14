@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>This technique utilizes the unorthodox Dangling Limb stance to both catch an opponent off guard while also striking with additional force.<br><br>While in the Taijutsu: Dachi - Kensui Teashi stance, the user makes melee attack at his highest attack bonus that uses both his limbs. The attack deals normal unarmed damage plus double the user's Strength modifier. If this technique was performed as part of a charge, the damage adds triple the user's Strength modifier.</p>\n\n<hr><p><b>Requires:</b> Kensui Teashi Dachi(t)</p>\n",
+      "value": "<p>This technique utilizes the unorthodox Dangling Limb stance to both catch an opponent off guard while also striking with additional force.<br><br>While in the Taijutsu: Dachi - Kensui Teashi stance, the user makes melee attack at his highest attack bonus that uses both his limbs. The attack deals normal unarmed damage plus double the user's Strength modifier. If this technique was performed as part of a charge, the damage adds triple the user's Strength modifier.</p>\n\n<hr><p><b>Requires:</b> Kensui Teashi Dachi(t)</p>\n",
       "summary": "",
       "instructions": ""
     },

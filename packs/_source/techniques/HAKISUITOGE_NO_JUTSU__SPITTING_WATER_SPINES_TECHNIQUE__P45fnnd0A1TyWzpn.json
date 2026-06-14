@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> E, F, S</p>\n\n<hr>\n\n<p>You raise some water into the air and turn it into countless needles to attack the target. The technique creates one needle, which is used to make a ranged attack at your highest attack bonus. If it hits, it deals 1d4 water damage. These attacks have Kawarimi Defense 1.<br><br>If you are (partially) submerged in water, you can increase the Perform Requirements by 5 to perform the technique without Half Seals.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to create an additional needle (up to 1 per level total), for which you may choose a new target. Creatures can be targeted by more than one needle.</p>\n\n",
+      "value": "<p>You raise some water into the air and turn it into countless needles to attack the target. The technique creates one needle, which is used to make a ranged attack at your highest attack bonus. If it hits, it deals 1d4 water damage. These attacks have Kawarimi Defense 1.<br><br>If you are (partially) submerged in water, you can increase the Perform Requirements by 5 to perform the technique without Half Seals.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to create an additional needle (up to 1 per level total), for which you may choose a new target. Creatures can be targeted by more than one needle.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

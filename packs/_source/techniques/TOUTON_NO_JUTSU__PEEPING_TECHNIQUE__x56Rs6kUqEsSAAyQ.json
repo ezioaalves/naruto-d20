@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>Created by a young Jiraiya to spy on the women's baths, this technique nonetheless has some practical uses. You gain a +4 bonus to Spot checks, and can see 20 ft further before suffering range penalties to your Spot checks. As long as you remain within the square in which you used this technique, you gain a +2 bonus to Hide checks.</p>\n\n\n\n",
+      "value": "<p>Created by a young Jiraiya to spy on the women's baths, this technique nonetheless has some practical uses. You gain a +4 bonus to Spot checks, and can see 20 ft further before suffering range penalties to your Spot checks. As long as you remain within the square in which you used this technique, you gain a +2 bonus to Hide checks.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>You soften the earth around you and become able to move through it, gaining a burrow speed equal to your normal speed. If you are within 5 ft. of the surface, you automatically sense if there is a creature standing above you. You cannot run or move through hard ground or stone, but sand, dirt and firm earth are susceptible to this technique. You leave tunnels while moving underground.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to leave no trace of your passing (including no tunnels) if you desire.<br><br>The fifth step allows you to burrow through hard ground (and rock) as well.</p>\n",
+      "value": "<p>You soften the earth around you and become able to move through it, gaining a burrow speed equal to your normal speed. If you are within 5 ft. of the surface, you automatically sense if there is a creature standing above you. You cannot run or move through hard ground or stone, but sand, dirt and firm earth are susceptible to this technique. You leave tunnels while moving underground.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to leave no trace of your passing (including no tunnels) if you desire.<br><br>The fifth step allows you to burrow through hard ground (and rock) as well.</p>\n",
       "summary": "",
       "instructions": ""
     },

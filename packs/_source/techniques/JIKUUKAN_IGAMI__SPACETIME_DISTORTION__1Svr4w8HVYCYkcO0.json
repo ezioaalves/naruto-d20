@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You ignore difficult terrain and can move through obstacles and other creatures. While moving, you do not trigger traps or provoke attacks of opportunity, as though you were @Condition[incorporeal]{incorporeal}. Though you remain affected by gravity, you do not fall through surfaces unless you wish to. If your movement ends in an occupied square, you are shunted to an adjacent square, taking 1d6 damage. If all adjacent squares are occupied, you return to where you started the movement and take 5d8 damage instead.</p>\n\n\n\n",
+      "value": "<p>You ignore difficult terrain and can move through obstacles and other creatures. While moving, you do not trigger traps or provoke attacks of opportunity, as though you were @Condition[incorporeal]{incorporeal}. Though you remain affected by gravity, you do not fall through surfaces unless you wish to. If your movement ends in an occupied square, you are shunted to an adjacent square, taking 1d6 damage. If all adjacent squares are occupied, you return to where you started the movement and take 5d8 damage instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

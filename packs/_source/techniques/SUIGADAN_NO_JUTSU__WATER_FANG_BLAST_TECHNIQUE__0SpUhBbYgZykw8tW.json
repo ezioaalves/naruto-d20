@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You send your Chakra into the water and have it surge into the area from all sides, dealing 5d8 water damage to any creature within the area. Creatures surrounded on all sides by a physical barrier are unaffected.</p>\n\n\n\n",
+      "value": "<p>You send your Chakra into the water and have it surge into the area from all sides, dealing 5d8 water damage to any creature within the area. Creatures surrounded on all sides by a physical barrier are unaffected.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

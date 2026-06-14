@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You must be under the effects of Speed Rank 2 or greater, and your weapon must be sheathed. Make a single melee attack against all creatures in the area, which deals an additional 2d4 damage, +1d4 per 4 levels (up to 6d4 total). This additional damage is not multiplied on critical hits, and you cannot apply sneak attack damage with these attacks.<br><br>After using this technique, the used weapon can be sheathed or left unsheathed (your choice).</p>\n\n\n\n",
+      "value": "<p>You must be under the effects of Speed Rank 2 or greater, and your weapon must be sheathed. Make a single melee attack against all creatures in the area, which deals an additional 2d4 damage, +1d4 per 4 levels (up to 6d4 total). This additional damage is not multiplied on critical hits, and you cannot apply sneak attack damage with these attacks.<br><br>After using this technique, the used weapon can be sheathed or left unsheathed (your choice).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

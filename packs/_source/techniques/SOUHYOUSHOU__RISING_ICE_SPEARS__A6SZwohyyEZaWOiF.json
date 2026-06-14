@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, E</p>\n\n<hr>\n\n<p>You freeze moisture from the air, forming thin blades of ice that spin around you at high speed, dealing 3d6 cold and 2d6 wind damage to other creatures within the area.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the wind or cold damage by 1d6 (up to 7d6 per damage type or 1d6 per level total, whichever is lower).</p>\n\n",
+      "value": "<p>You freeze moisture from the air, forming thin blades of ice that spin around you at high speed, dealing 3d6 cold and 2d6 wind damage to other creatures within the area.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the wind or cold damage by 1d6 (up to 7d6 per damage type or 1d6 per level total, whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You must be in a Jyuuken stance to use this technique. Make a Jyuuken attack against the target, as though they were in melee range. In addition, if the target is hit it must save to avoid being pushed back 1d4x5 ft. This attack counts as a ray attack, despite not using the same rules as most rays.</p>\n\n\n\n",
+      "value": "<p>You must be in a Jyuuken stance to use this technique. Make a Jyuuken attack against the target, as though they were in melee range. In addition, if the target is hit it must save to avoid being pushed back 1d4x5 ft. This attack counts as a ray attack, despite not using the same rules as most rays.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

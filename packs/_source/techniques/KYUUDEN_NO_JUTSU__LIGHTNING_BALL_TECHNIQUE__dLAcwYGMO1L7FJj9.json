@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You throw a sphere of volatile, electric energy at the area, which explodes to deal 3d10 electric damage.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d10 (up to 6d10).</p>\n\n",
+      "value": "<p>You throw a sphere of volatile, electric energy at the area, which explodes to deal 3d10 electric damage.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d10 (up to 6d10).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

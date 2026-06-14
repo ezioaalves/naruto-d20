@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>While under the effects of this technique, the character's pupils seemingly dissolve and form into a misty haze that wildly circles amongst his eyes. It is impossible to tell what the character is looking at and in turn, much harder to catch him with Doujutsu techniques whilst he adverts his eyes. When doing so, the character gains an additional 10% to be unaffected by Doujutsu.<br><br>Master -Each step of mastery grants another +2% bonus to be unaffected by Doujutsu.</p>\n\n<hr><p><b>Requires:</b> Fukurougan (t)</p>\n",
+      "value": "<p>While under the effects of this technique, the character's pupils seemingly dissolve and form into a misty haze that wildly circles amongst his eyes. It is impossible to tell what the character is looking at and in turn, much harder to catch him with Doujutsu techniques whilst he adverts his eyes. When doing so, the character gains an additional 10% to be unaffected by Doujutsu.<br><br>Master -Each step of mastery grants another +2% bonus to be unaffected by Doujutsu.</p>\n\n<hr><p><b>Requires:</b> Fukurougan (t)</p>\n",
       "summary": "",
       "instructions": ""
     },

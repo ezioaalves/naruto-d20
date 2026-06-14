@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You concentrate, simulating a drunken state of mind to make your movements difficult to read. You can Feint in combat as a move action, and gain a +1 dodge bonus to Defense. You are not granted any bonuses if you wield any weapons, unless you have the ability to make those weapons be treated as unarmed attacks.<br><br>If you are actually drunk, reduce the Skill Threshold by 1 and the Perform DC by 5.</p>\n\n\n<p><b>Mastery:</b> The third step has the stance grant a +1 bonus to attack rolls.</p>\n",
+      "value": "<p>You concentrate, simulating a drunken state of mind to make your movements difficult to read. You can Feint in combat as a move action, and gain a +1 dodge bonus to Defense. You are not granted any bonuses if you wield any weapons, unless you have the ability to make those weapons be treated as unarmed attacks.<br><br>If you are actually drunk, reduce the Skill Threshold by 1 and the Perform DC by 5.</p>\n\n\n<p><b>Mastery:</b> The third step has the stance grant a +1 bonus to attack rolls.</p>\n",
       "summary": "",
       "instructions": ""
     },

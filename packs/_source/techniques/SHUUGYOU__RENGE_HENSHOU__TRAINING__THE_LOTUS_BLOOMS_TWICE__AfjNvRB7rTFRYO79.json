@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> Mas</p>\n\n<hr>\n\n<p>Whenever you would suffer an ability score penalty when closing a Gate, you can spend 3 Chakra to reduce the penalty by 1. You may do this up to two times each time such a penalty is gained.</p>\n\n\n<p><b>Mastery:</b> The first, third and fifth steps allow you to repeat this process two additional times each (up to 8 times total).</p>\n",
+      "value": "<p>Whenever you would suffer an ability score penalty when closing a Gate, you can spend 3 Chakra to reduce the penalty by 1. You may do this up to two times each time such a penalty is gained.</p>\n\n\n<p><b>Mastery:</b> The first, third and fifth steps allow you to repeat this process two additional times each (up to 8 times total).</p>\n",
       "summary": "",
       "instructions": ""
     },

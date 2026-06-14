@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This dangerous technique was forbidden due to its ability to drive people insane by repeated use. It allows you to send terrifying images from 'hell' with little more than a look. Any creature that meets your gaze is @Condition[panicked]{panicked} for 2d6+1 rounds and suffers 1d4 temporary Wisdom damage (a Will save negates both). If a creature succeeds at their save, they are @Condition[shaken]{shaken} for 1d4 rounds instead.</p>\n\n\n\n",
+      "value": "<p>This dangerous technique was forbidden due to its ability to drive people insane by repeated use. It allows you to send terrifying images from 'hell' with little more than a look. Any creature that meets your gaze is @Condition[panicked]{panicked} for 2d6+1 rounds and suffers 1d4 temporary Wisdom damage (a Will save negates both). If a creature succeeds at their save, they are @Condition[shaken]{shaken} for 1d4 rounds instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

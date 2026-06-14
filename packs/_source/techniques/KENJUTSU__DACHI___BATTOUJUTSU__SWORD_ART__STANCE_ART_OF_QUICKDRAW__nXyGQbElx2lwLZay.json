@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>This stance is the culmination of quickdrawing technique, designed to allow you to to perform a series of quick and powerful strikes that break through an opponent's guard.<br><br>While in this stance, if your weapon is sheathed before you make a Full Attack, you draw it on the first attack, dealing an additional die of weapon damage with that attack and gaining Kawarimi Defense 1 to all attacks made. You can return the weapon to its sheath as a free action when you finish the Full Attack.<br><br>To benefit from this stance, you must wield a single weapon with both hands.</p>\n\n\n\n",
+      "value": "<p>This stance is the culmination of quickdrawing technique, designed to allow you to to perform a series of quick and powerful strikes that break through an opponent's guard.<br><br>While in this stance, if your weapon is sheathed before you make a Full Attack, you draw it on the first attack, dealing an additional die of weapon damage with that attack and gaining Kawarimi Defense 1 to all attacks made. You can return the weapon to its sheath as a free action when you finish the Full Attack.<br><br>To benefit from this stance, you must wield a single weapon with both hands.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

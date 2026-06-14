@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You study the target, which must be using a Stance technique. As long as the opponent remains in the same stance, you gain a +2 insight bonus to attack and damage rolls against them.</p>\n\n\n\n",
+      "value": "<p>You study the target, which must be using a Stance technique. As long as the opponent remains in the same stance, you gain a +2 insight bonus to attack and damage rolls against them.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

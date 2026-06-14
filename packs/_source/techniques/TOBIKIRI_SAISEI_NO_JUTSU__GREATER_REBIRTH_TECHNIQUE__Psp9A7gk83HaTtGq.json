@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 31 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This extremely powerful sealing technique draws from medical knowledge to render you nearly immortal, for a time. Once performed, your Chakra Pool is reduced to 1 and the seal will begin to form. After being performed, you do not regain any Chakra. Instead, any Chakra you would recover will charge the seal, until the seal has absorbed 250 Chakra, at which point the seal completely covers your body and will activate the next time your HP reaches -10 or lower.<br><br>1d4+1 Rounds after the seal activates, you are brought back from the dead and your HP is set to 1. This will not regrow any lost limbs, though @Condition[bleed;remove]{bleeding} wounds will close.</p>\n\n\n\n",
+      "value": "<p>This extremely powerful sealing technique draws from medical knowledge to render you nearly immortal, for a time. Once performed, your Chakra Pool is reduced to 1 and the seal will begin to form. After being performed, you do not regain any Chakra. Instead, any Chakra you would recover will charge the seal, until the seal has absorbed 250 Chakra, at which point the seal completely covers your body and will activate the next time your HP reaches -10 or lower.<br><br>1d4+1 Rounds after the seal activates, you are brought back from the dead and your HP is set to 1. This will not regrow any lost limbs, though @Condition[bleed;remove]{bleeding} wounds will close.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

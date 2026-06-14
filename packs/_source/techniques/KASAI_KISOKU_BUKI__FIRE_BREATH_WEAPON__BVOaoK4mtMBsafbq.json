@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>The Fire breath weapon can be formed into a Line 30 ft. long, 5 feet high, and 5 feet wide or into a Cone 15 ft. long. The character's breath weapon is able to affect a larger area as he progresses. The distance increases by 5 ft. per 2 HD of the Keeper beyond 4. The attack deals 3d6 damage to each creature in the cone or the first creature hit in a line attack and deals fire damage up to 11d6.</p>\n\n<hr><p><b>Requires:</b> Advanced Bloodline Flame Keeper (f)</p>\n<p><b>Empower:</b> The user may spend 1 point of chakra to increase the damage by 1 die, maximum 1 die per level</p>\n",
+      "value": "<p>The Fire breath weapon can be formed into a Line 30 ft. long, 5 feet high, and 5 feet wide or into a Cone 15 ft. long. The character's breath weapon is able to affect a larger area as he progresses. The distance increases by 5 ft. per 2 HD of the Keeper beyond 4. The attack deals 3d6 damage to each creature in the cone or the first creature hit in a line attack and deals fire damage up to 11d6.</p>\n\n<hr><p><b>Requires:</b> Advanced Bloodline Flame Keeper (f)</p>\n<p><b>Empower:</b> The user may spend 1 point of chakra to increase the damage by 1 die, maximum 1 die per level</p>\n",
       "summary": "",
       "instructions": ""
     },

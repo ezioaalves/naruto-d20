@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "mwdamage"
+        "target": "mwdamage",
+        "flavor": "ISHIMARU RYU: SANDAN DACHI"
       },
       {
         "type": "competence",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "mattack"
+        "target": "mattack",
+        "flavor": "ISHIMARU RYU: SANDAN DACHI"
       },
       {
         "type": "untyped",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "4",
-        "target": "critConfirm"
+        "target": "critConfirm",
+        "flavor": "ISHIMARU RYU: SANDAN DACHI"
       }
     ],
     "changeFlags": {

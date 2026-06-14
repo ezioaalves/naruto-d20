@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>In order to use this technique, you must be grappling with the target, the target must be within 1 size category of you, and neither of you can be prone or pinned. Both you and the target twist several times in midair, both falling @Condition[prone]{prone}. As a result, the target will be @Condition[pinned]{pinned} by you, and suffers 1d4 bludgeoning damage per 5 levels (Reflex halves the damage).</p>\n\n\n\n",
+      "value": "<p>In order to use this technique, you must be grappling with the target, the target must be within 1 size category of you, and neither of you can be prone or pinned. Both you and the target twist several times in midair, both falling @Condition[prone]{prone}. As a result, the target will be @Condition[pinned]{pinned} by you, and suffers 1d4 bludgeoning damage per 5 levels (Reflex halves the damage).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

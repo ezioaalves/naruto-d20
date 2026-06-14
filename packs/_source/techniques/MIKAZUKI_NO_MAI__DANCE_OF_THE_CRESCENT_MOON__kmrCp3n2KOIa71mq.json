@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>You make a series of graceful strikes, making a fullattack action and gaining an additional attack at your highest attack bonus -5. You gain a +1 dodge bonus to Defense and the benefits of the Great Cleave feat (D20 Modern, p84) until the beginning of your next turn.</p>\n\n\n\n",
+      "value": "<p>You make a series of graceful strikes, making a fullattack action and gaining an additional attack at your highest attack bonus -5. You gain a +1 dodge bonus to Defense and the benefits of the Great Cleave feat (D20 Modern, p84) until the beginning of your next turn.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

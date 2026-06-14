@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 13</p>\n<p><b>Chakra Cost:</b> 18</p>\n\n<p><b>Learn DC:</b> 29 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 17 | <b>Perform DC:</b> 33</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>This technique is identical to Hyourou no Jutsu (p166). The Strength check DC to break the prison is 35, and instead of suffocating the target will fall @Condition[unconscious]{unconscious} after being trapped for 1d4+1 rounds, remaining so until freed.</p>\n\n\n\n",
+      "value": "<p>This technique is identical to Hyourou no Jutsu (p166). The Strength check DC to break the prison is 35, and instead of suffocating the target will fall @Condition[unconscious]{unconscious} after being trapped for 1d4+1 rounds, remaining so until freed.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

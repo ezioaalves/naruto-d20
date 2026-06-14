@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, E</p>\n\n<hr>\n\n<p>You push out a mass of wild Chakra, knocking back all creatures 1d4+1 x 5ft away from you and having them fall @Condition[prone]{prone}. This technique registers as a Strong Chakra activity for those sensing Chakra.</p>\n\n<hr><p><b>Empower:</b> Spend 4 Chakra once to deal 2d6 force damage to all creatures in the area (no save).</p>\n\n",
+      "value": "<p>You push out a mass of wild Chakra, knocking back all creatures 1d4+1 x 5ft away from you and having them fall @Condition[prone]{prone}. This technique registers as a Strong Chakra activity for those sensing Chakra.</p>\n\n<hr><p><b>Empower:</b> Spend 4 Chakra once to deal 2d6 force damage to all creatures in the area (no save).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

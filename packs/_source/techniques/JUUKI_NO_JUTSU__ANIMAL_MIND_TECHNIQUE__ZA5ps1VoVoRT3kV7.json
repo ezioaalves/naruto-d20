@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>Your Chakra signature is disguised, making it seem like an animal's signature to anyone Sensing Chakra. Creatures that detect your Signature can make a save to see through the illusion. Using any Chakra will cancel the technique's effects.</p>\n\n\n\n",
+      "value": "<p>Your Chakra signature is disguised, making it seem like an animal's signature to anyone Sensing Chakra. Creatures that detect your Signature can make a save to see through the illusion. Using any Chakra will cancel the technique's effects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

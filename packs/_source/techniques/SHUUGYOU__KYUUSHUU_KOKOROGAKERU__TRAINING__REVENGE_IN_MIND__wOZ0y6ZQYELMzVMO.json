@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (General)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>For weeks, you've trained and trained, determined to overcome (or kill) a single being. They may be a rival you hope to surpass, or a sensei you wish to impress. Most likely, it's someone you want to kill.<br><br>Every time you interact directly against that character, you add a +1 to every roll related to opposing them - to hit, damage, saves vs. their jutsu, intimidate checks anything the GM finds suitable.<br><br>Each time this technique is trained the user applies it to a new specific person.</p>\n",
+      "value": "<p>For weeks, you've trained and trained, determined to overcome (or kill) a single being. They may be a rival you hope to surpass, or a sensei you wish to impress. Most likely, it's someone you want to kill.<br><br>Every time you interact directly against that character, you add a +1 to every roll related to opposing them - to hit, damage, saves vs. their jutsu, intimidate checks anything the GM finds suitable.<br><br>Each time this technique is trained the user applies it to a new specific person.</p>\n",
       "summary": "",
       "instructions": ""
     },

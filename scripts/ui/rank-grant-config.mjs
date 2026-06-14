@@ -1,9 +1,9 @@
 import { MODULE_ID } from "../constants.mjs";
+import { getRankGrantType } from "../automation/rank-buffs.mjs";
 import {
-  RANK_BUFF_FLAG,
-  RANK_BUFF_FLAG_PATH,
-  getRankGrantType,
-} from "../automation/rank-buffs.mjs";
+  MAINTENANCE_BUFF_FLAG_PATH,
+  getRankMaintenanceFlag,
+} from "../automation/maintenance-buffs.mjs";
 
 const TEMPLATE = `modules/${MODULE_ID}/templates/item/rank-grant-config.hbs`;
 
@@ -25,10 +25,10 @@ async function onRenderItemSheet(app, html) {
   const anchor = html.find('.tab.details select[name="system.subType"]').closest(".form-group");
   if (!anchor.length) return;
 
-  const flag = item.flags?.[MODULE_ID]?.[RANK_BUFF_FLAG] ?? null;
+  const flag = getRankMaintenanceFlag(item);
   const grantType = getRankGrantType(item);
   const rendered = await foundry.applications.handlebars.renderTemplate(TEMPLATE, {
-    flagPath: RANK_BUFF_FLAG_PATH,
+    flagPath: MAINTENANCE_BUFF_FLAG_PATH,
     key: flag?.key ?? "",
     grantType: grantType === "paid" ? "paid" : (flag?.grantType ?? "temp"),
     isPaid: grantType === "paid",

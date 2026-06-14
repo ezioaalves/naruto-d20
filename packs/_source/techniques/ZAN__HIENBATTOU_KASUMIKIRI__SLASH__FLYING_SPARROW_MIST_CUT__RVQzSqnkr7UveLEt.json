@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> F, Mas, Mob</p>\n\n<hr>\n\n<p>You must be wielding two weapons to use this technique. Make a normal attack with each weapon (incurring normal penalties for doing so), which will target all creatures in the target square.</p>\n\n\n<p><b>Mastery:</b> The second step grants the attacks Kawarimi Defense 1, and allows you to use the technique if both weapons are sheathed, though the Perform Requirements increase by 4 when doing so.</p>\n",
+      "value": "<p>You must be wielding two weapons to use this technique. Make a normal attack with each weapon (incurring normal penalties for doing so), which will target all creatures in the target square.</p>\n\n\n<p><b>Mastery:</b> The second step grants the attacks Kawarimi Defense 1, and allows you to use the technique if both weapons are sheathed, though the Perform Requirements increase by 4 when doing so.</p>\n",
       "summary": "",
       "instructions": ""
     },

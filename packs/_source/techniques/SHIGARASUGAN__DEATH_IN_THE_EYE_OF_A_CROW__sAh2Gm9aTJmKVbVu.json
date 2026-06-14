@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> E, H, M</p>\n\n<hr>\n\n<p>You summon a murder of crows to swarm the area, without any regard for the allegiance of creatures within. The crows deal 5d4+5 slashing damage with their talons (Fortitude halves). A creature taking damage is @Condition[nauseated;duration=1]{nauseated} for 1 round (Fortitude DC 20 negates).</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d4+1, up to 1d4+1 per level or 15d4+15 total.</p>\n\n",
+      "value": "<p>You summon a murder of crows to swarm the area, without any regard for the allegiance of creatures within. The crows deal 5d4+5 slashing damage with their talons (Fortitude halves). A creature taking damage is @Condition[nauseated;duration=1]{nauseated} for 1 round (Fortitude DC 20 negates).</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d4+1, up to 1d4+1 per level or 15d4+15 total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

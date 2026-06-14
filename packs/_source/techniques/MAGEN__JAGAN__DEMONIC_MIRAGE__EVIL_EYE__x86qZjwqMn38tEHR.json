@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>The subject is caught in a strange illusion, and is completely unaware of its surroundings (and, thus, is also entirely unresponsive). If the subject is hit by an offensive action, the illusion is immediately ended. This technique cannot be used on the same creature more than once every 24 hours, and can be dispelled.</p>\n\n\n\n",
+      "value": "<p>The subject is caught in a strange illusion, and is completely unaware of its surroundings (and, thus, is also entirely unresponsive). If the subject is hit by an offensive action, the illusion is immediately ended. This technique cannot be used on the same creature more than once every 24 hours, and can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

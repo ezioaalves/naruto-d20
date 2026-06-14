@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You create a sudden but potent updraft, dealing 1d6 wind damage to creatures in the area. In addition, creatures in the area are blown upward 1d4 x 5 ft (Fortitude negated), and may take falling damage on landing if they were blown upward enough.</p>\n\n\n\n",
+      "value": "<p>You create a sudden but potent updraft, dealing 1d6 wind damage to creatures in the area. In addition, creatures in the area are blown upward 1d4 x 5 ft (Fortitude negated), and may take falling damage on landing if they were blown upward enough.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

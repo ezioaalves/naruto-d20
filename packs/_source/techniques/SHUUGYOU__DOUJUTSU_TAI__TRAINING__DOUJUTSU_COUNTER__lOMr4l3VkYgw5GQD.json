@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>After learning this technique, the user must choose which of his eyes will develop the resistance against Doujutsu. For as long as only that eye is exposed to the effects of visual attacks, the user may spend an instant action and an action point to re-roll any failed saving throw against visual attacks, in addition to adding the result of the action point to the result of the second saving throw.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
+      "value": "<p>After learning this technique, the user must choose which of his eyes will develop the resistance against Doujutsu. For as long as only that eye is exposed to the effects of visual attacks, the user may spend an instant action and an action point to re-roll any failed saving throw against visual attacks, in addition to adding the result of the action point to the result of the second saving throw.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You create a short-lived shadow image of yourself, distracting the opponent. You make a melee attack with a +4 attack bonus, which benefits from Kawarimi Defense 1. This technique does not provoke attack of opportunity. The target must both identify and make a successful save to negate the technique's effects, in which case you still make the attack, but do not gain any bonuses.</p>\n\n\n\n",
+      "value": "<p>You create a short-lived shadow image of yourself, distracting the opponent. You make a melee attack with a +4 attack bonus, which benefits from Kawarimi Defense 1. This technique does not provoke attack of opportunity. The target must both identify and make a successful save to negate the technique's effects, in which case you still make the attack, but do not gain any bonuses.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>Make a trip attempt against the target that does not provoke an attack of opportunity. If successful, you receive an attack of opportunity against the target. You suffer a -4 penalty to Learn checks when learning this technique if you do not have the Gouken feat.</p>\n\n\n\n",
+      "value": "<p>Make a trip attempt against the target that does not provoke an attack of opportunity. If successful, you receive an attack of opportunity against the target. You suffer a -4 penalty to Learn checks when learning this technique if you do not have the Gouken feat.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

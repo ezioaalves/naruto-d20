@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Your skin assumes reptilian qualities, becoming scaled and sickly green. This new skin grants a +2 natural armor bonus to Defense, but you suffer a -2 penalty to Fortitude saves against cold weather and cold attacks or techniques.</p>\n\n\n\n",
+      "value": "<p>Your skin assumes reptilian qualities, becoming scaled and sickly green. This new skin grants a +2 natural armor bonus to Defense, but you suffer a -2 penalty to Fortitude saves against cold weather and cold attacks or techniques.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

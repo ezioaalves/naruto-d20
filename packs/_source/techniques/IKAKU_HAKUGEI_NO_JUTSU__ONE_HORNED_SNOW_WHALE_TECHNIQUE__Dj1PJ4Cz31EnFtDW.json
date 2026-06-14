@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 18</p>\n\n<p><b>Learn DC:</b> 31 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>A gigantic narwhal of ice and snow emerges from the ground, impaling creatures in the cylinder with its horn to deal 8d6 damage (half piercing, half cold, Relex halves). Any creature taking damage is thrown upwards 2d6 x 5 ft. Any creature this technique was not specifically aimed at has a 20% chance to avoid being hit by this first half of the technique.<br><br>Afterward, you direct the narwhal to fall in any direction as it dissolves, causing any creature caught in the Line area (starting from the cylinder's center point) to suffer 8d6 cold damage (Reflex halves).</p>\n\n\n\n",
+      "value": "<p>A gigantic narwhal of ice and snow emerges from the ground, impaling creatures in the cylinder with its horn to deal 8d6 damage (half piercing, half cold, Relex halves). Any creature taking damage is thrown upwards 2d6 x 5 ft. Any creature this technique was not specifically aimed at has a 20% chance to avoid being hit by this first half of the technique.<br><br>Afterward, you direct the narwhal to fall in any direction as it dissolves, causing any creature caught in the Line area (starting from the cylinder's center point) to suffer 8d6 cold damage (Reflex halves).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

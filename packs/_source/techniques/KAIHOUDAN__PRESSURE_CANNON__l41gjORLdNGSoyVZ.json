@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You gather Chakra in your mouth and spit out a jet of water at great force dealing 2d6 water damage and having the target make a save to avoid being knocked back 1d3 x 5 ft and falling @Condition[prone]{prone}.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6 and the knockback distance by 1 die size (up to 5d6 water damage and 1d8 x 5 ft knockback).</p>\n\n",
+      "value": "<p>You gather Chakra in your mouth and spit out a jet of water at great force dealing 2d6 water damage and having the target make a save to avoid being knocked back 1d3 x 5 ft and falling @Condition[prone]{prone}.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6 and the knockback distance by 1 die size (up to 5d6 water damage and 1d8 x 5 ft knockback).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

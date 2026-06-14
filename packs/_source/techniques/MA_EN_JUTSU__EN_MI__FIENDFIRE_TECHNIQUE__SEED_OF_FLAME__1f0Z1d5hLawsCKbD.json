@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> F, Mas, S</p>\n\n<hr>\n\n<p>You carve fiery seals into your flesh, granting you a +1 bonus to Perform checks made to perform Katon techniques, and such techniques deal 1 additional fire damage.This techniques takes up one seal slot, and you deal yourself 1 damage when performing it. The seal's effects do not stack with itself.</p>\n\n\n<p><b>Mastery:</b> The third step requires ECL 8 or higher, and allows you to spend 2 additional Chakra and deal yourself 2 additional damage to double the seal's bonuses.</p>\n",
+      "value": "<p>You carve fiery seals into your flesh, granting you a +1 bonus to Perform checks made to perform Katon techniques, and such techniques deal 1 additional fire damage.This techniques takes up one seal slot, and you deal yourself 1 damage when performing it. The seal's effects do not stack with itself.</p>\n\n\n<p><b>Mastery:</b> The third step requires ECL 8 or higher, and allows you to spend 2 additional Chakra and deal yourself 2 additional damage to double the seal's bonuses.</p>\n",
       "summary": "",
       "instructions": ""
     },

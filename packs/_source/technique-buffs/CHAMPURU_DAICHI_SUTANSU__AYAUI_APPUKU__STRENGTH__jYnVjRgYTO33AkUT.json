@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "target": "damage",
-        "formula": "2"
+        "formula": "2",
+        "flavor": "CHAMPURU DAICHI SUTANSU -AYAUI APPUKU"
       },
       {
         "type": "untyped",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "target": "cmb",
-        "formula": "2"
+        "formula": "2",
+        "flavor": "CHAMPURU DAICHI SUTANSU -AYAUI APPUKU"
       }
     ],
     "changeFlags": {

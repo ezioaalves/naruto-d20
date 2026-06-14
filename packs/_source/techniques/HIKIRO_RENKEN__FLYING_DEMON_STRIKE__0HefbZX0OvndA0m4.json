@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You treat an object up to one size category larger than you as a thrown weapon, and can make a thrown attack against a creature within range at your highest attack bonus. At the start of your next turn, if you moved less than 30 ft. away from the location you used this technique from, the object safely returns to your hand.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to ignore the size limit when throwing a Fullblade or oversized weapon.</p>\n",
+      "value": "<p>You treat an object up to one size category larger than you as a thrown weapon, and can make a thrown attack against a creature within range at your highest attack bonus. At the start of your next turn, if you moved less than 30 ft. away from the location you used this technique from, the object safely returns to your hand.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to ignore the size limit when throwing a Fullblade or oversized weapon.</p>\n",
       "summary": "",
       "instructions": ""
     },

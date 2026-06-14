@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Shodan Kousoku. You gain the Speed Rank 3 extraordinary ability. Mastery in this technique applies to Speed Rank 3 instead.</p>\n\n\n\n",
+      "value": "<p>As Shodan Kousoku. You gain the Speed Rank 3 extraordinary ability. Mastery in this technique applies to Speed Rank 3 instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },
@@ -88,7 +88,24 @@
         "title": "NarutoD20 Redux v1.3",
         "pages": "236"
       }
-    ]
+    ],
+    "automation": {
+      "enabled": true,
+      "targetMode": "auto",
+      "maintenance": {
+        "enabled": true,
+        "resource": "chakra",
+        "cost": "3",
+        "policy": "prompt",
+        "interval": 5,
+        "waiver": "freeUse",
+        "waiverStep": 5,
+        "freeRounds": 5,
+        "choice": "",
+        "element": false,
+        "elementDoubleStep": 5
+      }
+    }
   },
   "effects": [],
   "folder": "ayYIiiWUKK026ygC",

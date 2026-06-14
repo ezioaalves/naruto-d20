@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, M, F, Mas</p>\n\n<hr>\n\n<p>The user makes a full attack action gains an additional attack at his highest attack bonus, each of which must be made against a single target. Each hit deals an additional point of damage, and if the target is hit three or more times he must make a Fortitude save or be stunned for 1d4 rounds and knocked prone.</p>\n\n<hr><p><b>Requires:</b> BAB +12, Soujutsu: Juugeki (3)</p>\n<p><b>Material Focus:</b> The user's spear, naginata or quarterstaff.</p>\n<p><b>Mastery:</b> The third and fifth step of mastery in this technique increase the bonus damage by 1.</p>\n",
+      "value": "<p>The user makes a full attack action gains an additional attack at his highest attack bonus, each of which must be made against a single target. Each hit deals an additional point of damage, and if the target is hit three or more times he must make a Fortitude save or be stunned for 1d4 rounds and knocked prone.</p>\n\n<hr><p><b>Requires:</b> BAB +12, Soujutsu: Juugeki (3)</p>\n<p><b>Material Focus:</b> The user's spear, naginata or quarterstaff.</p>\n<p><b>Mastery:</b> The third and fifth step of mastery in this technique increase the bonus damage by 1.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You attack with your held weapon, gaining an attack of opportunity against the same target at a -5 penalty if the first attack hits, provided you are still able to make an attack of opportunity this round.</p>\n\n\n\n",
+      "value": "<p>You attack with your held weapon, gaining an attack of opportunity against the same target at a -5 penalty if the first attack hits, provided you are still able to make an attack of opportunity this round.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

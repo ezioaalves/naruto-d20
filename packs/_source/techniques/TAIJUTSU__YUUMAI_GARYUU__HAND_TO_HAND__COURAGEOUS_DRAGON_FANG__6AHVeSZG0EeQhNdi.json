@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, P</p>\n\n<hr>\n\n<p>Make an unarmed melee touch attack against all creatures within the area. On hit, the attack deals your normal unarmed attack damage, plus 2d6 damage of piercing, sonic and fire damage (each, 6d6 total). A successful save halves the bonus damage. Chakra Resistance only resists the bonus damage, not the normal unarmed attack damage.</p>\n\n\n\n",
+      "value": "<p>Make an unarmed melee touch attack against all creatures within the area. On hit, the attack deals your normal unarmed attack damage, plus 2d6 damage of piercing, sonic and fire damage (each, 6d6 total). A successful save halves the bonus damage. Chakra Resistance only resists the bonus damage, not the normal unarmed attack damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

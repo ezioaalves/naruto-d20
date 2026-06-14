@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> Mas</p>\n\n<hr>\n\n<p>You gain a +4 bonus to Chakra Control checks to charge exploding tags of any kind, and a +4 bonus to Demolition checks when placing them.</p>\n\n\n<p><b>Mastery:</b> The first step increases the time an explosive tag that's charged by you remains charged to 10 minutes. The third step increases it to 30 minutes, and the fifth step further increases this to one hour.</p>\n",
+      "value": "<p>You gain a +4 bonus to Chakra Control checks to charge exploding tags of any kind, and a +4 bonus to Demolition checks when placing them.</p>\n\n\n<p><b>Mastery:</b> The first step increases the time an explosive tag that's charged by you remains charged to 10 minutes. The third step increases it to 30 minutes, and the fifth step further increases this to one hour.</p>\n",
       "summary": "",
       "instructions": ""
     },

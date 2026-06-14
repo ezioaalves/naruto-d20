@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>This technique functions as Kuuhazan (p182), except as above, and you make a Full Attack instead.</p>\n\n\n\n",
+      "value": "<p>This technique functions as Kuuhazan (p182), except as above, and you make a Full Attack instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

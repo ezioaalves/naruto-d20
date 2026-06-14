@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You enter a special fighting stance, and gain a +2 competence bonus to unarmed damage rolls.</p>\n\n\n\n",
+      "value": "<p>You enter a special fighting stance, and gain a +2 competence bonus to unarmed damage rolls.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

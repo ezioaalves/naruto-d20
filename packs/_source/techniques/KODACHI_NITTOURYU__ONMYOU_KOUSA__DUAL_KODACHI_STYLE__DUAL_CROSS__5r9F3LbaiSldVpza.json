@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>This technique can only be used if you wield two weapons and missed the target by 5 or less with a melee attack this round. You make an attack that deals normal damage, and may choose to make a sunder or disarm attempt instead. The attack is made with the weapon that didn't miss (i.e. if your main hand attack missed, this is an attack with your off-hand weapon).</p>\n\n\n\n",
+      "value": "<p>This technique can only be used if you wield two weapons and missed the target by 5 or less with a melee attack this round. You make an attack that deals normal damage, and may choose to make a sunder or disarm attempt instead. The attack is made with the weapon that didn't miss (i.e. if your main hand attack missed, this is an attack with your off-hand weapon).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

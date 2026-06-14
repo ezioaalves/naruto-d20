@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> Mob Range: Melee Attack</p>\n\n<hr>\n\n<p>You strike with a powerful blow to the head, following it up with a potent finisher. Make an unarmed attack that functions as Taijutsu: Yama-uchi. If the attack hits and the target fails its save, you may make a second attack at a -5 penalty, which functions as Todome.</p>\n\n\n\n",
+      "value": "<p>You strike with a powerful blow to the head, following it up with a potent finisher. Make an unarmed attack that functions as Taijutsu: Yama-uchi. If the attack hits and the target fails its save, you may make a second attack at a -5 penalty, which functions as Todome.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

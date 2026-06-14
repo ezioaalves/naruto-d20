@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>You spit out a long stream of spider silk towards a creature, attempting to stick to it and fling it away. The target must be your size category or smaller. If hit, the target is thrown 1d6 x 5 ft in a direction of your choosing (except directly away from you), and may suffer fall damage. If the target impacts a hard object or surface, it suffers 1d4 damage per 10 ft of the knockback.</p>\n\n\n\n",
+      "value": "<p>You spit out a long stream of spider silk towards a creature, attempting to stick to it and fling it away. The target must be your size category or smaller. If hit, the target is thrown 1d6 x 5 ft in a direction of your choosing (except directly away from you), and may suffer fall damage. If the target impacts a hard object or surface, it suffers 1d4 damage per 10 ft of the knockback.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

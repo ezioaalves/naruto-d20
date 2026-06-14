@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>Throw up to 1 shuriken, plus 1 per 2 levels (up to 5 total) at the target. Each shuriken suffers a cumulative 1 penalty to hit for each shuriken thrown this way.<br><br>These shuriken do not gain any damage bonuses from your Strength, feats or other abilities.</p>\n\n\n\n",
+      "value": "<p>Throw up to 1 shuriken, plus 1 per 2 levels (up to 5 total) at the target. Each shuriken suffers a cumulative 1 penalty to hit for each shuriken thrown this way.<br><br>These shuriken do not gain any damage bonuses from your Strength, feats or other abilities.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

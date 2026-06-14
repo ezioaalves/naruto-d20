@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, F, Mob</p>\n\n<hr>\n\n<p>You swing your Chakra-infused blade in a downward motion, creating a blast of wind carrying your Chakra, which takes the shape of numerous cherry blossom petals. Once it arrives at its destination, it turns into a whirlwind that slashes everything within.<br><br>Make a melee attack against each creature in the area, which deals 3d6+3 slashing damage on hit. Any creature in the area (even if missed) is also blown upward 5 ft per two levels (Fortitude negates), and will begin to fall until their initiative count (even if they do not get a turn).</p>\n\n\n\n",
+      "value": "<p>You swing your Chakra-infused blade in a downward motion, creating a blast of wind carrying your Chakra, which takes the shape of numerous cherry blossom petals. Once it arrives at its destination, it turns into a whirlwind that slashes everything within.<br><br>Make a melee attack against each creature in the area, which deals 3d6+3 slashing damage on hit. Any creature in the area (even if missed) is also blown upward 5 ft per two levels (Fortitude negates), and will begin to fall until their initiative count (even if they do not get a turn).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

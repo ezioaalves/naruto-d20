@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Medical)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You concentrate Chakra into your hand and touch a creature, forcing the Chakra into its body, curing one poison effect. It will not suffer any secondary damage from the poison, if it hasn't already. If you have 9 or more ranks in Craft (Pharmaceutical) and Knowledge (Earth and Life Sciences), you can extract a dose of the poison.<br><br>The dose must be used within 1 hour, or it becomes unusable, and can only be used to create an antidote.</p>\n\n\n\n",
+      "value": "<p>You concentrate Chakra into your hand and touch a creature, forcing the Chakra into its body, curing one poison effect. It will not suffer any secondary damage from the poison, if it hasn't already. If you have 9 or more ranks in Craft (Pharmaceutical) and Knowledge (Earth and Life Sciences), you can extract a dose of the poison.<br><br>The dose must be used within 1 hour, or it becomes unusable, and can only be used to create an antidote.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

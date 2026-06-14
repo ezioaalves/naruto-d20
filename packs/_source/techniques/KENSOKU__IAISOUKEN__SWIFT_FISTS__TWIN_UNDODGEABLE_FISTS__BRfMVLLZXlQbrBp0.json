@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>All your unarmed attacks count as Kensoku: Iaiken attacks, with the same bonuses. You take a -2 penalty to attack rolls, and gain a +2 bonus to any rolls made to confirm critical hits with such attacks. Inflicting the dazed condition multiple times in a round does not extend its duration.</p>\n\n\n\n",
+      "value": "<p>All your unarmed attacks count as Kensoku: Iaiken attacks, with the same bonuses. You take a -2 penalty to attack rolls, and gain a +2 bonus to any rolls made to confirm critical hits with such attacks. Inflicting the dazed condition multiple times in a round does not extend its duration.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

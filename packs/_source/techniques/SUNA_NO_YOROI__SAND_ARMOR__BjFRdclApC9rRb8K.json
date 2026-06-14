@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 20</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>You gain DR 10/Ballistic, as well as fire and electricity resistance 10. The armor can soak up 10 points of physical and energy damage each per level (maximum 150 of each), after which it expires. While in effect, you add the weight of the sand to your worn equipment.</p>\n\n\n\n",
+      "value": "<p>You gain DR 10/Ballistic, as well as fire and electricity resistance 10. The armor can soak up 10 points of physical and energy damage each per level (maximum 150 of each), after which it expires. While in effect, you add the weight of the sand to your worn equipment.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

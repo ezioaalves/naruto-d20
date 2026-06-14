@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> F, Mas, Mob</p>\n\n<hr>\n\n<p>This special technique is mainly used by ANBU and Hunter-Nin forces, and attempts to mangle a body beyond recognition. The check DC for any creature attempting to perform a forensics investigation on the body is increased by 5. If performed in one minute, the increase is 10 instead. This technique does not stack with itself: simply apply the highest modifier from among the effects.</p>\n\n\n<p><b>Mastery:</b> Each step improves the DC increase by +1, or +2 if performed in one minute.</p>\n",
+      "value": "<p>This special technique is mainly used by ANBU and Hunter-Nin forces, and attempts to mangle a body beyond recognition. The check DC for any creature attempting to perform a forensics investigation on the body is increased by 5. If performed in one minute, the increase is 10 instead. This technique does not stack with itself: simply apply the highest modifier from among the effects.</p>\n\n\n<p><b>Mastery:</b> Each step improves the DC increase by +1, or +2 if performed in one minute.</p>\n",
       "summary": "",
       "instructions": ""
     },

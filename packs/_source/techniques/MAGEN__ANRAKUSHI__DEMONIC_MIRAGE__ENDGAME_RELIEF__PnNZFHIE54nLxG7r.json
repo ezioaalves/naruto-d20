@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The subject is shown an illusion catering to its greatest desire in this moment (reinforcements, death of an enemy, etc.), losing their Dexterity bonus to Defense or losing their next turn (your choice). You are not aware of what illusions they experience. Once the technique ends, the illusion falls away, and the subject takes 2d6 damage as its hopes are crushed. This damage cannot reduce their HP below 0.</p>\n\n\n\n",
+      "value": "<p>The subject is shown an illusion catering to its greatest desire in this moment (reinforcements, death of an enemy, etc.), losing their Dexterity bonus to Defense or losing their next turn (your choice). You are not aware of what illusions they experience. Once the technique ends, the illusion falls away, and the subject takes 2d6 damage as its hopes are crushed. This damage cannot reduce their HP below 0.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

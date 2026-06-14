@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You greatly increase the effects of gravity upon the subject, making it count as though it were carrying an extra 15 lbs per level of extra gear. If the subject's heavy load is exceeded by this effect, it is @Condition[staggered]{staggered} while the technique lasts, and suffers 1d6 damage for every 20 lbs its heavy load is exceeded each round (up to 10d6 per round). A creature that cannot lift its new weight is immobilized.<br><br>If the ground beneath the subject cannot support its new weight, it may collapse and have it fall through. It cannot use the tumble skill to lessen the fall damage in this case.</p>\n\n\n\n",
+      "value": "<p>You greatly increase the effects of gravity upon the subject, making it count as though it were carrying an extra 15 lbs per level of extra gear. If the subject's heavy load is exceeded by this effect, it is @Condition[staggered]{staggered} while the technique lasts, and suffers 1d6 damage for every 20 lbs its heavy load is exceeded each round (up to 10d6 per round). A creature that cannot lift its new weight is immobilized.<br><br>If the ground beneath the subject cannot support its new weight, it may collapse and have it fall through. It cannot use the tumble skill to lessen the fall damage in this case.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

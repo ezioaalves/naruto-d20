@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You must be touching the ground with your hands, and the target area must be an earthen surface (earth, dirt, rock or sand). A sharp spike of earth rises up, skewering creatures in the area for 2d8 damage (half earth, half piercing).</p>\n\n<hr><p><b>Empower:</b> Spend one Chakra to create an additional spike, up to one per level. Each spike must target a different 5 ft square.</p>\n\n",
+      "value": "<p>You must be touching the ground with your hands, and the target area must be an earthen surface (earth, dirt, rock or sand). A sharp spike of earth rises up, skewering creatures in the area for 2d8 damage (half earth, half piercing).</p>\n\n<hr><p><b>Empower:</b> Spend one Chakra to create an additional spike, up to one per level. Each spike must target a different 5 ft square.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You gain Darkvision with a range of 60 ft, and gain a +4 bonus to Spot checks if it is daytime.</p>\n\n\n\n",
+      "value": "<p>You gain Darkvision with a range of 60 ft, and gain a +4 bonus to Spot checks if it is daytime.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

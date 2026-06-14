@@ -1,0 +1,21 @@
+{{!-- templates/item/technique-header.hbs --}}
+{{!-- Auto-generated stat block injected above the description editor, mirroring PF1e's spell-header.hbs --}}
+<div class="technique-description">
+  <p>
+    <strong>{{localize "NarutoD20.Technique.Type.Label"}}</strong> {{discipline}}&nbsp;&middot;
+    <strong>{{localize "NarutoD20.Technique.Rank.Label"}}</strong> {{rank}}&nbsp;&middot;
+    {{complexity}}
+  </p>
+  <p>
+    <strong>{{localize "NarutoD20.Technique.ChakraCost.Label"}}</strong> {{chakraCost}}<br>
+    <strong>{{localize "NarutoD20.Technique.LearnDC"}}</strong> {{learnDC}}&nbsp;&nbsp;
+    <strong>{{localize "NarutoD20.Technique.Successes"}}</strong> {{successes}}<br>
+    {{#if hasPerform}}
+    <strong>{{localize "NarutoD20.Technique.Threshold"}}</strong> {{threshold}}&nbsp;&nbsp;
+    <strong>{{localize "NarutoD20.Technique.PerformDC.Label"}}</strong> {{performDC}}<br>
+    {{/if}}
+    {{#if components}}
+    <strong>{{localize "NarutoD20.Technique.Components.Legend"}}</strong> {{components}}
+    {{/if}}
+  </p>
+</div>

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> E, F, Mob</p>\n\n<hr>\n\n<p>Make an attack against the target, dealing 4d6 additional damage if it hits (not multiplied on critical hits). If the attack hits, you can make a single attack at each other creature adjacent to you, at a -5 penalty, which deals half as much damage as the first attack.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the additional damage by 1d6, up to 1d6 per level or 16d6 total (whichever is lower).</p>\n\n",
+      "value": "<p>Make an attack against the target, dealing 4d6 additional damage if it hits (not multiplied on critical hits). If the attack hits, you can make a single attack at each other creature adjacent to you, at a -5 penalty, which deals half as much damage as the first attack.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the additional damage by 1d6, up to 1d6 per level or 16d6 total (whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

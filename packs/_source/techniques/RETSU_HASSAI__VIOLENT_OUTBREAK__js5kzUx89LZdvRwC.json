@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> H, Mas</p>\n\n<hr>\n\n<p>The subject is overcome with uncontrollable, violent thoughts and attacks the nearest creature to the best of its ability. If the subject is damaged or attacked by a creature, that creature becomes the focus of its rage, and the subject attacks it to the best of its ability. The subject does not make attacks of opportunity against any creature it is not currently attacking.</p>\n\n\n<p><b>Mastery:</b> The first and third steps increase the duration by 1 round.<br><br>The fifth step allows you to select a secondary target within 15 ft of the first, which is also affected by this technique, though only for a single round.</p>\n",
+      "value": "<p>The subject is overcome with uncontrollable, violent thoughts and attacks the nearest creature to the best of its ability. If the subject is damaged or attacked by a creature, that creature becomes the focus of its rage, and the subject attacks it to the best of its ability. The subject does not make attacks of opportunity against any creature it is not currently attacking.</p>\n\n\n<p><b>Mastery:</b> The first and third steps increase the duration by 1 round.<br><br>The fifth step allows you to select a secondary target within 15 ft of the first, which is also affected by this technique, though only for a single round.</p>\n",
       "summary": "",
       "instructions": ""
     },

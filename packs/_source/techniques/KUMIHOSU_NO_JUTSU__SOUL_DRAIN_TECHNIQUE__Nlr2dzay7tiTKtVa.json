@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>This low-level Ninjutsu is used by Kuiarasu clan members to absorb the remaining energy from a dead body and to \"feed\" from its soul to calm their hunger. Every round this technique is maintained the user gains 1 Soul Unit. The amount of time before a corpse can no longer be used is based on the time of death, once a body dies the corpse can be used within 12 hours time before it cannot provide Soul Units. For every hit dice the creature possessed the time is increased by another hour. The user is able to harvest a number of Soul Units equal to the number of hit dice the creature had.</p>\n\n<hr><p><b>Material Focus:</b> A corpse of a sentient creature.</p>\n",
+      "value": "<p>This low-level Ninjutsu is used by Kuiarasu clan members to absorb the remaining energy from a dead body and to \"feed\" from its soul to calm their hunger. Every round this technique is maintained the user gains 1 Soul Unit. The amount of time before a corpse can no longer be used is based on the time of death, once a body dies the corpse can be used within 12 hours time before it cannot provide Soul Units. For every hit dice the creature possessed the time is increased by another hour. The user is able to harvest a number of Soul Units equal to the number of hit dice the creature had.</p>\n\n<hr><p><b>Material Focus:</b> A corpse of a sentient creature.</p>\n",
       "summary": "",
       "instructions": ""
     },

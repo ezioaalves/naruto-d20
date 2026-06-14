@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, Mob, E</p>\n\n<hr>\n\n<p>You must have a chidori or raikiri effect (or a derivative thereof) active. You channel Chakra into the effect and fire two needles of electricity, dealing 1d4+1 electric damage each. You can select a target within range for each needle, and can target the same creature multiple times. The needles automatically hit, ignoring cover and concealment (except total cover or concealment), and cannot be evaded with avoiding an attack actions.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to fire an additional needle, up to 1 per level or 10 total (whichever is lower).</p>\n\n",
+      "value": "<p>You must have a chidori or raikiri effect (or a derivative thereof) active. You channel Chakra into the effect and fire two needles of electricity, dealing 1d4+1 electric damage each. You can select a target within range for each needle, and can target the same creature multiple times. The needles automatically hit, ignoring cover and concealment (except total cover or concealment), and cannot be evaded with avoiding an attack actions.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to fire an additional needle, up to 1 per level or 10 total (whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

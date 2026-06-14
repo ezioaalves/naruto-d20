@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You camouflage yourself near an amount of dirt, rock or stone that can cover your size, gaining a +10 bonus to Hide checks and becoming able to Hide while being observed for as long as you remain immobile. Creatures who can See (Through) Chakra gain a +5 bonus to Spot checks against you while you hide like this.<br><br>You can partially merge with any rock or stone formation that can physically contain your body to gain DR 5/-. You must maintain direct contact to the surface you use to hide in and/or merge with. If you lose direct contact, the technique ends.</p>\n\n\n\n",
+      "value": "<p>You camouflage yourself near an amount of dirt, rock or stone that can cover your size, gaining a +10 bonus to Hide checks and becoming able to Hide while being observed for as long as you remain immobile. Creatures who can See (Through) Chakra gain a +5 bonus to Spot checks against you while you hide like this.<br><br>You can partially merge with any rock or stone formation that can physically contain your body to gain DR 5/-. You must maintain direct contact to the surface you use to hide in and/or merge with. If you lose direct contact, the technique ends.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

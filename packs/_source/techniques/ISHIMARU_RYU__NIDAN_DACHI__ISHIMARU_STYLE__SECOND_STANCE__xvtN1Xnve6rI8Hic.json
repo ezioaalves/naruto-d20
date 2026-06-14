@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Ishimaru Ryu: Shodan Dachi, except as above, and you also gain a +2 competence bonus to unarmed attack rolls. If an unarmed attack made by you kills or disables an opponent (such as unconsciousness by lethal damage), you may make an attack of opportunity against any creature adjacent to you.</p>\n\n\n\n",
+      "value": "<p>As Ishimaru Ryu: Shodan Dachi, except as above, and you also gain a +2 competence bonus to unarmed attack rolls. If an unarmed attack made by you kills or disables an opponent (such as unconsciousness by lethal damage), you may make an attack of opportunity against any creature adjacent to you.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

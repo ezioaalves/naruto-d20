@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> Mas</p>\n\n<hr>\n\n<p>While in thick mist or smoke, you suffer no miss chance due to concealment against targets within 5 ft of you, and can see clearly for that distance.</p>\n\n\n<p><b>Mastery:</b> The second step requires ECL 5 or higher and increases the range at which you can see through mist or fog to 10 ft. The fourth step requires ECL 10 or higher, and increases that range to 15 ft. Neither step increases the range at which you can ignore concealment.</p>\n",
+      "value": "<p>While in thick mist or smoke, you suffer no miss chance due to concealment against targets within 5 ft of you, and can see clearly for that distance.</p>\n\n\n<p><b>Mastery:</b> The second step requires ECL 5 or higher and increases the range at which you can see through mist or fog to 10 ft. The fourth step requires ECL 10 or higher, and increases that range to 15 ft. Neither step increases the range at which you can ignore concealment.</p>\n",
       "summary": "",
       "instructions": ""
     },

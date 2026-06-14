@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>Your animal companion recovers 1d6 + 1 HP. This technique cannot affect the same creature more than once every 24 hours.</p>\n\n\n<p><b>Mastery:</b> Steps one, three and five each increase the healing by 2, but require ECL 5, 7 and 9 (respectively) to obtain.</p>\n",
+      "value": "<p>Your animal companion recovers 1d6 + 1 HP. This technique cannot affect the same creature more than once every 24 hours.</p>\n\n\n<p><b>Mastery:</b> Steps one, three and five each increase the healing by 2, but require ECL 5, 7 and 9 (respectively) to obtain.</p>\n",
       "summary": "",
       "instructions": ""
     },

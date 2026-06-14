@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You apply a seal to a puppet. Anyone with the same Chakra signature as you can spend 1 Chakra to animate the puppet with 1 HD, but it cannot attack or perform any combat actions. While animated by this seal, you can use the Puppetry ability to animate the puppet as a swift action.<br><br>This seal is created with any amount of Chakra (your choice, up to 1 per 2 levels), and extends the duration of the Puppetry ability by 30 minutes per point of Chakra spent, which can be spread among multiple uses of the Puppetry ability, but once this extra time is used up, the seal disappears. Only one such seal can be applied per puppet.</p>\n\n\n\n",
+      "value": "<p>You apply a seal to a puppet. Anyone with the same Chakra signature as you can spend 1 Chakra to animate the puppet with 1 HD, but it cannot attack or perform any combat actions. While animated by this seal, you can use the Puppetry ability to animate the puppet as a swift action.<br><br>This seal is created with any amount of Chakra (your choice, up to 1 per 2 levels), and extends the duration of the Puppetry ability by 30 minutes per point of Chakra spent, which can be spread among multiple uses of the Puppetry ability, but once this extra time is used up, the seal disappears. Only one such seal can be applied per puppet.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You strike with light but quick blows. This attack must be used as a follow-up to Taijutsu: Ougi - Rendan Kidouki, against the same target, gaining two additional attacks at a -5 penalty. These additional attacks cannot score critical hits, and you suffer a -6 penalty to confirming any critical hits with the other attacks.<br><br>If both additional attacks hit, the subject is knocked back 10 ft (Fortitude negates).</p>\n\n\n\n",
+      "value": "<p>You strike with light but quick blows. This attack must be used as a follow-up to Taijutsu: Ougi - Rendan Kidouki, against the same target, gaining two additional attacks at a -5 penalty. These additional attacks cannot score critical hits, and you suffer a -6 penalty to confirming any critical hits with the other attacks.<br><br>If both additional attacks hit, the subject is knocked back 10 ft (Fortitude negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

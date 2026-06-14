@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You focus a large amount of Chakra in your hand, charging it with a high voltage. When the charge hits, the target must make a save vs massive damage. Holding the charge will not impede your normal functions.</p>\n\n\n\n",
+      "value": "<p>You focus a large amount of Chakra in your hand, charging it with a high voltage. When the charge hits, the target must make a save vs massive damage. Holding the charge will not impede your normal functions.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

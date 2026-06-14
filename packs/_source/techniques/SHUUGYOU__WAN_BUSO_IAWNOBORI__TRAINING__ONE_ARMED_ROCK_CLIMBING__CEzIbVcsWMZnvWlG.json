@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Through mountainous terrain you climb to the top. This training involves climbing dangerous cliffs with one hand tied behind your back. The character must be around mountainous terrain to learn this training. At the end of this training the character gains a +5 inherent bonus to Climb checks. Additionally, if the character is reduced to climbing with only one hand, they may continue to climb using one hand instead of being unable to move.</p>\n\n<hr><p><b>Requires:</b> Training (f) Climb 10 ranks</p>\n<p><b>Mastery:</b> Each step of mastery gives the user a +1 to the Reflex save.</p>\n",
+      "value": "<p>Through mountainous terrain you climb to the top. This training involves climbing dangerous cliffs with one hand tied behind your back. The character must be around mountainous terrain to learn this training. At the end of this training the character gains a +5 inherent bonus to Climb checks. Additionally, if the character is reduced to climbing with only one hand, they may continue to climb using one hand instead of being unable to move.</p>\n\n<hr><p><b>Requires:</b> Training (f) Climb 10 ranks</p>\n<p><b>Mastery:</b> Each step of mastery gives the user a +1 to the Reflex save.</p>\n",
       "summary": "",
       "instructions": ""
     },

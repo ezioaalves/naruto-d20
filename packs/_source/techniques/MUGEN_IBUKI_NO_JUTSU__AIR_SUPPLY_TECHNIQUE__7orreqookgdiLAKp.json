@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You use Chakra to modify the composition and quantity of air in your lungs, allowing you to 'breathe' in any area without needing to inhale or exhale.<br><br>You are immune to strangulation, drowning and suffocation, and can run at your maximum speed without getting short of breath.<br><br>In the last round of the technique's duration, you can perform the technique again as a move-equivalent action to renew its duration.</p>\n\n\n\n",
+      "value": "<p>You use Chakra to modify the composition and quantity of air in your lungs, allowing you to 'breathe' in any area without needing to inhale or exhale.<br><br>You are immune to strangulation, drowning and suffocation, and can run at your maximum speed without getting short of breath.<br><br>In the last round of the technique's duration, you can perform the technique again as a move-equivalent action to renew its duration.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

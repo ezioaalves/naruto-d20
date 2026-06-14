@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, F, Mas, Mob</p>\n\n<hr>\n\n<p>You rapidly spin your weapon, igniting the air around you through extreme friction. Make a melee attack against each creature in the area, dealing normal damage. In addition, creatures in the area take 5d6 fire damage (Reflex halves), and are knocked back 5 ft (Fortitude negates).</p>\n\n\n<p><b>Mastery:</b> The fifth step increases the area to a 10 ft wide, 15 ft high Cylinder.</p>\n",
+      "value": "<p>You rapidly spin your weapon, igniting the air around you through extreme friction. Make a melee attack against each creature in the area, dealing normal damage. In addition, creatures in the area take 5d6 fire damage (Reflex halves), and are knocked back 5 ft (Fortitude negates).</p>\n\n\n<p><b>Mastery:</b> The fifth step increases the area to a 10 ft wide, 15 ft high Cylinder.</p>\n",
       "summary": "",
       "instructions": ""
     },

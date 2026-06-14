@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> F, Mas</p>\n\n<hr>\n\n<p>This basic Kamiton technique creates a small shuriken-shaped projectile made of paper which hurdles towards his foes. The projectile deals 1d6 point of slashing damage, which can be halved with a successful Reflex save.<br><br>This technique cannot solidify more than one Chakrabearing object (like an exploding tag or advanced seal) among the objects it affects. If such an object is thrown and hits a creature, they have a -4 Reflex save against the object, unless it is removed before it activates.</p>\n\n<hr><p><b>Requires:</b> 3 ranks Craft (Visual Arts)</p>\n<p><b>Material Focus:</b> 2 pages of paper.</p>\n<p><b>Mastery:</b> Each step increases the damage by +1.</p>\n",
+      "value": "<p>This basic Kamiton technique creates a small shuriken-shaped projectile made of paper which hurdles towards his foes. The projectile deals 1d6 point of slashing damage, which can be halved with a successful Reflex save.<br><br>This technique cannot solidify more than one Chakrabearing object (like an exploding tag or advanced seal) among the objects it affects. If such an object is thrown and hits a creature, they have a -4 Reflex save against the object, unless it is removed before it activates.</p>\n\n<hr><p><b>Requires:</b> 3 ranks Craft (Visual Arts)</p>\n<p><b>Material Focus:</b> 2 pages of paper.</p>\n<p><b>Mastery:</b> Each step increases the damage by +1.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>An illusory copy of you appears within range. Starting the round after you use this technique, you must maintain concentration on the double to keep it from disappearing at the end of the following round. The double acts and moves as you direct it, but cannot interact with physical objects or make any sound. In addition, you turn invisible to all creatures that could see you perform the technique. If the illusory clone is made to appear in your square, onlookers will not notice that you turned invisible as the illusion covers you. The invisibility breaks when you take offensive action or are damaged in any way.</p>\n\n\n\n",
+      "value": "<p>An illusory copy of you appears within range. Starting the round after you use this technique, you must maintain concentration on the double to keep it from disappearing at the end of the following round. The double acts and moves as you direct it, but cannot interact with physical objects or make any sound. In addition, you turn invisible to all creatures that could see you perform the technique. If the illusory clone is made to appear in your square, onlookers will not notice that you turned invisible as the illusion covers you. The invisibility breaks when you take offensive action or are damaged in any way.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

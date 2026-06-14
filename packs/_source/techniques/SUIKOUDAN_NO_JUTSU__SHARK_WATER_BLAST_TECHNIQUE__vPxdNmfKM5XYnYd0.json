@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You create a large shark of water that speed towards the target and explodes, dealing 7d8 water damage.</p>\n\n\n\n",
+      "value": "<p>You create a large shark of water that speed towards the target and explodes, dealing 7d8 water damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

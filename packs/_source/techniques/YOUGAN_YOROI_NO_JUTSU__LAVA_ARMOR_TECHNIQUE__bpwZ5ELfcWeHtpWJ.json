@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Yoton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H, F</p>\n\n<hr>\n\n<p>Using this technique, the user creates a layer of molten armor that helps protect them from attacks. For the duration of the technique, the user gains +3 natural armor bonus to defense, and attackers using natural weapons or melee weapons without reach take one point of lava damage. This armor weighs 1 pound per size category of the user (5 pounds for a medium-sized character) or 10 pounds per size category of the user if the user is of Large size or larger.</p>\n\n<hr><p><b>Material Focus:</b> A sufficient mass of earth, sand, rock, or mud nearby to form the armor.</p>\n",
+      "value": "<p>Using this technique, the user creates a layer of molten armor that helps protect them from attacks. For the duration of the technique, the user gains +3 natural armor bonus to defense, and attackers using natural weapons or melee weapons without reach take one point of lava damage. This armor weighs 1 pound per size category of the user (5 pounds for a medium-sized character) or 10 pounds per size category of the user if the user is of Large size or larger.</p>\n\n<hr><p><b>Material Focus:</b> A sufficient mass of earth, sand, rock, or mud nearby to form the armor.</p>\n",
       "summary": "",
       "instructions": ""
     },

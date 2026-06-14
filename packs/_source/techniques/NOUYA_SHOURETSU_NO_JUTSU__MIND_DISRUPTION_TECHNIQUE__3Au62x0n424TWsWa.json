@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>This technique affects the subject's bond to any creatures it controls by will (such as various types of clones, but not puppets or summoned creatures) When the subject sends mental orders to such creatures, they have a 50% chance of being ignored, resulting in the clone either continuing its previous actions or simply taking no actions instead. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>This technique affects the subject's bond to any creatures it controls by will (such as various types of clones, but not puppets or summoned creatures) When the subject sends mental orders to such creatures, they have a 50% chance of being ignored, resulting in the clone either continuing its previous actions or simply taking no actions instead. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

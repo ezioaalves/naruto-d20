@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The next time the target sleeps for at least one hour, it will experience a dream communicating a message of your choice that it will remember perfectly upon wak ing. The message does not respond to any questions or actions, and if the subject does not speak your language it will not understand the message.</p>\n\n\n\n",
+      "value": "<p>The next time the target sleeps for at least one hour, it will experience a dream communicating a message of your choice that it will remember perfectly upon wak ing. The message does not respond to any questions or actions, and if the subject does not speak your language it will not understand the message.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

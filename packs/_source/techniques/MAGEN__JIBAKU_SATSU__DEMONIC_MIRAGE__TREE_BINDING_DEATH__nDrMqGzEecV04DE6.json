@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create the illusion that the subject is bound by a tree that grows around it as you vanish from its senses. The subject becomes immobilized and cannot detect you through smell, sight, taste, hearing or touch. You<br>are considered as an invisible attacker if you choose to attack the subject. This technique ends if the subject is attacked or damaged, and blind creatures are not affected.</p>\n\n\n\n",
+      "value": "<p>You create the illusion that the subject is bound by a tree that grows around it as you vanish from its senses. The subject becomes immobilized and cannot detect you through smell, sight, taste, hearing or touch. You<br>are considered as an invisible attacker if you choose to attack the subject. This technique ends if the subject is attacked or damaged, and blind creatures are not affected.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

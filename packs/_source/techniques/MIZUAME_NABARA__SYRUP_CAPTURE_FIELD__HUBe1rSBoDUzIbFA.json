@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> Mas, S</p>\n\n<hr>\n\n<p>You spit out a large quantity of sticky liquid that covers the area. Creatures within the area cannot run or charge, and move at half their speed during their turn. They also suffer a -2 penalty to Defense and Reflex saves. Characters that use the Tadayou technique before moving through the area remain unaffected</p>\n\n\n<p><b>Mastery:</b> The third step allows you to increase the Cost to 6 and increase the area to a 15 ft square.<br><br>The fifth step allows you to increase the Cost to 8 and increase the area to a 20 ft square.</p>\n",
+      "value": "<p>You spit out a large quantity of sticky liquid that covers the area. Creatures within the area cannot run or charge, and move at half their speed during their turn. They also suffer a -2 penalty to Defense and Reflex saves. Characters that use the Tadayou technique before moving through the area remain unaffected</p>\n\n\n<p><b>Mastery:</b> The third step allows you to increase the Cost to 6 and increase the area to a 15 ft square.<br><br>The fifth step allows you to increase the Cost to 8 and increase the area to a 20 ft square.</p>\n",
       "summary": "",
       "instructions": ""
     },

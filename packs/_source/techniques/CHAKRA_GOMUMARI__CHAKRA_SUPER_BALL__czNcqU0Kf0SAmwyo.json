@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, E, P</p>\n\n<hr>\n\n<p>You fire a concentrated ball of Chakra that seeks out the highest Chakra signature in the area of effect, dealing 4d6 force damage before bouncing to the next highest Chakra signature, continuing until it has hit 4 targets. Secondary targets take half damage.<br><br>If two or more Chakra signatures are even, determine which is hit first randomly.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6 and the number of secondary targets by 1 (maximum 8d6 damage and 7 secondary targets).</p>\n\n",
+      "value": "<p>You fire a concentrated ball of Chakra that seeks out the highest Chakra signature in the area of effect, dealing 4d6 force damage before bouncing to the next highest Chakra signature, continuing until it has hit 4 targets. Secondary targets take half damage.<br><br>If two or more Chakra signatures are even, determine which is hit first randomly.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6 and the number of secondary targets by 1 (maximum 8d6 damage and 7 secondary targets).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

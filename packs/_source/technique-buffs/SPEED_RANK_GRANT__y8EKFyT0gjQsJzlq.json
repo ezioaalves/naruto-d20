@@ -14,7 +14,8 @@
         "operator": "add",
         "priority": 0,
         "target": "skill.acr",
-        "formula": "@item.speedRank.jump"
+        "formula": "@item.speedRank.jump",
+        "flavor": "SPEED RANK GRANT"
       },
       {
         "type": "dodge",
@@ -22,7 +23,8 @@
         "operator": "add",
         "priority": 0,
         "target": "ac",
-        "formula": "@item.speedRank.dodge"
+        "formula": "@item.speedRank.dodge",
+        "flavor": "SPEED RANK GRANT"
       },
       {
         "type": "untyped",
@@ -30,7 +32,8 @@
         "operator": "add",
         "priority": 0,
         "target": "attack",
-        "formula": "@item.speedRank.attack"
+        "formula": "@item.speedRank.attack",
+        "flavor": "SPEED RANK GRANT"
       },
       {
         "type": "untyped",
@@ -38,7 +41,8 @@
         "operator": "add",
         "priority": 0,
         "target": "allSpeeds",
-        "formula": "@item.speedRank.speed"
+        "formula": "@item.speedRank.speed",
+        "flavor": "SPEED RANK GRANT"
       },
       {
         "type": "untyped",
@@ -46,7 +50,8 @@
         "priority": 0,
         "target": "skill.ste",
         "formula": "@item.speedRank.hide",
-        "_id": "RjMHVqgN"
+        "_id": "RjMHVqgN",
+        "flavor": "SPEED RANK GRANT"
       },
       {
         "type": "untyped",
@@ -54,7 +59,8 @@
         "priority": 0,
         "target": "ref",
         "formula": "@item.speedRank.dodge",
-        "_id": "17OhbWVn"
+        "_id": "17OhbWVn",
+        "flavor": "SPEED RANK GRANT"
       },
       {
         "type": "untyped",
@@ -62,7 +68,8 @@
         "operator": "add",
         "priority": 0,
         "target": "cmb",
-        "formula": "@item.speedRank.cmb"
+        "formula": "@item.speedRank.cmb",
+        "flavor": "SPEED RANK GRANT"
       }
     ],
     "changeFlags": {
@@ -113,7 +120,7 @@
   "effects": [],
   "flags": {
     "naruto-d20": {
-      "rankBuff": {
+      "maintenanceBuff": {
         "key": "KOUSOKU",
         "grantType": "temp"
       }

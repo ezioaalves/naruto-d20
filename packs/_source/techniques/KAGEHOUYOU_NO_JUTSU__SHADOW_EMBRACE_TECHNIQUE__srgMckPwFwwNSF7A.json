@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You make your own shadow wrap around your body and make erratic movements, confusing your foes and granting you 15% concealment against melee attacks unless the attacker makes a save to keep focused enough to ignore the shadow. A successful save makes the attacker immune for a single round, after which it must save again when it attacks.<br><br>Blind creatures are immune to this technique.</p>\n\n\n\n",
+      "value": "<p>You make your own shadow wrap around your body and make erratic movements, confusing your foes and granting you 15% concealment against melee attacks unless the attacker makes a save to keep focused enough to ignore the shadow. A successful save makes the attacker immune for a single round, after which it must save again when it attacks.<br><br>Blind creatures are immune to this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>This technique's effect is identical to Kaihoudan, except it originates from a puppet controlled by you, using it's attack bonus modified by your Intelligence modifier.<br><br>The puppet in question must be animated with 4 HD or more, and be equipped with an Elemental Cannon loaded with a Water Scroll. The attack consumes 2 charges from the scroll. The technique consumes 2 of the puppet's Chakra, and you can have the puppet pay up to 3 of the technique's cost.</p>\n\n\n\n",
+      "value": "<p>This technique's effect is identical to Kaihoudan, except it originates from a puppet controlled by you, using it's attack bonus modified by your Intelligence modifier.<br><br>The puppet in question must be animated with 4 HD or more, and be equipped with an Elemental Cannon loaded with a Water Scroll. The attack consumes 2 charges from the scroll. The technique consumes 2 of the puppet's Chakra, and you can have the puppet pay up to 3 of the technique's cost.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

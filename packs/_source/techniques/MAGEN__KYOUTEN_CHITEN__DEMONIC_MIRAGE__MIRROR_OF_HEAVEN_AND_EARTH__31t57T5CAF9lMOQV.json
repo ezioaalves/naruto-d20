@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>Your sharingan must be active to use this technique. The first time you make a successful save against a harmful genjutsu before your next turn, you can 'bounce' the genjutsu to any creature within 30 ft, as long as you are aware of them.<br><br>The new target is now targeted by the genjutsu, as though it had been the original target (it can still make a save, and CR still applies).</p>\n\n\n\n",
+      "value": "<p>Your sharingan must be active to use this technique. The first time you make a successful save against a harmful genjutsu before your next turn, you can 'bounce' the genjutsu to any creature within 30 ft, as long as you are aware of them.<br><br>The new target is now targeted by the genjutsu, as though it had been the original target (it can still make a save, and CR still applies).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

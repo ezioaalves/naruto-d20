@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You channel Chakra into the air, creating a shower of embers that deals 2d4 fire damage each round, which damages unattended objects and structures and sets fire to combustible materials.</p>\n\n\n\n",
+      "value": "<p>You channel Chakra into the air, creating a shower of embers that deals 2d4 fire damage each round, which damages unattended objects and structures and sets fire to combustible materials.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

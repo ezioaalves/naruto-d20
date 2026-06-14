@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique functions the same as Genryuudan (p266), but allows you to recreate techniques of Rank 8 or lower, increases its base cost to 12 plus the cost of the recreated technique, and the save DC is calculated as though it were a Rank 10 genjutsu.</p>\n\n\n\n",
+      "value": "<p>This technique functions the same as Genryuudan (p266), but allows you to recreate techniques of Rank 8 or lower, increases its base cost to 12 plus the cost of the recreated technique, and the save DC is calculated as though it were a Rank 10 genjutsu.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

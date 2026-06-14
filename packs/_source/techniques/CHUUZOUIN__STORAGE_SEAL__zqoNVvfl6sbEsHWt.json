@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is the same as Gesouin, except:<br><br>- The seal holds 20 lbs /level.<br>- The cost to add more objects increases to 2.<br>- The DC to undo the seal is 22.<br>- Each step of mastery increases the capacity by 10 lbs.</p>\n\n\n\n",
+      "value": "<p>This technique is the same as Gesouin, except:<br><br>- The seal holds 20 lbs /level.<br>- The cost to add more objects increases to 2.<br>- The DC to undo the seal is 22.<br>- Each step of mastery increases the capacity by 10 lbs.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

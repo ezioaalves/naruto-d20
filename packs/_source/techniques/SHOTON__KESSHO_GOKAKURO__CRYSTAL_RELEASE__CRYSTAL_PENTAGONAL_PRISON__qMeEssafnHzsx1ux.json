@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>As Shoton: Suisho Ro no Jutsu except as above.</p>\n\n<hr><p><b>Requires:</b> Suisho Ro no Jutsu (5)</p>\n",
+      "value": "<p>As Shoton: Suisho Ro no Jutsu except as above.</p>\n\n<hr><p><b>Requires:</b> Suisho Ro no Jutsu (5)</p>\n",
       "summary": "",
       "instructions": ""
     },

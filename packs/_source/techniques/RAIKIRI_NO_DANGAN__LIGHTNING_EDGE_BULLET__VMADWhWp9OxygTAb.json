@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> H, E</p>\n\n<hr>\n\n<p>This advanced form of the Raikiri technique allows the user to charge and shoot his Raikiri at the target in a zigzag formation that strikes with the same vital precision of its parent technique, but with more power. The user makes a ranged touch attack that deals 6d6+1 electricity damage and 4d4+1 sonic damage. If the user rolls a natural 20 on the touch attack, the target must succeed a Fortitude save or become stunned for 1 round afterwards.</p>\n\n<hr><p><b>Requires:</b> Raikiri (3)</p>\n<p><b>Empower:</b> The user may spend an additional 1 point of chakra to increase both the electricity and sonic damage by 1, up to 6d6+5 and 4d4+5.</p>\n",
+      "value": "<p>This advanced form of the Raikiri technique allows the user to charge and shoot his Raikiri at the target in a zigzag formation that strikes with the same vital precision of its parent technique, but with more power. The user makes a ranged touch attack that deals 6d6+1 electricity damage and 4d4+1 sonic damage. If the user rolls a natural 20 on the touch attack, the target must succeed a Fortitude save or become stunned for 1 round afterwards.</p>\n\n<hr><p><b>Requires:</b> Raikiri (3)</p>\n<p><b>Empower:</b> The user may spend an additional 1 point of chakra to increase both the electricity and sonic damage by 1, up to 6d6+5 and 4d4+5.</p>\n",
       "summary": "",
       "instructions": ""
     },

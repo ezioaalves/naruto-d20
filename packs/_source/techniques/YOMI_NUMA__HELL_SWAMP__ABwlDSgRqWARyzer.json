@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You turn all natural, unworked earth and stone in the area into a thick mud, to a depth of 1 ft per level (which may be reduced based on the ground's toughness or resilience, GM's discretion). Creatures caught in the mud must save each round to avoid sinking in and becoming immobilized for 1d6 rounds. If a creature is small enough, it may start drowning as well.<br><br>You have full control over the shape, size and depth of each patch of mud (within the technique's limits).<br><br>Creatures can use Tadayou or similar effects to walk on the mud without a chance of any ill effects.</p>\n\n\n\n",
+      "value": "<p>You turn all natural, unworked earth and stone in the area into a thick mud, to a depth of 1 ft per level (which may be reduced based on the ground's toughness or resilience, GM's discretion). Creatures caught in the mud must save each round to avoid sinking in and becoming immobilized for 1d6 rounds. If a creature is small enough, it may start drowning as well.<br><br>You have full control over the shape, size and depth of each patch of mud (within the technique's limits).<br><br>Creatures can use Tadayou or similar effects to walk on the mud without a chance of any ill effects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

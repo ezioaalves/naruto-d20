@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 13</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 16 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>As Shouchite no Jutsu, but the hand is Large, has a Strength score of 35 and a base attack bonus equal to half your level, and can reach out to grapple an adjacent enemy once per round. While successfully grappling, a successful grapple check deals 2d6+12 damage to the grappled creature as the hand crushes it. The hand has a Defense of 20 (10, -1 size, +11 natural) and has 2 HP per level.</p>\n\n\n\n",
+      "value": "<p>As Shouchite no Jutsu, but the hand is Large, has a Strength score of 35 and a base attack bonus equal to half your level, and can reach out to grapple an adjacent enemy once per round. While successfully grappling, a successful grapple check deals 2d6+12 damage to the grappled creature as the hand crushes it. The hand has a Defense of 20 (10, -1 size, +11 natural) and has 2 HP per level.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

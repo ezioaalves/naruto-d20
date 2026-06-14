@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-5",
-        "target": "skill.ckc"
+        "target": "skill.ckc",
+        "flavor": "GOGYOU FUUIN"
       }
     ],
     "changeFlags": {

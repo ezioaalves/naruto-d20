@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>A basic traversal and Chakra Control technique in the category of Kinobori or Tadayou, this basic skill lets you walk on snow or ice without hindrance.<br><br>When walking on snow or ice, you suffer no movement penalties and need not make Tumble checks to move across a slippery surface of ice. You still leave tracks in the snow. When used in conjunction with Kinobori, you can even walk up ice-covered surfaces. Should the Koori Tanjou no Jutsu technique be used, you do not need to make a Balance check to remain standing on the surface it creates.</p>\n\n\n\n",
+      "value": "<p>A basic traversal and Chakra Control technique in the category of Kinobori or Tadayou, this basic skill lets you walk on snow or ice without hindrance.<br><br>When walking on snow or ice, you suffer no movement penalties and need not make Tumble checks to move across a slippery surface of ice. You still leave tracks in the snow. When used in conjunction with Kinobori, you can even walk up ice-covered surfaces. Should the Koori Tanjou no Jutsu technique be used, you do not need to make a Balance check to remain standing on the surface it creates.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

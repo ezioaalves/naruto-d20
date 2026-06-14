@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>The target squares must have short grass, moss or similar plant growth, which will harden and sharpen.<br><br>Each square counts as though it was covered in caltrops, which can be destroyed (a square of grass caltrops has Defense 11, 3 HP and 8 hardness). When dismissing this technique, you can choose to dismiss all of it, or only specific squares.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to target an additional 5 ft square (up to 1 per level).</p>\n\n",
+      "value": "<p>The target squares must have short grass, moss or similar plant growth, which will harden and sharpen.<br><br>Each square counts as though it was covered in caltrops, which can be destroyed (a square of grass caltrops has Defense 11, 3 HP and 8 hardness). When dismissing this technique, you can choose to dismiss all of it, or only specific squares.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to target an additional 5 ft square (up to 1 per level).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

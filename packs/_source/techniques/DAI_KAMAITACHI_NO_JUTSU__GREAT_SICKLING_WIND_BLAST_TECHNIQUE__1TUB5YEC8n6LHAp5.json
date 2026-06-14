@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is an improved version of Kamaitachi no Jutsu, and functions like it. The slashing winds deal 6d6 wind damage, and creatures caught must make a Fortitude save to avoid being pushed back 1d6x5 ft. The increase to Perform Requirements when using a fan or other suitable implement increases to 4.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chaka to increase the damage by 1 die, up to 1 die per level or 12d6 (whichever is lower). Every 2 Chakra you spend this way increases the Perform Requirements by 1.</p>\n\n",
+      "value": "<p>This technique is an improved version of Kamaitachi no Jutsu, and functions like it. The slashing winds deal 6d6 wind damage, and creatures caught must make a Fortitude save to avoid being pushed back 1d6x5 ft. The increase to Perform Requirements when using a fan or other suitable implement increases to 4.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chaka to increase the damage by 1 die, up to 1 die per level or 12d6 (whichever is lower). Every 2 Chakra you spend this way increases the Perform Requirements by 1.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

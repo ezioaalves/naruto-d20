@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You focus a toxic configuration of Chakra into your hand, which the touched creature's body reacts to as if it were poison. This technique delivers a contact poison with primary and secondary damage of 2d4 Constitution, and a save DC equal to this technique's.</p>\n\n\n\n",
+      "value": "<p>You focus a toxic configuration of Chakra into your hand, which the touched creature's body reacts to as if it were poison. This technique delivers a contact poison with primary and secondary damage of 2d4 Constitution, and a save DC equal to this technique's.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

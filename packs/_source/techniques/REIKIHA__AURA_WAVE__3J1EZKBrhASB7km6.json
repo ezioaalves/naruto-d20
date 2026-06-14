@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You send out a burst of Chakra that deals 3d6 force and 1d6 fire damage. The explosion damages unattended objects, though will not set fire to them, and it will blow out small fires (such as candles) within 15 ft. of the center of the blast.</p>\n\n\n\n",
+      "value": "<p>You send out a burst of Chakra that deals 3d6 force and 1d6 fire damage. The explosion damages unattended objects, though will not set fire to them, and it will blow out small fires (such as candles) within 15 ft. of the center of the blast.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

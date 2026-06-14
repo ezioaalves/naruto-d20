@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H *</p>\n\n<hr>\n\n<p>You must be adjacent to your animal companion to use this technique. You and your animal companion fuse into a large, two-headed wolf. You gain a size category, a bonus to your Strength, Dexterity and Constitution equal to your animal companion's ability modifiers in those scores, and your movement speed increases by 15 ft. In addition, you gain a number of claw attacks based on your BaB, as well as two bite attacks.<br><br>Your animal companion and all of your equipment merges into your new form and becomes unavailable while the transformation lasts. You become unable to make hand or half seals and cannot use techniques unless they require you to be affected by this technique.</p>\n\n\n\n",
+      "value": "<p>You must be adjacent to your animal companion to use this technique. You and your animal companion fuse into a large, two-headed wolf. You gain a size category, a bonus to your Strength, Dexterity and Constitution equal to your animal companion's ability modifiers in those scores, and your movement speed increases by 15 ft. In addition, you gain a number of claw attacks based on your BaB, as well as two bite attacks.<br><br>Your animal companion and all of your equipment merges into your new form and becomes unavailable while the transformation lasts. You become unable to make hand or half seals and cannot use techniques unless they require you to be affected by this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

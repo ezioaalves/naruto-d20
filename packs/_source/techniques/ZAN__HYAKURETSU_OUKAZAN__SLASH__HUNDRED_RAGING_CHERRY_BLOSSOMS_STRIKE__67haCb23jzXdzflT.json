@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You focus your Chakra around you, into razor-sharp cherry blossom petals that create a swirling, destructive storm that can shred your enemies to bits. Make a melee attack against all creatures inside the area, which deals 2d6 x 1d4 damage, increasing to 2d6 x 1d4+1 on a critical hit. The attack benefits from Kawarimi Defense 2.</p>\n\n\n\n",
+      "value": "<p>You focus your Chakra around you, into razor-sharp cherry blossom petals that create a swirling, destructive storm that can shred your enemies to bits. Make a melee attack against all creatures inside the area, which deals 2d6 x 1d4 damage, increasing to 2d6 x 1d4+1 on a critical hit. The attack benefits from Kawarimi Defense 2.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

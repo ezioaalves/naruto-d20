@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, S</p>\n\n<hr>\n\n<p>You carve glowing runes into your skin, granting you Darkvision out to 60 ft. You take 2 damage every time you attempt to perform this technique.</p>\n\n\n\n",
+      "value": "<p>You carve glowing runes into your skin, granting you Darkvision out to 60 ft. You take 2 damage every time you attempt to perform this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

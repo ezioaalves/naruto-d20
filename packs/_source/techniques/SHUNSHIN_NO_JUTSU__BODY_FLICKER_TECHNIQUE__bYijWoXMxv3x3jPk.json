@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> Mas, Mob, S</p>\n\n<hr>\n\n<p>This basic teleportation-like technique allows you to move to a location within range, as though moving with a flight speed with perfect maneuverability. The technique comes with audiovisual cues, like a pop and a puff of smoke, which does not allow you to hide while moving, and you cannot use it while heavily encumbered.</p>\n\n\n<p><b>Mastery:</b> The fifth step requires ECL 9 or higher, and allows you to perform this technique without the halfseal component by increasing the Perform Requirements by 5.</p>\n",
+      "value": "<p>This basic teleportation-like technique allows you to move to a location within range, as though moving with a flight speed with perfect maneuverability. The technique comes with audiovisual cues, like a pop and a puff of smoke, which does not allow you to hide while moving, and you cannot use it while heavily encumbered.</p>\n\n\n<p><b>Mastery:</b> The fifth step requires ECL 9 or higher, and allows you to perform this technique without the halfseal component by increasing the Perform Requirements by 5.</p>\n",
       "summary": "",
       "instructions": ""
     },

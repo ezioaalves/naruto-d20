@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, Mob, Mas</p>\n\n<hr>\n\n<p>You make a charge attack with your weapon. If it hits, the attack deals double damage, and all damage becomes piercing damage. Any damage that would not be multiplied on critical hits is not doubled. This technique can be used once per encounter.</p>\n\n\n<p><b>Mastery:</b> The first, third and fifth step increase the number of uses per encounter by one each.</p>\n",
+      "value": "<p>You make a charge attack with your weapon. If it hits, the attack deals double damage, and all damage becomes piercing damage. Any damage that would not be multiplied on critical hits is not doubled. This technique can be used once per encounter.</p>\n\n\n<p><b>Mastery:</b> The first, third and fifth step increase the number of uses per encounter by one each.</p>\n",
       "summary": "",
       "instructions": ""
     },

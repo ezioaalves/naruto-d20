@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You send forth a glimmering yellow tiger to leap at the target, dealing 4d8 electric damage (Fortitude halves). After one to five rounds (your choice), the target suffers another 3d8 electric damage and must make a Fortitude save or take 1d4 Chakra Coils damage.</p>\n\n\n\n",
+      "value": "<p>You send forth a glimmering yellow tiger to leap at the target, dealing 4d8 electric damage (Fortitude halves). After one to five rounds (your choice), the target suffers another 3d8 electric damage and must make a Fortitude save or take 1d4 Chakra Coils damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

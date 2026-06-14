@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Hachimon Tonkou </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You open and close the Heal Gate quickly, and are granted a burst of energy that allows you to ignore the fatigued and exhausted conditions, as well as granting you 2d6+2 temporary HP. This technique's effects are not cumulative. If used while the technique is still active, it does not refresh the duration.</p>\n\n\n\n",
+      "value": "<p>You open and close the Heal Gate quickly, and are granted a burst of energy that allows you to ignore the fatigued and exhausted conditions, as well as granting you 2d6+2 temporary HP. This technique's effects are not cumulative. If used while the technique is still active, it does not refresh the duration.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

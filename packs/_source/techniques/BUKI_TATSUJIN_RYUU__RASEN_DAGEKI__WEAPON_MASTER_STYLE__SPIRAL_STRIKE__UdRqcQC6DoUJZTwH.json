@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>Usable once per day. The user spirals around quickly before, striking for a devastating blow. The user makes an attack roll at his highest base attack bonus, if the attack hits the user threatens critical damage to the target. If the attack hits the target must make a Fortitude save or be knocked back 1d4x5 feet.</p>\n\n<hr><p><b>Requires:</b> Weapon Master 4, BaB +12, Melee Mastery (f)</p>\n<p><b>Material Focus:</b> The users held weapon.</p>\n<p><b>Mastery:</b> At the first, third and fifth steps of mastery you gain +1 to confirm criticals when using this technique. At the second and fourth steps of mastery you gain additional use per day.</p>\n",
+      "value": "<p>Usable once per day. The user spirals around quickly before, striking for a devastating blow. The user makes an attack roll at his highest base attack bonus, if the attack hits the user threatens critical damage to the target. If the attack hits the target must make a Fortitude save or be knocked back 1d4x5 feet.</p>\n\n<hr><p><b>Requires:</b> Weapon Master 4, BaB +12, Melee Mastery (f)</p>\n<p><b>Material Focus:</b> The users held weapon.</p>\n<p><b>Mastery:</b> At the first, third and fifth steps of mastery you gain +1 to confirm criticals when using this technique. At the second and fourth steps of mastery you gain additional use per day.</p>\n",
       "summary": "",
       "instructions": ""
     },

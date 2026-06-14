@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>This simple yet powerful combination attack starts with you executing an attack as though performing Ryu Tsui Sen. On hit, the target is not knocked @Condition[prone]{prone}, however, but loses its Dexterity bonus to Defense against the second hit of this combo (no save). Immediately after the first attack, you follow up with a second one (even if the first attack missed), this time making an attack as though performing Ryu Shou Sen, though you suffer a 5 penalty to the attack roll. The distance the target is thrown increases to 1d4 x 5 ft, and it will end up @Condition[prone]{prone} once it lands.</p>\n\n\n\n",
+      "value": "<p>This simple yet powerful combination attack starts with you executing an attack as though performing Ryu Tsui Sen. On hit, the target is not knocked @Condition[prone]{prone}, however, but loses its Dexterity bonus to Defense against the second hit of this combo (no save). Immediately after the first attack, you follow up with a second one (even if the first attack missed), this time making an attack as though performing Ryu Shou Sen, though you suffer a 5 penalty to the attack roll. The distance the target is thrown increases to 1d4 x 5 ft, and it will end up @Condition[prone]{prone} once it lands.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

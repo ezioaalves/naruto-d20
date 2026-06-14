@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>Your Swim speed increases by 10 ft, and you gain a +3 bonus to Swim checks.</p>\n\n\n<p><b>Mastery:</b> Each step increases your swim speed by an additional 5 ft, and improves the bonus to Swim checks by +1.</p>\n",
+      "value": "<p>Your Swim speed increases by 10 ft, and you gain a +3 bonus to Swim checks.</p>\n\n\n<p><b>Mastery:</b> Each step increases your swim speed by an additional 5 ft, and improves the bonus to Swim checks by +1.</p>\n",
       "summary": "",
       "instructions": ""
     },

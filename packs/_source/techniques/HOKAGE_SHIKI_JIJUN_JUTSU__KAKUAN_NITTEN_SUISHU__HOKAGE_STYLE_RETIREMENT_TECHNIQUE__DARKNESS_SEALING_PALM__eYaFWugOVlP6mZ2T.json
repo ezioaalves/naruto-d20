@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 13</p>\n<p><b>Chakra Cost:</b> 24</p>\n\n<p><b>Learn DC:</b> 30 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 18 | <b>Perform DC:</b> 38</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>You attempt to seal the qualities of demonic Chakra that make the target frenzied. You scribe a seal on your palm and thrust it towards the target, prematurely ending any rage or frenzy effect it may be affected by.<br><br>If you concentrate on the technique, the subject is restrained, causing the target to be unable to run and have its effective Strength and Dexterity scores reduced to 3 as long as it is within 500 ft of you.</p>\n\n\n\n",
+      "value": "<p>You attempt to seal the qualities of demonic Chakra that make the target frenzied. You scribe a seal on your palm and thrust it towards the target, prematurely ending any rage or frenzy effect it may be affected by.<br><br>If you concentrate on the technique, the subject is restrained, causing the target to be unable to run and have its effective Strength and Dexterity scores reduced to 3 as long as it is within 500 ft of you.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

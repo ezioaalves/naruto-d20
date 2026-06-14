@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You create a tunnel of air that's large enough to fit one Medium-sized creature (8 ft. tall and 5 ft. wide). The air inside the tunnel causes no friction, allowing creatures moving through the tunnel to move at triple their normal speed. All thrown weapons that pass through the tunnel for at least half of their trajectory have their range increment tripled as well.<br><br>The tunnel starts at your location and can have as many turns as you like until it reaches maximum range. Only you and creatures able to See (Through) Chakra can detect the exact path of the tunnel.</p>\n\n\n\n",
+      "value": "<p>You create a tunnel of air that's large enough to fit one Medium-sized creature (8 ft. tall and 5 ft. wide). The air inside the tunnel causes no friction, allowing creatures moving through the tunnel to move at triple their normal speed. All thrown weapons that pass through the tunnel for at least half of their trajectory have their range increment tripled as well.<br><br>The tunnel starts at your location and can have as many turns as you like until it reaches maximum range. Only you and creatures able to See (Through) Chakra can detect the exact path of the tunnel.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

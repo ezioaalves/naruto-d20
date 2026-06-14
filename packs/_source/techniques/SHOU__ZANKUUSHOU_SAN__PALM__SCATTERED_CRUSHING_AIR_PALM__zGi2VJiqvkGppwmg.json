@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, E, Mob</p>\n\n<hr>\n\n<p>You make a Full Attack, either all with Chakra Bullets or all with enhancedunarmed strikes, each attack working like with Zankuushou, except as follows:<br><br>The bulllets deal 1d4 force damage, or melee attacks are enhanced with 1d4 additional force damage. The knockback the target suffers takes effect after all attacks are finished.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage of a single bullet or attack by 1d4, up to 3d4 total per bullet or attack.</p>\n\n",
+      "value": "<p>You make a Full Attack, either all with Chakra Bullets or all with enhancedunarmed strikes, each attack working like with Zankuushou, except as follows:<br><br>The bulllets deal 1d4 force damage, or melee attacks are enhanced with 1d4 additional force damage. The knockback the target suffers takes effect after all attacks are finished.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage of a single bullet or attack by 1d4, up to 3d4 total per bullet or attack.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

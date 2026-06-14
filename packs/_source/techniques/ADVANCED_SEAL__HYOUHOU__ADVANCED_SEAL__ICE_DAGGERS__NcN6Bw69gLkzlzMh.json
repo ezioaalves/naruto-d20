@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, E, X</p>\n\n<hr>\n\n<p>You throw an advanced seal at your target, which transforms into a shard of ice mid-throw. Make a ranged attack roll with a +1 bonus. The shard deals 1d4+2 cold damage on hit.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to throw an extra seal, up to 1 per level total. Each seal requires an attack roll.</p>\n\n",
+      "value": "<p>You throw an advanced seal at your target, which transforms into a shard of ice mid-throw. Make a ranged attack roll with a +1 bonus. The shard deals 1d4+2 cold damage on hit.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to throw an extra seal, up to 1 per level total. Each seal requires an attack roll.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

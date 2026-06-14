@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>You focus Chakra into your hand and mouth, and slowly breathe out a small, solid stream of fire that shapes itself into a sword. The weapon counts as a chisagatana, and attacks made with it are touch attacks dealing 1d6 fire damage, +1 per two levels (maximum +8). Since the blade is not material, you cannot add your Strength bonus to damage with the blade. The sword can be used to ignite combustible materials.</p>\n\n\n\n",
+      "value": "<p>You focus Chakra into your hand and mouth, and slowly breathe out a small, solid stream of fire that shapes itself into a sword. The weapon counts as a chisagatana, and attacks made with it are touch attacks dealing 1d6 fire damage, +1 per two levels (maximum +8). Since the blade is not material, you cannot add your Strength bonus to damage with the blade. The sword can be used to ignite combustible materials.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

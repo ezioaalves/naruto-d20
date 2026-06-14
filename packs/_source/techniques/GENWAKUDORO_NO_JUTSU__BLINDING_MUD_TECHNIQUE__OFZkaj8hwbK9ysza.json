@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> F, S</p>\n\n<hr>\n\n<p>You fling a patch of mud at the target's eyes, blinding it for 1d6 rounds. The target can remove the mud as a move action that requires one hand free and provokes attacks of opportunities. The target suffers a -1 penalty to Spot checks and attack rolls for 1 round after the blindness ends.</p>\n\n\n\n",
+      "value": "<p>You fling a patch of mud at the target's eyes, blinding it for 1d6 rounds. The target can remove the mud as a move action that requires one hand free and provokes attacks of opportunities. The target suffers a -1 penalty to Spot checks and attack rolls for 1 round after the blindness ends.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

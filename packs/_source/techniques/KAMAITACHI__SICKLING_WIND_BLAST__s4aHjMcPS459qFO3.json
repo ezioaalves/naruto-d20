@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>You release a blast of cutting wind, causing 4d6 wind damage (Reflex halves), and any creature caught in the area is pushed back 1d4 x 5 ft (Fortitude negates). You can ignore the Hand Seals component by swinging with tessen, war fan or a Huge or larger weapon. Doing so increases the Perform Requirements by 3.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 12d6.</p>\n\n",
+      "value": "<p>You release a blast of cutting wind, causing 4d6 wind damage (Reflex halves), and any creature caught in the area is pushed back 1d4 x 5 ft (Fortitude negates). You can ignore the Hand Seals component by swinging with tessen, war fan or a Huge or larger weapon. Doing so increases the Perform Requirements by 3.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 12d6.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, Mob, S</p>\n\n<hr>\n\n<p>This technique functions as Jigen Ugoku no Jutsu (p172), except as above, and you can only teleport to a square containing a Hyoushou or Makyou Hyoushou barrier, or a square adjacent to one, and you cannot bring other creatures with you.</p>\n\n\n\n",
+      "value": "<p>This technique functions as Jigen Ugoku no Jutsu (p172), except as above, and you can only teleport to a square containing a Hyoushou or Makyou Hyoushou barrier, or a square adjacent to one, and you cannot bring other creatures with you.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

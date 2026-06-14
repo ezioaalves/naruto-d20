@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, F, H</p>\n\n<hr>\n\n<p>You send forth a tiger of ice and snow to rend your targets apart, dealing 4d10 damage (half cold, half slashing).</p>\n\n\n\n",
+      "value": "<p>You send forth a tiger of ice and snow to rend your targets apart, dealing 4d10 damage (half cold, half slashing).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

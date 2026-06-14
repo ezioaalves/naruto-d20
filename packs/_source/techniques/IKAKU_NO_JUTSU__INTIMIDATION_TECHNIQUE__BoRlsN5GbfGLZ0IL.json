@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You gain a +4 bonus to Intimidation checks, as you seem bigger and more threatening to other creatures.<br><br>Any creature seeing you or interacting with you can make a save to deny you the bonus against them.</p>\n\n\n\n",
+      "value": "<p>You gain a +4 bonus to Intimidation checks, as you seem bigger and more threatening to other creatures.<br><br>Any creature seeing you or interacting with you can make a save to deny you the bonus against them.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

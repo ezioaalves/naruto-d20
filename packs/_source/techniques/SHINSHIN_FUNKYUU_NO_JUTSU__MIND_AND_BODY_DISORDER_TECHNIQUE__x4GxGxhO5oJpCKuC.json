@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You place some restraints in the subject's mind, making it difficult for them to move normally. The subject suffers a -4 penalty to attack and weapon damage, skill checks and Defense. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>You place some restraints in the subject's mind, making it difficult for them to move normally. The subject suffers a -4 penalty to attack and weapon damage, skill checks and Defense. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

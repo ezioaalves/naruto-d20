@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You cause a touched body part or object to shine like a torch, shedding bright light in a 30 ft. radius, and dim light for 20 ft. after that.</p>\n\n\n\n",
+      "value": "<p>You cause a touched body part or object to shine like a torch, shedding bright light in a 30 ft. radius, and dim light for 20 ft. after that.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

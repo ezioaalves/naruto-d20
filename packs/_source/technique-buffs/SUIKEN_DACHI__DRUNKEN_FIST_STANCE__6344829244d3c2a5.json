@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "1",
-        "target": "ac"
+        "target": "ac",
+        "flavor": "SUIKEN DACHI"
       }
     ],
     "changeFlags": {

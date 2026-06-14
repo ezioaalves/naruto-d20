@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>A simple exercise in Chakra control, you create a glowing orb, shedding bright light in a 30 ft. radius, and dim light for 20 ft. after that. As a move action, you can move the light anywhere within the technique's range.<br><br>Alternatively, you can make your hand emit the same amount of light for 1 minute per level.</p>\n\n\n\n",
+      "value": "<p>A simple exercise in Chakra control, you create a glowing orb, shedding bright light in a 30 ft. radius, and dim light for 20 ft. after that. As a move action, you can move the light anywhere within the technique's range.<br><br>Alternatively, you can make your hand emit the same amount of light for 1 minute per level.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

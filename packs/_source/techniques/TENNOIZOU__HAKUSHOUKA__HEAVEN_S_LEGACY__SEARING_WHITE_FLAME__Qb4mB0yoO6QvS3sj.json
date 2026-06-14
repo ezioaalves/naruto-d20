@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 30</p>\n\n<p><b>Learn DC:</b> 31 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> C, H, P</p>\n\n<hr>\n\n<p>Among the most powerful of fire techniques, this lost skill allows you to expel Chakra and superheat it, breathing it out as a short, white-hot stream of flames that deals 25d8 fire damage. Any creature damaged will also catch fire until it manages to put out the flames. Creatures immune to fire damage still take 5d8 damage, but will not catch fire.</p>\n\n\n\n",
+      "value": "<p>Among the most powerful of fire techniques, this lost skill allows you to expel Chakra and superheat it, breathing it out as a short, white-hot stream of flames that deals 25d8 fire damage. Any creature damaged will also catch fire until it manages to put out the flames. Creatures immune to fire damage still take 5d8 damage, but will not catch fire.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, H, Mas</p>\n\n<hr>\n\n<p>You raise a wall of ice, which is 4 inches thick, has 12 HP, 2 hardness and can be broken by a Strength check (DC 15).</p>\n\n\n<p><b>Mastery:</b> Each step increases the number of times per day you can use this technique as a defensive maneuver by 1. The first step allows you to defend against attacks from sources of a CR up to your level or 5 (whichever is lower). Each additional step increases the CR by 5.</p>\n",
+      "value": "<p>You raise a wall of ice, which is 4 inches thick, has 12 HP, 2 hardness and can be broken by a Strength check (DC 15).</p>\n\n\n<p><b>Mastery:</b> Each step increases the number of times per day you can use this technique as a defensive maneuver by 1. The first step allows you to defend against attacks from sources of a CR up to your level or 5 (whichever is lower). Each additional step increases the CR by 5.</p>\n",
       "summary": "",
       "instructions": ""
     },

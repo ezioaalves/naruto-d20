@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> C, F, Mas, Mob</p>\n\n<hr>\n\n<p>Make a single attack with a thrown weapon and gain a +1 bonus to damage rolls with it.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage bonus by 1 (up to +5 total).</p>\n<p><b>Mastery:</b> The fifth step increases the basic damage bonus and the maximum amount it can be empowered to by 1 each (+2 base, empower up to +6 total).</p>\n",
+      "value": "<p>Make a single attack with a thrown weapon and gain a +1 bonus to damage rolls with it.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage bonus by 1 (up to +5 total).</p>\n<p><b>Mastery:</b> The fifth step increases the basic damage bonus and the maximum amount it can be empowered to by 1 each (+2 base, empower up to +6 total).</p>\n",
       "summary": "",
       "instructions": ""
     },

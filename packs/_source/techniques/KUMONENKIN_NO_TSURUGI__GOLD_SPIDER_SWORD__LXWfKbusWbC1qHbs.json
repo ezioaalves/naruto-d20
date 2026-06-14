@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> E, H, M</p>\n\n<hr>\n\n<p>You fire a long thread of hardened, golden silk, dealing 7d6 piercing damage to all creatures in its way.</p>\n\n<hr><p><b>Empower:</b> Spend 5 Chakra and one additional kumonosu to extend the range by 25 ft (up to 100 ft total).</p>\n\n",
+      "value": "<p>You fire a long thread of hardened, golden silk, dealing 7d6 piercing damage to all creatures in its way.</p>\n\n<hr><p><b>Empower:</b> Spend 5 Chakra and one additional kumonosu to extend the range by 25 ft (up to 100 ft total).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

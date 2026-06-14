@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, X</p>\n\n<hr>\n\n<p>You send yout chakra to an advanced seal and throw it at the targeted area, where it explodes for 3d8 fire damage. You can also use this technique on an advanced seal within range to make it explode, though doing so require the use of hand seals.</p>\n\n\n\n",
+      "value": "<p>You send yout chakra to an advanced seal and throw it at the targeted area, where it explodes for 3d8 fire damage. You can also use this technique on an advanced seal within range to make it explode, though doing so require the use of hand seals.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

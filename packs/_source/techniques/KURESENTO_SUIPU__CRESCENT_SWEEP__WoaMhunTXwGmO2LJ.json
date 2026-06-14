@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 9</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, M, F</p>\n\n<hr>\n\n<p>The user makes an attack at his highest attack bonus with his held weapon against all creatures in the area that deals double damage on a successful hit. While using this technique, the user does not suffer attack penalties from Combat Expertise or Defensive Fighting, but still gains the benefits.<br><br>If the user's weapon wasn't a mastercraft weapon, it is destroyed beyond repair after using this technique.</p>\n\n<hr><p><b>Requires:</b> Soujutsu: Hassun (3)</p>\n<p><b>Material Focus:</b> The user's spear, naginata or quarterstaff.</p>\n",
+      "value": "<p>The user makes an attack at his highest attack bonus with his held weapon against all creatures in the area that deals double damage on a successful hit. While using this technique, the user does not suffer attack penalties from Combat Expertise or Defensive Fighting, but still gains the benefits.<br><br>If the user's weapon wasn't a mastercraft weapon, it is destroyed beyond repair after using this technique.</p>\n\n<hr><p><b>Requires:</b> Soujutsu: Hassun (3)</p>\n<p><b>Material Focus:</b> The user's spear, naginata or quarterstaff.</p>\n",
       "summary": "",
       "instructions": ""
     },

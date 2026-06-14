@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>You form a tight prison of crystal clear ice, which has an effect depending on the target's size category. A Medium-size creature is immobilized and starts suffocating on its next round. A Small-size creature starts suffocating after 1d4+1 rounds, and although it counts as immobilized, it can still attack with unarmed attacks or held weapons to destroy the prison.<br><br>The prison has 35 HP and can be attacked from the outside, though a creature trapped inside takes half damage from any outside attack that destroys the pris- on. Trapped creatures can make a Strength check (DC 30) to break free of the prison.</p>\n\n\n\n",
+      "value": "<p>You form a tight prison of crystal clear ice, which has an effect depending on the target's size category. A Medium-size creature is immobilized and starts suffocating on its next round. A Small-size creature starts suffocating after 1d4+1 rounds, and although it counts as immobilized, it can still attack with unarmed attacks or held weapons to destroy the prison.<br><br>The prison has 35 HP and can be attacked from the outside, though a creature trapped inside takes half damage from any outside attack that destroys the pris- on. Trapped creatures can make a Strength check (DC 30) to break free of the prison.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

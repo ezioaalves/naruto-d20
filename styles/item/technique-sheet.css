@@ -84,6 +84,18 @@
   gap: 4px;
 }
 
+/* Auto-generated stat block above description (mirrors PF1e .spell-description) */
+.pf1.sheet.item .technique-description {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #4b3b1e;
+}
+
+.pf1.sheet.item .technique-description p {
+  margin: 0 0 2px;
+}
+
 /* Dictionary flag read-only table */
 .pf1.sheet.item .flags table {
   width: 100%;

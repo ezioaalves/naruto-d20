@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>The subject gains 2 Chakra. If you have 5 or more levels of Elementalist with a Doton specialization, you can use this technique to reverse most kinds of petrification. This technique cannot be used more than once per day per target.</p>\n\n\n<p><b>Mastery:</b> The fifth step allows you to restore the target's Chakra Reserves by 2 instead, and if used on a target within 5 minutes of it having suffered Chakra depletion, it suffers none of the usual effects of that affliction.</p>\n",
+      "value": "<p>The subject gains 2 Chakra. If you have 5 or more levels of Elementalist with a Doton specialization, you can use this technique to reverse most kinds of petrification. This technique cannot be used more than once per day per target.</p>\n\n\n<p><b>Mastery:</b> The fifth step allows you to restore the target's Chakra Reserves by 2 instead, and if used on a target within 5 minutes of it having suffered Chakra depletion, it suffers none of the usual effects of that affliction.</p>\n",
       "summary": "",
       "instructions": ""
     },

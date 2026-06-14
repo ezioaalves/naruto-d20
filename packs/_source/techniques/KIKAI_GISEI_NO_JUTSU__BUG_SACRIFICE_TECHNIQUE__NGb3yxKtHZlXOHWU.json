@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> </p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b>  | <b>Successes:</b> </p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Used when you take damage from any source, you sac- rifice a kikaichuu inside your body to absorb 8 of the damage.</p>\n\n\n\n",
+      "value": "<p>Used when you take damage from any source, you sac- rifice a kikaichuu inside your body to absorb 8 of the damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

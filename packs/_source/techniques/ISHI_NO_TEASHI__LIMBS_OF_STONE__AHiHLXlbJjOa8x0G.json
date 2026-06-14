@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Your forearms, hands, shins and feet turn to stone, allowing your unarmed attacks to deal damage as though you were one size larger and deal lethal damage. You gain a +2 bonus to Strength checks made to break items or structures, as well as a +2 bonus to Climb checks, but take a -5 penalty to Move Silently and Swim checks. In the round this technique ends, you can spend a move action to refresh the duration, spending Chakra as though performing it to do so.</p>\n\n\n\n",
+      "value": "<p>Your forearms, hands, shins and feet turn to stone, allowing your unarmed attacks to deal damage as though you were one size larger and deal lethal damage. You gain a +2 bonus to Strength checks made to break items or structures, as well as a +2 bonus to Climb checks, but take a -5 penalty to Move Silently and Swim checks. In the round this technique ends, you can spend a move action to refresh the duration, spending Chakra as though performing it to do so.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

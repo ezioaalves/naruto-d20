@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You use your Chakra to form a powerful electric aura around you, which crackles with energy. Each round, other creatures caught within the area during your turn suffers 8d4 electric damage. While active, you gain a +2 bonus to Reflex saves against electric effects, but suffer a -8 penalty to Hide and Move Silently checks, as well as taking a -4 penalty to saves against any Water effects.</p>\n\n\n\n",
+      "value": "<p>You use your Chakra to form a powerful electric aura around you, which crackles with energy. Each round, other creatures caught within the area during your turn suffers 8d4 electric damage. While active, you gain a +2 bonus to Reflex saves against electric effects, but suffer a -8 penalty to Hide and Move Silently checks, as well as taking a -4 penalty to saves against any Water effects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

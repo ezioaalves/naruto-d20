@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, E, H, M</p>\n\n<hr>\n\n<p>You fill the area around you with a thick mist, reaching up to 30 ft high, which disperses in 5 rounds by a moderate wind (11+ mph) or 1 round in a strong wind (21+ mph). The fog completely obscures all vision beyond 5 feet, and creatures within 5 ft of each other gain concealment (20%).</p>\n\n<hr><p><b>Empower:</b> As an attack action while standing inside the fog, you can spend up to 5 Chakra to expand its radius by 20 ft and have it reach 10 ft higher (up to 1 Chakra per level's worth of total empowerment).</p>\n\n",
+      "value": "<p>You fill the area around you with a thick mist, reaching up to 30 ft high, which disperses in 5 rounds by a moderate wind (11+ mph) or 1 round in a strong wind (21+ mph). The fog completely obscures all vision beyond 5 feet, and creatures within 5 ft of each other gain concealment (20%).</p>\n\n<hr><p><b>Empower:</b> As an attack action while standing inside the fog, you can spend up to 5 Chakra to expand its radius by 20 ft and have it reach 10 ft higher (up to 1 Chakra per level's worth of total empowerment).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

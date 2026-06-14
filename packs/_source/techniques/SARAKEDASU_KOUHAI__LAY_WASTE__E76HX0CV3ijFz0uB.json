@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> S, Mas</p>\n\n<hr>\n\n<p>With this technique the user creates a mass of energy in a space within range. This space can be occupied by a creature. At the end of the combat round in which it was created, this mass of energy detonates, dealing 1d4 Force damage to all creatures in a 10 ft. radius. If only a single creature is in the effect radius of Sarakedasu Kouhai, the damage is doubled. (A swarm is not considered a single creature for the purposes of this jutsu).<br><br>This technique cannot be used more than once in a round.</p>\n\n<hr><p><b>Mastery:</b> The first, third, and fifth steps of mastery increase the damage die size by one step.</p>\n",
+      "value": "<p>With this technique the user creates a mass of energy in a space within range. This space can be occupied by a creature. At the end of the combat round in which it was created, this mass of energy detonates, dealing 1d4 Force damage to all creatures in a 10 ft. radius. If only a single creature is in the effect radius of Sarakedasu Kouhai, the damage is doubled. (A swarm is not considered a single creature for the purposes of this jutsu).<br><br>This technique cannot be used more than once in a round.</p>\n\n<hr><p><b>Mastery:</b> The first, third, and fifth steps of mastery increase the damage die size by one step.</p>\n",
       "summary": "",
       "instructions": ""
     },

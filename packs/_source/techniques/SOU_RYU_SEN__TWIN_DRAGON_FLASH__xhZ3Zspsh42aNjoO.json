@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>To use this technique, your katana must be sheathed in a solid sheath (such as wood or metal). You make an attack against the target, as though performing Kenjutsu: Iaido. Regardless of the result, you make a second attack with the sword's sheath at a -4 penalty, which is treated as a katana of one (metal) or two (wooden) sizes smaller than the katana it is paired with.<br><br>Unlike Iaido, this technique cannot be used as part of a charge. When this technique has been performed, your katana will be unsheathed, and you will hold the sheath in your off-hand.</p>\n\n\n\n",
+      "value": "<p>To use this technique, your katana must be sheathed in a solid sheath (such as wood or metal). You make an attack against the target, as though performing Kenjutsu: Iaido. Regardless of the result, you make a second attack with the sword's sheath at a -4 penalty, which is treated as a katana of one (metal) or two (wooden) sizes smaller than the katana it is paired with.<br><br>Unlike Iaido, this technique cannot be used as part of a charge. When this technique has been performed, your katana will be unsheathed, and you will hold the sheath in your off-hand.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

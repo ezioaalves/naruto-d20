@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "str"
+        "target": "str",
+        "flavor": "USAGIDO"
       },
       {
         "type": "untyped",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "fort"
+        "target": "fort",
+        "flavor": "USAGIDO"
       },
       {
         "type": "untyped",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "ref"
+        "target": "ref",
+        "flavor": "USAGIDO"
       },
       {
         "type": "untyped",
@@ -37,7 +40,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "ac"
+        "target": "ac",
+        "flavor": "USAGIDO"
       },
       {
         "type": "untyped",
@@ -45,7 +49,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "attack"
+        "target": "attack",
+        "flavor": "USAGIDO"
       },
       {
         "type": "untyped",
@@ -53,7 +58,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "wdamage"
+        "target": "wdamage",
+        "flavor": "USAGIDO"
       },
       {
         "type": "untyped",
@@ -61,7 +67,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-10",
-        "target": "chakraPool"
+        "target": "chakraPool",
+        "flavor": "USAGIDO"
       }
     ],
     "changeFlags": {

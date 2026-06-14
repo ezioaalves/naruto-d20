@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You summon two creatures of the same blood pact, neither of which can be of a higher rank than Protector. There is no chance to summon Elite or Paragon creatures when using this technique, though you can call on such creatures if you already know how to summon them. The Cost is equal to 5, plus the normal cost of both summoned creatures.</p>\n\n\n\n",
+      "value": "<p>You summon two creatures of the same blood pact, neither of which can be of a higher rank than Protector. There is no chance to summon Elite or Paragon creatures when using this technique, though you can call on such creatures if you already know how to summon them. The Cost is equal to 5, plus the normal cost of both summoned creatures.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You apply the seal to an object or surface, which grants the affected object 5 hardness, 1 HP per level and increases its break DC by 5. If used on a surface, the effect applies to a 10x10 ft. section. Up to two seals can be applied per object or surface, and their effects stack.</p>\n\n\n\n",
+      "value": "<p>You apply the seal to an object or surface, which grants the affected object 5 hardness, 1 HP per level and increases its break DC by 5. If used on a surface, the effect applies to a 10x10 ft. section. Up to two seals can be applied per object or surface, and their effects stack.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -2,7 +2,7 @@
   "type": "buff",
   "system": {
     "description": {
-      "value": "<p>You open the Heal Gate, gaining the bonuses of Kai-mon Kai: a +2 enhancement bonus to Strength and Dexterity and a 10 ft increase to land speed.</p><p>This buff does not automate Fast Healing, ignored fatigue/exhaustion, temporarily ineffective Strength or Dexterity damage, or the Chakra damage taken each round.</p>",
+      "value": "<p>You open the Heal Gate, gaining the bonuses of Kai-mon Kai: a +2 enhancement bonus to Strength and Dexterity and a 10 ft increase to land speed.</p><p>While open, Fast Healing, ignored fatigue/exhaustion, and the per-round Chakra damage are automated each turn. Still manual: your Strength or Dexterity damage is temporarily ineffective (it returns when the gate ends), and opening this gate as part of a greater Gate (Mastery step 2) grants no benefits and no penalties.</p>",
       "instructions": ""
     },
     "tags": [],
@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "str"
+        "target": "str",
+        "flavor": "KYU-MON KAI"
       },
       {
         "type": "enh",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "dex"
+        "target": "dex",
+        "flavor": "KYU-MON KAI"
       },
       {
         "type": "untyped",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "10",
-        "target": "landSpeed"
+        "target": "landSpeed",
+        "flavor": "KYU-MON KAI"
       }
     ],
     "changeFlags": {

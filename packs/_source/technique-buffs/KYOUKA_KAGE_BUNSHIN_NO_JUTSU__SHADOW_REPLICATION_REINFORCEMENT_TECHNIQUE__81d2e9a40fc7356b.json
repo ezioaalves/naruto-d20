@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "1",
-        "target": "attack"
+        "target": "attack",
+        "flavor": "KYOUKA KAGE BUNSHIN NO JUTSU"
       },
       {
         "type": "untyped",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "1",
-        "target": "ac"
+        "target": "ac",
+        "flavor": "KYOUKA KAGE BUNSHIN NO JUTSU"
       }
     ],
     "changeFlags": {

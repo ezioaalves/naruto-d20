@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>A spiked, crimson chain erupts from your outstretched hand and coils itself around the target's forehead, where it slowly damages and incapacitates them. Make a ranged touch attack. On hit, the chain fastens itself and deals 1d4 damage to the target each round. In addition, the target must make a Will save each round to avoid becoming @Condition[dazed]{dazed} for that round.<br><br>You can remove the chain easily, but others must succeed at a Strength check (DC 25) in order to do so. When removed, the chain instantly disappears.</p>\n\n\n\n",
+      "value": "<p>A spiked, crimson chain erupts from your outstretched hand and coils itself around the target's forehead, where it slowly damages and incapacitates them. Make a ranged touch attack. On hit, the chain fastens itself and deals 1d4 damage to the target each round. In addition, the target must make a Will save each round to avoid becoming @Condition[dazed]{dazed} for that round.<br><br>You can remove the chain easily, but others must succeed at a Strength check (DC 25) in order to do so. When removed, the chain instantly disappears.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You send Chakra into the flames surrounding the target, increasing their potency. The Reflex save required for the target to put out the flames is increased by 3, and the damage dealt by the flames each round increases by 1 per damage die.</p>\n\n\n\n",
+      "value": "<p>You send Chakra into the flames surrounding the target, increasing their potency. The Reflex save required for the target to put out the flames is increased by 3, and the damage dealt by the flames each round increases by 1 per damage die.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>You mold Chakra in your hand, turning it into a blade of electricity that is wielded like a ninja-to. Attacks with the blade are touch attacks, dealing 1d6 electric damage, +1 per three levels (up to +5). Since the blade is made of energy and not physical matter, you do not apply your Strength modifier to damage.<br><br>If a creature that carries a large amount of metal or one that is soaking wet is hit by the blade, it is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude DC 13 negates).</p>\n\n\n\n",
+      "value": "<p>You mold Chakra in your hand, turning it into a blade of electricity that is wielded like a ninja-to. Attacks with the blade are touch attacks, dealing 1d6 electric damage, +1 per three levels (up to +5). Since the blade is made of energy and not physical matter, you do not apply your Strength modifier to damage.<br><br>If a creature that carries a large amount of metal or one that is soaking wet is hit by the blade, it is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude DC 13 negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

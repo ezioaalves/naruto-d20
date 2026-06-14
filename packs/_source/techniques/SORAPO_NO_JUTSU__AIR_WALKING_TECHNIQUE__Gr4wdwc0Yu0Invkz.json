@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You can effortlessly leap into the sky, and gain a +60 bonus to Jump checks. In addition, the maximum height cap on jumps is removed while this technique is active.</p>\n\n\n\n",
+      "value": "<p>You can effortlessly leap into the sky, and gain a +60 bonus to Jump checks. In addition, the maximum height cap on jumps is removed while this technique is active.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

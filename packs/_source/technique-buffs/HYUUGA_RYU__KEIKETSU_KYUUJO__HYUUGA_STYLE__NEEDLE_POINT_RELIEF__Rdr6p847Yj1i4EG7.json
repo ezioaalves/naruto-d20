@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "skill.ckc"
+        "target": "skill.ckc",
+        "flavor": "HYUUGA RYU: KEIKETSU KYUUJO"
       }
     ],
     "changeFlags": {

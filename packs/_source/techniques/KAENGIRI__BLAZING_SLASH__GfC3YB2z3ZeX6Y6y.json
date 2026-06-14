@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, Mas, Mob</p>\n\n<hr>\n\n<p>You fire a ray of flames at your target, dealing 1d6 fire damage. If you hold a weapon with a Homura Dama effect active on it, you can instead discharge the effect to deal damage equal to the Homura Dama's. The effect is discharged even if the attack misses.</p>\n\n\n<p><b>Mastery:</b> The third step increases the range to Long.</p>\n",
+      "value": "<p>You fire a ray of flames at your target, dealing 1d6 fire damage. If you hold a weapon with a Homura Dama effect active on it, you can instead discharge the effect to deal damage equal to the Homura Dama's. The effect is discharged even if the attack misses.</p>\n\n\n<p><b>Mastery:</b> The third step increases the range to Long.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>Make a single melee attack with each of your weapons. Material Focus - Two held melee weapons.</p>\n\n\n\n",
+      "value": "<p>Make a single melee attack with each of your weapons. Material Focus - Two held melee weapons.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

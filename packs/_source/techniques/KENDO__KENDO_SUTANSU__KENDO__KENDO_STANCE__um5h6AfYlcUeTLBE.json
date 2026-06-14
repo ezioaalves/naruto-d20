@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>The user must be wielding a Kendo Stick in order to perform this stance. If the user is disarmed, the stance is broken. While in this stance the user can fight defensively without taking a penalty to his attack rolls.<br><br>Additionally, if the user threatens a critical hit on a target creature, he automatically confirms said critical.</p>\n\n<hr><p><b>Material Focus:</b> Kendo Stick.</p>\n<p><b>Mastery:</b> At each level of mastery, the user gains a cumulative +1 bonus to avoid being disarmed.</p>\n",
+      "value": "<p>The user must be wielding a Kendo Stick in order to perform this stance. If the user is disarmed, the stance is broken. While in this stance the user can fight defensively without taking a penalty to his attack rolls.<br><br>Additionally, if the user threatens a critical hit on a target creature, he automatically confirms said critical.</p>\n\n<hr><p><b>Material Focus:</b> Kendo Stick.</p>\n<p><b>Mastery:</b> At each level of mastery, the user gains a cumulative +1 bonus to avoid being disarmed.</p>\n",
       "summary": "",
       "instructions": ""
     },

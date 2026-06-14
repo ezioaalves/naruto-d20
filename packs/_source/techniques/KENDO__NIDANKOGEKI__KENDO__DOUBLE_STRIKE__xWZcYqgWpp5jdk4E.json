@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>A master of Kendo arts is quick and precise enough to land consecutive blows on his foe with ease.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. During a full attack, the user makes an additional attack at his highest attack bonus, minus 2 (in addition to the user's normal number of attacks).</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stic k.</p>\n<p><b>Mastery:</b> At 2nd and 4th levels of mastery the user may make an additional attack at his highest attack bonus, minus 2, at the cost of 2 chakra per extra attack.</p>\n",
+      "value": "<p>A master of Kendo arts is quick and precise enough to land consecutive blows on his foe with ease.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. During a full attack, the user makes an additional attack at his highest attack bonus, minus 2 (in addition to the user's normal number of attacks).</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stic k.</p>\n<p><b>Mastery:</b> At 2nd and 4th levels of mastery the user may make an additional attack at his highest attack bonus, minus 2, at the cost of 2 chakra per extra attack.</p>\n",
       "summary": "",
       "instructions": ""
     },

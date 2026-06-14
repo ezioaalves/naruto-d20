@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b>  | <b>Successes:</b> </p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You attempt you revitalize yourself using the blood of your opponent. You make a melee touch attack against an opponent, if you succeed; the opponent makes a Fortitude save. If the opponent fails their Fortitude save, they take damage equal to the amount of Constitution damage you have taken or 1, whichever is lower. You then restore an amount of Constitution damage equal to that amount. Mastery: At first, third, and fifth steps of mastery the maximum amount of damage you may heal/deal is increased by one by paying an additional 3 chakra per point beyond the first.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Blood Weapon (Small) (a)</p>\n",
+      "value": "<p>You attempt you revitalize yourself using the blood of your opponent. You make a melee touch attack against an opponent, if you succeed; the opponent makes a Fortitude save. If the opponent fails their Fortitude save, they take damage equal to the amount of Constitution damage you have taken or 1, whichever is lower. You then restore an amount of Constitution damage equal to that amount. Mastery: At first, third, and fifth steps of mastery the maximum amount of damage you may heal/deal is increased by one by paying an additional 3 chakra per point beyond the first.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Blood Weapon (Small) (a)</p>\n",
       "summary": "",
       "instructions": ""
     },

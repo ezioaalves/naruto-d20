@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You concentrate Chakra in your legs to propel yourself upward, gaining a +40 bonus to Jump checks and becoming unrestricted in jump height.</p>\n\n\n\n",
+      "value": "<p>You concentrate Chakra in your legs to propel yourself upward, gaining a +40 bonus to Jump checks and becoming unrestricted in jump height.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

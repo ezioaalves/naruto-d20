@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 20</p>\n\n<p><b>Learn DC:</b> 30 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 18 | <b>Perform DC:</b> 34</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You dig your hands into an earthen surface beneath your feet, regardless of how hard it is, and channel immense Chakra into it to raise a massive stalagmite in the target area, dealing 5d10 earth damage and 5d10 piercing damage. Non-flying creatures caught in the area must make a secondary Reflex save to avoid being knocked upwards 1d10x5 ft.<br><br>The stalagmite is a stone pillar that remains for 10 minutes per level, and can be dismissed as a move action.</p>\n\n\n\n",
+      "value": "<p>You dig your hands into an earthen surface beneath your feet, regardless of how hard it is, and channel immense Chakra into it to raise a massive stalagmite in the target area, dealing 5d10 earth damage and 5d10 piercing damage. Non-flying creatures caught in the area must make a secondary Reflex save to avoid being knocked upwards 1d10x5 ft.<br><br>The stalagmite is a stone pillar that remains for 10 minutes per level, and can be dismissed as a move action.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

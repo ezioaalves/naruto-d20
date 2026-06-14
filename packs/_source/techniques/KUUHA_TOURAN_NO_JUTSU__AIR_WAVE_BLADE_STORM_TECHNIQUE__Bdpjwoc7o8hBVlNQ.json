@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You create a blade of wind that cleaves through all enemies in the area, dealing 7d8 wind damage. The line cannot extend further than 100 ft.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 4 (up to 7d8+20 damage total).</p>\n\n",
+      "value": "<p>You create a blade of wind that cleaves through all enemies in the area, dealing 7d8 wind damage. The line cannot extend further than 100 ft.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 4 (up to 7d8+20 damage total).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

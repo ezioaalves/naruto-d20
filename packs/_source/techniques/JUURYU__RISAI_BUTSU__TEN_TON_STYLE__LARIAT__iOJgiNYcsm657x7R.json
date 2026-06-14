@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> Mas, Mob</p>\n\n<hr>\n\n<p>You strike a creature up to one size category larger than yourself with a simple lariat, making an unarmed attack that deals damage as though you were one size category larger, and deals 2 additional damage per Strength Rank you are currently benefiting from (maximum +6 damage).<br><br>This technique may be used as part of a charge.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to make a trip attempt as a free action after the attack, without provoking an attack of opportunity.</p>\n",
+      "value": "<p>You strike a creature up to one size category larger than yourself with a simple lariat, making an unarmed attack that deals damage as though you were one size category larger, and deals 2 additional damage per Strength Rank you are currently benefiting from (maximum +6 damage).<br><br>This technique may be used as part of a charge.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to make a trip attempt as a free action after the attack, without provoking an attack of opportunity.</p>\n",
       "summary": "",
       "instructions": ""
     },

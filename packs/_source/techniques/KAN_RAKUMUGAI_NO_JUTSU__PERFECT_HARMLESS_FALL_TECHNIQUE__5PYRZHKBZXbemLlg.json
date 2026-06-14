@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is identical to Shou Rakumugai no Jutsu, except as above, and the fall height is reduced by 50 ft instead.</p>\n\n\n\n",
+      "value": "<p>This technique is identical to Shou Rakumugai no Jutsu, except as above, and the fall height is reduced by 50 ft instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

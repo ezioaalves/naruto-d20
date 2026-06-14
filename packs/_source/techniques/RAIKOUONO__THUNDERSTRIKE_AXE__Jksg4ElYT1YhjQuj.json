@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>You call forth lightning, shaping it into a large axe that you smash into the target, dealing 6d8 electric damage (Reflex halves). A target taking any amount of damage from this technique is @Condition[paralyzed;duration=2]{paralyzed} for 2 rounds (Fortitude negates). This technique does not provoke attacks of opportunity when performed in another creature's threatened area.</p>\n\n\n\n",
+      "value": "<p>You call forth lightning, shaping it into a large axe that you smash into the target, dealing 6d8 electric damage (Reflex halves). A target taking any amount of damage from this technique is @Condition[paralyzed;duration=2]{paralyzed} for 2 rounds (Fortitude negates). This technique does not provoke attacks of opportunity when performed in another creature's threatened area.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

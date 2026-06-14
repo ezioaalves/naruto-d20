@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You create a ball of water that bursts outward in a spiraling wave, dealing 2d6 water damage to creatures caught in the area. Creatures damaged are knocked back 5 ft (Fortitude negates). If a creature is knocked back into another creature, both creatures fall @Condition[prone]{prone} (Balance or Dexterity check DC 10 negates). The range of this technique cannot exceed 30 ft.</p>\n\n\n\n",
+      "value": "<p>You create a ball of water that bursts outward in a spiraling wave, dealing 2d6 water damage to creatures caught in the area. Creatures damaged are knocked back 5 ft (Fortitude negates). If a creature is knocked back into another creature, both creatures fall @Condition[prone]{prone} (Balance or Dexterity check DC 10 negates). The range of this technique cannot exceed 30 ft.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

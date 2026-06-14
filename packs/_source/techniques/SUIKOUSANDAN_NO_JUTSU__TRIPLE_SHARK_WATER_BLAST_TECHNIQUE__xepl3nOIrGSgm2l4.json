@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> F, Mas, S</p>\n\n<hr>\n\n<p>This advanced version of Suikoudan no Jutsu creates three sharks of water, each targeting one creature (not necessarily a different creature). The sharks each deal 7d6 damage.</p>\n\n\n<p><b>Mastery:</b> The fifth step increases the damage per shark to 8d6.</p>\n",
+      "value": "<p>This advanced version of Suikoudan no Jutsu creates three sharks of water, each targeting one creature (not necessarily a different creature). The sharks each deal 7d6 damage.</p>\n\n\n<p><b>Mastery:</b> The fifth step increases the damage per shark to 8d6.</p>\n",
       "summary": "",
       "instructions": ""
     },

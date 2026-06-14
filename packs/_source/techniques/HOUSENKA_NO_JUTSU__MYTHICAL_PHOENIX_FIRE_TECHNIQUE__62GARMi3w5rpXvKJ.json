@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>You rapidly spit out a small fireball, which deals 2d6 fire damage (Reflex negates). If a creature is hit for at least 15 fire damage by a single use of this technique, it must make a second Reflex save to avoid catching on fire.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to create an additional fireball (up to 1 per 2 levels total), which may target the same creature or square, or a different one. Spend 1 Chakra per fireball to increase the damage by 1d6.<br><br>You must empower all fireballs equally, and any single creature cannot be targeted by more than 1d6 per level worth of fireballs.</p>\n\n",
+      "value": "<p>You rapidly spit out a small fireball, which deals 2d6 fire damage (Reflex negates). If a creature is hit for at least 15 fire damage by a single use of this technique, it must make a second Reflex save to avoid catching on fire.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to create an additional fireball (up to 1 per 2 levels total), which may target the same creature or square, or a different one. Spend 1 Chakra per fireball to increase the damage by 1d6.<br><br>You must empower all fireballs equally, and any single creature cannot be targeted by more than 1d6 per level worth of fireballs.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

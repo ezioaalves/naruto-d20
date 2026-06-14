@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create an illusory setting, changing the appearance of the environment completely, though you cannot hide creatures, structures and equipment. As usual, the illusion is merely aesthetic and provides no actual protection or cover. If you move more than 1,000 ft. from the illusion, it automatically fades.</p>\n\n\n\n",
+      "value": "<p>You create an illusory setting, changing the appearance of the environment completely, though you cannot hide creatures, structures and equipment. As usual, the illusion is merely aesthetic and provides no actual protection or cover. If you move more than 1,000 ft. from the illusion, it automatically fades.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Mokuton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> F, H, E</p>\n\n<hr>\n\n<p>This wood element technique has the user create a small dragon made out of wood and quickly dispose of his enemies. Albeit having a small range, this is a very effective technique to use against a group. Any creature caught in the area of effect suffer 10d6 points of damage from the dragon's bite, damage which can be halved with a successful reflex save.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (2)</p>\n<p><b>Material Focus:</b> A tree or other source of wood within the technique's range.</p>\n<p><b>Empower:</b> The user can spend 1 additional point of chakra to increase the damage by +1, up to 10d6+5.</p>\n",
+      "value": "<p>This wood element technique has the user create a small dragon made out of wood and quickly dispose of his enemies. Albeit having a small range, this is a very effective technique to use against a group. Any creature caught in the area of effect suffer 10d6 points of damage from the dragon's bite, damage which can be halved with a successful reflex save.</p>\n\n<hr><p><b>Requires:</b> Kantoku no Jutsu (2)</p>\n<p><b>Material Focus:</b> A tree or other source of wood within the technique's range.</p>\n<p><b>Empower:</b> The user can spend 1 additional point of chakra to increase the damage by +1, up to 10d6+5.</p>\n",
       "summary": "",
       "instructions": ""
     },

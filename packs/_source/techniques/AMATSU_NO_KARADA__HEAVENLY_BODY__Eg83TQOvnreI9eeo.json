@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>Choose an element: cold, earth, electricity, fire, water or wind. Your body glows with a faint hue with a color according to your element, and your hands are covered by elemental energy, allowing you to make touch attacks that deal 2d6 damage of the chosen energy type, which benefits from damage bonuses to unarmed attacks or elemental damage you may have (though attack bonuses to unarmed attacks do not apply). While in this stance, you apply your Dexterity bonus to attack rolls instead of your Strength modifier.<br><br>Entering this stance in melee provokes attacks of opportunity, and you suffer 1d4 damage each round while the stance is active.</p>\n\n\n<p><b>Mastery:</b> The second step allows you to ignore taking damage from this stance each round.<br><br>The fifth step allows you to deal 1d6 of two chosen elements instead of 2d6 of a single element.</p>\n",
+      "value": "<p>Choose an element: cold, earth, electricity, fire, water or wind. Your body glows with a faint hue with a color according to your element, and your hands are covered by elemental energy, allowing you to make touch attacks that deal 2d6 damage of the chosen energy type, which benefits from damage bonuses to unarmed attacks or elemental damage you may have (though attack bonuses to unarmed attacks do not apply). While in this stance, you apply your Dexterity bonus to attack rolls instead of your Strength modifier.<br><br>Entering this stance in melee provokes attacks of opportunity, and you suffer 1d4 damage each round while the stance is active.</p>\n\n\n<p><b>Mastery:</b> The second step allows you to ignore taking damage from this stance each round.<br><br>The fifth step allows you to deal 1d6 of two chosen elements instead of 2d6 of a single element.</p>\n",
       "summary": "",
       "instructions": ""
     },
@@ -66,10 +66,6 @@
             {
               "formula": "2d6",
               "types": []
-            },
-            {
-              "formula": "1d4",
-              "types": []
             }
           ]
         },
@@ -81,6 +77,23 @@
         }
       }
     ],
+    "automation": {
+      "enabled": true,
+      "targetMode": "self",
+      "maintenance": {
+        "enabled": true,
+        "resource": "hp",
+        "cost": "1d4",
+        "policy": "prompt",
+        "interval": 1,
+        "waiver": "step",
+        "waiverStep": 2,
+        "freeRounds": 5,
+        "choice": "",
+        "element": true,
+        "elementDoubleStep": 5
+      }
+    },
     "scriptCalls": [],
     "links": {
       "prerequisites": [],

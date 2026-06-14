@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This training teaches the character to move swiftly and go for the kill as fast as possible, at the end of this training the character gains a +5 ft. to movement and +1 to Reflex saves and Initiative.</p>\n",
+      "value": "<p>This training teaches the character to move swiftly and go for the kill as fast as possible, at the end of this training the character gains a +5 ft. to movement and +1 to Reflex saves and Initiative.</p>\n",
       "summary": "",
       "instructions": ""
     },

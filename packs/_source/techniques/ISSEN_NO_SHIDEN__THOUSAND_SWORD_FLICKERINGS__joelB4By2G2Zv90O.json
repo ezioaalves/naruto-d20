@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 31</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>To use this technique, you must have a Speed Rank of 4 or higher active. You move forward up to 30 ft, making a series of extremely fast and subtle attacks. You can make a single melee attack against up to one creature per level inside the area (maximum 15).<br><br>These attacks cannot score a critical hit, and apply a number of sneak attack dice up to your Intelligence modifier (maximum 3d6). You do not provoke attacks of opportunity while moving this way.</p>\n\n\n\n",
+      "value": "<p>To use this technique, you must have a Speed Rank of 4 or higher active. You move forward up to 30 ft, making a series of extremely fast and subtle attacks. You can make a single melee attack against up to one creature per level inside the area (maximum 15).<br><br>These attacks cannot score a critical hit, and apply a number of sneak attack dice up to your Intelligence modifier (maximum 3d6). You do not provoke attacks of opportunity while moving this way.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

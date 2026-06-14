@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You shoot a stream of searing flames from your mouth, taking shape as a nimble, fiery dragon that deals 4d10 fire damage. The range cannot exceed 60 ft.</p>\n\n\n\n",
+      "value": "<p>You shoot a stream of searing flames from your mouth, taking shape as a nimble, fiery dragon that deals 4d10 fire damage. The range cannot exceed 60 ft.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

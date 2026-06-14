@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Mobility)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You must be in the Shunpo stance to use this technique. You take a number of Shunpo leaps equal to a move action in a straight line, and each creature standing adjacent to a square you pass through suffers 3d6 damage and is pushed back 5 feet. Unlike normal Shunpo movement, you can be easily spotted while moving.<br><br>You can make fewer leaps if you wish, though you must make at least 2 leaps.</p>\n\n\n\n",
+      "value": "<p>You must be in the Shunpo stance to use this technique. You take a number of Shunpo leaps equal to a move action in a straight line, and each creature standing adjacent to a square you pass through suffers 3d6 damage and is pushed back 5 feet. Unlike normal Shunpo movement, you can be easily spotted while moving.<br><br>You can make fewer leaps if you wish, though you must make at least 2 leaps.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You draw on natural cold and amplify it with your Chakra, freezing the target's bodily fluids and dealing 5d8 cold damage (Fortitude halves). In addition, if the target took any amount of damage from this technique, it must make a save against massive damage. Anyone within 15 ft. of the target can feel the temperature drop significantly for a few seconds.</p>\n\n\n\n",
+      "value": "<p>You draw on natural cold and amplify it with your Chakra, freezing the target's bodily fluids and dealing 5d8 cold damage (Fortitude halves). In addition, if the target took any amount of damage from this technique, it must make a save against massive damage. Anyone within 15 ft. of the target can feel the temperature drop significantly for a few seconds.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

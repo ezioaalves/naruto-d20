@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Mobility)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is identical to Hirameku except as above, and you count as invisible while moving (as the fifth step Mastery of Hirameku). High Speed Sight 7 or higher allows a creature to ignore the invisibility.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to make the movement as though you had a flight speed with perfect maneuverability.</p>\n",
+      "value": "<p>This technique is identical to Hirameku except as above, and you count as invisible while moving (as the fifth step Mastery of Hirameku). High Speed Sight 7 or higher allows a creature to ignore the invisibility.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to make the movement as though you had a flight speed with perfect maneuverability.</p>\n",
       "summary": "",
       "instructions": ""
     },

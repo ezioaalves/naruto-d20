@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> H, M, Mas</p>\n\n<hr>\n\n<p>You cover yourself with a heavy, earthen layer of armor, which counts as heavy armor granting a +8 armor bonus to Defense (+3 nonproficient), has a maximum Dexterity bonus of +1, an armor penalty of -6 and a speed of 20 ft. It grants you DR 2/- and weighs 80 lbs. The DR stacks with the one granted by the Fortify bloodline.<br><br>The armor crumbles into nothing when the technique ends.</p>\n\n\n<p><b>Mastery:</b> The fifth step allows you to not count the armor's weight against your carrying capacity.</p>\n",
+      "value": "<p>You cover yourself with a heavy, earthen layer of armor, which counts as heavy armor granting a +8 armor bonus to Defense (+3 nonproficient), has a maximum Dexterity bonus of +1, an armor penalty of -6 and a speed of 20 ft. It grants you DR 2/- and weighs 80 lbs. The DR stacks with the one granted by the Fortify bloodline.<br><br>The armor crumbles into nothing when the technique ends.</p>\n\n\n<p><b>Mastery:</b> The fifth step allows you to not count the armor's weight against your carrying capacity.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You infuse yourself with poison, with the goal of enhancing your bone weapons. Each bone weapon you create while the technique lasts will contain an Injury poison (Fortitude DC 16, primary damage is 2d6 negative energy damage, secondary damage is 1d4 temporary Strength damage). The poison on a weapon lasts for 1 attack per 3 levels. You suffer 1d6 damage 1 minute after the technique was performed.</p>\n\n\n\n",
+      "value": "<p>You infuse yourself with poison, with the goal of enhancing your bone weapons. Each bone weapon you create while the technique lasts will contain an Injury poison (Fortitude DC 16, primary damage is 2d6 negative energy damage, secondary damage is 1d4 temporary Strength damage). The poison on a weapon lasts for 1 attack per 3 levels. You suffer 1d6 damage 1 minute after the technique was performed.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is identical to Kenjutsu: Iaido, except it can be used while prone, cannot be used as part of a charge attack, and you do not suffer a Defense penalty after making the attack.</p>\n\n\n\n",
+      "value": "<p>This technique is identical to Kenjutsu: Iaido, except it can be used while prone, cannot be used as part of a charge attack, and you do not suffer a Defense penalty after making the attack.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

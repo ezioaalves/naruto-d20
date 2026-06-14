@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F</p>\n\n<hr>\n\n<p>You channel a focused stream of wind Chakra into your held weapon(s). The Chakra extends the cutting edge of the blade(s), granting you a +1 bonus to attack rolls with them against creatures that cannot See (Through) Chakra and your attacks with these weapons count as Chakra enhanced. The technique immediately ends for any weapon that leaves your grip.</p>\n\n\n\n",
+      "value": "<p>You channel a focused stream of wind Chakra into your held weapon(s). The Chakra extends the cutting edge of the blade(s), granting you a +1 bonus to attack rolls with them against creatures that cannot See (Through) Chakra and your attacks with these weapons count as Chakra enhanced. The technique immediately ends for any weapon that leaves your grip.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This basic Kendo-style attack targets the wrist in an attempt to disarm the opponent.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the ene my's wrist. This attack deals normal weapon damage and has a 10% chance of making the enemy drop his weapon if armed.</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stick.</p>\n<p><b>Mastery:</b> At 2nd, 3rd, 4th and 5th levels of mastery the percentage of disarming the target creature increases by 10%.</p>\n",
+      "value": "<p>This basic Kendo-style attack targets the wrist in an attempt to disarm the opponent.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the ene my's wrist. This attack deals normal weapon damage and has a 10% chance of making the enemy drop his weapon if armed.</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stick.</p>\n<p><b>Mastery:</b> At 2nd, 3rd, 4th and 5th levels of mastery the percentage of disarming the target creature increases by 10%.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 18</p>\n\n<p><b>Learn DC:</b> 35 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 18 | <b>Perform DC:</b> 34</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions as Shundou, except it can only be used to avoid an attack once per day. Mastery does not increase the number of uses per day, and the CR against which you can avoid attacks is determined by your mastery in Shundou. You suffer a -4 penalty to the perform check to avoid attacks with this technique.<br><br>If you succeed at avoiding an attack, you can instantly perform Juuryu: Rairi Nettou against the origin of the attack, without having to pay its Cost or meet its Perform Requirements, and you will move to the square behind the attack's source (as per Shundou).</p>\n\n\n\n",
+      "value": "<p>This technique functions as Shundou, except it can only be used to avoid an attack once per day. Mastery does not increase the number of uses per day, and the CR against which you can avoid attacks is determined by your mastery in Shundou. You suffer a -4 penalty to the perform check to avoid attacks with this technique.<br><br>If you succeed at avoiding an attack, you can instantly perform Juuryu: Rairi Nettou against the origin of the attack, without having to pay its Cost or meet its Perform Requirements, and you will move to the square behind the attack's source (as per Shundou).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is similar to Daikodan no Jutsu (p153), except as above, but you sends out a smaller ice tiger dealing 6d6 cold damage to the primary target, and half as much to the secondary targets (maximum 10). Unlike Daikodan no Jutsu, creatures hit suffer no secondary effects.</p>\n\n\n\n",
+      "value": "<p>This technique is similar to Daikodan no Jutsu (p153), except as above, but you sends out a smaller ice tiger dealing 6d6 cold damage to the primary target, and half as much to the secondary targets (maximum 10). Unlike Daikodan no Jutsu, creatures hit suffer no secondary effects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>While in this stance, when making an unarmed attack (including those made for Kick or Punch techniques), you may opt to make a melee touch attack instead. If you do, the attack deals your base unarmed damage, without any damage bonuses.</p>\n\n\n\n",
+      "value": "<p>While in this stance, when making an unarmed attack (including those made for Kick or Punch techniques), you may opt to make a melee touch attack instead. If you do, the attack deals your base unarmed damage, without any damage bonuses.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You attach Chakra strings to yourself, controlling your body by nothing but your will. This technique can be used while paralyzed, and allows you to make a Concentration check (DC 20) each round to act as normal while suffering from that condition. Once the technique ends, it cannot be used again for 1d4 minutes.</p>\n\n\n\n",
+      "value": "<p>You attach Chakra strings to yourself, controlling your body by nothing but your will. This technique can be used while paralyzed, and allows you to make a Concentration check (DC 20) each round to act as normal while suffering from that condition. Once the technique ends, it cannot be used again for 1d4 minutes.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You must have at least one clone of any kind active to use this technique. Choose a clone within range and immediately trade places with it. Onlookers must succeed at a Spot check (DC 20) to notice the exchange.</p>\n\n\n\n",
+      "value": "<p>You must have at least one clone of any kind active to use this technique. Choose a clone within range and immediately trade places with it. Onlookers must succeed at a Spot check (DC 20) to notice the exchange.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

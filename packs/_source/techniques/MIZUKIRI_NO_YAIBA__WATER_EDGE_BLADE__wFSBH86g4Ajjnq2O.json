@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> F, S</p>\n\n<hr>\n\n<p>You infuse a small amount of water with Chakra, forming into a water blade that has the same characteristics as a ninja-to. You are automatically proficient with the blade, the blade deals 2 additional water damage and it counts as Chakra-enhanced when bypassing damage reductions. If the weapon leaves your grip, it immediately loses its shape.</p>\n\n\n\n",
+      "value": "<p>You infuse a small amount of water with Chakra, forming into a water blade that has the same characteristics as a ninja-to. You are automatically proficient with the blade, the blade deals 2 additional water damage and it counts as Chakra-enhanced when bypassing damage reductions. If the weapon leaves your grip, it immediately loses its shape.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

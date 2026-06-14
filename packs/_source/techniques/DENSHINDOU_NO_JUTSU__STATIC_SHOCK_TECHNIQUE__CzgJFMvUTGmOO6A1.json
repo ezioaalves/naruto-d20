@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> H, E *</p>\n\n<hr>\n\n<p>See Godai Taigeki: Sandan Jutsu technique (p160).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or the maximum indicated per variant (whichever is lower).</p>\n\n",
+      "value": "<p>See Godai Taigeki: Sandan Jutsu technique (p160).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or the maximum indicated per variant (whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

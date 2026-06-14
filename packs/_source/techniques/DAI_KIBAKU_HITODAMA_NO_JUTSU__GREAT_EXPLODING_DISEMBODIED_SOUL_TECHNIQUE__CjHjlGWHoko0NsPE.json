@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H, X</p>\n\n<hr>\n\n<p>With this technique the user draws energy from the souls he previously absorbed and uses it to attack an objective. The energy takes the form of a ghostly skull and strikes the objective without a chance of missing its target. When the energy hits said target, it explodes dealing 4d10 points of damage to everything in a 20 ft. radius, half of it being sonic and half force damage. Other creatures caught in the area of effect must make a Reflex save for half damage. The target must be a human being.</p>\n\n<hr><p><b>Expendable Component:</b> Expendable Component -2 Soul Units.</p>\n",
+      "value": "<p>With this technique the user draws energy from the souls he previously absorbed and uses it to attack an objective. The energy takes the form of a ghostly skull and strikes the objective without a chance of missing its target. When the energy hits said target, it explodes dealing 4d10 points of damage to everything in a 20 ft. radius, half of it being sonic and half force damage. Other creatures caught in the area of effect must make a Reflex save for half damage. The target must be a human being.</p>\n\n<hr><p><b>Expendable Component:</b> Expendable Component -2 Soul Units.</p>\n",
       "summary": "",
       "instructions": ""
     },

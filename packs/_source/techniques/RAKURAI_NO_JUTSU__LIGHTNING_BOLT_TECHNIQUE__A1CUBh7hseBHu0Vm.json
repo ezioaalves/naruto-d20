@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> E, H, Mas</p>\n\n<hr>\n\n<p>You fire a bolt of lightning from your hand, dealing 3d6 electric damage. You can reduce the length of the Line as you see fit.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 12d6 total.</p>\n<p><b>Mastery:</b> The third step reduces the base cost to 3.</p>\n",
+      "value": "<p>You fire a bolt of lightning from your hand, dealing 3d6 electric damage. You can reduce the length of the Line as you see fit.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 12d6 total.</p>\n<p><b>Mastery:</b> The third step reduces the base cost to 3.</p>\n",
       "summary": "",
       "instructions": ""
     },

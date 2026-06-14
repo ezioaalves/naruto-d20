@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You make a focused strike, dealing only half damage. If it hits and the target fails its save, it suffers a -1 penalty to Speed or Strength ranks (your choice) for 5 minutes, stacking up to two times. Each time a creature makes a successful save against this technique, it gains a +2 bonus to further saves against it for 24 hours.</p>\n\n\n\n",
+      "value": "<p>You make a focused strike, dealing only half damage. If it hits and the target fails its save, it suffers a -1 penalty to Speed or Strength ranks (your choice) for 5 minutes, stacking up to two times. Each time a creature makes a successful save against this technique, it gains a +2 bonus to further saves against it for 24 hours.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>You create a fine web of silken threads, covering the surfaces around you. Any creature that is in direct contact with the ground or a connected surface within range is immediately detected and located by you. While concentrating, you remain aware of all such creatures 'caught' within the web. The technique ends if you move from the location where you used the technique.</p>\n\n\n\n",
+      "value": "<p>You create a fine web of silken threads, covering the surfaces around you. Any creature that is in direct contact with the ground or a connected surface within range is immediately detected and located by you. While concentrating, you remain aware of all such creatures 'caught' within the web. The technique ends if you move from the location where you used the technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You fire a thin ray of flame at your target. If it hits, it deals 2d6 fire damage and makes the target catch on fire unless it succeeds at a save.</p>\n\n\n\n",
+      "value": "<p>You fire a thin ray of flame at your target. If it hits, it deals 2d6 fire damage and makes the target catch on fire unless it succeeds at a save.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

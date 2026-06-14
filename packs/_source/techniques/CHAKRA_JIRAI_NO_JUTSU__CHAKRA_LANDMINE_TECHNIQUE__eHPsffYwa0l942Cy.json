@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create a charge of Chakra in a specific square, which detonates when a creature with a Chakra Pool of 5 or more steps on it. The blast deals 3d6 fire damage and 1d6 force damage within a 15 ft radius of the mine, and will set fire to flammable materials caught in the blast.</p>\n\n\n\n",
+      "value": "<p>You create a charge of Chakra in a specific square, which detonates when a creature with a Chakra Pool of 5 or more steps on it. The blast deals 3d6 fire damage and 1d6 force damage within a 15 ft radius of the mine, and will set fire to flammable materials caught in the blast.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

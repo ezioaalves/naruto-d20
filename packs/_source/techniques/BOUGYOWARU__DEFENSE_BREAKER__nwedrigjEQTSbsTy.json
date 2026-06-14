@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>Make a melee attack that deals normal damage and cannot score a critical hit. If the target is hit, it will lose any benefit from having used the Total Defense action (if it was benefiting from it), and must make a Fortitude save or be unable to use the action until your next turn.</p>\n\n\n\n",
+      "value": "<p>Make a melee attack that deals normal damage and cannot score a critical hit. If the target is hit, it will lose any benefit from having used the Total Defense action (if it was benefiting from it), and must make a Fortitude save or be unable to use the action until your next turn.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

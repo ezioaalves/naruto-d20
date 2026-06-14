@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, E, Mob</p>\n\n<hr>\n\n<p>You fire a small bullet of shimmering, white Chakra from your palm. Make a ray attack against the target, suffering a -2 penalty to hit if you do not have at least two hands free. The bullet deals 2d6 force damage, though you may choose to have it deal non-lethal damage without the usual penalties.<br><br>Alternatively, you may use this technique to enhance an unarmed melee attack, causing it to deal an additional 1d6 force damage and push the target back 10 ft. If performed this way, you suffer a -4 penalty to meet the Perform Requirements, and the technique cannot be empowered.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 5d6 damage total.</p>\n\n",
+      "value": "<p>You fire a small bullet of shimmering, white Chakra from your palm. Make a ray attack against the target, suffering a -2 penalty to hit if you do not have at least two hands free. The bullet deals 2d6 force damage, though you may choose to have it deal non-lethal damage without the usual penalties.<br><br>Alternatively, you may use this technique to enhance an unarmed melee attack, causing it to deal an additional 1d6 force damage and push the target back 10 ft. If performed this way, you suffer a -4 penalty to meet the Perform Requirements, and the technique cannot be empowered.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 5d6 damage total.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

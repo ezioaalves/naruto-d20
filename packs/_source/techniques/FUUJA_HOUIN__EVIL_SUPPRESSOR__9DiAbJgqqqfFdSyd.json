@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H, XP</p>\n\n<hr>\n\n<p>This seal is drawn from the target's cursed seal out onto a small circle on the floor, after which it contracts and forms a barrier around the cursed seal. The seal has one charge per level or HD of the target, and each time they make a Control Cursed Seal check to resist an involuntary transformation, one charge is consumed to grant a +8 bonus to the check. Once all charges are used, the seal disappears. If the target becomes a willing bearer of the cursed seal, the seal is destroyed.</p>\n\n\n\n",
+      "value": "<p>This seal is drawn from the target's cursed seal out onto a small circle on the floor, after which it contracts and forms a barrier around the cursed seal. The seal has one charge per level or HD of the target, and each time they make a Control Cursed Seal check to resist an involuntary transformation, one charge is consumed to grant a +8 bonus to the check. Once all charges are used, the seal disappears. If the target becomes a willing bearer of the cursed seal, the seal is destroyed.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

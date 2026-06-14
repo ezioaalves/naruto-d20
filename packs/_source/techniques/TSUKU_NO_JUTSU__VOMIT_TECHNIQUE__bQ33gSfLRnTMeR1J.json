@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C, Mas, S</p>\n\n<hr>\n\n<p>You force yourself to vomit, regurgitating whatever you've recently eaten or drunk. You become @Condition[nauseated]{nauseated} for 1d4 rounds, and gain a +4 bonus to secondary saves against ingested poisons for 1 minute.</p>\n\n\n<p><b>Mastery:</b> The fifth step reduces the duration of the nausea by 2 rounds (minimum 1 round).</p>\n",
+      "value": "<p>You force yourself to vomit, regurgitating whatever you've recently eaten or drunk. You become @Condition[nauseated]{nauseated} for 1d4 rounds, and gain a +4 bonus to secondary saves against ingested poisons for 1 minute.</p>\n\n\n<p><b>Mastery:</b> The fifth step reduces the duration of the nausea by 2 rounds (minimum 1 round).</p>\n",
       "summary": "",
       "instructions": ""
     },

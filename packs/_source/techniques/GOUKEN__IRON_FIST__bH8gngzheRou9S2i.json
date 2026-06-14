@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>The most basic of iron fist strikes, this technique allows you to make a single unarmed attack, gaining a +1 bonus to the damage roll on hit.</p>\n\n\n\n",
+      "value": "<p>The most basic of iron fist strikes, this technique allows you to make a single unarmed attack, gaining a +1 bonus to the damage roll on hit.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

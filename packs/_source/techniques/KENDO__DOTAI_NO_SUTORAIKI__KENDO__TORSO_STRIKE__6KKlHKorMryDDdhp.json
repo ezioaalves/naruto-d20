@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This basic Kendo-style attack targets the side torso area in an attempt to rupture or nauseate the foe.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the torso area. This attack deals normal weapon damage and causes the target to become nauseated for 1 round unless he succeeds a Fortitude save.</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stick.</p>\n<p><b>Mastery:</b> Each mastery in this technique increases the save DC by 1.</p>\n",
+      "value": "<p>This basic Kendo-style attack targets the side torso area in an attempt to rupture or nauseate the foe.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at a -2 penalty specifically targeting the torso area. This attack deals normal weapon damage and causes the target to become nauseated for 1 round unless he succeeds a Fortitude save.</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stick.</p>\n<p><b>Mastery:</b> Each mastery in this technique increases the save DC by 1.</p>\n",
       "summary": "",
       "instructions": ""
     },

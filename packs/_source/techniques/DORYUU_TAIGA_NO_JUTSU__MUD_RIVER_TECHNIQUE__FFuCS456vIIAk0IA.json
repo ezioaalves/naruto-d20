@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H, F</p>\n\n<hr>\n\n<p>You create a river of mud that starts in front of you and travels forward 40 ft. per round. A creature hit by the river must make a save each round to avoid being caught and getting pushed back 1d4 x 5 ft., and after the first round it can make a second Reflex save to<br><br>break free of the wave if it saves against being pushed back.</p>\n\n\n\n",
+      "value": "<p>You create a river of mud that starts in front of you and travels forward 40 ft. per round. A creature hit by the river must make a save each round to avoid being caught and getting pushed back 1d4 x 5 ft., and after the first round it can make a second Reflex save to<br><br>break free of the wave if it saves against being pushed back.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

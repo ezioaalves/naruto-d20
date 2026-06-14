@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "10",
-        "target": "str"
+        "target": "str",
+        "flavor": "KYO-MON KAI"
       },
       {
         "type": "enh",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "10",
-        "target": "dex"
+        "target": "dex",
+        "flavor": "KYO-MON KAI"
       },
       {
         "type": "untyped",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "30",
-        "target": "landSpeed"
+        "target": "landSpeed",
+        "flavor": "KYO-MON KAI"
       },
       {
         "type": "untyped",
@@ -37,7 +40,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "8",
-        "target": "init"
+        "target": "init",
+        "flavor": "KYO-MON KAI"
       },
       {
         "type": "untyped",
@@ -45,7 +49,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "8",
-        "target": "skill.acr"
+        "target": "skill.acr",
+        "flavor": "KYO-MON KAI"
       },
       {
         "type": "untyped",
@@ -53,7 +58,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "8",
-        "target": "skill.clm"
+        "target": "skill.clm",
+        "flavor": "KYO-MON KAI"
       },
       {
         "type": "untyped",
@@ -61,7 +67,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "8",
-        "target": "skill.swm"
+        "target": "skill.swm",
+        "flavor": "KYO-MON KAI"
       }
     ],
     "changeFlags": {

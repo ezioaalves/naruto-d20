@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>One of the third Hokage's original techniques, which attempts to deal a lethal blow by striking a creature's shadow. You must be able to see the shadow clearly, and its owner must be unaware of you. It has a Defense of 10, and if you hit, you deal normal damage to the shadow's owner, and it must save against being reduced to -1 HP and dying.<br><br>This attack automatically bypasses the creature's damage reductions. Creatures immune to sneak attacks or critical hits are immune to this technique.</p>\n\n\n\n",
+      "value": "<p>One of the third Hokage's original techniques, which attempts to deal a lethal blow by striking a creature's shadow. You must be able to see the shadow clearly, and its owner must be unaware of you. It has a Defense of 10, and if you hit, you deal normal damage to the shadow's owner, and it must save against being reduced to -1 HP and dying.<br><br>This attack automatically bypasses the creature's damage reductions. Creatures immune to sneak attacks or critical hits are immune to this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

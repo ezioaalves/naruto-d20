@@ -180,6 +180,32 @@ Feats` abrem.
    Resultado esperado: o buff expirado e removido da ficha quando a expiracao
    veio por duracao PF1e.
 
+## Manutencao no inicio do turno
+
+1. Ative KAI-MON KAI e avance ate o inicio do proximo turno.
+   Resultado esperado: perde 2 PV com o flavor "Manutencao: 2 PV perdidos.";
+   nenhuma mensagem chama a tecnica de stance.
+
+2. Repita KAI-MON KAI com 2 PV.
+   Resultado esperado: o buff termina sem aplicar o custo e o ator permanece com
+   pelo menos 1 PV.
+
+3. Ative AMATSU NO KARADA abaixo da maestria 2.
+   Resultado esperado: escolhe o elemento na entrada e, no inicio do turno,
+   oferece pagar 1d4 PV ou encerrar.
+
+4. Repita AMATSU NO KARADA com maestria 2 ou maior.
+   Resultado esperado: a manutencao renova silenciosamente, sem custo de PV, e o
+   elemento escolhido continua tipando o dano.
+
+5. Ative CHAMPURU DAICHI SUTANSU.
+   Resultado esperado: no inicio do turno permite manter, trocar Destreza/Forca
+   ou encerrar; apenas uma variante do buff permanece ativa.
+
+6. Deixe expirar um buff comum criado pela automacao e desative outro manualmente.
+   Resultado esperado: a expiracao natural remove o primeiro; a desativacao
+   manual deixa o segundo inativo na ficha.
+
 ## Ranks temporarios e bonus de rank
 
 Baseline de paridade: use SANDAN KOUSOKU sozinho e anote os totais de AC,
@@ -327,3 +353,30 @@ feature.
 3. Abra uma ficha, uma tecnica, um browser e o Synckit.
    Resultado esperado: nenhuma janela fica com template faltando ou layout
    quebrado.
+
+### Kyu-Mon Kai (Heal Gate Release) — chakra-damage upkeep
+
+Prereq: a character actor with the Heal Gate technique and chakra pool > 0.
+
+- [ ] Perform Heal Gate → the buff applies with Kai-Mon bonuses (+2 Str/Dex, +10 ft speed) and `system.active = true`.
+- [ ] On the performer's next turn start, 3 chakra leaves the pool and a chat card reads "… 3 Chakra damage (pool X→Y)".
+- [ ] HP is healed +2 the same turn; a "Fast Healing 2 (+2 HP)" card posts; the defenses card shows Fast Healing 2.
+- [ ] With an empty pool (temp+pool = 0), the turn deals 6 HP of overflow instead.
+- [ ] When the doubled overflow would drop HP below 1, the gate ends with an "upkeep ended" notification (no HP applied).
+- [ ] fatigued / exhausted applied from another source are cleared at the performer's turn start while the gate is open.
+- [ ] At mastery step 5: chakra damage is 2/round and Fast Healing is 5.
+- [ ] Removing the buff (manually or via the lethal guard) clears `system.traits.fastHealing` (defenses card no longer lists it).
+- [ ] The reserve total is never reduced by the chakra damage.
+
+### Real-duration gate upkeep — finite round maintenance model
+
+Prereq: a technique with finite round duration (e.g., Kai-Mon rank 1 = 3 rounds) and maintenance upkeep.
+
+- [ ] Perform the technique at round 5, combat turn 1 → buff applies with duration 3 rounds, ending at turn 3 (round 5 + 3 = round 8).
+- [ ] Turn 1 (round 5): upkeep charges on-interval and is marked paid; tooltip/chat shows "1 of 3 rounds remaining".
+- [ ] Turn 2 (round 6): upkeep charges again on-interval and is marked paid; "2 of 3 rounds remaining".
+- [ ] Turn 3 (round 7): upkeep charges again on-interval and is marked paid; "3 of 3 rounds remaining".
+- [ ] Turn 4 (round 8): buff expires naturally because all rounds are consumed; "Buff ended (duration exhausted)" notification posts; actor is hit with fatigued if buff had fatigue-on-end semantics.
+- [ ] If upkeep is skipped/waived on turn 2, the buff still expires at turn 4; skipping does not extend duration.
+- [ ] Manually removing the buff before round 8 stops upkeep immediately and no end-of-duration fatigue applies.
+- [ ] At mastery step 5 with double-element maintenance (2 elements instead of 1): upkeep cost scales as designed (e.g., 2 instances of HP damage per round).

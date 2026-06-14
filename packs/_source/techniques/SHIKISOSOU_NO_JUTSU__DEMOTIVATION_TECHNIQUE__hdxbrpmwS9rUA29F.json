@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You make the target feel a sudden drop in morale, making it suffer a penalty to its next attack roll, ability, skill or initiative check equal to half your level, rounded down.</p>\n\n\n\n",
+      "value": "<p>You make the target feel a sudden drop in morale, making it suffer a penalty to its next attack roll, ability, skill or initiative check equal to half your level, rounded down.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

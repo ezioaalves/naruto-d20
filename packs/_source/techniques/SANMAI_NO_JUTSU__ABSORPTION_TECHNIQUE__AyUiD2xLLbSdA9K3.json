@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>You sheathe your hand in offensive Chakra, touching the target to drain it of its energies. If hit, the target is drained of 1d6 Chakra, and you gain temporary HP equal to the amount drained.</p>\n\n<hr><p><b>Empower:</b> Spend 1 additional Chakra to increase the Chakra drain by 1 (maximum +1 per 3 levels, up to +5).</p>\n\n",
+      "value": "<p>You sheathe your hand in offensive Chakra, touching the target to drain it of its energies. If hit, the target is drained of 1d6 Chakra, and you gain temporary HP equal to the amount drained.</p>\n\n<hr><p><b>Empower:</b> Spend 1 additional Chakra to increase the Chakra drain by 1 (maximum +1 per 3 levels, up to +5).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

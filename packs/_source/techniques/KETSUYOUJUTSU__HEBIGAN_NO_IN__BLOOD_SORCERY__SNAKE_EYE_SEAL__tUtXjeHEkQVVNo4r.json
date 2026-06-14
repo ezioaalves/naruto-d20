@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> F, S</p>\n\n<hr>\n\n<p>You carve glowing runes into your skin, which fade to black, granting you low-light vision. You take 1 damage every time you attempt to perform this technique.</p>\n\n\n\n",
+      "value": "<p>You carve glowing runes into your skin, which fade to black, granting you low-light vision. You take 1 damage every time you attempt to perform this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

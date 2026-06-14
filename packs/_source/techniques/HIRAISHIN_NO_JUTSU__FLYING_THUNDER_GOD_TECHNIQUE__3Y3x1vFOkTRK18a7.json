@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 31</p>\n\n<p><b>Components:</b> C, Mob, S</p>\n\n<hr>\n\n<p>You disappear in a flash of yellow Chakra and instantly appear in a square adjacent to a creature of your choice that is carrying your Shikei no In. When you arrive, you can make a hide check as a free action to attempt to remain undetected.</p>\n\n\n\n",
+      "value": "<p>You disappear in a flash of yellow Chakra and instantly appear in a square adjacent to a creature of your choice that is carrying your Shikei no In. When you arrive, you can make a hide check as a free action to attempt to remain undetected.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

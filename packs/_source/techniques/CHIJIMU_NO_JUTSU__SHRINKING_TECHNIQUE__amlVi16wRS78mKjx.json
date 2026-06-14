@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You shrink a target one size category. Having it gain the appropriate bonuses and penalties (-2 Strength, +2 Dexterity, -2 Constitution, +1 size penalty to Defense and attack rolls, -4 to Grapple checks, +4 to Hide checks and unarmed damage decreases by one step). Any worn and equipped items shrink with the target.<br><br>This technique can be used to counter and dispel the effects of Baika no Jutsu and Chou Baika no Jutsu.<br><br>If used on an unwilling target, the duration is reduced to 1 round per level (D).</p>\n\n\n\n",
+      "value": "<p>You shrink a target one size category. Having it gain the appropriate bonuses and penalties (-2 Strength, +2 Dexterity, -2 Constitution, +1 size penalty to Defense and attack rolls, -4 to Grapple checks, +4 to Hide checks and unarmed damage decreases by one step). Any worn and equipped items shrink with the target.<br><br>This technique can be used to counter and dispel the effects of Baika no Jutsu and Chou Baika no Jutsu.<br><br>If used on an unwilling target, the duration is reduced to 1 round per level (D).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You are in total defense (D20 Modern, p137) while in this stance. If you move, attack or perform any other action, the stance will immediately end. This stance will overlap with any bonuses granted by other stances, and can be used at the same time. This stance can be used only once per encounter, and automatically ends if you leave total defense for any reason.</p>\n\n\n<p><b>Mastery:</b> The second and fourth steps each allow this technique to be used an additional time per encounter.</p>\n",
+      "value": "<p>You are in total defense (D20 Modern, p137) while in this stance. If you move, attack or perform any other action, the stance will immediately end. This stance will overlap with any bonuses granted by other stances, and can be used at the same time. This stance can be used only once per encounter, and automatically ends if you leave total defense for any reason.</p>\n\n\n<p><b>Mastery:</b> The second and fourth steps each allow this technique to be used an additional time per encounter.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You scribe a description of the environment onto a blank page, after which you send your Chakra to the target area and seal any fire present into the scroll, where the 'Seal' kanji will appear. This technique puts out fires and can remove the caught on fire effect, but it cannot seal away lava or hot substances.</p>\n\n\n\n",
+      "value": "<p>You scribe a description of the environment onto a blank page, after which you send your Chakra to the target area and seal any fire present into the scroll, where the 'Seal' kanji will appear. This technique puts out fires and can remove the caught on fire effect, but it cannot seal away lava or hot substances.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

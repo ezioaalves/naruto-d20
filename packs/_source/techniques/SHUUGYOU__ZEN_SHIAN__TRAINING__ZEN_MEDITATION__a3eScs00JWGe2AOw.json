@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You have trained yourself in being one with the world and one with yourself. Once per day, you may gain an additional +4 on any Chakra-Control Check.</p>\n",
+      "value": "<p>You have trained yourself in being one with the world and one with yourself. Once per day, you may gain an additional +4 on any Chakra-Control Check.</p>\n",
       "summary": "",
       "instructions": ""
     },

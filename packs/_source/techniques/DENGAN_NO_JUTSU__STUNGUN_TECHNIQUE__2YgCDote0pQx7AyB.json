@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You release a ray of shocking currents. If it hits, the ray deals 1d2 electric damage and forces the target to make a save against suffering 2d4 nonlethal damage. This counts as a stun effect.</p>\n\n\n\n",
+      "value": "<p>You release a ray of shocking currents. If it hits, the ray deals 1d2 electric damage and forces the target to make a save against suffering 2d4 nonlethal damage. This counts as a stun effect.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

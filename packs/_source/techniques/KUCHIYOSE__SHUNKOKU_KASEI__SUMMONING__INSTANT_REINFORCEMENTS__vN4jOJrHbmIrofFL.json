@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> E, H, M</p>\n\n<hr>\n\n<p>This technique is a sister to Fuinjutsu: Keiyaku Houjin, and allows you to summon a creature marked by it if it is within range (determined by the Fuinjutsu: Keiyaku Houjin seal when it was made), which appears in a square adjacent to you. The technique costs 2 Chakra, plus half the level or HD of the summoned creature (minimum 6 Chakra).<br><br>A creature cannot be summoned by this technique more than once per week.</p>\n\n<hr><p><b>Empower:</b> You can summon up to one additional creature per 6 levels by spending the appropriate cost.</p>\n\n",
+      "value": "<p>This technique is a sister to Fuinjutsu: Keiyaku Houjin, and allows you to summon a creature marked by it if it is within range (determined by the Fuinjutsu: Keiyaku Houjin seal when it was made), which appears in a square adjacent to you. The technique costs 2 Chakra, plus half the level or HD of the summoned creature (minimum 6 Chakra).<br><br>A creature cannot be summoned by this technique more than once per week.</p>\n\n<hr><p><b>Empower:</b> You can summon up to one additional creature per 6 levels by spending the appropriate cost.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

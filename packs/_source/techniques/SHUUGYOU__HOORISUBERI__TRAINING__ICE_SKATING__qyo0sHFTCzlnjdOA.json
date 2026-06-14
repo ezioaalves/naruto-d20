@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This training helps the character to move on ice faster than he normally would. The character spends all his time doing various tasks on an ice field. At the end of this training the character gains a +5 ft. to movement when on ice or snow and a +1 to chakra control checks.</p>\n",
+      "value": "<p>This training helps the character to move on ice faster than he normally would. The character spends all his time doing various tasks on an ice field. At the end of this training the character gains a +5 ft. to movement when on ice or snow and a +1 to chakra control checks.</p>\n",
       "summary": "",
       "instructions": ""
     },

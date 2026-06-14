@@ -345,7 +345,16 @@ async function rollMasteryCheck(item, actor, skillKey, activeState) {
 async function resolveMasterAttempt(
   item,
   actor,
-  { skillKey, mode, baseState, total, apBonus = 0, apRollText = "", rollMessage = null, returnBlock = false },
+  {
+    skillKey,
+    mode,
+    baseState,
+    total,
+    apBonus = 0,
+    apRollText = "",
+    rollMessage = null,
+    returnBlock = false,
+  },
 ) {
   const result = buildMasteryAttemptResult(item, actor, {
     skillKey,

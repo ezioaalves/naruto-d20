@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 13</p>\n<p><b>Chakra Cost:</b> 17</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 16 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>This advanced technique creates two large dragon heads, each dealing 7d6+3 water damage to creatures within their respective areas. Both dragon heads can target the same square, though a creature must save against each of them seperately.</p>\n\n\n\n",
+      "value": "<p>This advanced technique creates two large dragon heads, each dealing 7d6+3 water damage to creatures within their respective areas. Both dragon heads can target the same square, though a creature must save against each of them seperately.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>This technique can only be used while under the effects of Tadayou. You can skate and slide over the water, allowing you to move twice your normal speed over water. You can still stop and turn as you wish, and are still capable of performing any normal movement actions (running, charging, tumbling, etc).</p>\n\n\n\n",
+      "value": "<p>This technique can only be used while under the effects of Tadayou. You can skate and slide over the water, allowing you to move twice your normal speed over water. You can still stop and turn as you wish, and are still capable of performing any normal movement actions (running, charging, tumbling, etc).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

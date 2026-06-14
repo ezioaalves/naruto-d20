@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> F, S</p>\n\n<hr>\n\n<p>You create a projectile out of mist. The projectile cannot leave the area of the mist, and you must know the square the target is in. The projectile always hits, deals damage as a kunai, and sneak attack (and other damage bonuses) applies.</p>\n\n\n\n",
+      "value": "<p>You create a projectile out of mist. The projectile cannot leave the area of the mist, and you must know the square the target is in. The projectile always hits, deals damage as a kunai, and sneak attack (and other damage bonuses) applies.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

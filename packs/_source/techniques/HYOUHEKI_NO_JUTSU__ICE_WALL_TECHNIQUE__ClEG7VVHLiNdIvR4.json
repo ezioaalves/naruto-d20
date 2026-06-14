@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You raise up a solid barrier of ice and/or snow, which is up to 1 ft. wide and 1 ft. tall per level (rounded up or down to the nearest 5 ft. increment), and has a thickness of 1 inch per level. Each 5 ft. square of the wall has 3 HP per inch of thickness, and can be destroyed by reducing it to 0 hp or with a Strength check (DC 15 + level).</p>\n\n\n\n",
+      "value": "<p>You raise up a solid barrier of ice and/or snow, which is up to 1 ft. wide and 1 ft. tall per level (rounded up or down to the nearest 5 ft. increment), and has a thickness of 1 inch per level. Each 5 ft. square of the wall has 3 HP per inch of thickness, and can be destroyed by reducing it to 0 hp or with a Strength check (DC 15 + level).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>You declare one separate target for each attack your base attack bonus grants you, each of which must be affected by Keirigan Jutsu: Hissatsugaku or Keirigan Jutsu: Ousatsugaku. You make an attack at your highest attack bonus against all targets, moving up to your full speed while doing so. The attacks benefit from the Destruction Mark feat, and deal weapon damage +12d6 on hit. This extra damage is not multiplied on critical hits.</p>\n\n\n\n",
+      "value": "<p>You declare one separate target for each attack your base attack bonus grants you, each of which must be affected by Keirigan Jutsu: Hissatsugaku or Keirigan Jutsu: Ousatsugaku. You make an attack at your highest attack bonus against all targets, moving up to your full speed while doing so. The attacks benefit from the Destruction Mark feat, and deal weapon damage +12d6 on hit. This extra damage is not multiplied on critical hits.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

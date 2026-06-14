@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>While in this stance the user lowers non-proficiency penalties to -2. As well all weapons that the user wields, gain the benefits of any feats and abilities that improve attack and damage rolls.</p>\n\n<hr><p><b>Requires:</b> Weapon Master 7, BaB +12, Melee Mastery (f), Ranged Mastery (f)</p>\n<p><b>Empower:</b> You can spend an additional 5 chakra to gain the benefits of any feats and abilities that improve attack and damage rolls, for the duration of this stance.</p>\n<p><b>Mastery:</b> At the third step of mastery the user completely ignores non-proficiency penalties.</p>\n",
+      "value": "<p>While in this stance the user lowers non-proficiency penalties to -2. As well all weapons that the user wields, gain the benefits of any feats and abilities that improve attack and damage rolls.</p>\n\n<hr><p><b>Requires:</b> Weapon Master 7, BaB +12, Melee Mastery (f), Ranged Mastery (f)</p>\n<p><b>Empower:</b> You can spend an additional 5 chakra to gain the benefits of any feats and abilities that improve attack and damage rolls, for the duration of this stance.</p>\n<p><b>Mastery:</b> At the third step of mastery the user completely ignores non-proficiency penalties.</p>\n",
       "summary": "",
       "instructions": ""
     },

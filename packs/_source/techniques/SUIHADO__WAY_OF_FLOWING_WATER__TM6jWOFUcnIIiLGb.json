@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>A lesser variant of Usagido, this seal is designed to conceal and contain part of a creature's strength. The target suffers a -1 penalty to Strength and Speed Ranks, Defense and weapon damage, and its maximum Chakra Pool is reduced by 5. The seal can be dispelled by its bearer by concentrating for a move action.</p>\n\n\n\n",
+      "value": "<p>A lesser variant of Usagido, this seal is designed to conceal and contain part of a creature's strength. The target suffers a -1 penalty to Strength and Speed Ranks, Defense and weapon damage, and its maximum Chakra Pool is reduced by 5. The seal can be dispelled by its bearer by concentrating for a move action.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

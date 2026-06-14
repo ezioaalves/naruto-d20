@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C, F, S</p>\n\n<hr>\n\n<p>You cover your hand with earthen materials, creating a large sledgehammer. For your next 1 unarmed attack per 2 levels, the attacks count as armed, deal lethal damage, and gain 1d4 bonus earth damage. While in effect, the hand used cannot hold objects.</p>\n\n\n\n",
+      "value": "<p>You cover your hand with earthen materials, creating a large sledgehammer. For your next 1 unarmed attack per 2 levels, the attacks count as armed, deal lethal damage, and gain 1d4 bonus earth damage. While in effect, the hand used cannot hold objects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

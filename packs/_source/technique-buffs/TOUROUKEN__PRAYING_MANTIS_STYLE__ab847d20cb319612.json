@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "skill.acr"
+        "target": "skill.acr",
+        "flavor": "TOUROUKEN"
       }
     ],
     "changeFlags": {

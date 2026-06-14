@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Jokaton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The user forms an orb of condensed purification chakra and makes a ranged touch attack against a target creature. If successful, the orb makes contact and calms the target. The subject will no longer see the user as a threat and will not attempt attacks on any other creatures on the battlefield either. The subject can still defend normally, and the technique's effect immediately breaks if the subject takes damage. This technique can be used to calm raging or frenzied creatures, but the perform time increases to a full-round action.</p>\n\n<hr><p><b>Requires:</b> Purification Release f</p>\n",
+      "value": "<p>The user forms an orb of condensed purification chakra and makes a ranged touch attack against a target creature. If successful, the orb makes contact and calms the target. The subject will no longer see the user as a threat and will not attempt attacks on any other creatures on the battlefield either. The subject can still defend normally, and the technique's effect immediately breaks if the subject takes damage. This technique can be used to calm raging or frenzied creatures, but the perform time increases to a full-round action.</p>\n\n<hr><p><b>Requires:</b> Purification Release f</p>\n",
       "summary": "",
       "instructions": ""
     },

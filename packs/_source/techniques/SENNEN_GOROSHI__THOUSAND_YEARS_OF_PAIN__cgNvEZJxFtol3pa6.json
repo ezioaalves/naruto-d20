@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>This technique is derived from the ancient art of Kancho, and is considered to be the most idiotic technique ever created. Make an unarmed melee attack against the target, which must be flat-footed and no more than one size category larger than you. On hit, the attack is an automatic critical hit that deals nonlethal damage. In addition, the target is knocked @Condition[prone]{prone} (Fortitude negates). Creatures immune to critical hits or sneak attacks are unaffected by this technique.</p>\n\n\n\n",
+      "value": "<p>This technique is derived from the ancient art of Kancho, and is considered to be the most idiotic technique ever created. Make an unarmed melee attack against the target, which must be flat-footed and no more than one size category larger than you. On hit, the attack is an automatic critical hit that deals nonlethal damage. In addition, the target is knocked @Condition[prone]{prone} (Fortitude negates). Creatures immune to critical hits or sneak attacks are unaffected by this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

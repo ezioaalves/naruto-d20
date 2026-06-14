@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, C</p>\n\n<hr>\n\n<p>The character is able to sense the nature of one's chakra focusing a mirror with his own chakra towards the targets, may it be light or dark and sinister. If a person within its jutsu range of the mirror should have any of the following allegiances a creature with this ability will know instantly. The allegiances are: Balance, Chaos, Evil, Good, Law. And anything further that descri bes the character's alignment.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> One Mirror.</p>\n",
+      "value": "<p>The character is able to sense the nature of one's chakra focusing a mirror with his own chakra towards the targets, may it be light or dark and sinister. If a person within its jutsu range of the mirror should have any of the following allegiances a creature with this ability will know instantly. The allegiances are: Balance, Chaos, Evil, Good, Law. And anything further that descri bes the character's alignment.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> One Mirror.</p>\n",
       "summary": "",
       "instructions": ""
     },

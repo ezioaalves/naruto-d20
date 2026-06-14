@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H, E</p>\n\n<hr>\n\n<p>A seal holds the closeable object shut (such as a book, a pouch, a door, etc.), preventing it from being opened by anyone.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to add a password or code to the seal. If the seal is broken without applying the code or password, the sealed object is destroyed.</p>\n\n",
+      "value": "<p>A seal holds the closeable object shut (such as a book, a pouch, a door, etc.), preventing it from being opened by anyone.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to add a password or code to the seal. If the seal is broken without applying the code or password, the sealed object is destroyed.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

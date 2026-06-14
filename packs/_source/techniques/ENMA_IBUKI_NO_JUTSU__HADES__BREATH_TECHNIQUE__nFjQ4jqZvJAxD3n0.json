@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You breathe out a cone of putrid, corrosive gas that deals 3d6 fire damage and 1d6 acid damage (Reflex halves). Creatures in the area are knocked back 1d4 x 5ft (Fortitude negates). This technique deals damage to unattended objects and sets fire to combustibles.</p>\n\n\n\n",
+      "value": "<p>You breathe out a cone of putrid, corrosive gas that deals 3d6 fire damage and 1d6 acid damage (Reflex halves). Creatures in the area are knocked back 1d4 x 5ft (Fortitude negates). This technique deals damage to unattended objects and sets fire to combustibles.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

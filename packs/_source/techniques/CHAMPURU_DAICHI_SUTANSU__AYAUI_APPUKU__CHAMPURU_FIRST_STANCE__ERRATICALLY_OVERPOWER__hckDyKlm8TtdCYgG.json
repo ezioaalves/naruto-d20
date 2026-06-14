@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>Following normal Champuru style, the user takes from all schools of martial arts and fills in the rest as he fights his opponents, showing opponents movements that contradict their expectations while moving about erratically.<br><br>The user may choose at the beginning of his turn to modify his attacks by dexterity or strength. If he chooses to dexterity, he gains a +2 to attack and tumble checks that round and all attacks are modified as chosen. If strength is chosen, then the user gains a +2 to damage and trip checks made on that round.<br><br>No matter what choice is made, the user gains a +2 dodge bonus to defense against attacks of opportunity and must move at least 10 feet every round, if movement is halted then the stance is broken. All above modifications only apply to a user wielding a sword.</p>\n\n<hr><p><b>Requires:</b> Champuru (f), Taijutsu 5 ranks</p>\n",
+      "value": "<p>Following normal Champuru style, the user takes from all schools of martial arts and fills in the rest as he fights his opponents, showing opponents movements that contradict their expectations while moving about erratically.<br><br>The user may choose at the beginning of his turn to modify his attacks by dexterity or strength. If he chooses to dexterity, he gains a +2 to attack and tumble checks that round and all attacks are modified as chosen. If strength is chosen, then the user gains a +2 to damage and trip checks made on that round.<br><br>No matter what choice is made, the user gains a +2 dodge bonus to defense against attacks of opportunity and must move at least 10 feet every round, if movement is halted then the stance is broken. All above modifications only apply to a user wielding a sword.</p>\n\n<hr><p><b>Requires:</b> Champuru (f), Taijutsu 5 ranks</p>\n",
       "summary": "",
       "instructions": ""
     },
@@ -48,7 +48,19 @@
     "automation": {
       "enabled": true,
       "targetMode": "auto",
-      "stanceMode": true
+      "maintenance": {
+        "enabled": true,
+        "resource": "",
+        "cost": "",
+        "policy": "prompt",
+        "interval": 1,
+        "waiver": "",
+        "waiverStep": 2,
+        "freeRounds": 5,
+        "choice": "mode",
+        "element": false,
+        "elementDoubleStep": 5
+      }
     },
     "changes": [],
     "actions": [

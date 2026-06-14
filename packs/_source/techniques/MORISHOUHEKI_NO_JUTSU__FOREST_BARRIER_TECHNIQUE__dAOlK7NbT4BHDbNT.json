@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 16 | <b>Perform DC:</b> 32</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create an illusory barrier of trees and plant growth, which seems completely real in all ways, acting as a physical barrier that obscures vision. The wall cannot be destroyed, and prevents affected creatures from passing through or attacking a creature beyond the barrier intentionally (an area attack that aims to destroy the wall may 'accidentally' affect a creature beyond it) Creatures who make their Will save still cannot see through the barrier, but can move through without any issues. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>You create an illusory barrier of trees and plant growth, which seems completely real in all ways, acting as a physical barrier that obscures vision. The wall cannot be destroyed, and prevents affected creatures from passing through or attacking a creature beyond the barrier intentionally (an area attack that aims to destroy the wall may 'accidentally' affect a creature beyond it) Creatures who make their Will save still cannot see through the barrier, but can move through without any issues. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

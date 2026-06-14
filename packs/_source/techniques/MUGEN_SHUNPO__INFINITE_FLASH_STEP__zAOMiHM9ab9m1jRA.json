@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>While in the Shunpo stance, you gain an additional leap per move action if not hustling, or increase the amount of leaps granted while hustling by 50% (total 1.5 times your level).</p>\n\n\n\n",
+      "value": "<p>While in the Shunpo stance, you gain an additional leap per move action if not hustling, or increase the amount of leaps granted while hustling by 50% (total 1.5 times your level).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

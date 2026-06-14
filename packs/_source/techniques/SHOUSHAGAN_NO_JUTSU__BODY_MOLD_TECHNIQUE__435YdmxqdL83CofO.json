@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You take on the guise of a creature you are familiar with, assuming its voice and gaining a +20 bonus to Disguise checks when impersonating that creature. If you have the creature's corpse available, you may double the Chakra cost to gain double the bonus to Disguise and also adopt the creature's Chakra Signature. As a result, the corpse's facial features will melt away.</p>\n\n\n\n",
+      "value": "<p>You take on the guise of a creature you are familiar with, assuming its voice and gaining a +20 bonus to Disguise checks when impersonating that creature. If you have the creature's corpse available, you may double the Chakra cost to gain double the bonus to Disguise and also adopt the creature's Chakra Signature. As a result, the corpse's facial features will melt away.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

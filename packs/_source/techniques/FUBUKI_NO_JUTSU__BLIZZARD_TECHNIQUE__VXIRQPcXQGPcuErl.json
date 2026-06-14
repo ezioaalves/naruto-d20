@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You unleash a fierce storm of frozen winds. Other creatures take 4d6 cold damage each round they remain within the storm. Any bonuses to saves against cold weather also apply to saves made for this technique.</p>\n\n\n\n",
+      "value": "<p>You unleash a fierce storm of frozen winds. Other creatures take 4d6 cold damage each round they remain within the storm. Any bonuses to saves against cold weather also apply to saves made for this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

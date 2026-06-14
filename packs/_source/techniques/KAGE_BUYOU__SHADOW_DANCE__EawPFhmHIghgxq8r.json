@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>This technique can be used as part of a charge, and allows you to make an unarmed attack that deals normal damage, sending the target upward a number of feet equal to three times the damage dealt if it fails its save. Once airborne, you may spend a move action to jump, arriving directly behind the target.<br><br>While airborne, the target can take no actions involving any movement (even hand seals), and is denied its Dexterity bonus to Defense. If you take no action other than jumping to the target before your next turn, the target will remain airborne until then. Otherwise, it will fall as normal.</p>\n\n\n\n",
+      "value": "<p>This technique can be used as part of a charge, and allows you to make an unarmed attack that deals normal damage, sending the target upward a number of feet equal to three times the damage dealt if it fails its save. Once airborne, you may spend a move action to jump, arriving directly behind the target.<br><br>While airborne, the target can take no actions involving any movement (even hand seals), and is denied its Dexterity bonus to Defense. If you take no action other than jumping to the target before your next turn, the target will remain airborne until then. Otherwise, it will fall as normal.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

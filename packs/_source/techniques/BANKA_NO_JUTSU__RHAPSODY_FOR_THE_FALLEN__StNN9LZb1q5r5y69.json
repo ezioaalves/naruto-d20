@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>Utilizing amplified sound waves, you damage the living and manipulate the dead. Each round, living creatures take 1d8 sonic damage and make a save to avoid becoming @Condition[deaf;duration=1]{deafened} for 1 round. Each round, the corpses of Medium-sized and smaller creatures of your type are raised as 1HD zombies (See D20 Modern, p267) under your control. If those zombies move out of the area, they immediately deanimate. Unless a zombie's body is completely destroyed, it will rise again the next round.<br><br>While performing the technique, you can freely make Perform checks using the instrument held to impress a person or crowd (as per the Perform skill).</p>\n\n\n\n",
+      "value": "<p>Utilizing amplified sound waves, you damage the living and manipulate the dead. Each round, living creatures take 1d8 sonic damage and make a save to avoid becoming @Condition[deaf;duration=1]{deafened} for 1 round. Each round, the corpses of Medium-sized and smaller creatures of your type are raised as 1HD zombies (See D20 Modern, p267) under your control. If those zombies move out of the area, they immediately deanimate. Unless a zombie's body is completely destroyed, it will rise again the next round.<br><br>While performing the technique, you can freely make Perform checks using the instrument held to impress a person or crowd (as per the Perform skill).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

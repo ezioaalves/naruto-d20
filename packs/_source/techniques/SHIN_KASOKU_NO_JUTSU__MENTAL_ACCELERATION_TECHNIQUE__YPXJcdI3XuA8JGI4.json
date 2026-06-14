@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You manipulate your brain into working faster, gaining a +1 bonus to Defense and saves. If the technique remains in effect for more than (2 + Wis modifier) rounds, you suffer 1 temporary Wisdom damage.</p>\n\n\n\n",
+      "value": "<p>You manipulate your brain into working faster, gaining a +1 bonus to Defense and saves. If the technique remains in effect for more than (2 + Wis modifier) rounds, you suffer 1 temporary Wisdom damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

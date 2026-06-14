@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You breathe a cone of deadly flame, which deals 5d6 fire damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 14d6.</p>\n<p><b>Mastery:</b> The third step allows you to add the Shapeable (S) effect to the technique's area.</p>\n",
+      "value": "<p>You breathe a cone of deadly flame, which deals 5d6 fire damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 14d6.</p>\n<p><b>Mastery:</b> The third step allows you to add the Shapeable (S) effect to the technique's area.</p>\n",
       "summary": "",
       "instructions": ""
     },

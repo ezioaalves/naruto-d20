@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> Mob, S</p>\n\n<hr>\n\n<p>You can make a melee or thrown weapon attack against the target without having to move. The target must make a Spot check (DC equal to the attack roll) or be denied its Dexterity bonus to Defense. A thrown weapon attack ignores all range penalties, and bypasses any obstacles (including cover) between you and the target, as long as you know the exact square the target is occupying.</p>\n\n\n\n",
+      "value": "<p>You can make a melee or thrown weapon attack against the target without having to move. The target must make a Spot check (DC equal to the attack roll) or be denied its Dexterity bonus to Defense. A thrown weapon attack ignores all range penalties, and bypasses any obstacles (including cover) between you and the target, as long as you know the exact square the target is occupying.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

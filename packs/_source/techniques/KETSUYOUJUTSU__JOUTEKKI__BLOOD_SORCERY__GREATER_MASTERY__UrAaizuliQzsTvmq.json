@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is identical to Ketsuyoujutsu: Getekki. The bonus granted is +4 and you deal yourself 3 damage when attempting this technique.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the bonus to +5</p>\n\n",
+      "value": "<p>This technique is identical to Ketsuyoujutsu: Getekki. The bonus granted is +4 and you deal yourself 3 damage when attempting this technique.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the bonus to +5</p>\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>Up to one creature per level inside the area will see vines bursting forth from all around, causing them to act as though @Condition[entangled]{entangled}. This effect lasts for as long as those creatures remain within the area. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>Up to one creature per level inside the area will see vines bursting forth from all around, causing them to act as though @Condition[entangled]{entangled}. This effect lasts for as long as those creatures remain within the area. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

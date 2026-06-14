@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>You cover yourself with an armor of ice, which is a medium armor granting a +5 armor bonus to Defense (+2 non-proficient), has a maximum Dexterity bonus of +2, an armor penalty of -3, does not affect your speed, and weighs 20 lbs. While worn, the armor grants you cold and water resistance 5, and any attacker striking you with an unarmed or natural melee weapon takes 1d4 cold damage for each attack.<br><br>If you take more than 20 fire damage while the armor is active, it melts and the technique ends.</p>\n\n\n\n",
+      "value": "<p>You cover yourself with an armor of ice, which is a medium armor granting a +5 armor bonus to Defense (+2 non-proficient), has a maximum Dexterity bonus of +2, an armor penalty of -3, does not affect your speed, and weighs 20 lbs. While worn, the armor grants you cold and water resistance 5, and any attacker striking you with an unarmed or natural melee weapon takes 1d4 cold damage for each attack.<br><br>If you take more than 20 fire damage while the armor is active, it melts and the technique ends.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

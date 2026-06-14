@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This long training has the character doing advanced yoga for a long time to increase strength and flexibility. At the end of this training the character gains a +2 to Balance and Concentration.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
+      "value": "<p>This long training has the character doing advanced yoga for a long time to increase strength and flexibility. At the end of this training the character gains a +2 to Balance and Concentration.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
       "summary": "",
       "instructions": ""
     },

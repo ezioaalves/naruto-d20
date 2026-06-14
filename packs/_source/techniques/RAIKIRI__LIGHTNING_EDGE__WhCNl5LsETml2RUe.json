@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>Though weaker than Chidori, this technique is more practical as it lasts longer and is easier and cheaper to perform. The effects are similar to those of Chidori (except as noted above), with the following exceptions:<br><br>Attacks with a Raikiri deal 1d8+1 piercing, 1d6+1 sonic and 1d4+1 electric damage, and have a critical of (18-20, x2).<br><br>Raikiri does not gain special bonuses when used with Taijutsu: Ougi - Rendan Kidouki.<br><br>When combined with Ryuutsuki, a Raikiri cannot be empowered, but it will deal triple damage on hit, or quadruple damage if it is a critical hit.</p>\n\n\n\n",
+      "value": "<p>Though weaker than Chidori, this technique is more practical as it lasts longer and is easier and cheaper to perform. The effects are similar to those of Chidori (except as noted above), with the following exceptions:<br><br>Attacks with a Raikiri deal 1d8+1 piercing, 1d6+1 sonic and 1d4+1 electric damage, and have a critical of (18-20, x2).<br><br>Raikiri does not gain special bonuses when used with Taijutsu: Ougi - Rendan Kidouki.<br><br>When combined with Ryuutsuki, a Raikiri cannot be empowered, but it will deal triple damage on hit, or quadruple damage if it is a critical hit.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

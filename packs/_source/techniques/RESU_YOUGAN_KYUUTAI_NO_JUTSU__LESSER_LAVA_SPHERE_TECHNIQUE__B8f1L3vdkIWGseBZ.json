@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Yoton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> H, F</p>\n\n<hr>\n\n<p>The user spits out a series of dripping, super-heated balls of lava, which merge with pieces of earth from the terrain around them. These balls lift from the ground and surround the user, waiting to be directed.<br><br>Using their chakra, the user creates one or more spheres of lava. These spheres can then be thrown as a ranged touch attack, dealing 1d6 points of hybrid earth/fire damage. The spheres follow and surround the user, but do not hinder any attacks.</p>\n\n<hr><p><b>Material Focus:</b> 1 lb. of earth, sand, rock, or mud per projectile.</p>\n",
+      "value": "<p>The user spits out a series of dripping, super-heated balls of lava, which merge with pieces of earth from the terrain around them. These balls lift from the ground and surround the user, waiting to be directed.<br><br>Using their chakra, the user creates one or more spheres of lava. These spheres can then be thrown as a ranged touch attack, dealing 1d6 points of hybrid earth/fire damage. The spheres follow and surround the user, but do not hinder any attacks.</p>\n\n<hr><p><b>Material Focus:</b> 1 lb. of earth, sand, rock, or mud per projectile.</p>\n",
       "summary": "",
       "instructions": ""
     },

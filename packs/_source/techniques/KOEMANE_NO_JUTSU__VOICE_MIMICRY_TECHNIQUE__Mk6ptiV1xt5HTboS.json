@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You learn to mimic the voice, accent and speech patterns of another creature with near perfect accuracy. To do so, you spend 1 Chakra per minute, and other creatures can tell it's a fake voice by making a Listen check, opposed by your Bluff check, to which you gain a +8 bonus. It the creature knows the owner of the voice you imitate, it gains a +2 to +8 bonus based on how well they know them (GM's discretion)<br><br>This training can be completed multiple times, allowing the mimicry of one specific voice each time. If you are not familiar with the owner of the voice you attempt to mimic, the training takes ten times as long to learn.</p>\n\n\n\n",
+      "value": "<p>You learn to mimic the voice, accent and speech patterns of another creature with near perfect accuracy. To do so, you spend 1 Chakra per minute, and other creatures can tell it's a fake voice by making a Listen check, opposed by your Bluff check, to which you gain a +8 bonus. It the creature knows the owner of the voice you imitate, it gains a +2 to +8 bonus based on how well they know them (GM's discretion)<br><br>This training can be completed multiple times, allowing the mimicry of one specific voice each time. If you are not familiar with the owner of the voice you attempt to mimic, the training takes ten times as long to learn.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

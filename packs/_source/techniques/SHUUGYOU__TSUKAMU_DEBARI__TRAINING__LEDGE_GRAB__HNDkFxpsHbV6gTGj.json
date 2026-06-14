@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>If the character fails a horizontal jump check by less than 10, the user doesn't clear the distance, but can make a Reflex save (DC 15) to grab the far edge of the gap. The character ends his or her movement grasping the far edge. If that leaves the character dangling over a chasm or gap, getting up requires a move action and a Climb check (DC 15).</p>\n\n<hr><p><b>Requires:</b> Training (f), Climb 5 ranks, Jump 5 ranks</p>\n",
+      "value": "<p>If the character fails a horizontal jump check by less than 10, the user doesn't clear the distance, but can make a Reflex save (DC 15) to grab the far edge of the gap. The character ends his or her movement grasping the far edge. If that leaves the character dangling over a chasm or gap, getting up requires a move action and a Climb check (DC 15).</p>\n\n<hr><p><b>Requires:</b> Training (f), Climb 5 ranks, Jump 5 ranks</p>\n",
       "summary": "",
       "instructions": ""
     },

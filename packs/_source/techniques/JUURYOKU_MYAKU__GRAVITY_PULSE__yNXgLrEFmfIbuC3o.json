@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H, Mob</p>\n\n<hr>\n\n<p>You lessen the effects of gravity on you, improving your speed. You gain the Speed Rank 1 extraordinary ability.<br><br>This technique only functions while you maintain contact with solid, rocky ground. If you are knocked off your feet, become @Condition[prone]{prone} or leave the ground, the technique immediately ends.</p>\n\n\n\n",
+      "value": "<p>You lessen the effects of gravity on you, improving your speed. You gain the Speed Rank 1 extraordinary ability.<br><br>This technique only functions while you maintain contact with solid, rocky ground. If you are knocked off your feet, become @Condition[prone]{prone} or leave the ground, the technique immediately ends.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

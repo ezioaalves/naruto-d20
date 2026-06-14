@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 16 | <b>Perform DC:</b> 32</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>This powerful gravity manipulation throws subjects straight up into the air 10 ft per level, then slams them back into the ground, suffering fall damage at an increased die size (in d8 rather than d6). A Reflex save can (DC 15 + 1 per 10 ft of the fall) halve the damage.</p>\n\n\n\n",
+      "value": "<p>This powerful gravity manipulation throws subjects straight up into the air 10 ft per level, then slams them back into the ground, suffering fall damage at an increased die size (in d8 rather than d6). A Reflex save can (DC 15 + 1 per 10 ft of the fall) halve the damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

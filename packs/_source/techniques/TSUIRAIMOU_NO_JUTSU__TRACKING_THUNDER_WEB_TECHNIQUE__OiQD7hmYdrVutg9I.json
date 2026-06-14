@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>While concentrating on this technique, you must either keep your hand in direct contact with the ground, or you may touch the ground with a Small or smaller sized metal object. You spread your Chakra throughout the area as a low voltage pulse, which will alert you to the presence, size and exact position of all creatures of at least Tiny size that are within the area and in direct contact with the ground. As such, the web does not extend up surfaces such as walls or trees.</p>\n\n\n\n",
+      "value": "<p>While concentrating on this technique, you must either keep your hand in direct contact with the ground, or you may touch the ground with a Small or smaller sized metal object. You spread your Chakra throughout the area as a low voltage pulse, which will alert you to the presence, size and exact position of all creatures of at least Tiny size that are within the area and in direct contact with the ground. As such, the web does not extend up surfaces such as walls or trees.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

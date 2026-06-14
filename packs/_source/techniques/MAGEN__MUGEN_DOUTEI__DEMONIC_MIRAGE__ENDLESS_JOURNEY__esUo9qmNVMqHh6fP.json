@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The subject(s) will slowly succumb to an illusion that causes them to lose any sense of direction, building up as the technique progresses.<br><br>First round: The subject is unable to make sense of which direction is north (or south, etc.) without using a compass or similar effect or device.<br><br>Second round: The subject wanders around, making little progress towards it destination, without realising.<br><br>Third round: The subject moves with numerous turns and twists and becomes unable to wander more than 200 ft from the location it started its turn in for the rest of this technique's duration.<br><br>This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>The subject(s) will slowly succumb to an illusion that causes them to lose any sense of direction, building up as the technique progresses.<br><br>First round: The subject is unable to make sense of which direction is north (or south, etc.) without using a compass or similar effect or device.<br><br>Second round: The subject wanders around, making little progress towards it destination, without realising.<br><br>Third round: The subject moves with numerous turns and twists and becomes unable to wander more than 200 ft from the location it started its turn in for the rest of this technique's duration.<br><br>This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create a powerful gust of wind resembling a tornado, dealing 3d6+3d4 wind damage. Small-size or smaller creatures caught are knocked upwards 1d6x5 ft (Fortitude negates), and will suffer falling damage as normal. Flying creatures take double damage, and Mediumsized flying creatures are must also save against the knock up. Despite having a flight speed, flying creatures knocked up by the technique will fall to the ground afterwards.</p>\n\n\n\n",
+      "value": "<p>You create a powerful gust of wind resembling a tornado, dealing 3d6+3d4 wind damage. Small-size or smaller creatures caught are knocked upwards 1d6x5 ft (Fortitude negates), and will suffer falling damage as normal. Flying creatures take double damage, and Mediumsized flying creatures are must also save against the knock up. Despite having a flight speed, flying creatures knocked up by the technique will fall to the ground afterwards.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

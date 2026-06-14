@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You cover yourself with a protective cocoon of energy, granting 5 energy resistance to either cold, earth, electric, fire, water or wind. No more than one instance of this technique can be active at a time.</p>\n\n\n\n",
+      "value": "<p>You cover yourself with a protective cocoon of energy, granting 5 energy resistance to either cold, earth, electric, fire, water or wind. No more than one instance of this technique can be active at a time.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

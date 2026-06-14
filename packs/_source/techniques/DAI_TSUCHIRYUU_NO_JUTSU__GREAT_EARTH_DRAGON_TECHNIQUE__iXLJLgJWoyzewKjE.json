@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create an earthen dragon that dives towards a primary target within the area, then surges toward up to one secondary target per 2 levels within the area, maximum 10 secondary targets total, dealing half the primary damage to each of them. The damage and cost depend on the size of the dragon:<br><br>- Small (8 Chakra): 6d6 earth damage.<br>- Medium (12 Chakra): 9d6 earth damage.<br>- Large (17 Chakra): 12d6 earth damage.</p>\n\n\n\n",
+      "value": "<p>You create an earthen dragon that dives towards a primary target within the area, then surges toward up to one secondary target per 2 levels within the area, maximum 10 secondary targets total, dealing half the primary damage to each of them. The damage and cost depend on the size of the dragon:<br><br>- Small (8 Chakra): 6d6 earth damage.<br>- Medium (12 Chakra): 9d6 earth damage.<br>- Large (17 Chakra): 12d6 earth damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

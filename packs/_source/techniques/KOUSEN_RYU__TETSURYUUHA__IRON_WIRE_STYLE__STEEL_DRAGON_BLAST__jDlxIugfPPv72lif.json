@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You must be in the Kousen Ryu stance to use this technique, which allows you to make a single attack with your wire weapon against all creatures in the area.<br><br>Such attacks deal normal damage but cannot score a critical hit. The range is 20 ft when using iron wire, or 30 ft when using battle wire.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the base damage of the wire weapon by 1 die (up to 5 extra dice). Can only be done if you have 2 or more Livewire levels.</p>\n\n",
+      "value": "<p>You must be in the Kousen Ryu stance to use this technique, which allows you to make a single attack with your wire weapon against all creatures in the area.<br><br>Such attacks deal normal damage but cannot score a critical hit. The range is 20 ft when using iron wire, or 30 ft when using battle wire.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the base damage of the wire weapon by 1 die (up to 5 extra dice). Can only be done if you have 2 or more Livewire levels.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

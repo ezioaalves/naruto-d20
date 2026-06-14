@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> E, F, H</p>\n\n<hr>\n\n<p>You create needles of ice that surround the target square and fly towards it, dealing 2d4 damage to creatures within the area (half cold, half piercing). Alternatively, you may target a 10 ft square, but the damage will be halved.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d4, up to 1d4 per level of 10d4.</p>\n\n",
+      "value": "<p>You create needles of ice that surround the target square and fly towards it, dealing 2d4 damage to creatures within the area (half cold, half piercing). Alternatively, you may target a 10 ft square, but the damage will be halved.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d4, up to 1d4 per level of 10d4.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You perform a basic cut from the hip to the shoulder, taking a -1 penalty to attack, but gaining a +1 bonus to damage.</p>\n\n\n\n",
+      "value": "<p>You perform a basic cut from the hip to the shoulder, taking a -1 penalty to attack, but gaining a +1 bonus to damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

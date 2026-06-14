@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You expel a wave of Chakra that causes flames within the area to flare up. The technique has each source of fire within the area emit a Burst, its damage and radius based on the size of the flame. Any creature caught in such an area can make a Reflex save (DC 15) for half damage.<br><br>- Small (candle, torch): 5 ft radius, 2d6 fire damage.<br>- Medium (campfire, grill): 10 ft radius, 3d6 fire damage.<br>- Large (burning tree): 15 ft radius, 5d6 fire damage.<br>- Huge (burning house): 20 ft radius, 8d6 fire damage.</p>\n\n\n\n",
+      "value": "<p>You expel a wave of Chakra that causes flames within the area to flare up. The technique has each source of fire within the area emit a Burst, its damage and radius based on the size of the flame. Any creature caught in such an area can make a Reflex save (DC 15) for half damage.<br><br>- Small (candle, torch): 5 ft radius, 2d6 fire damage.<br>- Medium (campfire, grill): 10 ft radius, 3d6 fire damage.<br>- Large (burning tree): 15 ft radius, 5d6 fire damage.<br>- Huge (burning house): 20 ft radius, 8d6 fire damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

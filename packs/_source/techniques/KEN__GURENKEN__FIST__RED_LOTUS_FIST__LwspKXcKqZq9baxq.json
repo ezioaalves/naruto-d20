@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You hold potent Chakra in your extremities. Your unarmed attacks count as armed and deal lethal damage, plus an additional 1 bonus force damage on hit.</p>\n\n\n\n",
+      "value": "<p>You hold potent Chakra in your extremities. Your unarmed attacks count as armed and deal lethal damage, plus an additional 1 bonus force damage on hit.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

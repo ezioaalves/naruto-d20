@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You improve your range of motion, gaining a +4 bonus to Escape Artist or Dexterity checks made to free yourself from bonds or confinement (such as handcuffs).</p>\n\n\n\n",
+      "value": "<p>You improve your range of motion, gaining a +4 bonus to Escape Artist or Dexterity checks made to free yourself from bonds or confinement (such as handcuffs).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

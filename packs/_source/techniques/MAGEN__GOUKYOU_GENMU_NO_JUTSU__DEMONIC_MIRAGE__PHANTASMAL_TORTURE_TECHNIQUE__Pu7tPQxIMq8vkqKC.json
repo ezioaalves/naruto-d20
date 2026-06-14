@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The subject writhes in pain as they experience their flesh being ripped from its body and their flesh being burned and torn from their bones. The subject suffers 1d4+1 damage each round, and a -1 penalty to skill checks, ability checks and attack rolls that stacks up to eight times. Once the technique expires, these penalties persist, but are reduced by one each round until they disappear entirely. If the subject is reduced to 0 HP, it stops taking damage and becomes unable to act while the technique lasts. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>The subject writhes in pain as they experience their flesh being ripped from its body and their flesh being burned and torn from their bones. The subject suffers 1d4+1 damage each round, and a -1 penalty to skill checks, ability checks and attack rolls that stacks up to eight times. Once the technique expires, these penalties persist, but are reduced by one each round until they disappear entirely. If the subject is reduced to 0 HP, it stops taking damage and becomes unable to act while the technique lasts. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

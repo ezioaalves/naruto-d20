@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>The animal companion gains a +1 enhancement bonus to attack and damage rolls with all of its natural weapons, which now count as Chakra-enhanced when trying to bypass damage reduction.</p>\n\n\n\n",
+      "value": "<p>The animal companion gains a +1 enhancement bonus to attack and damage rolls with all of its natural weapons, which now count as Chakra-enhanced when trying to bypass damage reduction.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

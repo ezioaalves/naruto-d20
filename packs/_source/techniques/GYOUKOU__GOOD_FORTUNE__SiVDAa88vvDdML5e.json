@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You infuse yourself with the essence of luck, or so it seems. You gain a +1 luck bonus to saves, Gamble checks and attack rolls. This technique can be used once per day.</p>\n\n\n\n",
+      "value": "<p>You infuse yourself with the essence of luck, or so it seems. You gain a +1 luck bonus to saves, Gamble checks and attack rolls. This technique can be used once per day.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

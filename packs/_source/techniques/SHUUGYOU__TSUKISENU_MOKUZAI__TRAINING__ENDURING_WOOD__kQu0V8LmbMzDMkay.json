@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b>  | <b>Successes:</b> </p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> Mas.</p>\n\n<hr>\n\n<p>The user learns to create more and more dense wood using their Mokuton affinity creating stronger barriers and ensuring their traps ensnare the enemy more effectively. The user's Mokuton techniques that create barriers gain an additional 1 hardness and 5 hit points. The user's techniques which capture or grapple an enemy increase their Escape Artist DC by 1 and their Break DC by 1.</p>\n\n<hr><p><b>Requires:</b> Mokuton Affinity</p>\n<p><b>Mastery:</b> Each step of mastery grants an additional 1 hardness and 5 hit points and further increase the Escape Artist DC by 1 and Break DC by 1 to the user's Mokuton techniques.</p>\n",
+      "value": "<p>The user learns to create more and more dense wood using their Mokuton affinity creating stronger barriers and ensuring their traps ensnare the enemy more effectively. The user's Mokuton techniques that create barriers gain an additional 1 hardness and 5 hit points. The user's techniques which capture or grapple an enemy increase their Escape Artist DC by 1 and their Break DC by 1.</p>\n\n<hr><p><b>Requires:</b> Mokuton Affinity</p>\n<p><b>Mastery:</b> Each step of mastery grants an additional 1 hardness and 5 hit points and further increase the Escape Artist DC by 1 and Break DC by 1 to the user's Mokuton techniques.</p>\n",
       "summary": "",
       "instructions": ""
     },

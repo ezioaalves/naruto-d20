@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You create a mental block within the target, making it unable to use two of the following abilities (your choice): Scent, See Chakra, See Through Chakra, Sense Chakra, Detect Emotions. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>You create a mental block within the target, making it unable to use two of the following abilities (your choice): Scent, See Chakra, See Through Chakra, Sense Chakra, Detect Emotions. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

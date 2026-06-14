@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>The user enters this stance as a swift action that does not provoke an attack of opportunity. His arms will seemingly go limp and he will hunch over. His attacks will seem misguided and unorthodox, causing enemies to become confused by the tactic. While in this stance, the user gains a +2 to attack rolls and defense.<br><br>Any person attempting to identify the technique takes a -2 penalty to checks made to identify due to the stance's strange qualities.</p>\n\n<hr><p><b>Mastery:</b> At the 3rd and 5th stage of mastery, the user may increase the penalty from this technique by an additional -1 for an additional point of chakra to a maximum of -4.</p>\n",
+      "value": "<p>The user enters this stance as a swift action that does not provoke an attack of opportunity. His arms will seemingly go limp and he will hunch over. His attacks will seem misguided and unorthodox, causing enemies to become confused by the tactic. While in this stance, the user gains a +2 to attack rolls and defense.<br><br>Any person attempting to identify the technique takes a -2 penalty to checks made to identify due to the stance's strange qualities.</p>\n\n<hr><p><b>Mastery:</b> At the 3rd and 5th stage of mastery, the user may increase the penalty from this technique by an additional -1 for an additional point of chakra to a maximum of -4.</p>\n",
       "summary": "",
       "instructions": ""
     },

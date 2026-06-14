@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>This Champuru taijutsu technique has the user fall to the ground and begin to support his body with his arms and swing his legs around his stationary torso in continuous circles, never allowing his legs to touch the ground.<br><br>The user is allowed to make an attempt to trip every creature in his range; The user gains an attack of opportunity against one tripped opponent as he stands up with his weapon. Standing counts as a free action at the end of this attack.</p>\n\n<hr><p><b>Requires:</b> Champuru (f)</p>\n",
+      "value": "<p>This Champuru taijutsu technique has the user fall to the ground and begin to support his body with his arms and swing his legs around his stationary torso in continuous circles, never allowing his legs to touch the ground.<br><br>The user is allowed to make an attempt to trip every creature in his range; The user gains an attack of opportunity against one tripped opponent as he stands up with his weapon. Standing counts as a free action at the end of this attack.</p>\n\n<hr><p><b>Requires:</b> Champuru (f)</p>\n",
       "summary": "",
       "instructions": ""
     },

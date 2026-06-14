@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Ishimaru Ryu: Nidan Dachi. You gain a +4 bonus to attack rolls made to confirm critical hits with unarmed attacks.</p>\n\n\n\n",
+      "value": "<p>As Ishimaru Ryu: Nidan Dachi. You gain a +4 bonus to attack rolls made to confirm critical hits with unarmed attacks.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

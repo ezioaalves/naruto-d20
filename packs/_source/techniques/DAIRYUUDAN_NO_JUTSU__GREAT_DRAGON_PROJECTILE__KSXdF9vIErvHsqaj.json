@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> </p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b>  | <b>Successes:</b> </p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Daikodan no Jutsu (p153), but you spit out a long, slithering dragon of flames. Instead of saving against the secondary penalties of Daikodan no Jutsu, creatures damaged must make a Reflex save to avoid catching fire.</p>\n\n\n\n",
+      "value": "<p>As Daikodan no Jutsu (p153), but you spit out a long, slithering dragon of flames. Instead of saving against the secondary penalties of Daikodan no Jutsu, creatures damaged must make a Reflex save to avoid catching fire.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Completing this training technique grants a +1 bonus to Chakra Control checks made to tap reserves and a +2 bonus to chakra pool and chakra reserves. The user automatically learns the Tadayou technique if he did not already know it.</p>\n\n<hr><p><b>Mastery:</b> At the first step of mastery in this technique the user may spend 3 chakra and activate Tadayou as a free action.<br><br>At the third step of mastery in this technique the user need only spend 2 chakra.<br><br>At the fifth step of mastery in this technique the user need only spend 1 chakra.</p>\n",
+      "value": "<p>Completing this training technique grants a +1 bonus to Chakra Control checks made to tap reserves and a +2 bonus to chakra pool and chakra reserves. The user automatically learns the Tadayou technique if he did not already know it.</p>\n\n<hr><p><b>Mastery:</b> At the first step of mastery in this technique the user may spend 3 chakra and activate Tadayou as a free action.<br><br>At the third step of mastery in this technique the user need only spend 2 chakra.<br><br>At the fifth step of mastery in this technique the user need only spend 1 chakra.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>The character touches the surface of the clean water, and let the chakra flows toward it. For the duration of the jutsu, this water body can be used as \"Material Focus: Mirror\".</p>\n\n<hr><p><b>Material Focus:</b> A body of clean water.</p>\n",
+      "value": "<p>The character touches the surface of the clean water, and let the chakra flows toward it. For the duration of the jutsu, this water body can be used as \"Material Focus: Mirror\".</p>\n\n<hr><p><b>Material Focus:</b> A body of clean water.</p>\n",
       "summary": "",
       "instructions": ""
     },

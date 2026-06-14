@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>The second of a three-move combination attack, this works exactly as Sangeki Hissatsu Waza: Igeki, except as above, the technique can only be used on a target hit by Igeki with the same weapon within the last three rounds, and you can also make a second attack at a -5 penalty. Both attacks benefit from the same bonuses (as Igeki), and deal an additional 1d6+1 damage each (Fortitude negates).</p>\n\n\n\n",
+      "value": "<p>The second of a three-move combination attack, this works exactly as Sangeki Hissatsu Waza: Igeki, except as above, the technique can only be used on a target hit by Igeki with the same weapon within the last three rounds, and you can also make a second attack at a -5 penalty. Both attacks benefit from the same bonuses (as Igeki), and deal an additional 1d6+1 damage each (Fortitude negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

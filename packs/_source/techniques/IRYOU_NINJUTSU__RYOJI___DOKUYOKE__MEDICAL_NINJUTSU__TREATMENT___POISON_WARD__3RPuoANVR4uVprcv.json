@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Medical)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>The target becomes immune to the next disease or poison that tries to affect it.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to make the target immune to another disease or poison, up to 1 every 5 levels or 5 total (whichever is lower).</p>\n\n",
+      "value": "<p>The target becomes immune to the next disease or poison that tries to affect it.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to make the target immune to another disease or poison, up to 1 every 5 levels or 5 total (whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

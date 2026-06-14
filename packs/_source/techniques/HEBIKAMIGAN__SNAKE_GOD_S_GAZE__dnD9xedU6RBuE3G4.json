@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton, Doujutsu)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>The curse of the snake god flows through the user's eyes and into the target. The target's blood thickens, senses dull and nerves deaden as they're afflicted with the user's poisonous chakra. The poisonous chakra deals 3d6 Doton damage to the target. If a target takes damage from this ability, then they must make a Fortitude saving throw. On a failure, the target is stunned for 1 round per 4 levels of the user.</p>\n\n<hr><p><b>Requires:</b> Petrifying Glare (a)</p>\n",
+      "value": "<p>The curse of the snake god flows through the user's eyes and into the target. The target's blood thickens, senses dull and nerves deaden as they're afflicted with the user's poisonous chakra. The poisonous chakra deals 3d6 Doton damage to the target. If a target takes damage from this ability, then they must make a Fortitude saving throw. On a failure, the target is stunned for 1 round per 4 levels of the user.</p>\n\n<hr><p><b>Requires:</b> Petrifying Glare (a)</p>\n",
       "summary": "",
       "instructions": ""
     },

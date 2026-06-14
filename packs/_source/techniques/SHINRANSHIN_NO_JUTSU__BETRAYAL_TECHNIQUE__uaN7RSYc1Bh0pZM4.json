@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 31</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You ensnare the mind of the subject, having it perform a command to the best of its ability (such as attacking a creature within its line of sight). The target's body will follow your order, but the subject's head (and thus, its mouth) remains under its own control. While under your control, the creature cannot use any techniques.</p>\n\n\n\n",
+      "value": "<p>You ensnare the mind of the subject, having it perform a command to the best of its ability (such as attacking a creature within its line of sight). The target's body will follow your order, but the subject's head (and thus, its mouth) remains under its own control. While under your control, the creature cannot use any techniques.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

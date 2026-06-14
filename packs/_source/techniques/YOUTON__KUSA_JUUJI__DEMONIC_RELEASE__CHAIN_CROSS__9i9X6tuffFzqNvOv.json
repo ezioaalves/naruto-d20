@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>This technique was designed to severely wound an enemy, or even cut it in half, and must be performed while you have at least two hands free. Make a single melee attack against the target, which deals 3d8 slashing damage as two wicked, crimson spiked chains erupt from your palms. If the target is hit, it will @Condition[bleed]{bleed} for 1d6+1 rounds, taking 1d4 damage each round (Fortitude negates all bleeding).<br><br>You suffer 2d6 damage when performing this technique. If you did not pay for this technique with demonic Chakra, you also suffer 1d4 temporary Strength damage.</p>\n\n\n\n",
+      "value": "<p>This technique was designed to severely wound an enemy, or even cut it in half, and must be performed while you have at least two hands free. Make a single melee attack against the target, which deals 3d8 slashing damage as two wicked, crimson spiked chains erupt from your palms. If the target is hit, it will @Condition[bleed]{bleed} for 1d6+1 rounds, taking 1d4 damage each round (Fortitude negates all bleeding).<br><br>You suffer 2d6 damage when performing this technique. If you did not pay for this technique with demonic Chakra, you also suffer 1d4 temporary Strength damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

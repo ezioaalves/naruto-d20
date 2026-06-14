@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 9</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is identical to Jougenzou no Jutsu (p132), except as above, and instead you get to make 1 minor change per level, 1 advanced change per 3 levels, or 1 greater change per 5 levels. An greater change is a something of great importance, such as changing an entire room, concealing a trapdoor or pit, or making<br><br>objects of a Large size or smaller appear or disappear. As with minor changes, such illusions cannot affect or harm creatures directly.</p>\n\n\n\n",
+      "value": "<p>This technique is identical to Jougenzou no Jutsu (p132), except as above, and instead you get to make 1 minor change per level, 1 advanced change per 3 levels, or 1 greater change per 5 levels. An greater change is a something of great importance, such as changing an entire room, concealing a trapdoor or pit, or making<br><br>objects of a Large size or smaller appear or disappear. As with minor changes, such illusions cannot affect or harm creatures directly.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

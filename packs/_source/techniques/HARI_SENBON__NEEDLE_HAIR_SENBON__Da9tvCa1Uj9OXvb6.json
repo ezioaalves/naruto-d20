@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H, E</p>\n\n<hr>\n\n<p>This jutsu can be used whilst Hari Jizou is being used or other defensive hair techniques are being used. The user fires their strengthened hair like tiny needles in either a cone shape or an area of affect around the user. It can hit no more than 2 targets doing 3d6 + 5 points of damage to each target and no one can be targeted more than once.</p>\n\n<hr><p><b>Requires:</b> Hari Jizou (t)</p>\n<p><b>Empower:</b> You may increase the number of targets by increasing the chakra cost by one per added target.</p>\n",
+      "value": "<p>This jutsu can be used whilst Hari Jizou is being used or other defensive hair techniques are being used. The user fires their strengthened hair like tiny needles in either a cone shape or an area of affect around the user. It can hit no more than 2 targets doing 3d6 + 5 points of damage to each target and no one can be targeted more than once.</p>\n\n<hr><p><b>Requires:</b> Hari Jizou (t)</p>\n<p><b>Empower:</b> You may increase the number of targets by increasing the chakra cost by one per added target.</p>\n",
       "summary": "",
       "instructions": ""
     },

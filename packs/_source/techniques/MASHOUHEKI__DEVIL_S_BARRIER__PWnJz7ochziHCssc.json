@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You create a transparent barrier in front of you that deals 1d6 Chakra damage and 1d6 fire damage per round to any creature touching it (Fortitude negates, CR applies). The barrier blocks all creatures and animated objects from passing through, as though an indestructible, invisible wall (CR does not apply).<br><br>Creatures that can See (Through) Chakra can make a Spot check (DC 20) to detect the barrier.</p>\n\n\n\n",
+      "value": "<p>You create a transparent barrier in front of you that deals 1d6 Chakra damage and 1d6 fire damage per round to any creature touching it (Fortitude negates, CR applies). The barrier blocks all creatures and animated objects from passing through, as though an indestructible, invisible wall (CR does not apply).<br><br>Creatures that can See (Through) Chakra can make a Spot check (DC 20) to detect the barrier.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

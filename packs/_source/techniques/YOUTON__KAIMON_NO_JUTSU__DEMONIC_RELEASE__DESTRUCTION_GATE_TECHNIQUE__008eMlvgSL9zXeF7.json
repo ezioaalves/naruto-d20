@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>You summon terrible images, memories and thoughts within your mind to trigger a controlled breakdown, which allows you to immediately enter your Blazing Rage, but causes you to suffer a -2 penalty to saves against Fear effects for the duration of the Rage (or Kyuubi Manifestation), plus 1d4 minutes afterward.<br><br>Once the Rage ends, you suffer 1 temporary Charisma damage (Will DC 16 negates).</p>\n\n\n\n",
+      "value": "<p>You summon terrible images, memories and thoughts within your mind to trigger a controlled breakdown, which allows you to immediately enter your Blazing Rage, but causes you to suffer a -2 penalty to saves against Fear effects for the duration of the Rage (or Kyuubi Manifestation), plus 1d4 minutes afterward.<br><br>Once the Rage ends, you suffer 1 temporary Charisma damage (Will DC 16 negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

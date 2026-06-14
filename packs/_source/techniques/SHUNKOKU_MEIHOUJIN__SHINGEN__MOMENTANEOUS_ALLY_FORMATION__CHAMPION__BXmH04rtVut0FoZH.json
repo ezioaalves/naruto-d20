@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions as Shunkoku Meihoujin: Bushi, but instead summons a Champion rank summon, and the cost increases by 2 per Level of the summon. A Champion summoned in this manner will not require or demand payment or compensation.</p>\n\n\n\n",
+      "value": "<p>This technique functions as Shunkoku Meihoujin: Bushi, but instead summons a Champion rank summon, and the cost increases by 2 per Level of the summon. A Champion summoned in this manner will not require or demand payment or compensation.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

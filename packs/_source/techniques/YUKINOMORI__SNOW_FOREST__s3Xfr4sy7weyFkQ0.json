@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 13</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 30 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 18 | <b>Perform DC:</b> 38</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique can only be used in areas covered in ice and snow, and causes a sea of snowy/icy trees to rise up around you. The trees are Medium to Huge size, resembling a forest of a few decades old. The trees do not have foliage, but otherwise act like trees, and will impose movement penalties like a normal forest would. The trees, while made of snow or ice, are not especially slippery.<br><br>You can dismiss the forest partly or entirely, as precise as a single tree (or any number of specific trees) at a time.</p>\n\n\n\n",
+      "value": "<p>This technique can only be used in areas covered in ice and snow, and causes a sea of snowy/icy trees to rise up around you. The trees are Medium to Huge size, resembling a forest of a few decades old. The trees do not have foliage, but otherwise act like trees, and will impose movement penalties like a normal forest would. The trees, while made of snow or ice, are not especially slippery.<br><br>You can dismiss the forest partly or entirely, as precise as a single tree (or any number of specific trees) at a time.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

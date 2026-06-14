@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, E, F</p>\n\n<hr>\n\n<p>You carve glowing runes into your skin, granting you a +2 competence bonus to a skill of your choice. You take 1 damage every time you attempt to perform this technique.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the bonus to +3</p>\n\n",
+      "value": "<p>You carve glowing runes into your skin, granting you a +2 competence bonus to a skill of your choice. You take 1 damage every time you attempt to perform this technique.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the bonus to +3</p>\n\n",
       "summary": "",
       "instructions": ""
     },

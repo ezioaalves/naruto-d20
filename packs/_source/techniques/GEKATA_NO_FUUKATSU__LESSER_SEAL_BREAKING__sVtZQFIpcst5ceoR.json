@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You attempt to remove a single seal of Rank 5 or lower from the target, of which you must be aware. You make a Chakra Control check (DC 15), which is increased by the complexity rating of the technique that made the seal: E (+0), D (+1), C (+3), B (+5), A (+7), S (+10) or SS (+15).<br><br>Removing a seal requires one person using this technique simultaneously per seal slot it occupies on the target's body.</p>\n\n\n\n",
+      "value": "<p>You attempt to remove a single seal of Rank 5 or lower from the target, of which you must be aware. You make a Chakra Control check (DC 15), which is increased by the complexity rating of the technique that made the seal: E (+0), D (+1), C (+3), B (+5), A (+7), S (+10) or SS (+15).<br><br>Removing a seal requires one person using this technique simultaneously per seal slot it occupies on the target's body.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

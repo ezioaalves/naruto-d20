@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You must have ingested a Chakra Growth shinobi drug in order to complete this training, which grants you a +5 bonus to your maximum Chakra Pool.</p>\n\n\n\n",
+      "value": "<p>You must have ingested a Chakra Growth shinobi drug in order to complete this training, which grants you a +5 bonus to your maximum Chakra Pool.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> F, X.</p>\n\n<hr>\n\n<p>The user gains a +1 inherent bonus to his Constitution score. This bonus is permanent.<br><br>Material Focus -Sophisticated training equipment (including weight). Purchase DC 20.</p>\n\n<hr><p><b>Expendable Component:</b> Expendable Components -Health drinks and pills. Purchase DC: 22.</p>\n",
+      "value": "<p>The user gains a +1 inherent bonus to his Constitution score. This bonus is permanent.<br><br>Material Focus -Sophisticated training equipment (including weight). Purchase DC 20.</p>\n\n<hr><p><b>Expendable Component:</b> Expendable Components -Health drinks and pills. Purchase DC: 22.</p>\n",
       "summary": "",
       "instructions": ""
     },

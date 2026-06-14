@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>The target square(s) must be composed of rock or dirt, which immediately shapes into small but sharp spikes and counts as though it had caltrops scattered over it (see p64). A square of makibishi has Defense 11, 3 HP and 8 hardness. When you dismiss this technique, you may choose to either dismiss all makibishi, or only a select number, leaving the rest (which could be dismissed at a later time).</p>\n\n\n\n",
+      "value": "<p>The target square(s) must be composed of rock or dirt, which immediately shapes into small but sharp spikes and counts as though it had caltrops scattered over it (see p64). A square of makibishi has Defense 11, 3 HP and 8 hardness. When you dismiss this technique, you may choose to either dismiss all makibishi, or only a select number, leaving the rest (which could be dismissed at a later time).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

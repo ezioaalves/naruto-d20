@@ -1,12 +1,39 @@
 import assert from "node:assert/strict";
-import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, it } from "node:test";
 
-import { applyTechniqueSystemDefaults } from "../scripts/data/technique-defaults.mjs";
+import {
+  applyTechniqueSystemDefaults,
+  legacyAutomationToMaintenance,
+} from "../scripts/data/technique-defaults.mjs";
+import { maintenanceMigrationPatch } from "../scripts/data/maintenance-migration.mjs";
 import { computeTechniqueDerived } from "../scripts/data/technique-model.mjs";
-import { calculateChakraSpend, canPayChakra } from "../scripts/data/chakra-spend.mjs";
+import {
+  allocateTemporaryChakraGrantSpend,
+  calculateChakraSpend,
+  canPayChakra,
+} from "../scripts/data/chakra-spend.mjs";
+import {
+  getRankMaintenanceFlag,
+  isFiniteRoundDuration,
+  maintenanceBuffFlagData,
+  maintenanceFacets,
+  maintenanceModeBuffName,
+  maintenanceModeById,
+  maintenanceRoundsRemaining,
+  realMaintenanceBuffDuration,
+  resolveMaintenanceModel,
+  shouldChargeUpkeep,
+} from "../scripts/automation/maintenance-buffs.mjs";
+import { extractTemporaryChakraGrant } from "../scripts/automation/buff-application.mjs";
+import { getRankGrantType, rankGrantLevel } from "../scripts/automation/rank-buffs.mjs";
+import {
+  legacyRankBuffToMaintenance,
+  rankMaintenanceFromContext,
+} from "../scripts/data/maintenance-migration.mjs";
+import { elementCount } from "../scripts/automation/maintenance-element-damage.mjs";
 import { diffTechnique, normalizeSystem } from "../scripts/automation/technique-sync.mjs";
 import {
   LEARNING_MODES,
@@ -20,6 +47,9 @@ import {
   readWeaponAttackRaw,
 } from "../scripts/ui/technique-weapon-attack.mjs";
 import { validateCompendia } from "../tools/validate-compendia.mjs";
+import { calculateChakraDamage } from "../scripts/data/chakra-damage.mjs";
+import { BUFF_TARGETS } from "../scripts/flag-paths.mjs";
+import { rollHpCost } from "../scripts/data/hp-cost.mjs";
 
 globalThis.foundry = {
   utils: {
@@ -30,6 +60,16 @@ globalThis.foundry = {
 globalThis.game = {
   settings: {
     get: () => false,
+  },
+};
+
+globalThis.RollPF = {
+  safeRoll: async (formula, data = {}) => {
+    const normalized = String(formula)
+      .replaceAll("@mastery", String(data.mastery ?? 0))
+      .replace(/floor\(([^)]+)\)/g, (_, expr) => String(Math.floor(Function(`return (${expr})`)())))
+      .replace(/ceil\(([^)]+)\)/g, (_, expr) => String(Math.ceil(Function(`return (${expr})`)())));
+    return { total: Function(`return (${normalized})`)() };
   },
 };
 
@@ -51,6 +91,10 @@ function techniqueDoc(overrides = {}) {
 
 function writeJson(path, data) {
   writeFileSync(path, `${JSON.stringify(data, null, 2)}\n`);
+}
+
+function readJson(path) {
+  return JSON.parse(readFileSync(path, "utf8"));
 }
 
 function makeSourceRoot(filesByPack) {
@@ -80,6 +124,19 @@ describe("technique defaults", () => {
     assert.equal(system.learning.learned, false);
     assert.equal(system.automation.enabled, true);
     assert.equal(system.automation.targetMode, "auto");
+    assert.deepEqual(system.automation.maintenance, {
+      enabled: false,
+      resource: "",
+      cost: "1d4",
+      policy: "prompt",
+      interval: 1,
+      waiver: "",
+      waiverStep: 2,
+      freeRounds: 5,
+      choice: "",
+      element: false,
+      elementDoubleStep: 5,
+    });
     assert.deepEqual(system.links.prerequisites, []);
     assert.deepEqual(system.tags, ["combat"]);
     assert.deepEqual(system.descriptors, ["Fire", "Hijutsu", "Combination"]);
@@ -93,6 +150,166 @@ describe("technique defaults", () => {
 
     assert.ok(system.descriptors instanceof Set);
     assert.deepEqual([...system.descriptors], ["Kinjutsu"]);
+  });
+
+  it("maps legacy stance automation to maintenance without changing behavior", () => {
+    assert.deepEqual(
+      legacyAutomationToMaintenance({
+        stanceMode: false,
+        stanceUpkeep: true,
+        elementChoice: true,
+        upkeepFormula: "1d4",
+        upkeepMode: "prompt",
+        upkeepWaiverStep: 2,
+        elementDoubleStep: 5,
+      }),
+      {
+        enabled: true,
+        resource: "hp",
+        cost: "1d4",
+        policy: "prompt",
+        interval: 1,
+        waiver: "step",
+        waiverStep: 2,
+        freeRounds: 5,
+        choice: "",
+        element: true,
+        elementDoubleStep: 5,
+      },
+    );
+    assert.equal(legacyAutomationToMaintenance({ enabled: true, targetMode: "auto" }), null);
+  });
+});
+
+describe("maintenance facets", () => {
+  const tech = (maintenance) => ({ name: "T", system: { automation: { maintenance } } });
+
+  it("returns null when maintenance is disabled", () => {
+    assert.equal(maintenanceFacets(tech({ enabled: false })), null);
+  });
+
+  it("reads a forced HP upkeep with no waiver/choice (Kai-Mon)", () => {
+    const f = maintenanceFacets(
+      tech({
+        enabled: true,
+        resource: "hp",
+        cost: "2",
+        policy: "forced",
+        interval: 1,
+        waiver: "",
+        choice: "",
+      }),
+    );
+    assert.deepEqual(f, {
+      resource: "hp",
+      cost: "2",
+      policy: "forced",
+      interval: 1,
+      waiver: "",
+      waiverStep: 2,
+      freeRounds: 5,
+      choice: "",
+      heal: "",
+      clearConditions: [],
+    });
+  });
+
+  it("reads a prompt HP upkeep with step waiver (Amatsu)", () => {
+    const f = maintenanceFacets(
+      tech({
+        enabled: true,
+        resource: "hp",
+        cost: "1d4",
+        policy: "prompt",
+        interval: 1,
+        waiver: "step",
+        waiverStep: 2,
+        choice: "",
+      }),
+    );
+    assert.equal(f.waiver, "step");
+    assert.equal(f.waiverStep, 2);
+  });
+
+  it("reads a no-cost mode choice (Champuru)", () => {
+    const f = maintenanceFacets(tech({ enabled: true, resource: "", choice: "mode", interval: 1 }));
+    assert.equal(f.resource, "");
+    assert.equal(f.choice, "mode");
+  });
+
+  it("builds mode-variant buff names and resolves mode ids", () => {
+    assert.equal(maintenanceModeBuffName({ name: "Champuru" }, "dex"), "Champuru (Dexterity)");
+    assert.equal(maintenanceModeById("str").suffix, "Strength");
+    assert.equal(maintenanceModeById("nope"), null);
+  });
+
+  it("builds a unified rank maintenance flag without storing the rank level", () => {
+    assert.deepEqual(
+      maintenanceBuffFlagData({
+        sourceTechniqueId: "tech1",
+        grantType: "paid",
+        key: "KOUSOKU",
+      }),
+      { sourceTechniqueId: "tech1", grantType: "paid", key: "KOUSOKU" },
+    );
+  });
+});
+
+describe("maintenanceFacets chakraDamage", () => {
+  it("surfaces resource, heal formula, and parsed clearConditions", () => {
+    const technique = {
+      system: {
+        automation: {
+          maintenance: {
+            enabled: true,
+            resource: "chakraDamage",
+            cost: "3 - floor(@mastery / 5)",
+            policy: "forced",
+            interval: 1,
+            heal: "2 + ceil(@mastery / 2)",
+            clearConditions: "fatigued, exhausted",
+          },
+        },
+      },
+    };
+    const facets = maintenanceFacets(technique);
+    assert.equal(facets.resource, "chakraDamage");
+    assert.equal(facets.heal, "2 + ceil(@mastery / 2)");
+    assert.deepEqual(facets.clearConditions, ["fatigued", "exhausted"]);
+  });
+
+  it("defaults heal to empty and clearConditions to an empty array", () => {
+    const technique = {
+      system: { automation: { maintenance: { enabled: true, resource: "hp" } } },
+    };
+    const facets = maintenanceFacets(technique);
+    assert.equal(facets.heal, "");
+    assert.deepEqual(facets.clearConditions, []);
+  });
+});
+
+describe("gate mastery formulas", () => {
+  // Mirrors the formula strings stored on the Heal Gate technique.
+  const chakraDamage = (m) => Math.max(0, 3 - Math.floor(m / 5));
+  const fastHealing = (m) => 2 + Math.ceil(m / 2);
+
+  it("chakra damage is 3 below mastery 5 and 2 at mastery 5", () => {
+    assert.deepEqual([0, 1, 2, 3, 4, 5].map(chakraDamage), [3, 3, 3, 3, 3, 2]);
+  });
+
+  it("fast healing scales 2/3/4/5 across mastery steps 0/1/3/5", () => {
+    assert.deepEqual([0, 1, 2, 3, 4, 5].map(fastHealing), [2, 3, 3, 4, 4, 5]);
+  });
+});
+
+describe("maintenance element count", () => {
+  const tech = (mastery, elementDoubleStep) => ({
+    system: { mastery, automation: { maintenance: { element: true, elementDoubleStep } } },
+  });
+
+  it("is 1 below the double step and 2 at/above it", () => {
+    assert.equal(elementCount(tech(1, 5)), 1);
+    assert.equal(elementCount(tech(5, 5)), 2);
   });
 });
 
@@ -316,8 +533,153 @@ describe("chakra spending", () => {
       temp: 0,
       pool: 1,
       reserve: 0,
+      fromTemp: 2,
+      fromPool: 3,
       summary: "2 temp, 3 pool",
     });
+  });
+});
+
+describe("chakra damage", () => {
+  const make = (temp, value) => ({
+    flags: { "naruto-d20": { chakra: { pool: { temp, value }, reserve: { value: 9 } } } },
+  });
+
+  it("absorbs from temp before pool with no HP overflow", () => {
+    assert.deepEqual(calculateChakraDamage(make(2, 3), 4), {
+      temp: 0,
+      pool: 1,
+      absorbed: 4,
+      hpOverflow: 0,
+      fromTemp: 2,
+      fromPool: 2,
+    });
+  });
+
+  it("doubles the unabsorbed remainder into HP overflow", () => {
+    // pool 1 absorbs 1 of 3; remainder 2 * 2 = 4 HP
+    assert.deepEqual(calculateChakraDamage(make(0, 1), 3), {
+      temp: 0,
+      pool: 0,
+      absorbed: 1,
+      hpOverflow: 4,
+      fromTemp: 0,
+      fromPool: 1,
+    });
+  });
+
+  it("doubles the full amount against an empty pool", () => {
+    assert.deepEqual(calculateChakraDamage(make(0, 0), 3), {
+      temp: 0,
+      pool: 0,
+      absorbed: 0,
+      hpOverflow: 6,
+      fromTemp: 0,
+      fromPool: 0,
+    });
+  });
+
+  it("never reads or writes the reserve", () => {
+    const result = calculateChakraDamage(make(0, 0), 2);
+    assert.equal("reserve" in result, false);
+    assert.equal(result.hpOverflow, 4);
+  });
+
+  it("treats a zero / negative amount as no damage", () => {
+    assert.deepEqual(calculateChakraDamage(make(0, 5), 0), {
+      temp: 0,
+      pool: 5,
+      absorbed: 0,
+      hpOverflow: 0,
+      fromTemp: 0,
+      fromPool: 0,
+    });
+  });
+});
+
+describe("temporary chakra buff grants", () => {
+  it("registers a dedicated buff target for temporary chakra", () => {
+    assert.equal(BUFF_TARGETS.temporaryChakra.label, "NarutoD20.BuffTargets.TemporaryChakra");
+  });
+
+  it("extracts a flat temporary chakra grant from buff changes", () => {
+    assert.equal(
+      extractTemporaryChakraGrant([
+        { target: "temporaryChakra", operator: "add", formula: "8" },
+        { target: "str", operator: "add", formula: "4" },
+      ]),
+      8,
+    );
+  });
+
+  it("spends granted temporary chakra before leaving leftover removal on the buff", () => {
+    assert.deepEqual(
+      allocateTemporaryChakraGrantSpend(
+        [
+          { id: "buffA", flags: { "naruto-d20": { temporaryChakra: { remaining: 8 } } } },
+          { id: "buffB", flags: { "naruto-d20": { temporaryChakra: { remaining: 3 } } } },
+        ],
+        9,
+      ),
+      {
+        updates: [
+          { _id: "buffA", "flags.naruto-d20.temporaryChakra.remaining": 0 },
+          { _id: "buffB", "flags.naruto-d20.temporaryChakra.remaining": 2 },
+        ],
+        remaining: 0,
+      },
+    );
+  });
+});
+
+describe("Life Gate source data", () => {
+  it("uses forced hp upkeep with mastery-based damage reduction", () => {
+    const technique = readJson(
+      new URL(
+        "../packs/_source/techniques/SEI_MON_KAI__LIFE_GATE_RELEASE__rr5ej5Vyiy2U4q7w.json",
+        import.meta.url,
+      ),
+    );
+
+    assert.deepEqual(technique.system.automation.maintenance, {
+      enabled: true,
+      resource: "hp",
+      cost: "4 - floor(@mastery / 5)",
+      policy: "forced",
+      interval: 1,
+      waiver: "",
+      waiverStep: 2,
+      freeRounds: 5,
+      choice: "",
+      element: false,
+      elementDoubleStep: 5,
+    });
+  });
+
+  it("grants 8 temporary chakra on the companion buff", () => {
+    const buff = readJson(
+      new URL(
+        "../packs/_source/technique-buffs/SEI_MON_KAI__LIFE_GATE_RELEASE__2e9f4c5b8d7a0132.json",
+        import.meta.url,
+      ),
+    );
+
+    assert.ok(
+      buff.system.changes.some(
+        (change) =>
+          change.target === "temporaryChakra" &&
+          change.operator === "add" &&
+          change.formula === "8",
+      ),
+    );
+  });
+});
+
+describe("hp upkeep formulas", () => {
+  it("evaluates hp upkeep formulas with injected mastery roll data", async () => {
+    const actor = { getRollData: () => ({}) };
+    const { amount } = await rollHpCost(actor, "4 - floor(@mastery / 5)", { mastery: 5 });
+    assert.equal(amount, 3);
   });
 });
 
@@ -372,6 +734,43 @@ describe("synckit normalization", () => {
     assert.equal(diffTechnique(embedded, source), true);
   });
 
+  it("treats a no-op sheet open/close as up-to-date for techniques without maintenance automation", () => {
+    // Opening a technique sheet submits the whole form on close: the DataModel
+    // cleans `system.automation` and persists every schema field. A technique's
+    // compendium source JSON predates the `maintenance` block and
+    // only carries the top-level automation fields. The normalizer must
+    // backfill the nested maintenance defaults on both sides so the diff stays
+    // equal.
+    const embedded = {
+      description: { value: "" },
+      descriptors: [],
+      automation: {
+        enabled: true,
+        targetMode: "auto",
+        maintenance: {
+          enabled: false,
+          resource: "",
+          cost: "1d4",
+          policy: "prompt",
+          interval: 1,
+          waiver: "",
+          waiverStep: 2,
+          freeRounds: 5,
+          choice: "",
+          element: false,
+          elementDoubleStep: 5,
+        },
+      },
+    };
+    const source = {
+      description: { value: "" },
+      descriptors: [],
+      automation: { enabled: true, targetMode: "auto" },
+    };
+
+    assert.equal(diffTechnique(embedded, source), true);
+  });
+
   it("still detects limited-use configuration changes", () => {
     const embedded = {
       description: { value: "" },
@@ -399,6 +798,99 @@ describe("synckit normalization", () => {
     };
 
     assert.equal(diffTechnique(embedded, source), false);
+  });
+});
+
+describe("maintenance migration", () => {
+  it("persists prepared maintenance and deletes every legacy automation key", () => {
+    assert.deepEqual(
+      maintenanceMigrationPatch({
+        enabled: true,
+        resource: "hp",
+        cost: "2",
+        policy: "forced",
+        interval: 1,
+        waiver: "",
+        waiverStep: 2,
+        freeRounds: 5,
+        choice: "",
+        element: false,
+        elementDoubleStep: 5,
+      }),
+      {
+        "system.automation.maintenance": {
+          enabled: true,
+          resource: "hp",
+          cost: "2",
+          policy: "forced",
+          interval: 1,
+          waiver: "",
+          waiverStep: 2,
+          freeRounds: 5,
+          choice: "",
+          element: false,
+          elementDoubleStep: 5,
+        },
+        "system.automation.-=stanceMode": null,
+        "system.automation.-=stanceUpkeep": null,
+        "system.automation.-=elementChoice": null,
+        "system.automation.-=upkeepFormula": null,
+        "system.automation.-=upkeepMode": null,
+        "system.automation.-=upkeepWaiverStep": null,
+        "system.automation.-=elementDoubleStep": null,
+      },
+    );
+  });
+});
+
+describe("unified rank maintenance metadata", () => {
+  const buff = {
+    flags: {
+      "naruto-d20": {
+        maintenanceBuff: { key: "KOUSOKU", grantType: "bonus" },
+      },
+    },
+    system: { level: 2 },
+  };
+
+  it("reads rank type and granted level from the unified flag", () => {
+    assert.equal(getRankMaintenanceFlag(buff).key, "KOUSOKU");
+    assert.equal(getRankGrantType(buff), "bonus");
+    assert.equal(rankGrantLevel(buff), 2);
+  });
+
+  it("maps a legacy rankBuff payload without storing level/cost/interval", () => {
+    assert.deepEqual(
+      legacyRankBuffToMaintenance({
+        key: "JOURYOKU",
+        grantType: "paid",
+        level: 3,
+        cost: 3,
+        interval: 5,
+        sourceTechniqueId: "tech1",
+      }),
+      {
+        key: "JOURYOKU",
+        grantType: "paid",
+        sourceTechniqueId: "tech1",
+      },
+    );
+  });
+
+  it("builds actor-owned rank maintenance from name-derived context", () => {
+    assert.deepEqual(rankMaintenanceFromContext({ cost: 4, interval: 5 }), {
+      enabled: true,
+      resource: "chakra",
+      cost: "4",
+      policy: "prompt",
+      interval: 5,
+      waiver: "freeUse",
+      waiverStep: 5,
+      freeRounds: 5,
+      choice: "",
+      element: false,
+      elementDoubleStep: 5,
+    });
   });
 });
 
@@ -467,5 +959,146 @@ describe("source JSON validation", () => {
     assert.ok(messages.some((m) => m.includes("unsupported weaponAttack.mode")));
     assert.ok(messages.some((m) => m.includes("unsupported weaponAttack.filter")));
     assert.ok(messages.some((m) => m.includes("weaponAttack.charge")));
+  });
+});
+
+describe("maintenance duration model", () => {
+  it("treats finite round durations as finite", () => {
+    assert.equal(isFiniteRoundDuration({ units: "round", value: "5" }), true);
+    assert.equal(isFiniteRoundDuration({ units: "round", value: 5 }), true);
+  });
+
+  it("rejects non-round, zero, missing, or non-finite durations", () => {
+    assert.equal(isFiniteRoundDuration(null), false);
+    assert.equal(isFiniteRoundDuration({ units: "inst" }), false);
+    assert.equal(isFiniteRoundDuration({ units: "round", value: "0" }), false);
+    assert.equal(isFiniteRoundDuration({ units: "round", value: "" }), false);
+    assert.equal(isFiniteRoundDuration({ units: "minute", value: "5" }), false);
+  });
+
+  it("resolves model from facets + duration", () => {
+    const facets = { resource: "hp" };
+    assert.equal(resolveMaintenanceModel(facets, { units: "round", value: "5" }), "duration");
+    assert.equal(resolveMaintenanceModel(facets, { units: "inst" }), "toggle");
+    assert.equal(resolveMaintenanceModel(facets, null), "toggle");
+    assert.equal(resolveMaintenanceModel(null, { units: "round", value: "5" }), null);
+  });
+
+  it("computes rounds remaining as total - (current - start)", () => {
+    assert.equal(maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 1 }), 5);
+    assert.equal(maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 2 }), 4);
+    assert.equal(maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 6 }), 0);
+    assert.equal(
+      maintenanceRoundsRemaining({ totalRounds: 5, startRound: 1, currentRound: 7 }),
+      -1,
+    );
+  });
+
+  it("treats a null startRound as not-yet-started (full duration remaining)", () => {
+    assert.equal(
+      maintenanceRoundsRemaining({ totalRounds: 5, startRound: null, currentRound: 3 }),
+      5,
+    );
+  });
+
+  it("charges upkeep only while rounds remain, on interval, once per round", () => {
+    // round 2, interval 1, not yet charged this round -> charge
+    assert.equal(
+      shouldChargeUpkeep({
+        remaining: 4,
+        currentRound: 2,
+        startRound: 1,
+        interval: 1,
+        lastUpkeepRound: 1,
+      }),
+      true,
+    );
+    // already charged this round -> skip
+    assert.equal(
+      shouldChargeUpkeep({
+        remaining: 4,
+        currentRound: 2,
+        startRound: 1,
+        interval: 1,
+        lastUpkeepRound: 2,
+      }),
+      false,
+    );
+    // ending turn (remaining 0) -> skip (teardown handles it)
+    assert.equal(
+      shouldChargeUpkeep({
+        remaining: 0,
+        currentRound: 6,
+        startRound: 1,
+        interval: 1,
+        lastUpkeepRound: 5,
+      }),
+      false,
+    );
+    // interval 2: charged at round 1, next charge at round 3 (since (3-1) % 2 === 0)
+    assert.equal(
+      shouldChargeUpkeep({
+        remaining: 3,
+        currentRound: 3,
+        startRound: 1,
+        interval: 2,
+        lastUpkeepRound: 1,
+      }),
+      true,
+    );
+    // interval 2: charged at round -1, next charge at round 1 (since (1-0) % 2 !== 0), then round 2 (since (2-0) % 2 === 0)
+    assert.equal(
+      shouldChargeUpkeep({
+        remaining: 4,
+        currentRound: 2,
+        startRound: 0,
+        interval: 2,
+        lastUpkeepRound: -1,
+      }),
+      true,
+    );
+  });
+
+  it("stamps the duration model fields into the flag payload", () => {
+    const flag = maintenanceBuffFlagData({
+      sourceTechniqueId: "abc",
+      model: "duration",
+      totalRounds: 5,
+      startRound: 1,
+      interval: 1,
+    });
+    assert.deepEqual(flag, {
+      sourceTechniqueId: "abc",
+      model: "duration",
+      totalRounds: 5,
+      startRound: 1,
+      interval: 1,
+      lastUpkeepRound: 1,
+    });
+  });
+
+  it("omits duration-model fields for toggle buffs", () => {
+    const flag = maintenanceBuffFlagData({ sourceTechniqueId: "abc", modeId: "dex" });
+    assert.deepEqual(flag, { sourceTechniqueId: "abc", modeId: "dex" });
+  });
+});
+
+describe("realMaintenanceBuffDuration", () => {
+  it("builds a round duration ending at turnStart with the given worldTime start", () => {
+    assert.deepEqual(realMaintenanceBuffDuration({ totalRounds: 5, worldTime: 120 }), {
+      units: "round",
+      value: "5",
+      end: "turnStart",
+      start: 120,
+    });
+  });
+
+  it("clamps totalRounds to at least 1", () => {
+    assert.deepEqual(realMaintenanceBuffDuration({ totalRounds: 0, worldTime: 0 }), {
+      units: "round",
+      value: "1",
+      end: "turnStart",
+      start: 0,
+    });
   });
 });

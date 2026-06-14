@@ -1,0 +1,91 @@
+{
+  "_id": "6iToAtVx4K88K29E",
+  "name": "Rokugan Kinjutsu: Gisei (Rokugan's Forbidden Technique: Sacrifice)",
+  "type": "naruto-d20.technique",
+  "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+  "_stats": {
+    "coreVersion": "13.350",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "system": {
+    "description": {
+      "value": "<p>A forbidden act of bodily sacrifice. When you fail a Fortitude saving throw against poison or disease, you may immediately spend Chakra. Your new result equals 2 times the Chakra spent (no bonuses added unless you have Mastery).</p>\n<p><b>Mastery Progression:</b></p>\n<p>Step 3 Mastery: Add your Constitution modifier to the final result.</p>\n<p>Step 5 Mastery: Add your full Fortitude bonus to the final result. (Replaces Step 3; they do not stack.)</p>\n\n",
+      "summary": "",
+      "instructions": ""
+    },
+    "discipline": "Chakra Control",
+    "subtype": "",
+    "descriptors": [
+      "Kinjutsu"
+    ],
+    "rank": 4,
+    "complexity": "C-Class",
+    "chakraCost": 0,
+    "activation": "immediate",
+    "range": "",
+    "target": "",
+    "area": "",
+    "duration": "",
+    "save": "",
+    "compHandSeals": true,
+    "compHalfSeals": true,
+    "compConcentration": false,
+    "compMobility": false,
+    "compFocus": false,
+    "compEmpower": false,
+    "compMastery": false,
+    "compPhysical": false,
+    "compXpCost": false,
+    "isHijutsu": false,
+    "isKinjutsu": true,
+    "isCombination": false,
+    "performMiscBonus": 0,
+    "active": false,
+    "changes": [],
+    "actions": [
+      {
+        "_id": "homebrew005a0001",
+        "name": "Use",
+        "actionType": "other",
+        "activation": {
+          "type": "immediate",
+          "unchained": {
+            "type": "action",
+            "cost": 1
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp"
+      }
+    ],
+    "scriptCalls": [],
+    "links": {
+      "prerequisites": [],
+      "supplements": [],
+      "children": []
+    },
+    "tag": "",
+    "tags": [],
+    "flags": {
+      "boolean": {},
+      "dictionary": {}
+    },
+    "showInQuickbar": false,
+    "showInCombat": false,
+    "sources": []
+  },
+  "effects": [],
+  "folder": "58aPZ0XGYDCo63Q5",
+  "sort": 400,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!6iToAtVx4K88K29E"
+}

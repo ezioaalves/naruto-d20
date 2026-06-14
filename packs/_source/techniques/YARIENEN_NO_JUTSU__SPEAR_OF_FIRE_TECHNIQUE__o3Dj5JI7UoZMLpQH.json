@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H, E, (see text)</p>\n\n<hr>\n\n<p>See Godai Taigeki: Yondan Jutsu technique.</p>\n\n<hr><p><b>Effect:</b> Ray</p>\n<p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or the maximum indicated per variant (whichever is lower).</p>\n",
+      "value": "<p>See Godai Taigeki: Yondan Jutsu technique.</p>\n\n<hr><p><b>Effect:</b> Ray</p>\n<p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or the maximum indicated per variant (whichever is lower).</p>\n",
       "summary": "",
       "instructions": ""
     },

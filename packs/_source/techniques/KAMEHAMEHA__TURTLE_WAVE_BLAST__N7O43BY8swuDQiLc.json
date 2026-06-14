@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C, E</p>\n\n<hr>\n\n<p>You gather your Chakra into your hands, and send it forth as a shimmering ball of energy.<br><br>Make a ray attack against the target. If it hits, the ray explodes in a burst of energy dealing 8d6 damage (half force, half sonic). It the ray misses, it will explode on the first solid surface it strikes within range (if any).</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 13d6. Doing so increases the perform time to one round, and increases the Burst radius by 5ft for every 2 additional damage dice.</p>\n\n",
+      "value": "<p>You gather your Chakra into your hands, and send it forth as a shimmering ball of energy.<br><br>Make a ray attack against the target. If it hits, the ray explodes in a burst of energy dealing 8d6 damage (half force, half sonic). It the ray misses, it will explode on the first solid surface it strikes within range (if any).</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 13d6. Doing so increases the perform time to one round, and increases the Burst radius by 5ft for every 2 additional damage dice.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

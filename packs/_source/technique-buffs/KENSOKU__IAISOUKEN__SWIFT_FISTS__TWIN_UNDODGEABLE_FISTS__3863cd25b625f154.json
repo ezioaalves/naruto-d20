@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-2",
-        "target": "mattack"
+        "target": "mattack",
+        "flavor": "KENSOKU: IAISOUKEN"
       },
       {
         "type": "untyped",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "2",
-        "target": "critConfirm"
+        "target": "critConfirm",
+        "flavor": "KENSOKU: IAISOUKEN"
       }
     ],
     "changeFlags": {

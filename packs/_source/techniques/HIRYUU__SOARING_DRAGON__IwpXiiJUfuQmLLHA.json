@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> E, H</p>\n\n<hr>\n\n<p>You gently blow out smoke, which forms into a serpentine dragon that flies towards the target and passes through it as though incorporeal before dissipating. At the start of your next turn, the target takes 3d6 wind damage and must make a save to avoid becoming @Condition[dazed;duration=1]{dazed} for 1 round and suffering 1d3 temporary Constitution damage.</p>\n\n<hr><p><b>Empower:</b> Spend 7 Chakra to create an additional dragon (maximum 1 dragon per 6 levels total). Each dragon must target a different creature.</p>\n\n",
+      "value": "<p>You gently blow out smoke, which forms into a serpentine dragon that flies towards the target and passes through it as though incorporeal before dissipating. At the start of your next turn, the target takes 3d6 wind damage and must make a save to avoid becoming @Condition[dazed;duration=1]{dazed} for 1 round and suffering 1d3 temporary Constitution damage.</p>\n\n<hr><p><b>Empower:</b> Spend 7 Chakra to create an additional dragon (maximum 1 dragon per 6 levels total). Each dragon must target a different creature.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

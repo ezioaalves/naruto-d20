@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You make an exceptionally powerful strike with your held weapon, which deals an additional 1d6 damage per 3 levels (maximum 3d6) and knocks the target @Condition[prone]{prone} if it fails its save.</p>\n\n\n\n",
+      "value": "<p>You make an exceptionally powerful strike with your held weapon, which deals an additional 1d6 damage per 3 levels (maximum 3d6) and knocks the target @Condition[prone]{prone} if it fails its save.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

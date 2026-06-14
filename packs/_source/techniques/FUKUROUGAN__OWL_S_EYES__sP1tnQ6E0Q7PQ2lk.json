@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You gather Chakra into your eyes and gain low-light vision.</p>\n\n\n\n",
+      "value": "<p>You gather Chakra into your eyes and gain low-light vision.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

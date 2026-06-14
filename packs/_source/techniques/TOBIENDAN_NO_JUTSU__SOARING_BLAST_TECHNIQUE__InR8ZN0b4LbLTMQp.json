@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You are able to fly through the air, as though you have a flight speed with clumsy maneuverability. The distance you can fly is equal to either your base land speed (if performed as a move action) or your run speed (if performed over one round). You can only fly in a straight line, and cannot travel upwards at an angle greater than 45 degrees. When traveling downward at an angle greater than 45 degrees, your speed is doubled.</p>\n\n\n\n",
+      "value": "<p>You are able to fly through the air, as though you have a flight speed with clumsy maneuverability. The distance you can fly is equal to either your base land speed (if performed as a move action) or your run speed (if performed over one round). You can only fly in a straight line, and cannot travel upwards at an angle greater than 45 degrees. When traveling downward at an angle greater than 45 degrees, your speed is doubled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

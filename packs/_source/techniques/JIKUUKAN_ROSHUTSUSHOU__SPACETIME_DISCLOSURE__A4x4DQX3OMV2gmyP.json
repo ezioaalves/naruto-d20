@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You touch an object and cause space to warp around it. If the object provided any cover except total cover, it will provide no cover while the technique lasts.</p>\n\n\n\n",
+      "value": "<p>You touch an object and cause space to warp around it. If the object provided any cover except total cover, it will provide no cover while the technique lasts.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

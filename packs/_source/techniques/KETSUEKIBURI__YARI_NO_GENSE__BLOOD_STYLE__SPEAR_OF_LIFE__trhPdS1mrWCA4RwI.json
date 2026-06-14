@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H, P, E, 2 points of Constitution damage</p>\n\n<hr>\n\n<p>The user freezes some of the blood in his hands and lets it seep into the ground. Any opponent who steps into the targeted square takes 3d6 damage, half cold damage, half piercing and is slowed as if affected by caltrops for the next 5 rounds. A successful Reflex save halves the damage and prevents the slow. A character may make a DC 22 Spot check to notice the trap</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f)</p>\n<p><b>Empower:</b> The user may spend an additional 3 chakra to increase the damage by 1d6 and the duration of the slow by 1 round (max 7d6 damage and 9 rounds of slow).</p>\n",
+      "value": "<p>The user freezes some of the blood in his hands and lets it seep into the ground. Any opponent who steps into the targeted square takes 3d6 damage, half cold damage, half piercing and is slowed as if affected by caltrops for the next 5 rounds. A successful Reflex save halves the damage and prevents the slow. A character may make a DC 22 Spot check to notice the trap</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f)</p>\n<p><b>Empower:</b> The user may spend an additional 3 chakra to increase the damage by 1d6 and the duration of the slow by 1 round (max 7d6 damage and 9 rounds of slow).</p>\n",
       "summary": "",
       "instructions": ""
     },

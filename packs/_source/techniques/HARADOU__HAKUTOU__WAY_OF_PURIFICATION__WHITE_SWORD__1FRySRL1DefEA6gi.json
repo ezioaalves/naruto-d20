@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, E</p>\n\n<hr>\n\n<p>You create one hakutou, a glowing white cross-shaped dagger that weighs nothing and deals 1d4 piercing damage, as well as 3d4 holy damage that is not multiplied on critical hits. The weapon is considered to be a dagger, and benefits from modifiers you may have to such a weapon.<br><br>If it hits an evil creature, a hakutou creates a brilliant glow for a moment. If it hits a non-evil creature, it deals no damage. In either case, once it hits, it disintegrates.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to create an additional hakutou (up to 1 per 3 levels or 5 total, whichever is lower).</p>\n\n",
+      "value": "<p>You create one hakutou, a glowing white cross-shaped dagger that weighs nothing and deals 1d4 piercing damage, as well as 3d4 holy damage that is not multiplied on critical hits. The weapon is considered to be a dagger, and benefits from modifiers you may have to such a weapon.<br><br>If it hits an evil creature, a hakutou creates a brilliant glow for a moment. If it hits a non-evil creature, it deals no damage. In either case, once it hits, it disintegrates.</p>\n\n<hr><p><b>Empower:</b> Spend 3 Chakra to create an additional hakutou (up to 1 per 3 levels or 5 total, whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You create a weightless blade of Chakra which appears in your hand, and instantly dissipates if it leaves your grasp. The blade has the same statistics as a short sword made for a creature of your size. It is a Chakraenhanced weapon, has 4 HP and 6 hardness. and can only be damaged by Chakra-enhanced attacks.</p>\n\n\n\n",
+      "value": "<p>You create a weightless blade of Chakra which appears in your hand, and instantly dissipates if it leaves your grasp. The blade has the same statistics as a short sword made for a creature of your size. It is a Chakraenhanced weapon, has 4 HP and 6 hardness. and can only be damaged by Chakra-enhanced attacks.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

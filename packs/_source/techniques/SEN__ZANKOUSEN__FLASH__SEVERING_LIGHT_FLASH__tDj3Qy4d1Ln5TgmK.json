@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You focus Chakra into your weapon, allowing you to make a melee attack at a target at range. If the attack hits, it deals 1d4 force damage, and the target must make a save to avoid their held weapon(s) take 1 damage per level (maximum 10), which bypasses all hardness. Weapons with mastercraft qualities or weapon seals are unaffected.</p>\n\n\n\n",
+      "value": "<p>You focus Chakra into your weapon, allowing you to make a melee attack at a target at range. If the attack hits, it deals 1d4 force damage, and the target must make a save to avoid their held weapon(s) take 1 damage per level (maximum 10), which bypasses all hardness. Weapons with mastercraft qualities or weapon seals are unaffected.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

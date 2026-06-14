@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>As Gamiyari, but you can harden up to 5 sheets of paper per level, and can harden 1 piece of Chakra-bearing paper per 3 levels (up to 5).</p>\n\n\n\n",
+      "value": "<p>As Gamiyari, but you can harden up to 5 sheets of paper per level, and can harden 1 piece of Chakra-bearing paper per 3 levels (up to 5).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

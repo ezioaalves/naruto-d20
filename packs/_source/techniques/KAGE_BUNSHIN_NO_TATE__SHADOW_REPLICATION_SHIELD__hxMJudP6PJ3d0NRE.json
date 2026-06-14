@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You quickly call on one of your (Tajuu) Kage Bunshin to step in and block an attack. Can only be used if such a clone is within 10 ft of you (for a melee attack) or within 10 ft of the path of a ranged attack.</p>\n\n\n<p><b>Mastery:</b> Each step allows this technique to be used an additional time per day. The fifth step allows you to create a (Tajuu) Kage Bunshin as part of using this technique, negating the need for a nearby clone. Doing so will cause you to take 1d4 damage.</p>\n",
+      "value": "<p>You quickly call on one of your (Tajuu) Kage Bunshin to step in and block an attack. Can only be used if such a clone is within 10 ft of you (for a melee attack) or within 10 ft of the path of a ranged attack.</p>\n\n\n<p><b>Mastery:</b> Each step allows this technique to be used an additional time per day. The fifth step allows you to create a (Tajuu) Kage Bunshin as part of using this technique, negating the need for a nearby clone. Doing so will cause you to take 1d4 damage.</p>\n",
       "summary": "",
       "instructions": ""
     },

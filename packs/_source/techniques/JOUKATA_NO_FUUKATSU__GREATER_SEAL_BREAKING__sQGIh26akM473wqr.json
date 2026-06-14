@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 25</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You attempt to remove a seal of Rank 10 or lower from the target by making a Chakra Control check (DC 25 + complexity rating of the seal). You must be aware of the seal's presence before you can attempt to remove it. This technique must be performed simultaneously by as many people as the number of seal slots the seal takes up on the target's body (i.e. all performers must start and complete the technique on the same turn and initiative count).</p>\n\n\n\n",
+      "value": "<p>You attempt to remove a seal of Rank 10 or lower from the target by making a Chakra Control check (DC 25 + complexity rating of the seal). You must be aware of the seal's presence before you can attempt to remove it. This technique must be performed simultaneously by as many people as the number of seal slots the seal takes up on the target's body (i.e. all performers must start and complete the technique on the same turn and initiative count).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

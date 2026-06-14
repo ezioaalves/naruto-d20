@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, Mas, S</p>\n\n<hr>\n\n<p>The target must have no more than 4 HD and an Intelligence score of 2 or lower for this technique to work. You take control of the creature's mind, and can make one very simple mental command each round, which the subject follows to its best ability. Suicidal or selfdestructive commands are not followed.</p>\n\n\n<p><b>Mastery:</b> The first and fifth step increase the number of HD the animal may have by 1 each.</p>\n",
+      "value": "<p>The target must have no more than 4 HD and an Intelligence score of 2 or lower for this technique to work. You take control of the creature's mind, and can make one very simple mental command each round, which the subject follows to its best ability. Suicidal or selfdestructive commands are not followed.</p>\n\n\n<p><b>Mastery:</b> The first and fifth step increase the number of HD the animal may have by 1 each.</p>\n",
       "summary": "",
       "instructions": ""
     },

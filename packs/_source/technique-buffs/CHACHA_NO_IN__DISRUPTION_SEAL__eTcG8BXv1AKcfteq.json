@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-6",
-        "target": "skill.ckc"
+        "target": "skill.ckc",
+        "flavor": "CHACHA NO IN"
       },
       {
         "type": "untyped",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-6",
-        "target": "skill.gnj"
+        "target": "skill.gnj",
+        "flavor": "CHACHA NO IN"
       },
       {
         "type": "untyped",
@@ -29,7 +31,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "-6",
-        "target": "skill.nin"
+        "target": "skill.nin",
+        "flavor": "CHACHA NO IN"
       }
     ],
     "changeFlags": {

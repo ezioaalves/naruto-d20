@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You infuse a held Rasengan with fire Chakra, turning it into a fierce, blazing orb. The Rasengan's damage is increased by 1d6 and now deals fire damage. Targets hit catch on fire and deal 2d6 fire damage to any object or creature that comes within 5 ft of it while it is being knocked back by the Rasengan. A Reflex save (DC 15) can halve this proximity damage.</p>\n\n\n\n",
+      "value": "<p>You infuse a held Rasengan with fire Chakra, turning it into a fierce, blazing orb. The Rasengan's damage is increased by 1d6 and now deals fire damage. Targets hit catch on fire and deal 2d6 fire damage to any object or creature that comes within 5 ft of it while it is being knocked back by the Rasengan. A Reflex save (DC 15) can halve this proximity damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

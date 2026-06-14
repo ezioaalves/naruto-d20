@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H, M, F</p>\n\n<hr>\n\n<p>The user creates a gate between an original point (a mirror) and a bonded mirror. The character walks through the surface, and any creature of the same size or small can walk too, leading outside from the bonded mirror. If the user has more than one bonded mirror, he can choose one to be the destination.<br><br>You need a medium mirror to a medium creature enter and exit, a larger mirror to a large creature enter and exit, and so on.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f), Retrieval Expert (f), Advanced Seal: Kagami Shasai (t)</p>\n<p><b>Effect:</b> Creates a teleportation point</p>\n<p><b>Material Focus:</b> One Mirror that can handle the user's size.</p>\n",
+      "value": "<p>The user creates a gate between an original point (a mirror) and a bonded mirror. The character walks through the surface, and any creature of the same size or small can walk too, leading outside from the bonded mirror. If the user has more than one bonded mirror, he can choose one to be the destination.<br><br>You need a medium mirror to a medium creature enter and exit, a larger mirror to a large creature enter and exit, and so on.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f), Retrieval Expert (f), Advanced Seal: Kagami Shasai (t)</p>\n<p><b>Effect:</b> Creates a teleportation point</p>\n<p><b>Material Focus:</b> One Mirror that can handle the user's size.</p>\n",
       "summary": "",
       "instructions": ""
     },

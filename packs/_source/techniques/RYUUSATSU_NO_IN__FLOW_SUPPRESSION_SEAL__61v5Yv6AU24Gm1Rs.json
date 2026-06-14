@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>You seal the flow of the target's Chakra, making the target unable to use Chakra as though affected by a Chakra Sealing Tag, with one exception: as a move action that provokes attacks of opportunity and requires concentration, the target can make a Chakra Control check (DC 15) to dispel the seal. While in effect, the target's Chakra Signature appears to be two categories smaller than in reality (minimum faint).</p>\n\n\n\n",
+      "value": "<p>You seal the flow of the target's Chakra, making the target unable to use Chakra as though affected by a Chakra Sealing Tag, with one exception: as a move action that provokes attacks of opportunity and requires concentration, the target can make a Chakra Control check (DC 15) to dispel the seal. While in effect, the target's Chakra Signature appears to be two categories smaller than in reality (minimum faint).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You make a Full Attack, converting any number of attacks into Zankousen attacks at the cost of 3 Chakra per attack. This technique cannot benefit from additional attacks by the use of techniques like Renzuki or Tsubaki no Mai.</p>\n\n\n\n",
+      "value": "<p>You make a Full Attack, converting any number of attacks into Zankousen attacks at the cost of 3 Chakra per attack. This technique cannot benefit from additional attacks by the use of techniques like Renzuki or Tsubaki no Mai.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

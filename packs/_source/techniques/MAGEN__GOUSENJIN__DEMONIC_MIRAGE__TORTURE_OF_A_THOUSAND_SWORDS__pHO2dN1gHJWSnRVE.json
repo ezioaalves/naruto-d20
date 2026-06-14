@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>The subject feels as if its body is being torn apart by and feels excruciating pain. The subject suffers a -4 penalty to attack rolls, weapon damage rolls, skill numerous sword slashes. It sees its skin being torn open checks and ability checks.<br><br>This technique can be dispelled, but there is a 50% chance that any dispel attempt will fail.</p>\n\n\n\n",
+      "value": "<p>The subject feels as if its body is being torn apart by and feels excruciating pain. The subject suffers a -4 penalty to attack rolls, weapon damage rolls, skill numerous sword slashes. It sees its skin being torn open checks and ability checks.<br><br>This technique can be dispelled, but there is a 50% chance that any dispel attempt will fail.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

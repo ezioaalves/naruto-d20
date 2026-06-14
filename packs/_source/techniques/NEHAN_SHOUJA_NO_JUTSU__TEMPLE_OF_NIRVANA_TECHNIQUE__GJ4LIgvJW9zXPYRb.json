@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 9</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>bonus to their save for every 5 HD or levels they have over 5 (up to +3 at level 20). This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>bonus to their save for every 5 HD or levels they have over 5 (up to +3 at level 20). This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

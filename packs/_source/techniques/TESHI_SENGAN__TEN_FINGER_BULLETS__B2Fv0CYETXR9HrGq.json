@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You fire bullets of bone from your fingers, up to five per hand you have free. Each bullet is a ranged attack with a bone weapon. It has a range increment of 20 ft, a maximum range of 200 ft, Kawarimi Defense 1, and deals 1d4+1 ballistic damage on hit. You do not suffer the normal penalties for creating a bone weapon when using this technique, as the bone and skin are instantly regenerated.<br><br>The Cost increases by 1 for each bullet fired beyond the first.</p>\n\n\n\n",
+      "value": "<p>You fire bullets of bone from your fingers, up to five per hand you have free. Each bullet is a ranged attack with a bone weapon. It has a range increment of 20 ft, a maximum range of 200 ft, Kawarimi Defense 1, and deals 1d4+1 ballistic damage on hit. You do not suffer the normal penalties for creating a bone weapon when using this technique, as the bone and skin are instantly regenerated.<br><br>The Cost increases by 1 for each bullet fired beyond the first.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

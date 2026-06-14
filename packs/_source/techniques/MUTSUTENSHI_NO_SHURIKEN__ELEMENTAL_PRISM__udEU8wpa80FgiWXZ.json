@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>You imbue a shuriken with entropic, elemental energies, having it deal 1d4 additional energy damage, which is not multiplied on critical hits. Roll a 1d6 to determine the type of energy damage dealt: 1 (Cold), 2 (Earth), 3 (Electric), 4 (Fire), 5 (Water) or 6 (Wind).<br><br>This technique gains a descriptor based on the damage type gained.</p>\n\n\n\n",
+      "value": "<p>You imbue a shuriken with entropic, elemental energies, having it deal 1d4 additional energy damage, which is not multiplied on critical hits. Roll a 1d6 to determine the type of energy damage dealt: 1 (Cold), 2 (Earth), 3 (Electric), 4 (Fire), 5 (Water) or 6 (Wind).<br><br>This technique gains a descriptor based on the damage type gained.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

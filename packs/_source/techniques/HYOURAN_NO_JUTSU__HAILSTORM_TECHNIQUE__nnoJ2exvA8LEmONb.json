@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>Hailstones rain down upon the area, dealing 3d6 bludgeoning damage and requiring a save to avoid taking an additional 2d6 cold damage. Creatures within the area have their fly speed halved (if they have one) and suffer a -4 penalty to Listen checks.</p>\n\n\n\n",
+      "value": "<p>Hailstones rain down upon the area, dealing 3d6 bludgeoning damage and requiring a save to avoid taking an additional 2d6 cold damage. Creatures within the area have their fly speed halved (if they have one) and suffer a -4 penalty to Listen checks.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

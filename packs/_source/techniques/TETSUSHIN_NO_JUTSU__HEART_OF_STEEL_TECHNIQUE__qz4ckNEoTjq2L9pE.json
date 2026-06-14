@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, F, H</p>\n\n<hr>\n\n<p>This technique was created in the Hidden Village of Steel, and is a particularly useful wartime skill that allows you to quickly create weaponry. You shape metal, allowing you to create simple, standard quality weapons. You make a Craft (Mechanical) check to craft the weapon(s), and halve the time required to do so. The weapons cannot be mastercrafted after being created.</p>\n\n\n\n",
+      "value": "<p>This technique was created in the Hidden Village of Steel, and is a particularly useful wartime skill that allows you to quickly create weaponry. You shape metal, allowing you to create simple, standard quality weapons. You make a Craft (Mechanical) check to craft the weapon(s), and halve the time required to do so. The weapons cannot be mastercrafted after being created.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

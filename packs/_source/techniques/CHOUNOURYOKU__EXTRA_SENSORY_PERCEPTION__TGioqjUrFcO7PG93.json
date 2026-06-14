@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>This very rare and useful technique allows you to enhance the senses, granting you the Detect Emotions ability and giving you a +2 competence bonus to Sense Motive checks.</p>\n\n\n\n",
+      "value": "<p>This very rare and useful technique allows you to enhance the senses, granting you the Detect Emotions ability and giving you a +2 competence bonus to Sense Motive checks.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

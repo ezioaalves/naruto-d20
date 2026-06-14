@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You erect a layer of Chakra around you that blends into the environment, granting you a +8 bonus to Hide checks while you remain in the same type of environment, and allowing you to make a Hide check even while being observed if you stand still for at least one round. Creatures who can See (Through) Chakra gain a +8 bonus to Spot checks against you. If you take any hostile action, the technique ends.</p>\n\n\n\n",
+      "value": "<p>You erect a layer of Chakra around you that blends into the environment, granting you a +8 bonus to Hide checks while you remain in the same type of environment, and allowing you to make a Hide check even while being observed if you stand still for at least one round. Creatures who can See (Through) Chakra gain a +8 bonus to Spot checks against you. If you take any hostile action, the technique ends.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

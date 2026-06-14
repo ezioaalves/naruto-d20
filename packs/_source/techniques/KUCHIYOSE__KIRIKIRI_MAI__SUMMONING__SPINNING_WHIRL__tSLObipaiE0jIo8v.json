@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> H, M *</p>\n\n<hr>\n\n<p>This unique summoning technique calls forth a white weasel, carrying a Gargantuan-size kama, with which it will rush forward and spin viciously. You may swing a tessen or war fan to ignore the hand seal component. The weasel makes a single attack against each creature in the area, at a +16 attack bonus. These attacks deal 2d8+10 slashing damage, and have a critical of (20, x2).</p>\n\n\n\n",
+      "value": "<p>This unique summoning technique calls forth a white weasel, carrying a Gargantuan-size kama, with which it will rush forward and spin viciously. You may swing a tessen or war fan to ignore the hand seal component. The weasel makes a single attack against each creature in the area, at a +16 attack bonus. These attacks deal 2d8+10 slashing damage, and have a critical of (20, x2).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

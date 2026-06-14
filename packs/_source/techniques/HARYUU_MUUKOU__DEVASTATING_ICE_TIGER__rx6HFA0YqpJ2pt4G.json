@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> M, H</p>\n\n<hr>\n\n<p>When used, this Snow Country technique creates a massive tiger of ice and snow, which dives upon the area and deals 4d10 cold and 3d8 slashing damage.</p>\n\n\n\n",
+      "value": "<p>When used, this Snow Country technique creates a massive tiger of ice and snow, which dives upon the area and deals 4d10 cold and 3d8 slashing damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

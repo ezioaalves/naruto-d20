@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>Make two thrown weapon attacks, the second one taking a -5 penalty to attack. The second attack cannot be a critical hit and cannot deal sneak attack damage.<br><br>The target must make a Spot check (DC 20) or be denied its Dexterity bonus to Defense against the second attack. Creatures who cannot see or who do not rely on sight are not affected by this technique.</p>\n\n\n\n",
+      "value": "<p>Make two thrown weapon attacks, the second one taking a -5 penalty to attack. The second attack cannot be a critical hit and cannot deal sneak attack damage.<br><br>The target must make a Spot check (DC 20) or be denied its Dexterity bonus to Defense against the second attack. Creatures who cannot see or who do not rely on sight are not affected by this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

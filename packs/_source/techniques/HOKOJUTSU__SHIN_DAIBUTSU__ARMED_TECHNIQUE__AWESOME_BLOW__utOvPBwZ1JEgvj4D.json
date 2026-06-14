@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is identical to Hokojutsu: Daibutsu, but the bonus damage increases to 3d6, plus 1d6 per 4 levels (maximum 8d6 total).</p>\n\n\n\n",
+      "value": "<p>This technique is identical to Hokojutsu: Daibutsu, but the bonus damage increases to 3d6, plus 1d6 per 4 levels (maximum 8d6 total).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

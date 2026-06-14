@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>The target creature must be caught by the Kousen Shibari no Jutsu technique, or bound in a similar way with you holding the bindings that lead directly to the target. You release a powerful stream of fire that flows along the bindings holding the target, engulfing it and dealing 6d6 fire damage. The target must make a Fortitude save to avoid catching fire for 2d6+1 rounds.<br><br>The bindings holding the target are disintegrated, freeing the them.</p>\n\n\n\n",
+      "value": "<p>The target creature must be caught by the Kousen Shibari no Jutsu technique, or bound in a similar way with you holding the bindings that lead directly to the target. You release a powerful stream of fire that flows along the bindings holding the target, engulfing it and dealing 6d6 fire damage. The target must make a Fortitude save to avoid catching fire for 2d6+1 rounds.<br><br>The bindings holding the target are disintegrated, freeing the them.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You attempt to repair a simple Large or smaller object, which is simple or moderate in complexity and primarily made of metal or rock. Make a Craft (Mechanical) check equal to the craft DC of the item. If you succeed, the item recovers 1 HP each minute. If you do not have the Mastercraft feat, there is a 10% chance any mastercraft quality is lost.</p>\n\n\n\n",
+      "value": "<p>You attempt to repair a simple Large or smaller object, which is simple or moderate in complexity and primarily made of metal or rock. Make a Craft (Mechanical) check equal to the craft DC of the item. If you succeed, the item recovers 1 HP each minute. If you do not have the Mastercraft feat, there is a 10% chance any mastercraft quality is lost.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

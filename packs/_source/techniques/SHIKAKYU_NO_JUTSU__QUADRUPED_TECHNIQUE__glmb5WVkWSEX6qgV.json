@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You change into a more beast-like form, becoming half predator, half man. You gain a claw and bite attack, dealing damage as though an animal of your size category, and gain a +4 competence bonus to Intimidate checks. In addition, you can move up to three times your speed when charging. If you fall unconscious, the technique ends.</p>\n\n\n\n",
+      "value": "<p>You change into a more beast-like form, becoming half predator, half man. You gain a claw and bite attack, dealing damage as though an animal of your size category, and gain a +4 competence bonus to Intimidate checks. In addition, you can move up to three times your speed when charging. If you fall unconscious, the technique ends.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

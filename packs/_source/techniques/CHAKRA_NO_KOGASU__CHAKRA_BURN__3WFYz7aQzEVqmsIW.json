@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>You channel Chakra into your hand and can burn off the Chakra in explosive tags, sunburst tags and similar Chakra-based devices by touching them, essentially defusing them.</p>\n\n\n<p><b>Mastery:</b> Each step allows you to use this technique an additional time per day as a defensive maneuver. Step one increases the maximum CR to 5.<br><br>Each additional step increases the maximum CR by 5.</p>\n",
+      "value": "<p>You channel Chakra into your hand and can burn off the Chakra in explosive tags, sunburst tags and similar Chakra-based devices by touching them, essentially defusing them.</p>\n\n\n<p><b>Mastery:</b> Each step allows you to use this technique an additional time per day as a defensive maneuver. Step one increases the maximum CR to 5.<br><br>Each additional step increases the maximum CR by 5.</p>\n",
       "summary": "",
       "instructions": ""
     },

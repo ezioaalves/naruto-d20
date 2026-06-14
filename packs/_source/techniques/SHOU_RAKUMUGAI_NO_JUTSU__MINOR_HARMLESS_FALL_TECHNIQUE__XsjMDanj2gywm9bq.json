@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>This technique allows for a clever use of Chakra and positioning to absorb the energy of a fall. You reduce your effective falling height (for the purpose of calculating how much fall damage you take, if any) by 10 ft. This stacks with the effects of the Tumble and Jump skills, does not apply to any fall caused by a technique (such as being knocked up by one), and the technique cannot be used if you are denied your Dexterity bonus to Defense.</p>\n\n\n\n",
+      "value": "<p>This technique allows for a clever use of Chakra and positioning to absorb the energy of a fall. You reduce your effective falling height (for the purpose of calculating how much fall damage you take, if any) by 10 ft. This stacks with the effects of the Tumble and Jump skills, does not apply to any fall caused by a technique (such as being knocked up by one), and the technique cannot be used if you are denied your Dexterity bonus to Defense.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

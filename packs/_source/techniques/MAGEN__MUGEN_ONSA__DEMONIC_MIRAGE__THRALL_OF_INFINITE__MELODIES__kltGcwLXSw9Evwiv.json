@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 20</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 31</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>While concentrating on this technique, you must keep playing the musical instrument you've chosen to use for the technique. The subject will sit kneeling, subject to an illusion that it is bound by chains and subjected to terrible torture, though it remains completely aware of its surroundings. It will be unable to take any action, and takes 1d10 damage per round. Damage from an outside source immediately ends the technique.<br><br>The technique can be dispelled, and a creature that cannot hear the music (e.g. because it is deaf) becomes immediately immune to the technique's effects.</p>\n\n\n\n",
+      "value": "<p>While concentrating on this technique, you must keep playing the musical instrument you've chosen to use for the technique. The subject will sit kneeling, subject to an illusion that it is bound by chains and subjected to terrible torture, though it remains completely aware of its surroundings. It will be unable to take any action, and takes 1d10 damage per round. Damage from an outside source immediately ends the technique.<br><br>The technique can be dispelled, and a creature that cannot hear the music (e.g. because it is deaf) becomes immediately immune to the technique's effects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You strike with a powerful blow to the head. The target must be your size category or smaller. Make an unarmed attack against the target that deals normal dam- age. If hit, the target falls @Condition[prone]{prone} and is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates both).</p>\n\n\n\n",
+      "value": "<p>You strike with a powerful blow to the head. The target must be your size category or smaller. Make an unarmed attack against the target that deals normal dam- age. If hit, the target falls @Condition[prone]{prone} and is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates both).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

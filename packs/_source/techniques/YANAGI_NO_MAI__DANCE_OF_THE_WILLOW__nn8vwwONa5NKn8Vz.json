@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Stance)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You immediately create two bone weapons (one per hand). While in this stance, you can retract and extend these weapons into (and from) your body as a move action. The weapons are part of your body, and any damage dealt to them is therefor dealt to you. In addi- tion, when you are struck in melee with an unarmed attack, or with a held weapon of Small or smaller size, you can spend 4 Chakra to sprout sharp bones in retaliation, dealing 1d6+1 piercing damage to the attacker. You can do this only once per round.<br><br>When the technique ends, the bone weapons return to your body.</p>\n\n\n\n",
+      "value": "<p>You immediately create two bone weapons (one per hand). While in this stance, you can retract and extend these weapons into (and from) your body as a move action. The weapons are part of your body, and any damage dealt to them is therefor dealt to you. In addi- tion, when you are struck in melee with an unarmed attack, or with a held weapon of Small or smaller size, you can spend 4 Chakra to sprout sharp bones in retaliation, dealing 1d6+1 piercing damage to the attacker. You can do this only once per round.<br><br>When the technique ends, the bone weapons return to your body.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

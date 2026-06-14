@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You erase your own presence from the target's mind, granting you total concealment and making the subject unable to see or hear you (though it can still detect your scent if it isn't hidden). Instead, the subject constantly sees an image of the user to their side, no matter where they look, as if you were moving at impossible speeds.</p>\n\n\n\n",
+      "value": "<p>You erase your own presence from the target's mind, granting you total concealment and making the subject unable to see or hear you (though it can still detect your scent if it isn't hidden). Instead, the subject constantly sees an image of the user to their side, no matter where they look, as if you were moving at impossible speeds.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You refine your hearing, gaining a +10 bonus to Listen checks and gaining the Blindsight ability with a range of 10 ft, but suffering a -4 penalty to saves against Sonic effects. If a complicated pattern of movement is performed within the range of the Blindsight (such as writing or someone making hand signs or hand seals), you can make a Listen check (DC 25) to identify exactly what is being done (the text being written, hand sign performed, etc).</p>\n\n\n\n",
+      "value": "<p>You refine your hearing, gaining a +10 bonus to Listen checks and gaining the Blindsight ability with a range of 10 ft, but suffering a -4 penalty to saves against Sonic effects. If a complicated pattern of movement is performed within the range of the Blindsight (such as writing or someone making hand signs or hand seals), you can make a Listen check (DC 25) to identify exactly what is being done (the text being written, hand sign performed, etc).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

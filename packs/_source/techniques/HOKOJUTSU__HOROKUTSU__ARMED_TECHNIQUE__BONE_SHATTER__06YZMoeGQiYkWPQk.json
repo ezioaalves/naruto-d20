@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You make a melee attack with a held weapon, which deals an additional 1d6 damage per 5 levels (maximum 4d6, not multiplied on critical hits). On hit, the target is dealt 1 Strength damage per 2 levels (maximum 8) if it fails its save. This damage lasts 5 minutes. Each time a creature makes a successful save against this technique, it gains a +2 bonus to further saves against it for 24 hours.</p>\n\n\n\n",
+      "value": "<p>You make a melee attack with a held weapon, which deals an additional 1d6 damage per 5 levels (maximum 4d6, not multiplied on critical hits). On hit, the target is dealt 1 Strength damage per 2 levels (maximum 8) if it fails its save. This damage lasts 5 minutes. Each time a creature makes a successful save against this technique, it gains a +2 bonus to further saves against it for 24 hours.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

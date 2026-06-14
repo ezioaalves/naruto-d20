@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>Make an unarmed attack against the target. If the attack hits, the target must make a Fortitude save. If the save succeeds, the attack deals normal damage, but you may apply your Strength modifier 1.5 times to the damage (instead of the usual 1 times). If the save fails, the attack deals double damage, and you may make a free grapple attempt against the target, which does not provoke an attack of opportunity.<br><br>Creatures immune to critical hits or sneak attacks will always take damage as though they had succeeded at their save, though you may still get the grapple attempt if the save was failed.</p>\n\n\n\n",
+      "value": "<p>Make an unarmed attack against the target. If the attack hits, the target must make a Fortitude save. If the save succeeds, the attack deals normal damage, but you may apply your Strength modifier 1.5 times to the damage (instead of the usual 1 times). If the save fails, the attack deals double damage, and you may make a free grapple attempt against the target, which does not provoke an attack of opportunity.<br><br>Creatures immune to critical hits or sneak attacks will always take damage as though they had succeeded at their save, though you may still get the grapple attempt if the save was failed.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

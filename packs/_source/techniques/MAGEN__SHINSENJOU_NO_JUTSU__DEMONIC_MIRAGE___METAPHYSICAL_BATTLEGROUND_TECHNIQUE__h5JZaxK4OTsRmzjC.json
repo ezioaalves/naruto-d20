@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You trap the target's mind into an imaginary battlefield, where it must fight a foe that is its equal in strength (or weakness). You and the subject make opposed Will saves to determine the winner. If the subject wins, it suffers a -4 penalty to Spot and Listen checks for 1 round.<br><br>If you win, the subject is defeated and suffers 3d6 damage, +1 per level (up to 3d6+10), suffers a -4 penalty to Spot and Listen checks for two rounds, and cannot act on its next turn. This technique cannot be used more than once per minute on the same target, and can't be dispelled.</p>\n\n\n\n",
+      "value": "<p>You trap the target's mind into an imaginary battlefield, where it must fight a foe that is its equal in strength (or weakness). You and the subject make opposed Will saves to determine the winner. If the subject wins, it suffers a -4 penalty to Spot and Listen checks for 1 round.<br><br>If you win, the subject is defeated and suffers 3d6 damage, +1 per level (up to 3d6+10), suffers a -4 penalty to Spot and Listen checks for two rounds, and cannot act on its next turn. This technique cannot be used more than once per minute on the same target, and can't be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

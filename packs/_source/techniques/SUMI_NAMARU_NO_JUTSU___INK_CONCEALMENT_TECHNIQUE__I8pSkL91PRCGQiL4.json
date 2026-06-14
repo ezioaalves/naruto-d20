@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>Often used by couriers carrying vital documents, this technique turns the target page or scroll into a basic, blank version of itself, removing all writing, imagery, watermarks and other identifying features. A creature with the same Chakra Signature as the one who used this technique can concentrate for a fullround action while holding the object to restore it to its previous state. Any information put onto the scroll after it was erased will be removed to make way for the original contents.</p>\n\n\n\n",
+      "value": "<p>Often used by couriers carrying vital documents, this technique turns the target page or scroll into a basic, blank version of itself, removing all writing, imagery, watermarks and other identifying features. A creature with the same Chakra Signature as the one who used this technique can concentrate for a fullround action while holding the object to restore it to its previous state. Any information put onto the scroll after it was erased will be removed to make way for the original contents.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

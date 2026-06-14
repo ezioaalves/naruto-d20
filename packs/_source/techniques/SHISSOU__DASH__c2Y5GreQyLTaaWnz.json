@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Enhancement)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> Mob, P</p>\n\n<hr>\n\n<p>Your run speed multiplier is increased by three (if you could previously run at four times your speed, you can now run at seven times your speed). In addition, you gain a +10 bonus to Constitution checks to continue running for extended periods of time.</p>\n\n\n\n",
+      "value": "<p>Your run speed multiplier is increased by three (if you could previously run at four times your speed, you can now run at seven times your speed). In addition, you gain a +10 bonus to Constitution checks to continue running for extended periods of time.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

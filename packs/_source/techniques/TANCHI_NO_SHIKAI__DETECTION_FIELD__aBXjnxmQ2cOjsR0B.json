@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You establish a lingering field of Chakra shaped like a sphere, which is designed to pick up the passage of creatures with Chakra. When a creature with a Chakra Pool of at least 10 enters the area, the field is dispelled and you are automatically aware of that fact (and, if you have multiple fields, you know exactly which one was dispelled). The field detects other creatures even if they are hiding, invisible or underground, though if they can shield their Chakra Signature completely, it is unable to detect them.<br><br>Creatures that can See (Through) Chakra can make a Spot check (DC 20) to see the field and be able to determine its exact area.</p>\n\n\n\n",
+      "value": "<p>You establish a lingering field of Chakra shaped like a sphere, which is designed to pick up the passage of creatures with Chakra. When a creature with a Chakra Pool of at least 10 enters the area, the field is dispelled and you are automatically aware of that fact (and, if you have multiple fields, you know exactly which one was dispelled). The field detects other creatures even if they are hiding, invisible or underground, though if they can shield their Chakra Signature completely, it is unable to detect them.<br><br>Creatures that can See (Through) Chakra can make a Spot check (DC 20) to see the field and be able to determine its exact area.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

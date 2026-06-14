@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 15</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>This seal can only be applied to a clone or replica of yourself created by Ishi Bunshin, (Tajuu) Kage Bunshin, Kasumi Bunshin or Mizu Bunshin no Jutsu, and grants the target a +1 bonus to attack rolls and Defense and increases its maximum Chakra Pool by 5 (if it had none, it gains a Chakra Pool of 5). In addition, the clone can use techniques of Rank 2 or lower and becomes capable of performing actions that require concentration.<br><br>Only one clone can be affected by this technique, and creating such a seal automatically dispels and previous ones you have created.</p>\n\n\n\n",
+      "value": "<p>This seal can only be applied to a clone or replica of yourself created by Ishi Bunshin, (Tajuu) Kage Bunshin, Kasumi Bunshin or Mizu Bunshin no Jutsu, and grants the target a +1 bonus to attack rolls and Defense and increases its maximum Chakra Pool by 5 (if it had none, it gains a Chakra Pool of 5). In addition, the clone can use techniques of Rank 2 or lower and becomes capable of performing actions that require concentration.<br><br>Only one clone can be affected by this technique, and creating such a seal automatically dispels and previous ones you have created.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (*)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This training technique comes in six varieties, each with a different subtype, and each relating to one of your ability scores: Strength (Taijutsu), Dexterity (Taijutsu), Constitution (Chakra Control), Intelligence (Ninjutsu), Wisdom (Chakra Control) and Charisma (Genjutsu). This technique can be learned six times: Once for each ability score. You cannot learn it twice for the same ability score.<br><br>You must have previously ingested an abilityenhancing drug of the appropriate kind (such as a Strength-enhancing Shinobi drug for the Strength variation) in order to be able to complete this training, which will increase the inherent bonus granted by the drug by +1.</p>\n\n\n\n",
+      "value": "<p>This training technique comes in six varieties, each with a different subtype, and each relating to one of your ability scores: Strength (Taijutsu), Dexterity (Taijutsu), Constitution (Chakra Control), Intelligence (Ninjutsu), Wisdom (Chakra Control) and Charisma (Genjutsu). This technique can be learned six times: Once for each ability score. You cannot learn it twice for the same ability score.<br><br>You must have previously ingested an abilityenhancing drug of the appropriate kind (such as a Strength-enhancing Shinobi drug for the Strength variation) in order to be able to complete this training, which will increase the inherent bonus granted by the drug by +1.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

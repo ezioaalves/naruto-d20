@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 0</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> H, M, Mas</p>\n\n<hr>\n\n<p>You summon a creature of Soldier rank, which appears in a square adjacent to you and can act immediately, though it disappears on your next turn. The summoned creature cannot be a special summon (paragon, elite or unique), and you are still limited by the normal restrictions of summoning. The technique's cost is increased by 1 per Level of the summon.</p>\n\n\n<p><b>Mastery:</b> Each step increases the range at which you can make the summoned creature appear (up to 30 ft at the fifth step).</p>\n",
+      "value": "<p>You summon a creature of Soldier rank, which appears in a square adjacent to you and can act immediately, though it disappears on your next turn. The summoned creature cannot be a special summon (paragon, elite or unique), and you are still limited by the normal restrictions of summoning. The technique's cost is increased by 1 per Level of the summon.</p>\n\n\n<p><b>Mastery:</b> Each step increases the range at which you can make the summoned creature appear (up to 30 ft at the fifth step).</p>\n",
       "summary": "",
       "instructions": ""
     },

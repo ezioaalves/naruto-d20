@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, Mas, Mob</p>\n\n<hr>\n\n<p>You must be wielding a light slashing weapon in both hands to use this technique. You make a melee attack with your main hand at a -4 penalty, which deals damage as though you hit with both weapons. On a critical hit, only the main hand's damage it multiplied.</p>\n\n\n<p><b>Mastery:</b> The third step grants Kawarimi Defense 1 to the attack.<br><br>The fifth step reduces the attack penalty to -2. Material Focus - Two light slashing weapons.</p>\n",
+      "value": "<p>You must be wielding a light slashing weapon in both hands to use this technique. You make a melee attack with your main hand at a -4 penalty, which deals damage as though you hit with both weapons. On a critical hit, only the main hand's damage it multiplied.</p>\n\n\n<p><b>Mastery:</b> The third step grants Kawarimi Defense 1 to the attack.<br><br>The fifth step reduces the attack penalty to -2. Material Focus - Two light slashing weapons.</p>\n",
       "summary": "",
       "instructions": ""
     },

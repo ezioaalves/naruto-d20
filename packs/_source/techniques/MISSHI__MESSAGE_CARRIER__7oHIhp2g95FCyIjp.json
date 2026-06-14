@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu (Advanced Seal)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, M, S</p>\n\n<hr>\n\n<p>You speak a message of up to 20 words, which is recorded in an advanced seal and keyed to a specific Chakra Signature, chosen when you perform the technique. The first time a creature with the chosen Chakra Signature touches the advanced seal, it will recite the recorded message exactly as spoken. When the seal recites its message, you are immediately aware of it, and the seal will fade into nothingness once the message has been delivered.</p>\n\n\n\n",
+      "value": "<p>You speak a message of up to 20 words, which is recorded in an advanced seal and keyed to a specific Chakra Signature, chosen when you perform the technique. The first time a creature with the chosen Chakra Signature touches the advanced seal, it will recite the recorded message exactly as spoken. When the seal recites its message, you are immediately aware of it, and the seal will fade into nothingness once the message has been delivered.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

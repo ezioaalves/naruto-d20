@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> S, F, M</p>\n\n<hr>\n\n<p>The shuriken used in this jutsu are six-sided with spikes at the sides of each blade, as they resemble snowflakes. The user makes a ranged attack roll with the thrown weapons at his maximum attack bonus for each shuriken, dealing d4 points of damage per successful hit. The shuriken created by this technique dissolve into shimmering, fragments of crystal at the end of the round.</p>\n\n<hr><p><b>Effect:</b> Launches up to 1 blade/2 level at nearby enemies</p>\n",
+      "value": "<p>The shuriken used in this jutsu are six-sided with spikes at the sides of each blade, as they resemble snowflakes. The user makes a ranged attack roll with the thrown weapons at his maximum attack bonus for each shuriken, dealing d4 points of damage per successful hit. The shuriken created by this technique dissolve into shimmering, fragments of crystal at the end of the round.</p>\n\n<hr><p><b>Effect:</b> Launches up to 1 blade/2 level at nearby enemies</p>\n",
       "summary": "",
       "instructions": ""
     },

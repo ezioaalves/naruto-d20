@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, F, Mob</p>\n\n<hr>\n\n<p>This technique is the style's only noutoujutsu (swordsheathing technique), which allows you to sheathe your weapon at incredible speed, creating a shockwave that is amplified by your Chakra. As such, the weapon used must be unsheathed when using this technique, and will be sheathed once the technique has been performed.<br><br>The shockwave deals 1d6 sonic damage per 2 levels (maximum 5d6; Fortitude halves). Creatures damaged are @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates).<br><br>Creatures within 50 ft suffer a -2 penalty to Listen checks for one round (Fortitude DC 15 negates).</p>\n\n\n\n",
+      "value": "<p>This technique is the style's only noutoujutsu (swordsheathing technique), which allows you to sheathe your weapon at incredible speed, creating a shockwave that is amplified by your Chakra. As such, the weapon used must be unsheathed when using this technique, and will be sheathed once the technique has been performed.<br><br>The shockwave deals 1d6 sonic damage per 2 levels (maximum 5d6; Fortitude halves). Creatures damaged are @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates).<br><br>Creatures within 50 ft suffer a -2 penalty to Listen checks for one round (Fortitude DC 15 negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

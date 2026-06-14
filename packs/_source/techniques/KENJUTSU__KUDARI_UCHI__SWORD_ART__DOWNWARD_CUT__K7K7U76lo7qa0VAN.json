@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You perform a basic slashing strike, from the head downward, gaining a +1 bonus to your attack roll.</p>\n\n\n\n",
+      "value": "<p>You perform a basic slashing strike, from the head downward, gaining a +1 bonus to your attack roll.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

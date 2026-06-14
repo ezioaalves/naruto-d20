@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> H, E *</p>\n\n<hr>\n\n<p>See Godai Ransatsu: Shodan Jutsu (p159).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 16d6 (whichever is lower).</p>\n\n",
+      "value": "<p>See Godai Ransatsu: Shodan Jutsu (p159).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level or 16d6 (whichever is lower).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

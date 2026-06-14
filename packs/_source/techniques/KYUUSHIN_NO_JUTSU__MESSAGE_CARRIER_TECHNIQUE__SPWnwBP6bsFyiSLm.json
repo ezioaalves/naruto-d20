@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, E, F, H</p>\n\n<hr>\n\n<p>You summon either a messenger lizard or a messenger bird (your choice). The lizard is slower, but can more easily conceal itself and can carry a Small or smaller item of up to 3 lbs to its destination. The bird can carry a Small or smaller item of up to 15 lbs and travels up to 9 miles an hour, but can only be sent to a location you have visited before. It has a Defense of 13, and has 8 HP. See p369 for the statistics of these summons.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the duration by 2 hours, up to a number of hours equal to twice your level, plus 8.</p>\n\n",
+      "value": "<p>You summon either a messenger lizard or a messenger bird (your choice). The lizard is slower, but can more easily conceal itself and can carry a Small or smaller item of up to 3 lbs to its destination. The bird can carry a Small or smaller item of up to 15 lbs and travels up to 9 miles an hour, but can only be sent to a location you have visited before. It has a Defense of 13, and has 8 HP. See p369 for the statistics of these summons.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the duration by 2 hours, up to a number of hours equal to twice your level, plus 8.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

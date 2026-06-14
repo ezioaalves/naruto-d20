@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You merge with your shadow and move yourself behind a subject of your Kage Mane no Jutsu, arriving in the square directly behind them on your next turn. This movement does not provoke attacks of opportunity.</p>\n\n\n\n",
+      "value": "<p>You merge with your shadow and move yourself behind a subject of your Kage Mane no Jutsu, arriving in the square directly behind them on your next turn. This movement does not provoke attacks of opportunity.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

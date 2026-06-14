@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You attempt to shock the target's brain, @Condition[dazed;duration=1]{dazing} it for one round (Fortitude negates) and dealing 2d6 nonlethal damage to them (Will negates). A target cannot be dazed by this technique more than once per 24 hours.</p>\n\n\n\n",
+      "value": "<p>You attempt to shock the target's brain, @Condition[dazed;duration=1]{dazing} it for one round (Fortitude negates) and dealing 2d6 nonlethal damage to them (Will negates). A target cannot be dazed by this technique more than once per 24 hours.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

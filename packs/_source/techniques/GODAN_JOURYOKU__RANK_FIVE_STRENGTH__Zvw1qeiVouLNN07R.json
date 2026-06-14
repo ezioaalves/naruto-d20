@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Shodan Jouryoku. You gain the Strength Rank 5 extraordinary ability. Mastery in this technique applies to Strength Rank 5 instead.</p>\n\n\n\n",
+      "value": "<p>As Shodan Jouryoku. You gain the Strength Rank 5 extraordinary ability. Mastery in this technique applies to Strength Rank 5 instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },
@@ -88,7 +88,24 @@
         "title": "NarutoD20 Redux v1.3",
         "pages": "234"
       }
-    ]
+    ],
+    "automation": {
+      "enabled": true,
+      "targetMode": "auto",
+      "maintenance": {
+        "enabled": true,
+        "resource": "chakra",
+        "cost": "1",
+        "policy": "prompt",
+        "interval": 1,
+        "waiver": "freeUse",
+        "waiverStep": 5,
+        "freeRounds": 5,
+        "choice": "",
+        "element": false,
+        "elementDoubleStep": 5
+      }
+    }
   },
   "effects": [],
   "folder": "2E8qMC4kYMOGQySW",

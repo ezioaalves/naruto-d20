@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> E, F, Mas</p>\n\n<hr>\n\n<p>You send a shimmering bird of silver fire to engulf the area in an inferno, dealing 9d6 fire damage. The blast damages unattended objects and sets fire to combustibles. You take 5d6 damage when performing this technique.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra and 1 HP to increase the damage by 1d6, up to 1d6 per level or 15d6 total.</p>\n<p><b>Mastery:</b> The third step allows you to ignore the base damage you suffer (but not the empower damage). The fifth step allows you to ignore the damage you would take when empowering this technique.</p>\n",
+      "value": "<p>You send a shimmering bird of silver fire to engulf the area in an inferno, dealing 9d6 fire damage. The blast damages unattended objects and sets fire to combustibles. You take 5d6 damage when performing this technique.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra and 1 HP to increase the damage by 1d6, up to 1d6 per level or 15d6 total.</p>\n<p><b>Mastery:</b> The third step allows you to ignore the base damage you suffer (but not the empower damage). The fifth step allows you to ignore the damage you would take when empowering this technique.</p>\n",
       "summary": "",
       "instructions": ""
     },

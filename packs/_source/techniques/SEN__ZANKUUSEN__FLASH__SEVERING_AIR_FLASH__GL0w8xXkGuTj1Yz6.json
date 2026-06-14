@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You focus Chakra through your body or through a held weapon, firing off swirling rays of condensed air. Each 'flash' is a ray attack that will deal 1d4 force da-mage on hit. In addition, each hit will throw the target back 5 ft (Fortitude negates). In addition, targets hit must make a Fortitude save for each ray to avoid being @Condition[stunned;duration=1]{stunned} for 1 round by the pain (non-cumulative). You can make up to 1 ray attack per 2 levels.</p>\n\n\n\n",
+      "value": "<p>You focus Chakra through your body or through a held weapon, firing off swirling rays of condensed air. Each 'flash' is a ray attack that will deal 1d4 force da-mage on hit. In addition, each hit will throw the target back 5 ft (Fortitude negates). In addition, targets hit must make a Fortitude save for each ray to avoid being @Condition[stunned;duration=1]{stunned} for 1 round by the pain (non-cumulative). You can make up to 1 ray attack per 2 levels.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

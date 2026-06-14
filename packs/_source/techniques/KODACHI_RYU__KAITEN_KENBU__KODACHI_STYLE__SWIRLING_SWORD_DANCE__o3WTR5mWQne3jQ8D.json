@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, F, Mob</p>\n\n<hr>\n\n<p>The target must be unable to pinpoint your location (such as while hidden, invisible of fully concealed). You make a Full Attack with your held weapon, gaining a +2 bonus to attack and damage rolls. The target is denied its Dexterity bonus to Defense against the first attack, and the attacks deal damage as though the weapon was one size category larger.</p>\n\n\n\n",
+      "value": "<p>The target must be unable to pinpoint your location (such as while hidden, invisible of fully concealed). You make a Full Attack with your held weapon, gaining a +2 bonus to attack and damage rolls. The target is denied its Dexterity bonus to Defense against the first attack, and the attacks deal damage as though the weapon was one size category larger.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

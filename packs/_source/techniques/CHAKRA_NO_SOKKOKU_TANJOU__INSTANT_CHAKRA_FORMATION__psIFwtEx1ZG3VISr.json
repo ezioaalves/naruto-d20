@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You gain a +4 bonus to Chakra Control checks made to tap your reserves.</p>\n\n\n\n",
+      "value": "<p>You gain a +4 bonus to Chakra Control checks made to tap your reserves.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

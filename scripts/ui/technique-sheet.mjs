@@ -13,6 +13,7 @@ import { COMPLEXITY_TABLE, TECHNIQUE_DESCRIPTORS } from "../data/technique-model
 import { attemptLearnTechnique, buildLearningView } from "../learn-technique.mjs";
 import { attemptMasterTechnique, buildMasteryView } from "../master-technique.mjs";
 import { canAffordTechnique, performTechnique } from "../use-technique.mjs";
+import { renderTechniqueHeader } from "./technique-header.mjs";
 import { resolveDroppedItem } from "../utils/drag-drop.mjs";
 
 const SPECIAL_DESCRIPTOR_FLAGS = {
@@ -73,6 +74,8 @@ export function createTechniqueItemSheet() {
         async: true,
         rollData,
       });
+
+      context.topDescription = await renderTechniqueHeader(item);
       context.instructionsHTML = await TextEditor.enrichHTML(
         system.description?.instructions ?? "",
         { async: true, rollData },
@@ -148,6 +151,33 @@ export function createTechniqueItemSheet() {
         auto: loc("NarutoD20.Automation.TargetMode.Auto"),
         self: loc("NarutoD20.Automation.TargetMode.Self"),
         selected: loc("NarutoD20.Automation.TargetMode.Selected"),
+      };
+
+      context.maintenanceResourceChoices = {
+        "": loc("NarutoD20.Automation.Maintenance.Resource.None"),
+        chakra: loc("NarutoD20.Automation.Maintenance.Resource.Chakra"),
+        hp: loc("NarutoD20.Automation.Maintenance.Resource.Hp"),
+      };
+      context.maintenancePolicyChoices = {
+        prompt: loc("NarutoD20.Automation.Maintenance.Policy.Prompt"),
+        forced: loc("NarutoD20.Automation.Maintenance.Policy.Forced"),
+      };
+      context.maintenanceWaiverChoices = {
+        "": loc("NarutoD20.Automation.Maintenance.Waiver.None"),
+        step: loc("NarutoD20.Automation.Maintenance.Waiver.Step"),
+        freeUse: loc("NarutoD20.Automation.Maintenance.Waiver.FreeUse"),
+      };
+      context.maintenanceChoiceChoices = {
+        "": loc("NarutoD20.Automation.Maintenance.Choice.None"),
+        mode: loc("NarutoD20.Automation.Maintenance.Choice.Mode"),
+      };
+      const maintenance = system.automation?.maintenance ?? {};
+      context.maintenanceFields = {
+        show: maintenance.enabled === true,
+        hasCost: Boolean(maintenance.resource),
+        showWaiverStep: maintenance.waiver === "step",
+        showFreeRounds: maintenance.waiver === "freeUse",
+        showElementDoubleStep: maintenance.element === true,
       };
 
       // ── Links tab — structured for PF1e's table/sub-nav layout ──

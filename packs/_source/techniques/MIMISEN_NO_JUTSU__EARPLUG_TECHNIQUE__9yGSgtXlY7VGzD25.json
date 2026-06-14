@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> C, Mas, S</p>\n\n<hr>\n\n<p>You focus Chakra into your ears, gaining sonic resistance equal to your level + 5 (up to 20), but suffering a -10 penalty to Listen checks.</p>\n\n\n<p><b>Mastery:</b> The second step allows you to reduce the resistance gained by 5 to halve the penalty to Listen checks.</p>\n",
+      "value": "<p>You focus Chakra into your ears, gaining sonic resistance equal to your level + 5 (up to 20), but suffering a -10 penalty to Listen checks.</p>\n\n\n<p><b>Mastery:</b> The second step allows you to reduce the resistance gained by 5 to halve the penalty to Listen checks.</p>\n",
       "summary": "",
       "instructions": ""
     },

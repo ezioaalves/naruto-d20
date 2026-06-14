@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H, Mas</p>\n\n<hr>\n\n<p>You manipulate a shadow within range, forming shadowy needles that can attack once, with a range of 10 ft. A shadow needle has a +10 attack bonus, and deals 1d6+1 damage (half slashing, half piercing). If a creature affected by Kage Mane no Jutsu is damaged by a shadow needle, this damage is not shared or transferred to any other creature caught in the technique, nor to the technique's user.<br><br>A single shadow can be used to create 1 shadow needle, plus 1 per size category it is larger than Fine. Each needle costs 2 Chakra. You cannot create more than 1 needle per level.</p>\n\n\n<p><b>Mastery:</b> The fifth step increases the needles' attack bonus to +15.</p>\n",
+      "value": "<p>You manipulate a shadow within range, forming shadowy needles that can attack once, with a range of 10 ft. A shadow needle has a +10 attack bonus, and deals 1d6+1 damage (half slashing, half piercing). If a creature affected by Kage Mane no Jutsu is damaged by a shadow needle, this damage is not shared or transferred to any other creature caught in the technique, nor to the technique's user.<br><br>A single shadow can be used to create 1 shadow needle, plus 1 per size category it is larger than Fine. Each needle costs 2 Chakra. You cannot create more than 1 needle per level.</p>\n\n\n<p><b>Mastery:</b> The fifth step increases the needles' attack bonus to +15.</p>\n",
       "summary": "",
       "instructions": ""
     },

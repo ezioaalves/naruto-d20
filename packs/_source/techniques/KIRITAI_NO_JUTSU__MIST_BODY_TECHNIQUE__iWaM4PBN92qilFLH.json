@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Your body turns to mist, allowing you to fly with perfect maneuverability, but you cannot go further than 5 ft from the ground. This gaseous form suffers double damage from Fuuton techniques, and you take 4d6 damage from Ichijin no Jutsu, as well as being pushed back three times as far by it. While gaseous, strong winds may affect your movement (GM's discretion).<br><br>This technique puts a lot of strain on your body, and you suffer 1d4 temporary Constitution damage when the technique ends (Fortitude DC 20 halves).</p>\n\n\n\n",
+      "value": "<p>Your body turns to mist, allowing you to fly with perfect maneuverability, but you cannot go further than 5 ft from the ground. This gaseous form suffers double damage from Fuuton techniques, and you take 4d6 damage from Ichijin no Jutsu, as well as being pushed back three times as far by it. While gaseous, strong winds may affect your movement (GM's discretion).<br><br>This technique puts a lot of strain on your body, and you suffer 1d4 temporary Constitution damage when the technique ends (Fortitude DC 20 halves).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

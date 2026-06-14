@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> E, F, Mob, S</p>\n\n<hr>\n\n<p>You focus your Chakra into the tip of a held melee weapon, igniting a roaring flame to enhance your next strike. Your next attack with the weapon will deal 2d6 additional fire damage (not multiplied on critical hits). Should the attack score a critical hit, it deals another 1d6 bonus fire damage. If the attack is evaded but still strikes an object (e.g. if the attack would have hit, but the opponent used Kawarimi no Jutsu or something similar to evade it), the bonus damage is still dealt, ending the enhancement to the weapon.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6 (maximum 5d6 total).</p>\n\n",
+      "value": "<p>You focus your Chakra into the tip of a held melee weapon, igniting a roaring flame to enhance your next strike. Your next attack with the weapon will deal 2d6 additional fire damage (not multiplied on critical hits). Should the attack score a critical hit, it deals another 1d6 bonus fire damage. If the attack is evaded but still strikes an object (e.g. if the attack would have hit, but the opponent used Kawarimi no Jutsu or something similar to evade it), the bonus damage is still dealt, ending the enhancement to the weapon.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6 (maximum 5d6 total).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

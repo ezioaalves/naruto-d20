@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> E, Mob</p>\n\n<hr>\n\n<p>This technique can only be performed if the target creature is your size category or smaller, and you are in a grapple with them. Make a grapple check. If successful, you deal your normal unarmed attack damage plus 3d6, and the target is left @Condition[prone]{prone} and no longer grappled by you. In addition, the target loses their Dexterity bonus to Defense until its next turn (Fortitude negates).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the bonus damage by 1d6, up to 5d6 total bonus damage.</p>\n\n",
+      "value": "<p>This technique can only be performed if the target creature is your size category or smaller, and you are in a grapple with them. Make a grapple check. If successful, you deal your normal unarmed attack damage plus 3d6, and the target is left @Condition[prone]{prone} and no longer grappled by you. In addition, the target loses their Dexterity bonus to Defense until its next turn (Fortitude negates).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the bonus damage by 1d6, up to 5d6 total bonus damage.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> H, M</p>\n\n<hr>\n\n<p>You focus Chakra in your throat, allowing you to store needles in it. Up to one needle can be fired per round, as though throwing it. If the needles as poisoned, you suffer no chance of accidentally poisoning yourself.<br><br>Small creatures can hold one needle, Medium creatures can hold three needles, and a Large or larger creature can hold 9 needles. The needles do not interfere with other activities, and once the duration expires, the needles are disintegrated.</p>\n\n\n\n",
+      "value": "<p>You focus Chakra in your throat, allowing you to store needles in it. Up to one needle can be fired per round, as though throwing it. If the needles as poisoned, you suffer no chance of accidentally poisoning yourself.<br><br>Small creatures can hold one needle, Medium creatures can hold three needles, and a Large or larger creature can hold 9 needles. The needles do not interfere with other activities, and once the duration expires, the needles are disintegrated.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

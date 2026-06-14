@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H, F</p>\n\n<hr>\n\n<p>You raise a large wall of rock and stone, which can seamlessly meld into adjacent rocky surfaces. The wall has a thickness of 5' per level, and is composed of a number of 10 ft. wide by 10 ft. high squares up to your level. You can choose to double the wall's area by halving its thickness. A section of 10ft by 10 ft. has 8 hardness and 2 HP per inch of thickness, and can be destroyed by reducing it to 0 HP or by making a Strength check (DC 20 + 2 per inch of thickness).<br><br>If the wall touches a building, the building may suffer 10d12 earth damage (GMs discretion).</p>\n\n\n\n",
+      "value": "<p>You raise a large wall of rock and stone, which can seamlessly meld into adjacent rocky surfaces. The wall has a thickness of 5' per level, and is composed of a number of 10 ft. wide by 10 ft. high squares up to your level. You can choose to double the wall's area by halving its thickness. A section of 10ft by 10 ft. has 8 hardness and 2 HP per inch of thickness, and can be destroyed by reducing it to 0 HP or by making a Strength check (DC 20 + 2 per inch of thickness).<br><br>If the wall touches a building, the building may suffer 10d12 earth damage (GMs discretion).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

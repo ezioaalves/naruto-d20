@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>A creature attempting to move through the wall must make a Strength check (DC 25) to do so, which breaches the wall just long enough for the creature to pass through. If a Raiton technique is used targeting the wall or whose area also hits the wall, it is electrified for 1d4+1 rounds, dealing 1d4 electric damage per rank of the Raiton technique used to any creatures making direct contact with it.</p>\n\n\n\n",
+      "value": "<p>A creature attempting to move through the wall must make a Strength check (DC 25) to do so, which breaches the wall just long enough for the creature to pass through. If a Raiton technique is used targeting the wall or whose area also hits the wall, it is electrified for 1d4+1 rounds, dealing 1d4 electric damage per rank of the Raiton technique used to any creatures making direct contact with it.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

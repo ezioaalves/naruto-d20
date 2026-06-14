@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Mirror Arts)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> H, F, Mas, E</p>\n\n<hr>\n\n<p>The user looks at the mirror and try to recall any information, talking with himself against the mirror. The user can make any Knowledge check (even untrained), and receives +1 insight bonus for the duration of technique.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> One Mirror.</p>\n<p><b>Empower:</b> The user may spend 1 point of chakra to increase the bonus by +2, up to +2 per level or +10.</p>\n<p><b>Mastery:</b> Every step of mastery in this technique lets the user re-roll a Knowledge Check per day with Insight Bonus, up to 5/day.</p>\n",
+      "value": "<p>The user looks at the mirror and try to recall any information, talking with himself against the mirror. The user can make any Knowledge check (even untrained), and receives +1 insight bonus for the duration of technique.</p>\n\n<hr><p><b>Requires:</b> Mirror Arts (f)</p>\n<p><b>Material Focus:</b> One Mirror.</p>\n<p><b>Empower:</b> The user may spend 1 point of chakra to increase the bonus by +2, up to +2 per level or +10.</p>\n<p><b>Mastery:</b> Every step of mastery in this technique lets the user re-roll a Knowledge Check per day with Insight Bonus, up to 5/day.</p>\n",
       "summary": "",
       "instructions": ""
     },

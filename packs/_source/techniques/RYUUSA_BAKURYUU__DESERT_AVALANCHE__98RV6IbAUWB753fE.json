@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> H, F</p>\n\n<hr>\n\n<p>You conduct a mass of sand into a wave 40ft wide and 10ft tall, which moves out from you in a line at a speed of 45 feet per round while you concentrate and the wave remains in range. Any Large or smaller creature hit by the wave must save or be pushed back 1d6 x 5 feet. Huge or larger creatures are unaffected.<br><br>Creatures of Medium size and smaller must make an additional Fortitude save to avoid being buried far enough to be affected by the Sabaku Taiso technique. Creatures so buried can escape by making two Escape Artist checks (DC 22) as a full-round action or by simply moving out if they have a burrow speed.</p>\n\n\n\n",
+      "value": "<p>You conduct a mass of sand into a wave 40ft wide and 10ft tall, which moves out from you in a line at a speed of 45 feet per round while you concentrate and the wave remains in range. Any Large or smaller creature hit by the wave must save or be pushed back 1d6 x 5 feet. Huge or larger creatures are unaffected.<br><br>Creatures of Medium size and smaller must make an additional Fortitude save to avoid being buried far enough to be affected by the Sabaku Taiso technique. Creatures so buried can escape by making two Escape Artist checks (DC 22) as a full-round action or by simply moving out if they have a burrow speed.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

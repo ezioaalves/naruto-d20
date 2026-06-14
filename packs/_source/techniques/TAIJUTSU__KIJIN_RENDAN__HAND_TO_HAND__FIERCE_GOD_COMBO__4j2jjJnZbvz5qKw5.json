@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 28</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You channel a small measure of divine-like wrath to unleash a deadly combo attack. Make an unarmed Full Attack, gaining an additional attack at your highest attack bonus. The attacks cannot deal nonlethal damage, deal damage as though you were one size category larger, and you can apply 1.5 times your Strength bonus to damage (instead of your normal Strength bonus).</p>\n\n\n\n",
+      "value": "<p>You channel a small measure of divine-like wrath to unleash a deadly combo attack. Make an unarmed Full Attack, gaining an additional attack at your highest attack bonus. The attacks cannot deal nonlethal damage, deal damage as though you were one size category larger, and you can apply 1.5 times your Strength bonus to damage (instead of your normal Strength bonus).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

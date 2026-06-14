@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Spirit)</p>\n<p><b>Rank:</b> </p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 10</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You coax out the Kyuubi's healing power without allowing its Chakra to overpower your senses. You must pay for this technique's cost with all the Chakra gained by using the Overwhelming Chakra ability. You gain 2d10 temporary HP, Fast Healing 2 and a +4 bonus to Fortitude saves against massive damage for 1d4 rounds.</p>\n\n\n\n",
+      "value": "<p>You coax out the Kyuubi's healing power without allowing its Chakra to overpower your senses. You must pay for this technique's cost with all the Chakra gained by using the Overwhelming Chakra ability. You gain 2d10 temporary HP, Fast Healing 2 and a +4 bonus to Fortitude saves against massive damage for 1d4 rounds.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -20,7 +20,8 @@
       "Temp": "Temp",
       "Max": "Max",
       "Total": "Total",
-      "Cancel": "Cancel"
+      "Cancel": "Cancel",
+      "Confirm": "Confirm"
     },
     "ChakraNature": {
       "None": "None",
@@ -68,6 +69,7 @@
       "Category": "Technique",
       "ChakraPool": "Chakra Pool Max",
       "ChakraReserve": "Chakra Reserve Max",
+      "TemporaryChakra": "Temporary Chakra",
       "TapReserves": "Tap Reserves",
       "Learn": {
         "ckc": "Learn: Chakra Control",
@@ -120,6 +122,9 @@
       "SkillThreshold": {
         "Label": "Skill Threshold"
       },
+      "LearnDC": "Learn DC",
+      "Successes": "Successes",
+      "Threshold": "Threshold",
       "LearnedViaEmpathy": "via Empathy",
       "MasteryStep": {
         "Label": "Mastery",
@@ -297,8 +302,32 @@
       "Enabled": {
         "Label": "Enable automatic buff application"
       },
-      "StanceMode": {
-        "Label": "Per-round mode-choice stance (Dex/Str)"
+      "Maintenance": {
+        "Enabled": { "Label": "Enable start-of-turn maintenance" },
+        "Resource": {
+          "Label": "Upkeep cost resource",
+          "None": "None",
+          "Chakra": "Chakra",
+          "Hp": "Hit Points"
+        },
+        "Cost": { "Label": "Upkeep cost (formula or amount)" },
+        "Policy": {
+          "Label": "Upkeep policy",
+          "Prompt": "Prompt (pay or end)",
+          "Forced": "Forced (auto, ends if lethal)"
+        },
+        "Interval": { "Label": "Refresh interval (rounds)" },
+        "Waiver": {
+          "Label": "Mastery waiver",
+          "None": "None",
+          "Step": "Step (waives the cost)",
+          "FreeUse": "Free use (daily charge)"
+        },
+        "WaiverStep": { "Label": "Mastery step for the waiver" },
+        "FreeRounds": { "Label": "Free rounds granted by a free-use waiver" },
+        "Choice": { "Label": "Per-turn choice", "None": "None", "Mode": "Mode swap (Dex/Str)" },
+        "Element": { "Label": "Choose damage element(s) on entry" },
+        "ElementDoubleStep": { "Label": "Mastery step that allows two elements" }
       },
       "BuffName": {
         "Label": "Buff Item Name",
@@ -449,15 +478,35 @@
       "Maintain": "Maintain",
       "Deactivate": "Deactivate"
     },
-    "StanceBuff": {
+    "Maintenance": {
       "Title": "{name} — choose stance mode",
       "MessageInitial": "Entering {name}. Choose which mode to fight in this round:",
-      "Message": "{name} continues at the start of your turn. Keep your mode, switch, or break the stance:",
+      "Message": "{name} continues at the start of your turn. Keep your mode, switch, or end it:",
       "Dexterity": "Dexterity",
       "Strength": "Strength",
-      "Break": "Break stance",
+      "Break": "End",
       "DexHint": "Dexterity: +2 attack and Acrobatics (tumble) this round.",
-      "StrHint": "Strength: +2 damage and CMB (trip) this round."
+      "StrHint": "Strength: +2 damage and CMB (trip) this round.",
+      "UpkeepTitle": "{name} — upkeep",
+      "UpkeepMessage": "{name} is active. Pay {formula} HP to maintain it, or end it.",
+      "PayHp": "Pay {formula} HP",
+      "HpCostFlavor": "Upkeep: {amount} HP lost.",
+      "ChakraDamageFlavor": "{name}: {amount} Chakra damage (pool {before}→{after})",
+      "ChakraDamageOverflow": " — +{hp} HP (overflow)",
+      "FastHealingFlavor": "{name}: Fast Healing {amount} (+{hp} HP)",
+      "UpkeepEnded": "{name} ends — the upkeep cost would have dropped you below 1 HP.",
+      "UpkeepExpired": "{name}'s duration has run out."
+    },
+    "MaintenanceElement": {
+      "Title": "{name} — choose element",
+      "Prompt": "Choose the damage element(s) for this technique.",
+      "SlotLabel": "Element {n}",
+      "Cold": "Cold",
+      "Earth": "Earth",
+      "Electric": "Electricity",
+      "Fire": "Fire",
+      "Water": "Water",
+      "Wind": "Wind"
     },
     "RankMasteryFreeUse": {
       "Title": "Use mastery free rounds for {name}?",
@@ -475,6 +524,7 @@
         "Failed": "Perform check failed (DC {dc}). No chakra spent.",
         "Spent": "Spent {cost} chakra ({summary}).",
         "FreeUse": "Used mastery free rounds ({rounds} rounds, no chakra spent).",
+        "UpkeepFree": "Upkeep active — no chakra spent.",
         "MasteryNote": " (+{value} mastery)",
         "AutoBypass": "Ranks {ranks}{mastery} ≥ threshold {threshold} — auto-perform.",
         "NoCheckRequired": "No perform check required."

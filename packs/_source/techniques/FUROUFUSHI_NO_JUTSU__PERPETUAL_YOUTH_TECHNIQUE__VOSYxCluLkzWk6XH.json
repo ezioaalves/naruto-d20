@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You physically change your body, making it younger by 1 or 2 age categories, changing your appearance and replacing your age penalties with those of the new age category. This may include changing your size.<br><br>This technique lasts until 1d4+1 rounds after your Chakra Pool falls below 10%, or it can be dismissed as any dismissible technique can.</p>\n\n\n\n",
+      "value": "<p>You physically change your body, making it younger by 1 or 2 age categories, changing your appearance and replacing your age penalties with those of the new age category. This may include changing your size.<br><br>This technique lasts until 1d4+1 rounds after your Chakra Pool falls below 10%, or it can be dismissed as any dismissible technique can.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

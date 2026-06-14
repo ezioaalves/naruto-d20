@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, F, S</p>\n\n<hr>\n\n<p>You can unseal objects from a storage scroll, which you may have appear in hand, ready to use.</p>\n\n\n\n",
+      "value": "<p>You can unseal objects from a storage scroll, which you may have appear in hand, ready to use.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

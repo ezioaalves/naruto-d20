@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions like Ma'en Jutsu: Youmi Kasouku, except as below. (You still damage yourself and follow the same limitations as with Youmi Kasouku).<br><br>The rune's passive bonuses are except the rune passively grants a +1 bonus to weapon damage rolls and Strength-based checks. It's activation and activated effects emulate the Ketsuyoujutsu: Seiryoku seal instead of the Kaisoku seal.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra and deal yourself 1 additional damage to increase the bonus on activation by either +1 (weapon damage) or +2 (Strength-based checks), up to a total of +12 or +24, respectively.</p>\n\n",
+      "value": "<p>This technique functions like Ma'en Jutsu: Youmi Kasouku, except as below. (You still damage yourself and follow the same limitations as with Youmi Kasouku).<br><br>The rune's passive bonuses are except the rune passively grants a +1 bonus to weapon damage rolls and Strength-based checks. It's activation and activated effects emulate the Ketsuyoujutsu: Seiryoku seal instead of the Kaisoku seal.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra and deal yourself 1 additional damage to increase the bonus on activation by either +1 (weapon damage) or +2 (Strength-based checks), up to a total of +12 or +24, respectively.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

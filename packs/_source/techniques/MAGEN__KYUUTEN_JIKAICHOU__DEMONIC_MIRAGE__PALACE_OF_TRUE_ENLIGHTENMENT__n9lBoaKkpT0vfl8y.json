@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 8</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 33</p>\n\n<p><b>Components:</b> C, F, H</p>\n\n<hr>\n\n<p>The target must have an attitude towards you that is indifferent or better for this technique to affect it. The subject truly believes it is in no danger, and as such it will not take any actions. Each round, the subject will answer one question truthfully, though it can make a Will save each time to simply not answer. If the subject's attitude towards you changes to something worse than indifference, the technique ends. This technique can be dispelled.</p>\n\n\n\n",
+      "value": "<p>The target must have an attitude towards you that is indifferent or better for this technique to affect it. The subject truly believes it is in no danger, and as such it will not take any actions. Each round, the subject will answer one question truthfully, though it can make a Will save each time to simply not answer. If the subject's attitude towards you changes to something worse than indifference, the technique ends. This technique can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

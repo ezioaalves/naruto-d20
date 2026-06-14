@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>You make an efficient, graceful strike against the target, gaining a +1 bonus to the attack roll. You may use your Dexterity bonus to the attack roll instead of your Strength modifier.</p>\n\n\n\n",
+      "value": "<p>You make an efficient, graceful strike against the target, gaining a +1 bonus to the attack roll. You may use your Dexterity bonus to the attack roll instead of your Strength modifier.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

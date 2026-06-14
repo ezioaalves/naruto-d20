@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 27</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>A Kendo master can surprise a foe with an unexpectedly powerful blow.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at his highest attack bonus that deals normal weapon damage plus 1d6 damage per 4 levels (maximum +4d6). If the user performs this technique as a charge attack, the damage is doubled. However, the user will become dazed and take a -4 penalty to his defense for 1 round afterward.</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stick.</p>\n",
+      "value": "<p>A Kendo master can surprise a foe with an unexpectedly powerful blow.<br><br>The user must be wielding a Kendo Stick in order to perform this technique. The user makes an attack roll at his highest attack bonus that deals normal weapon damage plus 1d6 damage per 4 levels (maximum +4d6). If the user performs this technique as a charge attack, the damage is doubled. However, the user will become dazed and take a -4 penalty to his defense for 1 round afterward.</p>\n\n<hr><p><b>Material Focus:</b> The user's held Kendo Stick.</p>\n",
       "summary": "",
       "instructions": ""
     },

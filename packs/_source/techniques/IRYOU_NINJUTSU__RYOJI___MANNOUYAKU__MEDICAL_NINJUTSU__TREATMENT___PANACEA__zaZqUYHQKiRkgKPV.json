@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Medical)</p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You touch the target, curing it of all blindness, daze, deafness, disease, exhaustion, fatigue, nausea, paralysis, poison and stun effects. In addition, they are cured of all ability damage to a single ability score, as well as 1d4 temporary ability damage or ability drain to the same ability score. Furthermore, the target is healed for 2d4+1 temporary HP.<br><br>If you are under any of the conditions listed above, you suffer a -10 penalty to your skill threshold and perform checks to perform this technique.</p>\n\n\n\n",
+      "value": "<p>You touch the target, curing it of all blindness, daze, deafness, disease, exhaustion, fatigue, nausea, paralysis, poison and stun effects. In addition, they are cured of all ability damage to a single ability score, as well as 1d4 temporary ability damage or ability drain to the same ability score. Furthermore, the target is healed for 2d4+1 temporary HP.<br><br>If you are under any of the conditions listed above, you suffer a -10 penalty to your skill threshold and perform checks to perform this technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You gain Sneak Attack (+1d6), or increase your existing sneak attack value by 1d6 (See p14 for more information on sneak attacks).</p>\n\n\n\n",
+      "value": "<p>You gain Sneak Attack (+1d6), or increase your existing sneak attack value by 1d6 (See p14 for more information on sneak attacks).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> F, Mas, Mob</p>\n\n<hr>\n\n<p>You must be standing on a firm or hard earthen surface to use this technique (such as rock or stone). You slam your weapon into the ground, sending out a burst of debris that deals 1d4 earth damage per 2 levels (maximum 4d4) to the creature in the area that is closest to you.</p>\n\n\n<p><b>Mastery:</b> The first step increases the range to 40 ft. The fifth step allows you to increase the Perform Requirements by 5 to make the technique 'safe': It will not reduce a creature below 0 HP. However, doing so also incurs a -1 penalty to damage per damage die.</p>\n",
+      "value": "<p>You must be standing on a firm or hard earthen surface to use this technique (such as rock or stone). You slam your weapon into the ground, sending out a burst of debris that deals 1d4 earth damage per 2 levels (maximum 4d4) to the creature in the area that is closest to you.</p>\n\n\n<p><b>Mastery:</b> The first step increases the range to 40 ft. The fifth step allows you to increase the Perform Requirements by 5 to make the technique 'safe': It will not reduce a creature below 0 HP. However, doing so also incurs a -1 penalty to damage per damage die.</p>\n",
       "summary": "",
       "instructions": ""
     },

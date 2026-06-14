@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You place an illusion on an object, either removing all text written on it, or forging text by using the Forgery skill (10 minutes for a simple forgery, 20 minutes for a moderate forgery). The illusion radiates a faint Chakra Signature. A creature can spend 1 Chakra and make a Chakra Control check (DC 15) to dispel the illusion.</p>\n\n\n\n",
+      "value": "<p>You place an illusion on an object, either removing all text written on it, or forging text by using the Forgery skill (10 minutes for a simple forgery, 20 minutes for a moderate forgery). The illusion radiates a faint Chakra Signature. A creature can spend 1 Chakra and make a Chakra Control check (DC 15) to dispel the illusion.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

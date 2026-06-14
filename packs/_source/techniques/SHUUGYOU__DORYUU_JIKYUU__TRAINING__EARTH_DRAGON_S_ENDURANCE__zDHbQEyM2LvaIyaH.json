@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This training allows the user to harden his body using the brutal but enlightening methods of the Earth Dragons. While the training is similar to other training techniques it differs in that it needs no special equipment or special foodstuffs, instead it requires that all time spent training must be done in mountainous terrain at an elevation of at least nine-thousand-and-one feet. By completing this training, the user's Constitution score is permanently increased by 1.</p>\n",
+      "value": "<p>This training allows the user to harden his body using the brutal but enlightening methods of the Earth Dragons. While the training is similar to other training techniques it differs in that it needs no special equipment or special foodstuffs, instead it requires that all time spent training must be done in mountainous terrain at an elevation of at least nine-thousand-and-one feet. By completing this training, the user's Constitution score is permanently increased by 1.</p>\n",
       "summary": "",
       "instructions": ""
     },

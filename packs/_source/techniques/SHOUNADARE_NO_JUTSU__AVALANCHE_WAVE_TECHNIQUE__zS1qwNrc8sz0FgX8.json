@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You unleash an avalanche that pushes back creatures by 1d4 x 5 ft and knocks them @Condition[prone]{prone}. The wave leaves a thick layer of snow, effectively burying any creature still within the area under a 1d6 x 5 ft layer of snow. Structures caught in the area take 2d4 x 10 damage. Any creature buried in the snow will start suffocating, and will suffer 3d6 cold damage per minute while buried. A successful Strength check (DC 20) allows a buried creature to move 5 ft in any direction.<br><br>The layer of snow makes it impossible for creatures to move through or fight within the area, unless they can walk on snow. The snow will melt and fade after 10 minutes.</p>\n\n\n\n",
+      "value": "<p>You unleash an avalanche that pushes back creatures by 1d4 x 5 ft and knocks them @Condition[prone]{prone}. The wave leaves a thick layer of snow, effectively burying any creature still within the area under a 1d6 x 5 ft layer of snow. Structures caught in the area take 2d4 x 10 damage. Any creature buried in the snow will start suffocating, and will suffer 3d6 cold damage per minute while buried. A successful Strength check (DC 20) allows a buried creature to move 5 ft in any direction.<br><br>The layer of snow makes it impossible for creatures to move through or fight within the area, unless they can walk on snow. The snow will melt and fade after 10 minutes.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

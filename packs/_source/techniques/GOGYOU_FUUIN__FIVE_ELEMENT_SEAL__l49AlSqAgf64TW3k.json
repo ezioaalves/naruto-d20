@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 11</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 15 | <b>Perform DC:</b> 31</p>\n\n<p><b>Components:</b> C, M</p>\n\n<hr>\n\n<p>You transfer a seal onto the target, sealing its natural energies and making it unable to use any Supernatural or Spell-like abilities. The subject suffers a -5 penalty to Chakra Control checks, and if it wishes to perform a technique, it must succeed at a Chakra Control check (DC 15 + Technique Rank) first to do so.<br><br>Can be dispelled by using the same technique on the target again. Disappears upon the target's death.</p>\n\n\n\n",
+      "value": "<p>You transfer a seal onto the target, sealing its natural energies and making it unable to use any Supernatural or Spell-like abilities. The subject suffers a -5 penalty to Chakra Control checks, and if it wishes to perform a technique, it must succeed at a Chakra Control check (DC 15 + Technique Rank) first to do so.<br><br>Can be dispelled by using the same technique on the target again. Disappears upon the target's death.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

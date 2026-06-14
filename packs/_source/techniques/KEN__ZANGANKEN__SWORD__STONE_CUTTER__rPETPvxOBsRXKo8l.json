@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>Make an attack against the target. If the attack hits, it will ignore 5 hardness or DR, and its base damage die increases by one size (d6 becomes d8, etc). If used against an object, it must be inanimate and unattended. The object must make a Fortitude save to avoid suffering 1d6 damage per level (maximum 10d6) which ignores all hardness.</p>\n\n\n\n",
+      "value": "<p>Make an attack against the target. If the attack hits, it will ignore 5 hardness or DR, and its base damage die increases by one size (d6 becomes d8, etc). If used against an object, it must be inanimate and unattended. The object must make a Fortitude save to avoid suffering 1d6 damage per level (maximum 10d6) which ignores all hardness.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

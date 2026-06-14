@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Upon completing this training technique, a user who is attempting to conceal their chakra to be able to ignore the concentration requirement of doing so and can perform other techniques that have a concentration requirement without issue.</p>\n\n<hr><p><b>Requires:</b> Training (f), Suppress Chakra (a), Chakra Control 10 ranks</p>\n",
+      "value": "<p>Upon completing this training technique, a user who is attempting to conceal their chakra to be able to ignore the concentration requirement of doing so and can perform other techniques that have a concentration requirement without issue.</p>\n\n<hr><p><b>Requires:</b> Training (f), Suppress Chakra (a), Chakra Control 10 ranks</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 12 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 11</p>\n\n<p><b>Components:</b> F</p>\n\n<hr>\n\n<p>The user of this technique makes a precision attack with his Senbon hitting pressure points and cutting off movement. The user makes a ranged attack with a throwing needle that if it hits deals damage and stuns the target for 1 round.</p>\n\n<hr><p><b>Material Focus:</b> Senbon.</p>\n",
+      "value": "<p>The user of this technique makes a precision attack with his Senbon hitting pressure points and cutting off movement. The user makes a ranged attack with a throwing needle that if it hits deals damage and stuns the target for 1 round.</p>\n\n<hr><p><b>Material Focus:</b> Senbon.</p>\n",
       "summary": "",
       "instructions": ""
     },

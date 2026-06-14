@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You confuse one of three senses of all creatures in the area. This technique can affect the same target multiple times, once for each sense, and must be disbelieved separately for each of them. This technique can be dispelled.<br><br>- Hearing: The creatures become @Condition[deaf]{deaf}.<br>- Sight: The creatures suffer a -4 penalty to Spot checks and attack rolls. Blind creatures are unaffected.<br>- Smell: The creatures cannot use the Scent ability.</p>\n\n\n\n",
+      "value": "<p>You confuse one of three senses of all creatures in the area. This technique can affect the same target multiple times, once for each sense, and must be disbelieved separately for each of them. This technique can be dispelled.<br><br>- Hearing: The creatures become @Condition[deaf]{deaf}.<br>- Sight: The creatures suffer a -4 penalty to Spot checks and attack rolls. Blind creatures are unaffected.<br>- Smell: The creatures cannot use the Scent ability.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

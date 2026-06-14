@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C, E, Mas</p>\n\n<hr>\n\n<p>You gather Chakra in a specific part of your body (like a fist or foot) and attack with the body part, pushing out the Chakra at the same time.<br><br>Make an unarmed attack against the target, gaining a +1 damage bonus of the appropriate type.</p>\n\n<hr><p><b>Empower:</b> Spend 1 additional Chakra to increase the damage bonus by +1, up to +1 per level or +6 total. Increase the Perform Requirements by 1 for every 2 Chakra spent to empower the technique.</p>\n<p><b>Mastery:</b> The fifth step grants an additional +1 damage to the attack, and increases the amount to which you can empower it by +1 as well.</p>\n",
+      "value": "<p>You gather Chakra in a specific part of your body (like a fist or foot) and attack with the body part, pushing out the Chakra at the same time.<br><br>Make an unarmed attack against the target, gaining a +1 damage bonus of the appropriate type.</p>\n\n<hr><p><b>Empower:</b> Spend 1 additional Chakra to increase the damage bonus by +1, up to +1 per level or +6 total. Increase the Perform Requirements by 1 for every 2 Chakra spent to empower the technique.</p>\n<p><b>Mastery:</b> The fifth step grants an additional +1 damage to the attack, and increases the amount to which you can empower it by +1 as well.</p>\n",
       "summary": "",
       "instructions": ""
     },

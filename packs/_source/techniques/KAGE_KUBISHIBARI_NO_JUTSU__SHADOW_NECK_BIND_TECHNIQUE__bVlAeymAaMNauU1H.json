@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shadow)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, S</p>\n\n<hr>\n\n<p>You stretch your shadows even further (not counting against Kage Mane's limit), and attempt to strangle the targets with your shadow, dealing 6d8 damage. Any creature suffering damage must also make a Massive Damage save.</p>\n\n\n\n",
+      "value": "<p>You stretch your shadows even further (not counting against Kage Mane's limit), and attempt to strangle the targets with your shadow, dealing 6d8 damage. Any creature suffering damage must also make a Massive Damage save.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> E, F, Mas, S</p>\n\n<hr>\n\n<p>You can lift and throw a barrage of Tiny or smaller throwing weapons towards your enemies. Make a ranged attack roll at your maximum attack bonus. On hit, the weapon deals damage as though thrown by you.<br><br>You cannot apply any special feats or abilities to the attack other than weapon focus and weapon specialization.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to throw an additional weapon, up to one per 2 levels or 5 total, whichever is lower. Each weapon may target a different creature.</p>\n<p><b>Mastery:</b> The third step increases the maximum number of thrown weapons to 6. The fifth step increases it to 7.</p>\n",
+      "value": "<p>You can lift and throw a barrage of Tiny or smaller throwing weapons towards your enemies. Make a ranged attack roll at your maximum attack bonus. On hit, the weapon deals damage as though thrown by you.<br><br>You cannot apply any special feats or abilities to the attack other than weapon focus and weapon specialization.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to throw an additional weapon, up to one per 2 levels or 5 total, whichever is lower. Each weapon may target a different creature.</p>\n<p><b>Mastery:</b> The third step increases the maximum number of thrown weapons to 6. The fifth step increases it to 7.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, Mob</p>\n\n<hr>\n\n<p>You must be in a Jyuuken stance and have your Byakugan ability active to use this technique. You make a Jyuuken attack at your highest attack bonus against each creature in the area, and those creatures are knocked back 5 ft. These attacks are considered Hyuuga Ryu: Jyuuken - Shodan Dachi attacks, regardless of which Jyuuken stance you are in.<br><br>Once you've used this technique, you can perform it again as an instant action up to once per round for the rest of the encounter. Doing so grants you a +4 deflection bonus to Defense against all attacks from a single opponent, in addition to Kaiten's normal effects.</p>\n\n\n\n",
+      "value": "<p>You must be in a Jyuuken stance and have your Byakugan ability active to use this technique. You make a Jyuuken attack at your highest attack bonus against each creature in the area, and those creatures are knocked back 5 ft. These attacks are considered Hyuuga Ryu: Jyuuken - Shodan Dachi attacks, regardless of which Jyuuken stance you are in.<br><br>Once you've used this technique, you can perform it again as an instant action up to once per round for the rest of the encounter. Doing so grants you a +4 deflection bonus to Defense against all attacks from a single opponent, in addition to Kaiten's normal effects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, F</p>\n\n<hr>\n\n<p>You place the advanced seal on a surface, after which it projects a sphere of energy that prevents any summoned creature or object from passing through. Attended summoned objects will use their wielder's Will save bonus, while unattended summoned object simply cannot pass. Banish resistance will apply to this effect.<br><br>If the seal is moved or destroyed, the seal disintegrates, ending the technique.</p>\n\n\n\n",
+      "value": "<p>You place the advanced seal on a surface, after which it projects a sphere of energy that prevents any summoned creature or object from passing through. Attended summoned objects will use their wielder's Will save bonus, while unattended summoned object simply cannot pass. Banish resistance will apply to this effect.<br><br>If the seal is moved or destroyed, the seal disintegrates, ending the technique.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

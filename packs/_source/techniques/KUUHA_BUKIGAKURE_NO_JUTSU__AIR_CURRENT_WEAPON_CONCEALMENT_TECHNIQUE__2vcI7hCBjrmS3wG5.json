@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> F, S</p>\n\n<hr>\n\n<p>You distort the air around a held melee weapon, making it difficult to detect. This concealment lasts for one attack per 4 levels (maximum 5), regardless of the result of the attack. When you attack a target, you may choose to discharge this technique, or not. If you choose to discharge, the attack is made as normal, but deals 1d6 bonus wind damage on hit per attack left on the concealment effect (not multiplied on critical hits).<br><br>If you do not discharge the technique, the target of the attack must make a Spot check (DC 20 or attack roll, whichever is lower) to avoid losing its Dexterity bonus to defense.</p>\n\n\n\n",
+      "value": "<p>You distort the air around a held melee weapon, making it difficult to detect. This concealment lasts for one attack per 4 levels (maximum 5), regardless of the result of the attack. When you attack a target, you may choose to discharge this technique, or not. If you choose to discharge, the attack is made as normal, but deals 1d6 bonus wind damage on hit per attack left on the concealment effect (not multiplied on critical hits).<br><br>If you do not discharge the technique, the target of the attack must make a Spot check (DC 20 or attack roll, whichever is lower) to avoid losing its Dexterity bonus to defense.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

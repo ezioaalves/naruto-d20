@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Shoton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>By way of this fairly simple technique, the user surrounds the target area with a crystal dome that can be used for protection. This dome has a hardness of 10, 30 hit points, Earth and Water resistance 5 but takes double damage from techniques or abilities with the Sonic descriptor.</p>\n\n<hr><p><b>Effect:</b> 10-ft. radius circle</p>\n",
+      "value": "<p>By way of this fairly simple technique, the user surrounds the target area with a crystal dome that can be used for protection. This dome has a hardness of 10, 30 hit points, Earth and Water resistance 5 but takes double damage from techniques or abilities with the Sonic descriptor.</p>\n\n<hr><p><b>Effect:</b> 10-ft. radius circle</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You insert a trigger into the target's mind, causing it to perform a specific action when the trigger is met. The target is unaware of this trigger, and the condition must be a simple one (such as someone speaking a certain code word or phrase). When the subject's trigger is activated, it will perform a simple action that is not harmful to itself (such as speaking a short phrase), without being aware of it, unless someone later reminds them of it.</p>\n\n\n\n",
+      "value": "<p>You insert a trigger into the target's mind, causing it to perform a specific action when the trigger is met. The target is unaware of this trigger, and the condition must be a simple one (such as someone speaking a certain code word or phrase). When the subject's trigger is activated, it will perform a simple action that is not harmful to itself (such as speaking a short phrase), without being aware of it, unless someone later reminds them of it.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

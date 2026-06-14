@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>Powerful winds rise around the target, restricting its movements and preventing it from moving from its square by physical means. If the target moves out of its current square, it will be freed of the effect. While restricted, the target cannot use Evasion or Improved Evasion, and any thrown or projectile weapons fired at them (other than ballistic weapons) suffer a 75% chance to be deflected.</p>\n\n\n\n",
+      "value": "<p>Powerful winds rise around the target, restricting its movements and preventing it from moving from its square by physical means. If the target moves out of its current square, it will be freed of the effect. While restricted, the target cannot use Evasion or Improved Evasion, and any thrown or projectile weapons fired at them (other than ballistic weapons) suffer a 75% chance to be deflected.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

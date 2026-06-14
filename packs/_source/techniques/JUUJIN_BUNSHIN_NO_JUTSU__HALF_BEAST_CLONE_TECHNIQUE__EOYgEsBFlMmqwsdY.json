@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You must be under the effects of Shikakyu no Jutsu and have a Dog or Wolf companion to use this technique.<br><br>You send Chakra into your animal companion, transforming it into an exact replica of you (as affected by Shikakyu no Jutsu), except it retains its own ability scores (modified by its new size if necessary). If the companion falls unconscious, the transformation automatically ends.</p>\n\n\n\n",
+      "value": "<p>You must be under the effects of Shikakyu no Jutsu and have a Dog or Wolf companion to use this technique.<br><br>You send Chakra into your animal companion, transforming it into an exact replica of you (as affected by Shikakyu no Jutsu), except it retains its own ability scores (modified by its new size if necessary). If the companion falls unconscious, the transformation automatically ends.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

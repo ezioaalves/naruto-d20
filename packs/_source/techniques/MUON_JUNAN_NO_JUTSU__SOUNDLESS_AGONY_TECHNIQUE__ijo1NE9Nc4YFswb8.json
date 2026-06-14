@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Compulsion)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Subjects believe that they must remain completely silent, and will not speak, shout, scream or otherwise try to make no sound. They can still move their lips (to allow for lip reading). Can be dispelled.</p>\n\n\n\n",
+      "value": "<p>Subjects believe that they must remain completely silent, and will not speak, shout, scream or otherwise try to make no sound. They can still move their lips (to allow for lip reading). Can be dispelled.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

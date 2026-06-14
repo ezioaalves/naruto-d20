@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 10</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 26 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 14 | <b>Perform DC:</b> 30</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You cause a seal to appear on the subject, which scrambles its Chakra pathways. The subject suffers a -6 penalty to meet the Perform Requirements of Chakra Control, Genjutsu and Ninjutsu techniques, and cannot benefit from any Medical ninjutsu of Rank 9 or lower.<br><br>This seal can be dispelled by using this technique on the target and succeeding at a level check (DC equal to the original seal's save DC).</p>\n\n\n\n",
+      "value": "<p>You cause a seal to appear on the subject, which scrambles its Chakra pathways. The subject suffers a -6 penalty to meet the Perform Requirements of Chakra Control, Genjutsu and Ninjutsu techniques, and cannot benefit from any Medical ninjutsu of Rank 9 or lower.<br><br>This seal can be dispelled by using this technique on the target and succeeding at a level check (DC equal to the original seal's save DC).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

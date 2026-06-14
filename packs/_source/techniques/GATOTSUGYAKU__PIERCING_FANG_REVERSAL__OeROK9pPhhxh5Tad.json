@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>Only usable after you miss with a charge attack made for Gatotsu: Isshiki or Gatotsu: Nishiki, you salvage the situation and make a normal melee attack with your weapon at your highest attack bonus -5. This technique can be used once per encounter.</p>\n\n\n<p><b>Mastery:</b> The second and fourth step increase the number of uses per encounter by one each.</p>\n",
+      "value": "<p>Only usable after you miss with a charge attack made for Gatotsu: Isshiki or Gatotsu: Nishiki, you salvage the situation and make a normal melee attack with your weapon at your highest attack bonus -5. This technique can be used once per encounter.</p>\n\n\n<p><b>Mastery:</b> The second and fourth step increase the number of uses per encounter by one each.</p>\n",
       "summary": "",
       "instructions": ""
     },

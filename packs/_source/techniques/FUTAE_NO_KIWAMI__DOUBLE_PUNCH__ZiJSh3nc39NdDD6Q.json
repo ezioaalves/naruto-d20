@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 12 | <b>Perform DC:</b> 26</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You make an unarmed attack that deals one additional die of damage, and ignores up to 15 points of DR and any hardness of 15 or lower. On hit, the target takes an additional 2d6 damage and is knocked back 1d6 x 5 ft (Fortitude negates both). If the target collides with an object, it suffers 1d4 damage for every 10 ft of knockback it suffered and falls @Condition[prone]{prone}.<br><br>If used more than once per minute, you must make a Fortitude save (DC 20) to avoid taking 1d6 temporary Strength damage. You suffer a -4 penalty to Learn checks when learning this technique unless you have the Gouken feat.</p>\n\n\n\n",
+      "value": "<p>You make an unarmed attack that deals one additional die of damage, and ignores up to 15 points of DR and any hardness of 15 or lower. On hit, the target takes an additional 2d6 damage and is knocked back 1d6 x 5 ft (Fortitude negates both). If the target collides with an object, it suffers 1d4 damage for every 10 ft of knockback it suffered and falls @Condition[prone]{prone}.<br><br>If used more than once per minute, you must make a Fortitude save (DC 20) to avoid taking 1d6 temporary Strength damage. You suffer a -4 penalty to Learn checks when learning this technique unless you have the Gouken feat.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

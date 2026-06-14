@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> E, F, Mas</p>\n\n<hr>\n\n<p>Make a melee attack against the target, dealing damage as normal, except half the damage becomes wind damage as a tiger of wind rips the target to shreds. You can deal 3d6 damage to yourself to improve the attack's damage by 2d6 wind damage (Reflex negates).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra and 1 HP to increase the damage of the attack by 1d6, up to 1d6 per level or 8d6 total.</p>\n<p><b>Mastery:</b> The third step allows you to take no dam- age when creating a more powerful attack. The fifth step allows you to ignore the damage you would take when empowering this technique.</p>\n",
+      "value": "<p>Make a melee attack against the target, dealing damage as normal, except half the damage becomes wind damage as a tiger of wind rips the target to shreds. You can deal 3d6 damage to yourself to improve the attack's damage by 2d6 wind damage (Reflex negates).</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra and 1 HP to increase the damage of the attack by 1d6, up to 1d6 per level or 8d6 total.</p>\n<p><b>Mastery:</b> The third step allows you to take no dam- age when creating a more powerful attack. The fifth step allows you to ignore the damage you would take when empowering this technique.</p>\n",
       "summary": "",
       "instructions": ""
     },

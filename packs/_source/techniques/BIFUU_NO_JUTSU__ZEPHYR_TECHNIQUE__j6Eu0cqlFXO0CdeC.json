@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> H, E</p>\n\n<hr>\n\n<p>You expel a sudden burst of air (approx 25 mph), clearing out dust, smoke, mist and fog as well as extinguishing small fires (such as candles). Diminutive or smaller creatures must make a save to avoid being knocked back 10 ft.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the radius by 5 ft. (up to 30 ft. total).</p>\n\n",
+      "value": "<p>You expel a sudden burst of air (approx 25 mph), clearing out dust, smoke, mist and fog as well as extinguishing small fires (such as candles). Diminutive or smaller creatures must make a save to avoid being knocked back 10 ft.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the radius by 5 ft. (up to 30 ft. total).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> Mob, E</p>\n\n<hr>\n\n<p>The first step of a two-part combo, the user strikes the target with a single unarmed attack, dealing normal damage. If the target is hit, it must make a Fortitude save or be knocked back 30 ft and become unable to act for 1 round. This technique can be used once per encounter, and requires the Kairiki technique to be active on the user.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the save DC by 1 (maximum +5).</p>\n\n",
+      "value": "<p>The first step of a two-part combo, the user strikes the target with a single unarmed attack, dealing normal damage. If the target is hit, it must make a Fortitude save or be knocked back 30 ft and become unable to act for 1 round. This technique can be used once per encounter, and requires the Kairiki technique to be active on the user.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the save DC by 1 (maximum +5).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

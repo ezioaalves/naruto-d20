@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 12</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 212</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions as Ryu Sou Sen, except as above. You must be moving at Speed Rank 1 or higher to use this technique. You attack the target (as per Ryu Sou Sen). Your critical threat range increases by 1 for these attacks, and the damage die of your weapon increases by one size (d6 becomes d8, 2d6 becomes 2d8, etc).</p>\n\n\n\n",
+      "value": "<p>This technique functions as Ryu Sou Sen, except as above. You must be moving at Speed Rank 1 or higher to use this technique. You attack the target (as per Ryu Sou Sen). Your critical threat range increases by 1 for these attacks, and the damage die of your weapon increases by one size (d6 becomes d8, 2d6 becomes 2d8, etc).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

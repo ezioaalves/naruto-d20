@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>The target Animal Companion must be under the effects of Juujin Ryu: Seiga or Juujin Ryu: Shinseiga to benefit from this technique.<br><br>The animal companion's next hit with a natural weapon deals an additional 2d6 damage, not multiplied on critical hits.</p>\n\n\n\n",
+      "value": "<p>The target Animal Companion must be under the effects of Juujin Ryu: Seiga or Juujin Ryu: Shinseiga to benefit from this technique.<br><br>The animal companion's next hit with a natural weapon deals an additional 2d6 damage, not multiplied on critical hits.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

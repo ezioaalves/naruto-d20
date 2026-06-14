@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> Mob</p>\n\n<hr>\n\n<p>Make an unarmed attack against the target that deals normal damage. If it hits, the target is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates). Creatures immune to sneak attacks or critical hits are unaffected by the stun.</p>\n\n\n\n",
+      "value": "<p>Make an unarmed attack against the target that deals normal damage. If it hits, the target is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates). Creatures immune to sneak attacks or critical hits are unaffected by the stun.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

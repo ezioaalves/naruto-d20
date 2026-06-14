@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Spacetime)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You flicker in and out of existence, allowing you to make an Escape Artist attempt to free yourself from bonds or confinements, to which you gain a +20 bonus.</p>\n\n\n\n",
+      "value": "<p>You flicker in and out of existence, allowing you to make an Escape Artist attempt to free yourself from bonds or confinements, to which you gain a +20 bonus.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

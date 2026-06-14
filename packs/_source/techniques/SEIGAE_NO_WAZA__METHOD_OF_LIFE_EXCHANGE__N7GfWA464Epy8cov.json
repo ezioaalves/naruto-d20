@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Medical)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>This technique allows for quick and effective healing of even deep wounds, but does so by channeling your life force, making it dangerous and ineffective for use on yourself. This technique cannot be used on a target below 0 HP. Each round you concentrate, you heal the target for 1d6 HP, but take 1d6 damage (not affected by damage reductions). If you heal the target for more than 3 rounds, the target suffers from Chakra Overload for 1 hour (as per Iryou Ninjutsu: Chiyu techniques).</p>\n\n\n<p><b>Mastery:</b> The first step decreases the damage you take to 1d4.<br><br>The third step increases the healing to 1d6+1. The fifth step increases the healing to 1d6+3.</p>\n",
+      "value": "<p>This technique allows for quick and effective healing of even deep wounds, but does so by channeling your life force, making it dangerous and ineffective for use on yourself. This technique cannot be used on a target below 0 HP. Each round you concentrate, you heal the target for 1d6 HP, but take 1d6 damage (not affected by damage reductions). If you heal the target for more than 3 rounds, the target suffers from Chakra Overload for 1 hour (as per Iryou Ninjutsu: Chiyu techniques).</p>\n\n\n<p><b>Mastery:</b> The first step decreases the damage you take to 1d4.<br><br>The third step increases the healing to 1d6+1. The fifth step increases the healing to 1d6+3.</p>\n",
       "summary": "",
       "instructions": ""
     },

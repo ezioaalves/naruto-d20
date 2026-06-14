@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>You fire a ray of lightning that deals 2d6 electric damage. If hit, the target is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates).</p>\n\n\n\n",
+      "value": "<p>You fire a ray of lightning that deals 2d6 electric damage. If hit, the target is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

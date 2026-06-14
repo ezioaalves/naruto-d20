@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> E, F, Mob</p>\n\n<hr>\n\n<p>You make a single attack with the weapon, gaining a +1 bonus to attack and damage rolls.</p>\n\n\n\n",
+      "value": "<p>You make a single attack with the weapon, gaining a +1 bonus to attack and damage rolls.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

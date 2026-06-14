@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Taijutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Slamming your fist into the ground until they bleed and various other parts of your body, the bones become stronger as they heal over and over again. Your legs are beaten until they almost break only to heal and become harder than ever before. At the end of this training the character gains an additional +1 bonus to unarmed damage and Damage Reduction 1/-. In addition, at the end of each day of training the character must make a Fortitude save DC 10 or take 1 point of temporary Strength damage.<br><br>Mastery: At each odd level the user gains +1 to their Damage Reduction. At each even level the user gains +1 to their unarmed damage bonus.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
+      "value": "<p>Slamming your fist into the ground until they bleed and various other parts of your body, the bones become stronger as they heal over and over again. Your legs are beaten until they almost break only to heal and become harder than ever before. At the end of this training the character gains an additional +1 bonus to unarmed damage and Damage Reduction 1/-. In addition, at the end of each day of training the character must make a Fortitude save DC 10 or take 1 point of temporary Strength damage.<br><br>Mastery: At each odd level the user gains +1 to their Damage Reduction. At each even level the user gains +1 to their unarmed damage bonus.</p>\n\n<hr><p><b>Requires:</b> Training (f)</p>\n",
       "summary": "",
       "instructions": ""
     },

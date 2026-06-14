@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This sealing technique will camouflage any object that it is applied to. When attempting to hide an object, you gain a bonus as per Meisaigakure no Jutsu to your Hide check, the bonus from this jutsu and Meisaigakure no Jutsu do not stack. If the seal is applied and the object left as is, the base Spot DC increases by 10.</p>\n\n<hr><p><b>Requires:</b> Meisaigakure no Jutsu (5)</p>\n",
+      "value": "<p>This sealing technique will camouflage any object that it is applied to. When attempting to hide an object, you gain a bonus as per Meisaigakure no Jutsu to your Hide check, the bonus from this jutsu and Meisaigakure no Jutsu do not stack. If the seal is applied and the object left as is, the base Spot DC increases by 10.</p>\n\n<hr><p><b>Requires:</b> Meisaigakure no Jutsu (5)</p>\n",
       "summary": "",
       "instructions": ""
     },

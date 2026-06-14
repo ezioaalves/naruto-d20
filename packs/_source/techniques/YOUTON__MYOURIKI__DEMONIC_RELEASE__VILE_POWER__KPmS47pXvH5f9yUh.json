@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>You gain the Strength Rank 1 extraordinary ability. While learning this technique, you take 1 damage per level each day, which heals after 8 hours of rest.</p>\n\n\n\n",
+      "value": "<p>You gain the Strength Rank 1 extraordinary ability. While learning this technique, you take 1 damage per level each day, which heals after 8 hours of rest.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

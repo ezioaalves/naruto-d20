@@ -2,7 +2,7 @@
   "type": "buff",
   "system": {
     "description": {
-      "value": "<p>You open the Life Gate, gaining a +4 enhancement bonus to Strength and Dexterity and a 15 ft increase to land speed.</p><p>This buff does not automate temporary Chakra, Chakra Signature changes, damage taken each round, or fatigue after the Gate closes.</p>",
+      "value": "<p>You open the Life Gate, gaining a +4 enhancement bonus to Strength and Dexterity, a 15 ft increase to land speed, and 8 temporary Chakra.</p><p>While active, the per-round HP damage is automated from the technique's maintenance. Still manual: Chakra Signature changes, the halved chakra from opening later Gates within 24 hours, and the fatigue after the Gate closes.</p>",
       "instructions": ""
     },
     "tags": [],
@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "4",
-        "target": "str"
+        "target": "str",
+        "flavor": "SEI-MON KAI"
       },
       {
         "type": "enh",
@@ -21,7 +22,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "4",
-        "target": "dex"
+        "target": "dex",
+        "flavor": "SEI-MON KAI"
       },
       {
         "type": "untyped",
@@ -29,7 +31,17 @@
         "operator": "add",
         "priority": 0,
         "formula": "15",
-        "target": "landSpeed"
+        "target": "landSpeed",
+        "flavor": "SEI-MON KAI"
+      },
+      {
+        "type": "untyped",
+        "_id": "a37e5f1d",
+        "operator": "add",
+        "priority": 0,
+        "formula": "8",
+        "target": "temporaryChakra",
+        "flavor": "SEI-MON KAI"
       }
     ],
     "changeFlags": {

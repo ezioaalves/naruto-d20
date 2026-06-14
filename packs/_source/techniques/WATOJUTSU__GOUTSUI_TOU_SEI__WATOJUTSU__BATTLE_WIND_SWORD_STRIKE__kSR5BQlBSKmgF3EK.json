@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 24 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> M, F</p>\n\n<hr>\n\n<p>This technique consists of the user impaling the target on his sword and then throwing him. The user makes a single melee attack with critical range increased by 2. If the attack hits the user throws his opponent 5 ft. per point of strength bonus he has in any direction he desires, and the target must make a reflex save or be knocked prone.<br><br>Material Focus -The user's Wato, katana, double katana or hansori.</p>\n",
+      "value": "<p>This technique consists of the user impaling the target on his sword and then throwing him. The user makes a single melee attack with critical range increased by 2. If the attack hits the user throws his opponent 5 ft. per point of strength bonus he has in any direction he desires, and the target must make a reflex save or be knocked prone.<br><br>Material Focus -The user's Wato, katana, double katana or hansori.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>Make a single attack that deals 1d6 damage per 3 levels if it hits (maximum 5d6).</p>\n\n\n\n",
+      "value": "<p>Make a single attack that deals 1d6 damage per 3 levels if it hits (maximum 5d6).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu or Fuinjutsu)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>As Craft Greater Chakra Storing Gem, but you are able to craft Lesser Chakra Storing Gems instead.</p>\n\n\n\n",
+      "value": "<p>As Craft Greater Chakra Storing Gem, but you are able to craft Lesser Chakra Storing Gems instead.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

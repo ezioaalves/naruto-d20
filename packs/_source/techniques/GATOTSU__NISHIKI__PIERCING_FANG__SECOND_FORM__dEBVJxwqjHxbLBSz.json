@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique functions the same as Gatotsu: Isshiki except as above, and if the attack hits, the target must make a save to avoid falling @Condition[prone]{prone} and taking 1d6 additional damage. This technique can be used once per encounter, and cannot be used on creatures that are not flying, swimming or moving underground.</p>\n\n\n<p><b>Mastery:</b> The first, third and fifth step increase the number of uses per encounter by one each.</p>\n",
+      "value": "<p>This technique functions the same as Gatotsu: Isshiki except as above, and if the attack hits, the target must make a save to avoid falling @Condition[prone]{prone} and taking 1d6 additional damage. This technique can be used once per encounter, and cannot be used on creatures that are not flying, swimming or moving underground.</p>\n\n\n<p><b>Mastery:</b> The first, third and fifth step increase the number of uses per encounter by one each.</p>\n",
       "summary": "",
       "instructions": ""
     },

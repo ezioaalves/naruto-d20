@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> F, H</p>\n\n<hr>\n\n<p>You exhale a blast of wind that whips up dirt and sand, dealing 5d8 wind damage. Creatures who fail their save are also knocked back 1d4x5 ft.</p>\n\n\n\n",
+      "value": "<p>You exhale a blast of wind that whips up dirt and sand, dealing 5d8 wind damage. Creatures who fail their save are also knocked back 1d4x5 ft.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

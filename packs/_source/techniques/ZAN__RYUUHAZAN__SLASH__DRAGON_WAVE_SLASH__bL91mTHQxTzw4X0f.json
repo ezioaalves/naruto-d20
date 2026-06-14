@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>Make a melee attack against the target, which deals normal damage. If the creature is draconic or reptilian in nature, the attack deals additional damage based on the creature's size (as shown below), and provokes a save against Massive Damage.<br><br>The bonus damage is as follows: 4d4 (Small or smaller), 4d6 (Medium), Large (4d8), Huge (4d10), Gargantuan or larger (4d12).</p>\n\n\n\n",
+      "value": "<p>Make a melee attack against the target, which deals normal damage. If the creature is draconic or reptilian in nature, the attack deals additional damage based on the creature's size (as shown below), and provokes a save against Massive Damage.<br><br>The bonus damage is as follows: 4d4 (Small or smaller), 4d6 (Medium), Large (4d8), Huge (4d10), Gargantuan or larger (4d12).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

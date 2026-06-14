@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You unleash an almost invisible bird of Chakra-infused air that dives onto the area, inflicting 7d6+5 wind damage.</p>\n\n\n\n",
+      "value": "<p>You unleash an almost invisible bird of Chakra-infused air that dives onto the area, inflicting 7d6+5 wind damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -1,26 +1,32 @@
 import { MODULE_ID } from "../constants.mjs";
+import { chakraPoolTempPath } from "../flag-paths.mjs";
+import { resolveRankTechnique } from "./rank-buffs.mjs";
 import {
-  RANK_BUFF_FLAG,
-  RANK_BUFF_FLAG_PATH,
-  rankBuffDuration,
-  rankBuffFlagData,
-  resolveRankTechnique,
-} from "./rank-buffs.mjs";
-import {
-  STANCE_BUFF_FLAG,
-  STANCE_BUFF_FLAG_PATH,
-  STANCE_MODES,
-  findStanceBuffForTechnique,
-  isModeChoiceStance,
-  stanceBuffDuration,
-  stanceBuffFlagData,
-  stanceBuffName,
-  stanceModeById,
-} from "./stance-buffs.mjs";
+  MAINTENANCE_BUFF_FLAG,
+  MAINTENANCE_BUFF_FLAG_PATH,
+  MAINTENANCE_MODES,
+  findMaintenanceBuffForTechnique,
+  maintenanceBuffDuration,
+  maintenanceBuffFlagData,
+  maintenanceFacets,
+  maintenanceModeBuffName,
+  maintenanceModeById,
+  realMaintenanceBuffDuration,
+  resolveMaintenanceModel,
+} from "./maintenance-buffs.mjs";
 
 const SOURCE_FLAG = MODULE_ID;
 const DEFAULT_BUFF_PACK_ID = "naruto-d20.technique-buffs";
 const buffIndexCache = new Map();
+
+export function extractTemporaryChakraGrant(changes = []) {
+  return changes.reduce((total, change) => {
+    if (change?.target !== "temporaryChakra") return total;
+    if ((change.operator ?? "add") !== "add") return total;
+    const amount = Math.max(0, Number(change.formula ?? change.value ?? 0) || 0);
+    return total + amount;
+  }, 0);
+}
 
 /**
  * Entry point: orchestrate buff lookup → target resolution → application.
@@ -33,10 +39,21 @@ export async function applyTechniqueBuff(item, actor, action) {
 
   if (game.settings.get(MODULE_ID, "buffTargetFiltering") === "off") return;
 
-  // Per-round Dex/Str mode-choice stances follow their own self-buff lifecycle.
-  if (isModeChoiceStance(item)) {
-    await applyStanceModeBuff(item, actor);
-    return;
+  const facets = maintenanceFacets(item);
+  if (facets) {
+    if (facets.choice === "mode") {
+      await applyModeBuff(item, actor, null, facets.interval);
+      return;
+    }
+    if (
+      facets.resource === "hp" ||
+      facets.resource === "chakraDamage" ||
+      item.system.automation.maintenance.element
+    ) {
+      const duration = resolveBuffDurationFromAction(action);
+      await applyUpkeepBuff(item, actor, facets.interval, duration);
+      return;
+    }
   }
 
   const context = resolveTechniqueBuffContext(item);
@@ -60,7 +77,7 @@ export async function applyTechniqueBuff(item, actor, action) {
     await applyBuffToTarget(buffDoc, targetActor, {
       duration,
       level: context.level,
-      rankBuff: context.rankBuff,
+      maintenanceBuff: context.maintenanceBuff,
     });
   }
 }
@@ -70,27 +87,27 @@ export function clearBuffLookupCache() {
 }
 
 /**
- * Apply (or switch) a mode-choice stance buff on the performer. Each mode maps to
+ * Apply (or switch) a mode-choice maintenance buff on the performer. Each mode maps to
  * a "<technique> (Dexterity|Strength)" buff variant. Switching deletes the previous
- * mode's buff so only one stance buff is ever active for the technique. No chakra is
+ * mode's buff so only one maintenance buff is ever active for the technique. No chakra is
  * spent here — only the initial perform pays; round-to-round upkeep is free.
  */
-export async function applyStanceModeBuff(item, actor, modeId = null) {
+export async function applyModeBuff(item, actor, modeId = null, interval = 1) {
   if (!actor?.isOwner) return;
 
-  const resolvedModeId = modeId ?? (await promptStanceMode(item, { initial: true }));
+  const resolvedModeId = modeId ?? (await promptModeChoice(item, { initial: true }));
   if (!resolvedModeId || resolvedModeId === "break") {
-    await removeStanceBuff(actor, item.id);
+    await removeMaintenanceBuff(actor, item.id);
     return;
   }
 
-  const mode = stanceModeById(resolvedModeId);
+  const mode = maintenanceModeById(resolvedModeId);
   if (!mode) return;
 
-  const buffEntry = await resolveBuffMatch(stanceBuffName(item, mode));
+  const buffEntry = await resolveBuffMatch(maintenanceModeBuffName(item, mode));
   if (!buffEntry) {
     console.warn(
-      `naruto-d20 | No stance buff found named "${stanceBuffName(item, mode)}" in technique-buffs compendia.`,
+      `naruto-d20 | No mode buff found named "${maintenanceModeBuffName(item, mode)}" in technique-buffs compendia.`,
     );
     return;
   }
@@ -99,34 +116,92 @@ export async function applyStanceModeBuff(item, actor, modeId = null) {
   if (!buffDoc) return;
 
   // Drop any previously applied mode buff for this technique before applying the new one.
-  const existing = findStanceBuffForTechnique(actor, item.id);
+  const existing = findMaintenanceBuffForTechnique(actor, item.id);
   if (existing && existing.flags?.[SOURCE_FLAG]?.sourceId !== buffDoc.uuid) {
-    await removeStanceBuff(actor, existing.id);
+    await removeMaintenanceBuff(actor, existing.id);
   }
 
   await applyBuffToTarget(buffDoc, actor, {
-    duration: stanceBuffDuration(),
-    stanceBuff: stanceBuffFlagData({ sourceTechniqueId: item.id, modeId: mode.id }),
+    duration: maintenanceBuffDuration(interval),
+    maintenanceBuff: maintenanceBuffFlagData({ sourceTechniqueId: item.id, modeId: mode.id }),
   });
 }
 
-async function removeStanceBuff(actor, itemId) {
+/**
+ * Apply (or refresh) an HP-upkeep maintenance buff (Amatsu) on the performer. The buff
+ * is the per-turn tracker: it expires at turn start and carries the chosen damage
+ * element(s) so re-uses and the turn-start maintenance can read them back. The
+ * companion buff is looked up by the technique's exact name. No chakra is spent
+ * here — entry pays once and round-to-round upkeep is HP (handled in maintenance).
+ */
+export async function applyUpkeepBuff(item, actor, interval = 1, duration = null) {
+  if (!actor?.isOwner) return;
+
+  const { getActiveElements } = await import("./maintenance-element-damage.mjs");
+  const elements = getActiveElements(actor, item) ?? [];
+
+  const buffEntry = await resolveBuffMatch(item.name);
+  if (!buffEntry) {
+    console.warn(
+      `naruto-d20 | No upkeep maintenance buff found named "${item.name}" in technique-buffs compendia.`,
+    );
+    return;
+  }
+
+  const buffDoc = await resolveBuffDocument(buffEntry);
+  if (!buffDoc) return;
+
+  const facets = maintenanceFacets(item);
+  const model = resolveMaintenanceModel(facets, duration);
+
+  if (model === "duration") {
+    const totalRounds = Number(duration.value);
+    const startRound = game.combat?.round ?? null;
+    await applyBuffToTarget(buffDoc, actor, {
+      duration: realMaintenanceBuffDuration({ totalRounds, worldTime: game.time.worldTime }),
+      maintenanceBuff: maintenanceBuffFlagData({
+        sourceTechniqueId: item.id,
+        elements,
+        hasHeal: !!facets?.heal,
+        model: "duration",
+        totalRounds,
+        startRound,
+        interval,
+      }),
+    });
+    return;
+  }
+
+  await applyBuffToTarget(buffDoc, actor, {
+    duration: maintenanceBuffDuration(interval),
+    maintenanceBuff: maintenanceBuffFlagData({
+      sourceTechniqueId: item.id,
+      elements,
+      hasHeal: !!facets?.heal,
+    }),
+  });
+}
+
+async function removeMaintenanceBuff(actor, itemId) {
   if (!actor.items.has(itemId)) return;
   try {
     await actor.deleteEmbeddedDocuments("Item", [itemId]);
   } catch (err) {
     if (actor.items.has(itemId)) {
-      console.error(`naruto-d20 | failed to delete stance buff "${itemId}":`, err);
+      console.error(`naruto-d20 | failed to delete maintenance buff "${itemId}":`, err);
     }
   }
 }
 
 /**
- * Prompt the user to pick a stance mode (or break the stance). Reused for the initial
+ * Prompt the user to pick a maintenance mode (or break the stance). Reused for the initial
  * activation and the per-turn maintenance prompt.
  * Resolves to a mode id ("dex" / "str"), "break", or null (canceled initial activation).
  */
-export function promptStanceMode(item, { current = null, allowBreak = false, initial = false } = {}) {
+export function promptModeChoice(
+  item,
+  { current = null, allowBreak = false, initial = false } = {},
+) {
   return new Promise((resolve) => {
     let resolved = false;
     const done = (value) => {
@@ -136,7 +211,7 @@ export function promptStanceMode(item, { current = null, allowBreak = false, ini
     };
 
     const buttons = {};
-    for (const mode of STANCE_MODES) {
+    for (const mode of MAINTENANCE_MODES) {
       buttons[mode.id] = {
         label: game.i18n.localize(mode.labelKey),
         callback: () => done(mode.id),
@@ -145,24 +220,24 @@ export function promptStanceMode(item, { current = null, allowBreak = false, ini
     if (allowBreak) {
       buttons.break = {
         icon: '<i class="fas fa-times"></i>',
-        label: game.i18n.localize("NarutoD20.StanceBuff.Break"),
+        label: game.i18n.localize("NarutoD20.Maintenance.Break"),
         callback: () => done("break"),
       };
     }
 
     const messageKey = initial
-      ? "NarutoD20.StanceBuff.MessageInitial"
-      : "NarutoD20.StanceBuff.Message";
+      ? "NarutoD20.Maintenance.MessageInitial"
+      : "NarutoD20.Maintenance.Message";
 
     new Dialog({
-      title: game.i18n.format("NarutoD20.StanceBuff.Title", { name: item.name }),
+      title: game.i18n.format("NarutoD20.Maintenance.Title", { name: item.name }),
       content: `<p>${game.i18n.format(messageKey, { name: item.name })}</p>
         <ul>
-          <li>${game.i18n.localize("NarutoD20.StanceBuff.DexHint")}</li>
-          <li>${game.i18n.localize("NarutoD20.StanceBuff.StrHint")}</li>
+          <li>${game.i18n.localize("NarutoD20.Maintenance.DexHint")}</li>
+          <li>${game.i18n.localize("NarutoD20.Maintenance.StrHint")}</li>
         </ul>`,
       buttons,
-      default: stanceModeById(current)?.id ?? STANCE_MODES[0].id,
+      default: maintenanceModeById(current)?.id ?? MAINTENANCE_MODES[0].id,
       // Closing the initial prompt cancels; closing maintenance breaks the stance.
       close: () => done(initial ? null : allowBreak ? "break" : null),
     }).render(true);
@@ -174,13 +249,17 @@ export function promptStanceMode(item, { current = null, allowBreak = false, ini
  * require an explicit canvas target so debuffs are not accidentally self-applied.
  */
 function resolveTechniqueBuffContext(item) {
-  const rankBuff = resolveRankTechnique(item.name);
-  if (rankBuff) {
+  const rank = resolveRankTechnique(item.name);
+  if (rank) {
     return {
-      ...rankBuff,
+      ...rank,
       sourceTechniqueId: item.id,
-      duration: rankBuffDuration(rankBuff.interval),
-      rankBuff: rankBuffFlagData({ ...rankBuff, sourceTechniqueId: item.id }),
+      duration: maintenanceBuffDuration(rank.interval),
+      maintenanceBuff: maintenanceBuffFlagData({
+        sourceTechniqueId: item.id,
+        grantType: "paid",
+        key: rank.key,
+      }),
     };
   }
 
@@ -188,7 +267,7 @@ function resolveTechniqueBuffContext(item) {
     buffName: item.name,
     level: null,
     duration: null,
-    rankBuff: null,
+    maintenanceBuff: null,
     selfTarget: false,
   };
 }
@@ -382,14 +461,18 @@ export async function applyBuffToTarget(buffDoc, targetActor, options = null) {
     return;
   }
 
-  const { duration, level, rankBuff, stanceBuff } = normalizeBuffApplyOptions(options);
+  const { duration, level, maintenanceBuff } = normalizeBuffApplyOptions(options);
   const sourceId = buffDoc.uuid;
   const existing = findExistingAppliedBuff(targetActor, sourceId);
 
   if (existing) {
-    await refreshExistingBuff(existing, { duration, level, rankBuff, stanceBuff });
+    await refreshExistingBuff(existing, { duration, level, maintenanceBuff });
   } else {
-    await createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff, stanceBuff });
+    await createBuffOnTarget(buffDoc, targetActor, sourceId, {
+      duration,
+      level,
+      maintenanceBuff,
+    });
   }
 }
 
@@ -398,16 +481,14 @@ function normalizeBuffApplyOptions(options) {
     !options ||
     (!("duration" in Object(options)) &&
       !("level" in Object(options)) &&
-      !("rankBuff" in Object(options)) &&
-      !("stanceBuff" in Object(options)))
+      !("maintenanceBuff" in Object(options)))
   ) {
-    return { duration: options ?? null, level: null, rankBuff: null, stanceBuff: null };
+    return { duration: options ?? null, level: null, maintenanceBuff: null };
   }
   return {
     duration: options.duration ?? null,
     level: Number.isInteger(options.level) ? options.level : null,
-    rankBuff: options.rankBuff ?? null,
-    stanceBuff: options.stanceBuff ?? null,
+    maintenanceBuff: options.maintenanceBuff ?? null,
   };
 }
 
@@ -415,7 +496,7 @@ function findExistingAppliedBuff(targetActor, sourceId) {
   return targetActor.items.find((i) => i.flags?.[SOURCE_FLAG]?.sourceId === sourceId);
 }
 
-async function refreshExistingBuff(existing, { duration, level, rankBuff, stanceBuff }) {
+async function refreshExistingBuff(existing, { duration, level, maintenanceBuff }) {
   const updates = { "system.active": true };
   if (duration) {
     updates["system.duration.units"] = duration.units;
@@ -426,24 +507,29 @@ async function refreshExistingBuff(existing, { duration, level, rankBuff, stance
   if (level != null) {
     updates["system.level"] = level;
   }
-  if (rankBuff) {
-    updates[RANK_BUFF_FLAG_PATH] = rankBuff;
-  }
-  if (stanceBuff) {
-    updates[STANCE_BUFF_FLAG_PATH] = stanceBuff;
+  if (maintenanceBuff) {
+    updates[MAINTENANCE_BUFF_FLAG_PATH] = maintenanceBuff;
   }
   await existing.update(updates);
 }
 
-async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, level, rankBuff, stanceBuff }) {
+async function createBuffOnTarget(
+  buffDoc,
+  targetActor,
+  sourceId,
+  { duration, level, maintenanceBuff },
+) {
   const itemData = buffDoc.toObject();
   delete itemData._id;
+  const temporaryChakraGrant = extractTemporaryChakraGrant(itemData.system?.changes ?? []);
 
   itemData.flags ??= {};
   itemData.flags[SOURCE_FLAG] ??= {};
   itemData.flags[SOURCE_FLAG].sourceId = sourceId;
-  if (rankBuff) itemData.flags[SOURCE_FLAG][RANK_BUFF_FLAG] = rankBuff;
-  if (stanceBuff) itemData.flags[SOURCE_FLAG][STANCE_BUFF_FLAG] = stanceBuff;
+  if (maintenanceBuff) itemData.flags[SOURCE_FLAG][MAINTENANCE_BUFF_FLAG] = maintenanceBuff;
+  if (temporaryChakraGrant > 0) {
+    itemData.flags[SOURCE_FLAG].temporaryChakra = { remaining: temporaryChakraGrant };
+  }
 
   itemData.system ??= {};
   if (duration) {
@@ -459,4 +545,12 @@ async function createBuffOnTarget(buffDoc, targetActor, sourceId, { duration, le
   itemData.system.active = true;
 
   await targetActor.createEmbeddedDocuments("Item", [itemData]);
+
+  if (temporaryChakraGrant > 0) {
+    const currentTemp = Math.max(
+      0,
+      Number(targetActor.flags?.[MODULE_ID]?.chakra?.pool?.temp ?? 0) || 0,
+    );
+    await targetActor.update({ [chakraPoolTempPath]: currentTemp + temporaryChakraGrant });
+  }
 }

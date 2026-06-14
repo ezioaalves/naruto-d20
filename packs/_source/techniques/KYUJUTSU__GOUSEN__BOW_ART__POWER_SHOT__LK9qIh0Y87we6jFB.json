@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>You draw the string of your greatbow to it's fullest potential and loose a powerful shot. Make an attack against the target. If the target is within 5 range increments, you can apply the Power Attack feat (despite it not being a melee attack) to the attack.<br><br>You may choose to increase the perform time to a full-round action to gain a +2 bonus to the attack roll.</p>\n\n\n\n",
+      "value": "<p>You draw the string of your greatbow to it's fullest potential and loose a powerful shot. Make an attack against the target. If the target is within 5 range increments, you can apply the Power Attack feat (despite it not being a melee attack) to the attack.<br><br>You may choose to increase the perform time to a full-round action to gain a +2 bonus to the attack roll.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> E, F, S</p>\n\n<hr>\n\n<p>You focus flames into a single shuriken and send it flying at the target, dealing 1d6 fire damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1 (maximum +5).</p>\n\n",
+      "value": "<p>You focus flames into a single shuriken and send it flying at the target, dealing 1d6 fire damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1 (maximum +5).</p>\n\n",
       "summary": "",
       "instructions": ""
     },

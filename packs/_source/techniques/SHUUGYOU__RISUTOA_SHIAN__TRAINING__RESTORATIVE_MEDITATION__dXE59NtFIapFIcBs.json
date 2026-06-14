@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Chakra is a ninja's most important tool, and as such, being able to regain chakra during sleep is very important. This training involves a special form of meditation used when sleeping. After finishing the training, the user can enter a deep REM-like sleep, that helps restore chakra reserves better than normal sleep. The user uses Constitution or Wisdom (whichever they derive their bonus chakra pool from) to determine chakra reserve recovered in addition to their normal recovery based on level.<br><br>The technique does not cost any chakra, but it does require the user have at least 1/10th of its original chakra.</p>\n",
+      "value": "<p>Chakra is a ninja's most important tool, and as such, being able to regain chakra during sleep is very important. This training involves a special form of meditation used when sleeping. After finishing the training, the user can enter a deep REM-like sleep, that helps restore chakra reserves better than normal sleep. The user uses Constitution or Wisdom (whichever they derive their bonus chakra pool from) to determine chakra reserve recovered in addition to their normal recovery based on level.<br><br>The technique does not cost any chakra, but it does require the user have at least 1/10th of its original chakra.</p>\n",
       "summary": "",
       "instructions": ""
     },

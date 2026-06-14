@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Phantasm)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>This technique is identical to Shougenzou no Jutsu (p141), except as above, and instead you get to make 1 minor change per level, or 1 advanced change per 3 levels. An advanced change is a significant detail, such as the color of a room or adding/removing a reasonably sized feature like a door or tree. It can also be used to make objects of Medium size or smaller appear or disappear. As with minor changes, such illusions cannot affect or harm creatures directly.</p>\n\n\n\n",
+      "value": "<p>This technique is identical to Shougenzou no Jutsu (p141), except as above, and instead you get to make 1 minor change per level, or 1 advanced change per 3 levels. An advanced change is a significant detail, such as the color of a room or adding/removing a reasonably sized feature like a door or tree. It can also be used to make objects of Medium size or smaller appear or disappear. As with minor changes, such illusions cannot affect or harm creatures directly.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

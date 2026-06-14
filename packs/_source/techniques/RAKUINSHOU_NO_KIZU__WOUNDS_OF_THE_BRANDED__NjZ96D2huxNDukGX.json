@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>This technique was created by the main house of the Hyuuga clan in conjunction with Itami no Rakuin to keep the branch house(s) serving loyally. It is mainly taught to those of the main house once they reach the rank of Chuunin. The target must be affected by Itami no Rakuin, and suffers one of the following effects (your choice):<br><br>- Headache: The subject is @Condition[dazed;duration=1]{dazed} for 1 round.<br>- Intense Pain: The subject is @Condition[stunned]{stunned} for 1d4 rounds (Fortitude negates).<br>- Severe Pain: The subject suffers 5d6 damage (Fortitude halves).<br>- Death Penalty: The subject must make a save against massive damage.</p>\n\n\n\n",
+      "value": "<p>This technique was created by the main house of the Hyuuga clan in conjunction with Itami no Rakuin to keep the branch house(s) serving loyally. It is mainly taught to those of the main house once they reach the rank of Chuunin. The target must be affected by Itami no Rakuin, and suffers one of the following effects (your choice):<br><br>- Headache: The subject is @Condition[dazed;duration=1]{dazed} for 1 round.<br>- Intense Pain: The subject is @Condition[stunned]{stunned} for 1d4 rounds (Fortitude negates).<br>- Severe Pain: The subject suffers 5d6 damage (Fortitude halves).<br>- Death Penalty: The subject must make a save against massive damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

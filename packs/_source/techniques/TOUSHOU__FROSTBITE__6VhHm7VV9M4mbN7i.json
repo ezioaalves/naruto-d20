@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Hyouton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You breathe out a gust of freezing air that deals 3d6 cold damage. Each creature in the area also suffers 1d4 temporary Strength damage (Fortitude negates). If used in very cold environments, the damage is reduced to<br><br>2d6 cold. A strong wind may, at your GM's discretion, nullify this technique. Creatures immune to cold are also immune to the Strength damage.</p>\n\n\n\n",
+      "value": "<p>You breathe out a gust of freezing air that deals 3d6 cold damage. Each creature in the area also suffers 1d4 temporary Strength damage (Fortitude negates). If used in very cold environments, the damage is reduced to<br><br>2d6 cold. A strong wind may, at your GM's discretion, nullify this technique. Creatures immune to cold are also immune to the Strength damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

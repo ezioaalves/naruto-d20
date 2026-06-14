@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> C, Mas, S</p>\n\n<hr>\n\n<p>You create a globe of rapidly spinning winds around you, limiting your fall speed to 10 ft per round, and you will not suffer damage when landing. This technique can be used once per day, even while in mid-air, to slow your descent and land safely.</p>\n\n\n<p><b>Mastery:</b> The third and fifth steps each allow you to use this technique an additional time per day.</p>\n",
+      "value": "<p>You create a globe of rapidly spinning winds around you, limiting your fall speed to 10 ft per round, and you will not suffer damage when landing. This technique can be used once per day, even while in mid-air, to slow your descent and land safely.</p>\n\n\n<p><b>Mastery:</b> The third and fifth steps each allow you to use this technique an additional time per day.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Katon)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> E, Mas, S</p>\n\n<hr>\n\n<p>A powerful improved version of the classic Uchiha fireball technique, you fire a flaming orb that travels up to the technique's range (your choice) as a line attack, then explodes. Creatures caught in the explosive Burst take 7d6 fire damage, while creatures only caught in the Line take half as much damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level of 18d6 (whichever is lower).</p>\n<p><b>Mastery:</b> Increase the range by 5 ft per step, or increase the radius of the Burst by 5 ft per two steps (chosen when performing).</p>\n",
+      "value": "<p>A powerful improved version of the classic Uchiha fireball technique, you fire a flaming orb that travels up to the technique's range (your choice) as a line attack, then explodes. Creatures caught in the explosive Burst take 7d6 fire damage, while creatures only caught in the Line take half as much damage.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the damage by 1d6, up to 1d6 per level of 18d6 (whichever is lower).</p>\n<p><b>Mastery:</b> Increase the range by 5 ft per step, or increase the radius of the Burst by 5 ft per two steps (chosen when performing).</p>\n",
       "summary": "",
       "instructions": ""
     },

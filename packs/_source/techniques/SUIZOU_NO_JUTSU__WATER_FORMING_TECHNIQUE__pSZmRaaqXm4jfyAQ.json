@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> C, H, Mas</p>\n\n<hr>\n\n<p>You spit out 10 Litres of water per level. The water is pure and drinkable, and can be used as any normal water could, but it lasts for only 3 rounds (As such, drinking it will not quench your thirst). If used as a swift action, increase the Perform Requirements by 8 and the Cost by 2.<br><br>Using this technique in a hot and dry environment (like a desert) causes you to take 2d6 damage.<br><br>This technique can be used once per day.</p>\n\n\n<p><b>Mastery:</b> The second and fourth step each allow you to use this technique an additional time per day.</p>\n",
+      "value": "<p>You spit out 10 Litres of water per level. The water is pure and drinkable, and can be used as any normal water could, but it lasts for only 3 rounds (As such, drinking it will not quench your thirst). If used as a swift action, increase the Perform Requirements by 8 and the Cost by 2.<br><br>Using this technique in a hot and dry environment (like a desert) causes you to take 2d6 damage.<br><br>This technique can be used once per day.</p>\n\n\n<p><b>Mastery:</b> The second and fourth step each allow you to use this technique an additional time per day.</p>\n",
       "summary": "",
       "instructions": ""
     },

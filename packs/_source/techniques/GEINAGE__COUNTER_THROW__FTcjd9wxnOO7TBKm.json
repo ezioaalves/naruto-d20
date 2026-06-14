@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Chakra Control)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> Mas</p>\n\n<hr>\n\n<p>You gain a +2 bonus to checks to defend against grapple, bull rush, trip and overrun attempts made against you while you are under the effects of Kinobori or Tadayou. This bonus does not apply when trying to escape a grapple.</p>\n\n\n<p><b>Mastery:</b> The second and fourth steps increase the bonus by +1 each.</p>\n",
+      "value": "<p>You gain a +2 bonus to checks to defend against grapple, bull rush, trip and overrun attempts made against you while you are under the effects of Kinobori or Tadayou. This bonus does not apply when trying to escape a grapple.</p>\n\n\n<p><b>Mastery:</b> The second and fourth steps increase the bonus by +1 each.</p>\n",
       "summary": "",
       "instructions": ""
     },

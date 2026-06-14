@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You send Chakra into the area around you, forming a concealing barrier. Any creature outside the area trying to See (Through) Chakra or Sense Chakra against anything inside the area is unable to detect anything with those senses.<br><br>Original author's note: Taken directly from the fanfiction Foxhound, though its name was changed from Hikenshutsu Ryouiki.</p>\n\n\n\n",
+      "value": "<p>You send Chakra into the area around you, forming a concealing barrier. Any creature outside the area trying to See (Through) Chakra or Sense Chakra against anything inside the area is unable to detect anything with those senses.<br><br>Original author's note: Taken directly from the fanfiction Foxhound, though its name was changed from Hikenshutsu Ryouiki.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

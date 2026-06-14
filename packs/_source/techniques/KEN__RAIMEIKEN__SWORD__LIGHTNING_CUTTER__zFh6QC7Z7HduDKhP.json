@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 20 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 21</p>\n\n<p><b>Components:</b> F, Mas, Mob</p>\n\n<hr>\n\n<p>You must be outside to use this technique, and most (or all) of the sky must be covered in clouds for this technique to work. You call forth lightning to surge into your weapon, which allows you to deal 3d6 bonus electric damage the next time you hit with it. If you hit a creature that is soaking wet or wearing a lot of metal, it is also @Condition[stunned]{stunned} for 1d3 rounds (Fortitude negates). CR applies to the entire effect.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to ignore the required weather conditions. The fifth step also allows you to use this technique indoors.<br><br>The mastery for Raimeiken also affects Raimeiken Ni no Tachi, and vice versa.</p>\n",
+      "value": "<p>You must be outside to use this technique, and most (or all) of the sky must be covered in clouds for this technique to work. You call forth lightning to surge into your weapon, which allows you to deal 3d6 bonus electric damage the next time you hit with it. If you hit a creature that is soaking wet or wearing a lot of metal, it is also @Condition[stunned]{stunned} for 1d3 rounds (Fortitude negates). CR applies to the entire effect.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to ignore the required weather conditions. The fifth step also allows you to use this technique indoors.<br><br>The mastery for Raimeiken also affects Raimeiken Ni no Tachi, and vice versa.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 4</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 14</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You focus Chakra into your nose to amplify your sense of smell, gaining the ability to detect odors and smells you normally wouldn't be able to.<br><br>You gain an ability similar to Scent, but it's range is reduced to 10 ft. (20 ft. upwind, 0 ft. downwind). A particularly odorous source can be detected downwind at 10 ft. (strong scent) or 15 ft. (overpowering scent). When you come within 5 ft. of the source, you must make a Wisdom check (DC 20) in order to pinpoint its location. You are also not capable of tracking by smell.</p>\n\n\n\n",
+      "value": "<p>You focus Chakra into your nose to amplify your sense of smell, gaining the ability to detect odors and smells you normally wouldn't be able to.<br><br>You gain an ability similar to Scent, but it's range is reduced to 10 ft. (20 ft. upwind, 0 ft. downwind). A particularly odorous source can be detected downwind at 10 ft. (strong scent) or 15 ft. (overpowering scent). When you come within 5 ft. of the source, you must make a Wisdom check (DC 20) in order to pinpoint its location. You are also not capable of tracking by smell.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

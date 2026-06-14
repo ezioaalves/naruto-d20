@@ -1,8 +1,5 @@
-import { MODULE_ID } from "../constants.mjs";
+import { getRankMaintenanceFlag } from "./maintenance-buffs.mjs";
 
-export const RANK_BUFF_FLAG = "rankBuff";
-export const RANK_BUFF_FLAG_PATH = `flags.${MODULE_ID}.${RANK_BUFF_FLAG}`;
-export const RANK_KEYS = ["KOUSOKU", "JOURYOKU"];
 export const RANK_GRANT_TYPES = ["paid", "temp", "bonus"];
 export const RANK_MASTERY_FREE_ROUNDS = 5;
 export const RANK_MASTERY_REQUIRED_STEP = 5;
@@ -89,68 +86,22 @@ export async function consumeRankMasteryFreeUse(item) {
   return true;
 }
 
-export function findRankTechniqueForBuff(actor, rankBuffFlag) {
-  if (!actor || !rankBuffFlag) return null;
-
-  if (rankBuffFlag.sourceTechniqueId) {
-    const item = actor.items.get(rankBuffFlag.sourceTechniqueId);
-    if (item) return item;
-  }
-
-  return actor.items.find((item) => {
-    const context = resolveRankTechnique(item.name);
-    return context?.key === rankBuffFlag.key && context?.level === rankBuffFlag.level;
-  });
-}
-
 export function rankMaintenanceForLevel(level) {
   return RANK_MAINTENANCE[Number(level)] ?? null;
 }
 
-export function rankBuffDuration(interval) {
-  return {
-    units: "round",
-    value: String(interval),
-    end: "turnStart",
-    start: game.time.worldTime,
-  };
-}
-
-export function rankBuffFlagData(context) {
-  if (!context) return null;
-  return {
-    key: context.key,
-    grantType: "paid",
-    level: context.level,
-    cost: context.cost,
-    interval: context.interval,
-    sourceTechniqueId: context.sourceTechniqueId ?? null,
-  };
-}
-
-export function getRankBuffFlag(item) {
-  const flag = item?.flags?.[MODULE_ID]?.[RANK_BUFF_FLAG] ?? null;
-  // key "" (sheet's "None" option) or anything malformed counts as no flag
-  if (!flag || !RANK_KEYS.includes(flag.key)) return null;
-  return flag;
-}
-
-export function isRankBuffItem(item) {
-  return Boolean(getRankBuffFlag(item));
-}
-
 export function getRankGrantType(item) {
-  const flag = getRankBuffFlag(item);
+  const flag = getRankMaintenanceFlag(item);
   if (!flag) return null;
   return RANK_GRANT_TYPES.includes(flag.grantType) ? flag.grantType : "paid";
 }
 
 export function rankGrantLevel(item) {
-  const flag = getRankBuffFlag(item);
+  const flag = getRankMaintenanceFlag(item);
   if (!flag) return 0;
   const level =
     getRankGrantType(item) === "paid"
-      ? flag.level ?? item.system?.level ?? 0
-      : item.system?.level ?? 0;
+      ? (flag.level ?? item.system?.level ?? 0)
+      : (item.system?.level ?? 0);
   return Math.max(0, Number(level) || 0);
 }

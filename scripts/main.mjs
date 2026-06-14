@@ -10,7 +10,8 @@
  *  [6] "pf1RegisterDamageTypes"    → Register elemental damage types
  *  [7] Foundry "setup"             → Push Chakra tab, register UI hooks
  *  [8] "preCreateActor"            → Seed default flags on new actors
- *  [9] "pf1ActorRest"              → Restore chakra pool, clear temp, recover reserve
+ *  [9] Foundry "ready"             → GM-only one-time migrations
+ * [10] "pf1ActorRest"              → Restore chakra pool, clear temp, recover reserve
  */
 
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
@@ -24,6 +25,7 @@ import {
   installChakraTabPatch,
   installSynckitHeaderButton,
   installTechniqueGetChatDataPatch,
+  installTechniqueGetDescriptionPatch,
 } from "./ui/render-patch.mjs";
 import { installTechniqueSaveDCPatch } from "./data/technique-save-dc.mjs";
 import { installTechniqueRollDataPatch } from "./data/technique-rolldata.mjs";
@@ -36,12 +38,17 @@ import { registerSummaryStats } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
-import { registerExpiredBuffCleanup } from "./automation/buff-expiry.mjs";
+import { registerTurnMaintenance } from "./automation/turn-maintenance.mjs";
+import { registerElementDamage } from "./automation/maintenance-element-damage.mjs";
 import { registerRankRollData } from "./automation/rank-rolldata.mjs";
 import { registerRankGrantConfig } from "./ui/rank-grant-config.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
 import { registerChakraConditions } from "./data/chakra-conditions.mjs";
+import {
+  MAINTENANCE_MIGRATION_SETTING,
+  runMaintenanceMigrations,
+} from "./data/maintenance-migration.mjs";
 
 // ── [1] init ──────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -68,6 +75,7 @@ Hooks.once("init", () => {
     `modules/${MODULE_ID}/templates/actor/summary-stats.hbs`,
     `modules/${MODULE_ID}/templates/actor/tap-reserves-dialog.hbs`,
     `modules/${MODULE_ID}/templates/item/technique-sheet.hbs`,
+    `modules/${MODULE_ID}/templates/item/technique-header.hbs`,
     `modules/${MODULE_ID}/templates/item/rank-grant-config.hbs`,
     `modules/${MODULE_ID}/templates/actor/technique-synckit.hbs`,
     `modules/${MODULE_ID}/templates/apps/technique-browser.hbs`,
@@ -153,6 +161,13 @@ Hooks.once("init", () => {
     name: "NarutoD20.Settings.DeductLearningChakra.Name",
     hint: "NarutoD20.Settings.DeductLearningChakra.Hint",
   });
+
+  game.settings.register(MODULE_ID, MAINTENANCE_MIGRATION_SETTING, {
+    scope: "world",
+    config: false,
+    type: Number,
+    default: 0,
+  });
 });
 
 // ── [2] pf1PostInit ───────────────────────────────────────────────────────
@@ -190,6 +205,7 @@ Hooks.once("setup", () => {
   installChakraTabPatch(); // _renderInner wrap — must run before first render
   installSynckitHeaderButton(); // _getHeaderButtons wrap — "Sync Techniques" title-bar button
   installTechniqueGetChatDataPatch(); // inject "Chakra Resistance" into item summary properties
+  installTechniqueGetDescriptionPatch(); // prepend technique stat-block header into chat card / item summary
   registerLearnCheckListeners(); // .shinobi-roll + learn-check tooltips + chakra max tooltips
   registerLearnCardContextMenu(); // learn chat card → right-click "Add Action Point"
   registerMasterCardContextMenu(); // mastery chat card → right-click "Add Action Point"
@@ -199,7 +215,8 @@ Hooks.once("setup", () => {
   registerFeatListListeners(); // Naruto Browse button on the Features tab
   registerFeatGrantDeletion(); // cascade-delete feat supplements on feat removal
   registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn
-  registerExpiredBuffCleanup(); // delete module automation buffs when their duration expires
+  registerTurnMaintenance(); // start-of-turn maintenance + spent-buff cleanup
+  registerElementDamage(); // type configured maintenance-element attack damage at roll time
   registerRankRollData(); // KOUSOKU/JOURYOKU effective rank (paid/temp/bonus + armor/condition penalties)
   registerRankGrantConfig(); // "Naruto Rank" grant section on PF1e buff sheets
   registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog
@@ -218,7 +235,12 @@ Hooks.on("preCreateActor", (doc, data) => {
   }
 });
 
-// ── [9] pf1ActorRest ─────────────────────────────────────────────────────
+// ── [9] ready ────────────────────────────────────────────────────────────
+Hooks.once("ready", async () => {
+  await runMaintenanceMigrations();
+});
+
+// ── [10] pf1ActorRest ────────────────────────────────────────────────────
 Hooks.on("pf1ActorRest", (actor, options) => {
   onActorRest(actor, options);
 });

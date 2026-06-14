@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> Mob, P</p>\n\n<hr>\n\n<p>You can only use this technique while wearing light or no armor. You make a charge attack against the target, gaining an additional +1 bonus to the attack roll and increasing your base speed by 10 ft for the duration of the charge.</p>\n\n\n\n",
+      "value": "<p>You can only use this technique while wearing light or no armor. You make a charge attack against the target, gaining an additional +1 bonus to the attack roll and increasing your base speed by 10 ft for the duration of the charge.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

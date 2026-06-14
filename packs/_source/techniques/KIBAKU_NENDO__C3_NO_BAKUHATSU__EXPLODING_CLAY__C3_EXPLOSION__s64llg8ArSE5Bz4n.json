@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 25</p>\n\n<p><b>Learn DC:</b> 31 | <b>Successes:</b> 8</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> C, M, S</p>\n\n<hr>\n\n<p>You focus immense destructive power into a Small, flying bird sculpture, having statistics according to Kibaku Nendo, but its flight speed is doubled, and the explosion is a 100 ft Burst that deals 13d8 fire damage.</p>\n\n\n\n",
+      "value": "<p>You focus immense destructive power into a Small, flying bird sculpture, having statistics according to Kibaku Nendo, but its flight speed is doubled, and the explosion is a 100 ft Burst that deals 13d8 fire damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Enhancement)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 23 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 11 | <b>Perform DC:</b> 25</p>\n\n<p><b>Components:</b> C, P</p>\n\n<hr>\n\n<p>You draw out the bones in your body, forming a protective but deadly armor. You gain a +3 natural armor bonus to Defense, and any creature attacking you with a natural weapon, or a held weapon of Small size or smaller, takes 1d4 piercing damage even if it misses. Your unarmed attacks deal damage as though they were claw attacks of a creature one size larger than you.Once every three rounds, you can spend a full-round action to spin wildly, making an attack at your highest attack bonus against all adjacent opponents.</p>\n\n\n\n",
+      "value": "<p>You draw out the bones in your body, forming a protective but deadly armor. You gain a +3 natural armor bonus to Defense, and any creature attacking you with a natural weapon, or a held weapon of Small size or smaller, takes 1d4 piercing damage even if it misses. Your unarmed attacks deal damage as though they were claw attacks of a creature one size larger than you.Once every three rounds, you can spend a full-round action to spin wildly, making an attack at your highest attack bonus against all adjacent opponents.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

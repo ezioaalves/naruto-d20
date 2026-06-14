@@ -2,6 +2,29 @@ import { MODULE_ID } from "../constants.mjs";
 import { chakraPoolTempPath, chakraPoolValuePath, chakraReserveValuePath } from "../flag-paths.mjs";
 import { checkAndUpdateConditions } from "./chakra-conditions.mjs";
 
+export function allocateTemporaryChakraGrantSpend(items, amount) {
+  let remaining = Math.max(0, Number(amount) || 0);
+  const updates = [];
+
+  for (const item of items ?? []) {
+    if (remaining <= 0) break;
+    const grant = Math.max(
+      0,
+      Number(item?.flags?.[MODULE_ID]?.temporaryChakra?.remaining ?? 0) || 0,
+    );
+    if (grant <= 0) continue;
+
+    const spent = Math.min(remaining, grant);
+    updates.push({
+      _id: item.id,
+      [`flags.${MODULE_ID}.temporaryChakra.remaining`]: grant - spent,
+    });
+    remaining -= spent;
+  }
+
+  return { updates, remaining };
+}
+
 export function availableChakra(actor) {
   const chakra = actor?.flags?.[MODULE_ID]?.chakra ?? {};
   const tempValue = Math.max(0, Number(chakra.pool?.temp ?? 0) || 0);
@@ -47,6 +70,8 @@ export function calculateChakraSpend(actor, cost) {
     temp: tempValue - fromTemp,
     pool: newPool,
     reserve: newReserve,
+    fromTemp,
+    fromPool,
     summary: spendParts.join(", ") || "0",
   };
 }
@@ -57,6 +82,11 @@ export async function applyChakraSpend(actor, spend) {
     [chakraPoolValuePath]: spend.pool,
     [chakraReserveValuePath]: spend.reserve,
   });
+
+  const grantSpend = allocateTemporaryChakraGrantSpend(actor.items, spend.fromTemp);
+  if (grantSpend.updates.length && actor.updateEmbeddedDocuments) {
+    await actor.updateEmbeddedDocuments("Item", grantSpend.updates);
+  }
 
   await checkAndUpdateConditions(actor);
 }

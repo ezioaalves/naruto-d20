@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> H, P</p>\n\n<hr>\n\n<p>The user hardens the blood near the surface of his skin, making him more difficult to cut through. The user gain DR 5/Piercing for the duration of the technique.<br><br>Special: The user may use this technique as an instant action, using up one of his uses of Kawarimi no Jutsu.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n",
+      "value": "<p>The user hardens the blood near the surface of his skin, making him more difficult to cut through. The user gain DR 5/Piercing for the duration of the technique.<br><br>Special: The user may use this technique as an instant action, using up one of his uses of Kawarimi no Jutsu.</p>\n\n<hr><p><b>Requires:</b> Blood Mage (f), Gift of Blood (a)</p>\n",
       "summary": "",
       "instructions": ""
     },

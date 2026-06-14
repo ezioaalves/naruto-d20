@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Genjutsu (Doujutsu)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> S</p>\n\n<hr>\n\n<p>The subject's mind is forced into a distinct thought pattern, allowing you to more easily anticipate its movements, granting you a +2 insight bonus to attack rolls, skill checks and Defense against the subject. This technique can only affect a single target at a time, and can be dispelled once it is detected (the subject may be able to realize it is subjected to a trick).</p>\n\n\n\n",
+      "value": "<p>The subject's mind is forced into a distinct thought pattern, allowing you to more easily anticipate its movements, granting you a +2 insight bonus to attack rolls, skill checks and Defense against the subject. This technique can only affect a single target at a time, and can be dispelled once it is detected (the subject may be able to realize it is subjected to a trick).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

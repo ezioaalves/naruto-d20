@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Medical, Ninjutsu)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Each time the user takes this training jutsu he is able to build immunity to another type of poison granting the user a +1 to save DCs against that type if the Fortitude DC of the poison is under 22. Pick from Contact, Ingested, Inhaled, or Injury.</p>\n\n<hr><p><b>Requires:</b> Expert Healer (a)</p>\n<p><b>Mastery:</b> Each odd step of mastery after the first grants a +1 save to DCs of poisons of that kind.<br><br>Expendable Components -Poisons and antidotes equal to a purchase DC of 20.</p>\n",
+      "value": "<p>Each time the user takes this training jutsu he is able to build immunity to another type of poison granting the user a +1 to save DCs against that type if the Fortitude DC of the poison is under 22. Pick from Contact, Ingested, Inhaled, or Injury.</p>\n\n<hr><p><b>Requires:</b> Expert Healer (a)</p>\n<p><b>Mastery:</b> Each odd step of mastery after the first grants a +1 save to DCs of poisons of that kind.<br><br>Expendable Components -Poisons and antidotes equal to a purchase DC of 20.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 9</p>\n<p><b>Chakra Cost:</b> 14</p>\n\n<p><b>Learn DC:</b> 25 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 13 | <b>Perform DC:</b> 29</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You send forth waves of Chakra through the ground, compressing and collapsing a large area of soft ground (such as loose dirt or sand). The technique's area reaches below the surface, up to 5 foot per level deep. Any creatures that are underground suffer 9d10 damage.</p>\n\n\n\n",
+      "value": "<p>You send forth waves of Chakra through the ground, compressing and collapsing a large area of soft ground (such as loose dirt or sand). The technique's area reaches below the surface, up to 5 foot per level deep. Any creatures that are underground suffer 9d10 damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

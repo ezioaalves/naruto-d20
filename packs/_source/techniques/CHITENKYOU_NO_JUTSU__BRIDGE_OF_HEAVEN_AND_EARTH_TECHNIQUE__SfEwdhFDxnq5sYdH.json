@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 8</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 23</p>\n\n<p><b>Components:</b> H, Mas</p>\n\n<hr>\n\n<p>You create a stairway or a bridge from rock and dirt, which begins in your square and covers 5 ft. per level. It can have a slope up to 45 degrees, either upward or downward. The construction is 15 ft. wide, an a single 5 ft. square can support a creature of up to 250 lbs.</p>\n\n\n<p><b>Mastery:</b> The second and fourth step increase the width of the construction by 10 ft each.</p>\n",
+      "value": "<p>You create a stairway or a bridge from rock and dirt, which begins in your square and covers 5 ft. per level. It can have a slope up to 45 degrees, either upward or downward. The construction is 15 ft. wide, an a single 5 ft. square can support a creature of up to 250 lbs.</p>\n\n\n<p><b>Mastery:</b> The second and fourth step increase the width of the construction by 10 ft each.</p>\n",
       "summary": "",
       "instructions": ""
     },

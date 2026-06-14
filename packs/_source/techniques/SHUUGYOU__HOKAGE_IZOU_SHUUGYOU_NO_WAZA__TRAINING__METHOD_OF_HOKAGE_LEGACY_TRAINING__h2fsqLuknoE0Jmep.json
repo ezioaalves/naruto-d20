@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Training (Ninjutsu)</p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> </p>\n\n<p><b>Learn DC:</b> 27 | <b>Successes:</b> 6</p>\n<p><b>Perform:</b>  | <b>Perform DC:</b> </p>\n\n<p><b>Components:</b> None</p>\n\n<hr>\n\n<p>Using a host of clones to improve the efficiency of your training. When you start to learn a technique, you may spend an Action Point to gain +10 to the Learn check, and reduce the time per attempt by half (before applying time reductions from your Learn check result). This does not apply to mastering techniques.<br><br>If used, you suffer 40d6 nonlethal damage at the end of the training day (or 20d6 if only half a day was spent), though the damage cannot exceed your maximum hp.<br><br>Note: This training technique is extremely powerful and should be denied to player characters.</p>\n\n\n\n",
+      "value": "<p>Using a host of clones to improve the efficiency of your training. When you start to learn a technique, you may spend an Action Point to gain +10 to the Learn check, and reduce the time per attempt by half (before applying time reductions from your Learn check result). This does not apply to mastering techniques.<br><br>If used, you suffer 40d6 nonlethal damage at the end of the training day (or 20d6 if only half a day was spent), though the damage cannot exceed your maximum hp.<br><br>Note: This training technique is extremely powerful and should be denied to player characters.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

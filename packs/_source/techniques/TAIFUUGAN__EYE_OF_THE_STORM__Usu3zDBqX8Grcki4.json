@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 30</p>\n\n<p><b>Learn DC:</b> 30 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 18 | <b>Perform DC:</b> 34</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>Using a large amount of Chakra, you can intensify the power of an existing storm for a short time. Creatures in the area suffer 6d10 slashing damage from violent winds, 3d8 bludgeoning damage from flying debris, and 4d8 electric damage from flashes of lightning. Structures take double damage. Three Fortitude saves can be made to halve the damage, one save for each damage type.</p>\n\n\n\n",
+      "value": "<p>Using a large amount of Chakra, you can intensify the power of an existing storm for a short time. Creatures in the area suffer 6d10 slashing damage from violent winds, 3d8 bludgeoning damage from flying debris, and 4d8 electric damage from flashes of lightning. Structures take double damage. Three Fortitude saves can be made to halve the damage, one save for each damage type.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

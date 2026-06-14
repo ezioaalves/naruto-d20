@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 12</p>\n<p><b>Chakra Cost:</b> 22</p>\n\n<p><b>Learn DC:</b> 28 | <b>Successes:</b> 7</p>\n<p><b>Perform:</b> 16 | <b>Perform DC:</b> 32</p>\n\n<p><b>Components:</b> C, H, M</p>\n\n<hr>\n\n<p>This powerful seal is used by the main house of the Hyuuga clan, to brand those of the branch house, serving to keep them in check by allowing a sufficiently skilled member of the main house to use Rakuinshou no Kizu to cause pain or even death. Upon completion, the target is @Condition[fatigued]{fatigued} for 2d6+2 hours.<br><br>The seal takes up a seal slot, and can only be removed by someone with the same Chakra signature as the one who placed it. If the subject dies, its bloodline and templates (if any) become sealed, making it look as though they had no bloodline or template(s) at all.</p>\n\n\n\n",
+      "value": "<p>This powerful seal is used by the main house of the Hyuuga clan, to brand those of the branch house, serving to keep them in check by allowing a sufficiently skilled member of the main house to use Rakuinshou no Kizu to cause pain or even death. Upon completion, the target is @Condition[fatigued]{fatigued} for 2d6+2 hours.<br><br>The seal takes up a seal slot, and can only be removed by someone with the same Chakra signature as the one who placed it. If the subject dies, its bloodline and templates (if any) become sealed, making it look as though they had no bloodline or template(s) at all.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

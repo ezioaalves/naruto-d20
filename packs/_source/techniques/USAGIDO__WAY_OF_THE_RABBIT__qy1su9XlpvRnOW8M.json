@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 22 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 10 | <b>Perform DC:</b> 24</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This seal is designed to conceal and contain a portion of a creature's strength. The target takes a -2 penalty to Strength and Speed Ranks, Fortitude and Reflex saves, Defense and attack and weapon damage rolls. Its maximum Chakra Pool is reduced by 10. The can be dispelled by its bearer by concentrating for a move action.</p>\n\n\n\n",
+      "value": "<p>This seal is designed to conceal and contain a portion of a creature's strength. The target takes a -2 penalty to Strength and Speed Ranks, Fortitude and Reflex saves, Defense and attack and weapon damage rolls. Its maximum Chakra Pool is reduced by 10. The can be dispelled by its bearer by concentrating for a move action.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

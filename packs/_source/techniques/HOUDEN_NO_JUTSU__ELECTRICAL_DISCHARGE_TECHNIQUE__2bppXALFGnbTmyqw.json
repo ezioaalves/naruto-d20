@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Raiton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, E, H</p>\n\n<hr>\n\n<p>You focus your Chakra and convert it to a crackling energy, dealing 3d6 electric damage. If used on water, the area increases to up to twice the size. This increase will not reach beyond the edge of the body of water.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 10d6.</p>\n\n",
+      "value": "<p>You focus your Chakra and convert it to a crackling energy, dealing 3d6 electric damage. If used on water, the area increases to up to twice the size. This increase will not reach beyond the edge of the body of water.</p>\n\n<hr><p><b>Empower:</b> Spend 2 Chakra to increase the damage by 1d6, up to 1d6 per level or 10d6.</p>\n\n",
       "summary": "",
       "instructions": ""
     },

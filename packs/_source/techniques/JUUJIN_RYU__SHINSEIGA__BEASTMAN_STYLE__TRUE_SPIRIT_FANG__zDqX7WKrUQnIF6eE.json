@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu </p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 10</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique is identical to Juujin Ryuu: Seiga, except the enhancement bonus improves to +1 per 3 levels (up to +5).</p>\n\n\n\n",
+      "value": "<p>This technique is identical to Juujin Ryuu: Seiga, except the enhancement bonus improves to +1 per 3 levels (up to +5).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

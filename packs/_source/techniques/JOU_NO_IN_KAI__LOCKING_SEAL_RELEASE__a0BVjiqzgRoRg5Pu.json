@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 1</p>\n<p><b>Chakra Cost:</b> 1</p>\n\n<p><b>Learn DC:</b> 13 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 1 | <b>Perform DC:</b> 12</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You touch a seal created by Jou no In and dispel it, allowing the object to be opened once more. If the seal requires a code or password, you must focus on it in your mind and spend 1 additional Chakra to properly undo the seal.</p>\n\n\n\n",
+      "value": "<p>You touch a seal created by Jou no In and dispel it, allowing the object to be opened once more. If the seal requires a code or password, you must focus on it in your mind and spend 1 additional Chakra to properly undo the seal.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> *</p>\n\n<p><b>Learn DC:</b> 31 | <b>Successes:</b> 8</p>\n<p><b>Perform:</b> 19 | <b>Perform DC:</b> 39</p>\n\n<p><b>Components:</b> C, E, M</p>\n\n<hr>\n\n<p>You touch the target and attempt to create a summoning contract with it, forcing it to obey your orders as a summoned creature would. As an attack action costing 1 Chakra per HD or level of the target (minimum 15), you may summon the target to a square adjacent to you. The target is not subject to the normal rules for summoned creatures and cannot be banished. The target of this technique cannot be more than twice your HD or level, and the Cost is equal to the target's level or HD (minimum 15).</p>\n\n\n\n",
+      "value": "<p>You touch the target and attempt to create a summoning contract with it, forcing it to obey your orders as a summoned creature would. As an attack action costing 1 Chakra per HD or level of the target (minimum 15), you may summon the target to a square adjacent to you. The target is not subject to the normal rules for summoned creatures and cannot be banished. The target of this technique cannot be more than twice your HD or level, and the Cost is equal to the target's level or HD (minimum 15).</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

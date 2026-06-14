@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Fuinjutsu </p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> C, F, H</p>\n\n<hr>\n\n<p>You seal all traces of residual Chakra in the area onto the page of a scroll. All traces of Chakra usage going back 1 hour per level are removed and sealed. Another technique (like Youso Fuuin no Jutsu) can be used to read and identify such Chakra. If the seal or the scroll containing it is destroyed, the traces are completely destroyed.</p>\n\n\n\n",
+      "value": "<p>You seal all traces of residual Chakra in the area onto the page of a scroll. All traces of Chakra usage going back 1 hour per level are removed and sealed. Another technique (like Youso Fuuin no Jutsu) can be used to read and identify such Chakra. If the seal or the scroll containing it is destroyed, the traces are completely destroyed.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

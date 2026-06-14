@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Kamiton)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 15 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 3 | <b>Perform DC:</b> 15</p>\n\n<p><b>Components:</b> F, Mas</p>\n\n<hr>\n\n<p>The user creates a small barrage of paper shuriken and kunai. Any creature and unattended object in the area of effect suffers 2d6 points of piercing damage, halved with a successful Reflex save. The cone's length cannot exceed 30 feet.<br><br>This technique cannot solidify more than one Chakrabearing object (like an exploding tag or advanced seal) among the objects it affects. If such an object is thrown and hits a creature, they have a -4 Reflex save against the object, unless it is removed before it activates.</p>\n\n<hr><p><b>Requires:</b> 4 ranks Craft (Visual Arts)</p>\n<p><b>Mastery:</b> Each step increases the damage by +1. Material Focus -4 pages of paper.</p>\n",
+      "value": "<p>The user creates a small barrage of paper shuriken and kunai. Any creature and unattended object in the area of effect suffers 2d6 points of piercing damage, halved with a successful Reflex save. The cone's length cannot exceed 30 feet.<br><br>This technique cannot solidify more than one Chakrabearing object (like an exploding tag or advanced seal) among the objects it affects. If such an object is thrown and hits a creature, they have a -4 Reflex save against the object, unless it is removed before it activates.</p>\n\n<hr><p><b>Requires:</b> 4 ranks Craft (Visual Arts)</p>\n<p><b>Mastery:</b> Each step increases the damage by +1. Material Focus -4 pages of paper.</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 6 | <b>Perform DC:</b> 19</p>\n\n<p><b>Components:</b> C</p>\n\n<hr>\n\n<p>You conceal your scent, and make a Hide check using your Intelligence bonus rather than your Dexterity bonus, which can be retried once every 5 minutes as a full-round action (you must use the new result).<br><br>Any creature attempting to detect or locate you using Scent must make a Survival check, opposed by the last Hide check made for this technique (they take a -8 penalty if they cannot track by scent) in order to do so successfully. If a creature has at least 10 HD less than you, it cannot detect your scent at all.</p>\n\n\n\n",
+      "value": "<p>You conceal your scent, and make a Hide check using your Intelligence bonus rather than your Dexterity bonus, which can be retried once every 5 minutes as a full-round action (you must use the new result).<br><br>Any creature attempting to detect or locate you using Scent must make a Survival check, opposed by the last Hide check made for this technique (they take a -8 penalty if they cannot track by scent) in order to do so successfully. If a creature has at least 10 HD less than you, it cannot detect your scent at all.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

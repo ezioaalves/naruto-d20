@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 14</p>\n<p><b>Chakra Cost:</b> 16</p>\n\n<p><b>Learn DC:</b> 30 | <b>Successes:</b> 5</p>\n<p><b>Perform:</b> 18 | <b>Perform DC:</b> 34</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This difficult and powerful technique has you focus a large amount of Chakra into your hands and touch the ground, sending forth a seemingly subtle shockwave. Immediately after, 15 ft tall stalagmites erupt throughout the area, dealing 8d12 earth damage and leaving a forest of stony trees that resemble a thick forest, not providing enough space for Small-sized or larger creatures to fight in. The stalagmites remain for one day, or until dismissed.<br><br>This technique cannot be performed on water.</p>\n\n\n\n",
+      "value": "<p>This difficult and powerful technique has you focus a large amount of Chakra into your hands and touch the ground, sending forth a seemingly subtle shockwave. Immediately after, 15 ft tall stalagmites erupt throughout the area, dealing 8d12 earth damage and leaving a forest of stony trees that resemble a thick forest, not providing enough space for Small-sized or larger creatures to fight in. The stalagmites remain for one day, or until dismissed.<br><br>This technique cannot be performed on water.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

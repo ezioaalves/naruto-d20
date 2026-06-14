@@ -13,7 +13,8 @@
         "operator": "add",
         "priority": 0,
         "formula": "60",
-        "target": "skill.acr"
+        "target": "skill.acr",
+        "flavor": "SORAPO NO JUTSU"
       }
     ],
     "changeFlags": {

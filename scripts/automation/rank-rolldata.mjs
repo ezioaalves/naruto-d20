@@ -1,4 +1,5 @@
-import { getRankBuffFlag, rankGrantLevel } from "./rank-buffs.mjs";
+import { rankGrantLevel } from "./rank-buffs.mjs";
+import { getRankMaintenanceFlag } from "./maintenance-buffs.mjs";
 import {
   computeEffectiveRank,
   speedRankPenalty,
@@ -11,7 +12,7 @@ export function registerRankRollData() {
 }
 
 function _onGetRollData(item, data) {
-  const flag = getRankBuffFlag(item);
+  const flag = getRankMaintenanceFlag(item);
   if (!flag || item.type !== "buff" || !item.actor) return;
 
   let level;

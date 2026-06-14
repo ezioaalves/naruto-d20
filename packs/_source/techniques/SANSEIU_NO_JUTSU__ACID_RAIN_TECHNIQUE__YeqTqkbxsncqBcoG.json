@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Suiton)</p>\n<p><b>Rank:</b> 5</p>\n<p><b>Chakra Cost:</b> 6</p>\n\n<p><b>Learn DC:</b> 19 | <b>Successes:</b> 4</p>\n<p><b>Perform:</b> 7 | <b>Perform DC:</b> 20</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>This technique can only be used if it is raining within the area of effect, and it turns the rain into acid for a short time, dealing 4d6 acid damage to creatures and structures in the area. Structures take double damage, and creatures can make a save for half damage.</p>\n\n\n\n",
+      "value": "<p>This technique can only be used if it is raining within the area of effect, and it turns the rain into acid for a short time, dealing 4d6 acid damage to creatures and structures in the area. Structures take double damage, and creatures can make a save for half damage.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

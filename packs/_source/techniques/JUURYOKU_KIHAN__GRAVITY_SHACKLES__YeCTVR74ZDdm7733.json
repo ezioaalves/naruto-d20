@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Doton)</p>\n<p><b>Rank:</b> 7</p>\n<p><b>Chakra Cost:</b> 8</p>\n\n<p><b>Learn DC:</b> 21 | <b>Successes:</b> 3</p>\n<p><b>Perform:</b> 9 | <b>Perform DC:</b> 22</p>\n\n<p><b>Components:</b> C, H</p>\n\n<hr>\n\n<p>You inhibit the movement of creatures within the area, causing them to be unable to run or charge and suffer a<br><br>-2 penalty to attack and weapon damage rolls, as the weight of all affected creatures and any items they carry increases by 50%. Subjects also take a -2 penalty to Speed Ranks, which is reduced by 1 for each Strength Rank they have active.<br><br>The area moves with you, and any creature who saves against it becomes immune to its effects even if it exits and re-enters the area of effect.</p>\n\n\n\n",
+      "value": "<p>You inhibit the movement of creatures within the area, causing them to be unable to run or charge and suffer a<br><br>-2 penalty to attack and weapon damage rolls, as the weight of all affected creatures and any items they carry increases by 50%. Subjects also take a -2 penalty to Speed Ranks, which is reduced by 1 for each Strength Rank they have active.<br><br>The area moves with you, and any creature who saves against it becomes immune to its effects even if it exits and re-enters the area of effect.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

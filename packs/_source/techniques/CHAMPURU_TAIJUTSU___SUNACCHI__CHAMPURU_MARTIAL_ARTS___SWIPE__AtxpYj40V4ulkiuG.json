@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 6</p>\n<p><b>Chakra Cost:</b> 5</p>\n\n<p><b>Learn DC:</b> 18 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 8 | <b>Perform DC:</b> 18</p>\n\n<p><b>Components:</b> M</p>\n\n<hr>\n\n<p>Using this Champuru technique, the character falls to the ground, leans back, whips his arms to one side to the ground, and then swings his legs closely behind, twisting 360 degrees and landing on the ground once again. The character may then stand back up as a free action at the end of his turn.<br><br>This allows the user to disarm or trip it's opponent by swiping at its legs and then its weapon as it falls. The user gains a +2 to checks in order to trip and disarm while using this technique.</p>\n\n<hr><p><b>Requires:</b> Champuru (f)</p>\n",
+      "value": "<p>Using this Champuru technique, the character falls to the ground, leans back, whips his arms to one side to the ground, and then swings his legs closely behind, twisting 360 degrees and landing on the ground once again. The character may then stand back up as a free action at the end of his turn.<br><br>This allows the user to disarm or trip it's opponent by swiping at its legs and then its weapon as it falls. The user gains a +2 to checks in order to trip and disarm while using this technique.</p>\n\n<hr><p><b>Requires:</b> Champuru (f)</p>\n",
       "summary": "",
       "instructions": ""
     },

@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 2</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 14 | <b>Successes:</b> 1</p>\n<p><b>Perform:</b> 2 | <b>Perform DC:</b> 13</p>\n\n<p><b>Components:</b> F, Mob</p>\n\n<hr>\n\n<p>The basic technique of the iaijutsu style, this technique can only be used if your weapon is sheathed. You make a single attack with the weapon against all creatures in the target square, gaining a +2 bonus to attack and damage rolls and dealing damage as though wielding the weapon with two hands. You suffer a -2 penalty to Defense until your next turn.<br><br>Can be used as part of a charge, but cannot be used while prone. If you have the Quick Draw feat, this technique can be performed as an attack action.</p>\n\n\n\n",
+      "value": "<p>The basic technique of the iaijutsu style, this technique can only be used if your weapon is sheathed. You make a single attack with the weapon against all creatures in the target square, gaining a +2 bonus to attack and damage rolls and dealing damage as though wielding the weapon with two hands. You suffer a -2 penalty to Defense until your next turn.<br><br>Can be used as part of a charge, but cannot be used while prone. If you have the Quick Draw feat, this technique can be performed as an attack action.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

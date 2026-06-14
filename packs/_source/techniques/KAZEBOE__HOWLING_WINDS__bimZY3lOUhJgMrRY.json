@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Ninjutsu (Fuuton)</p>\n<p><b>Rank:</b> 4</p>\n<p><b>Chakra Cost:</b> 7</p>\n\n<p><b>Learn DC:</b> 17 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 5 | <b>Perform DC:</b> 17</p>\n\n<p><b>Components:</b> H</p>\n\n<hr>\n\n<p>You release an ear-splitting blast of wind that deals 2d6 damage (half wind, half sonic; Fortitude halves). On a failed save, creatures are also @Condition[deaf]{deafened} for 1d4+1 rounds. Exposed brittle or crystalline objects take 1d6 damage per level. Creatures holding them can make a Reflex save to negate the damage to the objects.</p>\n\n\n\n",
+      "value": "<p>You release an ear-splitting blast of wind that deals 2d6 damage (half wind, half sonic; Fortitude halves). On a failed save, creatures are also @Condition[deaf]{deafened} for 1d4+1 rounds. Exposed brittle or crystalline objects take 1d6 damage per level. Creatures holding them can make a Reflex save to negate the damage to the objects.</p>\n\n\n\n",
       "summary": "",
       "instructions": ""
     },

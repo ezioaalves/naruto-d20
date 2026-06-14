@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Chakra Control (Body)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 3</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> C, Mas</p>\n\n<hr>\n\n<p>Gathering Chakra in your feet, you gain a +20 bonus to Jump checks.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to perform this technique as a Swift action instead.</p>\n",
+      "value": "<p>Gathering Chakra in your feet, you gain a +20 bonus to Jump checks.</p>\n\n\n<p><b>Mastery:</b> The third step allows you to perform this technique as a Swift action instead.</p>\n",
       "summary": "",
       "instructions": ""
     },

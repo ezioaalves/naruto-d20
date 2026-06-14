@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "\n<p><b>Type:</b> Taijutsu (Strike)</p>\n<p><b>Rank:</b> 3</p>\n<p><b>Chakra Cost:</b> 2</p>\n\n<p><b>Learn DC:</b> 16 | <b>Successes:</b> 2</p>\n<p><b>Perform:</b> 4 | <b>Perform DC:</b> 16</p>\n\n<p><b>Components:</b> E, F, Mob Range: Melee attack</p>\n\n<hr>\n\n<p>Make a single attack with your held weapon. If the attack hits, it deals normal damage, and the target is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates). A Samurai with at least 2 class levels may substitute this technique for a normal attack when they make a Full Attack (using the same attack bonus as the substituted attack), but only if they chose the Soujutsu path. If you substitute the technique this way, it cannot be empowered and the Perform Requirements are automatically met.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the save DC by 1, up to +1 per 2 levels or +5.</p>\n\n",
+      "value": "<p>Make a single attack with your held weapon. If the attack hits, it deals normal damage, and the target is @Condition[stunned;duration=1]{stunned} for 1 round (Fortitude negates). A Samurai with at least 2 class levels may substitute this technique for a normal attack when they make a Full Attack (using the same attack bonus as the substituted attack), but only if they chose the Soujutsu path. If you substitute the technique this way, it cannot be empowered and the Perform Requirements are automatically met.</p>\n\n<hr><p><b>Empower:</b> Spend 1 Chakra to increase the save DC by 1, up to +1 per 2 levels or +5.</p>\n\n",
       "summary": "",
       "instructions": ""
     },
