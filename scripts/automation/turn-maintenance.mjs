@@ -32,7 +32,7 @@ export function registerTurnMaintenance() {
       const tdActor = item.actor;
       if (!tdActor?.isOwner) return;
       const itemId = item.id;
-      window.setTimeout(() => tearDownDurationBuff(tdActor, itemId), 0);
+      window.setTimeout(() => tearDownDurationBuff(tdActor, itemId, "expired"), 0);
       return;
     }
 
@@ -142,10 +142,6 @@ async function chargeDurationUpkeep(actor, itemId, currentRound) {
     return;
   }
 
-  if (flag.startRound === null || flag.startRound === undefined) {
-    await item.update({ [`flags.${MODULE_ID}.maintenanceBuff.startRound`]: currentRound });
-  }
-
   const rollData = masteryRollData(actor, technique);
 
   if (facets.resource === "hp") {
@@ -171,10 +167,14 @@ async function chargeDurationUpkeep(actor, itemId, currentRound) {
   }
 
   await applyTurnBenefits(actor, technique, facets);
-  await item.update({ [`flags.${MODULE_ID}.maintenanceBuff.lastUpkeepRound`]: currentRound });
+  const flagUpdates = { [`flags.${MODULE_ID}.maintenanceBuff.lastUpkeepRound`]: currentRound };
+  if (flag.startRound === null || flag.startRound === undefined) {
+    flagUpdates[`flags.${MODULE_ID}.maintenanceBuff.startRound`] = currentRound;
+  }
+  await item.update(flagUpdates);
 }
 
-async function tearDownDurationBuff(actor, itemId) {
+async function tearDownDurationBuff(actor, itemId, reason = "cost") {
   const item = actor.items.get(itemId);
   if (!item) return;
   const flag = getMaintenanceBuffFlag(item);
@@ -189,7 +189,14 @@ async function tearDownDurationBuff(actor, itemId) {
     console.error(`naruto-d20 | failed to set fatigued on "${actor.name}":`, err);
   }
 
-  ui.notifications.info(game.i18n.format("NarutoD20.Maintenance.UpkeepEnded", { name }));
+  ui.notifications.info(
+    game.i18n.format(
+      reason === "expired"
+        ? "NarutoD20.Maintenance.UpkeepExpired"
+        : "NarutoD20.Maintenance.UpkeepEnded",
+      { name },
+    ),
+  );
 }
 
 function queueMaintenance(item) {

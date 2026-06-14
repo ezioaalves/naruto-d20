@@ -494,7 +494,8 @@
       "ChakraDamageFlavor": "{name}: {amount} Chakra damage (pool {before}→{after})",
       "ChakraDamageOverflow": " — +{hp} HP (overflow)",
       "FastHealingFlavor": "{name}: Fast Healing {amount} (+{hp} HP)",
-      "UpkeepEnded": "{name} ends — the upkeep cost would have dropped you below 1 HP."
+      "UpkeepEnded": "{name} ends — the upkeep cost would have dropped you below 1 HP.",
+      "UpkeepExpired": "{name}'s duration has run out."
     },
     "MaintenanceElement": {
       "Title": "{name} — choose element",
