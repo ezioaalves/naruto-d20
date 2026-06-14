@@ -45,3 +45,10 @@ Append new verified facts under the matching section. Never add a guessed entry.
 
 - i18n keys are mostly **flat** in v11.11: use `PF1.Changes`, NOT `PF1.Changes.many`.
   Keys live in `lang/en.json`.
+
+- `system.traits.fastHealing` → **string** field (default `""`), `public/template.json:717`.
+  Display-only: rendered in the defenses chat card and exposed as the `@traits.fastHealing`
+  rolldata path (`module/applications/actor/actor-sheet.mjs:1806`,
+  `module/documents/actor/actor-pf.mjs:3528-3531`). PF1e does **NOT** auto-apply fast healing
+  each round, and there is **no numeric buff change target** for it — to actually heal HP per
+  round you must run your own turn hook. `system.traits.regen` is the analogous string field.
