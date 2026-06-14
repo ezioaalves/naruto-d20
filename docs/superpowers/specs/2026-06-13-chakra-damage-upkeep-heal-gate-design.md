@@ -81,11 +81,13 @@ check the lethal guard, and only then commit.
 - Amount comes from a roll formula evaluated by the caller, so the formula (with
   `@mastery`) stays in the engine layer; this module takes a resolved integer.
 
-**Condition-trigger note (implementation guard):** chakra damage can leave
-`pool == 0` while `reserve > 0` (no emergency transfer). Verify
-`checkAndUpdateConditions` keys Chakra Depletion off the **reserve**, not the pool,
-so damage to an empty pool does not falsely trigger Depletion. Adjust the call /
-add a regression test if it does.
+**Condition-trigger note (verified):** chakra damage can leave `pool == 0` while
+`reserve > 0` (no emergency transfer), which violates the "pool == 0 ⟹ reserve == 0"
+invariant that deliberate spends maintain. This is safe: `checkAndUpdateConditions`
+keys Low Reserves / Chakra Depletion off **`reserve`** only
+(`chakra-conditions.mjs:87-88`), so damaging an empty pool never falsely triggers
+Depletion. The `checkAndUpdateConditions` call after committing damage is therefore a
+no-op for reserve-unchanged damage, but is kept as a cheap, defensive refresh.
 
 ### 2. Schema — `technique-model.mjs` `automation.maintenance`
 
@@ -114,9 +116,10 @@ add a regression test if it does.
   and `applyTechniqueBuff`'s entry branch to also route `resource === "chakraDamage"`
   through `applyUpkeepBuff` (which stamps the maintenance flag + `turnStart` duration
   by technique name).
-- **Teardown:** when the engine deletes a maintenance buff whose technique has a
-  non-empty `heal` facet, clear `system.traits.fastHealing` (snapshot/restore the
-  prior value via a buff flag if a prior non-empty value existed; otherwise clear).
+- **Teardown:** a `deleteItem` hook clears `system.traits.fastHealing` (sets it to
+  `""`) whenever a maintenance buff whose source technique has a non-empty `heal`
+  facet is removed by any means. No snapshot/restore — the string is reset to empty
+  (single fast-healing source assumed).
 
 ### 4. Mastery formulas (data, on the technique)
 
