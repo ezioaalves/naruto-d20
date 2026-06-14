@@ -29,3 +29,42 @@ export function calculateChakraDamage(actor, amount) {
     hpOverflow,
   };
 }
+
+/**
+ * Apply a resolved chakra-damage calculation to the actor: write the new
+ * temp/pool, subtract any HP overflow, refresh chakra conditions, and post a
+ * chat message. `before`/`after` are the pool totals for the flavor line.
+ */
+export async function commitChakraDamage(actor, technique, calc, amount) {
+  if (!actor) return;
+
+  const beforePool = Math.max(0, Number(actor.flags?.[MODULE_ID]?.chakra?.pool?.value ?? 0) || 0);
+
+  const updates = {
+    [chakraPoolTempPath]: calc.temp,
+    [chakraPoolValuePath]: calc.pool,
+  };
+  if (calc.hpOverflow > 0) {
+    const hp = Number(actor.system?.attributes?.hp?.value ?? 0) || 0;
+    updates["system.attributes.hp.value"] = hp - calc.hpOverflow;
+  }
+  await actor.update(updates);
+  await checkAndUpdateConditions(actor);
+
+  let flavor = game.i18n.format("NarutoD20.Maintenance.ChakraDamageFlavor", {
+    name: technique?.name ?? "",
+    amount,
+    before: beforePool,
+    after: calc.pool,
+  });
+  if (calc.hpOverflow > 0) {
+    flavor += game.i18n.format("NarutoD20.Maintenance.ChakraDamageOverflow", {
+      hp: calc.hpOverflow,
+    });
+  }
+
+  await ChatMessage.implementation.create({
+    speaker: ChatMessage.implementation.getSpeaker({ actor }),
+    content: `<p>${flavor}</p>`,
+  });
+}

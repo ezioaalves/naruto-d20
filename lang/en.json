@@ -490,6 +490,9 @@
       "UpkeepMessage": "{name} is active. Pay {formula} HP to maintain it, or end it.",
       "PayHp": "Pay {formula} HP",
       "HpCostFlavor": "Upkeep: {amount} HP lost.",
+      "ChakraDamageFlavor": "{name}: {amount} Chakra damage (pool {before}→{after})",
+      "ChakraDamageOverflow": " — +{hp} HP (overflow)",
+      "FastHealingFlavor": "{name}: Fast Healing {amount} (+{hp} HP)",
       "UpkeepEnded": "{name} ends — the upkeep cost would have dropped you below 1 HP."
     },
     "MaintenanceElement": {
