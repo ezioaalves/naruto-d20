@@ -5,6 +5,8 @@ import {
   getMaintenanceBuffFlag,
   maintenanceBuffDuration,
   maintenanceFacets,
+  maintenanceRoundsRemaining,
+  shouldChargeUpkeep,
 } from "./maintenance-buffs.mjs";
 import { applyModeBuff, applyUpkeepBuff, promptModeChoice } from "./buff-application.mjs";
 import { availableChakra, canPayChakra, payChakra } from "../data/chakra-spend.mjs";
@@ -24,6 +26,15 @@ export function registerTurnMaintenance() {
     if (changed?.system?.active !== false) return;
     if (item.type !== "buff") return;
     if (!item.flags?.[MODULE_ID]?.sourceId) return;
+
+    const mFlag = item.flags?.[MODULE_ID]?.maintenanceBuff;
+    if (mFlag?.model === "duration") {
+      const tdActor = item.actor;
+      if (!tdActor?.isOwner) return;
+      const itemId = item.id;
+      window.setTimeout(() => tearDownDurationBuff(tdActor, itemId, "expired"), 0);
+      return;
+    }
 
     const actor = item.actor;
     if (!actor?.isOwner) return;
@@ -46,13 +57,22 @@ export function registerTurnMaintenance() {
     }, 0);
   });
 
+  Hooks.on("updateCombat", (combat, changed) => {
+    if (changed?.turn === undefined && changed?.round === undefined) return;
+    const actor = combat.combatant?.actor;
+    if (!actor) return;
+    if (!actor.activeOwner?.isSelf) return;
+    runTurnUpkeep(actor, combat);
+  });
+
   Hooks.on("deleteItem", (item, options, userId) => {
     if (userId !== game.user.id) return;
     if (item.type !== "buff") return;
     const actor = item.actor;
     if (!actor?.isOwner) return;
     const flag = getMaintenanceBuffFlag(item);
-    const shouldClearHealing = flag?.sourceTechniqueId && flag.hasHeal && !!actor.system?.traits?.fastHealing;
+    const shouldClearHealing =
+      flag?.sourceTechniqueId && flag.hasHeal && !!actor.system?.traits?.fastHealing;
     const remainingTemp = Math.max(
       0,
       Number(item.flags?.[MODULE_ID]?.temporaryChakra?.remaining ?? 0) || 0,
@@ -64,7 +84,10 @@ export function registerTurnMaintenance() {
         updates["system.traits.fastHealing"] = "";
       }
       if (remainingTemp > 0) {
-        const currentTemp = Math.max(0, Number(actor.flags?.[MODULE_ID]?.chakra?.pool?.temp ?? 0) || 0);
+        const currentTemp = Math.max(
+          0,
+          Number(actor.flags?.[MODULE_ID]?.chakra?.pool?.temp ?? 0) || 0,
+        );
         updates[chakraPoolTempPath] = Math.max(0, currentTemp - remainingTemp);
       }
       actor.update(updates).catch((err) => {
@@ -72,6 +95,108 @@ export function registerTurnMaintenance() {
       });
     }, 0);
   });
+}
+
+function runTurnUpkeep(actor, combat) {
+  const currentRound = Number(combat.round) || 0;
+  for (const item of actor.items) {
+    if (item.type !== "buff") continue;
+    const flag = getMaintenanceBuffFlag(item);
+    if (flag?.model !== "duration") continue;
+    if (!item.system?.active) continue;
+
+    const remaining = maintenanceRoundsRemaining({
+      totalRounds: flag.totalRounds,
+      startRound: flag.startRound,
+      currentRound,
+    });
+    if (
+      !shouldChargeUpkeep({
+        remaining,
+        currentRound,
+        startRound: flag.startRound,
+        interval: flag.interval,
+        lastUpkeepRound: flag.lastUpkeepRound,
+      })
+    ) {
+      continue;
+    }
+
+    queueDeferred(item, () => chargeDurationUpkeep(actor, item.id, currentRound));
+  }
+}
+
+async function chargeDurationUpkeep(actor, itemId, currentRound) {
+  const item = actor.items.get(itemId);
+  if (!item || !item.system?.active) return;
+
+  const flag = getMaintenanceBuffFlag(item);
+  const technique = flag?.sourceTechniqueId ? actor.items.get(flag.sourceTechniqueId) : null;
+  if (!technique) {
+    await deleteMaintenanceBuff(actor, itemId);
+    return;
+  }
+  const facets = maintenanceFacets(technique);
+  if (!facets) {
+    await deleteMaintenanceBuff(actor, itemId);
+    return;
+  }
+
+  const rollData = masteryRollData(actor, technique);
+
+  if (facets.resource === "hp") {
+    const { roll, amount } = await rollHpCost(actor, facets.cost || "0", rollData);
+    const hp = Number(actor.system?.attributes?.hp?.value ?? 0) || 0;
+    if (hp - amount < 1) {
+      await tearDownDurationBuff(actor, itemId);
+      return;
+    }
+    await commitHpCost(actor, roll, amount);
+  } else if (facets.resource === "chakraDamage") {
+    const roll = await RollPF.safeRoll(String(facets.cost || "0"), rollData);
+    const amount = Math.max(0, Math.floor(Number(roll?.total) || 0));
+    const calc = calculateChakraDamage(actor, amount);
+    if (calc.hpOverflow > 0) {
+      const hp = Number(actor.system?.attributes?.hp?.value ?? 0) || 0;
+      if (hp - calc.hpOverflow < 1) {
+        await tearDownDurationBuff(actor, itemId);
+        return;
+      }
+    }
+    await commitChakraDamage(actor, technique, calc, amount);
+  }
+
+  await applyTurnBenefits(actor, technique, facets);
+  const flagUpdates = { [`flags.${MODULE_ID}.maintenanceBuff.lastUpkeepRound`]: currentRound };
+  if (flag.startRound === null || flag.startRound === undefined) {
+    flagUpdates[`flags.${MODULE_ID}.maintenanceBuff.startRound`] = currentRound;
+  }
+  await item.update(flagUpdates);
+}
+
+async function tearDownDurationBuff(actor, itemId, reason = "cost") {
+  const item = actor.items.get(itemId);
+  if (!item) return;
+  const flag = getMaintenanceBuffFlag(item);
+  const technique = flag?.sourceTechniqueId ? actor.items.get(flag.sourceTechniqueId) : null;
+  const name = technique?.name ?? item.name;
+
+  await deleteMaintenanceBuff(actor, itemId);
+
+  try {
+    await actor.setConditions({ fatigued: true });
+  } catch (err) {
+    console.error(`naruto-d20 | failed to set fatigued on "${actor.name}":`, err);
+  }
+
+  ui.notifications.info(
+    game.i18n.format(
+      reason === "expired"
+        ? "NarutoD20.Maintenance.UpkeepExpired"
+        : "NarutoD20.Maintenance.UpkeepEnded",
+      { name },
+    ),
+  );
 }
 
 function queueMaintenance(item) {

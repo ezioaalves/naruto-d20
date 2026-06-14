@@ -367,3 +367,16 @@ Prereq: a character actor with the Heal Gate technique and chakra pool > 0.
 - [ ] At mastery step 5: chakra damage is 2/round and Fast Healing is 5.
 - [ ] Removing the buff (manually or via the lethal guard) clears `system.traits.fastHealing` (defenses card no longer lists it).
 - [ ] The reserve total is never reduced by the chakra damage.
+
+### Real-duration gate upkeep — finite round maintenance model
+
+Prereq: a technique with finite round duration (e.g., Kai-Mon rank 1 = 3 rounds) and maintenance upkeep.
+
+- [ ] Perform the technique at round 5, combat turn 1 → buff applies with duration 3 rounds, ending at turn 3 (round 5 + 3 = round 8).
+- [ ] Turn 1 (round 5): upkeep charges on-interval and is marked paid; tooltip/chat shows "1 of 3 rounds remaining".
+- [ ] Turn 2 (round 6): upkeep charges again on-interval and is marked paid; "2 of 3 rounds remaining".
+- [ ] Turn 3 (round 7): upkeep charges again on-interval and is marked paid; "3 of 3 rounds remaining".
+- [ ] Turn 4 (round 8): buff expires naturally because all rounds are consumed; "Buff ended (duration exhausted)" notification posts; actor is hit with fatigued if buff had fatigue-on-end semantics.
+- [ ] If upkeep is skipped/waived on turn 2, the buff still expires at turn 4; skipping does not extend duration.
+- [ ] Manually removing the buff before round 8 stops upkeep immediately and no end-of-duration fatigue applies.
+- [ ] At mastery step 5 with double-element maintenance (2 elements instead of 1): upkeep cost scales as designed (e.g., 2 instances of HP damage per round).

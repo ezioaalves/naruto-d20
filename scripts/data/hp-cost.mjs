@@ -15,7 +15,10 @@ export async function applyHpCost(actor, formula, rollData = null) {
  * subtract the HP. Returns the roll and its clamped (>= 0) amount.
  */
 export async function rollHpCost(actor, formula, rollData = null) {
-  const roll = await RollPF.safeRoll(String(formula ?? "0"), rollData ?? (actor?.getRollData?.() ?? {}));
+  const roll = await RollPF.safeRoll(
+    String(formula ?? "0"),
+    rollData ?? actor?.getRollData?.() ?? {},
+  );
   return { roll, amount: Math.max(0, Number(roll?.total) || 0) };
 }
 
