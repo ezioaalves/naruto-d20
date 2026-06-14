@@ -52,9 +52,7 @@ export function registerTurnMaintenance() {
     if (!flag?.sourceTechniqueId) return;
     const actor = item.actor;
     if (!actor?.isOwner) return;
-    const technique = actor.items.get(flag.sourceTechniqueId);
-    const facets = technique ? maintenanceFacets(technique) : null;
-    if (!facets?.heal) return;
+    if (!flag.hasHeal) return;
     if (!actor.system?.traits?.fastHealing) return;
     window.setTimeout(() => {
       actor.update({ "system.traits.fastHealing": "" }).catch((err) => {

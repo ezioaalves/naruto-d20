@@ -72,6 +72,7 @@ export function maintenanceBuffFlagData({
   key,
   modeId,
   elements,
+  hasHeal = false,
 } = {}) {
   const data = {};
   if (sourceTechniqueId) data.sourceTechniqueId = sourceTechniqueId;
@@ -79,6 +80,7 @@ export function maintenanceBuffFlagData({
   if (key) data.key = key;
   if (modeId) data.modeId = modeId;
   if (Array.isArray(elements)) data.elements = elements;
+  if (hasHeal) data.hasHeal = true;
   return data;
 }
 

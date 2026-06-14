@@ -140,7 +140,11 @@ export async function applyUpkeepBuff(item, actor, interval = 1) {
 
   await applyBuffToTarget(buffDoc, actor, {
     duration: maintenanceBuffDuration(interval),
-    maintenanceBuff: maintenanceBuffFlagData({ sourceTechniqueId: item.id, elements }),
+    maintenanceBuff: maintenanceBuffFlagData({
+      sourceTechniqueId: item.id,
+      elements,
+      hasHeal: !!maintenanceFacets(item)?.heal,
+    }),
   });
 }
 
