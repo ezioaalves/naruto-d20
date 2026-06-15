@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.31 - 2026-06-15
+
+- Added **real-duration gate buffs** (#122): Kai-Mon, Sei-Mon, and Heal Gate now carry a finite round duration (character level in rounds) instead of short-cycling 1-round toggle buffs. A new `updateCombat` hook charges HP / chakra-damage upkeep at the start of each actor's turn; natural buff expiry triggers teardown (fatigue + delete) rather than re-application. Toggle-model buffs (stances, rank maintenance) are completely unchanged.
+- Fixed **teardown ordering** in `tearDownDurationBuff` (#123): the Fatigued condition was being applied after the buff was deleted, creating a potential race. It is now applied first.
+- Fixed **Uzukaze Rengeki** weapon selection (#124): `weaponAttack.filter` was `unarmedOnly`, which only searches for natural attack items (subType `"natural"`). Changed to `meleeOrUnarmed` so actors with equipped melee weapons can use the technique normally — consistent with Jiki-Uchi and other melee techniques.
+
 ## v1.0.30 - 2026-06-14
 
 - Added **Heal Gate** (`KYU-MON KAI`) start-of-turn automation (#119): a reusable `chakraDamage` maintenance path now spends temporary chakra first, then chakra pool, doubles any unabsorbed remainder into HP damage, and leaves chakra reserve untouched. The gate also applies mastery-scaling Fast Healing each turn, clears fatigued/exhausted while active, and ends itself if upkeep overflow would be lethal.
