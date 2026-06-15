@@ -46,11 +46,26 @@ Subsistema introduzido em `f9f6075` (#118) — unifica stance/upkeep/rank no sch
 `automation.maintenance`. Substitui os módulos removidos `stance-*` e
 `rank-buff-maintenance`.
 
-- `registerTurnMaintenance()` (hook de start-of-turn) → `scripts/automation/turn-maintenance.mjs:19`.
-- `refreshMaintenanceBuff(actor, itemId, interval)` → `scripts/automation/turn-maintenance.mjs:403`.
+Dois modelos de buff de manutenção:
+- **`model:"duration"`** — duração finita em rounds; upkeep cobrado por `chargeDurationUpkeep`
+  via `updateCombat`; teardown por `updateItem` (reason="duration").
+- **`model:"toggle"`** — duração permanente (`units:"perm"`); ativado/desativado por
+  `runToggleMaintenance` via `updateCombat`; PF1e nunca expira automaticamente.
+  Usado para stances de modo (CHAMPURU) e técnicas de upkeep sem duração finita.
+
+- `registerTurnMaintenance()` (hook de start-of-turn) → `scripts/automation/turn-maintenance.mjs:22`.
+- `runTurnUpkeep(actor, combat)` (trata duration e toggle) → `scripts/automation/turn-maintenance.mjs:100`.
+- `runToggleMaintenance(actor, itemId)` (desativa + chama runMaintenance) → `scripts/automation/turn-maintenance.mjs:139`.
+- `refreshMaintenanceBuff(actor, itemId, interval)` (model-aware) → `scripts/automation/turn-maintenance.mjs:560`.
 - `MAINTENANCE_BUFF_FLAG` → `scripts/automation/maintenance-buffs.mjs:3`.
 - `maintenanceFacets(item)` (resolver de facetas) → `scripts/automation/maintenance-buffs.mjs:45`.
+- `maintenanceBuffDuration(interval)` (1-round, para duration-model) → `scripts/automation/maintenance-buffs.mjs:22`.
+- `toggleMaintenanceBuffDuration()` (perm, para toggle-model) → `scripts/automation/maintenance-buffs.mjs:32`.
+- `maintenanceBuffFlagData({..., model, startRound, interval})` → `scripts/automation/maintenance-buffs.mjs:99`.
+  `model:"toggle"` stampa `{model, startRound, interval}`; `model:"duration"` stampa `{model, totalRounds, startRound, interval, lastUpkeepRound}`.
 - `findMaintenanceBuffForTechnique(actor, techniqueId)` → `scripts/automation/maintenance-buffs.mjs:91`.
+- `applyModeBuff(item, actor, modeId, interval)` (stance mode choice) → `scripts/automation/buff-application.mjs:95`.
+- `applyUpkeepBuff(item, actor, interval, duration)` (HP/chakraDamage/element) → `scripts/automation/buff-application.mjs:144`.
 - Element damage: `registerElementDamage()` → `scripts/automation/maintenance-element-damage.mjs:95`;
   `promptElements(item, count)` → `scripts/automation/maintenance-element-damage.mjs:38`.
 - Migração de schema: `runMaintenanceMigrations()` → `scripts/data/maintenance-migration.mjs:111`;
