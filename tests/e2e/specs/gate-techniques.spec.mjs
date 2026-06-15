@@ -146,3 +146,44 @@ test.describe("Gate techniques — Kyu-Mon Kai", () => {
     expect(result.exhausted).toBe(false);
   });
 });
+
+test.describe("Gate techniques — Sei-Mon Kai", () => {
+  test("performing grants 8 temporary chakra alongside the self-buff", async ({ page }) => {
+    await prepareGate(page, SEI);
+    const result = await page.evaluate(async (name) => {
+      const api = game.modules.get("naruto-d20").api;
+      const actor = api.getActor();
+      await api.performByName(actor, name, { forceRoll: 20, rollBonus: 100 });
+      return {
+        temp: api.getChakra(actor).pool.temp,
+        buffs: api.listBuffs(actor).filter((buff) => buff.sourceId),
+      };
+    }, SEI);
+
+    expect(result.buffs).toHaveLength(1);
+    expect(result.buffs[0].name).toBe(SEI);
+    expect(result.temp).toBe(8);
+  });
+
+  test("forced HP upkeep drains 4 HP per combat turn", async ({ page }) => {
+    await prepareGate(page, SEI);
+    const result = await page.evaluate(async (name) => {
+      const api = game.modules.get("naruto-d20").api;
+      const actor = api.getActor();
+      await api.performByName(actor, name, { forceRoll: 20, rollBonus: 100 });
+      await api.startCombatForActor(actor);
+      const hpBefore = actor.system.attributes.hp.value;
+      await api.advanceCombatTurn(actor);
+      return {
+        hpBefore,
+        hpAfter: actor.system.attributes.hp.value,
+        buffs: api.listBuffs(actor).filter((buff) => buff.sourceId),
+      };
+    }, SEI);
+
+    expect(result.hpAfter).toBe(result.hpBefore - 4);
+    expect(result.buffs).toHaveLength(1);
+    expect(result.buffs[0].name).toBe(SEI);
+    expect(result.buffs[0].active).toBe(true);
+  });
+});
