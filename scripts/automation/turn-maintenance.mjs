@@ -102,28 +102,47 @@ function runTurnUpkeep(actor, combat) {
   for (const item of actor.items) {
     if (item.type !== "buff") continue;
     const flag = getMaintenanceBuffFlag(item);
-    if (flag?.model !== "duration") continue;
-    if (!item.system?.active) continue;
+    if (!flag?.sourceTechniqueId) continue;
 
-    const remaining = maintenanceRoundsRemaining({
-      totalRounds: flag.totalRounds,
-      startRound: flag.startRound,
-      currentRound,
-    });
-    if (
-      !shouldChargeUpkeep({
-        remaining,
-        currentRound,
+    if (flag.model === "duration") {
+      if (!item.system?.active) continue;
+
+      const remaining = maintenanceRoundsRemaining({
+        totalRounds: flag.totalRounds,
         startRound: flag.startRound,
-        interval: flag.interval,
-        lastUpkeepRound: flag.lastUpkeepRound,
-      })
-    ) {
-      continue;
-    }
+        currentRound,
+      });
+      if (
+        !shouldChargeUpkeep({
+          remaining,
+          currentRound,
+          startRound: flag.startRound,
+          interval: flag.interval,
+          lastUpkeepRound: flag.lastUpkeepRound,
+        })
+      ) {
+        continue;
+      }
 
-    queueDeferred(item, () => chargeDurationUpkeep(actor, item.id, currentRound));
+      queueDeferred(item, () => chargeDurationUpkeep(actor, item.id, currentRound));
+    } else if (flag.model === "toggle") {
+      if (!item.system?.active) continue;
+      const startRound = flag.startRound ?? null;
+      if (startRound === null || currentRound <= startRound) continue;
+      const interval = Math.max(1, Number(flag.interval) || 1);
+      if ((currentRound - startRound) % interval !== 0) continue;
+      queueDeferred(item, () => runToggleMaintenance(actor, item.id));
+    }
   }
+}
+
+async function runToggleMaintenance(actor, itemId) {
+  const item = actor.items.get(itemId);
+  if (!item || !item.system?.active) return;
+  // Deactivate without pf1.reason="duration" so the updateItem handler does not
+  // also fire maintenance (it bails when reason !== "duration").
+  await item.update({ "system.active": false });
+  await runMaintenance(actor, itemId);
 }
 
 async function chargeDurationUpkeep(actor, itemId, currentRound) {
@@ -541,6 +560,16 @@ function promptHpUpkeep(technique, formula) {
 export async function refreshMaintenanceBuff(actor, itemId, interval) {
   const current = actor.items.get(itemId);
   if (!current) return;
+  const flag = getMaintenanceBuffFlag(current);
+  if (flag?.model === "toggle") {
+    await current.update({
+      "system.active": true,
+      "system.duration.units": "perm",
+      "system.duration.value": "",
+      [`flags.${MODULE_ID}.maintenanceBuff.startRound`]: game.combat?.round ?? null,
+    });
+    return;
+  }
   const d = maintenanceBuffDuration(interval);
   await current.update({
     "system.active": true,
