@@ -608,8 +608,9 @@ async function startCombatForActor(actor, { x = 100, y = 100 } = {}) {
   ]);
   await combat.activate();
   await combat.startCombat();
-  await waitForUpkeepSettle(actor, ids, combat.round);
-  return { combatId: combat.id, round: combat.round, turn: combat.turn };
+  const liveCombat = game.combats.get(combat.id) ?? combat;
+  await waitForUpkeepSettle(actor, ids, liveCombat.round);
+  return { combatId: combat.id, round: liveCombat.round, turn: liveCombat.turn };
 }
 
 async function advanceCombatTurn(actor) {
