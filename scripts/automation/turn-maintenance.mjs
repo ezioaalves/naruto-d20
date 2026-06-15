@@ -128,7 +128,18 @@ function runTurnUpkeep(actor, combat) {
     } else if (flag.model === "toggle") {
       if (!item.system?.active) continue;
       const startRound = flag.startRound ?? null;
-      if (startRound === null || currentRound <= startRound) continue;
+      if (startRound === null) {
+        // Activated out of combat (no game.combat at apply time) → anchor on the
+        // current round so upkeep begins next turn, without charging this turn.
+        const itemId = item.id;
+        queueDeferred(item, () =>
+          actor.items
+            .get(itemId)
+            ?.update({ [`flags.${MODULE_ID}.maintenanceBuff.startRound`]: currentRound }),
+        );
+        continue;
+      }
+      if (currentRound <= startRound) continue;
       const interval = Math.max(1, Number(flag.interval) || 1);
       if ((currentRound - startRound) % interval !== 0) continue;
       queueDeferred(item, () => runToggleMaintenance(actor, item.id));
