@@ -627,8 +627,7 @@ function durationBuffIds(actor) {
   return actor.items
     .filter(
       (item) =>
-        item.type === "buff" &&
-        item.flags?.[MODULE_ID]?.maintenanceBuff?.model === "duration",
+        item.type === "buff" && item.flags?.[MODULE_ID]?.maintenanceBuff?.model === "duration",
     )
     .map((item) => item.id);
 }

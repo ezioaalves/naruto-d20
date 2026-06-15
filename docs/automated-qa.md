@@ -50,12 +50,13 @@ directly in its browser page; there is no persistent test-mode setting.
 
 ## Current coverage
 
-| Spec                     | Coverage                                                                                |
-| ------------------------ | --------------------------------------------------------------------------------------- |
-| `chakra.spec.mjs`        | Derived values, sheet editing/persistence, conditions, Chakra UI                        |
-| `tap-reserves.spec.mjs`  | Real dialog UI, seal DCs, validation, success/failure, PF1e roll card                   |
-| `use-technique.spec.mjs` | YOUTON perform failure/success, mastery bypass, insufficient chakra, Emergency Transfer |
-| `auto-buffs.spec.mjs`    | Full technique-to-buff flow, targeting, refresh, lookup priority, PF1e expiry           |
+| Spec                       | Coverage                                                                                           |
+| -------------------------- | -------------------------------------------------------------------------------------------------- |
+| `chakra.spec.mjs`          | Derived values, sheet editing/persistence, conditions, Chakra UI                                   |
+| `tap-reserves.spec.mjs`    | Real dialog UI, seal DCs, validation, success/failure, PF1e roll card                              |
+| `use-technique.spec.mjs`   | YOUTON perform failure/success, mastery bypass, insufficient chakra, Emergency Transfer            |
+| `auto-buffs.spec.mjs`      | Full technique-to-buff flow, targeting, refresh, lookup priority, PF1e expiry                      |
+| `gate-techniques.spec.mjs` | Eight-Gates upkeep: HP/chakra-damage drain, fast-healing, condition clearing, lethal guard, expiry |
 
 Tests run serially because they share one Foundry world and browser page. A
 test fails if required fixture data is missing; core scenarios do not skip.
