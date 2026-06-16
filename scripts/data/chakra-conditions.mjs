@@ -63,6 +63,52 @@ export function registerChakraConditions() {
 
 // ── Condition evaluation ──────────────────────────────────────────────────
 
+export function resolveChakraConditionState({
+  reserveValue = 0,
+  reserveMax = 0,
+  poolValue = 0,
+  poolMax = 0,
+  depletionActive = false,
+  lowReserveFatiguePending = false,
+  inCombat = false,
+} = {}) {
+  const reservePct = reserveMax > 0 ? reserveValue / reserveMax : 1;
+  const fullReserve = reserveMax <= 0 || reserveValue >= reserveMax;
+  const fullPool = poolMax <= 0 || poolValue >= poolMax;
+  const fullyRecovered = fullReserve && fullPool;
+
+  let nextDepletionActive = depletionActive || reserveValue <= 0;
+  if (nextDepletionActive && fullyRecovered) nextDepletionActive = false;
+
+  if (nextDepletionActive) {
+    return {
+      wantsLowReserves: false,
+      wantsDepletion: true,
+      wantsFatigued: reservePct >= 0.5,
+      wantsExhausted: reservePct < 0.5,
+      depletionActive: true,
+      lowReserveFatiguePending: false,
+    };
+  }
+
+  const wantsLowReserves = reserveValue > 0 && reservePct < 0.5;
+  const immediateLowReserveFatigue = wantsLowReserves && (reservePct < 0.25 || !inCombat);
+  const nextPending =
+    wantsLowReserves && !immediateLowReserveFatigue
+      ? true
+      : wantsLowReserves && lowReserveFatiguePending && inCombat;
+
+  return {
+    wantsLowReserves,
+    wantsDepletion: false,
+    wantsFatigued:
+      immediateLowReserveFatigue || (wantsLowReserves && lowReserveFatiguePending && !inCombat),
+    wantsExhausted: false,
+    depletionActive: false,
+    lowReserveFatiguePending: Boolean(nextPending && !immediateLowReserveFatigue),
+  };
+}
+
 /**
  * Evaluate the actor's chakra reserve level and apply or remove the two naruto-d20
  * conditions (plus their implied PF1e conditions) accordingly.
