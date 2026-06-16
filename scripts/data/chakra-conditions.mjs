@@ -3,7 +3,12 @@ import {
   LOW_RESERVES_CONDITION_ID,
   CHAKRA_DEPLETION_CONDITION_ID,
 } from "../constants.mjs";
-import { conditionAppliedExhaustedPath, conditionAppliedFatiguedPath } from "../flag-paths.mjs";
+import {
+  conditionAppliedExhaustedPath,
+  conditionAppliedFatiguedPath,
+  conditionDepletionActivePath,
+  conditionLowReserveFatiguePendingPath,
+} from "../flag-paths.mjs";
 
 /**
  * Naruto D20 — Chakra Condition System
@@ -126,22 +131,30 @@ export async function checkAndUpdateConditions(actor) {
 
   const reserveValue = chakra.reserve?.value ?? 0;
   const reserveMax = chakra.reserve?.max ?? 0;
-
-  // Percentage — treat 0-max as 1 (full) to avoid division by zero on new actors
-  const reservePct = reserveMax > 0 ? reserveValue / reserveMax : 1;
-
-  const wantsDepletion = reserveValue <= 0;
-  const wantsLowReserves = !wantsDepletion && reservePct < 0.5;
+  const poolValue = chakra.pool?.value ?? 0;
+  const poolMax = chakra.pool?.max ?? 0;
 
   // Previously-tracked implied PF1e conditions (which conditions WE applied)
   const tracked = actor.flags?.[MODULE_ID]?.conditions ?? {};
   const hadFatigued = tracked.appliedFatigued ?? false;
   const hadExhausted = tracked.appliedExhausted ?? false;
+  const hadDepletionActive = tracked.depletionActive ?? false;
+  const hadLowReserveFatiguePending = tracked.lowReserveFatiguePending ?? false;
+  const inCombat = actorIsInStartedCombat(actor);
+  const state = resolveChakraConditionState({
+    reserveValue,
+    reserveMax,
+    poolValue,
+    poolMax,
+    depletionActive: hadDepletionActive,
+    lowReserveFatiguePending: hadLowReserveFatiguePending,
+    inCombat,
+  });
 
   // Build the setConditions payload
   const condUpdates = {
-    [LOW_RESERVES_CONDITION_ID]: wantsLowReserves,
-    [CHAKRA_DEPLETION_CONDITION_ID]: wantsDepletion,
+    [LOW_RESERVES_CONDITION_ID]: state.wantsLowReserves,
+    [CHAKRA_DEPLETION_CONDITION_ID]: state.wantsDepletion,
   };
 
   let newAppliedFatigued = hadFatigued;
@@ -149,47 +162,44 @@ export async function checkAndUpdateConditions(actor) {
 
   await _removeLegacyNamespacedConditions(actor);
 
-  if (wantsDepletion) {
-    // Apply exhausted — track it only if it was not already active from another source
+  if (state.wantsExhausted) {
     const exhaustedAlreadyActive = actor.statuses?.has("exhausted") ?? false;
     condUpdates.exhausted = true;
-    newAppliedExhausted = !exhaustedAlreadyActive;
+    newAppliedExhausted = hadExhausted || !exhaustedAlreadyActive;
+  } else if (hadExhausted) {
+    condUpdates.exhausted = false;
+    newAppliedExhausted = false;
+  }
 
-    // Remove fatigued if we applied it (depletion supersedes low reserves)
-    if (hadFatigued) {
-      condUpdates.fatigued = false;
-      newAppliedFatigued = false;
-    }
-  } else {
-    // Remove exhausted only if we applied it
-    if (hadExhausted) {
-      condUpdates.exhausted = false;
-      newAppliedExhausted = false;
-    }
-
-    if (wantsLowReserves) {
-      // Apply fatigued — track it only if it was not already active from another source
-      const fatiguedAlreadyActive = actor.statuses?.has("fatigued") ?? false;
-      condUpdates.fatigued = true;
-      newAppliedFatigued = !fatiguedAlreadyActive;
-    } else {
-      // Remove fatigued only if we applied it
-      if (hadFatigued) {
-        condUpdates.fatigued = false;
-        newAppliedFatigued = false;
-      }
-    }
+  if (state.wantsFatigued) {
+    const fatiguedAlreadyActive = actor.statuses?.has("fatigued") ?? false;
+    condUpdates.fatigued = true;
+    newAppliedFatigued = hadFatigued || !fatiguedAlreadyActive;
+  } else if (hadFatigued) {
+    condUpdates.fatigued = false;
+    newAppliedFatigued = false;
   }
 
   await actor.setConditions(condUpdates);
 
   // Persist tracking flags — only if something changed to avoid an extra round-trip
-  if (newAppliedFatigued !== hadFatigued || newAppliedExhausted !== hadExhausted) {
+  if (
+    newAppliedFatigued !== hadFatigued ||
+    newAppliedExhausted !== hadExhausted ||
+    state.depletionActive !== hadDepletionActive ||
+    state.lowReserveFatiguePending !== hadLowReserveFatiguePending
+  ) {
     await actor.update({
       [conditionAppliedFatiguedPath]: newAppliedFatigued,
       [conditionAppliedExhaustedPath]: newAppliedExhausted,
+      [conditionDepletionActivePath]: state.depletionActive,
+      [conditionLowReserveFatiguePendingPath]: state.lowReserveFatiguePending,
     });
   }
+}
+
+function actorIsInStartedCombat(actor) {
+  return actor.getCombatants?.().some((combatant) => combatant.combat?.started) ?? false;
 }
 
 async function _removeLegacyNamespacedConditions(actor) {
