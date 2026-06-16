@@ -41,6 +41,7 @@ import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
 import { registerTurnMaintenance } from "./automation/turn-maintenance.mjs";
 import { registerElementDamage } from "./automation/maintenance-element-damage.mjs";
 import { registerRankRollData } from "./automation/rank-rolldata.mjs";
+import { registerTrainingWeightCarryPatch } from "./automation/training-weight-carry.mjs";
 import { registerRankGrantConfig } from "./ui/rank-grant-config.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
@@ -222,6 +223,7 @@ Hooks.once("setup", () => {
   registerTurnMaintenance(); // start-of-turn maintenance + spent-buff cleanup
   registerElementDamage(); // type configured maintenance-element attack damage at roll time
   registerRankRollData(); // KOUSOKU/JOURYOKU effective rank (paid/temp/bonus + armor/condition penalties)
+  registerTrainingWeightCarryPatch(); // subtract ignored Training Weight mass from encumbrance
   registerRankGrantConfig(); // "Naruto Rank" grant section on PF1e buff sheets
   registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog
 });
