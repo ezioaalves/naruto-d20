@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.32 - 2026-06-16
+
+- Added **persistent chakra condition recovery state** (#125): Chakra Depletion now persists until both Chakra Pool and Reserve are fully recovered, excluding temporary chakra. While in depletion, PF1e `exhausted` downgrades to module-owned `fatigued` once Reserve reaches 50%+, and Low Reserve fatigue above the 25% threshold can be delayed until combat ends instead of applying immediately mid-encounter.
+- Fixed **depleted pool rest recovery** (#126): while under Chakra Depletion, normal rest and long-term care now recover `floor(max / 4)` or `floor(max / 2)` of the Chakra Pool **incrementally**, capped at max, instead of overwriting the pool to those values and blocking further recovery on later rests.
+
 ## v1.0.31 - 2026-06-15
 
 - Added **real-duration gate buffs** (#122): Kai-Mon, Sei-Mon, and Heal Gate now carry a finite round duration (character level in rounds) instead of short-cycling 1-round toggle buffs. A new `updateCombat` hook charges HP / chakra-damage upkeep at the start of each actor's turn; natural buff expiry triggers teardown (fatigue + delete) rather than re-application. Toggle-model buffs (stances, rank maintenance) are completely unchanged.
