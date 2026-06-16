@@ -16,6 +16,7 @@ import {
   hasRankMasteryFreeUseAvailable,
 } from "./rank-buffs.mjs";
 import { calculateChakraDamage, commitChakraDamage } from "../data/chakra-damage.mjs";
+import { applyConditionBenefits } from "./condition-benefits.mjs";
 
 const pending = new Set();
 
@@ -528,11 +529,7 @@ async function applyTurnBenefits(actor, technique, facets) {
     }
   }
 
-  if (facets.clearConditions?.length) {
-    const payload = {};
-    for (const id of facets.clearConditions) payload[id] = false;
-    await actor.setConditions(payload);
-  }
+  await applyConditionBenefits(actor, facets);
 }
 
 function promptHpUpkeep(technique, formula) {
