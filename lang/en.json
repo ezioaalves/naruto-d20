@@ -93,6 +93,7 @@
       "SkillSynergy": "Skill Synergy",
       "MiscBonus": "Misc Bonus",
       "PrimaryAffinity": "Primary Affinity ({affinity})",
+      "TrainingWeight": "Training Weight",
       "ChakraPoolBase": "Base (2 + 2×Lv)",
       "ConTimesLevel": "Con × Level",
       "TwoTimesLevel": "2 × Level"

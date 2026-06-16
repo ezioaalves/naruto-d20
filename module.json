@@ -100,6 +100,13 @@
       "path":   "packs/classes",
       "type":   "Item",
       "system": "pf1"
+    },
+    {
+      "name": "training-weights",
+      "label": "Training Weights",
+      "path": "packs/training-weights",
+      "type": "Item",
+      "system": "pf1"
     }
   ],
   "packFolders": [
@@ -111,7 +118,8 @@
         "techniques",
         "technique-buffs",
         "feats",
-        "classes"
+        "classes",
+        "training-weights"
       ]
     }
   ]

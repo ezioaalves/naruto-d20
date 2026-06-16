@@ -1,0 +1,48 @@
+{
+  "_id": "TrnWtWrstT8A8",
+  "_key": "!items!TrnWtWrstT8A8",
+  "_stats": {
+    "compendiumSource": null,
+    "coreVersion": "13.351",
+    "createdTime": 1780850000000,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "naruto-d20",
+    "modifiedTime": 1780850000000,
+    "systemId": "pf1",
+    "systemVersion": "11.11"
+  },
+  "type": "loot",
+  "name": "Wrist Weight Type VIII",
+  "img": "systems/pf1/icons/items/equipment/bracers-defense.jpg",
+  "system": {
+    "description": {
+      "value": "<p>Training weight worn on the wrists. While equipped, it penalizes effective Strength Rank. Together with an equipped ankle weight, it grants a Learn/Mastery bonus for explicitly marked rank-training techniques.</p>",
+      "unidentified": ""
+    },
+    "subType": "gear",
+    "quantity": 1,
+    "carried": true,
+    "equipped": false,
+    "identified": true,
+    "weight": {
+      "value": 500
+    },
+    "price": 0
+  },
+  "flags": {
+    "naruto-d20": {
+      "trainingWeightItem": {
+        "slot": "wrist",
+        "type": 8,
+        "rankPenalty": 10,
+        "learnBonus": 5
+      }
+    }
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0
+}

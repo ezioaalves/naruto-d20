@@ -24,6 +24,7 @@ const PACKS = [
   { name: "techniques", dir: "techniques", type: "naruto-d20.technique" },
   { name: "feats", dir: "feats", type: "feat" },
   { name: "technique-buffs", dir: "technique-buffs", type: "buff" },
+  { name: "training-weights", dir: "training-weights", type: "loot" },
 ];
 
 const DISCIPLINES = new Set([
@@ -72,6 +73,16 @@ const WEAPON_ATTACK_FILTERS = new Set([
   "unarmedOnly",
   "meleeOrUnarmed",
 ]);
+const TRAINING_WEIGHT_TABLE = Object.freeze({
+  1: Object.freeze({ weight: 25, rankPenalty: 1, learnBonus: 1 }),
+  2: Object.freeze({ weight: 37.5, rankPenalty: 2, learnBonus: 2 }),
+  3: Object.freeze({ weight: 50, rankPenalty: 3, learnBonus: 3 }),
+  4: Object.freeze({ weight: 62.5, rankPenalty: 4, learnBonus: 4 }),
+  5: Object.freeze({ weight: 75, rankPenalty: 5, learnBonus: 5 }),
+  6: Object.freeze({ weight: 150, rankPenalty: 6, learnBonus: 5 }),
+  7: Object.freeze({ weight: 250, rankPenalty: 8, learnBonus: 5 }),
+  8: Object.freeze({ weight: 500, rankPenalty: 10, learnBonus: 5 }),
+});
 
 const docsByPack = new Map();
 const foldersByPack = new Map();
@@ -415,6 +426,46 @@ function validateBuff({ doc, filename, packName }) {
   }
 }
 
+function validateTrainingWeight(packName, filename, doc) {
+  if (doc.system?.subType !== "gear") {
+    error(packName, filename, `training weight items must use loot subtype "gear"`);
+  }
+
+  const flag = doc.flags?.["naruto-d20"]?.trainingWeightItem;
+  if (!isPlainObject(flag)) {
+    error(packName, filename, "missing flags.naruto-d20.trainingWeightItem");
+    return;
+  }
+
+  if (!["wrist", "ankle"].includes(flag.slot)) {
+    error(packName, filename, `trainingWeightItem.slot must be "wrist" or "ankle"`);
+  }
+  if (!isIntegerInRange(flag.type, 1, 8)) {
+    error(packName, filename, "trainingWeightItem.type must be 1..8");
+  }
+  const row = TRAINING_WEIGHT_TABLE[flag.type];
+  const weight = doc.system?.weight?.value ?? doc.system?.weight;
+  if (typeof weight !== "number" || !Number.isFinite(weight)) {
+    error(packName, filename, "training weight must define numeric system.weight.value");
+  } else if (row && weight !== row.weight) {
+    error(packName, filename, `training weight type ${flag.type} must weigh ${row.weight}`);
+  }
+  if (row && flag.rankPenalty !== row.rankPenalty) {
+    error(
+      packName,
+      filename,
+      `trainingWeightItem.rankPenalty for type ${flag.type} must be ${row.rankPenalty}`,
+    );
+  }
+  if (row && flag.learnBonus !== row.learnBonus) {
+    error(
+      packName,
+      filename,
+      `trainingWeightItem.learnBonus for type ${flag.type} must be ${row.learnBonus}`,
+    );
+  }
+}
+
 function validateAutomationBuffMatches() {
   const techniques = docsByPack.get("techniques") ?? [];
   const buffs = docsByPack.get("technique-buffs") ?? [];
@@ -470,6 +521,8 @@ export function validateCompendia({
       if (pack.name === "techniques") validateTechnique(ctx);
       if (pack.name === "feats") validateFeat(ctx);
       if (pack.name === "technique-buffs") validateBuff(ctx);
+      if (pack.name === "training-weights")
+        validateTrainingWeight(pack.name, ctx.filename, ctx.doc);
     }
   }
 

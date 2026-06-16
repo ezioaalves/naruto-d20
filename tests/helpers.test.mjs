@@ -28,6 +28,8 @@ import {
   shouldChargeUpkeep,
 } from "../scripts/automation/maintenance-buffs.mjs";
 import { extractTemporaryChakraGrant } from "../scripts/automation/buff-application.mjs";
+import { computeEffectiveRank } from "../scripts/automation/rank-effective-level.mjs";
+import { registerTrainingWeightCarryPatch } from "../scripts/automation/training-weight-carry.mjs";
 import { getRankGrantType, rankGrantLevel } from "../scripts/automation/rank-buffs.mjs";
 import {
   legacyRankBuffToMaintenance,
@@ -46,6 +48,13 @@ import {
   parseWeaponAttackConfig,
   readWeaponAttackRaw,
 } from "../scripts/ui/technique-weapon-attack.mjs";
+import {
+  getHighestLearnedStrengthRank,
+  getIgnoredTrainingWeightTotal,
+  getTrainingWeightLearnBonus,
+  getTrainingWeightState,
+} from "../scripts/data/training-weights.mjs";
+import { buildLearnCheckBreakdown } from "../scripts/data/bonus-sources.mjs";
 import { validateCompendia } from "../tools/validate-compendia.mjs";
 import { calculateChakraDamage } from "../scripts/data/chakra-damage.mjs";
 import {
@@ -57,6 +66,8 @@ import { onActorRest } from "../scripts/data/rest-recovery.mjs";
 import { BUFF_TARGETS } from "../scripts/flag-paths.mjs";
 import { rollHpCost } from "../scripts/data/hp-cost.mjs";
 import { applyConditionBenefits } from "../scripts/automation/condition-benefits.mjs";
+
+globalThis.Math.clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
 globalThis.foundry = {
   utils: {
@@ -107,7 +118,7 @@ function readJson(path) {
 function makeSourceRoot(filesByPack) {
   const root = mkdtempSync(join(tmpdir(), "naruto-d20-tests-"));
   const sourceRoot = join(root, "packs/_source");
-  for (const pack of ["techniques", "feats", "technique-buffs"]) {
+  for (const pack of ["techniques", "feats", "technique-buffs", "training-weights"]) {
     mkdirSync(join(sourceRoot, pack), { recursive: true });
   }
   for (const [pack, files] of Object.entries(filesByPack)) {
@@ -1333,6 +1344,25 @@ describe("source JSON validation", () => {
           system: { subType: "buff" },
         },
       },
+      "training-weights": {
+        "weight.json": {
+          type: "loot",
+          _id: "weight01",
+          _key: "!items!weight01",
+          name: "Wrist Weight Type I",
+          system: { subType: "gear", weight: { value: 25 } },
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: {
+                slot: "wrist",
+                type: 1,
+                rankPenalty: 1,
+                learnBonus: 1,
+              },
+            },
+          },
+        },
+      },
     });
 
     const result = validateCompendia({ root, sourceRoot });
@@ -1345,6 +1375,7 @@ describe("source JSON validation", () => {
         ["techniques", 1],
         ["feats", 1],
         ["technique-buffs", 1],
+        ["training-weights", 1],
       ],
     );
   });
@@ -1376,6 +1407,63 @@ describe("source JSON validation", () => {
     assert.ok(messages.some((m) => m.includes("unsupported weaponAttack.mode")));
     assert.ok(messages.some((m) => m.includes("unsupported weaponAttack.filter")));
     assert.ok(messages.some((m) => m.includes("weaponAttack.charge")));
+  });
+
+  it("reports Training Weight source mistakes", () => {
+    const { root, sourceRoot } = makeSourceRoot({
+      "training-weights": {
+        "bad-weight.json": {
+          type: "loot",
+          _id: "badweight",
+          _key: "!items!badweight",
+          name: "Bad Weight",
+          system: { subType: "gear", weight: { value: "25" } },
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: {
+                slot: "wrist",
+                type: "1",
+                rankPenalty: 1,
+                learnBonus: 1,
+              },
+            },
+          },
+        },
+        "wrong-table.json": {
+          type: "loot",
+          _id: "wrongtbl",
+          _key: "!items!wrongtbl",
+          name: "Wrong Table Weight",
+          system: { subType: "gear", weight: { value: 25 } },
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: {
+                slot: "ankle",
+                type: 2,
+                rankPenalty: 1,
+                learnBonus: 1,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const result = validateCompendia({ root, sourceRoot });
+    const messages = result.issues.map((i) => i.message);
+
+    assert.equal(result.failed, true);
+    assert.ok(messages.some((m) => m.includes("trainingWeightItem.type must be 1..8")));
+    assert.ok(
+      messages.some((m) => m.includes("training weight must define numeric system.weight.value")),
+    );
+    assert.ok(messages.some((m) => m.includes("training weight type 2 must weigh 37.5")));
+    assert.ok(
+      messages.some((m) => m.includes("trainingWeightItem.rankPenalty for type 2 must be 2")),
+    );
+    assert.ok(
+      messages.some((m) => m.includes("trainingWeightItem.learnBonus for type 2 must be 2")),
+    );
   });
 });
 
@@ -1497,6 +1585,447 @@ describe("maintenance duration model", () => {
   it("omits duration-model fields for toggle buffs", () => {
     const flag = maintenanceBuffFlagData({ sourceTechniqueId: "abc", modeId: "dex" });
     assert.deepEqual(flag, { sourceTechniqueId: "abc", modeId: "dex" });
+  });
+});
+
+describe("training weight state", () => {
+  const learned = (name, trainingWeightTechnique) => ({
+    type: "naruto-d20.technique",
+    name,
+    system: { learning: { learned: true } },
+    flags: { "naruto-d20": { trainingWeightTechnique } },
+  });
+
+  const weight = ({
+    id,
+    slot,
+    type,
+    rankPenalty,
+    learnBonus,
+    weightValue,
+    equipped = true,
+  }) => ({
+    id,
+    type: "loot",
+    system: {
+      subType: "gear",
+      quantity: 1,
+      carried: true,
+      equipped,
+      weight: { total: weightValue },
+    },
+    isPhysical: true,
+    isActive: equipped,
+    inContainer: false,
+    flags: {
+      "naruto-d20": {
+        trainingWeightItem: { slot, type, rankPenalty, learnBonus },
+      },
+    },
+  });
+
+  it("chooses the highest equipped type per slot and uses the lower full-set type for learn bonus", () => {
+    const actor = {
+      items: [
+        weight({
+          id: "w1",
+          slot: "wrist",
+          type: 3,
+          rankPenalty: 3,
+          learnBonus: 3,
+          weightValue: 50,
+        }),
+        weight({
+          id: "w2",
+          slot: "wrist",
+          type: 5,
+          rankPenalty: 5,
+          learnBonus: 5,
+          weightValue: 75,
+        }),
+        weight({
+          id: "a1",
+          slot: "ankle",
+          type: 2,
+          rankPenalty: 2,
+          learnBonus: 2,
+          weightValue: 37.5,
+        }),
+      ],
+    };
+
+    assert.deepEqual(getTrainingWeightState(actor), {
+      wrist: { itemId: "w2", slot: "wrist", type: 5, rankPenalty: 5, learnBonus: 5, weight: 75 },
+      ankle: { itemId: "a1", slot: "ankle", type: 2, rankPenalty: 2, learnBonus: 2, weight: 37.5 },
+      hasFullSet: true,
+      fullSetType: 2,
+      fullSetLearnBonus: 2,
+      strengthRankPenalty: 5,
+      speedRankPenalty: 2,
+      highestLearnedStrengthRank: 0,
+      ignoredCarryWeight: 0,
+    });
+  });
+
+  it("reads highest learned strength rank from explicit technique metadata", () => {
+    const actor = {
+      items: [
+        learned("SHODAN JOURYOKU", {
+          eligibleRankKey: "JOURYOKU",
+          learnedStrengthRank: 1,
+        }),
+        learned("SANDAN JOURYOKU", {
+          eligibleRankKey: "JOURYOKU",
+          learnedStrengthRank: 3,
+        }),
+        learned("NINJOURYOKU NO JUTSU", {
+          eligibleRankKey: "",
+          learnedStrengthRank: 0,
+        }),
+      ],
+    };
+
+    assert.equal(getHighestLearnedStrengthRank(actor), 3);
+  });
+
+  it("ignores carried weight for both halves when their type is at or below learned JOURYOKU rank", () => {
+    const actor = {
+      items: [
+        learned("SANDAN JOURYOKU", {
+          eligibleRankKey: "JOURYOKU",
+          learnedStrengthRank: 3,
+        }),
+        weight({
+          id: "w3",
+          slot: "wrist",
+          type: 3,
+          rankPenalty: 3,
+          learnBonus: 3,
+          weightValue: 50,
+        }),
+        weight({
+          id: "a2",
+          slot: "ankle",
+          type: 2,
+          rankPenalty: 2,
+          learnBonus: 2,
+          weightValue: 37.5,
+        }),
+        weight({
+          id: "w5",
+          slot: "wrist",
+          type: 5,
+          rankPenalty: 5,
+          learnBonus: 5,
+          weightValue: 75,
+        }),
+      ],
+    };
+
+    assert.equal(getIgnoredTrainingWeightTotal(actor), 87.5);
+  });
+
+  it("ignores carried unequipped weight without applying effective automation", () => {
+    const actor = {
+      items: [
+        learned("SANDAN JOURYOKU", {
+          eligibleRankKey: "JOURYOKU",
+          learnedStrengthRank: 3,
+        }),
+        weight({
+          id: "w3",
+          slot: "wrist",
+          type: 3,
+          rankPenalty: 3,
+          learnBonus: 3,
+          weightValue: 50,
+          equipped: false,
+        }),
+        weight({
+          id: "a2",
+          slot: "ankle",
+          type: 2,
+          rankPenalty: 2,
+          learnBonus: 2,
+          weightValue: 37.5,
+          equipped: false,
+        }),
+      ],
+    };
+
+    assert.equal(getIgnoredTrainingWeightTotal(actor), 87.5);
+    assert.deepEqual(getTrainingWeightState(actor), {
+      wrist: null,
+      ankle: null,
+      hasFullSet: false,
+      fullSetType: null,
+      fullSetLearnBonus: 0,
+      strengthRankPenalty: 0,
+      speedRankPenalty: 0,
+      highestLearnedStrengthRank: 3,
+      ignoredCarryWeight: 87.5,
+    });
+  });
+
+  it("registers the carry patch safely when PF1 globals or converters are missing", () => {
+    const originalPf1 = globalThis.pf1;
+    const originalConsoleError = console.error;
+    const errors = [];
+    console.error = (message) => errors.push(message);
+
+    try {
+      delete globalThis.pf1;
+      assert.doesNotThrow(() => registerTrainingWeightCarryPatch());
+      assert.equal(errors.at(-1), "Naruto D20 | ActorPF not found — training weight carry patch skipped");
+
+      class ActorPF {
+        constructor(items) {
+          this.items = items;
+        }
+
+        getCarriedWeight() {
+          return 100;
+        }
+      }
+
+      globalThis.pf1 = { documents: { actor: { ActorPF } }, utils: {} };
+      registerTrainingWeightCarryPatch();
+      const actor = new ActorPF([
+        learned("SANDAN JOURYOKU", {
+          eligibleRankKey: "JOURYOKU",
+          learnedStrengthRank: 3,
+        }),
+        weight({
+          id: "w3",
+          slot: "wrist",
+          type: 3,
+          rankPenalty: 3,
+          learnBonus: 3,
+          weightValue: 50,
+          equipped: false,
+        }),
+      ]);
+
+      assert.equal(actor.getCarriedWeight(), 50);
+    } finally {
+      console.error = originalConsoleError;
+      if (originalPf1 === undefined) delete globalThis.pf1;
+      else globalThis.pf1 = originalPf1;
+    }
+  });
+
+  it("returns a learn bonus only for explicitly eligible full-set techniques", () => {
+    const actor = {
+      items: [
+        weight({
+          id: "w4",
+          slot: "wrist",
+          type: 4,
+          rankPenalty: 4,
+          learnBonus: 4,
+          weightValue: 62.5,
+        }),
+        weight({
+          id: "a2",
+          slot: "ankle",
+          type: 2,
+          rankPenalty: 2,
+          learnBonus: 2,
+          weightValue: 37.5,
+        }),
+      ],
+    };
+
+    assert.deepEqual(
+      getTrainingWeightLearnBonus(actor, {
+        flags: {
+          "naruto-d20": {
+            trainingWeightTechnique: {
+              eligibleRankKey: "KOUSOKU",
+              learnedStrengthRank: 0,
+            },
+          },
+        },
+      }),
+      { value: 2, type: 2, eligibleRankKey: "KOUSOKU" },
+    );
+
+    assert.equal(
+      getTrainingWeightLearnBonus(actor, {
+        flags: {
+          "naruto-d20": {
+            trainingWeightTechnique: {
+              eligibleRankKey: "",
+              learnedStrengthRank: 0,
+            },
+          },
+        },
+      }),
+      null,
+    );
+  });
+});
+
+describe("training weight learn breakdown", () => {
+  it("injects the full-set bonus only for explicitly eligible techniques", () => {
+    globalThis.game.i18n = {
+      localize: (key) => key,
+      format: (key, data) => `${key}:${JSON.stringify(data)}`,
+    };
+
+    const actor = {
+      flags: {
+        "naruto-d20": {
+          learn: {
+            tai: {
+              base: 7,
+              abilityMod: 3,
+              abilityLabel: "Str",
+              buffBonus: 0,
+              synergyBonus: 0,
+              miscBonus: 0,
+            },
+          },
+        },
+      },
+      sourceInfo: {},
+      items: [
+        {
+          id: "w3",
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 50 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "wrist", type: 3, rankPenalty: 3, learnBonus: 3 },
+            },
+          },
+        },
+        {
+          id: "a2",
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 37.5 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "ankle", type: 2, rankPenalty: 2, learnBonus: 2 },
+            },
+          },
+        },
+      ],
+    };
+
+    const eligible = {
+      flags: {
+        "naruto-d20": {
+          trainingWeightTechnique: {
+            eligibleRankKey: "KOUSOKU",
+            learnedStrengthRank: 0,
+          },
+        },
+      },
+    };
+
+    const ineligible = {
+      flags: {
+        "naruto-d20": {
+          trainingWeightTechnique: {
+            eligibleRankKey: "",
+            learnedStrengthRank: 0,
+          },
+        },
+      },
+    };
+
+    assert.equal(
+      buildLearnCheckBreakdown(actor, "tai", { item: eligible, includeConditional: true }).parts.at(-1),
+      "2[NarutoD20.Breakdown.TrainingWeight]",
+    );
+    assert.equal(
+      buildLearnCheckBreakdown(actor, "tai", { item: ineligible, includeConditional: true }).parts.at(-1),
+      "3[Str]",
+    );
+  });
+});
+
+describe("training weight rank penalties", () => {
+  const activeRankBuff = ({ id, key, level }) => ({
+    id,
+    type: "buff",
+    system: { active: true, level },
+    flags: {
+      "naruto-d20": {
+        maintenanceBuff: { key, grantType: "paid" },
+      },
+    },
+  });
+
+  const weight = ({ id, slot, type, rankPenalty }) => ({
+    id,
+    type: "loot",
+    system: {
+      subType: "gear",
+      quantity: 1,
+      carried: true,
+      equipped: true,
+      weight: { total: 25 },
+    },
+    isPhysical: true,
+    isActive: true,
+    inContainer: false,
+    flags: {
+      "naruto-d20": {
+        trainingWeightItem: { slot, type, rankPenalty, learnBonus: Math.min(type, 5) },
+      },
+    },
+  });
+
+  it("subtracts wrist penalties from effective JOURYOKU and ankle penalties from effective KOUSOKU", () => {
+    const actor = {
+      items: [
+        activeRankBuff({ id: "jr5", key: "JOURYOKU", level: 5 }),
+        activeRankBuff({ id: "kr4", key: "KOUSOKU", level: 4 }),
+        weight({ id: "w2", slot: "wrist", type: 2, rankPenalty: 2 }),
+        weight({ id: "a3", slot: "ankle", type: 3, rankPenalty: 3 }),
+      ],
+      statuses: new Set(),
+    };
+
+    assert.deepEqual(computeEffectiveRank(actor, "JOURYOKU", { rollData: { armor: { type: 0 } } }), {
+      paid: 5,
+      temp: 0,
+      bonus: 0,
+      penalty: 2,
+      effective: 3,
+      carryEffective: 5,
+      carrierId: "jr5",
+    });
+
+    assert.deepEqual(computeEffectiveRank(actor, "KOUSOKU", { rollData: { armor: { type: 0 } } }), {
+      paid: 4,
+      temp: 0,
+      bonus: 0,
+      penalty: 3,
+      effective: 1,
+      carryEffective: 4,
+      carrierId: "kr4",
+    });
   });
 });
 

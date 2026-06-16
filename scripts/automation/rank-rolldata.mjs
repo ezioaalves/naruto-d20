@@ -21,12 +21,19 @@ function _onGetRollData(item, data) {
     // the sheet's Changes tab still shows this buff's own numbers.
     level = _standaloneEffective(item, data, flag.key);
   } else {
-    const { effective, carrierId } = computeEffectiveRank(item.actor, flag.key, {
+    const { effective, carryEffective, carrierId } = computeEffectiveRank(item.actor, flag.key, {
       rollData: data,
     });
     // Only the carrier's changes apply the effective values; every other
     // active rank buff of this key is zeroed to prevent double application.
     level = item.id === carrierId ? effective : 0;
+    if (flag.key === "JOURYOKU") {
+      data.item.strRank = {
+        ...strRankValues(level),
+        carryMult: strRankValues(carryEffective).carryMult,
+      };
+      return;
+    }
   }
 
   if (flag.key === "KOUSOKU") data.item.speedRank = speedRankValues(level);

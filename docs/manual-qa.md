@@ -382,3 +382,22 @@ Prereq: a technique with finite round duration (e.g., Kai-Mon rank 1 = 3 rounds)
 - [ ] If upkeep is skipped/waived on turn 2, the buff still expires at turn 4; skipping does not extend duration.
 - [ ] Manually removing the buff before round 8 stops upkeep immediately and no end-of-duration fatigue applies.
 - [ ] At mastery step 5 with double-element maintenance (2 elements instead of 1): upkeep cost scales as designed (e.g., 2 instances of HP damage per round).
+
+## Training Weight
+
+1. Drag `Wrist Weight Type III` to a test actor and equip it.
+   Expected: effective JOURYOKU benefits drop by 3 while equipped.
+
+2. Drag `Ankle Weight Type II` to the same actor and equip it.
+   Expected: effective KOUSOKU benefits drop by 2 while equipped.
+   Expected: learning/mastering an explicitly marked KOUSOKU or JOURYOKU technique gains a +2 Training Weight row in the roll breakdown.
+
+3. Learn `SANDAN JOURYOKU` on a test actor without activating any JOURYOKU buff.
+   Expected: Type I, II, and III wrist/ankle items count as 0 carried weight.
+   Expected: higher Types still count toward carried weight.
+
+4. Equip two wrist weights of different Types and one ankle weight.
+   Expected: only the highest-Type wrist weight applies; there is no stacking across duplicate halves.
+
+5. Learn or master a technique without `trainingWeightTechnique.eligibleRankKey`.
+   Expected: no Training Weight bonus appears in the breakdown even with a full set equipped.

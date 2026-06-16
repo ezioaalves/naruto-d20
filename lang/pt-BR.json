@@ -93,6 +93,7 @@
       "SkillSynergy": "Sinergia de Perícia",
       "MiscBonus": "Bônus Diverso",
       "PrimaryAffinity": "Afinidade Primária ({affinity})",
+      "TrainingWeight": "Peso de Treino",
       "ChakraPoolBase": "Base (2 + 2×Nv)",
       "ConTimesLevel": "Con × Nível",
       "TwoTimesLevel": "2 × Nível"
