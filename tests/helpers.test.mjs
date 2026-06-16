@@ -117,7 +117,7 @@ function readJson(path) {
 function makeSourceRoot(filesByPack) {
   const root = mkdtempSync(join(tmpdir(), "naruto-d20-tests-"));
   const sourceRoot = join(root, "packs/_source");
-  for (const pack of ["techniques", "feats", "technique-buffs"]) {
+  for (const pack of ["techniques", "feats", "technique-buffs", "training-weights"]) {
     mkdirSync(join(sourceRoot, pack), { recursive: true });
   }
   for (const [pack, files] of Object.entries(filesByPack)) {
@@ -1343,6 +1343,25 @@ describe("source JSON validation", () => {
           system: { subType: "buff" },
         },
       },
+      "training-weights": {
+        "weight.json": {
+          type: "loot",
+          _id: "weight01",
+          _key: "!items!weight01",
+          name: "Wrist Weight Type I",
+          system: { subType: "gear", weight: { value: 25 } },
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: {
+                slot: "wrist",
+                type: 1,
+                rankPenalty: 1,
+                learnBonus: 1,
+              },
+            },
+          },
+        },
+      },
     });
 
     const result = validateCompendia({ root, sourceRoot });
@@ -1355,6 +1374,7 @@ describe("source JSON validation", () => {
         ["techniques", 1],
         ["feats", 1],
         ["technique-buffs", 1],
+        ["training-weights", 1],
       ],
     );
   });
