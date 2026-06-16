@@ -14,7 +14,7 @@
   },
   "type": "loot",
   "name": "Wrist Weight Type I",
-  "img": "icons/tools/smithing/anvil.webp",
+  "img": "systems/pf1/icons/items/equipment/bracers-defense.jpg",
   "system": {
     "description": {
       "value": "<p>Training weight worn on the wrists. While equipped, it penalizes effective Strength Rank. Together with an equipped ankle weight, it grants a Learn/Mastery bonus for explicitly marked rank-training techniques.</p>",

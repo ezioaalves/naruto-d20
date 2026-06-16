@@ -14,7 +14,7 @@
   },
   "type": "loot",
   "name": "Ankle Weight Type III",
-  "img": "icons/tools/smithing/anvil.webp",
+  "img": "systems/pf1/icons/items/equipment/bracers-defense.jpg",
   "system": {
     "description": {
       "value": "<p>Training weight worn on the ankles. While equipped, it penalizes effective Speed Rank. Together with an equipped wrist weight, it grants a Learn/Mastery bonus for explicitly marked rank-training techniques.</p>",
