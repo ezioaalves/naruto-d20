@@ -5,6 +5,7 @@ import {
   chakraPoolMaxBonusPath,
   chakraReserveMaxBonusPath,
 } from "../flag-paths.mjs";
+import { getTrainingWeightLearnBonus } from "./training-weights.mjs";
 
 const AFFINITY_DESCRIPTOR_ALIASES = {
   Earth: ["Earth"],
@@ -88,6 +89,13 @@ export function buildLearnCheckBreakdown(
   if (affinity) {
     parts.push(`${affinity.value}[${affinity.label}]`);
     sources.push({ name: affinity.label, value: affinity.value, builtIn: true });
+  }
+
+  const trainingWeight = item ? getTrainingWeightLearnBonus(actor, item) : null;
+  if (trainingWeight) {
+    const label = game.i18n.localize("NarutoD20.Breakdown.TrainingWeight");
+    parts.push(`${trainingWeight.value}[${label}]`);
+    sources.push({ name: label, value: trainingWeight.value, builtIn: false });
   }
 
   return { parts, sources };

@@ -52,6 +52,7 @@ import {
   getTrainingWeightLearnBonus,
   getTrainingWeightState,
 } from "../scripts/data/training-weights.mjs";
+import { buildLearnCheckBreakdown } from "../scripts/data/bonus-sources.mjs";
 import { validateCompendia } from "../tools/validate-compendia.mjs";
 import { calculateChakraDamage } from "../scripts/data/chakra-damage.mjs";
 import {
@@ -1691,6 +1692,104 @@ describe("training weight state", () => {
         },
       }),
       null,
+    );
+  });
+});
+
+describe("training weight learn breakdown", () => {
+  it("injects the full-set bonus only for explicitly eligible techniques", () => {
+    globalThis.game.i18n = {
+      localize: (key) => key,
+      format: (key, data) => `${key}:${JSON.stringify(data)}`,
+    };
+
+    const actor = {
+      flags: {
+        "naruto-d20": {
+          learn: {
+            tai: {
+              base: 7,
+              abilityMod: 3,
+              abilityLabel: "Str",
+              buffBonus: 0,
+              synergyBonus: 0,
+              miscBonus: 0,
+            },
+          },
+        },
+      },
+      sourceInfo: {},
+      items: [
+        {
+          id: "w3",
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 50 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "wrist", type: 3, rankPenalty: 3, learnBonus: 3 },
+            },
+          },
+        },
+        {
+          id: "a2",
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 37.5 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "ankle", type: 2, rankPenalty: 2, learnBonus: 2 },
+            },
+          },
+        },
+      ],
+    };
+
+    const eligible = {
+      flags: {
+        "naruto-d20": {
+          trainingWeightTechnique: {
+            eligibleRankKey: "KOUSOKU",
+            learnedStrengthRank: 0,
+          },
+        },
+      },
+    };
+
+    const ineligible = {
+      flags: {
+        "naruto-d20": {
+          trainingWeightTechnique: {
+            eligibleRankKey: "",
+            learnedStrengthRank: 0,
+          },
+        },
+      },
+    };
+
+    assert.equal(
+      buildLearnCheckBreakdown(actor, "tai", { item: eligible, includeConditional: true }).parts.at(-1),
+      "2[NarutoD20.Breakdown.TrainingWeight]",
+    );
+    assert.equal(
+      buildLearnCheckBreakdown(actor, "tai", { item: ineligible, includeConditional: true }).parts.at(-1),
+      "3[Str]",
     );
   });
 });
