@@ -44,7 +44,10 @@ import { registerRankRollData } from "./automation/rank-rolldata.mjs";
 import { registerRankGrantConfig } from "./ui/rank-grant-config.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
 import { onActorRest } from "./data/rest-recovery.mjs";
-import { registerChakraConditions } from "./data/chakra-conditions.mjs";
+import {
+  registerChakraConditionCombatHooks,
+  registerChakraConditions,
+} from "./data/chakra-conditions.mjs";
 import {
   MAINTENANCE_MIGRATION_SETTING,
   runMaintenanceMigrations,
@@ -202,6 +205,7 @@ Hooks.once("pf1RegisterDamageTypes", registerDamageTypes);
 
 // ── [7] setup ─────────────────────────────────────────────────────────────
 Hooks.once("setup", () => {
+  registerChakraConditionCombatHooks(); // combat end -> apply delayed Low Reserve fatigue
   installChakraTabPatch(); // _renderInner wrap — must run before first render
   installSynckitHeaderButton(); // _getHeaderButtons wrap — "Sync Techniques" title-bar button
   installTechniqueGetChatDataPatch(); // inject "Chakra Resistance" into item summary properties

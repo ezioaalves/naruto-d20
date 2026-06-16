@@ -38,6 +38,8 @@ export const chakraReserveValuePath = `${moduleFlagsPath}.chakra.reserve.value`;
 // ── Chakra condition tracking paths ──────────────────────────────────────
 export const conditionAppliedFatiguedPath = `${moduleFlagsPath}.conditions.appliedFatigued`;
 export const conditionAppliedExhaustedPath = `${moduleFlagsPath}.conditions.appliedExhausted`;
+export const conditionDepletionActivePath = `${moduleFlagsPath}.conditions.depletionActive`;
+export const conditionLowReserveFatiguePendingPath = `${moduleFlagsPath}.conditions.lowReserveFatiguePending`;
 
 /**
  * Single source of truth for pf1's changes-engine integration.
