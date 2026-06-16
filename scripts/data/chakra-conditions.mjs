@@ -193,10 +193,15 @@ export async function checkAndUpdateConditions(actor) {
   const appliedConditions = await actor.setConditions(condUpdates);
   if (state.wantsExhausted) {
     newAppliedExhausted =
-      hadExhausted || Object.hasOwn(appliedConditions ?? {}, "exhausted");
+      actorHasModuleOwnedConditionEffect(actor, "exhausted") ||
+      (Object.hasOwn(appliedConditions ?? {}, "exhausted") &&
+        !actorHasDirectConditionEffect(actor, "exhausted"));
   }
   if (state.wantsFatigued) {
-    newAppliedFatigued = hadFatigued || Object.hasOwn(appliedConditions ?? {}, "fatigued");
+    newAppliedFatigued =
+      actorHasModuleOwnedConditionEffect(actor, "fatigued") ||
+      (Object.hasOwn(appliedConditions ?? {}, "fatigued") &&
+        !actorHasDirectConditionEffect(actor, "fatigued"));
   }
 
   // Persist tracking flags — only if something changed to avoid an extra round-trip
@@ -243,6 +248,14 @@ function moduleOwnedConditionEffectIds(
   if (ownedEffectIds.length) return ownedEffectIds;
   if (allowSingleTrackedFallback && statusEffects.length === 1) return [statusEffects[0].id];
   return [];
+}
+
+function actorHasDirectConditionEffect(actor, status) {
+  return (actor.effects ?? []).some((effect) => effect.statuses?.has(status));
+}
+
+function actorHasModuleOwnedConditionEffect(actor, status) {
+  return (actor.effects ?? []).some((effect) => isModuleOwnedConditionEffect(effect, status));
 }
 
 function isModuleOwnedConditionEffect(effect, status) {

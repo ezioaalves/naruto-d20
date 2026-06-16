@@ -707,6 +707,58 @@ describe("chakra condition state", () => {
 
     assert.deepEqual(deletedEffectIds, ["module-fatigued"]);
   });
+
+  it("clears stale fatigue ownership when only an external effect remains", async () => {
+    const deletedEffectIds = [];
+    const actorUpdates = [];
+    const actor = {
+      type: "character",
+      flags: {
+        "naruto-d20": {
+          chakra: {
+            pool: { value: 20, max: 20 },
+            reserve: { value: 4, max: 20 },
+          },
+          conditions: {
+            appliedFatigued: true,
+          },
+        },
+      },
+      statuses: new Set(["fatigued"]),
+      effects: [
+        {
+          id: "external-fatigued",
+          statuses: new Set(["fatigued"]),
+          flags: {},
+        },
+      ],
+      getCombatants: () => [],
+      async setConditions(updates) {
+        assert.deepEqual(updates.fatigued, {
+          flags: {
+            "naruto-d20": {
+              conditionOwner: true,
+              conditionStatus: "fatigued",
+            },
+          },
+        });
+        return {};
+      },
+      async update(update) {
+        actorUpdates.push(update);
+      },
+      async deleteEmbeddedDocuments(type, ids) {
+        assert.equal(type, "ActiveEffect");
+        deletedEffectIds.push(...ids);
+      },
+    };
+
+    await checkAndUpdateConditions(actor);
+
+    assert.deepEqual(deletedEffectIds, []);
+    assert.equal(actorUpdates.length, 1);
+    assert.equal(actorUpdates[0]["flags.naruto-d20.conditions.appliedFatigued"], false);
+  });
 });
 
 describe("chakra damage", () => {
