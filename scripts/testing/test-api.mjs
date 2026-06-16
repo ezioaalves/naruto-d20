@@ -299,6 +299,8 @@ function getConditions(actor) {
     statuses: [...(actor.statuses ?? [])],
     appliedFatigued: tracked.appliedFatigued ?? false,
     appliedExhausted: tracked.appliedExhausted ?? false,
+    lowReserveFatiguePending: tracked.lowReserveFatiguePending ?? false,
+    depletionActive: tracked.depletionActive ?? false,
   };
 }
 
