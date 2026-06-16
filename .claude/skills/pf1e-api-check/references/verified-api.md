@@ -76,3 +76,24 @@ Append new verified facts under the matching section. Never add a guessed entry.
   per-turn trigger independent of buff expiry, listen to core Foundry `updateCombat` (check
   `changed.turn`/`changed.round`) or core `combatTurn`/`combatRound` hooks and read
   `combat.combatant.actor`.
+- **`end: "turnStart"` cross-fires on "turnEnd" (BUG TRIGGER)** → `actor-pf.mjs:297-298`:
+  `case "turnStart": if (remaining === 0 && !["turnStart","turnEnd"].includes(event)) return false;`
+  When `remaining === 0`, this guard is bypassed for BOTH "turnStart" AND "turnEnd" events.
+  Consequence: a 1-round buff with `end:"turnStart"` applied on the last combatant's turn
+  expires in `_processEndTurn` (turnEnd, new world time, remaining=0) — not in the actor's
+  own `_processTurnStart` in the next round. Use `units:"perm"` + manual tracking to avoid.
+- **Round-based remaining** → `actor-pf.mjs:277-279`:
+  `elapsed = combat.round - (startRound ?? 0)`, `remaining = (rounds - elapsed) * CONFIG.time.roundTime`.
+  Rounds advance only at round boundaries; world time snapshots to new time in `_onUpdate:240`
+  before `_onNewTurn` runs.
+
+## Buff duration — `system.duration.units: "perm"`
+
+- `"perm"` is a valid `system.duration.units` value → `module/config.mjs:1554` (`timePeriods`).
+- `getDuration()` with `units:"perm"` + empty `value:""` → hits `if (!formula) return null`
+  (`module/documents/item/item-buff.mjs:226`) → returns `null` → `createData.duration.seconds`
+  is never set (`getRawEffectData:267`).
+- `AE._hasDuration` → `module/documents/active-effect.mjs:74`:
+  `return Number.isFinite(seconds ?? rounds ?? turns) && duration >= 0`. Without `seconds`/`rounds`
+  this is `false` → perm-buff AEs are excluded from `_effectsWithDuration` entirely
+  (`actor-base.mjs:143-148`) → PF1e never auto-expires them, regardless of `end` setting.

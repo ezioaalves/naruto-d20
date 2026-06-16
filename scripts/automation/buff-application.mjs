@@ -13,6 +13,7 @@ import {
   maintenanceModeById,
   realMaintenanceBuffDuration,
   resolveMaintenanceModel,
+  toggleMaintenanceBuffDuration,
 } from "./maintenance-buffs.mjs";
 
 const SOURCE_FLAG = MODULE_ID;
@@ -122,8 +123,14 @@ export async function applyModeBuff(item, actor, modeId = null, interval = 1) {
   }
 
   await applyBuffToTarget(buffDoc, actor, {
-    duration: maintenanceBuffDuration(interval),
-    maintenanceBuff: maintenanceBuffFlagData({ sourceTechniqueId: item.id, modeId: mode.id }),
+    duration: toggleMaintenanceBuffDuration(),
+    maintenanceBuff: maintenanceBuffFlagData({
+      sourceTechniqueId: item.id,
+      modeId: mode.id,
+      model: "toggle",
+      startRound: game.combat?.round ?? null,
+      interval,
+    }),
   });
 }
 
@@ -173,11 +180,14 @@ export async function applyUpkeepBuff(item, actor, interval = 1, duration = null
   }
 
   await applyBuffToTarget(buffDoc, actor, {
-    duration: maintenanceBuffDuration(interval),
+    duration: toggleMaintenanceBuffDuration(),
     maintenanceBuff: maintenanceBuffFlagData({
       sourceTechniqueId: item.id,
       elements,
       hasHeal: !!facets?.heal,
+      model: "toggle",
+      startRound: game.combat?.round ?? null,
+      interval,
     }),
   });
 }
@@ -254,11 +264,14 @@ function resolveTechniqueBuffContext(item) {
     return {
       ...rank,
       sourceTechniqueId: item.id,
-      duration: maintenanceBuffDuration(rank.interval),
+      duration: toggleMaintenanceBuffDuration(),
       maintenanceBuff: maintenanceBuffFlagData({
         sourceTechniqueId: item.id,
         grantType: "paid",
         key: rank.key,
+        model: "toggle",
+        startRound: game.combat?.round ?? null,
+        interval: rank.interval,
       }),
     };
   }

@@ -28,6 +28,11 @@ export function maintenanceBuffDuration(interval = 1) {
   };
 }
 
+/** Permanent duration for toggle-model maintenance buffs — PF1e never auto-expires these. */
+export function toggleMaintenanceBuffDuration() {
+  return { units: "perm", value: "" };
+}
+
 /**
  * Buff system.duration for the duration model: the technique's real round count,
  * ending at turnStart so PF1e expires it (and triggers teardown) at the owner's turn.
@@ -151,6 +156,11 @@ export function maintenanceBuffFlagData({
   if (modeId) data.modeId = modeId;
   if (Array.isArray(elements)) data.elements = elements;
   if (hasHeal) data.hasHeal = true;
+  if (model === "toggle") {
+    data.model = "toggle";
+    data.startRound = startRound ?? null;
+    data.interval = Math.max(1, Number(interval) || 1);
+  }
   if (model === "duration") {
     data.model = "duration";
     if (Number.isFinite(Number(totalRounds))) data.totalRounds = Number(totalRounds);
