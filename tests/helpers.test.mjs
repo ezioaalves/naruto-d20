@@ -56,6 +56,7 @@ import {
 import { onActorRest } from "../scripts/data/rest-recovery.mjs";
 import { BUFF_TARGETS } from "../scripts/flag-paths.mjs";
 import { rollHpCost } from "../scripts/data/hp-cost.mjs";
+import { applyConditionBenefits } from "../scripts/automation/condition-benefits.mjs";
 
 globalThis.foundry = {
   utils: {
@@ -291,6 +292,36 @@ describe("maintenanceFacets chakraDamage", () => {
     const facets = maintenanceFacets(technique);
     assert.equal(facets.heal, "");
     assert.deepEqual(facets.clearConditions, []);
+  });
+});
+
+describe("condition suppression timing", () => {
+  it("clears fatigued and exhausted immediately on activation", async () => {
+    const calls = [];
+    const actor = {
+      async setConditions(payload) {
+        calls.push(payload);
+      },
+    };
+
+    await applyConditionBenefits(actor, {
+      clearConditions: ["fatigued", "exhausted"],
+    });
+
+    assert.deepEqual(calls, [{ fatigued: false, exhausted: false }]);
+  });
+
+  it("skips condition writes when there is nothing to clear", async () => {
+    const calls = [];
+    const actor = {
+      async setConditions(payload) {
+        calls.push(payload);
+      },
+    };
+
+    await applyConditionBenefits(actor, { clearConditions: [] });
+
+    assert.deepEqual(calls, []);
   });
 });
 

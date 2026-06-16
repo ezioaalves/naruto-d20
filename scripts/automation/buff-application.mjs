@@ -15,6 +15,7 @@ import {
   resolveMaintenanceModel,
   toggleMaintenanceBuffDuration,
 } from "./maintenance-buffs.mjs";
+import { applyConditionBenefits } from "./condition-benefits.mjs";
 
 const SOURCE_FLAG = MODULE_ID;
 const DEFAULT_BUFF_PACK_ID = "naruto-d20.technique-buffs";
@@ -176,6 +177,7 @@ export async function applyUpkeepBuff(item, actor, interval = 1, duration = null
         interval,
       }),
     });
+    await applyConditionBenefits(actor, facets);
     return;
   }
 
@@ -190,6 +192,7 @@ export async function applyUpkeepBuff(item, actor, interval = 1, duration = null
       interval,
     }),
   });
+  await applyConditionBenefits(actor, facets);
 }
 
 async function removeMaintenanceBuff(actor, itemId) {
