@@ -113,6 +113,13 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "naruto-d20": {
+      "trainingWeightTechnique": {
+        "eligibleRankKey": "KOUSOKU",
+        "learnedStrengthRank": 0
+      }
+    }
+  },
   "_key": "!items!TRCgxJOvq2Kk8cDI"
 }

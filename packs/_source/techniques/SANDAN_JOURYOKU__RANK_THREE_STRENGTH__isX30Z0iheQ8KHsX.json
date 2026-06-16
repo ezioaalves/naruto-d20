@@ -113,6 +113,13 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "naruto-d20": {
+      "trainingWeightTechnique": {
+        "eligibleRankKey": "JOURYOKU",
+        "learnedStrengthRank": 3
+      }
+    }
+  },
   "_key": "!items!isX30Z0iheQ8KHsX"
 }
