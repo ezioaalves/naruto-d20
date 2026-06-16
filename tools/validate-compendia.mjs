@@ -24,6 +24,7 @@ const PACKS = [
   { name: "techniques", dir: "techniques", type: "naruto-d20.technique" },
   { name: "feats", dir: "feats", type: "feat" },
   { name: "technique-buffs", dir: "technique-buffs", type: "buff" },
+  { name: "training-weights", dir: "training-weights", type: "loot" },
 ];
 
 const DISCIPLINES = new Set([
@@ -415,6 +416,28 @@ function validateBuff({ doc, filename, packName }) {
   }
 }
 
+function validateTrainingWeight(packName, filename, doc) {
+  if (doc.system?.subType !== "gear") {
+    error(packName, filename, `training weight items must use loot subtype "gear"`);
+  }
+
+  const flag = doc.flags?.["naruto-d20"]?.trainingWeightItem;
+  if (!isPlainObject(flag)) {
+    error(packName, filename, "missing flags.naruto-d20.trainingWeightItem");
+    return;
+  }
+
+  if (!["wrist", "ankle"].includes(flag.slot)) {
+    error(packName, filename, `trainingWeightItem.slot must be "wrist" or "ankle"`);
+  }
+  if (!isIntegerInRange(Number(flag.type), 1, 8)) {
+    error(packName, filename, "trainingWeightItem.type must be 1..8");
+  }
+  if (!Number.isFinite(Number(doc.system?.weight?.value ?? doc.system?.weight))) {
+    error(packName, filename, "training weight must define numeric system.weight.value");
+  }
+}
+
 function validateAutomationBuffMatches() {
   const techniques = docsByPack.get("techniques") ?? [];
   const buffs = docsByPack.get("technique-buffs") ?? [];
@@ -470,6 +493,8 @@ export function validateCompendia({
       if (pack.name === "techniques") validateTechnique(ctx);
       if (pack.name === "feats") validateFeat(ctx);
       if (pack.name === "technique-buffs") validateBuff(ctx);
+      if (pack.name === "training-weights")
+        validateTrainingWeight(pack.name, ctx.filename, ctx.doc);
     }
   }
 

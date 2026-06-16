@@ -1,0 +1,48 @@
+{
+  "_id": "TrnWtAnklT1B1",
+  "_key": "!items!TrnWtAnklT1B1",
+  "_stats": {
+    "compendiumSource": null,
+    "coreVersion": "13.351",
+    "createdTime": 1780850000000,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "naruto-d20",
+    "modifiedTime": 1780850000000,
+    "systemId": "pf1",
+    "systemVersion": "11.11"
+  },
+  "type": "loot",
+  "name": "Ankle Weight Type I",
+  "img": "icons/tools/smithing/anvil.webp",
+  "system": {
+    "description": {
+      "value": "<p>Training weight worn on the ankles. While equipped, it penalizes effective Speed Rank. Together with an equipped wrist weight, it grants a Learn/Mastery bonus for explicitly marked rank-training techniques.</p>",
+      "unidentified": ""
+    },
+    "subType": "gear",
+    "quantity": 1,
+    "carried": true,
+    "equipped": false,
+    "identified": true,
+    "weight": {
+      "value": 25
+    },
+    "price": 0
+  },
+  "flags": {
+    "naruto-d20": {
+      "trainingWeightItem": {
+        "slot": "ankle",
+        "type": 1,
+        "rankPenalty": 1,
+        "learnBonus": 1
+      }
+    }
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0
+}
