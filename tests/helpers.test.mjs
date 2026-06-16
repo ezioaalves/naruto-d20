@@ -46,6 +46,12 @@ import {
   parseWeaponAttackConfig,
   readWeaponAttackRaw,
 } from "../scripts/ui/technique-weapon-attack.mjs";
+import {
+  getHighestLearnedStrengthRank,
+  getIgnoredTrainingWeightTotal,
+  getTrainingWeightLearnBonus,
+  getTrainingWeightState,
+} from "../scripts/data/training-weights.mjs";
 import { validateCompendia } from "../tools/validate-compendia.mjs";
 import { calculateChakraDamage } from "../scripts/data/chakra-damage.mjs";
 import {
@@ -1497,6 +1503,195 @@ describe("maintenance duration model", () => {
   it("omits duration-model fields for toggle buffs", () => {
     const flag = maintenanceBuffFlagData({ sourceTechniqueId: "abc", modeId: "dex" });
     assert.deepEqual(flag, { sourceTechniqueId: "abc", modeId: "dex" });
+  });
+});
+
+describe("training weight state", () => {
+  const learned = (name, trainingWeightTechnique) => ({
+    type: "naruto-d20.technique",
+    name,
+    system: { learning: { learned: true } },
+    flags: { "naruto-d20": { trainingWeightTechnique } },
+  });
+
+  const weight = ({
+    id,
+    slot,
+    type,
+    rankPenalty,
+    learnBonus,
+    weightValue,
+    equipped = true,
+  }) => ({
+    id,
+    type: "loot",
+    system: {
+      subType: "gear",
+      quantity: 1,
+      carried: true,
+      equipped,
+      weight: { total: weightValue },
+    },
+    isPhysical: true,
+    isActive: equipped,
+    inContainer: false,
+    flags: {
+      "naruto-d20": {
+        trainingWeightItem: { slot, type, rankPenalty, learnBonus },
+      },
+    },
+  });
+
+  it("chooses the highest equipped type per slot and uses the lower full-set type for learn bonus", () => {
+    const actor = {
+      items: [
+        weight({
+          id: "w1",
+          slot: "wrist",
+          type: 3,
+          rankPenalty: 3,
+          learnBonus: 3,
+          weightValue: 50,
+        }),
+        weight({
+          id: "w2",
+          slot: "wrist",
+          type: 5,
+          rankPenalty: 5,
+          learnBonus: 5,
+          weightValue: 75,
+        }),
+        weight({
+          id: "a1",
+          slot: "ankle",
+          type: 2,
+          rankPenalty: 2,
+          learnBonus: 2,
+          weightValue: 37.5,
+        }),
+      ],
+    };
+
+    assert.deepEqual(getTrainingWeightState(actor), {
+      wrist: { itemId: "w2", slot: "wrist", type: 5, rankPenalty: 5, learnBonus: 5, weight: 75 },
+      ankle: { itemId: "a1", slot: "ankle", type: 2, rankPenalty: 2, learnBonus: 2, weight: 37.5 },
+      hasFullSet: true,
+      fullSetType: 2,
+      fullSetLearnBonus: 2,
+      strengthRankPenalty: 5,
+      speedRankPenalty: 2,
+      highestLearnedStrengthRank: 0,
+      ignoredCarryWeight: 0,
+    });
+  });
+
+  it("reads highest learned strength rank from explicit technique metadata", () => {
+    const actor = {
+      items: [
+        learned("SHODAN JOURYOKU", {
+          eligibleRankKey: "JOURYOKU",
+          learnedStrengthRank: 1,
+        }),
+        learned("SANDAN JOURYOKU", {
+          eligibleRankKey: "JOURYOKU",
+          learnedStrengthRank: 3,
+        }),
+        learned("NINJOURYOKU NO JUTSU", {
+          eligibleRankKey: "",
+          learnedStrengthRank: 0,
+        }),
+      ],
+    };
+
+    assert.equal(getHighestLearnedStrengthRank(actor), 3);
+  });
+
+  it("ignores carried weight for both halves when their type is at or below learned JOURYOKU rank", () => {
+    const actor = {
+      items: [
+        learned("SANDAN JOURYOKU", {
+          eligibleRankKey: "JOURYOKU",
+          learnedStrengthRank: 3,
+        }),
+        weight({
+          id: "w3",
+          slot: "wrist",
+          type: 3,
+          rankPenalty: 3,
+          learnBonus: 3,
+          weightValue: 50,
+        }),
+        weight({
+          id: "a2",
+          slot: "ankle",
+          type: 2,
+          rankPenalty: 2,
+          learnBonus: 2,
+          weightValue: 37.5,
+        }),
+        weight({
+          id: "w5",
+          slot: "wrist",
+          type: 5,
+          rankPenalty: 5,
+          learnBonus: 5,
+          weightValue: 75,
+        }),
+      ],
+    };
+
+    assert.equal(getIgnoredTrainingWeightTotal(actor), 87.5);
+  });
+
+  it("returns a learn bonus only for explicitly eligible full-set techniques", () => {
+    const actor = {
+      items: [
+        weight({
+          id: "w4",
+          slot: "wrist",
+          type: 4,
+          rankPenalty: 4,
+          learnBonus: 4,
+          weightValue: 62.5,
+        }),
+        weight({
+          id: "a2",
+          slot: "ankle",
+          type: 2,
+          rankPenalty: 2,
+          learnBonus: 2,
+          weightValue: 37.5,
+        }),
+      ],
+    };
+
+    assert.deepEqual(
+      getTrainingWeightLearnBonus(actor, {
+        flags: {
+          "naruto-d20": {
+            trainingWeightTechnique: {
+              eligibleRankKey: "KOUSOKU",
+              learnedStrengthRank: 0,
+            },
+          },
+        },
+      }),
+      { value: 2, type: 2, eligibleRankKey: "KOUSOKU" },
+    );
+
+    assert.equal(
+      getTrainingWeightLearnBonus(actor, {
+        flags: {
+          "naruto-d20": {
+            trainingWeightTechnique: {
+              eligibleRankKey: "",
+              learnedStrengthRank: 0,
+            },
+          },
+        },
+      }),
+      null,
+    );
   });
 });
 
