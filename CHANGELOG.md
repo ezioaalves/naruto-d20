@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.35 - 2026-06-16
+
+- Fixed **Speed Rank (KOUSOKU) attack bonus** (#134): the Attack bonus used the native `attack` change target, which PF1e includes in `cmb.total` — inflating CMB. It is now routed through a deferred `speedRankAttack` target (same roll-time injection pattern as `strRankCombat`) that injects into every attack roll except combat maneuvers, so weapon/natural/spell attacks keep the bonus while CMB and CMD are unaffected. The brittle negative `cmb` compensation change on KOUSOKU and SPEED RANK GRANT buffs has been removed.
+- Fixed **Champuru Dexterity stance attack bonus** (#135): the +2 Attack bonus from the Champuru Dexterity mode similarly used the native `attack` target, leaking into CMB. A new generic `attackNoManeuver` deferred target was added — same injection pattern — and the Dexterity buff now points at it instead. The maneuver-detection helper (`isCombatManeuver`) is now shared in `rank-roll-injection.mjs` and reused by both speed-rank and Champuru targets.
+
 ## v1.0.34 - 2026-06-17
 
 - Fixed **Strength Rank Combat bonus** (#132): the Combat bonus no longer inflates CMB, CMD, and Strength checks — those already receive the separate _Actions_ bonus, so the Combat value was being double-counted. It now applies **only to attack and weapon-damage rolls governed by Strength** (so a finesse weapon attacking with Dexterity gets it on damage only), is injected at roll time via a deferred `strRankCombat` buff target, and scales with the weapon's ability-damage multiplier on damage. Also removed the now-stale `cmd` compensation change from the **JOURYOKU** and **STRENGTH RANK GRANT** buffs, which would otherwise lower CMD.
