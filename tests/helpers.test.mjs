@@ -9,7 +9,10 @@ import {
   legacyAutomationToMaintenance,
 } from "../scripts/data/technique-defaults.mjs";
 import { maintenanceMigrationPatch } from "../scripts/data/maintenance-migration.mjs";
-import { computeTechniqueDerived } from "../scripts/data/technique-model.mjs";
+import {
+  computeTechniqueDerived,
+  createTechniqueDataModel,
+} from "../scripts/data/technique-model.mjs";
 import {
   allocateTemporaryChakraGrantSpend,
   calculateChakraSpend,
@@ -158,6 +161,8 @@ describe("technique defaults", () => {
       waiverStep: 2,
       freeRounds: 5,
       choice: "",
+      heal: "",
+      clearConditions: "",
       element: false,
       elementDoubleStep: 5,
     });
@@ -202,6 +207,67 @@ describe("technique defaults", () => {
       },
     );
     assert.equal(legacyAutomationToMaintenance({ enabled: true, targetMode: "auto" }), null);
+  });
+
+  // ── Regression guard: schema ↔ normalizer parity ──────────────────────
+  // Synckit reports "out-of-date" whenever the embedded copy carries a
+  // `system.automation.maintenance` key the source JSON predates and the
+  // normalizer fails to backfill on both sides. A no-op sheet open/close
+  // persists the full DataModel-cleaned maintenance block, so EVERY field in
+  // the schema's `automation.maintenance` SchemaField MUST also be defaulted
+  // by applyTechniqueSystemDefaults. This test introspects the live schema so
+  // that adding a maintenance field without backfilling it fails CI here —
+  // before it silently flags every learned technique as desatualizada.
+  // (Bugs reintroduced by #114/#119 after #109/#117 first fixed the class.)
+  it("backfills every automation.maintenance field declared in the schema", () => {
+    const leaf = class {};
+    const prevData = globalThis.foundry.data;
+    const prevAbstract = globalThis.foundry.abstract;
+    globalThis.foundry.abstract = { TypeDataModel: class {} };
+    globalThis.foundry.data = {
+      fields: {
+        SchemaField: class {
+          constructor(schema) {
+            this.fields = schema;
+          }
+        },
+        ArrayField: class {
+          constructor(element) {
+            this.element = element;
+          }
+        },
+        SetField: class {
+          constructor(element) {
+            this.element = element;
+          }
+        },
+        StringField: leaf,
+        NumberField: leaf,
+        BooleanField: leaf,
+        HTMLField: leaf,
+        ObjectField: leaf,
+      },
+    };
+
+    let schemaKeys;
+    try {
+      const schema = createTechniqueDataModel().defineSchema();
+      schemaKeys = Object.keys(schema.automation.fields.maintenance.fields).sort();
+    } finally {
+      globalThis.foundry.data = prevData;
+      globalThis.foundry.abstract = prevAbstract;
+    }
+
+    const normalizerKeys = Object.keys(
+      applyTechniqueSystemDefaults({}).automation.maintenance,
+    ).sort();
+
+    assert.deepEqual(
+      normalizerKeys,
+      schemaKeys,
+      "applyTechniqueSystemDefaults must default every automation.maintenance schema field " +
+        "(see scripts/data/technique-defaults.mjs) or synckit will flag unedited techniques out-of-date",
+    );
   });
 });
 
@@ -1197,6 +1263,8 @@ describe("synckit normalization", () => {
           waiverStep: 2,
           freeRounds: 5,
           choice: "",
+          heal: "",
+          clearConditions: "",
           element: false,
           elementDoubleStep: 5,
         },
