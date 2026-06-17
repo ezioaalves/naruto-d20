@@ -34,7 +34,7 @@ import { registerLearnCardContextMenu } from "./learn-technique.mjs";
 import { registerMasterCardContextMenu } from "./master-technique.mjs";
 import { registerNarutoRollContextMenu } from "./chat-rerolls.mjs";
 import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
-import { registerSummaryStats } from "./ui/summary-stats.mjs";
+import { registerSummaryStats, registerActorSettings } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
 import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
@@ -217,6 +217,7 @@ Hooks.once("setup", () => {
   registerNarutoRollContextMenu(); // Naruto d20 cards → AP / reroll context menu
   registerTechniqueListListeners(); // chakra tab: filter, drop zone, CRUD
   registerSummaryStats(); // Hero Statistics block on the Summary tab
+  registerActorSettings(); // Has Chakra toggle in the Settings tab
   registerFeatListListeners(); // Naruto Browse button on the Features tab
   registerFeatGrantDeletion(); // cascade-delete feat supplements on feat removal
   registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn

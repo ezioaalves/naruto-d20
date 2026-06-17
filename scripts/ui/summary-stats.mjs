@@ -34,6 +34,35 @@ export function registerSummaryStats() {
   });
 }
 
+export function registerActorSettings() {
+  Hooks.on("renderActorSheetPF", (app, html) => {
+    if (!["character", "npc"].includes(app.actor.type)) return;
+    const $html = html instanceof HTMLElement ? $(html) : html;
+    const settingsTab = $html.find('.tab[data-tab="settings"]');
+    if (!settingsTab.length || settingsTab.find(".naruto-d20-actor-settings").length) return;
+
+    const hasChakra = app.actor.flags?.[MODULE_ID]?.hasChakra ?? true;
+    const header = game.i18n.localize("NarutoD20.ActorSettings.Header");
+    const label = game.i18n.localize("NarutoD20.ActorSettings.HasChakra.Label");
+    const hint = game.i18n.localize("NarutoD20.ActorSettings.HasChakra.Hint");
+
+    settingsTab.append(`
+      <div class="naruto-d20-actor-settings">
+        <h2>${header}</h2>
+        <div class="form-group stacked">
+          <label class="checkbox" title="${hint}">
+            <input type="checkbox" class="naruto-has-chakra"${hasChakra ? " checked" : ""}>
+            ${label}
+          </label>
+        </div>
+      </div>`);
+
+    $html.find(".naruto-has-chakra").on("change", async (event) => {
+      await app.actor.setFlag(MODULE_ID, "hasChakra", event.target.checked);
+    });
+  });
+}
+
 async function rollActionPoint(actor) {
   const current = Number(foundry.utils.getProperty(actor, actionPointsPath) ?? 0);
   if (!Number.isFinite(current) || current <= 0) {
