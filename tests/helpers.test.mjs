@@ -30,6 +30,10 @@ import {
 import { extractTemporaryChakraGrant } from "../scripts/automation/buff-application.mjs";
 import { computeEffectiveRank } from "../scripts/automation/rank-effective-level.mjs";
 import { registerTrainingWeightCarryPatch } from "../scripts/automation/training-weight-carry.mjs";
+import {
+  applyStrengthRankCombatToAttack,
+  applyStrengthRankCombatToDamage,
+} from "../scripts/automation/strength-rank-combat.mjs";
 import { getRankGrantType, rankGrantLevel } from "../scripts/automation/rank-buffs.mjs";
 import {
   legacyRankBuffToMaintenance,
@@ -1585,6 +1589,95 @@ describe("maintenance duration model", () => {
   it("omits duration-model fields for toggle buffs", () => {
     const flag = maintenanceBuffFlagData({ sourceTechniqueId: "abc", modeId: "dex" });
     assert.deepEqual(flag, { sourceTechniqueId: "abc", modeId: "dex" });
+  });
+});
+
+describe("strength rank combat bonus", () => {
+  // `formula` is a pre-resolved numeric value here: in production resolveCombatValue
+  // evaluates @item.strRank.combat against the buff roll data via RollPF, which is
+  // unavailable in the Node test environment, so the helper falls back to Number(formula).
+  const change = ({ target, formula = 2, flavor = "JOURYOKU" }) => ({
+    target,
+    formula,
+    flavor,
+    type: "untyped",
+    operator: "add",
+  });
+
+  it("adds combat bonus to Strength-based attack rolls only", () => {
+    const changes = [
+      change({ target: "strRankCombat" }),
+      change({ target: "strChecks", formula: 4 }),
+    ];
+
+    applyStrengthRankCombatToAttack({ actionType: "mwak", ability: { attack: "str" } }, changes);
+    const attackChanges = changes.filter((c) => c.target === "attack");
+    assert.equal(attackChanges.length, 1);
+    assert.equal(attackChanges[0].value, 2);
+    assert.equal(changes.find((c) => c.target === "strRankCombat"), undefined);
+
+    const dexChanges = [change({ target: "strRankCombat" })];
+    applyStrengthRankCombatToAttack({ actionType: "rwak", ability: { attack: "dex" } }, dexChanges);
+    assert.deepEqual(
+      dexChanges.map((c) => c.target),
+      ["strRankCombat"],
+    );
+
+    const cmbChanges = [change({ target: "strRankCombat" })];
+    applyStrengthRankCombatToAttack({ actionType: "mcman", ability: { attack: "str" } }, cmbChanges);
+    assert.deepEqual(
+      cmbChanges.map((c) => c.target),
+      ["strRankCombat"],
+    );
+  });
+
+  it("reads Strength Rank combat changes from PF1e actor change collections", () => {
+    const changes = [];
+    const actorChanges = new Map([["buff-change-id", change({ target: "strRankCombat" })]]);
+
+    applyStrengthRankCombatToAttack(
+      { actionType: "mwak", ability: { attack: "str" } },
+      changes,
+      actorChanges,
+    );
+
+    assert.deepEqual(
+      changes.map((c) => c.target),
+      ["attack"],
+    );
+    assert.equal(changes[0].value, 2);
+  });
+
+  it("scales the combat bonus by the weapon ability-damage multiplier on damage only", () => {
+    const changes = [change({ target: "strRankCombat" })];
+
+    applyStrengthRankCombatToDamage(
+      { actionType: "mwak", ability: { damage: "str" } },
+      changes,
+      changes,
+      { ablMult: 1.5 },
+    );
+    const damageChanges = changes.filter((c) => c.target === "damage");
+    assert.equal(damageChanges.length, 1);
+    assert.equal(damageChanges[0].value, 3); // floor(2 * 1.5)
+    assert.equal(damageChanges[0].formula, "3");
+    assert.equal(changes.find((c) => c.target === "strRankCombat"), undefined);
+
+    const oneHanded = [change({ target: "strRankCombat" })];
+    applyStrengthRankCombatToDamage(
+      { actionType: "mwak", ability: { damage: "str" } },
+      oneHanded,
+      oneHanded,
+      { ablMult: 1 },
+    );
+    assert.equal(oneHanded.find((c) => c.target === "damage").value, 2);
+
+    const spellChanges = [change({ target: "strRankCombat" })];
+    applyStrengthRankCombatToDamage({ actionType: "msak", ability: { damage: "str" } }, spellChanges);
+    assert.deepEqual(
+      spellChanges.map((c) => c.target),
+      ["strRankCombat"],
+    );
   });
 });
 
