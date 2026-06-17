@@ -34,6 +34,7 @@ import {
   applyStrengthRankCombatToAttack,
   applyStrengthRankCombatToDamage,
 } from "../scripts/automation/strength-rank-combat.mjs";
+import { applySpeedRankAttack } from "../scripts/automation/speed-rank-attack.mjs";
 import { getRankGrantType, rankGrantLevel } from "../scripts/automation/rank-buffs.mjs";
 import {
   legacyRankBuffToMaintenance,
@@ -1681,6 +1682,52 @@ describe("strength rank combat bonus", () => {
       [change({ target: "strRankCombat" })],
     );
     assert.equal(spellChanges.length, 0);
+  });
+});
+
+describe("speed rank attack bonus", () => {
+  // `formula` is a pre-resolved numeric value (see strength rank note above).
+  const change = ({ target, formula = 1, flavor = "KOUSOKU" }) => ({
+    target,
+    formula,
+    flavor,
+    type: "untyped",
+    operator: "add",
+  });
+
+  it("injects the attack bonus into non-maneuver attack rolls", () => {
+    for (const actionType of ["mwak", "rwak", "twak", "msak", "rsak"]) {
+      const changes = [];
+      applySpeedRankAttack({ actionType }, changes, [change({ target: "speedRankAttack" })]);
+      assert.deepEqual(changes.map((c) => c.target), ["attack"], `${actionType} should get the bonus`);
+      assert.equal(changes[0].value, 1);
+    }
+  });
+
+  it("never injects the attack bonus into combat maneuver rolls (no CMB leak)", () => {
+    for (const actionType of ["mcman", "rcman"]) {
+      const changes = [];
+      applySpeedRankAttack({ actionType }, changes, [change({ target: "speedRankAttack" })]);
+      assert.equal(changes.length, 0, `${actionType} must not get the bonus`);
+    }
+
+    // also honours the action's own isCombatManeuver flag
+    const flagged = [];
+    applySpeedRankAttack({ actionType: "mwak", isCombatManeuver: true }, flagged, [
+      change({ target: "speedRankAttack" }),
+    ]);
+    assert.equal(flagged.length, 0);
+  });
+
+  it("ignores other targets and reads from the actor change collection", () => {
+    const changes = [];
+    const actorChanges = new Map([
+      ["a", change({ target: "speedRankAttack", formula: 2 })],
+      ["b", change({ target: "ac", formula: 5 })],
+    ]);
+    applySpeedRankAttack({ actionType: "mwak" }, changes, actorChanges);
+    assert.deepEqual(changes.map((c) => c.target), ["attack"]);
+    assert.equal(changes[0].value, 2);
   });
 });
 

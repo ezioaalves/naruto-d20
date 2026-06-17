@@ -1,3 +1,5 @@
+import { injectDeferredChanges } from "./rank-roll-injection.mjs";
+
 export const STRENGTH_RANK_COMBAT_TARGET = "strRankCombat";
 
 const WEAPON_ACTION_TYPES = new Set(["mwak", "rwak", "twak"]);
@@ -30,14 +32,26 @@ export function registerStrengthRankCombat() {
   });
 }
 
-export function applyStrengthRankCombatToAttack(action, changes, actorChanges = changes, rollData = null) {
+export function applyStrengthRankCombatToAttack(
+  action,
+  changes,
+  actorChanges = changes,
+  rollData = null,
+) {
   if (!usesStrengthAttack(action, rollData)) return;
-  addStrengthRankCombatChanges(changes, actorChanges, "attack", { ablMult: 1 });
+  injectDeferredChanges(changes, actorChanges, STRENGTH_RANK_COMBAT_TARGET, "attack");
 }
 
-export function applyStrengthRankCombatToDamage(action, changes, actorChanges = changes, rollData = null) {
+export function applyStrengthRankCombatToDamage(
+  action,
+  changes,
+  actorChanges = changes,
+  rollData = null,
+) {
   if (!usesStrengthWeaponDamage(action, rollData)) return;
-  addStrengthRankCombatChanges(changes, actorChanges, "damage", { ablMult: damageMultiplier(rollData) });
+  injectDeferredChanges(changes, actorChanges, STRENGTH_RANK_COMBAT_TARGET, "damage", {
+    ablMult: damageMultiplier(rollData),
+  });
 }
 
 function usesStrengthAttack(action, rollData) {
@@ -58,48 +72,4 @@ function usesStrengthWeaponDamage(action, rollData) {
 function damageMultiplier(rollData) {
   const mult = Number(rollData?.ablMult);
   return Number.isFinite(mult) && mult > 0 ? mult : 1;
-}
-
-function addStrengthRankCombatChanges(changes, actorChanges, target, { ablMult = 1 } = {}) {
-  for (const change of changeValues(actorChanges)) {
-    if (change?.target !== STRENGTH_RANK_COMBAT_TARGET) continue;
-    const value = Math.floor(resolveCombatValue(change) * ablMult);
-    if (!value) continue;
-    changes.push(retargetChange(change, target, value));
-  }
-}
-
-/**
- * Resolve @item.strRank.combat against the buff's own roll data.
- *
- * applyChange() cannot compute this at roll time: the actor has no changeOverride
- * for the deferred attack/damage flat paths, so it short-circuits before
- * evaluating the formula. We therefore pre-compute the value here and stamp it on
- * the retargeted change (the same pattern PF1e uses for enhancement-bonus changes).
- */
-function resolveCombatValue(change) {
-  const RollPF = globalThis.pf1?.dice?.RollPF;
-  if (RollPF?.safeRollSync && typeof change?.parent?.getRollData === "function") {
-    const rollData = change.parent.getRollData({ refresh: true });
-    return Math.floor(RollPF.safeRollSync(change.formula, rollData).total ?? 0);
-  }
-  const numeric = Number(change?.formula);
-  return Number.isFinite(numeric) ? numeric : 0;
-}
-
-function changeValues(changes) {
-  if (!changes) return [];
-  if (Array.isArray(changes)) return changes;
-  if (typeof changes.values === "function") return changes.values();
-  return changes;
-}
-
-function retargetChange(change, target, value) {
-  const data = typeof change.toObject === "function" ? change.toObject() : { ...change };
-  data.target = target;
-  data.formula = String(value);
-  data.value = value;
-  return typeof change.constructor === "function" && typeof change.applyChange === "function"
-    ? new change.constructor(data, { parent: change.parent, strict: false })
-    : data;
 }
