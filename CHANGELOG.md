@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.34 - 2026-06-17
+
+- Fixed **Strength Rank Combat bonus** (#132): the Combat bonus no longer inflates CMB, CMD, and Strength checks — those already receive the separate _Actions_ bonus, so the Combat value was being double-counted. It now applies **only to attack and weapon-damage rolls governed by Strength** (so a finesse weapon attacking with Dexterity gets it on damage only), is injected at roll time via a deferred `strRankCombat` buff target, and scales with the weapon's ability-damage multiplier on damage. Also removed the now-stale `cmd` compensation change from the **JOURYOKU** and **STRENGTH RANK GRANT** buffs, which would otherwise lower CMD.
+
 ## v1.0.33 - 2026-06-17
 
 - Fixed **toggle maintenance timing** (#128): stance and upkeep techniques (Champuru, Amatsu, Kai-Mon Kai, etc.) now always prompt on the **owning actor's turn** instead of at the round boundary, which could fire on the wrong combatant's turn. Toggle-model buffs now use a permanent PF1e duration and are expired by the module's own turn-start hook. Buffs applied outside of combat lazy-initialize on the owner's first in-combat turn and charge upkeep from the turn after that.
