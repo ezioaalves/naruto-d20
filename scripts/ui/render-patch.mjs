@@ -147,6 +147,8 @@ export function installChakraTabPatch() {
     const $html = await original.apply(this, args);
     if (!["character", "npc"].includes(this.actor.type)) return $html;
 
+    if ((this.actor.flags?.[MODULE_ID]?.hasChakra ?? true) === false) return $html;
+
     // Nav <a> — must be present before _activateCoreListeners binds tabs,
     // otherwise Tabs.activate("chakra") falls back to "summary".
     const nav = $html.find("nav.sheet-navigation.tabs[data-group='primary']");
