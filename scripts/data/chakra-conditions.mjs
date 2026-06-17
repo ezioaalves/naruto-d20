@@ -130,6 +130,46 @@ export function resolveChakraConditionState({
   };
 }
 
+async function _clearNarutoConditions(actor) {
+  const tracked = actor.flags?.[MODULE_ID]?.conditions ?? {};
+  const hadFatigued = tracked.appliedFatigued ?? false;
+  const hadExhausted = tracked.appliedExhausted ?? false;
+  const hadDepletionActive = tracked.depletionActive ?? false;
+  const hadLowReserveFatiguePending = tracked.lowReserveFatiguePending ?? false;
+
+  const hasActiveNarutoConditions = (actor.effects ?? []).some((e) =>
+    e.statuses?.has(LOW_RESERVES_CONDITION_ID) || e.statuses?.has(CHAKRA_DEPLETION_CONDITION_ID),
+  );
+
+  const nothingTracked =
+    !hadFatigued && !hadExhausted && !hadDepletionActive && !hadLowReserveFatiguePending;
+  if (nothingTracked && !hasActiveNarutoConditions) return;
+
+  const effectIdsToDelete = [
+    ...(hadFatigued ? moduleOwnedConditionEffectIds(actor, "fatigued") : []),
+    ...(hadExhausted ? moduleOwnedConditionEffectIds(actor, "exhausted") : []),
+  ];
+  if (effectIdsToDelete.length) {
+    await actor.deleteEmbeddedDocuments("ActiveEffect", effectIdsToDelete, {
+      pf1: { updateConditionTracks: false },
+    });
+  }
+
+  await actor.setConditions({
+    [LOW_RESERVES_CONDITION_ID]: false,
+    [CHAKRA_DEPLETION_CONDITION_ID]: false,
+  });
+
+  if (!nothingTracked) {
+    await actor.update({
+      [conditionAppliedFatiguedPath]: false,
+      [conditionAppliedExhaustedPath]: false,
+      [conditionDepletionActivePath]: false,
+      [conditionLowReserveFatiguePendingPath]: false,
+    });
+  }
+}
+
 /**
  * Evaluate the actor's chakra reserve level and apply or remove the two naruto-d20
  * conditions (plus their implied PF1e conditions) accordingly.
@@ -141,6 +181,11 @@ export function resolveChakraConditionState({
  */
 export async function checkAndUpdateConditions(actor) {
   if (!["character", "npc"].includes(actor.type)) return;
+
+  if ((actor.flags?.[MODULE_ID]?.hasChakra ?? true) === false) {
+    await _clearNarutoConditions(actor);
+    return;
+  }
 
   const chakra = actor.flags?.[MODULE_ID]?.chakra;
   if (!chakra) return;
