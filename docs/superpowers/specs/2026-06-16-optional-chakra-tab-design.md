@@ -97,7 +97,7 @@ Chakra Depletion already applied, the cleanup runs immediately on the next
 | `scripts/ui/render-patch.mjs` | Guard at start of chakra tab injection block |
 | `scripts/data/chakra-conditions.mjs` | Guard + `_clearNarutoConditions` helper |
 | `scripts/ui/summary-stats.mjs` | Inject Naruto D20 settings section + change listener via existing `renderActorSheetPF` usage |
-| `lang/en.json` | `NarutoD20.Settings.HasChakra.Label`, `.Hint` |
+| `lang/en.json` | `NarutoD20.ActorSettings.Header`, `NarutoD20.ActorSettings.HasChakra.Label`, `.Hint` |
 | `lang/pt-BR.json` | Portuguese translations |
 
 No new files. No schema changes beyond the new flag. No migration.
