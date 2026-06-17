@@ -31,7 +31,7 @@
         "_id": "vkK43M8p",
         "operator": "add",
         "priority": 0,
-        "target": "attack",
+        "target": "speedRankAttack",
         "formula": "@item.speedRank.attack",
         "flavor": "SPEED RANK GRANT"
       },
@@ -60,15 +60,6 @@
         "target": "ref",
         "formula": "@item.speedRank.dodge",
         "_id": "17OhbWVn",
-        "flavor": "SPEED RANK GRANT"
-      },
-      {
-        "type": "untyped",
-        "_id": "YfxaAt5D",
-        "operator": "add",
-        "priority": 0,
-        "target": "cmb",
-        "formula": "@item.speedRank.cmb",
         "flavor": "SPEED RANK GRANT"
       }
     ],

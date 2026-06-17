@@ -111,7 +111,6 @@ export function speedRankValues(level) {
     attack: Math.floor(level / 2),
     speed: level > 0 ? (level === 10 ? 60 : level * 5 + 5) : 0,
     hide: level > 0 ? Math.min(level + 1, 10) : 0,
-    cmb: -Math.floor(level / 2),
   };
 }
 
