@@ -77,6 +77,10 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   // synckit normalizer fills missing keys on both sides of the diff, so an
   // unedited sheet open/close (which persists the full cleaned automation block)
   // does not falsely flag a technique whose source JSON predates a field.
+  // GUARD: a test introspects the schema and fails if any automation.maintenance
+  // field is missing here ("backfills every automation.maintenance field
+  // declared in the schema" in tests/helpers.test.mjs). Add new maintenance
+  // fields to BOTH places.
   system.automation ??= {};
   system.automation.enabled ??= true;
   system.automation.targetMode ??= "auto";
@@ -91,6 +95,8 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   m.waiverStep ??= 2;
   m.freeRounds ??= 5;
   m.choice ??= "";
+  m.heal ??= "";
+  m.clearConditions ??= "";
   m.element ??= false;
   m.elementDoubleStep ??= 5;
 
