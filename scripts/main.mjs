@@ -43,6 +43,7 @@ import { registerElementDamage } from "./automation/maintenance-element-damage.m
 import { registerRankRollData } from "./automation/rank-rolldata.mjs";
 import { registerStrengthRankCombat } from "./automation/strength-rank-combat.mjs";
 import { registerSpeedRankAttack } from "./automation/speed-rank-attack.mjs";
+import { registerAttackNoManeuver } from "./automation/attack-no-maneuver.mjs";
 import { registerTrainingWeightCarryPatch } from "./automation/training-weight-carry.mjs";
 import { registerRankGrantConfig } from "./ui/rank-grant-config.mjs";
 import { registerTapReservesListener } from "./ui/tap-reserves.mjs";
@@ -185,6 +186,7 @@ Hooks.once("pf1PostInit", () => {
   installTechniqueRollDataPatch();
   registerStrengthRankCombat();
   registerSpeedRankAttack();
+  registerAttackNoManeuver();
   registerChakraConditions();
 });
 

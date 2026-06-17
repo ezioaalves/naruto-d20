@@ -12,7 +12,7 @@
         "_id": "champdexa",
         "operator": "add",
         "priority": 0,
-        "target": "attack",
+        "target": "attackNoManeuver",
         "formula": "2",
         "flavor": "CHAMPURU DAICHI SUTANSU -AYAUI APPUKU"
       },

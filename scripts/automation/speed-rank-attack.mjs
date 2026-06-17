@@ -1,8 +1,6 @@
-import { injectDeferredChanges } from "./rank-roll-injection.mjs";
+import { injectDeferredChanges, isCombatManeuver } from "./rank-roll-injection.mjs";
 
 export const SPEED_RANK_ATTACK_TARGET = "speedRankAttack";
-
-const COMBAT_MANEUVER_ACTIONS = new Set(["mcman", "rcman"]);
 
 /**
  * Register Speed Rank attack as a roll-time-only PF1e change target.
@@ -33,8 +31,4 @@ export function registerSpeedRankAttack() {
 export function applySpeedRankAttack(action, changes, actorChanges = changes) {
   if (isCombatManeuver(action)) return;
   injectDeferredChanges(changes, actorChanges, SPEED_RANK_ATTACK_TARGET, "attack");
-}
-
-function isCombatManeuver(action) {
-  return action?.isCombatManeuver === true || COMBAT_MANEUVER_ACTIONS.has(action?.actionType);
 }

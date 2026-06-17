@@ -73,6 +73,7 @@
       "TapReserves": "Tap Reserves",
       "StrRankCombat": "Strength Rank Combat",
       "SpeedRankAttack": "Speed Rank Attack",
+      "AttackNoManeuver": "Attack (excl. maneuvers)",
       "Learn": {
         "ckc": "Learn: Chakra Control",
         "fui": "Learn: Fuinjutsu",

@@ -35,6 +35,7 @@ import {
   applyStrengthRankCombatToDamage,
 } from "../scripts/automation/strength-rank-combat.mjs";
 import { applySpeedRankAttack } from "../scripts/automation/speed-rank-attack.mjs";
+import { applyAttackNoManeuver } from "../scripts/automation/attack-no-maneuver.mjs";
 import { getRankGrantType, rankGrantLevel } from "../scripts/automation/rank-buffs.mjs";
 import {
   legacyRankBuffToMaintenance,
@@ -916,7 +917,13 @@ describe("chakra condition state", () => {
 });
 
 describe("chakra rest recovery", () => {
-  function makeRestActor({ poolValue, poolMax = 20, reserveValue = 0, reserveMax = 20, hdTotal = 6 }) {
+  function makeRestActor({
+    poolValue,
+    poolMax = 20,
+    reserveValue = 0,
+    reserveMax = 20,
+    hdTotal = 6,
+  }) {
     const updates = [];
     return {
       actor: {
@@ -1614,11 +1621,21 @@ describe("strength rank combat bonus", () => {
     ];
 
     const changes = [];
-    applyStrengthRankCombatToAttack({ actionType: "mwak", ability: { attack: "str" } }, changes, actorChanges);
-    assert.deepEqual(changes.map((c) => c.target), ["attack"]);
+    applyStrengthRankCombatToAttack(
+      { actionType: "mwak", ability: { attack: "str" } },
+      changes,
+      actorChanges,
+    );
+    assert.deepEqual(
+      changes.map((c) => c.target),
+      ["attack"],
+    );
     assert.equal(changes[0].value, 2);
     // source collection is left untouched
-    assert.equal(actorChanges.find((c) => c.target === "attack"), undefined);
+    assert.equal(
+      actorChanges.find((c) => c.target === "attack"),
+      undefined,
+    );
 
     const dexChanges = [];
     applyStrengthRankCombatToAttack(
@@ -1662,7 +1679,10 @@ describe("strength rank combat bonus", () => {
       [change({ target: "strRankCombat" })],
       { ablMult: 1.5 },
     );
-    assert.deepEqual(twoHanded.map((c) => c.target), ["damage"]);
+    assert.deepEqual(
+      twoHanded.map((c) => c.target),
+      ["damage"],
+    );
     assert.equal(twoHanded[0].value, 3); // floor(2 * 1.5)
     assert.equal(twoHanded[0].formula, "3");
 
@@ -1699,7 +1719,11 @@ describe("speed rank attack bonus", () => {
     for (const actionType of ["mwak", "rwak", "twak", "msak", "rsak"]) {
       const changes = [];
       applySpeedRankAttack({ actionType }, changes, [change({ target: "speedRankAttack" })]);
-      assert.deepEqual(changes.map((c) => c.target), ["attack"], `${actionType} should get the bonus`);
+      assert.deepEqual(
+        changes.map((c) => c.target),
+        ["attack"],
+        `${actionType} should get the bonus`,
+      );
       assert.equal(changes[0].value, 1);
     }
   });
@@ -1726,8 +1750,42 @@ describe("speed rank attack bonus", () => {
       ["b", change({ target: "ac", formula: 5 })],
     ]);
     applySpeedRankAttack({ actionType: "mwak" }, changes, actorChanges);
-    assert.deepEqual(changes.map((c) => c.target), ["attack"]);
+    assert.deepEqual(
+      changes.map((c) => c.target),
+      ["attack"],
+    );
     assert.equal(changes[0].value, 2);
+  });
+});
+
+describe("generic attack-no-maneuver bonus", () => {
+  const change = ({ target, formula = 2, flavor = "CHAMPURU" }) => ({
+    target,
+    formula,
+    flavor,
+    type: "untyped",
+    operator: "add",
+  });
+
+  it("injects a flat attack bonus into non-maneuver attack rolls", () => {
+    for (const actionType of ["mwak", "rwak", "twak", "msak", "rsak"]) {
+      const changes = [];
+      applyAttackNoManeuver({ actionType }, changes, [change({ target: "attackNoManeuver" })]);
+      assert.deepEqual(
+        changes.map((c) => c.target),
+        ["attack"],
+        `${actionType} should get the bonus`,
+      );
+      assert.equal(changes[0].value, 2);
+    }
+  });
+
+  it("never injects into combat maneuver rolls (no CMB leak)", () => {
+    for (const actionType of ["mcman", "rcman"]) {
+      const changes = [];
+      applyAttackNoManeuver({ actionType }, changes, [change({ target: "attackNoManeuver" })]);
+      assert.equal(changes.length, 0, `${actionType} must not get the bonus`);
+    }
   });
 });
 
@@ -1739,15 +1797,7 @@ describe("training weight state", () => {
     flags: { "naruto-d20": { trainingWeightTechnique } },
   });
 
-  const weight = ({
-    id,
-    slot,
-    type,
-    rankPenalty,
-    learnBonus,
-    weightValue,
-    equipped = true,
-  }) => ({
+  const weight = ({ id, slot, type, rankPenalty, learnBonus, weightValue, equipped = true }) => ({
     id,
     type: "loot",
     system: {
@@ -1919,7 +1969,10 @@ describe("training weight state", () => {
     try {
       delete globalThis.pf1;
       assert.doesNotThrow(() => registerTrainingWeightCarryPatch());
-      assert.equal(errors.at(-1), "Naruto D20 | ActorPF not found — training weight carry patch skipped");
+      assert.equal(
+        errors.at(-1),
+        "Naruto D20 | ActorPF not found — training weight carry patch skipped",
+      );
 
       class ActorPF {
         constructor(items) {
@@ -2097,11 +2150,16 @@ describe("training weight learn breakdown", () => {
     };
 
     assert.equal(
-      buildLearnCheckBreakdown(actor, "tai", { item: eligible, includeConditional: true }).parts.at(-1),
+      buildLearnCheckBreakdown(actor, "tai", { item: eligible, includeConditional: true }).parts.at(
+        -1,
+      ),
       "2[NarutoD20.Breakdown.TrainingWeight]",
     );
     assert.equal(
-      buildLearnCheckBreakdown(actor, "tai", { item: ineligible, includeConditional: true }).parts.at(-1),
+      buildLearnCheckBreakdown(actor, "tai", {
+        item: ineligible,
+        includeConditional: true,
+      }).parts.at(-1),
       "3[Str]",
     );
   });
@@ -2150,15 +2208,18 @@ describe("training weight rank penalties", () => {
       statuses: new Set(),
     };
 
-    assert.deepEqual(computeEffectiveRank(actor, "JOURYOKU", { rollData: { armor: { type: 0 } } }), {
-      paid: 5,
-      temp: 0,
-      bonus: 0,
-      penalty: 2,
-      effective: 3,
-      carryEffective: 5,
-      carrierId: "jr5",
-    });
+    assert.deepEqual(
+      computeEffectiveRank(actor, "JOURYOKU", { rollData: { armor: { type: 0 } } }),
+      {
+        paid: 5,
+        temp: 0,
+        bonus: 0,
+        penalty: 2,
+        effective: 3,
+        carryEffective: 5,
+        carrierId: "jr5",
+      },
+    );
 
     assert.deepEqual(computeEffectiveRank(actor, "KOUSOKU", { rollData: { armor: { type: 0 } } }), {
       paid: 4,

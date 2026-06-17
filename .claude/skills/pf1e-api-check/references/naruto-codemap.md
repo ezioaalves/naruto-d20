@@ -70,3 +70,27 @@ Dois modelos de buff de manutenção:
   `promptElements(item, count)` → `scripts/automation/maintenance-element-damage.mjs:38`.
 - Migração de schema: `runMaintenanceMigrations()` → `scripts/data/maintenance-migration.mjs:111`;
   `MAINTENANCE_MIGRATION_VERSION` → `scripts/data/maintenance-migration.mjs:6`.
+
+## Roll-time attack/damage bonuses that must NOT leak into CMB/CMD
+
+Padrão: o target nativo `attack` é escrito em `system.attributes.attack.general` no
+data-prep, e `cmb.total` inclui esse genAtk (`actor-pf.mjs:1405`), então qualquer bônus
+de `attack` vaza para o CMB. A solução é um **target deferred customizado** que não mapeia
+para nenhum dado do ator (logo nunca toca CMB/CMD/stat estático) e é injetado em roll-time
+via `pf1PreAttackRoll`/`pf1PreDamageRoll`. Mecanismo PF1e detalhado em
+`references/verified-api.md` → seção "Roll-time change injection".
+
+- Helper compartilhado → `scripts/automation/rank-roll-injection.mjs`:
+  `injectDeferredChanges(changes, actorChanges, sourceTarget, destTarget, {ablMult})` → `:22`;
+  `isCombatManeuver(action)` (gate p/ excluir mcman/rcman) → `:63`;
+  `resolveDeferredValue` / `changeValues` no mesmo arquivo. Pré-computa o valor e estampa
+  `value` no change (applyChange daria 0 — sem changeOverride para o flat path).
+- `strRankCombat` (Str-governed weapon attack + weapon damage) → `scripts/automation/strength-rank-combat.mjs:3`;
+  `registerStrengthRankCombat()` → `:16`. Buffs JOURYOKU / STRENGTH RANK GRANT. (#132)
+- `speedRankAttack` (todo ataque não-manobra) → `scripts/automation/speed-rank-attack.mjs:3`;
+  `registerSpeedRankAttack()` → `:16`. Buffs KOUSOKU / SPEED RANK GRANT. (#134)
+- `attackNoManeuver` (**genérico**: bônus de ataque fixo, qualquer buff, todo ataque
+  não-manobra) → `scripts/automation/attack-no-maneuver.mjs:3`;
+  `registerAttackNoManeuver()` → `:16`. Usado pelo buff CHAMPURU (Dexterity). (#135)
+- Os três registram um hook `pf1PreAttackRoll` em `pf1PostInit` (`scripts/main.mjs`).
+  Labels i18n em `NarutoD20.BuffTargets.{StrRankCombat,SpeedRankAttack,AttackNoManeuver}`.

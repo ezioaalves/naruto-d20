@@ -53,6 +53,17 @@ export function resolveDeferredValue(change) {
   return Number.isFinite(numeric) ? numeric : 0;
 }
 
+const COMBAT_MANEUVER_ACTIONS = new Set(["mcman", "rcman"]);
+
+/**
+ * True when the action is a combat maneuver (CMB) roll. Used to keep
+ * "attack-only" deferred bonuses off CMB, since maneuver attack rolls otherwise
+ * pick up `attack`-targeted changes.
+ */
+export function isCombatManeuver(action) {
+  return action?.isCombatManeuver === true || COMBAT_MANEUVER_ACTIONS.has(action?.actionType);
+}
+
 export function changeValues(changes) {
   if (!changes) return [];
   if (Array.isArray(changes)) return changes;
