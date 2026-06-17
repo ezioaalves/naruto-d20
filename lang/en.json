@@ -287,6 +287,13 @@
         "Hint": "When enabled, technique learning deducts training chakra from temp chakra first and then Pool. Reserve is never consumed automatically because Tap Reserves must be used manually."
       }
     },
+    "ActorSettings": {
+      "Header": "Naruto D20",
+      "HasChakra": {
+        "Label": "Has Chakra",
+        "Hint": "When enabled, this actor has a Chakra Pool and Reserve. Disable for creatures without chakra to prevent automatic Chakra Depletion."
+      }
+    },
     "Conditions": {
       "LowReserves": {
         "Name": "Low Reserves",

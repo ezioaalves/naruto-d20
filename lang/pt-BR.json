@@ -287,6 +287,13 @@
         "Hint": "Quando ativado, o aprendizado de técnicas deduz chakra de treino do chakra temporário primeiro e depois da Pool. A Reserva nunca é consumida automaticamente porque Tap Reserves deve ser usado manualmente."
       }
     },
+    "ActorSettings": {
+      "Header": "Naruto D20",
+      "HasChakra": {
+        "Label": "Possui Chakra",
+        "Hint": "Quando ativado, este ator possui Pool e Reserva de Chakra. Desative para criaturas sem chakra para evitar Depleção de Chakra automática."
+      }
+    },
     "Conditions": {
       "LowReserves": {
         "Name": "Reservas Baixas",
