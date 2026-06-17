@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.36 - 2026-06-17
+
+- Fixed **technique sync false positives** (#137): opening a technique and closing it without editing no longer flags it as out-of-date in Synckit. The Heal Gate automation (#119) added `heal` and `clearConditions` to the `automation.maintenance` schema without mirroring them in the synckit normalizer, so a no-op sheet open/close persisted both fields onto the embedded item while the compendium source predated them — making the content diff differ on nearly every technique. Both fields are now backfilled on both sides of the diff. A regression guard introspects the live technique schema and fails the test suite if any future `automation.maintenance` field is added without a matching normalizer default, so this class of bug cannot silently return.
+
 ## v1.0.35 - 2026-06-16
 
 - Fixed **Speed Rank (KOUSOKU) attack bonus** (#134): the Attack bonus used the native `attack` change target, which PF1e includes in `cmb.total` — inflating CMB. It is now routed through a deferred `speedRankAttack` target (same roll-time injection pattern as `strRankCombat`) that injects into every attack roll except combat maneuvers, so weapon/natural/spell attacks keep the bonus while CMB and CMD are unaffected. The brittle negative `cmb` compensation change on KOUSOKU and SPEED RANK GRANT buffs has been removed.
