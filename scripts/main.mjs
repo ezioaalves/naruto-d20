@@ -37,6 +37,10 @@ import { registerTechniqueListListeners } from "./ui/technique-list.mjs";
 import { registerSummaryStats, registerActorSettings } from "./ui/summary-stats.mjs";
 import { registerFeatListListeners } from "./ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "./automation/feat-grants.mjs";
+import {
+  registerOccupationAutoApply,
+  registerOccupationAutoRevert,
+} from "./automation/occupation-grants.mjs";
 import { registerChargeDefensePenalty } from "./automation/charge-defense.mjs";
 import { registerTurnMaintenance } from "./automation/turn-maintenance.mjs";
 import { registerElementDamage } from "./automation/maintenance-element-damage.mjs";
@@ -226,6 +230,8 @@ Hooks.once("setup", () => {
   registerActorSettings(); // Has Chakra toggle in the Settings tab
   registerFeatListListeners(); // Naruto Browse button on the Features tab
   registerFeatGrantDeletion(); // cascade-delete feat supplements on feat removal
+  registerOccupationAutoApply(); // occupation drop → prompt + apply grants
+  registerOccupationAutoRevert(); // occupation delete → reverse wealth/reputation
   registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn
   registerTurnMaintenance(); // start-of-turn maintenance + spent-buff cleanup
   registerElementDamage(); // type configured maintenance-element attack damage at roll time
