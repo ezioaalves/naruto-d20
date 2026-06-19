@@ -587,6 +587,18 @@
         "BlocksCount": "{count} {unit}",
         "ChakraDeducted": "{cost} ({deducted} deducted)"
       }
+    },
+    "Occupation": {
+      "SelectTitle": "{name}: Select Occupation Grants",
+      "ClassSkills": "Class Skills",
+      "SelectExactly": "Select exactly {n}.",
+      "BonusFeat": "Bonus Feat",
+      "Technique": "Technique",
+      "Apply": "Apply",
+      "Cancelled": "{name}: occupation application was cancelled.",
+      "FeatNotFound": "{name}: could not find feat in compendia: {feat}",
+      "TechniqueNotFound": "{name}: could not find technique in compendia: {technique}",
+      "Applied": "{name}: applied {count} occupation grant(s)."
     }
   }
 }

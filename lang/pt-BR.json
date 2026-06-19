@@ -587,6 +587,18 @@
         "BlocksCount": "{count} {unit}",
         "ChakraDeducted": "{cost} ({deducted} deduzido)"
       }
+    },
+    "Occupation": {
+      "SelectTitle": "{name}: Selecionar Benefícios de Ocupação",
+      "ClassSkills": "Perícias de Classe",
+      "SelectExactly": "Selecione exatamente {n}.",
+      "BonusFeat": "Talento Bônus",
+      "Technique": "Técnica",
+      "Apply": "Aplicar",
+      "Cancelled": "{name}: aplicação da ocupação cancelada.",
+      "FeatNotFound": "{name}: não foi possível encontrar o talento nos compêndios: {feat}",
+      "TechniqueNotFound": "{name}: não foi possível encontrar a técnica nos compêndios: {technique}",
+      "Applied": "{name}: {count} benefício(s) de ocupação aplicado(s)."
     }
   }
 }

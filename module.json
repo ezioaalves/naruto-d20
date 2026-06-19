@@ -58,7 +58,8 @@
     "styles/chat/technique-cards.css",
     "styles/item/technique-sidebar.css",
     "styles/apps/technique-synckit.css",
-    "styles/apps/technique-browser.css"
+    "styles/apps/technique-browser.css",
+    "styles/apps/occupation-selector.css"
   ],
   "languages": [
     {
