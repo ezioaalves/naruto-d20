@@ -102,9 +102,9 @@
       "system": "pf1"
     },
     {
-      "name": "training-weights",
-      "label": "Training Weights",
-      "path": "packs/training-weights",
+      "name": "equipments",
+      "label": "Equipments",
+      "path": "packs/equipments",
       "type": "Item",
       "system": "pf1"
     }
@@ -119,7 +119,7 @@
         "technique-buffs",
         "feats",
         "classes",
-        "training-weights"
+        "equipments"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "_id": "TrnWtWrstT1A1",
-  "_key": "!items!TrnWtWrstT1A1",
+  "_id": "TrnWtWrstT2A2",
+  "_key": "!items!TrnWtWrstT2A2",
   "_stats": {
     "compendiumSource": null,
     "coreVersion": "13.351",
@@ -13,7 +13,7 @@
     "systemVersion": "11.11"
   },
   "type": "loot",
-  "name": "Wrist Weight Type I",
+  "name": "Wrist Weight Type II",
   "img": "systems/pf1/icons/items/equipment/bracers-defense.jpg",
   "system": {
     "description": {
@@ -26,7 +26,7 @@
     "equipped": false,
     "identified": true,
     "weight": {
-      "value": 25
+      "value": 37.5
     },
     "price": 0
   },
@@ -34,9 +34,9 @@
     "naruto-d20": {
       "trainingWeightItem": {
         "slot": "wrist",
-        "type": 1,
-        "rankPenalty": 1,
-        "learnBonus": 1
+        "type": 2,
+        "rankPenalty": 2,
+        "learnBonus": 2
       }
     }
   },
@@ -44,5 +44,6 @@
   "ownership": {
     "default": 0
   },
-  "sort": 0
+  "sort": 0,
+  "folder": "EqpNnjTlsFoldr02"
 }

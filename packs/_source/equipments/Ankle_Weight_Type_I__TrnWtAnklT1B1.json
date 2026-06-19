@@ -1,6 +1,6 @@
 {
-  "_id": "TrnWtAnklT3B3",
-  "_key": "!items!TrnWtAnklT3B3",
+  "_id": "TrnWtAnklT1B1",
+  "_key": "!items!TrnWtAnklT1B1",
   "_stats": {
     "compendiumSource": null,
     "coreVersion": "13.351",
@@ -13,7 +13,7 @@
     "systemVersion": "11.11"
   },
   "type": "loot",
-  "name": "Ankle Weight Type III",
+  "name": "Ankle Weight Type I",
   "img": "systems/pf1/icons/items/equipment/bracers-defense.jpg",
   "system": {
     "description": {
@@ -26,7 +26,7 @@
     "equipped": false,
     "identified": true,
     "weight": {
-      "value": 50
+      "value": 25
     },
     "price": 0
   },
@@ -34,9 +34,9 @@
     "naruto-d20": {
       "trainingWeightItem": {
         "slot": "ankle",
-        "type": 3,
-        "rankPenalty": 3,
-        "learnBonus": 3
+        "type": 1,
+        "rankPenalty": 1,
+        "learnBonus": 1
       }
     }
   },
@@ -44,5 +44,6 @@
   "ownership": {
     "default": 0
   },
-  "sort": 0
+  "sort": 0,
+  "folder": "EqpNnjTlsFoldr02"
 }

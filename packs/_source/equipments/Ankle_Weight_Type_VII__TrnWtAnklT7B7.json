@@ -1,6 +1,6 @@
 {
-  "_id": "TrnWtWrstT5A5",
-  "_key": "!items!TrnWtWrstT5A5",
+  "_id": "TrnWtAnklT7B7",
+  "_key": "!items!TrnWtAnklT7B7",
   "_stats": {
     "compendiumSource": null,
     "coreVersion": "13.351",
@@ -13,11 +13,11 @@
     "systemVersion": "11.11"
   },
   "type": "loot",
-  "name": "Wrist Weight Type V",
+  "name": "Ankle Weight Type VII",
   "img": "systems/pf1/icons/items/equipment/bracers-defense.jpg",
   "system": {
     "description": {
-      "value": "<p>Training weight worn on the wrists. While equipped, it penalizes effective Strength Rank. Together with an equipped ankle weight, it grants a Learn/Mastery bonus for explicitly marked rank-training techniques.</p>",
+      "value": "<p>Training weight worn on the ankles. While equipped, it penalizes effective Speed Rank. Together with an equipped wrist weight, it grants a Learn/Mastery bonus for explicitly marked rank-training techniques.</p>",
       "unidentified": ""
     },
     "subType": "gear",
@@ -26,16 +26,16 @@
     "equipped": false,
     "identified": true,
     "weight": {
-      "value": 75
+      "value": 250
     },
     "price": 0
   },
   "flags": {
     "naruto-d20": {
       "trainingWeightItem": {
-        "slot": "wrist",
-        "type": 5,
-        "rankPenalty": 5,
+        "slot": "ankle",
+        "type": 7,
+        "rankPenalty": 8,
         "learnBonus": 5
       }
     }
@@ -44,5 +44,6 @@
   "ownership": {
     "default": 0
   },
-  "sort": 0
+  "sort": 0,
+  "folder": "EqpNnjTlsFoldr02"
 }

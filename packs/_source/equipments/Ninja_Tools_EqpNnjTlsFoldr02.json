@@ -1,0 +1,19 @@
+{
+  "_id": "EqpNnjTlsFoldr02",
+  "name": "Ninja Tools",
+  "type": "Item",
+  "description": "",
+  "folder": "EqpGenEqmntFld01",
+  "sorting": "a",
+  "color": null,
+  "sort": 1000,
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!EqpNnjTlsFoldr02"
+}
