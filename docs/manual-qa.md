@@ -407,7 +407,7 @@ Prereq: a technique with finite round duration (e.g., Kai-Mon rank 1 = 3 rounds)
 1. Open the **Naruto D20 → Naruto D20 — Starting Occupations** compendium.
    Expected: exactly 22 entries appear with the diplomacy icon.
 
-2. Open the **Community Packs → Occupations** compendium.
+2. Open the **Naruto D20 → Naruto D20 — Occupations (Community Compendium)** compendium.
    Expected: exactly 26 entries appear; 8 are tagged "Samurai Clans" (filter by tag to verify).
 
 3. Drag **Academy Student** occupation onto a test character.
@@ -416,8 +416,8 @@ Prereq: a technique with finite round duration (e.g., Kai-Mon rank 1 = 3 rounds)
 4. Select 3 skills and a feat, then click Apply.
    Expected: the 3 chosen skills plus Academy Student's fixed skills (Acrobatics, Climb, Escape Artist, Diplomacy, Intimidate, Knowledge Martial) appear as class skills on the actor; the selected feat is added to the Features tab; the character's wealth increases by +1 (confirmed in the Summary tab Hero Statistics).
 
-5. In the Features tab, find and delete the newly granted feat.
-   Expected: the feat is removed; its supplements (if any) cascade-delete via `registerFeatGrantDeletion`; the character's wealth decreases by −1 (verified in Summary tab).
+5. In the Features tab, find and delete the **Academy Student** occupation item (the trait, not the granted feat).
+   Expected: the occupation is removed; the supplement cascade (`registerFeatGrantDeletion`) deletes the granted feat automatically; the character's wealth decreases by −1 (verified in Summary tab).
 
 6. Drag an occupation with no skill choices and a single fixed feat (e.g., a simpler occupation) onto the same test character.
    Expected: the occupation applies with no dialog prompt; an info notification appears (e.g., "Occupation applied: [Name]"); the wealth and reputation values update as configured on the occupation.

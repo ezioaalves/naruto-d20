@@ -5,6 +5,8 @@
   flex-direction: column;
   gap: 14px;
   padding: 4px 2px;
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
 /* ── Section card ── */
