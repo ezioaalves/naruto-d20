@@ -12,7 +12,9 @@ export function registerTrainingWeightCarryPatch() {
   if (_patched) return;
 
   if (!ActorPF.prototype.getCarriedWeight) {
-    console.error("Naruto D20 | ActorPF.getCarriedWeight not found — training weight carry patch skipped");
+    console.error(
+      "Naruto D20 | ActorPF.getCarriedWeight not found — training weight carry patch skipped",
+    );
     return;
   }
 

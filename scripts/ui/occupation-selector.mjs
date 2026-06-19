@@ -13,6 +13,11 @@ function t(key, fallback, data) {
   return data ? fallback.replace(/\{(\w+)\}/g, (_, k) => String(data[k] ?? "")) : fallback;
 }
 
+function resolveSkillLabel(key, fallback) {
+  const pf1Label = globalThis.pf1?.config?.skills?.[key];
+  return typeof pf1Label === "string" ? pf1Label : fallback;
+}
+
 export function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -35,7 +40,7 @@ export function renderOccupationSelectionContent({
   const skillRows = skills
     .map(
       (o) =>
-        `<label class="nd20-occ-choice"><input type="checkbox" name="classSkill" value="${escapeHtml(o.key)}"> <span>${escapeHtml(o.label)}</span></label>`,
+        `<label class="nd20-occ-choice"><input type="checkbox" name="classSkill" value="${escapeHtml(o.key)}"> <span>${escapeHtml(resolveSkillLabel(o.key, o.label))}</span></label>`,
     )
     .join("");
   const featRows = feats
@@ -61,7 +66,7 @@ export function renderOccupationSelectionContent({
     ? `<section class="nd20-occ-section"><h3>${t("NarutoD20.Occupation.Technique", "Technique")}</h3><div class="nd20-occ-grid">${techRows}</div></section>`
     : "";
 
-  return `<form class="nd20-occupation-selector">${skillSection}${featSection}${techSection}</form>`;
+  return `<div class="nd20-occupation-selector">${skillSection}${featSection}${techSection}</div>`;
 }
 
 export async function promptOccupationSelections(
@@ -90,9 +95,9 @@ export async function promptOccupationSelections(
         default: true,
         callback: (_event, _button, dialog) => {
           const root = dialog.element.querySelector(".nd20-occupation-selector") ?? dialog.element;
-          const classSkillKeys = [
-            ...root.querySelectorAll("input[name='classSkill']:checked"),
-          ].map((input) => input.value);
+          const classSkillKeys = [...root.querySelectorAll("input[name='classSkill']:checked")].map(
+            (input) => input.value,
+          );
           const featName = root.querySelector("input[name='featOption']:checked")?.value ?? null;
           const techniqueName =
             root.querySelector("input[name='techniqueOption']:checked")?.value ?? null;

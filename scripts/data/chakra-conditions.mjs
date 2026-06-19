@@ -137,8 +137,9 @@ async function _clearNarutoConditions(actor) {
   const hadDepletionActive = tracked.depletionActive ?? false;
   const hadLowReserveFatiguePending = tracked.lowReserveFatiguePending ?? false;
 
-  const hasActiveNarutoConditions = (actor.effects ?? []).some((e) =>
-    e.statuses?.has(LOW_RESERVES_CONDITION_ID) || e.statuses?.has(CHAKRA_DEPLETION_CONDITION_ID),
+  const hasActiveNarutoConditions = (actor.effects ?? []).some(
+    (e) =>
+      e.statuses?.has(LOW_RESERVES_CONDITION_ID) || e.statuses?.has(CHAKRA_DEPLETION_CONDITION_ID),
   );
 
   const nothingTracked =

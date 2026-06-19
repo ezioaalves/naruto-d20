@@ -70,7 +70,13 @@ export function planOccupationApplication(actor, occupation) {
   return { updates, creates: [], deletes: [] };
 }
 
-export function buildOccupationItemUpdate(occupationItem, occupation, selections, featDoc, techDoc) {
+export function buildOccupationItemUpdate(
+  occupationItem,
+  occupation,
+  selections,
+  featDoc,
+  techDoc,
+) {
   const classSkills = {};
   for (const key of mergedClassSkillKeys(occupation, selections)) classSkills[key] = true;
   const links = [featDoc, techDoc].filter(Boolean).map((doc) => linkRowFromDocument(doc));
