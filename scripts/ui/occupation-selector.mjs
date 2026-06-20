@@ -27,6 +27,13 @@ export function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
+export function normalizeOccupationSelectionResult(result) {
+  if (!result) return null;
+  if (result === "cancel") return null;
+  if (typeof result === "object" && result.action === "cancel") return null;
+  return result;
+}
+
 export function renderOccupationSelectionContent({
   classSkillOptions,
   skillSelectCount,
@@ -133,7 +140,7 @@ export async function promptOccupationSelections(
     rejectClose: false,
   });
 
-  return result ?? null;
+  return normalizeOccupationSelectionResult(result);
 }
 
 function wireOccupationDialogConstraints(

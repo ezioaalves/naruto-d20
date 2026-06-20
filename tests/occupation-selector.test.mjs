@@ -1,6 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { renderOccupationSelectionContent } from "../scripts/ui/occupation-selector.mjs";
+import {
+  normalizeOccupationSelectionResult,
+  renderOccupationSelectionContent,
+} from "../scripts/ui/occupation-selector.mjs";
 
 test("renders skill checkboxes with key values and 'select exactly' copy", () => {
   const html = renderOccupationSelectionContent({
@@ -64,4 +67,22 @@ test("renders advanced bloodline options as grantable radios", () => {
   assert.match(html, /value="Advanced Bloodline \(Byakugan\)"/);
   assert.match(html, /value="Advanced Bloodline \(Red Eyes\)"/);
   assert.doesNotMatch(html, /Manual Feat Choices/);
+});
+
+test("normalizes close and cancel dialog results to null", () => {
+  assert.equal(normalizeOccupationSelectionResult(null), null);
+  assert.equal(normalizeOccupationSelectionResult(undefined), null);
+  assert.equal(normalizeOccupationSelectionResult(false), null);
+  assert.equal(normalizeOccupationSelectionResult("cancel"), null);
+  assert.equal(normalizeOccupationSelectionResult({ action: "cancel" }), null);
+});
+
+test("preserves valid occupation selection payloads", () => {
+  const payload = {
+    classSkillKeys: ["ste", "kar"],
+    featName: "Genin",
+    techniqueName: null,
+  };
+
+  assert.equal(normalizeOccupationSelectionResult(payload), payload);
 });
