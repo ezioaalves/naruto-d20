@@ -62,6 +62,34 @@ test("transformOccupationFlag separates manual feat choices from grantable feat 
   ]);
 });
 
+test("transformOccupationFlag keeps single advanced bloodline options grantable", () => {
+  const occ = transformOccupationFlag({
+    skillSelectCount: 0,
+    classSkillOptions: [],
+    fixedClassSkills: [],
+    featOptions: ["Advanced Bloodline (Byakugan)", "Genin"],
+  });
+
+  assert.deepEqual(occ.featOptions, ["Advanced Bloodline (Byakugan)", "Genin"]);
+  assert.deepEqual(occ.manualFeatOptions, []);
+});
+
+test("transformOccupationFlag expands multi-bloodline advanced bloodline options", () => {
+  const occ = transformOccupationFlag({
+    skillSelectCount: 0,
+    classSkillOptions: [],
+    fixedClassSkills: [],
+    featOptions: ["Advanced Bloodline (Satori, Red Eyes)", "Genin"],
+  });
+
+  assert.deepEqual(occ.featOptions, [
+    "Advanced Bloodline (Satori)",
+    "Advanced Bloodline (Red Eyes)",
+    "Genin",
+  ]);
+  assert.deepEqual(occ.manualFeatOptions, []);
+});
+
 test("transformOccupationFlag normalizes known feat aliases", () => {
   const occ = transformOccupationFlag({
     skillSelectCount: 0,

@@ -62,6 +62,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Doukagan)",
           "Educated",
           "Gearhead",
           "Genjutsu Adept",
@@ -72,9 +73,7 @@
         "techniqueOptions": [],
         "wealthBonus": 1,
         "reputationBonus": 0,
-        "manualFeatOptions": [
-          "Advanced Bloodline (Doukagan)"
-        ]
+        "manualFeatOptions": []
       }
     }
   }

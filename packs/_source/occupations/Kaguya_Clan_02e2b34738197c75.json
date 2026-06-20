@@ -77,6 +77,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Shikotsu Myaku)",
           "Archaic Weapons Proficiency",
           "Combat Martial Arts",
           "Defensive Martial Arts",
@@ -89,9 +90,7 @@
         "techniqueOptions": [],
         "wealthBonus": 0,
         "reputationBonus": 1,
-        "manualFeatOptions": [
-          "Advanced Bloodline (Shikotsu Myaku)"
-        ]
+        "manualFeatOptions": []
       }
     }
   }

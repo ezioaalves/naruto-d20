@@ -18,7 +18,6 @@ const FEAT_ALIASES = new Map([
   ["Resist Poison", "Resist Poisons"],
 ]);
 const MANUAL_FEAT_PATTERNS = [
-  /^Advanced Bloodline\b/i,
   /^Armor Proficiency$/i,
   /^Craft Poison\b/i,
   /^Dodge \(/i,
@@ -33,6 +32,19 @@ const MANUAL_FEAT_PATTERNS = [
   /^Unarmed Combatant \(/i,
   /^Weapon Focus \(/i,
 ];
+
+function expandAdvancedBloodlineOptions(name) {
+  const value = String(name ?? "").trim();
+  const match = /^Advanced Bloodline \((.+)\)$/i.exec(value);
+  if (!match) return [value];
+
+  const parts = match[1]
+    .split(",")
+    .map((part) => part.trim())
+    .filter(Boolean);
+  if (parts.length <= 1) return [value];
+  return parts.map((part) => `Advanced Bloodline (${part})`);
+}
 
 export function convertSkillKey(option) {
   if (option?.slug === NINJA_LORE_SLUG || option?.key === "lor") {
@@ -70,8 +82,11 @@ export function splitFeatOptions(options) {
   const manualFeatOptions = [];
   for (const option of options ?? []) {
     const normalized = normalizeFeatOption(option);
-    if (isManualFeatOption(normalized)) manualFeatOptions.push(normalized);
-    else featOptions.push(normalized);
+    const expandedOptions = expandAdvancedBloodlineOptions(normalized);
+    for (const expanded of expandedOptions) {
+      if (isManualFeatOption(expanded)) manualFeatOptions.push(expanded);
+      else featOptions.push(expanded);
+    }
   }
   return { featOptions, manualFeatOptions };
 }

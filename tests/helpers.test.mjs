@@ -1628,6 +1628,35 @@ describe("source JSON validation", () => {
       messages.some((m) => m.includes("occupation technique option not found: Missing Technique")),
     );
   });
+
+  it("accepts advanced bloodline feat options when matching feats exist", () => {
+    const { root, sourceRoot } = makeSourceRoot({
+      techniques: { "technique.json": techniqueDoc() },
+      feats: {
+        "bloodline.json": {
+          type: "feat",
+          _id: "feat0002",
+          _key: "!items!feat0002",
+          name: "Advanced Bloodline (Byakugan)",
+          system: { subType: "feat" },
+        },
+      },
+      occupations: {
+        "good-occupation.json": occupationDoc({
+          occupation: {
+            featOptions: ["Advanced Bloodline (Byakugan)"],
+            manualFeatOptions: [],
+            techniqueOptions: [],
+          },
+        }),
+      },
+    });
+
+    const result = validateCompendia({ root, sourceRoot });
+
+    assert.equal(result.failed, false);
+    assert.deepEqual(result.issues, []);
+  });
 });
 
 describe("maintenance duration model", () => {

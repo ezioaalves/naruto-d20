@@ -51,3 +51,17 @@ test("renders manual feat options as instructions, not auto-grant radios", () =>
   assert.match(html, /\[Universal \/ Finesse Category\]/);
   assert.doesNotMatch(html, /value="\[Universal \/ Finesse Category\]"/);
 });
+
+test("renders advanced bloodline options as grantable radios", () => {
+  const html = renderOccupationSelectionContent({
+    classSkillOptions: [],
+    skillSelectCount: 0,
+    featOptions: ["Advanced Bloodline (Byakugan)", "Advanced Bloodline (Red Eyes)"],
+    manualFeatOptions: [],
+    techniqueOptions: [],
+  });
+
+  assert.match(html, /value="Advanced Bloodline \(Byakugan\)"/);
+  assert.match(html, /value="Advanced Bloodline \(Red Eyes\)"/);
+  assert.doesNotMatch(html, /Manual Feat Choices/);
+});
