@@ -351,6 +351,14 @@ export function createTechniqueDataModel() {
 
         performMiscBonus: new fields.NumberField({ ...opt, integer: true, initial: 0 }),
 
+        attackAdjustments: new fields.SchemaField(
+          {
+            sizeBonus: new fields.NumberField({ ...opt, integer: true, initial: 0 }),
+            critConfirmBonus: new fields.StringField({ ...opt, blank: true, initial: "" }),
+          },
+          opt,
+        ),
+
         // ObjectField rows let PF1e's ItemAction sheet persist arbitrary
         // fields (damage, attack, save, etc.) without schema stripping.
         actions: new fields.ArrayField(new fields.ObjectField(), { ...opt, initial: [] }),

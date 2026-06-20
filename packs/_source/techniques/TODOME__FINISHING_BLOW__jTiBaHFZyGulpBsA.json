@@ -42,6 +42,10 @@
     "isKinjutsu": false,
     "isCombination": false,
     "performMiscBonus": 0,
+    "attackAdjustments": {
+      "sizeBonus": 1,
+      "critConfirmBonus": "2[TODOME]"
+    },
     "active": false,
     "changes": [],
     "actions": [
@@ -85,7 +89,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly"
+        "weaponAttack.filter": "meleeOrUnarmed"
       }
     },
     "showInQuickbar": false,

@@ -38,6 +38,42 @@ function formatWeaponAttackIssue(key, data = {}) {
   return formatIssueTemplate(ISSUE_TEMPLATES[key] ?? key, data);
 }
 
+function getTechniqueAttackAdjustments(technique) {
+  const raw = technique.system?.attackAdjustments ?? {};
+  return {
+    sizeBonus: Number(raw.sizeBonus ?? 0) || 0,
+    critConfirmBonus: String(raw.critConfirmBonus ?? "").trim(),
+  };
+}
+
+function applyTechniqueAttackAdjustments(actionUse, technique, cleanup) {
+  const { sizeBonus, critConfirmBonus } = getTechniqueAttackAdjustments(technique);
+  if (!sizeBonus && !critConfirmBonus) return;
+
+  if (critConfirmBonus) {
+    const previous = actionUse.shared.action.critConfirmBonus;
+    actionUse.shared.action.critConfirmBonus = previous
+      ? `${previous} + ${critConfirmBonus}`
+      : critConfirmBonus;
+    cleanup.push(() => {
+      if (previous) actionUse.shared.action.critConfirmBonus = previous;
+      else delete actionUse.shared.action.critConfirmBonus;
+    });
+  }
+
+  if (sizeBonus) {
+    const rollData = actionUse.shared.rollData;
+    const previousSize = rollData.size;
+    const itemSize = rollData.item?.size;
+    rollData.size = (Number(previousSize) || 0) + sizeBonus;
+    if (Number.isFinite(itemSize)) rollData.item.size = itemSize + sizeBonus;
+    cleanup.push(() => {
+      rollData.size = previousSize;
+      if (Number.isFinite(itemSize)) rollData.item.size = itemSize;
+    });
+  }
+}
+
 /**
  * Read the `system.flags.dictionary.weaponAttack` config in both supported
  * shapes — a nested object (`weaponAttack: { mode, filter, … }`) and dotted
@@ -208,6 +244,8 @@ export async function rollSelectedWeaponAttackWithTechnique({
       nonCritParts.push({ formula: config.nonCritDamageBonus, types: [] });
       cleanup.push(() => nonCritParts.splice(originalLength, 1));
     }
+
+    applyTechniqueAttackAdjustments(actionUse, technique, cleanup);
 
     if (config.extraAttacks?.length) {
       const exAtk = actionUse.shared.action.extraAttacks;
