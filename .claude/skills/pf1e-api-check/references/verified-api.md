@@ -33,6 +33,12 @@ Append new verified facts under the matching section. Never add a guessed entry.
   `unregister`. So module-registered custom damage types are looked up bare — naruto-d20's
   are `earth`/`water`/`wind`/`holy` (NOT `naruto-d20.earth`). Confirmed by existing content:
   every technique stores bare ids in `types[]`.
+- `ItemPF#use(...)` seeds shared action-use data with `action`, `rollData`, `attackBonus`, and
+  `damageBonus` → `module/documents/item/item-pf.mjs:1743`; `ActionUse#process` calls
+  `Hooks.callAll("pf1CreateActionUse", this)` after roll data is prepared and before attacks,
+  damage, and the attack dialog are generated → `module/action-use/action-use.mjs:1599`;
+  `ActionUse#addAttacks` and `ActionUse#addDamage` pass `shared.damageBonus` into
+  `ChatAttack.addDamage(...)` → `module/action-use/action-use.mjs:712`, `:772`.
 - `Hooks.call("pf1PreDamageRoll", action, rollData, parts, changes)` →
   `module/components/action.mjs:1704`. `parts` is a mutable array; each entry is
   `{ base: <formula>, extra: [], damageType: <types array>, type }`
