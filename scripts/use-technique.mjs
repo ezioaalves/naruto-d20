@@ -31,6 +31,52 @@ export function canAffordTechnique(actor, item) {
   return canPayChakra(actor, item.system.chakraCost ?? 0);
 }
 
+function getTechniqueAttackAdjustments(item) {
+  const raw = item.system?.attackAdjustments ?? {};
+  return {
+    sizeBonus: Number(raw.sizeBonus ?? 0) || 0,
+    critConfirmBonus: String(raw.critConfirmBonus ?? "").trim(),
+  };
+}
+
+function installTechniqueAttackAdjustmentsHook(item, actor, action, cleanup) {
+  const adjustments = getTechniqueAttackAdjustments(item);
+  if (!adjustments.sizeBonus && !adjustments.critConfirmBonus) return null;
+
+  const hook = (actionUse) => {
+    if (actionUse.actor?.id !== actor.id) return;
+    if (actionUse.item?.id !== item.id) return;
+    if (actionUse.action?.id !== action.id) return;
+
+    if (adjustments.critConfirmBonus) {
+      const previous = actionUse.shared.action.critConfirmBonus;
+      actionUse.shared.action.critConfirmBonus = previous
+        ? `${previous} + ${adjustments.critConfirmBonus}`
+        : adjustments.critConfirmBonus;
+      cleanup.push(() => {
+        if (previous) actionUse.shared.action.critConfirmBonus = previous;
+        else delete actionUse.shared.action.critConfirmBonus;
+      });
+    }
+
+    if (adjustments.sizeBonus) {
+      const rollData = actionUse.shared.rollData;
+      const previousSize = rollData.size;
+      const itemSize = rollData.item?.size;
+      rollData.size = (Number(previousSize) || 0) + adjustments.sizeBonus;
+      if (Number.isFinite(itemSize)) rollData.item.size = itemSize + adjustments.sizeBonus;
+      cleanup.push(() => {
+        rollData.size = previousSize;
+        if (Number.isFinite(itemSize)) rollData.item.size = itemSize;
+      });
+    }
+  };
+
+  Hooks.on("pf1CreateActionUse", hook);
+  cleanup.push(() => Hooks.off("pf1CreateActionUse", hook));
+  return hook;
+}
+
 export async function performTechnique(item, actionId, event = null) {
   const context = validateTechniqueUse(item, actionId);
   if (!context) return;
@@ -293,17 +339,23 @@ async function useTechniqueAction(item, action, actor, event) {
     });
   }
 
-  const useResult = await item.use({
-    actionId: action.id,
-    skipDialog: !(action.hasAttack || action.hasDamage),
-    ev: event,
-  });
+  const cleanup = [];
+  installTechniqueAttackAdjustmentsHook(item, actor, action, cleanup);
+  try {
+    const useResult = await item.use({
+      actionId: action.id,
+      skipDialog: !(action.hasAttack || action.hasDamage),
+      ev: event,
+    });
 
-  // Charge defense penalty is applied by the global pf1PostActionUse hook
-  // (registerChargeDefensePenalty), which fires for the weapon attack this
-  // technique triggers internally. Applying it again here would duplicate the
-  // buff due to the dedup race (the hook runs un-awaited, concurrently).
-  return useResult;
+    // Charge defense penalty is applied by the global pf1PostActionUse hook
+    // (registerChargeDefensePenalty), which fires for the weapon attack this
+    // technique triggers internally. Applying it again here would duplicate the
+    // buff due to the dedup race (the hook runs un-awaited, concurrently).
+    return useResult;
+  } finally {
+    for (const restore of cleanup.reverse()) restore();
+  }
 }
 
 async function postPerformCard(actor, data, visibility = null) {
