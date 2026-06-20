@@ -620,10 +620,12 @@
         <label>{{localize "NarutoD20.Empower.PerformIncreaseEvery.Label"}}</label>
         <input type="number" step="1" min="0" name="system.automation.empower.performIncreaseEvery" value="{{system.automation.empower.performIncreaseEvery}}">
       </div>
+      {{#if empowerFields.hasPerformIncrease}}
       <div class="form-group">
         <label>{{localize "NarutoD20.Empower.PerformIncreaseAmount.Label"}}</label>
         <input type="number" step="1" min="0" name="system.automation.empower.performIncreaseAmount" value="{{system.automation.empower.performIncreaseAmount}}">
       </div>
+      {{/if}}
       {{/if}}
 
       <label class="checkbox">
