@@ -99,6 +99,20 @@
     "showInQuickbar": false,
     "showInCombat": false,
     "chakraResistance": true,
+    "automation": {
+      "enabled": true,
+      "targetMode": "auto",
+      "empower": {
+        "enabled": true,
+        "mode": "damageBonus",
+        "costPerStep": 1,
+        "formulaPerStep": "1d6",
+        "damageTypes": [],
+        "maxStepsFormula": "min(@cl, 16) - 6",
+        "performIncreaseEvery": 0,
+        "performIncreaseAmount": 0
+      }
+    },
     "sources": [
       {
         "title": "NarutoD20 Redux v1.3",

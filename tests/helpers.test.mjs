@@ -1839,6 +1839,39 @@ describe("source JSON validation", () => {
     );
   });
 
+  it("reports invalid damage empower config", () => {
+    const { root, sourceRoot } = makeSourceRoot({
+      techniques: {
+        "bad-empower.json": techniqueDoc({
+          system: {
+            automation: {
+              empower: {
+                enabled: true,
+                mode: "unknown",
+                costPerStep: 0,
+                formulaPerStep: "",
+                damageTypes: "fire",
+                performIncreaseEvery: -1,
+                performIncreaseAmount: -1,
+              },
+            },
+          },
+        }),
+      },
+    });
+
+    const result = validateCompendia({ root, sourceRoot });
+    const messages = result.issues.map((i) => i.message);
+
+    assert.equal(result.failed, true);
+    assert.ok(messages.some((m) => m.includes("unsupported automation.empower.mode")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.costPerStep")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.formulaPerStep")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.damageTypes")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.performIncreaseEvery")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.performIncreaseAmount")));
+  });
+
   it("accepts advanced bloodline feat options when matching feats exist", () => {
     const { root, sourceRoot } = makeSourceRoot({
       techniques: { "technique.json": techniqueDoc() },

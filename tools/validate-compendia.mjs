@@ -55,6 +55,7 @@ const COMPLEXITIES = new Set([
 ]);
 
 const AUTOMATION_TARGET_MODES = new Set(["auto", "self", "selected"]);
+const EMPOWER_MODES = new Set(["damageBonus"]);
 const WEAPON_ATTACK_PREFIX = "weaponAttack";
 const WEAPON_ATTACK_KEYS = new Set([
   "mode",
@@ -360,6 +361,7 @@ function validateTechnique({ doc, filename, packName }) {
     }
   }
 
+  validateEmpower(packName, filename, system.automation?.empower, system.compEmpower === true);
   validateWeaponAttack(doc, filename, packName);
 }
 
@@ -422,6 +424,47 @@ function validateWeaponAttack(doc, filename, packName) {
   const charge = str("charge").toLowerCase();
   if (charge && charge !== "true" && charge !== "false")
     error(packName, filename, `weaponAttack.charge must be "true" or "false"`);
+}
+
+function validateEmpower(packName, filename, empower, hasComponent) {
+  if (empower === undefined) {
+    if (hasComponent) warn(packName, filename, "compEmpower is set but automation.empower is absent");
+    return;
+  }
+  if (!isPlainObject(empower)) {
+    error(packName, filename, "system.automation.empower must be an object");
+    return;
+  }
+  if (hasComponent && empower.enabled !== true) {
+    warn(packName, filename, "compEmpower is set but automation.empower.enabled is not true");
+  }
+  if (empower.enabled !== true) return;
+
+  const mode = String(empower.mode ?? "").trim();
+  if (!EMPOWER_MODES.has(mode)) {
+    error(packName, filename, `unsupported automation.empower.mode "${mode}"`);
+  }
+  if (!Number.isInteger(empower.costPerStep) || empower.costPerStep < 1) {
+    error(packName, filename, "automation.empower.costPerStep must be a positive integer");
+  }
+  if (!isNonEmptyString(empower.formulaPerStep)) {
+    error(packName, filename, "automation.empower.formulaPerStep must be a non-empty string");
+  }
+  if (empower.damageTypes !== undefined && !Array.isArray(empower.damageTypes)) {
+    error(packName, filename, "automation.empower.damageTypes must be an array");
+  }
+  if (
+    empower.performIncreaseEvery !== undefined &&
+    (!Number.isInteger(empower.performIncreaseEvery) || empower.performIncreaseEvery < 0)
+  ) {
+    error(packName, filename, "automation.empower.performIncreaseEvery must be a non-negative integer");
+  }
+  if (
+    empower.performIncreaseAmount !== undefined &&
+    (!Number.isInteger(empower.performIncreaseAmount) || empower.performIncreaseAmount < 0)
+  ) {
+    error(packName, filename, "automation.empower.performIncreaseAmount must be a non-negative integer");
+  }
 }
 
 function validateFeat({ doc, filename, packName }) {
