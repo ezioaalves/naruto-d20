@@ -2,6 +2,7 @@ import { MAIN_DISCIPLINES, MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.m
 import { TechniqueSynckitApp } from "./technique-synckit-app.mjs";
 import { renderTechniqueHeader } from "./technique-header.mjs";
 import { buildLearningView } from "../learn-technique.mjs";
+import { injectHeroStatistics } from "./summary-stats.mjs";
 
 // pf1 11.11 uses V1 ApplicationV1. Its render flow is (foundry.mjs:37369–37406):
 //   1. _renderInner(data) → returns the full new inner HTML
@@ -146,6 +147,13 @@ export function installChakraTabPatch() {
 
     const $html = await original.apply(this, args);
     if (!["character", "npc"].includes(this.actor.type)) return $html;
+
+    // Hero Statistics (Action Points / Reputation / Wealth) — injected here,
+    // pre-paint, rather than via a post-render hook. The old async hook inserted
+    // it after the frame painted, which flickered (and flickered worse on sheets
+    // that relocate the block). Independent of chakra, so it runs before the
+    // hasChakra early-return below.
+    await injectHeroStatistics(this, $html, args[0] ?? {});
 
     if ((this.actor.flags?.[MODULE_ID]?.hasChakra ?? true) === false) return $html;
 
