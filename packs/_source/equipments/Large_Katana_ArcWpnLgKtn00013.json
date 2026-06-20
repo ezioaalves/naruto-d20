@@ -25,7 +25,9 @@
         "actionType": "mwak",
         "activation": {
           "type": "attack",
-          "unchained": { "type": "attack" }
+          "unchained": {
+            "type": "attack"
+          }
         },
         "ability": {
           "attack": "_default",
@@ -36,32 +38,51 @@
           "parts": [
             {
               "formula": "sizeRoll(2, 6, @size)",
-              "types": ["slashing"]
+              "types": [
+                "slashing"
+              ]
             }
           ]
         },
-        "range": { "units": "melee", "value": "0" },
-        "duration": { "units": "inst" },
-        "extraAttacks": { "type": "standard" },
-        "uses": { "autoDeductChargesCost": "0" }
+        "range": {
+          "units": "melee",
+          "value": "0"
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "extraAttacks": {
+          "type": "standard"
+        },
+        "uses": {
+          "autoDeductChargesCost": "0"
+        }
       }
     ],
-    "subType": "martial",
+    "subType": "archaicWeapons",
     "weaponSubtype": "2h",
     "hands": 2,
     "held": "2h",
-    "weaponGroups": ["bladesHeavy"],
-    "weight": { "value": 9 },
+    "weaponGroups": [
+      "bladesHeavy"
+    ],
+    "weight": {
+      "value": 9
+    },
     "price": 13,
     "quantity": 1,
     "identified": true,
     "carried": true,
     "equipped": false,
     "hardness": 10,
-    "hp": { "base": 10 }
+    "hp": {
+      "base": 10
+    }
   },
   "effects": [],
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "flags": {}
 }

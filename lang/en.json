@@ -6,10 +6,12 @@
   },
   "NarutoD20": {
     "WeaponProficiency": {
-      "ninWeapons": "Nin Weapons"
+      "ninWeapons": "Nin Weapons",
+      "archaicWeapons": "Archaic Weapons"
     },
     "WeaponType": {
-      "ninWeapons": "Nin Weapons"
+      "ninWeapons": "Nin Weapons",
+      "archaicWeapons": "Archaic Weapons"
     },
     "Skills": {
       "ckc": "Chakra Control",

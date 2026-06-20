@@ -14,7 +14,10 @@
   "img": "systems/pf1/icons/items/weapons/sword-short.PNG",
   "folder": "ArcWpnFolderD004",
   "system": {
-    "description": { "value": "", "unidentified": "" },
+    "description": {
+      "value": "",
+      "unidentified": ""
+    },
     "actions": [
       {
         "_id": "ShtswActMwak0001",
@@ -22,7 +25,9 @@
         "actionType": "mwak",
         "activation": {
           "type": "attack",
-          "unchained": { "type": "attack" }
+          "unchained": {
+            "type": "attack"
+          }
         },
         "ability": {
           "attack": "_default",
@@ -33,30 +38,49 @@
           "parts": [
             {
               "formula": "sizeRoll(1, 6, @size)",
-              "types": ["piercing"]
+              "types": [
+                "piercing"
+              ]
             }
           ]
         },
-        "range": { "units": "melee", "value": "0" },
-        "duration": { "units": "inst" },
-        "extraAttacks": { "type": "standard" },
-        "uses": { "autoDeductChargesCost": "0" }
+        "range": {
+          "units": "melee",
+          "value": "0"
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "extraAttacks": {
+          "type": "standard"
+        },
+        "uses": {
+          "autoDeductChargesCost": "0"
+        }
       }
     ],
-    "subType": "martial",
+    "subType": "archaicWeapons",
     "weaponSubtype": "1h",
-    "weaponGroups": ["bladesLight"],
-    "weight": { "value": 2 },
+    "weaponGroups": [
+      "bladesLight"
+    ],
+    "weight": {
+      "value": 2
+    },
     "price": 5,
     "quantity": 1,
     "identified": true,
     "carried": true,
     "equipped": false,
     "hardness": 10,
-    "hp": { "base": 5 }
+    "hp": {
+      "base": 5
+    }
   },
   "effects": [],
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "flags": {}
 }

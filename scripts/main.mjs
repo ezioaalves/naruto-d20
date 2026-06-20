@@ -189,6 +189,14 @@ Hooks.once("pf1PostInit", () => {
     "2h": "PF1.WeaponSubtypeTwoHanded",
     ranged: "PF1.WeaponSubtypeRanged",
   };
+  CONFIG.PF1.weaponProficiencies.archaicWeapons = "NarutoD20.WeaponProficiency.archaicWeapons";
+  CONFIG.PF1.weaponTypes.archaicWeapons = {
+    _label: "NarutoD20.WeaponType.archaicWeapons",
+    light: "PF1.WeaponSubtypeLight",
+    "1h": "PF1.WeaponSubtypeOneHanded",
+    "2h": "PF1.WeaponSubtypeTwoHanded",
+    ranged: "PF1.WeaponSubtypeRanged",
+  };
   registerNarutoSkills();
   _registerScriptCallCategories();
   installTechniqueSaveDCPatch();

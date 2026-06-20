@@ -1,0 +1,15 @@
+2026/06/19-22:09:33.995403 171553000 Recovering log #50
+2026/06/19-22:09:33.996004 171553000 Delete type=3 #48
+2026/06/19-22:09:33.996056 171553000 Delete type=0 #50
+2026/06/19-22:09:33.997779 1725f7000 Level-0 table #56: started
+2026/06/19-22:09:33.998076 1725f7000 Level-0 table #56: 30558 bytes OK
+2026/06/19-22:09:33.998136 1725f7000 Delete type=0 #54
+2026/06/19-22:09:33.998190 1725f7000 Manual compaction at level-0 from '!folders!ArcWpnFolderD004' @ 72057594037927935 : 1 .. '!items!TrnWtWrstT8A8' @ 0 : 0; will stop at (end)
+2026/06/19-22:09:33.998232 1725f7000 Manual compaction at level-1 from '!folders!ArcWpnFolderD004' @ 72057594037927935 : 1 .. '!items!TrnWtWrstT8A8' @ 0 : 0; will stop at '!items!TrnWtWrstT8A8' @ 367 : 1
+2026/06/19-22:09:33.998239 1725f7000 Compacting 1@1 + 1@2 files
+2026/06/19-22:09:33.998639 1725f7000 Generated table #57@1: 81 keys, 30558 bytes
+2026/06/19-22:09:33.998643 1725f7000 Compacted 1@1 + 1@2 files => 30558 bytes
+2026/06/19-22:09:33.998678 1725f7000 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/06/19-22:09:33.998703 1725f7000 Delete type=2 #56
+2026/06/19-22:09:33.998742 1725f7000 Delete type=2 #52
+2026/06/19-22:09:33.998792 1725f7000 Manual compaction at level-1 from '!items!TrnWtWrstT8A8' @ 367 : 1 .. '!items!TrnWtWrstT8A8' @ 0 : 0; will stop at (end)

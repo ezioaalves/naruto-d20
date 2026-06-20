@@ -6,10 +6,12 @@
   },
   "NarutoD20": {
     "WeaponProficiency": {
-      "ninWeapons": "Armas Nin"
+      "ninWeapons": "Armas Nin",
+      "archaicWeapons": "Armas Arcaicas"
     },
     "WeaponType": {
-      "ninWeapons": "Armas Nin"
+      "ninWeapons": "Armas Nin",
+      "archaicWeapons": "Armas Arcaicas"
     },
     "Skills": {
       "ckc": "Controle de Chakra",
