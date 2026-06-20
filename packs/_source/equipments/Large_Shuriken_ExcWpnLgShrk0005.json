@@ -1,0 +1,92 @@
+{
+  "_id": "ExcWpnLgShrk0005",
+  "_key": "!items!ExcWpnLgShrk0005",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Large Shuriken",
+  "img": "systems/pf1/icons/items/weapons/shuriken.png",
+  "folder": "ExcWpnFolderE005",
+  "system": {
+    "description": {
+      "value": "<p>A larger version of the basic shuriken, which cannot be substituted for normal Shuriken for techniques or special attacks (unless specified otherwise), but can be used to attack in melee at a −4 penalty to attack rolls. Counts as ammunition for the purpose of crafting and applying enhancement seals.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "LgShrkActTwak001",
+        "name": "Throw",
+        "actionType": "twak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critRange": 19
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 8, @size)",
+              "types": ["piercing", "slashing"]
+            }
+          ]
+        },
+        "range": { "units": "ft", "value": "10", "maxIncrements": 5 },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      },
+      {
+        "_id": "LgShrkActMwak002",
+        "name": "Melee (−4)",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critRange": 19
+        },
+        "attackBonus": "-4",
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 8, @size)",
+              "types": ["piercing", "slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "1h",
+    "weaponGroups": ["thrown"],
+    "weight": { "value": 2 },
+    "price": 10,
+    "quantity": 3,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 5,
+    "hp": { "base": 1 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

@@ -321,6 +321,24 @@ This rebuilds `packs/equipments/` (LevelDB) from all JSON files in `packs/_sourc
 | War Fan | `ArcWpnWarFn00020` | exotic | twak (10 ft) + mwak (1d8 B) |
 | Warhammer | `ArcWpnWrhmr00021` | martial | mwak (1d8 B, ×3) |
 
+### Exotic Weapons (folder `ExcWpnFolderE005`)
+
+> Fullblade and Katana are listed in Table 7-6 with `**` ("See Archaic Weapons") — they live in the Archaic Weapons folder.
+
+| Weapon | ID | Actions |
+|--------|----|---------|
+| Daigama | `ExcWpnDaigm00001` | mwak (1d10 P/S, ×3); 2h; trip |
+| Double Katana | `ExcWpnDblKt00002` | mwak (1d10 S, 18–20); 2h; Treat Injury DC +5 |
+| Hansori | `ExcWpnHansr00003` | mwak blade (1d10 S, 19–20) + mwak chain (1d4 S, 19–20); 2h double |
+| Hooksword | `ExcWpnHkSwd00004` | mwak (1d8 S, ×3); disarm + trip |
+| Large Shuriken | `ExcWpnLgShrk0005` | twak (10 ft, 1d8 P/S, 19–20) + mwak (−4); qty 3 |
+| Mancatcher | `ExcWpnMncth00006` | mwak (1d8 B); 2h; reach + trip |
+| Scythe | `ExcWpnScyth00007` | mwak (2d4 P/S, ×4); 2h |
+| Scythe, Hand | `ExcWpnHndSc00008` | mwak (1d10 P/S, ×3) |
+| Shuko and Ashiko | `ExcWpnShkAs00009` | — (modifies unarmed: +1 P dmg, armed, lethal) |
+| Spiked Greatmace | `ExcWpnSpGtm00010` | mwak (1d12 B/S, ×3); 2h |
+| Two-bladed Sword | `ExcWpnTwBlS00011` | mwak ×2 (1d8 S each, 19–20); 2h double |
+
 ## Weapon Icons
 
 Icons live at `systems/pf1/icons/items/weapons/`. Some filenames use `.PNG` (uppercase), others `.png` — check the actual filename on disk before referencing. Common icons:

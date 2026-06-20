@@ -1,0 +1,64 @@
+{
+  "_id": "ExcWpnSpGtm00010",
+  "_key": "!items!ExcWpnSpGtm00010",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Spiked Greatmace",
+  "img": "systems/pf1/icons/items/weapons/morningstar.PNG",
+  "folder": "ExcWpnFolderE005",
+  "system": {
+    "description": { "value": "", "unidentified": "" },
+    "actions": [
+      {
+        "_id": "SpGtmActMwak0001",
+        "name": "Attack",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critMult": 3
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 12, @size)",
+              "types": ["bludgeoning", "slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "2h",
+    "hands": 2,
+    "held": "2h",
+    "weaponGroups": ["hammers"],
+    "weight": { "value": 16 },
+    "price": 15,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 10 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

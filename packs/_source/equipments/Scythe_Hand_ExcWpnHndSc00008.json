@@ -1,0 +1,62 @@
+{
+  "_id": "ExcWpnHndSc00008",
+  "_key": "!items!ExcWpnHndSc00008",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Scythe, Hand",
+  "img": "systems/pf1/icons/items/weapons/sickle.png",
+  "folder": "ExcWpnFolderE005",
+  "system": {
+    "description": { "value": "", "unidentified": "" },
+    "actions": [
+      {
+        "_id": "HndScActMwak0001",
+        "name": "Attack",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critMult": 3
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 10, @size)",
+              "types": ["piercing", "slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "1h",
+    "weaponGroups": ["bladesLight"],
+    "weight": { "value": 6 },
+    "price": 13,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 5 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

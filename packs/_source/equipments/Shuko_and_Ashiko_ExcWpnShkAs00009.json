@@ -1,0 +1,38 @@
+{
+  "_id": "ExcWpnShkAs00009",
+  "_key": "!items!ExcWpnShkAs00009",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Shuko and Ashiko",
+  "img": "systems/pf1/icons/items/weapons/claw-blades.PNG",
+  "folder": "ExcWpnFolderE005",
+  "system": {
+    "description": {
+      "value": "<p>Your unarmed attacks count as armed, deal lethal damage and gain a +1 piercing damage bonus. You can freely perform hand seals and hold objects, and gain a +2 bonus to Climb checks. Shuko and ashiko consists of two gloves and two boots, so they cannot be dual-wielded.</p>",
+      "unidentified": ""
+    },
+    "actions": [],
+    "subType": "exotic",
+    "weaponSubtype": "1h",
+    "weaponGroups": ["close"],
+    "weight": { "value": 1 },
+    "price": 7,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 2 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

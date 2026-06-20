@@ -1,0 +1,96 @@
+{
+  "_id": "ExcWpnHansr00003",
+  "_key": "!items!ExcWpnHansr00003",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Hansori",
+  "img": "systems/pf1/icons/items/weapons/spiked-chain.png",
+  "folder": "ExcWpnFolderE005",
+  "system": {
+    "description": {
+      "value": "<p>Sometimes called shackle-blade, this double weapon is a katana with a spiked chain at its end, and can be used as either or both. A hansori can be wielded one-handed or two-handed. Using it as a double weapon counts as though you had a light weapon in your off-hand. Having proficiency in the hansori does not automatically make you proficient in the katana or spiked chain.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "HansrActMwak0001",
+        "name": "Attack (Blade)",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critRange": 19
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 10, @size)",
+              "types": ["slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      },
+      {
+        "_id": "HansrActMwak0002",
+        "name": "Attack (Chain)",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critRange": 19
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 4, @size)",
+              "types": ["slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "2h",
+    "hands": 2,
+    "held": "2h",
+    "properties": {
+      "double": true
+    },
+    "weaponGroups": ["bladesHeavy", "flails", "double"],
+    "weight": { "value": 7.5 },
+    "price": 13,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 10 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

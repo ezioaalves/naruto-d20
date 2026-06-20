@@ -1,0 +1,67 @@
+{
+  "_id": "ExcWpnDblKt00002",
+  "_key": "!items!ExcWpnDblKt00002",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Double Katana",
+  "img": "systems/pf1/icons/items/weapons/katana.png",
+  "folder": "ExcWpnFolderE005",
+  "system": {
+    "description": {
+      "value": "<p>A hilt with two blades, which leaves grievous wounds. The DC of Treat Injury checks to restore HP to a creature wounded by this weapon is increased by 5 for one day after being hit.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "DblKtActMwak0001",
+        "name": "Attack",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critRange": 18
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 10, @size)",
+              "types": ["slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "2h",
+    "hands": 2,
+    "held": "2h",
+    "weaponGroups": ["bladesHeavy"],
+    "weight": { "value": 9 },
+    "price": 14,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 10 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

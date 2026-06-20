@@ -1,0 +1,70 @@
+{
+  "_id": "ExcWpnMncth00006",
+  "_key": "!items!ExcWpnMncth00006",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Mancatcher",
+  "img": "systems/pf1/icons/items/weapons/mancatcher.png",
+  "folder": "ExcWpnFolderE005",
+  "system": {
+    "description": {
+      "value": "<p>A pole with a U-shaped head used to capture or hinder opponents. You can make trip attempts with this weapon. In addition, you can make grapple attempts with this weapon if the opponent is prone or adjacent to a surface larger than it. During a pin, you can deal weapon damage rather than unarmed damage. The mancatcher has reach — it can be used to attack opponents 10 feet away, but not adjacent ones.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "MncthActMwak0001",
+        "name": "Attack",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 8, @size)",
+              "types": ["bludgeoning"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "2h",
+    "hands": 2,
+    "held": "2h",
+    "properties": {
+      "reach": true,
+      "trip": true
+    },
+    "weaponGroups": ["spears"],
+    "weight": { "value": 8 },
+    "price": 10,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 5,
+    "hp": { "base": 5 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

@@ -1,0 +1,69 @@
+{
+  "_id": "ExcWpnHkSwd00004",
+  "_key": "!items!ExcWpnHkSwd00004",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Hooksword",
+  "img": "systems/pf1/icons/items/weapons/axe-hooked.PNG",
+  "folder": "ExcWpnFolderE005",
+  "system": {
+    "description": {
+      "value": "<p>You gain a +2 bonus to opposed disarm checks. The hooksword can be used to make a trip attack. If you would be tripped during the attempt, you can drop the hooksword to avoid being tripped.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "HkSwdActMwak0001",
+        "name": "Attack",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critMult": 3
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 8, @size)",
+              "types": ["slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "1h",
+    "properties": {
+      "disarm": true,
+      "trip": true
+    },
+    "weaponGroups": ["bladesHeavy"],
+    "weight": { "value": 4 },
+    "price": 12,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 5 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}
