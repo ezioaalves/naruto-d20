@@ -1,0 +1,86 @@
+{
+  "_id": "ArcWpnThrAx00018",
+  "_key": "!items!ArcWpnThrAx00018",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Throwing Axe",
+  "img": "systems/pf1/icons/items/weapons/axe-throwing.png",
+  "folder": "ArcWpnFolderD004",
+  "system": {
+    "description": { "value": "", "unidentified": "" },
+    "actions": [
+      {
+        "_id": "ThrAxActTwak0001",
+        "name": "Throw",
+        "actionType": "twak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 6, @size)",
+              "types": ["slashing"]
+            }
+          ]
+        },
+        "range": { "units": "ft", "value": "10", "maxIncrements": 5 },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      },
+      {
+        "_id": "ThrAxActMwak0002",
+        "name": "Melee",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 6, @size)",
+              "types": ["slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "martial",
+    "weaponSubtype": "1h",
+    "weaponGroups": ["thrown"],
+    "weight": { "value": 2 },
+    "price": 4,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 5 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

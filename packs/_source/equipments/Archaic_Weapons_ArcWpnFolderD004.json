@@ -1,0 +1,19 @@
+{
+  "_id": "ArcWpnFolderD004",
+  "name": "Archaic Weapons",
+  "type": "Item",
+  "description": "",
+  "folder": "WpnFolderAAA0001",
+  "sorting": "a",
+  "color": null,
+  "sort": 3000,
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!ArcWpnFolderD004"
+}

@@ -1,0 +1,64 @@
+{
+  "_id": "ArcWpnKanbo00010",
+  "_key": "!items!ArcWpnKanbo00010",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Kanabo",
+  "img": "systems/pf1/icons/items/weapons/greatclub.png",
+  "folder": "ArcWpnFolderD004",
+  "system": {
+    "description": { "value": "", "unidentified": "" },
+    "actions": [
+      {
+        "_id": "KanboActMwak0001",
+        "name": "Attack",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critMult": 3
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 12, @size)",
+              "types": ["bludgeoning"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "martial",
+    "weaponSubtype": "2h",
+    "hands": 2,
+    "held": "2h",
+    "weaponGroups": ["hammers"],
+    "weight": { "value": 7 },
+    "price": 10,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 10 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

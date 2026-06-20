@@ -126,6 +126,7 @@ File naming convention: `Weapon_Name_<ItemID>.json`
 | omitted | Simple weapon |
 | `"martial"` | Martial weapon |
 | `"exotic"` | Exotic weapon |
+| `"ninWeapons"` | Nin Weapon — custom type registered via `CONFIG.PF1.weaponTypes.ninWeapons`; proficiency granted when the class has `ninWeapons` in `actor.system.traits.weaponProf.standard` |
 
 ### `system.weaponGroups` common values
 
@@ -265,7 +266,7 @@ This rebuilds `packs/equipments/` (LevelDB) from all JSON files in `packs/_sourc
 | Quarterstaff | `QrtrstfSimpleA01` | mwak (main) + mwak (off-hand) |
 | Throwing Spear | `ThrSpearSimpleB2` | twak (30 ft) + mwak (−4) |
 
-### Nin Weapons (folder `NnjWpnFolderC003`, all `subType: "exotic"`, `weaponGroups: ["ninWeapons", ...]`)
+### Nin Weapons (folder `NnjWpnFolderC003`, all `subType: "ninWeapons"`, `weaponGroups: ["ninWeapons", ...]`)
 
 | Weapon | ID | Actions |
 |--------|----|---------|
@@ -293,6 +294,32 @@ This rebuilds `packs/equipments/` (LevelDB) from all JSON files in `packs/_sourc
 | Tessen | `NnjWpnTssnN00022` | twak (10 ft) + mwak (1d4 B) |
 | Throwing Knife | `NnjWpnThrKn00023` | twak (10 ft) + mwak (−4); qty 5 |
 | Throwing Needle | `NnjWpnThrNd00024` | twak (10 ft, fixed 1 dmg); qty 10 |
+
+### Archaic Weapons (folder `ArcWpnFolderD004`)
+
+| Weapon | ID | subType | Actions |
+|--------|----|---------|---------|
+| Battleaxe | `ArcWpnBtAxe00001` | martial | mwak (1d8 S, ×3) |
+| Dagger | `ArcWpnDgger00002` | simple | mwak (1d4 P, 19–20) + twak (10 ft) |
+| Daikyuu | `ArcWpnDaiky00003` | exotic | rwak (120 ft, 1d8+min(Str,4) P, ×3) |
+| Arrows (20) | `ArcWpnArrow00004` | — | ammo, qty 20 |
+| Fullblade | `ArcWpnFllBl00005` | exotic | mwak (2d8 S, 19–20); 2h; −2 penalty without EWP |
+| Greatbow | `ArcWpnGrtBw00006` | exotic | rwak (80 ft, 1d10+Str P, ×3) |
+| Greathammer | `ArcWpnGrtHm00007` | martial | mwak (1d12 B, ×3); 2h |
+| Greatsword | `ArcWpnGrtSw00008` | martial | mwak (2d6 S, 19–20); 2h |
+| Hankyuu | `ArcWpnHnkyu00009` | exotic | rwak (100 ft, 1d6 P, ×3); no Str to damage |
+| Kanabo | `ArcWpnKanbo00010` | martial | mwak (1d12 B, ×3); 2h |
+| Katana | `ArcWpnKatan00011` | exotic | mwak (1d10 S, 19–20); 2h (1h with EWP) |
+| Kodachi | `ArcWpnKodch00012` | martial | mwak (1d6 S) |
+| Large Katana | `ArcWpnLgKtn00013` | martial | mwak (2d6 S, 19–20); 2h |
+| Longsword | `ArcWpnLngsw00014` | martial | mwak (1d8 S, 19–20) |
+| Naginata | `ArcWpnNgnta00015` | exotic | mwak (1d10 S, ×3); 2h; reach |
+| Sabre | `ArcWpnSabre00016` | exotic | mwak (1d6 S, 18–20); +4 to resist disarm |
+| Shortsword | `ArcWpnShtsw00017` | martial | mwak (1d6 P, 19–20) |
+| Throwing Axe | `ArcWpnThrAx00018` | martial | twak (10 ft) + mwak (1d6 S) |
+| Wakizashi | `ArcWpnWkzsh00019` | martial | mwak (1d6 S, 19–20) |
+| War Fan | `ArcWpnWarFn00020` | exotic | twak (10 ft) + mwak (1d8 B) |
+| Warhammer | `ArcWpnWrhmr00021` | martial | mwak (1d8 B, ×3) |
 
 ## Weapon Icons
 

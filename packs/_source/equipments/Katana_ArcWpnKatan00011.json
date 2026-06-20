@@ -1,0 +1,67 @@
+{
+  "_id": "ArcWpnKatan00011",
+  "_key": "!items!ArcWpnKatan00011",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Katana",
+  "img": "systems/pf1/icons/items/weapons/katana.png",
+  "folder": "ArcWpnFolderD004",
+  "system": {
+    "description": {
+      "value": "<p>This weapon can be wielded as a one-handed weapon with the Exotic Weapons Proficiency feat.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "KatanActMwak0001",
+        "name": "Attack",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critRange": 19
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 10, @size)",
+              "types": ["slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "2h",
+    "hands": 2,
+    "held": "2h",
+    "weaponGroups": ["bladesHeavy"],
+    "weight": { "value": 6 },
+    "price": 12,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 10 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

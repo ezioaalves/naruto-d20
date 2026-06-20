@@ -1,0 +1,66 @@
+{
+  "_id": "ArcWpnDaiky00003",
+  "_key": "!items!ArcWpnDaiky00003",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Daikyuu",
+  "img": "systems/pf1/icons/items/weapons/longbow.PNG",
+  "folder": "ArcWpnFolderD004",
+  "system": {
+    "description": {
+      "value": "<p>You can apply your Strength bonus to attacks made with this weapon (max +4). The Daikyuu has a Single rate of fire — it can only fire once per round.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "DaikyActRwak0001",
+        "name": "Attack",
+        "actionType": "rwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "critMult": 3
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 8, @size) + min(@abilities.str.mod, 4)[Strength]",
+              "types": ["piercing"]
+            }
+          ]
+        },
+        "range": { "units": "ft", "value": "120", "maxIncrements": 10 },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "ranged",
+    "hands": 2,
+    "held": "2h",
+    "weaponGroups": ["bows"],
+    "weight": { "value": 3 },
+    "price": 14,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 5,
+    "hp": { "base": 5 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

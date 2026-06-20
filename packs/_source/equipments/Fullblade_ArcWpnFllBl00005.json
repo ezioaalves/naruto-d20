@@ -1,0 +1,67 @@
+{
+  "_id": "ArcWpnFllBl00005",
+  "_key": "!items!ArcWpnFllBl00005",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Fullblade",
+  "img": "systems/pf1/icons/items/weapons/greatsword.PNG",
+  "folder": "ArcWpnFolderD004",
+  "system": {
+    "description": {
+      "value": "<p>This enormous sword can be wielded as a two-handed weapon despite its size, incurring the normal −2 penalty due to its improper size unless you have the Exotic Weapon Proficiency feat for it, without which you are not considered proficient with the fullblade for any abilities, feats or techniques. The Monkey Grip feat does not allow you to wield this weapon one-handed.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "FllBlActMwak0001",
+        "name": "Attack",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str",
+          "critRange": 19
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(2, 8, @size)",
+              "types": ["slashing"]
+            }
+          ]
+        },
+        "range": { "units": "melee", "value": "0" },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "2h",
+    "hands": 2,
+    "held": "2h",
+    "weaponGroups": ["bladesHeavy"],
+    "weight": { "value": 23 },
+    "price": 14,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 10,
+    "hp": { "base": 10 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

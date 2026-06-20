@@ -1,0 +1,37 @@
+{
+  "_id": "ArcWpnArrow00004",
+  "_key": "!items!ArcWpnArrow00004",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Arrows",
+  "img": "systems/pf1/icons/items/weapons/arrow.PNG",
+  "folder": "ArcWpnFolderD004",
+  "system": {
+    "description": {
+      "value": "<p>Ammunition for bows (Daikyuu, Greatbow, Hankyuu).</p>",
+      "unidentified": ""
+    },
+    "actions": [],
+    "weaponSubtype": "1h",
+    "weaponGroups": ["bows"],
+    "weight": { "value": 3 },
+    "price": 6,
+    "quantity": 20,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 2,
+    "hp": { "base": 1 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

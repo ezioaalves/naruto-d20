@@ -1,0 +1,66 @@
+{
+  "_id": "ArcWpnHnkyu00009",
+  "_key": "!items!ArcWpnHnkyu00009",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Hankyuu",
+  "img": "systems/pf1/icons/items/weapons/shortbow.PNG",
+  "folder": "ArcWpnFolderD004",
+  "system": {
+    "description": {
+      "value": "<p>Functions as a Daikyuu, but you cannot add your Strength modifier to damage.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "HnkyuActRwak0001",
+        "name": "Attack",
+        "actionType": "rwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "critMult": 3
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 6, @size)",
+              "types": ["piercing"]
+            }
+          ]
+        },
+        "range": { "units": "ft", "value": "100", "maxIncrements": 10 },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "subType": "exotic",
+    "weaponSubtype": "ranged",
+    "hands": 2,
+    "held": "2h",
+    "weaponGroups": ["bows"],
+    "weight": { "value": 2 },
+    "price": 10,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 5,
+    "hp": { "base": 5 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}
