@@ -57,7 +57,7 @@ function applyEmpowerDamage(actionUse, empower, cleanup) {
     const parts = (actionUse.shared.action.damage.parts ??= []);
     const originalLength = parts.length;
     parts.push({ formula: empower.damageFormula, types: [...empower.damageTypes] });
-    cleanup.push(() => parts.splice(originalLength));
+    cleanup.push(() => parts.splice(originalLength, 1));
   } else {
     actionUse.shared.damageBonus.push(empower.damageFormula);
   }
@@ -189,11 +189,6 @@ export async function performTechnique(item, actionId, event = null) {
       if (empower === "cancel") return;
     }
 
-    const useResult = await useTechniqueAction(current.item, current.action, actor, event, {
-      empower,
-    });
-    if (!useResult || useResult.err) return;
-
     if (
       !chakraFree &&
       !canPayChakra(actor, empower?.totalCost ?? current.item.system.chakraCost ?? cost)
@@ -206,6 +201,11 @@ export async function performTechnique(item, actionId, event = null) {
       );
       return;
     }
+
+    const useResult = await useTechniqueAction(current.item, current.action, actor, event, {
+      empower,
+    });
+    if (!useResult || useResult.err) return;
 
     let spend = null;
     if (upkeepFree) {

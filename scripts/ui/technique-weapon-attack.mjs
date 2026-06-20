@@ -81,7 +81,7 @@ function applyEmpowerDamage(actionUse, empower, cleanup) {
     const parts = (actionUse.shared.action.damage.parts ??= []);
     const originalLength = parts.length;
     parts.push({ formula: empower.damageFormula, types: [...empower.damageTypes] });
-    cleanup.push(() => parts.splice(originalLength));
+    cleanup.push(() => parts.splice(originalLength, 1));
   } else {
     actionUse.shared.damageBonus.push(empower.damageFormula);
   }
