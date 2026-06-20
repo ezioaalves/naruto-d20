@@ -1,0 +1,108 @@
+{
+  "_id": "81eecadf2020efef",
+  "_key": "!items!81eecadf2020efef",
+  "name": "Senju Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>Revered as one of the strongest known clans in the ninja world, the Senju clan has dominated early ninja history. They are renowned for their incredible strength and fortitude. History says they descended from the younger of the two sons of the Sage of Six Paths, and they possessed the “ body” of the Sage.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Senju Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Balance, Climb, Concentration, Diplomacy, Hide, Knowledge (Nin Lore), Ninjutsu, Spot, Swim, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Armor Proficiency (Light, Medium, Heavy), Brawl, Chakra Restoration, Combat Martial Arts, Defensive Martial Arts, Genin, Genius Nin, Greater Fortitude, Ninjutsu Adept, Taijutsu Adept, Training.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +2</p><p><b>Affiliation:</b> You are required 1 less success to learn Training techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-senju-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Senju Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Concentration",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Diplomacy",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Knowledge (Nin Lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Spot",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Armor Proficiency (Light, Medium, Heavy)",
+          "Brawl",
+          "Chakra Restoration",
+          "Combat Martial Arts",
+          "Defensive Martial Arts",
+          "Genin",
+          "Genius Nin",
+          "Greater Fortitude",
+          "Ninjutsu Adept",
+          "Taijutsu Adept",
+          "Training"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 2
+      }
+    }
+  }
+}

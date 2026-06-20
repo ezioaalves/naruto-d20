@@ -1,0 +1,238 @@
+{
+  "_id": "0b0c87460e64e544",
+  "_key": "!items!0b0c87460e64e544",
+  "name": "Phenom",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>From birth, you were gifted with incredible potential. You quickly set yourself apart from your peers as a prodigy and gained instant recognition; your very actions can influence the course of life around you. They say everyone gets their fifteen minutes of fame, but you got more. You are a prodigy, the product of extraordinary union or perhaps simply an astonishing happenstance; when people say &#x27;one in every generation,&#x27; they&#x27;re referring to you. Though your looks may be deceiving, you have been dealt an incredible hand, and have all the tools one could ever hope for to become a legendary ninja.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Phenom.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 5+ and one ability score 15 or higher. The Phenom&#x27;s age requirement is not subject to being reduced by the Genius Ninja feat, but he does not suffer ability score penalties from being a child</p><p><b>Class Skills:</b> Select 2 from Acrobatics, Appraise, Bluff, Chakra Control, Climb, Craft Armor, Diplomacy, Disable Device, Disguise, Escape Artist, Fly, Fuinjutsu, Genjutsu, Handle Animal, Heal, Intimidate, Knowledge Arcana, Knowledge Dungeoneering, Knowledge Engineering, Knowledge History, Knowledge Local, Knowledge Nature, Knowledge Ninja Lore, Knowledge Nobility, Knowledge Planes, Knowledge Religion, Linguistics, Ninjutsu, Perception, Perform, Profession, Ride, Sense Motive, Sleight Of Hand, Spellcraft, Stealth, Survival, Swim, Taijutsu, Use Magic Device.</p><p><b>Feat:</b> Select one from Genius Ninja.</p><p><b>Reputation Bonus Increase:</b> +2</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "phenom",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Phenom.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Acrobatics",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Appraise",
+            "slug": "appraise",
+            "key": "apr"
+          },
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Craft Armor",
+            "slug": "craft-armor",
+            "key": "crf"
+          },
+          {
+            "label": "Diplomacy",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Disable Device",
+            "slug": "disable-device",
+            "key": "dev"
+          },
+          {
+            "label": "Disguise",
+            "slug": "disguise",
+            "key": "dis"
+          },
+          {
+            "label": "Escape Artist",
+            "slug": "escape-artist",
+            "key": "esc"
+          },
+          {
+            "label": "Fly",
+            "slug": "fly",
+            "key": "fly"
+          },
+          {
+            "label": "Fuinjutsu",
+            "slug": "fuinjutsu",
+            "key": "fui"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Handle Animal",
+            "slug": "handle-animal",
+            "key": "han"
+          },
+          {
+            "label": "Heal",
+            "slug": "heal",
+            "key": "hea"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Knowledge Arcana",
+            "slug": "knowledge-arcana",
+            "key": "kar"
+          },
+          {
+            "label": "Knowledge Dungeoneering",
+            "slug": "knowledge-dungeoneering",
+            "key": "kdu"
+          },
+          {
+            "label": "Knowledge Engineering",
+            "slug": "knowledge-engineering",
+            "key": "ken"
+          },
+          {
+            "label": "Knowledge History",
+            "slug": "knowledge-history",
+            "key": "khi"
+          },
+          {
+            "label": "Knowledge Local",
+            "slug": "knowledge-local",
+            "key": "klo"
+          },
+          {
+            "label": "Knowledge Nature",
+            "slug": "knowledge-nature",
+            "key": "kna"
+          },
+          {
+            "label": "Knowledge Nobility",
+            "slug": "knowledge-nobility",
+            "key": "kno"
+          },
+          {
+            "label": "Knowledge Planes",
+            "slug": "knowledge-planes",
+            "key": "kpl"
+          },
+          {
+            "label": "Knowledge Religion",
+            "slug": "knowledge-religion",
+            "key": "kre"
+          },
+          {
+            "label": "Linguistics",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Perception",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Perform",
+            "slug": "perform",
+            "key": "prf"
+          },
+          {
+            "label": "Profession",
+            "slug": "profession",
+            "key": "pro"
+          },
+          {
+            "label": "Ride",
+            "slug": "ride",
+            "key": "rid"
+          },
+          {
+            "label": "Sense Motive",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Sleight Of Hand",
+            "slug": "sleight-of-hand",
+            "key": "slt"
+          },
+          {
+            "label": "Spellcraft",
+            "slug": "spellcraft",
+            "key": "spl"
+          },
+          {
+            "label": "Stealth",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Use Magic Device",
+            "slug": "use-magic-device",
+            "key": "umd"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Genius Ninja"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 0,
+        "reputationBonus": 2
+      }
+    }
+  }
+}

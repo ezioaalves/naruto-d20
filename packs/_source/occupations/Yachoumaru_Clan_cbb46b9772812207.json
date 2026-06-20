@@ -1,0 +1,99 @@
+{
+  "_id": "cbb46b9772812207",
+  "_key": "!items!cbb46b9772812207",
+  "name": "Yachoumaru Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>A small but very powerful and respected clan of the Hidden Stone. They possess a strong bloodline and one of its founding member was the first Tsuchikage . They constitute a major trump card of the village&#x27;s defense and have strong connection in its military.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Yachoumaru Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Chakra Control, Climb, Genjutsu, Hide, Investigate, Jump, Knowledge (ninja lore), Knowledge (tactics), Ninjutsu, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Dairiki), Chakra Affinity, Defensive Martial Arts, Genin, Nin Weapons Proficiency, Ninjutsu Adept, Taijutsu Adept.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Yachoumaru Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "yachoumaru-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Yachoumaru Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Investigate",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Jump",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Dairiki)",
+          "Chakra Affinity",
+          "Defensive Martial Arts",
+          "Genin",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Taijutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

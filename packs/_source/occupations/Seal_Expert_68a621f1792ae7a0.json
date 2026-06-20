@@ -1,0 +1,68 @@
+{
+  "_id": "68a621f1792ae7a0",
+  "_key": "!items!68a621f1792ae7a0",
+  "name": "Seal Expert",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>You come from a background of expertise in sealing ninjutsu.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Seal Expert.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 15+</p><p><b>Class Skills:</b> Select 2 from Chakra Control, Craft (calligraphy), Fuinjutsu, Knowledge (ninja lore), Ninjutsu.</p><p><b>Feat:</b> Select one from Sealweaver.</p><p><b>Reputation Bonus Increase:</b> +1</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "seal-expert",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Seal Expert.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (calligraphy)",
+            "slug": "craft-calligraphy",
+            "key": "crf"
+          },
+          {
+            "label": "Fuinjutsu",
+            "slug": "fuinjutsu",
+            "key": "fui"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Sealweaver"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 0,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

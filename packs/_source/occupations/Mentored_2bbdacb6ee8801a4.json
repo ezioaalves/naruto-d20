@@ -1,0 +1,151 @@
+{
+  "_id": "2bbdacb6ee8801a4",
+  "_key": "!items!2bbdacb6ee8801a4",
+  "name": "Mentored",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>Still in your master&#x27;s shadow, you aim to rise to fame as one of the student of a legendary shinobi. Your skills are naturally more keen than that of a typical academy student, but you also tend to be more specialized. Mentored characters are very rare, as few high-level shinobi are known to take upon the job.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Mentored.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 12+</p><p><b>Class Skills:</b> Select 3 from Balance, Bluff, Climb, Chakra Control, Craft (chemical), Disable Device, Disguise, Escape Artist, Fuinjutsu, Gather Information, Genjutsu, Hide, Investigate, Knowledge (current events), Knowledge (ninja lore), Knowledge (tactics), Ninjutsu, Sleight of Hand, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Alertness, Archaic Weapon Proficiency, Brawl, Combat Martial Arts, Defensive Martial Arts, Dodge, Genin, Genius Ninja, Genjutsu Adept, Meticulous, Nin Weapons Proficiency, Ninjutsu Adept, Precise Shot, Taijutsu Adept.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "mentored",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Mentored.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (chemical)",
+            "slug": "craft-chemical",
+            "key": "crf"
+          },
+          {
+            "label": "Disable Device",
+            "slug": "disable-device",
+            "key": "dev"
+          },
+          {
+            "label": "Disguise",
+            "slug": "disguise",
+            "key": "dis"
+          },
+          {
+            "label": "Escape Artist",
+            "slug": "escape-artist",
+            "key": "esc"
+          },
+          {
+            "label": "Fuinjutsu",
+            "slug": "fuinjutsu",
+            "key": "fui"
+          },
+          {
+            "label": "Gather Information",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Investigate",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Knowledge (current events)",
+            "slug": "knowledge-local",
+            "key": "klo"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Sleight of Hand",
+            "slug": "sleight-of-hand",
+            "key": "slt"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Alertness",
+          "Archaic Weapon Proficiency",
+          "Brawl",
+          "Combat Martial Arts",
+          "Defensive Martial Arts",
+          "Dodge",
+          "Genin",
+          "Genius Ninja",
+          "Genjutsu Adept",
+          "Meticulous",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Precise Shot",
+          "Taijutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

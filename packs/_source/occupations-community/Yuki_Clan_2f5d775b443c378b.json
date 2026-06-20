@@ -1,0 +1,86 @@
+{
+  "_id": "2f5d775b443c378b",
+  "_key": "!items!2f5d775b443c378b",
+  "name": "Yuki Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>A clan most commonly found in the freezing northern parts of the world, many of the clan members migrated southward to the Land of Water. Their skills in controlling ice are fierce to behold and deadly to experience.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Yuki Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Chakra Control, Hide, Intimidate, Knowledge (Ninja lore), Ninjutsu, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Hyouma), Chakra Affinity, Chakra Restoration, Elemental Specialization, Genin, Genius Ninja, Hand Seals Proficiency, Harmony, Ninjutsu Adept.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-yuki-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Yuki Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Knowledge (Ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Hyouma)",
+          "Chakra Affinity",
+          "Chakra Restoration",
+          "Elemental Specialization",
+          "Genin",
+          "Genius Ninja",
+          "Hand Seals Proficiency",
+          "Harmony",
+          "Ninjutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

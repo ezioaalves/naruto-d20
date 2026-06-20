@@ -1,0 +1,82 @@
+{
+  "_id": "b48a1f880da30dfa",
+  "_key": "!items!b48a1f880da30dfa",
+  "name": "Ishimaru Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The Ishimaru Clan are some of the finest practitioners of Ninjutsu and Taijutsu of the Hidden Stone. Some of its more talented members form an entire squad of the Tsuchikage&#x27;s elite guard . Their combat style is as simplistic as it is brutal.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Ishimaru Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Climb, Hide, Jump, Ninjutsu, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Fortify), Archaic Weapon Proficiency, Armor Proficiency (light, medium), Brawl, Combat Martial Arts, Defensive Martial Arts, Genin, Nin Weapons Proficiency, Ninjutsu Adept, Taijutsu Adept.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Ishimaru Hujutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "ishimaru-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Ishimaru Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Jump",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Fortify)",
+          "Archaic Weapon Proficiency",
+          "Armor Proficiency (light, medium)",
+          "Brawl",
+          "Combat Martial Arts",
+          "Defensive Martial Arts",
+          "Genin",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Taijutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

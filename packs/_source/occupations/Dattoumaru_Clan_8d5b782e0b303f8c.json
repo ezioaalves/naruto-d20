@@ -1,0 +1,85 @@
+{
+  "_id": "8d5b782e0b303f8c",
+  "_key": "!items!8d5b782e0b303f8c",
+  "name": "Dattoumaru Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>From the Hidden Village of Cloud , this clan of taijutsu users is reputed for their advanced bloodline, which gives them lightning speed and many other combat advantages. They are respected and well known in the Thunder Country as expert in Missing-Nin assassination.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Dattoumaru Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Balance, Chakra Control, Climb, Ninjutsu, Sleight of Hand, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Hiraishin), Brawl, Combat Martial Arts, Dodge, Improved Initiative, Nin Weapons Proficiency, Run, Taijutsu Adept.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Dattoumaru Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "dattoumaru-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Dattoumaru Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Sleight of Hand",
+            "slug": "sleight-of-hand",
+            "key": "slt"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Hiraishin)",
+          "Brawl",
+          "Combat Martial Arts",
+          "Dodge",
+          "Improved Initiative",
+          "Nin Weapons Proficiency",
+          "Run",
+          "Taijutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "_id": "07cf36df7a8a53f5",
+  "_key": "!items!07cf36df7a8a53f5",
+  "name": "Sunagakure Puppeteer",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>You have trained since your early days to master the art of puppetry, created by the first puppeteer in Sunagakure&#x27;s history, Chikamatsu Monzaemon. Because of that, your skills are naturally directed to the puppeteer path.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Sunagakure Puppeteer.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 10+</p><p><b>Class Skills:</b> Select 3 from Balance, Climb, Chakra Control, Craft (Mechanical), Hide, Knowledge (ninja lore), Listen, Ninjutsu, Sleight of Hand, Survival.</p><p><b>Feat:</b> Select one from Craft Poison, Craft Puppets, Genin, Nin Weapons Proficiency, Ninjutsu Adept, Resist Poisons, Skilled.</p><p><b>Technique Option:</b> Kairai Engeki: Shichihenge, Chakra no Ito.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-sunagakure-puppeteer",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Sunagakure Puppeteer.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (Mechanical)",
+            "slug": "craft-mechanics",
+            "key": "crf"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Sleight of Hand",
+            "slug": "sleight-of-hand",
+            "key": "slt"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Craft Poison",
+          "Craft Puppets",
+          "Genin",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Resist Poisons",
+          "Skilled"
+        ],
+        "techniqueOptions": [
+          "Kairai Engeki: Shichihenge",
+          "Chakra no Ito"
+        ],
+        "wealthBonus": 0,
+        "reputationBonus": 0
+      }
+    }
+  }
+}

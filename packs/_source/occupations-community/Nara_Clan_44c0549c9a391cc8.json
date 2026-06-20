@@ -1,0 +1,138 @@
+{
+  "_id": "44c0549c9a391cc8",
+  "_key": "!items!44c0549c9a391cc8",
+  "name": "Nara Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The Nara clan is a product of the Fire Country, namely Konohagakure. They are a small clan of incredibly intelligent people who are often regarded as the most tactical sort in the village. Many of the Nara clansmen become tactical advisors or squad leaders due to their innate planning abilities. Many of them also possess the ability to manipulate shadows, most notably Shikamaru Nara and his father, Shikaku.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Nara Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Bluff, Chakra Control, Craft (Chemical), Decipher Script, Disable Device, Escape Artist, Gather Information, Genjutsu, Hide, Investigate, Jump, Knowledge (Behavioral Science), Knowledge (earth and life science), Knowledge (Ninja Lore), Knowledge (Tactics), Ninjutsu.</p><p><b>Feat:</b> Select one from Advanced Study, Alertness, Attentive, Blind -Fight, Combat Expertise, Combat Tactics, [Universal: Risky Strike], Deceptive, Defensive Martial Arts, Dodge, Educated, Genius Ninja, Genjutsu Adept, Improved Initiative, Insightful Reflexes, Ninjutsu Adept, Nin Weapon Proficiency, Precise Shot, Stealthy, Talented Shinobi, Technique Focus.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Shadow Ninjutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-nara-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Nara Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (Chemical)",
+            "slug": "craft-chemical",
+            "key": "crf"
+          },
+          {
+            "label": "Decipher Script",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Disable Device",
+            "slug": "disable-device",
+            "key": "dev"
+          },
+          {
+            "label": "Escape Artist",
+            "slug": "escape-artist",
+            "key": "esc"
+          },
+          {
+            "label": "Gather Information",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Investigate",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Jump",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Knowledge (Behavioral Science)",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Knowledge (earth and life science)",
+            "slug": "knowledge-nature",
+            "key": "kna"
+          },
+          {
+            "label": "Knowledge (Ninja Lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Study",
+          "Alertness",
+          "Attentive",
+          "Blind -Fight",
+          "Combat Expertise",
+          "Combat Tactics",
+          "[Universal: Risky Strike]",
+          "Deceptive",
+          "Defensive Martial Arts",
+          "Dodge",
+          "Educated",
+          "Genius Ninja",
+          "Genjutsu Adept",
+          "Improved Initiative",
+          "Insightful Reflexes",
+          "Ninjutsu Adept",
+          "Nin Weapon Proficiency",
+          "Precise Shot",
+          "Stealthy",
+          "Talented Shinobi",
+          "Technique Focus"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

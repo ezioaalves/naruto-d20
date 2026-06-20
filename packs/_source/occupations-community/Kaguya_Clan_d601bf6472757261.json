@@ -1,0 +1,102 @@
+{
+  "_id": "d601bf6472757261",
+  "_key": "!items!d601bf6472757261",
+  "name": "Kaguya Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The people of this clan are infamous for their ability to manipulate their bones in a variety of ways, known as Shikotsumyaku. Many fear them because most are known to have a love of battle that borders on bloodlust.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Kaguya Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Balance, Chakra Control, Climb, Intimidate, Knowledge (Ninja lore), Knowledge (Tactics), Knowledge (The Underworld), Ninjutsu, Spot, Swim, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Shikotsumyaku), Archaic Weapon Proficiency, Combat Martial Arts, Defensive Martial Arts, Genin, Genius Ninja, Nin Weapons Proficiency, Ninjutsu Adept, Taijutsu Adept, Toughness.</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Kaguya Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-kaguya-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Kaguya Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Knowledge (Ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Knowledge (The Underworld)",
+            "slug": "knowledge-religion",
+            "key": "kre"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Spot",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Shikotsumyaku)",
+          "Archaic Weapon Proficiency",
+          "Combat Martial Arts",
+          "Defensive Martial Arts",
+          "Genin",
+          "Genius Ninja",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Taijutsu Adept",
+          "Toughness"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 0,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "_id": "9754a3dc44d985a4",
+  "_key": "!items!9754a3dc44d985a4",
+  "name": "Phoenix Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The Phoenix are the most pious clan and enjoy many blessings they feel are derived from their spiritual outlook and attunement to their ways is as complete as mortal minds can attain.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Phoenix Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Folder:</b> Samurai Clans</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Chakra Control, Climb, Iaijutsu Focus, Knowledge (Tactics), Listen, Swim.</p><p><b>Feat:</b> Select one from Alertness, Blind-Fight, Combat Reflexes, [Universal: Defensive Stance] (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack), Great Fortitude, Improved Initiative, Iron Will, Quick Draw, Weapon Focus (katana).</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> If a Phoenix Clan member takes levels in Samurai his skills listed above become part of his Class Skills for Samurai levels. His Fortitude save becomes Average, while his Reflex save becomes Good, and his Will save becomes Good. All feats listed above become feats he may select from the Bonus Feats granted by the Samurai class.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium",
+      "Samurai Clans"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-samurai-clans-phoenix-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Phoenix Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": "Samurai Clans",
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Iaijutsu Focus",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Knowledge (Tactics)",
+            "slug": "knowledge-arcana",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Alertness",
+          "Blind-Fight",
+          "Combat Reflexes",
+          "[Universal: Defensive Stance] (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
+          "Great Fortitude",
+          "Improved Initiative",
+          "Iron Will",
+          "Quick Draw",
+          "Weapon Focus (katana)"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

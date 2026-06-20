@@ -1,0 +1,105 @@
+{
+  "_id": "528138149f092ba7",
+  "_key": "!items!528138149f092ba7",
+  "name": "Scorpion Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>Behind their ever -present masks, the members of the Scorpion clan fill a distastef ul but necessary role within the samurai clans . They ar e the keepers of secrets, walkers in shadows, assassins and spies. They care little for honor, but hold up loyalty as the pre -eminent virtue of the clan: loyalty to the clan —loyalty that makes a Scorpion willing to suffer death or dishonor, to pay any cost . Scorpions are usually seen as villains, often even as traitors —but from the Scorpion point of view, their worst de eds have all stemmed from their sense of loyalty.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Scorpion Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Folder:</b> Samurai Clans</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Balance, Bluff, Chakra Control, Climb, Gather Information, Iaijutsu Focus, Intimidate, Knowledge (Tactics), Listen, Sense Motive, Swim.</p><p><b>Feat:</b> Select one from Blind Fight, Dodge (Dodge, Spring Attack), [Universal: Defensive Stance] (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack), Improved Initiative, Prone Attack, Quick Draw, Weapon Focus (katana, wakizashi).</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> If a Scorpion Clan member takes levels in Samurai his skills listed above become part of his Class Skills for Samurai levels and his Skill Points becomes 5 + Int Modifier. His Fortitude becomes Average, while his Reflex save becomes Good, and his Will save becomes Poor. All feats listed above become feats he may select from the Bonus Feats granted by the Samurai class.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium",
+      "Samurai Clans"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-samurai-clans-scorpion-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Scorpion Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": "Samurai Clans",
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Gather Information",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Iaijutsu Focus",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Knowledge (Tactics)",
+            "slug": "knowledge-arcana",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Sense Motive",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Blind Fight",
+          "Dodge (Dodge, Spring Attack)",
+          "[Universal: Defensive Stance] (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
+          "Improved Initiative",
+          "Prone Attack",
+          "Quick Draw",
+          "Weapon Focus (katana, wakizashi)"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

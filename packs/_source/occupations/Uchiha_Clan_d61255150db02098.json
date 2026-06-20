@@ -1,0 +1,105 @@
+{
+  "_id": "d61255150db02098",
+  "_key": "!items!d61255150db02098",
+  "name": "Uchiha Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>One of Konoha&#x27;s most famous clan, the Uchiha clan are amongst the most respected and powerful individuals in the village. They are well known because of the Sharingan, a special eye condition that can be awakened by some members of the clan.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Uchiha Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Balance, Genjutsu, Hide, Intimidate, Knowledge (behavioral science), Knowledge (ninja lore), Knowledge (tactics), Ninjutsu, Sleight of Hand, Spot, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Sharingan Eye), Athletic, Combat Martial Arts, Defensive Martial Arts, Educated, Genin, Genius Ninja, Nin Weapons Proficiency, Ninjutsu Adept, Taijutsu Adept.</p><p><b>Technique Option:</b> Goukakyuu no Jutsu, Housenka no Jutsu.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Uchiha Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "uchiha-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Uchiha Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Knowledge (behavioral science)",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Sleight of Hand",
+            "slug": "sleight-of-hand",
+            "key": "slt"
+          },
+          {
+            "label": "Spot",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Sharingan Eye)",
+          "Athletic",
+          "Combat Martial Arts",
+          "Defensive Martial Arts",
+          "Educated",
+          "Genin",
+          "Genius Ninja",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Taijutsu Adept"
+        ],
+        "techniqueOptions": [
+          "Goukakyuu no Jutsu",
+          "Housenka no Jutsu"
+        ],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "_id": "3f7d7c59740286b8",
+  "_key": "!items!3f7d7c59740286b8",
+  "name": "Mibu Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>This immense clan said to be the direct descendant of God possesses more than a few bloodlines, some of which were what the very first independant Shinobi based their abilities on. The Mibu Clan has tacticians that possess the ability to read mind, soldiers with the ability to manipulate fire and water, others to make their skin into iron. The Ishimaru and Yachoumaru are direct descendants of the Mibu Clan, as is the Kyuushou Kousei bloodline. The Katsugan bloodline and Kagetsuki Clan were exiled failures of the clan&#x27;s experiments. They hold no qualm to kidnapping humans and using them as guinea pigs for their experiments, tossing the failures in the massive forest surrounding the equally massive landmass that is the Clan&#x27;s castlegrounds. The successes are welcomed with open arms, with promises of power and immortality, and sometimes a little more forcefully with an intense session of brainwashing. Furthermore, the Clan has a powerful sword style at its disposal, called the Muryou Saikyou Ryu. More than a few users of the Shinmei Ryu are also known to have ties with the Mibu.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Mibu Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Balance, Chakra Control, Craft (calligraphy), Diplomacy, Disguise, Genjutsu, Hide, Intimidate, Knowledge (arcane lore), Knowledge (art), Knowledge (behavioral sciences), Knowledge (business), Knowledge (civics), Knowledge (current events), Knowledge (earth and life sciences), Knowledge (ninja lore), Knowledge (physical sciences), Knowledge (theology and philosophy), Listen, Ninjutsu, Research, Swim, Taijutsu, Treat Injury.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Satori, Red Eyes), Alertness, Animal Affinity, Armor Proficiency (light), Attentive, Builder, Creative, Deceptive, Dodge, Educated, Focused, Genius Ninja, Genjutsu Adept, Guide, Heroic Surge, Medical Expert, Meticulous, Nin Weapons Proficiency, Ninjutsu Adept, Stealthy, Studious, Taijutsu Adept, Trustworthy.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Mibu Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "mibu-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Mibu Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (calligraphy)",
+            "slug": "craft-calligraphy",
+            "key": "crf"
+          },
+          {
+            "label": "Diplomacy",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Disguise",
+            "slug": "disguise",
+            "key": "dis"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Knowledge (arcane lore)",
+            "slug": "knowledge-arcana",
+            "key": "kar"
+          },
+          {
+            "label": "Knowledge (art)",
+            "slug": "knowledge-history",
+            "key": "khi"
+          },
+          {
+            "label": "Knowledge (behavioral sciences)",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Knowledge (business)",
+            "slug": "profession",
+            "key": "pro"
+          },
+          {
+            "label": "Knowledge (civics)",
+            "slug": "knowledge-nobility",
+            "key": "kno"
+          },
+          {
+            "label": "Knowledge (current events)",
+            "slug": "knowledge-local",
+            "key": "klo"
+          },
+          {
+            "label": "Knowledge (earth and life sciences)",
+            "slug": "knowledge-nature",
+            "key": "kna"
+          },
+          {
+            "label": "Knowledge (physical sciences)",
+            "slug": "knowledge-engineering",
+            "key": "ken"
+          },
+          {
+            "label": "Knowledge (theology and philosophy)",
+            "slug": "knowledge-religion",
+            "key": "kre"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Research",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Treat Injury",
+            "slug": "heal",
+            "key": "hea"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Satori, Red Eyes)",
+          "Alertness",
+          "Animal Affinity",
+          "Armor Proficiency (light)",
+          "Attentive",
+          "Builder",
+          "Creative",
+          "Deceptive",
+          "Dodge",
+          "Educated",
+          "Focused",
+          "Genius Ninja",
+          "Genjutsu Adept",
+          "Guide",
+          "Heroic Surge",
+          "Medical Expert",
+          "Meticulous",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Stealthy",
+          "Studious",
+          "Taijutsu Adept",
+          "Trustworthy"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

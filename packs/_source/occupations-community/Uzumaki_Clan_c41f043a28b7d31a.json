@@ -1,0 +1,101 @@
+{
+  "_id": "c41f043a28b7d31a",
+  "_key": "!items!c41f043a28b7d31a",
+  "name": "Uzumaki Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The Uzumaki clan was once a very prominent clan in Uzushiokagure. They are renowned for their talents in fuinjutsu, or sealing arts. They are also known to have a long lifespan and an incredible life force. However, it is rare to see an Uzumaki today, for their clan was almost entirely destroyed in the Third Shinobi War.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Uzumaki Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Balance, Chakra Control, Craft (calligraphy), Fuinjutsu, Knowledge (Ninja Lore), Ninjutsu, Sense Motive, Spot, Taijutsu, Treat Injury.</p><p><b>Feat:</b> Select one from Advanced Study, Chakra Restoration, Fuinjutsu Adept, Genin, Genius Nin, Improved Chakra Pool, Sealweaver, Skilled, Talented Shinobi.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +2</p><p><b>Affiliation:</b> You are required 1 less success to learn Fuinjutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-uzumaki-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Uzumaki Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (calligraphy)",
+            "slug": "craft-calligraphy",
+            "key": "crf"
+          },
+          {
+            "label": "Fuinjutsu",
+            "slug": "fuinjutsu",
+            "key": "fui"
+          },
+          {
+            "label": "Knowledge (Ninja Lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Sense Motive",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Spot",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Treat Injury",
+            "slug": "heal",
+            "key": "hea"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Study",
+          "Chakra Restoration",
+          "Fuinjutsu Adept",
+          "Genin",
+          "Genius Nin",
+          "Improved Chakra Pool",
+          "Sealweaver",
+          "Skilled",
+          "Talented Shinobi"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 2
+      }
+    }
+  }
+}

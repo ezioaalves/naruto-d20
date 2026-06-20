@@ -1,0 +1,107 @@
+{
+  "_id": "60c3c6150e09e60a",
+  "_key": "!items!60c3c6150e09e60a",
+  "name": "Kagetsuki Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>A clan surrounded by several and myth and legend existing today, they are a people whom have no ability to generate or rejuvenate their own chakra. Although capable of crafting incredible medicines to offset this, they are most known for their feared capability to absorb chakra from other living beings.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Kagetsuki Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 10+</p><p><b>Class Skills:</b> Select 2 from Chakra Control, Craft (chemical), Diplomacy, Disguise, Genjutsu, Hide, Knowledge (ninja lore), Listen, Ninjutsu, Research, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Chakra Vampire), Alertness, Armor Proficiency (light), Builder, Dodge, Nin Weapons Proficiency, Ninjutsu Adept, Stealthy, Taijutsu Adept, Trustworthy.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Kagetsuki Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "kagetsuki-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Kagetsuki Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (chemical)",
+            "slug": "craft-chemical",
+            "key": "crf"
+          },
+          {
+            "label": "Diplomacy",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Disguise",
+            "slug": "disguise",
+            "key": "dis"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Research",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Chakra Vampire)",
+          "Alertness",
+          "Armor Proficiency (light)",
+          "Builder",
+          "Dodge",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Stealthy",
+          "Taijutsu Adept",
+          "Trustworthy"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 0
+      }
+    }
+  }
+}

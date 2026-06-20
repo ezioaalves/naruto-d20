@@ -1,0 +1,79 @@
+{
+  "_id": "73faa99ebfef6d2a",
+  "_key": "!items!73faa99ebfef6d2a",
+  "name": "Fujiwara Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The Fujiwara Clan is not affiliated to any village but responsible for much of what Genjutsu and Ninjutsu has become today. With their advanced knowledge, they have become extremely proficient at the creation and perfection of the various means of chakra manipulation techniques.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Fujiwara Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 1 from Chakra Control, Decipher Script, Genjutsu, Knowledge (ninja lore), Ninjutsu, Survival.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Doukagan), Educated, Gearhead, Genjutsu Adept, Harmony, Ninjutsu Adept, Nin Weapons Proficiency.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Fujiwara Hujutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "fujiwara-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Fujiwara Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 1,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Decipher Script",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Doukagan)",
+          "Educated",
+          "Gearhead",
+          "Genjutsu Adept",
+          "Harmony",
+          "Ninjutsu Adept",
+          "Nin Weapons Proficiency"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 0
+      }
+    }
+  }
+}

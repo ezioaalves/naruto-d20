@@ -1,0 +1,100 @@
+{
+  "_id": "2dace960f361c3d5",
+  "_key": "!items!2dace960f361c3d5",
+  "name": "Hyuuga Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The single most powerful clan in Konoha, the Hyuuga are a clan to be respected and feared. They possess the Byakugan, an eye bloodline limit that surpasses even the Sharingan in observational prowess.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Hyuuga Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Balance, Chakra Control, Hide, Intimidate, Knowledge (behavioral science), Knowledge (ninja lore), Ninjutsu, Search, Sleight of Hand, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Byakugan), Combat Martial Arts, Defensive Martial Arts, Genin, Genius Ninja, Nin Weapons Proficiency, Ninjutsu Adept, Taijutsu Adept.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Hyuuga Hujutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "hyuuga-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Hyuuga Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Knowledge (behavioral science)",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Search",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Sleight of Hand",
+            "slug": "sleight-of-hand",
+            "key": "slt"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Byakugan)",
+          "Combat Martial Arts",
+          "Defensive Martial Arts",
+          "Genin",
+          "Genius Ninja",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Taijutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

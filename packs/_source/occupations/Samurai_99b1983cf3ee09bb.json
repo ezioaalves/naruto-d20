@@ -1,0 +1,98 @@
+{
+  "_id": "99b1983cf3ee09bb",
+  "_key": "!items!99b1983cf3ee09bb",
+  "name": "Samurai",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>You were either raised in a samurai clan or were taught the secrets of Bushido.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Samurai.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 15+</p><p><b>Class Skills:</b> Select 2 from Chakra Control, Gamble, Handle Animal, Intimidate, Jump, Knowledge (tactics), Listen, Sense Motive, Taijutsu.</p><p><b>Feat:</b> Select one from Archaic Weapons Proficiency, Armor Proficiency (heavy), Armor Proficiency (light), Armor Proficiency (medium), Blind-Fight, Defensive Martial Arts, Exotic Melee Weapon Proficiency, Precise Shot, [Universal: Risky Strike], Quick Draw, Windfall.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "samurai",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Samurai.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Gamble",
+            "slug": "profession",
+            "key": "pro"
+          },
+          {
+            "label": "Handle Animal",
+            "slug": "handle-animal",
+            "key": "han"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Jump",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Knowledge (tactics)",
+            "slug": "knowledge-arcana",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Sense Motive",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Archaic Weapons Proficiency",
+          "Armor Proficiency (heavy)",
+          "Armor Proficiency (light)",
+          "Armor Proficiency (medium)",
+          "Blind-Fight",
+          "Defensive Martial Arts",
+          "Exotic Melee Weapon Proficiency",
+          "Precise Shot",
+          "[Universal: Risky Strike]",
+          "Quick Draw",
+          "Windfall"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "_id": "eae607b37cdfdd1c",
+  "_key": "!items!eae607b37cdfdd1c",
+  "name": "Myugan Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The Myugan Monk Order is a small clan in the northern regions of the Fire Country. They are an exclusive bunch who tends to live isolated lives in their own small village. Although they are generally pacifists, they have an amazing grasp of Taijutsu and Chakra Control which they harness through an ancient style of martial art known as Dao Shi.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Myugan Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Balance, Bluff, Concentration, Escape Artist, Knowledge (Ninja Lore), Knowledge (earth and life science), Listen, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Shitatchi), Combat Martial Arts, Genius Ninja, Taijutsu Adept.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You gain a +1 bonus and require 1 less success to learn Myugan Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-myugan-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Myugan Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Concentration",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Escape Artist",
+            "slug": "escape-artist",
+            "key": "esc"
+          },
+          {
+            "label": "Knowledge (Ninja Lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Knowledge (earth and life science)",
+            "slug": "knowledge-nature",
+            "key": "kna"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Shitatchi)",
+          "Combat Martial Arts",
+          "Genius Ninja",
+          "Taijutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

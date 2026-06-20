@@ -1,0 +1,120 @@
+{
+  "_id": "6b8e1ad6d76f6472",
+  "_key": "!items!6b8e1ad6d76f6472",
+  "name": "Ninja Law Enforcer",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>This occupation covers any type of ninja law enforcement, such as ANBU, the Ninja Police or even the Hunter-Nins.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Ninja Law Enforcer.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 15+</p><p><b>Class Skills:</b> Select 2 from Bluff, Climb, Chakra Control, Diplomacy, Fuinjutsu, Genjutsu, Hide, Investigate, Knowledge (ninja lore), Knowledge (tactics), Ninjutsu, Survival, Taijutsu, Tumble.</p><p><b>Feat:</b> Select one from Archaic Weapon Proficiency, Armor Proficiency, Brawl, Combat Martial Arts, Defensive Martial Arts, Genin, Genjutsu Adept, Nin Weapons Proficiency, Ninjutsu Adept, Precise Shot, Rapid Shot, Taijutsu Adept, Trustworthy.</p><p><b>Wealth Bonus Increase:</b> +2</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "ninja-law-enforcer",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Ninja Law Enforcer.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Diplomacy",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Fuinjutsu",
+            "slug": "fuinjutsu",
+            "key": "fui"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Investigate",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Tumble",
+            "slug": "acrobatics",
+            "key": "acr"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Archaic Weapon Proficiency",
+          "Armor Proficiency",
+          "Brawl",
+          "Combat Martial Arts",
+          "Defensive Martial Arts",
+          "Genin",
+          "Genjutsu Adept",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Precise Shot",
+          "Rapid Shot",
+          "Taijutsu Adept",
+          "Trustworthy"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 2,
+        "reputationBonus": 0
+      }
+    }
+  }
+}

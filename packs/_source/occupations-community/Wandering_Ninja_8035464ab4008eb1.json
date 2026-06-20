@@ -1,0 +1,127 @@
+{
+  "_id": "8035464ab4008eb1",
+  "_key": "!items!8035464ab4008eb1",
+  "name": "Wandering Ninja",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>You don&#x27;t belong to any ninja village, even having shinobi skills as keen as any shinobi from the major villages. You probably live as a wandering mercenary.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Wandering Ninja.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 10+</p><p><b>Class Skills:</b> Select 3 from Balance, Bluff, Climb, Chakra Control, Genjutsu, Hide, Intimidate, Knowledge (ninja lore), Listen, Ninjutsu, Profession, Repair, Sleight of Hand, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline, Combat Martial Arts, Dodge, Genjutsu Adept, Genin, Genius Ninja, Nin Weapons Proficiency, Ninjutsu Adept, Precise Shot, Taijutsu Adept.</p><p><b>Wealth Bonus Increase:</b> +1</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-wandering-ninja",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Wandering Ninja.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Profession",
+            "slug": "profession",
+            "key": "pro"
+          },
+          {
+            "label": "Repair",
+            "slug": "craft-mechanics",
+            "key": "crf"
+          },
+          {
+            "label": "Sleight of Hand",
+            "slug": "sleight-of-hand",
+            "key": "slt"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline",
+          "Combat Martial Arts",
+          "Dodge",
+          "Genjutsu Adept",
+          "Genin",
+          "Genius Ninja",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept",
+          "Precise Shot",
+          "Taijutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 0
+      }
+    }
+  }
+}

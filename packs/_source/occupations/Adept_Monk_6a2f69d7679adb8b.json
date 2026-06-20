@@ -1,0 +1,130 @@
+{
+  "_id": "6a2f69d7679adb8b",
+  "_key": "!items!6a2f69d7679adb8b",
+  "name": "Adept Monk",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>You were born and raised in a monastery, or have adopted the teachings at some point in your life. You are very studious and prefer to avoid conflict whenever you can.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Adept_Monk.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Balance, Chakra Control, Craft (calligraphy), Decipher Script, Diplomacy, Genjutsu, Knowledge (earth and life science), Knowledge (history), Knowledge (ninja lore), Knowledge (tactics), Knowledge (theology and philosophy), Listen, Ninjutsu, Perform (martial arts), Profession, Sense Motive, Taijutsu, Treat Injury.</p><p><b>Feat:</b> Select one from Defensive Martial Arts, Studious, [Universal / Finesse Category].</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "adept-monk",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Adept_Monk.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (calligraphy)",
+            "slug": "craft-calligraphy",
+            "key": "crf"
+          },
+          {
+            "label": "Decipher Script",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Diplomacy",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Knowledge (earth and life science)",
+            "slug": "knowledge-nature",
+            "key": "kna"
+          },
+          {
+            "label": "Knowledge (history)",
+            "slug": "knowledge-history",
+            "key": "khi"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Knowledge (theology and philosophy)",
+            "slug": "knowledge-religion",
+            "key": "kre"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Perform (martial arts)",
+            "slug": "perform-martial-arts",
+            "key": "prf"
+          },
+          {
+            "label": "Profession",
+            "slug": "profession",
+            "key": "pro"
+          },
+          {
+            "label": "Sense Motive",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Treat Injury",
+            "slug": "heal",
+            "key": "hea"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Defensive Martial Arts",
+          "Studious",
+          "[Universal / Finesse Category]"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 0,
+        "reputationBonus": 0
+      }
+    }
+  }
+}

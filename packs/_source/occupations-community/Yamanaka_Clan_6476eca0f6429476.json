@@ -1,0 +1,123 @@
+{
+  "_id": "6476eca0f6429476",
+  "_key": "!items!6476eca0f6429476",
+  "name": "Yamanaka Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The Yamanaka clan is a product of the Fire Country, namely Konohagakure. They are a small clan of incredibly skilled people who are known as some of the best interrogators in the village. Many of the Yamanaka clansmen become interrogators due to their hijutsu, which allows them to enter the minds of others and control them or peer into their thoughts.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Yamanaka Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Bluff, Concentration, Craft (Writing), Disguise, Escape Artist, Genjutsu, Hide, Investigate, Knowledge (Behavioral Science), Knowledge (Ninja Lore), Ninjutsu, Research, Sleight of Hand.</p><p><b>Feat:</b> Select one from Advanced Study, Alertness, Attentive, Chakra Affinity, Combat Tactics, Deceptive, Genius Ninja, Genjutsu Adept, Harmony, Improved Initiative, Iron Will, Nimble, Ninjutsu Adept, Nin Weapon Proficiency, Precise Shot, Technique Focus.</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Yamanaka Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-yamanaka-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Yamanaka Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Concentration",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (Writing)",
+            "slug": "craft-calligraphy",
+            "key": "crf"
+          },
+          {
+            "label": "Disguise",
+            "slug": "disguise",
+            "key": "dis"
+          },
+          {
+            "label": "Escape Artist",
+            "slug": "escape-artist",
+            "key": "esc"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Investigate",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Knowledge (Behavioral Science)",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Knowledge (Ninja Lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Research",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Sleight of Hand",
+            "slug": "sleight-of-hand",
+            "key": "slt"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Study",
+          "Alertness",
+          "Attentive",
+          "Chakra Affinity",
+          "Combat Tactics",
+          "Deceptive",
+          "Genius Ninja",
+          "Genjutsu Adept",
+          "Harmony",
+          "Improved Initiative",
+          "Iron Will",
+          "Nimble",
+          "Ninjutsu Adept",
+          "Nin Weapon Proficiency",
+          "Precise Shot",
+          "Technique Focus"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

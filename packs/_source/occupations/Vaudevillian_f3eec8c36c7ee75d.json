@@ -1,0 +1,125 @@
+{
+  "_id": "f3eec8c36c7ee75d",
+  "_key": "!items!f3eec8c36c7ee75d",
+  "name": "Vaudevillian",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>You are a performer, a wandering artiste, a master of puppets; the man behind the curtain. You can create a masterpiece performance with a wave of your right hand, and bring devastation and woe with a wave of your left.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Vaudevillian.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 15+</p><p><b>Class Skills:</b> Select 3 from Chakra Control, Craft (calligraphy), Decipher Script, Disable Device, Disguise, Genjutsu, Hide, Knowledge (earth and life science), Knowledge (ninja lore), Knowledge (popular culture), Knowledge (technology), Listen, Ninjutsu, Perform, Profession, Treat Injury.</p><p><b>Feat:</b> Select one from Craft Poisons, Craft Puppets, Nin Weapons Proficiency.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "vaudevillian",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Vaudevillian.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Craft (calligraphy)",
+            "slug": "craft-calligraphy",
+            "key": "crf"
+          },
+          {
+            "label": "Decipher Script",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Disable Device",
+            "slug": "disable-device",
+            "key": "dev"
+          },
+          {
+            "label": "Disguise",
+            "slug": "disguise",
+            "key": "dis"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Knowledge (earth and life science)",
+            "slug": "knowledge-nature",
+            "key": "kna"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Knowledge (popular culture)",
+            "slug": "knowledge-local",
+            "key": "klo"
+          },
+          {
+            "label": "Knowledge (technology)",
+            "slug": "knowledge-engineering",
+            "key": "ken"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Perform",
+            "slug": "perform",
+            "key": "prf"
+          },
+          {
+            "label": "Profession",
+            "slug": "profession",
+            "key": "pro"
+          },
+          {
+            "label": "Treat Injury",
+            "slug": "heal",
+            "key": "hea"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Craft Poisons",
+          "Craft Puppets",
+          "Nin Weapons Proficiency"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 0,
+        "reputationBonus": 0
+      }
+    }
+  }
+}

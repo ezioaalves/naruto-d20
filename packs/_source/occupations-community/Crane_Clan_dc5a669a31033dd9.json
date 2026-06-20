@@ -1,0 +1,100 @@
+{
+  "_id": "dc5a669a31033dd9",
+  "_key": "!items!dc5a669a31033dd9",
+  "name": "Crane Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The Crane Clan are the masters of the political intrigue —until very recently, the undisputed masters (the Scorpions now challenge that claim). They hold favors in store from nearly every family of every clan, and know how to call in favors at the right time and circumstance. The members of the Crane clan are noble in every sense of the word, refined, cultured, civilized, and graceful.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Crane Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Folder:</b> Samurai Clans</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Balance, Bluff, Chakra Control, Climb, Diplomacy, Iaijutsu Focus, Knowledge (Tactics), Listen, Sense Motive, Swim.</p><p><b>Feat:</b> Select one from Dodge (Dodge, Spring Attack), Expertise (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack), Improved Initiative, Quick Draw, Skill Focus (Iaijutsu Focus), Toughness, Weapon Focus (katana).</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> If a Crane Clan member takes levels in Samurai his Hit Dice becomes D8s instead of D10s. All skills listed above become part of his Class Skills for Samurai levels as well as his Class Skills per level becomes 5 + Int Modifier. His Fortitude save becomes Poor, while his Reflex save becomes Good. All feats listed above become feats he may select from the Bonus Feats granted by the Samurai class.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium",
+      "Samurai Clans"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-samurai-clans-crane-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Crane Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": "Samurai Clans",
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Bluff",
+            "slug": "bluff",
+            "key": "blf"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Diplomacy",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Iaijutsu Focus",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Knowledge (Tactics)",
+            "slug": "knowledge-arcana",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Sense Motive",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Dodge (Dodge, Spring Attack)",
+          "Expertise (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
+          "Improved Initiative",
+          "Quick Draw",
+          "Skill Focus (Iaijutsu Focus)",
+          "Toughness",
+          "Weapon Focus (katana)"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

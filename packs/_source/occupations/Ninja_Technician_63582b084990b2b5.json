@@ -1,0 +1,43 @@
+{
+  "_id": "63582b084990b2b5",
+  "_key": "!items!63582b084990b2b5",
+  "name": "Ninja Technician",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>You have uncanny ease to learn lost or forgotten techniques.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Ninja Technician.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 12+</p><p><b>Skills:</b> Genjutsu 2 ranks, Knowledge (ninja lore) 2 ranks and Ninjutsu 2 ranks.</p><p><b>Feat:</b> Select one from Genjutsu Adept, Ninjutsu Adept.</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Expertise:</b> You require 1 less success to learn Lost Hijutsu and Lost Kinjutsu techniques of any type (minimum 1).</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "ninja-technician",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Ninja Technician.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 0,
+        "fixedClassSkills": [],
+        "classSkillOptions": [],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Genjutsu Adept",
+          "Ninjutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 0,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

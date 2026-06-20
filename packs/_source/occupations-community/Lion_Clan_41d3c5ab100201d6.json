@@ -1,0 +1,96 @@
+{
+  "_id": "41d3c5ab100201d6",
+  "_key": "!items!41d3c5ab100201d6",
+  "name": "Lion Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>More than any other clan, the Lion clan embodies the warrior ideal of bushido —the way of the warrior, the virtues and morals of the samurai. The samurai of the Lion are the paragons of warrior virtue.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Lion Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Folder:</b> Samurai Clans</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Chakra Control, Climb, Diplomacy, Iaijutsu Focus, Intimidate, Jump, Knowledge (Tactics), Listen, Swim.</p><p><b>Feat:</b> Select one from Endurance, Expertise (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack), Improved Initiative, Iron Will, Ki Shout (Great Ki Shout), Remain Conscious, Toughness, Weapon Focus (katana).</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> If a Lion Clan member takes levels in Samurai his skills listed above become part of his Class Skills for Samurai levels. His Reflex save becomes Poor, while his Will save becomes Good. All feats listed above become feats he may select from the Bonus Feats granted by the Samurai class. While wielding either their katana or wakizashi a Lion Samurai may use the Pounce ability. \n\nPounce (Ex): When making a charge, the character can follow with a full attack.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium",
+      "Samurai Clans"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-samurai-clans-lion-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Lion Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": "Samurai Clans",
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Diplomacy",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Iaijutsu Focus",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Jump",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Knowledge (Tactics)",
+            "slug": "knowledge-arcana",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Endurance",
+          "Expertise (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
+          "Improved Initiative",
+          "Iron Will",
+          "Ki Shout (Great Ki Shout)",
+          "Remain Conscious",
+          "Toughness",
+          "Weapon Focus (katana)"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

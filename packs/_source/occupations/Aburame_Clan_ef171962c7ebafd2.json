@@ -1,0 +1,129 @@
+{
+  "_id": "ef171962c7ebafd2",
+  "_key": "!items!ef171962c7ebafd2",
+  "name": "Aburame Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The famous clan of the Hidden Leaf sprouted many excellent ninja. Their ability is on par to that of the Hyuuga clan, and while their special ability is not as powerful, it still is a valuable asset during a combat. They are often referred to as creepy, but never looked down upon.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Aburame Clan.md</p><p><b>Category:</b> Core</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 2 from Balance, Chakra Control, Climb, Gather Information, Genjutsu, Hide, Investigate, Knowledge (behavioral science), Knowledge (civics), Knowledge (current events), Knowledge (ninja lore), Knowledge (physical science), Knowledge (tactics), Ninjutsu, Research, Survival, Taijutsu.</p><p><b>Feat:</b> Select one from Advanced Bloodline (Symbiote), Destruction Bugs, Genin, Genius Ninja, Genjutsu Adept, Nin Weapons Proficiency, Ninjutsu Adept.</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> You require 1 less success to learn Aburame Hijutsu techniques.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Core"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "aburame-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Aburame Clan.md",
+        "sourceCategory": "Core",
+        "sourceSubcategory": null,
+        "skillSelectCount": 2,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Balance",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Gather Information",
+            "slug": "diplomacy",
+            "key": "dip"
+          },
+          {
+            "label": "Genjutsu",
+            "slug": "genjutsu",
+            "key": "gnj"
+          },
+          {
+            "label": "Hide",
+            "slug": "stealth",
+            "key": "ste"
+          },
+          {
+            "label": "Investigate",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Knowledge (behavioral science)",
+            "slug": "sense-motive",
+            "key": "sen"
+          },
+          {
+            "label": "Knowledge (civics)",
+            "slug": "knowledge-nobility",
+            "key": "kno"
+          },
+          {
+            "label": "Knowledge (current events)",
+            "slug": "knowledge-local",
+            "key": "klo"
+          },
+          {
+            "label": "Knowledge (ninja lore)",
+            "slug": "knowledge-ninja-lore",
+            "key": "kar"
+          },
+          {
+            "label": "Knowledge (physical science)",
+            "slug": "knowledge-engineering",
+            "key": "ken"
+          },
+          {
+            "label": "Ninjutsu",
+            "slug": "ninjutsu",
+            "key": "nin"
+          },
+          {
+            "label": "Research",
+            "slug": "linguistics",
+            "key": "lin"
+          },
+          {
+            "label": "Survival",
+            "slug": "survival",
+            "key": "sur"
+          },
+          {
+            "label": "Taijutsu",
+            "slug": "taijutsu",
+            "key": "tai"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Advanced Bloodline (Symbiote)",
+          "Destruction Bugs",
+          "Genin",
+          "Genius Ninja",
+          "Genjutsu Adept",
+          "Nin Weapons Proficiency",
+          "Ninjutsu Adept"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 0,
+        "reputationBonus": 1
+      }
+    }
+  }
+}

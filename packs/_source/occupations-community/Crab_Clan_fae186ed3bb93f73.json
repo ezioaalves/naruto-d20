@@ -1,0 +1,89 @@
+{
+  "_id": "fae186ed3bb93f73",
+  "_key": "!items!fae186ed3bb93f73",
+  "name": "Crab Clan",
+  "type": "feat",
+  "system": {
+    "subType": "trait",
+    "description": {
+      "value": "<p>The samurai of the Crab clan boast the greatest defense, emphasizing heavy armor, great strength, and unusual weapons. Theirs is a grim existence, and the Crabs see little time in life for the courtly activities so enjoyed by other samurai —arts, diplomacy, etiquette, and the like. The other clans view the Crabs as crude, unwashed brutes, and that stereotype is often close to the truth.</p><p><b>Source:</b> Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Crab Clan.md</p><p><b>Category:</b> Community Compendium</p><p><b>Folder:</b> Samurai Clans</p><p><b>Prerequisite:</b> Age 8+</p><p><b>Class Skills:</b> Select 3 from Chakra Control, Climb, Iaijutsu Focus, Intimidate, Jump, Knowledge (Tactics), Listen, Swim.</p><p><b>Feat:</b> Select one from Armor Proficiency (Heavy), Dodge (Dodge, Spring Attack), Endurance, [Universal: Risky Strike] (Cleave, Powerful Maneuvers, Powerful Maneuvers, Great Cleave), Run, Weapon Focus (battleaxe, greatclub, katana, warhammer).</p><p><b>Wealth Bonus Increase:</b> +1</p><p><b>Reputation Bonus Increase:</b> +1</p><p><b>Affiliation:</b> If a Crab Clan member takes levels in Samurai his Hit Dice are D12s instead of D10s. All skills listed above become part of his Class Skills for Samurai levels. His Reflex and Will saves become Poor from Average. All feats listed above become feats he may  select from the Bonus Feats granted by the Samurai class.</p>"
+    },
+    "tags": [
+      "Occupation",
+      "Community Compendium",
+      "Samurai Clans"
+    ],
+    "classSkills": {},
+    "changes": [],
+    "links": {
+      "supplements": []
+    }
+  },
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "flags": {
+    "naruto-d20": {
+      "occupation": {
+        "slug": "community-compendium-samurai-clans-crab-clan",
+        "sourceMd": "Mechanics/Character_Options/Occupations/Community Compendium/Samurai Clans/Crab Clan.md",
+        "sourceCategory": "Community Compendium",
+        "sourceSubcategory": "Samurai Clans",
+        "skillSelectCount": 3,
+        "fixedClassSkills": [],
+        "classSkillOptions": [
+          {
+            "label": "Chakra Control",
+            "slug": "chakra-control",
+            "key": "ckc"
+          },
+          {
+            "label": "Climb",
+            "slug": "climb",
+            "key": "clm"
+          },
+          {
+            "label": "Iaijutsu Focus",
+            "slug": "taijutsu",
+            "key": "tai"
+          },
+          {
+            "label": "Intimidate",
+            "slug": "intimidate",
+            "key": "int"
+          },
+          {
+            "label": "Jump",
+            "slug": "acrobatics",
+            "key": "acr"
+          },
+          {
+            "label": "Knowledge (Tactics)",
+            "slug": "knowledge-arcana",
+            "key": "kar"
+          },
+          {
+            "label": "Listen",
+            "slug": "perception",
+            "key": "per"
+          },
+          {
+            "label": "Swim",
+            "slug": "swim",
+            "key": "swm"
+          }
+        ],
+        "featSelectCount": 1,
+        "featOptions": [
+          "Armor Proficiency (Heavy)",
+          "Dodge (Dodge, Spring Attack)",
+          "Endurance",
+          "[Universal: Risky Strike] (Cleave, Powerful Maneuvers, Powerful Maneuvers, Great Cleave)",
+          "Run",
+          "Weapon Focus (battleaxe, greatclub, katana, warhammer)"
+        ],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1
+      }
+    }
+  }
+}
