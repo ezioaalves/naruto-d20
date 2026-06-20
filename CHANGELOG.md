@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.39 - 2026-06-20
+
+- Fixed **occupation Advanced Bloodline grants** (#145): community occupations now keep named `Advanced Bloodline (...)` choices in grantable feat options instead of downgrading them to manual instructions. Added the missing Advanced Bloodline feat source entries, expanded multi-bloodline source options into individual grantable choices, and repacked the feats, occupations, and occupations-community compendia so shipped data matches the source JSON.
+- Fixed **occupation selector cancel parity** (#145): clicking the selector's explicit **Cancel** button now resolves exactly like closing the dialog with `X`, so the existing cancellation flow reliably deletes the temporary occupation item and shows the cancellation notification.
+
 ## v1.0.38 - 2026-06-20
 
 - Renamed the visible compendium labels to drop redundant `Naruto` and `Naruto D20` prefixes from packs that already live inside the module sidebar, so the sidebar now shows `Techniques`, `Feats`, `Classes`, `Starting Occupations`, and `Occupations (Community Compendium)` instead of the longer prefixed names (#143).
