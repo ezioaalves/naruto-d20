@@ -85,7 +85,7 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "unarmedOnly"
+        "weaponAttack.filter": "meleeOrUnarmed"
       }
     },
     "showInQuickbar": false,
