@@ -18,6 +18,9 @@ Append new verified facts under the matching section. Never add a guessed entry.
 ## CONFIG.PF1
 
 - `CONFIG.PF1.buffTargets` → `module/config.mjs:2623` → exported `buffTargets` const.
+- `CONFIG.PF1.weaponProficiencies` → `module/config.mjs:355` → `{ simple, martial, firearm, siege, heavy }` keyed by proficiency id, values are i18n keys. Passed as `weaponProf` to class/actor sheet templates. Adding a key here makes it appear as a checkbox in the "Weapon Proficiencies" dialog.
+- `CONFIG.PF1.weaponTypes` → `module/config.mjs:2274` → outer keys are weapon category ids (`simple`, `martial`, `exotic`, `firearm`, …). Each entry `{ _label, light, "1h", "2h", ranged }`. `item-weapon.mjs:45` reads `weaponTypes[item.system.subType]._label` — if `system.subType` points to a missing key this throws. Must register a custom category here alongside `weaponProficiencies`.
+- `actor.hasWeaponProficiency(item)` → `module/documents/actor/actor-pf.mjs:619` → checks `actor.system.traits.weaponProf.standard.has(item.subType)`. `item.subType` = `item.system.subType`. Proficiency granted when class/actor has the matching id in `traits.weaponProf.base`; ids in `weaponProficiencies` map go into `standard`, unknown ids go into `custom`.
 
 ## Damage types & damage-roll hook
 
