@@ -428,7 +428,8 @@ function validateWeaponAttack(doc, filename, packName) {
 
 function validateEmpower(packName, filename, empower, hasComponent) {
   if (empower === undefined) {
-    if (hasComponent) warn(packName, filename, "compEmpower is set but automation.empower is absent");
+    if (hasComponent)
+      warn(packName, filename, "compEmpower is set but automation.empower is absent");
     return;
   }
   if (!isPlainObject(empower)) {
@@ -457,13 +458,21 @@ function validateEmpower(packName, filename, empower, hasComponent) {
     empower.performIncreaseEvery !== undefined &&
     (!Number.isInteger(empower.performIncreaseEvery) || empower.performIncreaseEvery < 0)
   ) {
-    error(packName, filename, "automation.empower.performIncreaseEvery must be a non-negative integer");
+    error(
+      packName,
+      filename,
+      "automation.empower.performIncreaseEvery must be a non-negative integer",
+    );
   }
   if (
     empower.performIncreaseAmount !== undefined &&
     (!Number.isInteger(empower.performIncreaseAmount) || empower.performIncreaseAmount < 0)
   ) {
-    error(packName, filename, "automation.empower.performIncreaseAmount must be a non-negative integer");
+    error(
+      packName,
+      filename,
+      "automation.empower.performIncreaseAmount must be a non-negative integer",
+    );
   }
 }
 

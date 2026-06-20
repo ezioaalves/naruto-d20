@@ -29,11 +29,7 @@ export function buildEmpowerDamageFormula({ steps, formulaPerStep }) {
   return `${count} * (${formula})[Empower]`;
 }
 
-export function empowerPerformIncrease({
-  steps,
-  performIncreaseEvery,
-  performIncreaseAmount,
-}) {
+export function empowerPerformIncrease({ steps, performIncreaseEvery, performIncreaseAmount }) {
   const every = Math.max(0, Number(performIncreaseEvery) || 0);
   const amount = Math.max(0, Number(performIncreaseAmount) || 0);
   if (!every || !amount) return 0;
