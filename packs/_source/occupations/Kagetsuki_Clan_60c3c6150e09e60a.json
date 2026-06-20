@@ -87,7 +87,6 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Advanced Bloodline (Chakra Vampire)",
           "Alertness",
           "Armor Proficiency (light)",
           "Builder",
@@ -100,7 +99,10 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 0
+        "reputationBonus": 0,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Chakra Vampire)"
+        ]
       }
     }
   }

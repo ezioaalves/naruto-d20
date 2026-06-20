@@ -74,15 +74,17 @@
         "featSelectCount": 1,
         "featOptions": [
           "Armor Proficiency (Heavy)",
-          "Dodge (Dodge, Spring Attack)",
           "Endurance",
-          "[Universal: Risky Strike] (Cleave, Powerful Maneuvers, Powerful Maneuvers, Great Cleave)",
-          "Run",
-          "Weapon Focus (battleaxe, greatclub, katana, warhammer)"
+          "Run"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Dodge (Dodge, Spring Attack)",
+          "[Universal: Risky Strike] (Cleave, Powerful Maneuvers, Powerful Maneuvers, Great Cleave)",
+          "Weapon Focus (battleaxe, greatclub, katana, warhammer)"
+        ]
       }
     }
   }

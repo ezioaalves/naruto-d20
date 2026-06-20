@@ -127,7 +127,14 @@ function readJson(path) {
 function makeSourceRoot(filesByPack) {
   const root = mkdtempSync(join(tmpdir(), "naruto-d20-tests-"));
   const sourceRoot = join(root, "packs/_source");
-  for (const pack of ["techniques", "feats", "technique-buffs", "training-weights"]) {
+  for (const pack of [
+    "techniques",
+    "feats",
+    "technique-buffs",
+    "equipments",
+    "occupations",
+    "occupations-community",
+  ]) {
     mkdirSync(join(sourceRoot, pack), { recursive: true });
   }
   for (const [pack, files] of Object.entries(filesByPack)) {
@@ -136,6 +143,38 @@ function makeSourceRoot(filesByPack) {
     }
   }
   return { root, sourceRoot };
+}
+
+function occupationDoc(overrides = {}) {
+  return {
+    type: "feat",
+    _id: overrides._id ?? "occupation01",
+    _key: `!items!${overrides._id ?? "occupation01"}`,
+    name: overrides.name ?? "Test Occupation",
+    system: {
+      subType: "trait",
+      classSkills: {},
+      links: { supplements: [] },
+      ...overrides.system,
+    },
+    flags: {
+      "naruto-d20": {
+        occupation: {
+          slug: "test-occupation",
+          skillSelectCount: 0,
+          fixedClassSkills: [],
+          classSkillOptions: [],
+          featOptions: ["Test Feat"],
+          manualFeatOptions: ["[Manual Choice]"],
+          techniqueOptions: ["Test Technique"],
+          wealthBonus: 0,
+          reputationBonus: 0,
+          ...overrides.occupation,
+        },
+      },
+      ...overrides.flags,
+    },
+  };
 }
 
 describe("technique defaults", () => {
@@ -1424,7 +1463,7 @@ describe("source JSON validation", () => {
           system: { subType: "buff" },
         },
       },
-      "training-weights": {
+      equipments: {
         "weight.json": {
           type: "loot",
           _id: "weight01",
@@ -1443,6 +1482,14 @@ describe("source JSON validation", () => {
           },
         },
       },
+      occupations: { "occupation.json": occupationDoc() },
+      "occupations-community": {
+        "community-occupation.json": occupationDoc({
+          _id: "occupation02",
+          name: "Community Occupation",
+          occupation: { slug: "community-occupation" },
+        }),
+      },
     });
 
     const result = validateCompendia({ root, sourceRoot });
@@ -1455,7 +1502,9 @@ describe("source JSON validation", () => {
         ["techniques", 1],
         ["feats", 1],
         ["technique-buffs", 1],
-        ["training-weights", 1],
+        ["equipments", 1],
+        ["occupations", 1],
+        ["occupations-community", 1],
       ],
     );
   });
@@ -1491,7 +1540,7 @@ describe("source JSON validation", () => {
 
   it("reports Training Weight source mistakes", () => {
     const { root, sourceRoot } = makeSourceRoot({
-      "training-weights": {
+      equipments: {
         "bad-weight.json": {
           type: "loot",
           _id: "badweight",
@@ -1543,6 +1592,40 @@ describe("source JSON validation", () => {
     );
     assert.ok(
       messages.some((m) => m.includes("trainingWeightItem.learnBonus for type 2 must be 2")),
+    );
+  });
+
+  it("reports Occupation source mistakes", () => {
+    const { root, sourceRoot } = makeSourceRoot({
+      techniques: { "technique.json": techniqueDoc() },
+      feats: {
+        "feat.json": {
+          type: "feat",
+          _id: "feat0001",
+          _key: "!items!feat0001",
+          name: "Test Feat",
+          system: { subType: "feat" },
+        },
+      },
+      occupations: {
+        "bad-occupation.json": occupationDoc({
+          occupation: {
+            slug: "",
+            featOptions: ["Missing Feat"],
+            techniqueOptions: ["Missing Technique"],
+          },
+        }),
+      },
+    });
+
+    const result = validateCompendia({ root, sourceRoot });
+    const messages = result.issues.map((i) => i.message);
+
+    assert.equal(result.failed, true);
+    assert.ok(messages.some((m) => m.includes("occupation.slug is required")));
+    assert.ok(messages.some((m) => m.includes("occupation feat option not found: Missing Feat")));
+    assert.ok(
+      messages.some((m) => m.includes("occupation technique option not found: Missing Technique")),
     );
   });
 });

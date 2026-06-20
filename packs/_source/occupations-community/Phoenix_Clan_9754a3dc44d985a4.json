@@ -66,16 +66,18 @@
           "Alertness",
           "Blind-Fight",
           "Combat Reflexes",
-          "[Universal: Defensive Stance] (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
           "Great Fortitude",
           "Improved Initiative",
           "Iron Will",
-          "Quick Draw",
-          "Weapon Focus (katana)"
+          "Quick Draw"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "[Universal: Defensive Stance] (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
+          "Weapon Focus (katana)"
+        ]
       }
     }
   }

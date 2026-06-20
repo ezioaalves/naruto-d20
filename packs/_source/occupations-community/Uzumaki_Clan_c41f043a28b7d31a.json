@@ -86,7 +86,7 @@
           "Chakra Restoration",
           "Fuinjutsu Adept",
           "Genin",
-          "Genius Nin",
+          "Genius Ninja",
           "Improved Chakra Pool",
           "Sealweaver",
           "Skilled",
@@ -94,7 +94,8 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 2
+        "reputationBonus": 2,
+        "manualFeatOptions": []
       }
     }
   }

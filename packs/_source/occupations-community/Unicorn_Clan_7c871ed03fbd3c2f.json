@@ -83,14 +83,16 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Alertness",
-          "Mounted Combat (Mounted Archery, Trample, Ride-By Attack, Spirited Charge)",
-          "Point Blank Shot (Far Shot, Precise Shot, Rapid Shot, Shot on the Run)",
-          "Weapon Focus (spear, lance, bow, katana)"
+          "Alertness"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Mounted Combat (Mounted Archery, Trample, Ride-By Attack, Spirited Charge)",
+          "Point Blank Shot (Far Shot, Precise Shot, Rapid Shot, Shot on the Run)",
+          "Weapon Focus (spear, lance, bow, katana)"
+        ]
       }
     }
   }

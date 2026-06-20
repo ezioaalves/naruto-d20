@@ -604,8 +604,11 @@
       "SelectExactly": "Select exactly {n}.",
       "BonusFeat": "Bonus Feat",
       "Technique": "Technique",
+      "ManualFeatChoices": "Manual Feat Choices",
+      "ManualFeatHint": "Choose one of these manually on the actor sheet; it is not auto-granted.",
       "Apply": "Apply",
       "Cancelled": "{name}: occupation application was cancelled.",
+      "AlreadyApplied": "{name}: this occupation is already applied.",
       "FeatNotFound": "{name}: could not find feat in compendia: {feat}",
       "TechniqueNotFound": "{name}: could not find technique in compendia: {technique}",
       "Applied": "{name}: applied {count} occupation grant(s)."

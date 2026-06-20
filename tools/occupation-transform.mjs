@@ -9,6 +9,30 @@ const DEFAULT_OPTS = {
   newNs: "naruto-d20",
   img: "icons/skills/social/diplomacy-peace-alliance.webp",
 };
+const FEAT_ALIASES = new Map([
+  ["Archaic Weapon Proficiency", "Archaic Weapons Proficiency"],
+  ["Exotic Melee Weapon Proficiency", "Exotic Melee Weapons Proficiency"],
+  ["Genius Nin", "Genius Ninja"],
+  ["Greater Fortitude", "Great Fortitude"],
+  ["Nin Weapon Proficiency", "Nin Weapons Proficiency"],
+  ["Resist Poison", "Resist Poisons"],
+]);
+const MANUAL_FEAT_PATTERNS = [
+  /^Advanced Bloodline\b/i,
+  /^Armor Proficiency$/i,
+  /^Craft Poison\b/i,
+  /^Dodge \(/i,
+  /^Exotic Weapon Proficiency \(/i,
+  /^Expertise \(/i,
+  /^Ki Shout \(/i,
+  /^Prone Attack$/i,
+  /^Powerful Maneuvers$/i,
+  /^Remain Conscious$/i,
+  /^Skill Focus \(/i,
+  /^Tenodori$/i,
+  /^Unarmed Combatant \(/i,
+  /^Weapon Focus \(/i,
+];
 
 export function convertSkillKey(option) {
   if (option?.slug === NINJA_LORE_SLUG || option?.key === "lor") {
@@ -28,12 +52,46 @@ export function dedupeByKey(options) {
   return out;
 }
 
+export function normalizeFeatOption(name) {
+  const value = String(name ?? "").trim();
+  return FEAT_ALIASES.get(value) ?? value;
+}
+
+export function isManualFeatOption(name) {
+  const value = String(name ?? "").trim();
+  if (!value) return false;
+  if (value.startsWith("[")) return true;
+  if (MANUAL_FEAT_PATTERNS.some((pattern) => pattern.test(value))) return true;
+  return /\([^)]*,[^)]*\)/.test(value);
+}
+
+export function splitFeatOptions(options) {
+  const featOptions = [];
+  const manualFeatOptions = [];
+  for (const option of options ?? []) {
+    const normalized = normalizeFeatOption(option);
+    if (isManualFeatOption(normalized)) manualFeatOptions.push(normalized);
+    else featOptions.push(normalized);
+  }
+  return { featOptions, manualFeatOptions };
+}
+
 export function transformOccupationFlag(occupation) {
   const classSkillOptions = dedupeByKey((occupation.classSkillOptions ?? []).map(convertSkillKey));
   const fixedClassSkills = dedupeByKey((occupation.fixedClassSkills ?? []).map(convertSkillKey));
   const requested = Number(occupation.skillSelectCount ?? 0) || 0;
   const skillSelectCount = Math.min(requested, classSkillOptions.length);
-  return { ...occupation, classSkillOptions, fixedClassSkills, skillSelectCount };
+  const splitFeats = splitFeatOptions([
+    ...(occupation.featOptions ?? []),
+    ...(occupation.manualFeatOptions ?? []),
+  ]);
+  return {
+    ...occupation,
+    ...splitFeats,
+    classSkillOptions,
+    fixedClassSkills,
+    skillSelectCount,
+  };
 }
 
 export function transformOccupationDoc(doc, opts = {}) {

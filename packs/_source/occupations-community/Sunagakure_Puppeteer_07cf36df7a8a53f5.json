@@ -82,7 +82,6 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Craft Poison",
           "Craft Puppets",
           "Genin",
           "Nin Weapons Proficiency",
@@ -95,7 +94,10 @@
           "Chakra no Ito"
         ],
         "wealthBonus": 0,
-        "reputationBonus": 0
+        "reputationBonus": 0,
+        "manualFeatOptions": [
+          "Craft Poison"
+        ]
       }
     }
   }

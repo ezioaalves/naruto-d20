@@ -604,8 +604,11 @@
       "SelectExactly": "Selecione exatamente {n}.",
       "BonusFeat": "Talento Bônus",
       "Technique": "Técnica",
+      "ManualFeatChoices": "Escolhas Manuais de Talento",
+      "ManualFeatHint": "Escolha uma destas manualmente na ficha do personagem; ela não é concedida automaticamente.",
       "Apply": "Aplicar",
       "Cancelled": "{name}: aplicação da ocupação cancelada.",
+      "AlreadyApplied": "{name}: esta ocupação já está aplicada.",
       "FeatNotFound": "{name}: não foi possível encontrar o talento nos compêndios: {feat}",
       "TechniqueNotFound": "{name}: não foi possível encontrar a técnica nos compêndios: {technique}",
       "Applied": "{name}: {count} benefício(s) de ocupação aplicado(s)."

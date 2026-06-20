@@ -79,7 +79,6 @@
         "featSelectCount": 1,
         "featOptions": [
           "Acrobatic",
-          "Advanced Bloodline (Buruhada)",
           "Combat Martial Arts",
           "Creative",
           "Defensive Martial Arts",
@@ -87,12 +86,15 @@
           "Genin",
           "Genius Ninja",
           "Nin Weapons Proficiency",
-          "Taijutsu Adept",
-          "Tenodori"
+          "Taijutsu Adept"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Buruhada)",
+          "Tenodori"
+        ]
       }
     }
   }

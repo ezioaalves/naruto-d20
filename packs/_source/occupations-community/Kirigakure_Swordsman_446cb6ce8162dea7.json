@@ -107,20 +107,22 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Archaic Weapon Proficiency",
-          "Armor Proficiency",
-          "[Universal: Defensive Stance]",
+          "Archaic Weapons Proficiency",
           "Genin",
           "Genjutsu Adept",
           "Monkey Grip",
           "Nin Weapons Proficiency",
           "Ninjutsu Adept",
-          "[Universal: Risky Strike]",
           "Taijutsu Adept"
         ],
         "techniqueOptions": [],
         "wealthBonus": 0,
-        "reputationBonus": 2
+        "reputationBonus": 2,
+        "manualFeatOptions": [
+          "Armor Proficiency",
+          "[Universal: Defensive Stance]",
+          "[Universal: Risky Strike]"
+        ]
       }
     }
   }

@@ -115,12 +115,14 @@
           "Archaic Weapons Proficiency",
           "Combat Martial Arts",
           "Defensive Martial Arts",
-          "Nin Weapons Proficiency",
-          "[Universal / Finesse Category]"
+          "Nin Weapons Proficiency"
         ],
         "techniqueOptions": [],
         "wealthBonus": 0,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "[Universal / Finesse Category]"
+        ]
       }
     }
   }

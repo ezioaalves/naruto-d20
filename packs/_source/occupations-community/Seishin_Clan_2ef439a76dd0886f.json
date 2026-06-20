@@ -82,17 +82,19 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Advanced Bloodline (Seishintoku)",
           "Educated",
           "Force of Personality",
           "Genjutsu Adept",
-          "Genjutsu Technique Focus (Phantasm, Doujutsu, Mind-Affecting)",
           "Skilled",
           "Will over Flesh"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Seishintoku)",
+          "Genjutsu Technique Focus (Phantasm, Doujutsu, Mind-Affecting)"
+        ]
       }
     }
   }

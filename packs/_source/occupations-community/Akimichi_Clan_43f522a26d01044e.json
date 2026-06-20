@@ -68,17 +68,19 @@
           "Gouken",
           "Great Fortitude",
           "Harmony",
-          "Powerful Maneuvers",
           "Improved Chakra Pool",
           "Ninjutsu Adept",
-          "Nin Weapon Proficiency",
-          "Resist Poison",
+          "Nin Weapons Proficiency",
+          "Resist Poisons",
           "Taijutsu Adept",
           "Toughness"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Powerful Maneuvers"
+        ]
       }
     }
   }

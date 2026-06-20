@@ -82,16 +82,17 @@
           }
         ],
         "featSelectCount": 1,
-        "featOptions": [
+        "featOptions": [],
+        "techniqueOptions": [],
+        "wealthBonus": 1,
+        "reputationBonus": 1,
+        "manualFeatOptions": [
           "Exotic Weapon Proficiency (katana)",
           "Unarmed Combatant (Choke Hold)",
           "Unarmed Combatant (Defensive Throw, Deflect Arrows, Grappling Block, Great Throw, Stunning Fist)",
           "[Universal: Risky Strike] (Cleave)",
           "Weapon Focus (katana)"
-        ],
-        "techniqueOptions": [],
-        "wealthBonus": 1,
-        "reputationBonus": 1
+        ]
       }
     }
   }

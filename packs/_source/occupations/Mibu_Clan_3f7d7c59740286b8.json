@@ -147,7 +147,6 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Advanced Bloodline (Satori, Red Eyes)",
           "Alertness",
           "Animal Affinity",
           "Armor Proficiency (light)",
@@ -173,7 +172,10 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Satori, Red Eyes)"
+        ]
       }
     }
   }

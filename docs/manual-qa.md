@@ -413,14 +413,23 @@ Prereq: a technique with finite round duration (e.g., Kai-Mon rank 1 = 3 rounds)
 3. Drag **Academy Student** occupation onto a test character.
    Expected: a dialog opens prompting for 3 class skill picks and 1 feat selection.
 
-4. Select 3 skills and a feat, then click Apply.
+4. Close or cancel the dialog.
+   Expected: the newly dropped occupation item is removed; actor stats, class skills, feats, and techniques are unchanged.
+
+5. Drag **Academy Student** again, select 3 skills and a feat, then click Apply.
    Expected: the 3 chosen skills plus Academy Student's fixed skills (Acrobatics, Climb, Escape Artist, Diplomacy, Intimidate, Knowledge Martial) appear as class skills on the actor; the selected feat is added to the Features tab; the character's wealth increases by +1 (confirmed in the Summary tab Hero Statistics).
 
-5. In the Features tab, find and delete the **Academy Student** occupation item (the trait, not the granted feat).
-   Expected: the occupation is removed; the supplement cascade (`registerFeatGrantDeletion`) deletes the granted feat automatically; the character's wealth decreases by −1 (verified in Summary tab).
+6. Drag **Academy Student** a second time after it is already applied.
+   Expected: the new dropped item is removed, a warning appears, and wealth/reputation do not change.
 
-6. Drag an occupation with no skill choices and a single fixed feat (e.g., a simpler occupation) onto the same test character.
+7. In the Features tab, find and delete the **Academy Student** occupation item (the trait, not the granted feat).
+   Expected: the occupation is removed; granted feats/techniques created by the occupation have `flags.naruto-d20.occupationGrant` and are removed; pre-existing items with the same name are not deleted; the character's wealth decreases by −1 (verified in Summary tab).
+
+8. Drag an occupation with no skill choices and a single fixed feat (e.g., a simpler occupation) onto the same test character.
    Expected: the occupation applies with no dialog prompt; an info notification appears (e.g., "Occupation applied: [Name]"); the wealth and reputation values update as configured on the occupation.
 
-7. Delete the occupation feature and verify cascade behavior.
+9. Delete the occupation feature and verify revert behavior.
    Expected: wealth and reputation reverse as documented in `registerOccupationAutoRevert` (confirmed in Summary tab).
+
+10. Drag **Uchiha Clan** or **Sunagakure Puppeteer**, choose a technique, and click Apply.
+    Expected: the selected technique is created explicitly on the actor and has `flags.naruto-d20.occupationGrant`.

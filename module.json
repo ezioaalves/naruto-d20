@@ -135,7 +135,7 @@
         "feats",
         "classes",
         "occupations",
-        "occupations-community"
+        "occupations-community",
         "equipments"
       ]
     }

@@ -62,9 +62,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Advanced Bloodline (Fortify)",
-          "Archaic Weapon Proficiency",
-          "Armor Proficiency (light, medium)",
+          "Archaic Weapons Proficiency",
           "Brawl",
           "Combat Martial Arts",
           "Defensive Martial Arts",
@@ -75,7 +73,11 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Fortify)",
+          "Armor Proficiency (light, medium)"
+        ]
       }
     }
   }

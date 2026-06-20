@@ -118,12 +118,14 @@
         "featSelectCount": 1,
         "featOptions": [
           "Defensive Martial Arts",
-          "Studious",
-          "[Universal / Finesse Category]"
+          "Studious"
         ],
         "techniqueOptions": [],
         "wealthBonus": 0,
-        "reputationBonus": 0
+        "reputationBonus": 0,
+        "manualFeatOptions": [
+          "[Universal / Finesse Category]"
+        ]
       }
     }
   }

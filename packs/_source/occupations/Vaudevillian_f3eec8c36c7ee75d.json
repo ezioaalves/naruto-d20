@@ -118,7 +118,8 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 0,
-        "reputationBonus": 0
+        "reputationBonus": 0,
+        "manualFeatOptions": []
       }
     }
   }

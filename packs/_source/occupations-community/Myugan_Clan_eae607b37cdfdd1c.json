@@ -77,14 +77,16 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Advanced Bloodline (Shitatchi)",
           "Combat Martial Arts",
           "Genius Ninja",
           "Taijutsu Adept"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Shitatchi)"
+        ]
       }
     }
   }

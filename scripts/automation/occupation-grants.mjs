@@ -1,14 +1,12 @@
 /**
  * Occupation auto-apply / auto-revert.
  *
- * Apply (createItem): prompt selections, write class skills + supplements + the
- * grant flag onto the occupation feat, bump the actor's wealth/reputation hero
- * stats, and materialize the chosen feat as a PF1e supplement (flags.pf1.source).
+ * Apply (createItem): prompt selections, write class skills and the grant flag
+ * onto the occupation feat, bump the actor's wealth/reputation hero stats, and
+ * explicitly materialize chosen grant items.
  *
- * Revert (deleteItem): reverse wealth/reputation only. The granted feat is removed
- * by this module's existing supplement cascade (automation/feat-grants.mjs), which
- * deletes embedded items whose flags.pf1.source matches the occupation's
- * system.links.supplements when the occupation feat is deleted.
+ * Revert (deleteItem): reverse wealth/reputation and delete only embedded items
+ * that this occupation created, identified by flags.naruto-d20.occupationGrant.
  */
 import { MODULE_ID } from "../constants.mjs";
 import { wealthPath, reputationPath } from "../flag-paths.mjs";
@@ -17,7 +15,6 @@ import {
   TECHNIQUE_PACK_IDS,
   buildEmbeddedGrantData,
   findCompendiumItemByName,
-  linkRowFromDocument,
   normalizeItemName,
 } from "../data/item-grants.mjs";
 import { promptOccupationSelections } from "../ui/occupation-selector.mjs";
@@ -74,15 +71,13 @@ export function buildOccupationItemUpdate(
   occupationItem,
   occupation,
   selections,
-  featDoc,
-  techDoc,
+  { featDoc = null, techDoc = null, createdGrantIds = [], skippedExistingGrantNames = [] } = {},
 ) {
   const classSkills = {};
   for (const key of mergedClassSkillKeys(occupation, selections)) classSkills[key] = true;
-  const links = [featDoc, techDoc].filter(Boolean).map((doc) => linkRowFromDocument(doc));
   return {
     "system.classSkills": classSkills,
-    "system.links.supplements": links,
+    "system.links.supplements": [],
     [`flags.${MODULE_ID}.${OCCUPATION_GRANT_FLAG}`]: {
       applied: true,
       sourceOccupationSlug: occupation.slug,
@@ -94,6 +89,8 @@ export function buildOccupationItemUpdate(
       wealthBonus: occupation.wealthBonus ?? 0,
       reputationBonus: occupation.reputationBonus ?? 0,
       sourceOccupationItemId: occupationItem.id,
+      createdGrantIds,
+      skippedExistingGrantNames,
     },
   };
 }
@@ -118,20 +115,79 @@ async function resolveOccupationSelections(occupationItem, occupation) {
     classSkillOptions: occupation.classSkillOptions ?? [],
     skillSelectCount,
     featOptions,
+    manualFeatOptions: occupation.manualFeatOptions ?? [],
     techniqueOptions,
   });
 }
 
-function actorHasNamedItem(actor, name) {
+function findExistingOwnedItemByName(actor, name) {
   const target = normalizeItemName(name);
-  return Array.from(actor.items ?? []).some((item) => normalizeItemName(item.name) === target);
+  if (!target) return null;
+  return (
+    Array.from(actor.items ?? []).find((item) => normalizeItemName(item.name) === target) ?? null
+  );
+}
+
+export function findAppliedOccupationBySlug(actor, slug) {
+  if (!slug) return null;
+
+  return (
+    Array.from(actor.items ?? []).find((item) => {
+      const grant = item.flags?.[MODULE_ID]?.[OCCUPATION_GRANT_FLAG];
+      return grant?.applied === true && grant.sourceOccupationSlug === slug;
+    }) ?? null
+  );
+}
+
+export function buildGrantDeletionIds(actor, grant) {
+  const sourceId = grant?.sourceOccupationItemId;
+  if (!sourceId) return [];
+
+  return Array.from(actor.items ?? [])
+    .filter(
+      (item) =>
+        item.id !== sourceId &&
+        item.flags?.[MODULE_ID]?.[OCCUPATION_GRANT_FLAG]?.sourceOccupationItemId === sourceId,
+    )
+    .map((item) => item.id)
+    .filter(Boolean);
+}
+
+async function createGrantItem(actor, doc, occupation, occupationItem, kind, grantName) {
+  if (!doc) return { createdId: null, skippedExistingName: null };
+
+  const existing = findExistingOwnedItemByName(actor, doc.name);
+  if (existing) return { createdId: null, skippedExistingName: doc.name };
+
+  const itemData = buildEmbeddedGrantData(doc, `flags.${MODULE_ID}.${OCCUPATION_GRANT_FLAG}`, {
+    sourceOccupationSlug: occupation.slug,
+    sourceOccupationItemId: occupationItem.id,
+    grantKind: kind,
+    grantName,
+  });
+  foundry.utils.setProperty(itemData, "flags.pf1.source", doc.uuid);
+
+  const [created] = await actor.createEmbeddedDocuments("Item", [itemData], {
+    _pf1NoSupplements: true,
+  });
+  return { createdId: created?.id ?? null, skippedExistingName: null };
 }
 
 export async function applyOccupationFromItem(actor, occupationItem, occupation) {
   if (occupationItem.getFlag?.(MODULE_ID, `${OCCUPATION_GRANT_FLAG}.applied`)) return;
 
+  const existingOccupation = findAppliedOccupationBySlug(actor, occupation.slug);
+  if (existingOccupation && existingOccupation.id !== occupationItem.id) {
+    await occupationItem.delete();
+    ui.notifications?.warn(
+      game.i18n.format("NarutoD20.Occupation.AlreadyApplied", { name: occupationItem.name }),
+    );
+    return;
+  }
+
   const selections = await resolveOccupationSelections(occupationItem, occupation);
   if (!selections) {
+    await occupationItem.delete();
     ui.notifications?.warn(
       game.i18n.format("NarutoD20.Occupation.Cancelled", { name: occupationItem.name }),
     );
@@ -161,31 +217,45 @@ export async function applyOccupationFromItem(actor, occupationItem, occupation)
     );
   }
 
+  const createdGrantIds = [];
+  const skippedExistingGrantNames = [];
+  const featGrant = await createGrantItem(
+    actor,
+    featDoc,
+    occupation,
+    occupationItem,
+    "feat",
+    selections.featName,
+  );
+  if (featGrant.createdId) createdGrantIds.push(featGrant.createdId);
+  if (featGrant.skippedExistingName) skippedExistingGrantNames.push(featGrant.skippedExistingName);
+
+  const techGrant = await createGrantItem(
+    actor,
+    techDoc,
+    occupation,
+    occupationItem,
+    "technique",
+    selections.techniqueName,
+  );
+  if (techGrant.createdId) createdGrantIds.push(techGrant.createdId);
+  if (techGrant.skippedExistingName) skippedExistingGrantNames.push(techGrant.skippedExistingName);
+
   await occupationItem.update(
-    buildOccupationItemUpdate(occupationItem, occupation, selections, featDoc, techDoc),
+    buildOccupationItemUpdate(occupationItem, occupation, selections, {
+      featDoc,
+      techDoc,
+      createdGrantIds,
+      skippedExistingGrantNames,
+    }),
   );
 
   const plan = planOccupationApplication(actor, occupation);
   if (Object.keys(plan.updates).length) await actor.update(plan.updates);
 
-  if (featDoc && !actorHasNamedItem(actor, featDoc.name)) {
-    const featData = buildEmbeddedGrantData(
-      featDoc,
-      `flags.${MODULE_ID}.${OCCUPATION_GRANT_FLAG}`,
-      {
-        sourceOccupationSlug: occupation.slug,
-        sourceOccupationItemId: occupationItem.id,
-        grantKind: "feat",
-        grantName: selections.featName,
-      },
-    );
-    foundry.utils.setProperty(featData, "flags.pf1.source", featDoc.uuid);
-    await actor.createEmbeddedDocuments("Item", [featData], { _pf1NoSupplements: true });
-  }
-
   const count =
     mergedClassSkillKeys(occupation, selections).length +
-    (featDoc ? 1 : 0) +
+    createdGrantIds.length +
     (occupation.wealthBonus ? 1 : 0) +
     (occupation.reputationBonus ? 1 : 0);
   ui.notifications?.info(
@@ -205,5 +275,7 @@ export async function revertOccupationFromItem(actor, grant) {
     const current = Number(foundry.utils.getProperty(actor, reputationPath) ?? 0) || 0;
     updates[reputationPath] = current - reputationBonus;
   }
+  const toDelete = buildGrantDeletionIds(actor, grant);
+  if (toDelete.length) await actor.deleteEmbeddedDocuments("Item", toDelete, { render: false });
   if (Object.keys(updates).length) await actor.update(updates);
 }

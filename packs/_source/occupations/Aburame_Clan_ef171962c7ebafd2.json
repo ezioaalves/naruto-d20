@@ -112,7 +112,6 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Advanced Bloodline (Symbiote)",
           "Destruction Bugs",
           "Genin",
           "Genius Ninja",
@@ -122,7 +121,10 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 0,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Symbiote)"
+        ]
       }
     }
   }

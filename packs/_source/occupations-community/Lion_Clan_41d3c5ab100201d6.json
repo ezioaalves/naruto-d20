@@ -79,17 +79,19 @@
         "featSelectCount": 1,
         "featOptions": [
           "Endurance",
-          "Expertise (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
           "Improved Initiative",
           "Iron Will",
-          "Ki Shout (Great Ki Shout)",
-          "Remain Conscious",
-          "Toughness",
-          "Weapon Focus (katana)"
+          "Toughness"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Expertise (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
+          "Ki Shout (Great Ki Shout)",
+          "Remain Conscious",
+          "Weapon Focus (katana)"
+        ]
       }
     }
   }

@@ -25,6 +25,8 @@ const PACKS = [
   { name: "feats", dir: "feats", type: "feat" },
   { name: "technique-buffs", dir: "technique-buffs", type: "buff" },
   { name: "equipments", dir: "equipments", type: null },
+  { name: "occupations", dir: "occupations", type: "feat" },
+  { name: "occupations-community", dir: "occupations-community", type: "feat" },
 ];
 
 const DISCIPLINES = new Set([
@@ -116,6 +118,16 @@ function isNonEmptyString(value) {
 
 function isIntegerInRange(value, min, max) {
   return Number.isInteger(value) && value >= min && value <= max;
+}
+
+function normalizeLookupName(value) {
+  return String(value ?? "")
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/['']/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
 function readPack({ name, dir, type }) {
@@ -426,6 +438,128 @@ function validateBuff({ doc, filename, packName }) {
   }
 }
 
+function validateOccupation(ctx) {
+  const { doc, filename, packName } = ctx;
+  const occupation = doc.flags?.["naruto-d20"]?.occupation;
+  if (!isPlainObject(occupation)) {
+    error(packName, filename, "missing flags.naruto-d20.occupation");
+    return;
+  }
+
+  if (doc.type !== "feat") error(packName, filename, "occupation must be a feat item");
+  if (doc.system?.subType !== "trait") {
+    error(packName, filename, "occupation system.subType must be trait");
+  }
+  if (!isNonEmptyString(occupation.slug)) {
+    error(packName, filename, "occupation.slug is required");
+  }
+
+  validateOccupationSkillOptions(packName, filename, occupation.fixedClassSkills, {
+    path: "occupation.fixedClassSkills",
+  });
+  validateOccupationSkillOptions(packName, filename, occupation.classSkillOptions, {
+    path: "occupation.classSkillOptions",
+  });
+
+  if (!Number.isInteger(occupation.skillSelectCount) || occupation.skillSelectCount < 0) {
+    error(packName, filename, "occupation.skillSelectCount must be a non-negative integer");
+  } else if (
+    Array.isArray(occupation.classSkillOptions) &&
+    occupation.skillSelectCount > occupation.classSkillOptions.length
+  ) {
+    error(packName, filename, "occupation.skillSelectCount exceeds classSkillOptions length");
+  }
+
+  validateStringArray(packName, filename, occupation.featOptions, "occupation.featOptions");
+  validateStringArray(
+    packName,
+    filename,
+    occupation.manualFeatOptions ?? [],
+    "occupation.manualFeatOptions",
+  );
+  validateStringArray(
+    packName,
+    filename,
+    occupation.techniqueOptions,
+    "occupation.techniqueOptions",
+  );
+
+  if (typeof occupation.wealthBonus !== "number" || !Number.isFinite(occupation.wealthBonus)) {
+    error(packName, filename, "occupation.wealthBonus must be a finite number");
+  }
+  if (
+    typeof occupation.reputationBonus !== "number" ||
+    !Number.isFinite(occupation.reputationBonus)
+  ) {
+    error(packName, filename, "occupation.reputationBonus must be a finite number");
+  }
+
+  validateOccupationReferences(packName, filename, occupation);
+}
+
+function validateOccupationSkillOptions(packName, filename, value, { path }) {
+  if (!Array.isArray(value)) {
+    error(packName, filename, `${path} must be an array`);
+    return;
+  }
+  value.forEach((option, index) => {
+    const prefix = `${path}[${index}]`;
+    if (!isPlainObject(option)) {
+      error(packName, filename, `${prefix} must be an object`);
+      return;
+    }
+    if (!isNonEmptyString(option.key)) error(packName, filename, `${prefix}.key is required`);
+    if (!isNonEmptyString(option.label)) error(packName, filename, `${prefix}.label is required`);
+  });
+}
+
+function validateStringArray(packName, filename, value, path) {
+  if (!Array.isArray(value)) {
+    error(packName, filename, `${path} must be an array`);
+    return false;
+  }
+  value.forEach((entry, index) => {
+    if (!isNonEmptyString(entry)) error(packName, filename, `${path}[${index}] must be a string`);
+  });
+  return true;
+}
+
+function validateOccupationReferences(packName, filename, occupation) {
+  const featNames = lookupNamesForPack("feats");
+  const techniqueNames = lookupNamesForPack("techniques");
+
+  for (const featName of occupation.featOptions ?? []) {
+    if (!hasExactLookupName(featNames, featName)) {
+      error(packName, filename, `occupation feat option not found: ${featName}`);
+    }
+  }
+
+  for (const techniqueName of occupation.techniqueOptions ?? []) {
+    if (!findFuzzyLookupName(techniqueNames, techniqueName)) {
+      error(packName, filename, `occupation technique option not found: ${techniqueName}`);
+    }
+  }
+}
+
+function lookupNamesForPack(packName) {
+  return (docsByPack.get(packName) ?? [])
+    .map(({ doc }) => doc.name)
+    .filter(isNonEmptyString)
+    .map(normalizeLookupName);
+}
+
+function hasExactLookupName(names, value) {
+  return names.includes(normalizeLookupName(value));
+}
+
+function findFuzzyLookupName(names, value) {
+  const target = normalizeLookupName(value);
+  if (!target) return false;
+  return names.some(
+    (candidate) => candidate === target || candidate.includes(target) || target.includes(candidate),
+  );
+}
+
 function validateTrainingWeight(packName, filename, doc) {
   if (doc.system?.subType !== "gear") {
     error(packName, filename, `training weight items must use loot subtype "gear"`);
@@ -534,6 +668,8 @@ export function validateCompendia({
       if (pack.name === "techniques") validateTechnique(ctx);
       if (pack.name === "feats") validateFeat(ctx);
       if (pack.name === "technique-buffs") validateBuff(ctx);
+      if (pack.name === "occupations" || pack.name === "occupations-community")
+        validateOccupation(ctx);
       if (ctx.doc.flags?.["naruto-d20"]?.trainingWeightItem)
         validateTrainingWeight(pack.name, ctx.filename, ctx.doc);
     }

@@ -83,17 +83,19 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Dodge (Dodge, Spring Attack)",
-          "Expertise (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
           "Improved Initiative",
           "Quick Draw",
-          "Skill Focus (Iaijutsu Focus)",
-          "Toughness",
-          "Weapon Focus (katana)"
+          "Toughness"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Dodge (Dodge, Spring Attack)",
+          "Expertise (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
+          "Skill Focus (Iaijutsu Focus)",
+          "Weapon Focus (katana)"
+        ]
       }
     }
   }

@@ -69,17 +69,19 @@
         "featSelectCount": 1,
         "featOptions": [
           "Alertness",
-          "[Universal: Defensive Stance]",
-          "(Improved Trick, Whirlwind Attack)",
-          "Dodge (Dodge, Spring Attack)",
           "Improved Initiative",
-          "[Universal: Risky Strike] (Cleave, Great Cleave)",
-          "Quick Draw",
-          "Weapon Focus (katana, kodachi, any polearm, wakizashi)"
+          "Quick Draw"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "[Universal: Defensive Stance]",
+          "(Improved Trick, Whirlwind Attack)",
+          "Dodge (Dodge, Spring Attack)",
+          "[Universal: Risky Strike] (Cleave, Great Cleave)",
+          "Weapon Focus (katana, kodachi, any polearm, wakizashi)"
+        ]
       }
     }
   }

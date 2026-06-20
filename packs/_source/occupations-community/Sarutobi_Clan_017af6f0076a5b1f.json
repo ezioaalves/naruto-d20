@@ -86,13 +86,14 @@
           "Dodge",
           "Genin",
           "Genius Ninja",
-          "Nin Weapon Proficiency",
+          "Nin Weapons Proficiency",
           "Ninjutsu Adept",
           "Taijutsu Adept"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 2
+        "reputationBonus": 2,
+        "manualFeatOptions": []
       }
     }
   }

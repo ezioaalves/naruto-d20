@@ -83,15 +83,17 @@
           "Armor Proficiency (medium)",
           "Blind-Fight",
           "Defensive Martial Arts",
-          "Exotic Melee Weapon Proficiency",
+          "Exotic Melee Weapons Proficiency",
           "Precise Shot",
-          "[Universal: Risky Strike]",
           "Quick Draw",
           "Windfall"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "[Universal: Risky Strike]"
+        ]
       }
     }
   }

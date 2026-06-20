@@ -37,3 +37,17 @@ test("escapes HTML in option labels", () => {
   assert.doesNotMatch(html, /<script>/);
   assert.match(html, /&lt;script&gt;/);
 });
+
+test("renders manual feat options as instructions, not auto-grant radios", () => {
+  const html = renderOccupationSelectionContent({
+    classSkillOptions: [],
+    skillSelectCount: 0,
+    featOptions: ["Genin"],
+    manualFeatOptions: ["[Universal / Finesse Category]"],
+    techniqueOptions: [],
+  });
+
+  assert.match(html, /Manual Feat Choices/);
+  assert.match(html, /\[Universal \/ Finesse Category\]/);
+  assert.doesNotMatch(html, /value="\[Universal \/ Finesse Category\]"/);
+});

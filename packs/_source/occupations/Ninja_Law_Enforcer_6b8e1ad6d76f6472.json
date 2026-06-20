@@ -97,8 +97,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Archaic Weapon Proficiency",
-          "Armor Proficiency",
+          "Archaic Weapons Proficiency",
           "Brawl",
           "Combat Martial Arts",
           "Defensive Martial Arts",
@@ -113,7 +112,10 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 2,
-        "reputationBonus": 0
+        "reputationBonus": 0,
+        "manualFeatOptions": [
+          "Armor Proficiency"
+        ]
       }
     }
   }

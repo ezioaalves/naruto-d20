@@ -110,13 +110,14 @@
           "Iron Will",
           "Nimble",
           "Ninjutsu Adept",
-          "Nin Weapon Proficiency",
+          "Nin Weapons Proficiency",
           "Precise Shot",
           "Technique Focus"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": []
       }
     }
   }

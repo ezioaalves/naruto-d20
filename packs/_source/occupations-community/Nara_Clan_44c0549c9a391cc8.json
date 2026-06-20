@@ -113,7 +113,6 @@
           "Blind -Fight",
           "Combat Expertise",
           "Combat Tactics",
-          "[Universal: Risky Strike]",
           "Deceptive",
           "Defensive Martial Arts",
           "Dodge",
@@ -123,7 +122,7 @@
           "Improved Initiative",
           "Insightful Reflexes",
           "Ninjutsu Adept",
-          "Nin Weapon Proficiency",
+          "Nin Weapons Proficiency",
           "Precise Shot",
           "Stealthy",
           "Talented Shinobi",
@@ -131,7 +130,10 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "[Universal: Risky Strike]"
+        ]
       }
     }
   }

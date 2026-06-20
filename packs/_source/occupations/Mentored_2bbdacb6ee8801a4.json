@@ -128,7 +128,7 @@
         "featSelectCount": 1,
         "featOptions": [
           "Alertness",
-          "Archaic Weapon Proficiency",
+          "Archaic Weapons Proficiency",
           "Brawl",
           "Combat Martial Arts",
           "Defensive Martial Arts",
@@ -144,7 +144,8 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": []
       }
     }
   }

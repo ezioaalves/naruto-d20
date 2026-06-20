@@ -82,7 +82,6 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Advanced Bloodline (Byakugan)",
           "Combat Martial Arts",
           "Defensive Martial Arts",
           "Genin",
@@ -93,7 +92,10 @@
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Byakugan)"
+        ]
       }
     }
   }

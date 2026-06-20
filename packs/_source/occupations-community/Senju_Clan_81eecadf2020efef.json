@@ -87,21 +87,23 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Armor Proficiency (Light, Medium, Heavy)",
           "Brawl",
           "Chakra Restoration",
           "Combat Martial Arts",
           "Defensive Martial Arts",
           "Genin",
-          "Genius Nin",
-          "Greater Fortitude",
+          "Genius Ninja",
+          "Great Fortitude",
           "Ninjutsu Adept",
           "Taijutsu Adept",
           "Training"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 2
+        "reputationBonus": 2,
+        "manualFeatOptions": [
+          "Armor Proficiency (Light, Medium, Heavy)"
+        ]
       }
     }
   }

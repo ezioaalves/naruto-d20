@@ -97,7 +97,6 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
-          "Advanced Bloodline (Child of the Wild)",
           "Alertness",
           "Brawl",
           "Chakra Restoration",
@@ -106,13 +105,16 @@
           "Defensive Martial Arts",
           "Improved Chakra Pool",
           "Ninjutsu Adept",
-          "Nin Weapon Proficiency",
+          "Nin Weapons Proficiency",
           "Taijutsu Adept",
           "Track"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Advanced Bloodline (Child of the Wild)"
+        ]
       }
     }
   }

@@ -89,16 +89,18 @@
         "featSelectCount": 1,
         "featOptions": [
           "Blind Fight",
-          "Dodge (Dodge, Spring Attack)",
-          "[Universal: Defensive Stance] (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
           "Improved Initiative",
-          "Prone Attack",
-          "Quick Draw",
-          "Weapon Focus (katana, wakizashi)"
+          "Quick Draw"
         ],
         "techniqueOptions": [],
         "wealthBonus": 1,
-        "reputationBonus": 1
+        "reputationBonus": 1,
+        "manualFeatOptions": [
+          "Dodge (Dodge, Spring Attack)",
+          "[Universal: Defensive Stance] (Deft Maneuvers, Deft Maneuvers, Whirlwind Attack)",
+          "Prone Attack",
+          "Weapon Focus (katana, wakizashi)"
+        ]
       }
     }
   }

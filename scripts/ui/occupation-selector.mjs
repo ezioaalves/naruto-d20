@@ -31,10 +31,12 @@ export function renderOccupationSelectionContent({
   classSkillOptions,
   skillSelectCount,
   featOptions,
+  manualFeatOptions,
   techniqueOptions,
 }) {
   const skills = classSkillOptions ?? [];
   const feats = featOptions ?? [];
+  const manualFeats = manualFeatOptions ?? [];
   const techniques = techniqueOptions ?? [];
 
   const skillRows = skills
@@ -62,21 +64,26 @@ export function renderOccupationSelectionContent({
   const featSection = feats.length
     ? `<section class="nd20-occ-section"><h3>${t("NarutoD20.Occupation.BonusFeat", "Bonus Feat")}</h3><div class="nd20-occ-grid">${featRows}</div></section>`
     : "";
+  const manualFeatRows = manualFeats.map((name) => `<li>${escapeHtml(name)}</li>`).join("");
+  const manualFeatSection = manualFeats.length
+    ? `<section class="nd20-occ-section"><h3>${t("NarutoD20.Occupation.ManualFeatChoices", "Manual Feat Choices")}</h3><p class="nd20-occ-hint">${t("NarutoD20.Occupation.ManualFeatHint", "Choose one of these manually on the actor sheet; it is not auto-granted.")}</p><ul class="nd20-occ-manual-list">${manualFeatRows}</ul></section>`
+    : "";
   const techSection = techniques.length
     ? `<section class="nd20-occ-section"><h3>${t("NarutoD20.Occupation.Technique", "Technique")}</h3><div class="nd20-occ-grid">${techRows}</div></section>`
     : "";
 
-  return `<div class="nd20-occupation-selector">${skillSection}${featSection}${techSection}</div>`;
+  return `<div class="nd20-occupation-selector">${skillSection}${featSection}${manualFeatSection}${techSection}</div>`;
 }
 
 export async function promptOccupationSelections(
   occupationItem,
-  { classSkillOptions, skillSelectCount, featOptions, techniqueOptions },
+  { classSkillOptions, skillSelectCount, featOptions, manualFeatOptions, techniqueOptions },
 ) {
   const content = renderOccupationSelectionContent({
     classSkillOptions,
     skillSelectCount,
     featOptions,
+    manualFeatOptions,
     techniqueOptions,
   });
 
