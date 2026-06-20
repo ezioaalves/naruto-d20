@@ -82,6 +82,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Sharingan Eye)",
           "Athletic",
           "Combat Martial Arts",
           "Defensive Martial Arts",
@@ -98,9 +99,7 @@
         ],
         "wealthBonus": 1,
         "reputationBonus": 1,
-        "manualFeatOptions": [
-          "Advanced Bloodline (Sharingan Eye)"
-        ]
+        "manualFeatOptions": []
       }
     }
   }

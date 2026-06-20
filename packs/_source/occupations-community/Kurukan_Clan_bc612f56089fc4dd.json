@@ -57,6 +57,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Kurugan)",
           "Archaic Weapons Proficiency",
           "Combat Martial Arts",
           "Genin",
@@ -67,7 +68,6 @@
         "wealthBonus": 1,
         "reputationBonus": 2,
         "manualFeatOptions": [
-          "Advanced Bloodline (Kurugan)",
           "Armor Proficiency (light, medium)"
         ]
       }

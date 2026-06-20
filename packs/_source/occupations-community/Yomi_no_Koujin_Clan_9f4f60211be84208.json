@@ -67,6 +67,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Yomi no Koujin)",
           "Chakra Affinity",
           "Chakra Restoration",
           "Genin",
@@ -76,9 +77,7 @@
         "techniqueOptions": [],
         "wealthBonus": 1,
         "reputationBonus": 1,
-        "manualFeatOptions": [
-          "Advanced Bloodline (Yomi no Koujin)"
-        ]
+        "manualFeatOptions": []
       }
     }
   }

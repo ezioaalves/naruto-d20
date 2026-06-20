@@ -82,6 +82,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Shikotsumyaku)",
           "Archaic Weapons Proficiency",
           "Combat Martial Arts",
           "Defensive Martial Arts",
@@ -95,9 +96,7 @@
         "techniqueOptions": [],
         "wealthBonus": 0,
         "reputationBonus": 1,
-        "manualFeatOptions": [
-          "Advanced Bloodline (Shikotsumyaku)"
-        ]
+        "manualFeatOptions": []
       }
     }
   }

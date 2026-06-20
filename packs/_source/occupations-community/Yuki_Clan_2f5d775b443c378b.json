@@ -67,6 +67,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Hyouma)",
           "Chakra Affinity",
           "Chakra Restoration",
           "Elemental Specialization",
@@ -79,9 +80,7 @@
         "techniqueOptions": [],
         "wealthBonus": 1,
         "reputationBonus": 1,
-        "manualFeatOptions": [
-          "Advanced Bloodline (Hyouma)"
-        ]
+        "manualFeatOptions": []
       }
     }
   }

@@ -87,6 +87,8 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Kuiarasu Clan Bloodline)",
+          "Advanced Bloodline (Soul Eater)",
           "Genin",
           "Genius Ninja",
           "Improved Chakra Pool",
@@ -97,9 +99,7 @@
         "techniqueOptions": [],
         "wealthBonus": 2,
         "reputationBonus": 1,
-        "manualFeatOptions": [
-          "Advanced Bloodline (Kuiarasu Clan Bloodline, Soul Eater)"
-        ]
+        "manualFeatOptions": []
       }
     }
   }

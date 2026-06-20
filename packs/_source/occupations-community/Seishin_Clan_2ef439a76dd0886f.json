@@ -82,6 +82,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Seishintoku)",
           "Educated",
           "Force of Personality",
           "Genjutsu Adept",
@@ -92,7 +93,6 @@
         "wealthBonus": 1,
         "reputationBonus": 1,
         "manualFeatOptions": [
-          "Advanced Bloodline (Seishintoku)",
           "Genjutsu Technique Focus (Phantasm, Doujutsu, Mind-Affecting)"
         ]
       }

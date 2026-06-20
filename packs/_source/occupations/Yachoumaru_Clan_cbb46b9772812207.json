@@ -82,6 +82,7 @@
         ],
         "featSelectCount": 1,
         "featOptions": [
+          "Advanced Bloodline (Dairiki)",
           "Chakra Affinity",
           "Defensive Martial Arts",
           "Genin",
@@ -92,9 +93,7 @@
         "techniqueOptions": [],
         "wealthBonus": 1,
         "reputationBonus": 1,
-        "manualFeatOptions": [
-          "Advanced Bloodline (Dairiki)"
-        ]
+        "manualFeatOptions": []
       }
     }
   }
