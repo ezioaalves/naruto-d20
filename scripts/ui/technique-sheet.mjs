@@ -294,6 +294,19 @@ export function createTechniqueItemSheet() {
       html.on("contextmenu", ".script-calls .item-list .item", this._onScriptCallEdit.bind(this));
     }
 
+    async _updateObject(event, formData) {
+      if (typeof formData["system.automation.empower.damageTypes"] === "string") {
+        formData["system.automation.empower.damageTypes"] = formData[
+          "system.automation.empower.damageTypes"
+        ]
+          .split(",")
+          .map((t) => t.trim())
+          .filter(Boolean);
+      }
+
+      return super._updateObject(event, formData);
+    }
+
     // ─────────────────────────────────────────────────────────────
     // Content source — mirrors ItemSheetPF._prepareContentSource
     // ─────────────────────────────────────────────────────────────
