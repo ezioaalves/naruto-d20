@@ -106,7 +106,7 @@ function isSafeEmpowerFormula(formula) {
   const identifierRe = /\b(min|max|floor|ceil)\b/g;
   let match;
   while ((match = identifierRe.exec(formula))) {
-    let index = identifierRe.lastIndex;
+    let index = match.index + match[0].length;
     while (index < formula.length && /\s/.test(formula[index])) index += 1;
     if (formula[index] !== "(") return false;
   }

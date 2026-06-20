@@ -121,6 +121,7 @@ export async function performTechnique(item, actionId, event = null) {
     maintenanceFacets(currentItem)?.resource === "hp" &&
     Boolean(findMaintenanceBuffForTechnique(actor, currentItem.id));
   const chakraFree = freeUseChoice?.useFree === true || upkeepFree;
+  const delegatedWeaponAttack = Boolean(getTechniqueWeaponAttackConfig(currentItem));
   const empowerConfig = normalizeEmpowerConfig(currentItem.system.automation?.empower);
   let empower = null;
 
@@ -134,7 +135,12 @@ export async function performTechnique(item, actionId, event = null) {
     return;
   }
 
-  if (!chakraFree && empowerConfig.enabled && shouldPromptEmpowerBeforePerform(empowerConfig)) {
+  if (
+    !delegatedWeaponAttack &&
+    !chakraFree &&
+    empowerConfig.enabled &&
+    shouldPromptEmpowerBeforePerform(empowerConfig)
+  ) {
     empower = await resolveEmpowerChoice(currentItem, actor, cost);
     if (empower === "cancel") return;
   }
@@ -178,7 +184,7 @@ export async function performTechnique(item, actionId, event = null) {
     );
     if (!current) return;
 
-    if (!chakraFree && empowerConfig.enabled && !empower) {
+    if (!delegatedWeaponAttack && !chakraFree && empowerConfig.enabled && !empower) {
       empower = await resolveEmpowerChoice(current.item, actor, cost);
       if (empower === "cancel") return;
     }
