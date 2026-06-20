@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.40 - 2026-06-20
+
+- Fixed **hero statistics pre-paint injection** (#146): the sheet now seeds hero statistics before the first paint so the actor sheet no longer flashes from empty state to populated state during render.
+- Fixed **selected-attack filters for melee techniques with no descriptors**: `TODOME`, `BOUGYOWARU`, and `BUTSUKARI` now allow both melee weapon attacks and unarmed attacks when rolled through PF1e's selected attack selector, matching their "Make a melee attack" text.
+
 ## v1.0.39 - 2026-06-20
 
 - Fixed **occupation Advanced Bloodline grants** (#145): community occupations now keep named `Advanced Bloodline (...)` choices in grantable feat options instead of downgrading them to manual instructions. Added the missing Advanced Bloodline feat source entries, expanded multi-bloodline source options into individual grantable choices, and repacked the feats, occupations, and occupations-community compendia so shipped data matches the source JSON.
