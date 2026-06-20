@@ -1,0 +1,96 @@
+{
+  "_id": "ThrSpearSimpleB2",
+  "_key": "!items!ThrSpearSimpleB2",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Throwing Spear",
+  "img": "systems/pf1/icons/items/weapons/javelin.PNG",
+  "folder": "SmpWpnFolderB002",
+  "system": {
+    "description": {
+      "value": "<p>A light spear balanced for throwing. Can be used as a melee weapon, but at a -4 penalty.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "ThrSprActThrow01",
+        "name": "Throw",
+        "actionType": "twak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 6, @size)",
+              "types": ["piercing"]
+            }
+          ]
+        },
+        "range": {
+          "units": "ft",
+          "value": "30",
+          "maxIncrements": 5
+        },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      },
+      {
+        "_id": "ThrSprActMelee02",
+        "name": "Melee (−4)",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str"
+        },
+        "attackBonus": "-4",
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 6, @size)",
+              "types": ["piercing"]
+            }
+          ]
+        },
+        "range": {
+          "units": "melee",
+          "value": "0"
+        },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "weaponSubtype": "1h",
+    "weaponGroups": ["spears", "thrown"],
+    "weight": { "value": 2 },
+    "price": 4,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 5,
+    "hp": { "base": 3 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

@@ -1,0 +1,99 @@
+{
+  "_id": "QrtrstfSimpleA01",
+  "_key": "!items!QrtrstfSimpleA01",
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "type": "weapon",
+  "name": "Quarterstaff",
+  "img": "systems/pf1/icons/items/weapons/quarterstaff.png",
+  "folder": "SmpWpnFolderB002",
+  "system": {
+    "description": {
+      "value": "<p>A simple wooden staff, usually about 5 feet long. Can be used as a double weapon, counting as though fighting with a light weapon in your off-hand.</p>",
+      "unidentified": ""
+    },
+    "actions": [
+      {
+        "_id": "QrtStfActMain001",
+        "name": "Attack (Main)",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 6, @size)",
+              "types": ["bludgeoning"]
+            }
+          ]
+        },
+        "range": {
+          "units": "melee",
+          "value": "0"
+        },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      },
+      {
+        "_id": "QrtStfActOffH002",
+        "name": "Attack (Off-Hand)",
+        "actionType": "mwak",
+        "activation": {
+          "type": "attack",
+          "unchained": { "type": "attack" }
+        },
+        "ability": {
+          "attack": "_default",
+          "damage": "str"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "sizeRoll(1, 6, @size)",
+              "types": ["bludgeoning"]
+            }
+          ]
+        },
+        "range": {
+          "units": "melee",
+          "value": "0"
+        },
+        "duration": { "units": "inst" },
+        "extraAttacks": { "type": "standard" },
+        "uses": { "autoDeductChargesCost": "0" }
+      }
+    ],
+    "weaponSubtype": "2h",
+    "hands": 2,
+    "held": "2h",
+    "properties": {
+      "double": true
+    },
+    "weaponGroups": ["staves", "double"],
+    "weight": { "value": 4 },
+    "price": 3,
+    "quantity": 1,
+    "identified": true,
+    "carried": true,
+    "equipped": false,
+    "hardness": 5,
+    "hp": { "base": 5 }
+  },
+  "effects": [],
+  "ownership": { "default": 0 },
+  "sort": 0,
+  "flags": {}
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "WpnFolderAAA0001",
+  "name": "Weapons",
+  "type": "Item",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "color": null,
+  "sort": 2000,
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "pf1",
+    "systemVersion": "11.11",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!WpnFolderAAA0001"
+}
