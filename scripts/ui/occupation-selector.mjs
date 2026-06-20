@@ -92,7 +92,9 @@ export async function promptOccupationSelections(
       title: t("NarutoD20.Occupation.SelectTitle", "{name}: Select Occupation Grants", {
         name: occupationItem.name,
       }),
+      icon: "fa-solid fa-list-check",
     },
+    classes: ["pf1-v2", "occupation-selector", "standard-form"],
     position: { width: 520 },
     content,
     buttons: [
