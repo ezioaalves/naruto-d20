@@ -31,7 +31,9 @@ export function getTrainingWeightTechniqueFlag(item) {
   const flag = item?.flags?.[MODULE_ID]?.[TRAINING_WEIGHT_TECHNIQUE_FLAG];
   if (!flag) return null;
   return {
-    eligibleRankKey: ["KOUSOKU", "JOURYOKU"].includes(flag.eligibleRankKey) ? flag.eligibleRankKey : "",
+    eligibleRankKey: ["KOUSOKU", "JOURYOKU"].includes(flag.eligibleRankKey)
+      ? flag.eligibleRankKey
+      : "",
     learnedStrengthRank: Math.max(0, Number(flag.learnedStrengthRank) || 0),
   };
 }
@@ -73,9 +75,19 @@ function chooseSlotItem(actor, slot) {
       type: flag.type,
       rankPenalty: flag.rankPenalty,
       learnBonus: flag.learnBonus,
-      weight: Number(item.system?.weight?.total ?? item.system?.weight?.value ?? TRAINING_WEIGHT_TABLE[flag.type].weight) || 0,
+      weight:
+        Number(
+          item.system?.weight?.total ??
+            item.system?.weight?.value ??
+            TRAINING_WEIGHT_TABLE[flag.type].weight,
+        ) || 0,
     };
-    if (!chosen || candidate.type > chosen.type || (candidate.type === chosen.type && String(candidate.itemId).localeCompare(String(chosen.itemId)) < 0)) {
+    if (
+      !chosen ||
+      candidate.type > chosen.type ||
+      (candidate.type === chosen.type &&
+        String(candidate.itemId).localeCompare(String(chosen.itemId)) < 0)
+    ) {
       chosen = candidate;
     }
   }

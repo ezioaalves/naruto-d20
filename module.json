@@ -58,7 +58,8 @@
     "styles/chat/technique-cards.css",
     "styles/item/technique-sidebar.css",
     "styles/apps/technique-synckit.css",
-    "styles/apps/technique-browser.css"
+    "styles/apps/technique-browser.css",
+    "styles/apps/occupation-selector.css"
   ],
   "languages": [
     {
@@ -107,6 +108,20 @@
       "path": "packs/equipments",
       "type": "Item",
       "system": "pf1"
+    },
+    {
+      "name":   "occupations",
+      "label":  "Naruto D20 — Starting Occupations",
+      "path":   "packs/occupations",
+      "type":   "Item",
+      "system": "pf1"
+    },
+    {
+      "name":   "occupations-community",
+      "label":  "Naruto D20 — Occupations (Community Compendium)",
+      "path":   "packs/occupations-community",
+      "type":   "Item",
+      "system": "pf1"
     }
   ],
   "packFolders": [
@@ -119,6 +134,8 @@
         "technique-buffs",
         "feats",
         "classes",
+        "occupations",
+        "occupations-community",
         "equipments"
       ]
     }

@@ -42,7 +42,9 @@ export function onActorRest(actor, options) {
     let nextPoolValue;
     if (hasDepletion) {
       // Depleted: partial recovery rate — doubled if the actor is under long-term care.
-      const recoveredPool = options.longTermCare ? Math.floor(poolMax / 2) : Math.floor(poolMax / 4);
+      const recoveredPool = options.longTermCare
+        ? Math.floor(poolMax / 2)
+        : Math.floor(poolMax / 4);
       nextPoolValue = Math.min(currentPool + recoveredPool, poolMax);
     } else {
       nextPoolValue = poolMax;
