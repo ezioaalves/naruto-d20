@@ -24,7 +24,7 @@ const PACKS = [
   { name: "techniques", dir: "techniques", type: "naruto-d20.technique" },
   { name: "feats", dir: "feats", type: "feat" },
   { name: "technique-buffs", dir: "technique-buffs", type: "buff" },
-  { name: "training-weights", dir: "training-weights", type: "loot" },
+  { name: "equipments", dir: "equipments", type: null },
 ];
 
 const DISCIPLINES = new Set([
@@ -159,7 +159,7 @@ function isFolderDoc(doc) {
 }
 
 function validateCommon({ doc, filename, packName, expectedType }) {
-  if (doc.type !== expectedType) {
+  if (expectedType !== null && doc.type !== expectedType) {
     error(packName, filename, `expected type "${expectedType}", got "${doc.type ?? "<missing>"}"`);
   }
 
@@ -521,7 +521,7 @@ export function validateCompendia({
       if (pack.name === "techniques") validateTechnique(ctx);
       if (pack.name === "feats") validateFeat(ctx);
       if (pack.name === "technique-buffs") validateBuff(ctx);
-      if (pack.name === "training-weights")
+      if (ctx.doc.flags?.["naruto-d20"]?.trainingWeightItem)
         validateTrainingWeight(pack.name, ctx.filename, ctx.doc);
     }
   }
