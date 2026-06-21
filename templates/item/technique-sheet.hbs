@@ -585,6 +585,49 @@
         </label>
       </div>
 
+      <h3 class="form-header">{{localize "NarutoD20.Empower.Header"}}</h3>
+
+      <label class="checkbox">
+        <input type="checkbox" name="system.automation.empower.enabled" {{checked system.automation.empower.enabled}}>
+        {{localize "NarutoD20.Empower.Enabled.Label"}}
+      </label>
+
+      {{#if empowerFields.show}}
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Empower.Mode.Label"}}</label>
+        <select name="system.automation.empower.mode">
+          {{selectOptions empowerModeChoices selected=system.automation.empower.mode}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Empower.CostPerStep.Label"}}</label>
+        <input type="number" step="1" min="1" name="system.automation.empower.costPerStep" value="{{system.automation.empower.costPerStep}}">
+      </div>
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Empower.FormulaPerStep.Label"}}</label>
+        <input type="text" name="system.automation.empower.formulaPerStep" value="{{system.automation.empower.formulaPerStep}}">
+      </div>
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Empower.DamageTypes.Label"}}</label>
+        <input type="text" name="system.automation.empower.damageTypes" value="{{system.automation.empower.damageTypes}}">
+        <p class="hint">{{localize "NarutoD20.Empower.DamageTypes.Hint"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Empower.MaxStepsFormula.Label"}}</label>
+        <input type="text" name="system.automation.empower.maxStepsFormula" value="{{system.automation.empower.maxStepsFormula}}">
+      </div>
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Empower.PerformIncreaseEvery.Label"}}</label>
+        <input type="number" step="1" min="0" name="system.automation.empower.performIncreaseEvery" value="{{system.automation.empower.performIncreaseEvery}}">
+      </div>
+      {{#if empowerFields.hasPerformIncrease}}
+      <div class="form-group">
+        <label>{{localize "NarutoD20.Empower.PerformIncreaseAmount.Label"}}</label>
+        <input type="number" step="1" min="0" name="system.automation.empower.performIncreaseAmount" value="{{system.automation.empower.performIncreaseAmount}}">
+      </div>
+      {{/if}}
+      {{/if}}
+
       <label class="checkbox">
         <input type="checkbox" name="system.automation.maintenance.enabled" {{checked system.automation.maintenance.enabled}}>
         {{localize "NarutoD20.Automation.Maintenance.Enabled.Label"}}

@@ -179,6 +179,14 @@ export function createTechniqueItemSheet() {
         showFreeRounds: maintenance.waiver === "freeUse",
         showElementDoubleStep: maintenance.element === true,
       };
+      context.empowerModeChoices = {
+        damageBonus: loc("NarutoD20.Empower.Mode.DamageBonus"),
+      };
+      const empower = system.automation?.empower ?? {};
+      context.empowerFields = {
+        show: empower.enabled === true,
+        hasPerformIncrease: Number(empower.performIncreaseEvery ?? 0) > 0,
+      };
 
       // ── Links tab — structured for PF1e's table/sub-nav layout ──
       const linkCat = (id, labelKey, helpKey) => ({
@@ -284,6 +292,19 @@ export function createTechniqueItemSheet() {
       // Advanced — script calls
       html.on("click", ".script-calls .item-control", this._onScriptCallControl.bind(this));
       html.on("contextmenu", ".script-calls .item-list .item", this._onScriptCallEdit.bind(this));
+    }
+
+    async _updateObject(event, formData) {
+      if (typeof formData["system.automation.empower.damageTypes"] === "string") {
+        formData["system.automation.empower.damageTypes"] = formData[
+          "system.automation.empower.damageTypes"
+        ]
+          .split(",")
+          .map((t) => t.trim())
+          .filter(Boolean);
+      }
+
+      return super._updateObject(event, formData);
     }
 
     // ─────────────────────────────────────────────────────────────

@@ -403,6 +403,39 @@
       "NoTargets": "Nenhum alvo selecionado para aplicação de buff.",
       "NoPermission": "Sem permissão para modificar {name}. Buff não aplicado."
     },
+    "Empower": {
+      "Header": "Empower",
+      "Title": "Empower {name}",
+      "Prompt": "{name} pode gastar {cost} de chakra por passo para adicionar {formula} de dano.",
+      "Steps": "Passos de Empower",
+      "PerformIncrease": "+{value} Empower",
+      "Enabled": {
+        "Label": "Automatizar Empower de dano"
+      },
+      "Mode": {
+        "Label": "Modo",
+        "DamageBonus": "Bonus de dano"
+      },
+      "CostPerStep": {
+        "Label": "Chakra por passo"
+      },
+      "FormulaPerStep": {
+        "Label": "Dano por passo"
+      },
+      "DamageTypes": {
+        "Label": "Tipos de dano",
+        "Hint": "IDs de tipos de dano PF1e separados por virgula. Deixe vazio para dano extra sem tipo explicito."
+      },
+      "MaxStepsFormula": {
+        "Label": "Formula de maximo de passos"
+      },
+      "PerformIncreaseEvery": {
+        "Label": "Aumentar Perform a cada N passos"
+      },
+      "PerformIncreaseAmount": {
+        "Label": "Aumento de Perform"
+      }
+    },
     "Synckit": {
       "Title": "Synckit de Técnicas",
       "HeaderButton": "Sincronizar Técnicas",

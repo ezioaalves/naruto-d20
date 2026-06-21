@@ -71,6 +71,21 @@ Dois modelos de buff de manutenção:
 - Migração de schema: `runMaintenanceMigrations()` → `scripts/data/maintenance-migration.mjs:111`;
   `MAINTENANCE_MIGRATION_VERSION` → `scripts/data/maintenance-migration.mjs:6`.
 
+## Empower (technique damage scaling)
+
+Subsistema introduzido no branch `feature/technique-empower-damage-design`.
+Permite pagar chakra extra antes de uma técnica para escalar o dano (modo `damageBonus`).
+
+- `normalizeEmpowerConfig(raw)` → `scripts/automation/technique-empower.mjs:6` — normaliza o campo `system.automation.empower` com defaults seguros.
+- `buildEmpowerDamageFormula({steps, formulaPerStep})` → `scripts/automation/technique-empower.mjs:23` — monta a fórmula de dano (`Nd6[Empower]` ou `N * (formula)[Empower]`).
+- `empowerPerformIncrease({steps, performIncreaseEvery, performIncreaseAmount})` → `scripts/automation/technique-empower.mjs:33` — calcula o aumento de DC da Perform por quantidade de steps.
+- `shouldPromptEmpowerBeforePerform(config)` → `scripts/automation/technique-empower.mjs:37` — retorna `true` quando `performIncreaseEvery > 0` (prompt ANTES do Perform check).
+- `resolveEmpowerUse({config, steps, baseCost})` → `scripts/automation/technique-empower.mjs:42` — calcula custo total, fórmula de dano e aumento de DC a partir do número de steps escolhido.
+- `resolveEmpowerStepLimit({config, rollData, availableExtraChakra})` → `scripts/automation/technique-empower.mjs:67` — calcula o máximo de steps (min(chakraLimit, avaliação de `maxStepsFormula`)).
+- `getTechniqueCasterLevel(item, actor)` → `scripts/data/technique-rolldata.mjs:5` — `charLevel + masteryOffset`; exportado e usado por `resolveEmpowerChoice` em `use-technique.mjs` para injetar `rollData.cl` ao avaliar `maxStepsFormula`.
+- Injeção de dano: `applyEmpowerDamage(actionUse, empower, cleanup)` em `scripts/use-technique.mjs:51` — registrado no hook `pf1CreateActionUse`; empurra `{ formula, types }` em `actionUse.shared.action.damage.parts` (typed) ou `shared.damageBonus` (untyped); cleanup via `parts.splice`.
+- Schema no modelo: campo `automation.empower` → `scripts/data/technique-model.mjs` (SchemaField com `enabled`, `mode`, `costPerStep`, `formulaPerStep`, `damageTypes`, `maxStepsFormula`, `performIncreaseEvery`, `performIncreaseAmount`).
+
 ## Roll-time attack/damage bonuses that must NOT leak into CMB/CMD
 
 Padrão: o target nativo `attack` é escrito em `system.attributes.attack.general` no

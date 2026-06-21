@@ -399,6 +399,39 @@
       "NoTargets": "No targets selected for buff application.",
       "NoPermission": "No permission to modify {name}. Buff not applied."
     },
+    "Empower": {
+      "Header": "Empower",
+      "Title": "Empower {name}",
+      "Prompt": "{name} can spend {cost} chakra per step to add {formula} damage.",
+      "Steps": "Empower steps",
+      "PerformIncrease": "+{value} Empower",
+      "Enabled": {
+        "Label": "Automate damage Empower"
+      },
+      "Mode": {
+        "Label": "Mode",
+        "DamageBonus": "Damage bonus"
+      },
+      "CostPerStep": {
+        "Label": "Chakra per step"
+      },
+      "FormulaPerStep": {
+        "Label": "Damage per step"
+      },
+      "DamageTypes": {
+        "Label": "Damage types",
+        "Hint": "Comma-separated PF1e damage type ids. Leave blank for untyped extra damage."
+      },
+      "MaxStepsFormula": {
+        "Label": "Max steps formula"
+      },
+      "PerformIncreaseEvery": {
+        "Label": "Perform increase every N steps"
+      },
+      "PerformIncreaseAmount": {
+        "Label": "Perform increase amount"
+      }
+    },
     "Synckit": {
       "Title": "Technique Synckit",
       "HeaderButton": "Sync Techniques",

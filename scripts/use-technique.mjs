@@ -1,6 +1,11 @@
 import { MODULE_ID } from "./constants.mjs";
 import { DISCIPLINE_SKILL_MAP } from "./data/skills.mjs";
-import { applyChakraSpend, calculateChakraSpend, canPayChakra } from "./data/chakra-spend.mjs";
+import {
+  applyChakraSpend,
+  availableChakra,
+  calculateChakraSpend,
+  canPayChakra,
+} from "./data/chakra-spend.mjs";
 import { applyChatVisibility, chatVisibilityFrom } from "./chat-visibility.mjs";
 import { markNarutoRollRerollable } from "./chat-rerolls.mjs";
 import {
@@ -26,6 +31,13 @@ import {
   promptElements,
   setPendingCastElements,
 } from "./automation/maintenance-element-damage.mjs";
+import {
+  normalizeEmpowerConfig,
+  resolveEmpowerStepLimit,
+  resolveEmpowerUse,
+  shouldPromptEmpowerBeforePerform,
+} from "./automation/technique-empower.mjs";
+import { getTechniqueCasterLevel } from "./data/technique-rolldata.mjs";
 
 export function canAffordTechnique(actor, item) {
   return canPayChakra(actor, item.system.chakraCost ?? 0);
@@ -39,14 +51,29 @@ function getTechniqueAttackAdjustments(item) {
   };
 }
 
-function installTechniqueAttackAdjustmentsHook(item, actor, action, cleanup) {
+function applyEmpowerDamage(actionUse, empower, cleanup) {
+  if (!empower?.steps || !empower.damageFormula) return;
+
+  if (empower.damageTypes?.length) {
+    const parts = (actionUse.shared.action.damage.parts ??= []);
+    const originalLength = parts.length;
+    parts.push({ formula: empower.damageFormula, types: [...empower.damageTypes] });
+    cleanup.push(() => parts.splice(originalLength, 1));
+  } else {
+    actionUse.shared.damageBonus.push(empower.damageFormula);
+  }
+}
+
+function installTechniqueActionUseHook(item, actor, action, cleanup, empower = null) {
   const adjustments = getTechniqueAttackAdjustments(item);
-  if (!adjustments.sizeBonus && !adjustments.critConfirmBonus) return null;
+  if (!adjustments.sizeBonus && !adjustments.critConfirmBonus && !empower?.steps) return null;
 
   const hook = (actionUse) => {
     if (actionUse.actor?.id !== actor.id) return;
     if (actionUse.item?.id !== item.id) return;
     if (actionUse.action?.id !== action.id) return;
+
+    applyEmpowerDamage(actionUse, empower, cleanup);
 
     if (adjustments.critConfirmBonus) {
       const previous = actionUse.shared.action.critConfirmBonus;
@@ -95,6 +122,9 @@ export async function performTechnique(item, actionId, event = null) {
     maintenanceFacets(currentItem)?.resource === "hp" &&
     Boolean(findMaintenanceBuffForTechnique(actor, currentItem.id));
   const chakraFree = freeUseChoice?.useFree === true || upkeepFree;
+  const delegatedWeaponAttack = Boolean(getTechniqueWeaponAttackConfig(currentItem));
+  const empowerConfig = normalizeEmpowerConfig(currentItem.system.automation?.empower);
+  let empower = null;
 
   if (!chakraFree && !canAffordTechnique(actor, currentItem)) {
     ui.notifications.warn(
@@ -106,7 +136,25 @@ export async function performTechnique(item, actionId, event = null) {
     return;
   }
 
-  const perform = await resolvePerformCheck(currentItem, actor);
+  if (
+    !delegatedWeaponAttack &&
+    !chakraFree &&
+    empowerConfig.enabled &&
+    shouldPromptEmpowerBeforePerform(empowerConfig)
+  ) {
+    empower = await resolveEmpowerChoice(currentItem, actor, cost);
+    if (empower === "cancel") return;
+  }
+
+  const perform = await resolvePerformCheck(currentItem, actor, {
+    dcBonus: empower?.performIncrease ?? 0,
+    note:
+      empower?.performIncrease > 0
+        ? game.i18n.format("NarutoD20.Empower.PerformIncrease", {
+            value: empower.performIncrease,
+          })
+        : "",
+  });
   if (!perform) return;
   if (!perform.succeeded) {
     await postPerformFailureCard(actor, currentItem, perform);
@@ -137,10 +185,15 @@ export async function performTechnique(item, actionId, event = null) {
     );
     if (!current) return;
 
-    const useResult = await useTechniqueAction(current.item, current.action, actor, event);
-    if (!useResult || useResult.err) return;
+    if (!delegatedWeaponAttack && !chakraFree && empowerConfig.enabled && !empower) {
+      empower = await resolveEmpowerChoice(current.item, actor, cost);
+      if (empower === "cancel") return;
+    }
 
-    if (!chakraFree && !canAffordTechnique(actor, current.item)) {
+    if (
+      !chakraFree &&
+      !canPayChakra(actor, empower?.totalCost ?? current.item.system.chakraCost ?? cost)
+    ) {
       ui.notifications.warn(
         game.i18n.format("NarutoD20.Notifications.NotEnoughChakra", {
           actor: actor.name,
@@ -149,6 +202,11 @@ export async function performTechnique(item, actionId, event = null) {
       );
       return;
     }
+
+    const useResult = await useTechniqueAction(current.item, current.action, actor, event, {
+      empower,
+    });
+    if (!useResult || useResult.err) return;
 
     let spend = null;
     if (upkeepFree) {
@@ -164,7 +222,7 @@ export async function performTechnique(item, actionId, event = null) {
         return;
       }
     } else {
-      cost = current.item.system.chakraCost ?? cost;
+      cost = empower?.totalCost ?? current.item.system.chakraCost ?? cost;
       spend = calculateChakraSpend(actor, cost);
       await applyChakraSpend(actor, spend);
     }
@@ -234,6 +292,24 @@ async function resolveRankMasteryFreeUseChoice(item, actor, cost) {
   return { useFree: choice === "free", item: currentItem };
 }
 
+async function resolveEmpowerChoice(item, actor, baseCost) {
+  const config = normalizeEmpowerConfig(item.system.automation?.empower);
+  if (!config.enabled) return null;
+
+  const rollData = item.getRollData?.() ?? {};
+  rollData.cl = getTechniqueCasterLevel(item);
+  const availableExtraChakra = Math.max(
+    0,
+    availableChakra(actor) - Math.max(0, Number(baseCost) || 0),
+  );
+  const maxSteps = await resolveEmpowerStepLimit({ config, rollData, availableExtraChakra });
+  if (maxSteps <= 0) return resolveEmpowerUse({ config, steps: 0, baseCost });
+
+  const steps = await promptEmpowerSteps(item, config, maxSteps);
+  if (steps === null) return "cancel";
+  return resolveEmpowerUse({ config, steps, baseCost });
+}
+
 function promptRankMasteryFreeUse(actor, item, cost) {
   return new Promise((resolve) => {
     let resolved = false;
@@ -273,28 +349,76 @@ function promptRankMasteryFreeUse(actor, item, cost) {
   });
 }
 
-async function resolvePerformCheck(item, actor) {
+function promptEmpowerSteps(item, config, maxSteps) {
+  return new Promise((resolve) => {
+    let resolved = false;
+    const done = (value) => {
+      if (resolved) return;
+      resolved = true;
+      resolve(value);
+    };
+
+    const content = `
+      <form>
+        <p>${game.i18n.format("NarutoD20.Empower.Prompt", {
+          name: item.name,
+          cost: config.costPerStep,
+          formula: config.formulaPerStep,
+        })}</p>
+        <div class="form-group">
+          <label>${game.i18n.localize("NarutoD20.Empower.Steps")}</label>
+          <input type="number" name="steps" value="0" min="0" max="${maxSteps}" step="1">
+        </div>
+      </form>`;
+
+    new Dialog({
+      title: game.i18n.format("NarutoD20.Empower.Title", { name: item.name }),
+      content,
+      buttons: {
+        roll: {
+          icon: '<i class="fas fa-bolt"></i>',
+          label: game.i18n.localize("PF1.Roll"),
+          callback: (html) => {
+            const raw = Number(html.find("input[name='steps']").val());
+            done(Math.max(0, Math.min(maxSteps, Math.floor(raw) || 0)));
+          },
+        },
+        cancel: {
+          icon: '<i class="fas fa-times"></i>',
+          label: game.i18n.localize("NarutoD20.Common.Cancel"),
+          callback: () => done(null),
+        },
+      },
+      default: "roll",
+      close: () => done(null),
+    }).render(true);
+  });
+}
+
+async function resolvePerformCheck(item, actor, { dcBonus = 0, note = "" } = {}) {
   const sys = item.system;
   const derived = sys.derived;
   const skillKey = DISCIPLINE_SKILL_MAP[sys.discipline];
   const skillRanks = skillKey ? (actor.system.skills?.[skillKey]?.rank ?? 0) : Infinity;
   const threshold = derived.skillThreshold;
-  const performDC = derived.performDC;
+  const performDC = derived.performDC + Math.max(0, Number(dcBonus) || 0);
   const masteryPerform = derived.masteryPerform ?? 0;
   const masteryNote =
     masteryPerform > 0
       ? game.i18n.format("NarutoD20.Cards.Perform.MasteryNote", { value: masteryPerform })
       : "";
+  const empowerNote = note ? ` ${note}` : "";
+  const dcNote = `${masteryNote}${empowerNote}`;
 
   if (!skillKey || skillRanks + masteryPerform >= threshold) {
     return {
       succeeded: true,
       performDC,
-      masteryNote,
+      masteryNote: dcNote,
       bypassNote: skillKey
         ? game.i18n.format("NarutoD20.Cards.Perform.AutoBypass", {
             ranks: skillRanks,
-            mastery: masteryNote,
+            mastery: dcNote,
             threshold,
           })
         : game.i18n.localize("NarutoD20.Cards.Perform.NoCheckRequired"),
@@ -308,7 +432,7 @@ async function resolvePerformCheck(item, actor) {
   return {
     succeeded: (rollMessage?.rolls?.[0]?.total ?? 0) + masteryPerform >= performDC,
     performDC,
-    masteryNote,
+    masteryNote: dcNote,
     bypassNote: null,
     rollVisibility: chatVisibilityFrom(rollMessage),
   };
@@ -327,7 +451,7 @@ function resolveCurrentTechniqueAction(actor, item, actionId, actionIndex, phase
   return { item: currentItem, action };
 }
 
-async function useTechniqueAction(item, action, actor, event) {
+async function useTechniqueAction(item, action, actor, event, options = {}) {
   const weaponAttackConfig = getTechniqueWeaponAttackConfig(item);
   if (weaponAttackConfig) {
     return rollSelectedWeaponAttackWithTechnique({
@@ -336,11 +460,12 @@ async function useTechniqueAction(item, action, actor, event) {
       actor,
       config: weaponAttackConfig,
       event,
+      empower: options.empower,
     });
   }
 
   const cleanup = [];
-  installTechniqueAttackAdjustmentsHook(item, actor, action, cleanup);
+  installTechniqueActionUseHook(item, actor, action, cleanup, options.empower);
   try {
     const useResult = await item.use({
       actionId: action.id,

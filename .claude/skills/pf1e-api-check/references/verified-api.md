@@ -33,6 +33,26 @@ Append new verified facts under the matching section. Never add a guessed entry.
   `unregister`. So module-registered custom damage types are looked up bare — naruto-d20's
   are `earth`/`water`/`wind`/`holy` (NOT `naruto-d20.earth`). Confirmed by existing content:
   every technique stores bare ids in `types[]`.
+- `ItemPF#use(...)` seeds shared action-use data with `action`, `rollData`, `attackBonus`, and
+  `damageBonus` → `module/documents/item/item-pf.mjs:1743`; `ActionUse#process` calls
+  `Hooks.callAll("pf1CreateActionUse", this)` after roll data is prepared and before attacks,
+  damage, and the attack dialog are generated → `module/action-use/action-use.mjs:1599`;
+  `ActionUse#addAttacks` and `ActionUse#addDamage` pass `shared.damageBonus` into
+  `ChatAttack.addDamage(...)` → `module/action-use/action-use.mjs:712`, `:772`.
+- `ItemAction.damage` schema → `module/components/action.mjs:139-143`: a `SchemaField` with
+  `parts`, `critParts`, `nonCritParts`, each an `ArrayField(EmbeddedDataField(DamagePartModel))`.
+  `DamagePartModel` → `module/models/action/damage-part-model.mjs:5`: fields are
+  `formula: FormulaField` and `types: SetField(StringField)` (bare damage-type ids like
+  `"fire"`, `"earth"`, etc.). `rollDamage` reads these at `action.mjs:1651-1668` via
+  `addParts("parts","normal")` — it only reads `.formula` and `.types` off each entry, so
+  **a plain `{ formula, types: string[] }` object pushed into the live array also works** (no
+  `DamagePartModel` instance required).
+- **Mutating `actionUse.shared.action.damage.parts` in `pf1CreateActionUse`** is a confirmed
+  pattern for injecting typed damage at roll time: push `{ formula, types }` before the hook
+  returns; `rollDamage` (called later via `addDamage`) reads the array live. Remember to
+  `splice` the injected entry in a cleanup after the action resolves to avoid persisting it on
+  the shared action data. `shared.damageBonus` (already documented) is the simpler alternative
+  for untyped bonus damage with no damage-type tag.
 - `Hooks.call("pf1PreDamageRoll", action, rollData, parts, changes)` →
   `module/components/action.mjs:1704`. `parts` is a mutable array; each entry is
   `{ base: <formula>, extra: [], damageType: <types array>, type }`

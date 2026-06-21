@@ -387,6 +387,37 @@ export function createTechniqueDataModel() {
               initial: "auto",
               choices: ["auto", "self", "selected"],
             }),
+            empower: new fields.SchemaField(
+              {
+                enabled: new fields.BooleanField({ ...opt, initial: false }),
+                mode: new fields.StringField({
+                  ...opt,
+                  blank: false,
+                  initial: "damageBonus",
+                  choices: ["damageBonus"],
+                }),
+                costPerStep: new fields.NumberField({ ...opt, integer: true, initial: 1, min: 1 }),
+                formulaPerStep: new fields.StringField({ ...opt, blank: true, initial: "1d6" }),
+                damageTypes: new fields.ArrayField(
+                  new fields.StringField({ blank: false, required: true }),
+                  { ...opt, initial: [] },
+                ),
+                maxStepsFormula: new fields.StringField({ ...opt, blank: true, initial: "" }),
+                performIncreaseEvery: new fields.NumberField({
+                  ...opt,
+                  integer: true,
+                  initial: 0,
+                  min: 0,
+                }),
+                performIncreaseAmount: new fields.NumberField({
+                  ...opt,
+                  integer: true,
+                  initial: 0,
+                  min: 0,
+                }),
+              },
+              opt,
+            ),
             maintenance: new fields.SchemaField(
               {
                 // Turn-start maintenance on/off. A maintained buff expires at turn start;

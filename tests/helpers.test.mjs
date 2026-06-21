@@ -8,6 +8,14 @@ import {
   applyTechniqueSystemDefaults,
   legacyAutomationToMaintenance,
 } from "../scripts/data/technique-defaults.mjs";
+import {
+  buildEmpowerDamageFormula,
+  empowerPerformIncrease,
+  normalizeEmpowerConfig,
+  resolveEmpowerStepLimit,
+  resolveEmpowerUse,
+  shouldPromptEmpowerBeforePerform,
+} from "../scripts/automation/technique-empower.mjs";
 import { maintenanceMigrationPatch } from "../scripts/data/maintenance-migration.mjs";
 import {
   computeTechniqueDerived,
@@ -190,6 +198,16 @@ describe("technique defaults", () => {
     assert.equal(system.learning.learned, false);
     assert.equal(system.automation.enabled, true);
     assert.equal(system.automation.targetMode, "auto");
+    assert.deepEqual(system.automation.empower, {
+      enabled: false,
+      mode: "damageBonus",
+      costPerStep: 1,
+      formulaPerStep: "1d6",
+      damageTypes: [],
+      maxStepsFormula: "",
+      performIncreaseEvery: 0,
+      performIncreaseAmount: 0,
+    });
     assert.deepEqual(system.automation.maintenance, {
       enabled: false,
       resource: "",
@@ -307,6 +325,198 @@ describe("technique defaults", () => {
       "applyTechniqueSystemDefaults must default every automation.maintenance schema field " +
         "(see scripts/data/technique-defaults.mjs) or synckit will flag unedited techniques out-of-date",
     );
+  });
+
+  it("backfills every automation.empower field declared in the schema", () => {
+    const leaf = class {};
+    const prevData = globalThis.foundry.data;
+    const prevAbstract = globalThis.foundry.abstract;
+    globalThis.foundry.abstract = { TypeDataModel: class {} };
+    globalThis.foundry.data = {
+      fields: {
+        SchemaField: class {
+          constructor(schema) {
+            this.fields = schema;
+          }
+        },
+        ArrayField: class {
+          constructor(element) {
+            this.element = element;
+          }
+        },
+        SetField: class {
+          constructor(element) {
+            this.element = element;
+          }
+        },
+        StringField: leaf,
+        NumberField: leaf,
+        BooleanField: leaf,
+        HTMLField: leaf,
+        ObjectField: leaf,
+      },
+    };
+
+    let schemaKeys;
+    try {
+      const schema = createTechniqueDataModel().defineSchema();
+      schemaKeys = Object.keys(schema.automation.fields.empower.fields).sort();
+    } finally {
+      globalThis.foundry.data = prevData;
+      globalThis.foundry.abstract = prevAbstract;
+    }
+
+    const normalizerKeys = Object.keys(applyTechniqueSystemDefaults({}).automation.empower).sort();
+
+    assert.deepEqual(
+      normalizerKeys,
+      schemaKeys,
+      "applyTechniqueSystemDefaults must default every automation.empower schema field " +
+        "(see scripts/data/technique-defaults.mjs) or synckit will flag unedited techniques out-of-date",
+    );
+  });
+});
+
+describe("technique empower helpers", () => {
+  it("normalizes disabled and enabled config", () => {
+    assert.equal(normalizeEmpowerConfig({})?.enabled, false);
+    assert.deepEqual(
+      normalizeEmpowerConfig({
+        enabled: true,
+        mode: "damageBonus",
+        costPerStep: 2,
+        formulaPerStep: "1d8",
+        damageTypes: ["fire"],
+        maxStepsFormula: "@cl - 5",
+        performIncreaseEvery: 2,
+        performIncreaseAmount: 1,
+      }),
+      {
+        enabled: true,
+        mode: "damageBonus",
+        costPerStep: 2,
+        formulaPerStep: "1d8",
+        damageTypes: ["fire"],
+        maxStepsFormula: "@cl - 5",
+        performIncreaseEvery: 2,
+        performIncreaseAmount: 1,
+      },
+    );
+  });
+
+  it("builds readable damage formulas", () => {
+    assert.equal(buildEmpowerDamageFormula({ steps: 0, formulaPerStep: "1d6" }), "");
+    assert.equal(buildEmpowerDamageFormula({ steps: 3, formulaPerStep: "1d6" }), "3d6[Empower]");
+    assert.equal(buildEmpowerDamageFormula({ steps: 2, formulaPerStep: "1d8" }), "2d8[Empower]");
+    assert.equal(buildEmpowerDamageFormula({ steps: 2, formulaPerStep: "1d6+1" }), "2 * (1d6+1)[Empower]");
+  });
+
+  it("computes perform DC increases by complete groups", () => {
+    assert.equal(
+      empowerPerformIncrease({
+        steps: 5,
+        performIncreaseEvery: 2,
+        performIncreaseAmount: 1,
+      }),
+      2,
+    );
+    assert.equal(
+      empowerPerformIncrease({
+        steps: 5,
+        performIncreaseEvery: 0,
+        performIncreaseAmount: 1,
+      }),
+      0,
+    );
+  });
+
+  it("knows when empower must be chosen before perform", () => {
+    assert.equal(shouldPromptEmpowerBeforePerform({ performIncreaseEvery: 2 }), true);
+    assert.equal(shouldPromptEmpowerBeforePerform({ performIncreaseEvery: 0 }), false);
+  });
+
+  it("builds a use context with total cost and damage formula", () => {
+    assert.deepEqual(
+      resolveEmpowerUse({
+        config: {
+          enabled: true,
+          mode: "damageBonus",
+          costPerStep: 1,
+          formulaPerStep: "1d8",
+          damageTypes: ["untyped"],
+          performIncreaseEvery: 2,
+          performIncreaseAmount: 1,
+        },
+        steps: 3,
+        baseCost: 11,
+      }),
+      {
+        steps: 3,
+        extraCost: 3,
+        totalCost: 14,
+        damageFormula: "3d8[Empower]",
+        damageTypes: ["untyped"],
+        performIncrease: 1,
+      },
+    );
+  });
+
+  it("caps steps by formula, available chakra, and cost per step", async () => {
+    assert.equal(
+      await resolveEmpowerStepLimit({
+        config: { maxStepsFormula: "@cl - 7", costPerStep: 1 },
+        rollData: { cl: 11 },
+        availableExtraChakra: 10,
+      }),
+      4,
+    );
+    assert.equal(
+      await resolveEmpowerStepLimit({
+        config: { maxStepsFormula: "min(@cl, 18) - 7", costPerStep: 1 },
+        rollData: { cl: 11 },
+        availableExtraChakra: 10,
+      }),
+      4,
+    );
+    assert.equal(
+      await resolveEmpowerStepLimit({
+        config: { maxStepsFormula: "", costPerStep: 2 },
+        rollData: { cl: 20 },
+        availableExtraChakra: 5,
+      }),
+      2,
+    );
+  });
+
+  it("supports min/max/floor/ceil and rejects injected identifiers", async () => {
+    assert.equal(
+      await resolveEmpowerStepLimit({
+        config: { maxStepsFormula: "max(floor(@cl / 2), ceil(3.2))", costPerStep: 1 },
+        rollData: { cl: 11 },
+        availableExtraChakra: 10,
+      }),
+      5,
+    );
+
+    const previousFlag = globalThis.__empowerExploit;
+    globalThis.__empowerExploit = 0;
+    try {
+      assert.equal(
+        await resolveEmpowerStepLimit({
+          config: { maxStepsFormula: "@cl + globalThis.__empowerExploit = 1", costPerStep: 1 },
+          rollData: { cl: 11 },
+          availableExtraChakra: 10,
+        }),
+        0,
+      );
+      assert.equal(globalThis.__empowerExploit, 0);
+    } finally {
+      if (previousFlag === undefined) {
+        delete globalThis.__empowerExploit;
+      } else {
+        globalThis.__empowerExploit = previousFlag;
+      }
+    }
   });
 });
 
@@ -1627,6 +1837,39 @@ describe("source JSON validation", () => {
     assert.ok(
       messages.some((m) => m.includes("occupation technique option not found: Missing Technique")),
     );
+  });
+
+  it("reports invalid damage empower config", () => {
+    const { root, sourceRoot } = makeSourceRoot({
+      techniques: {
+        "bad-empower.json": techniqueDoc({
+          system: {
+            automation: {
+              empower: {
+                enabled: true,
+                mode: "unknown",
+                costPerStep: 0,
+                formulaPerStep: "",
+                damageTypes: "fire",
+                performIncreaseEvery: -1,
+                performIncreaseAmount: -1,
+              },
+            },
+          },
+        }),
+      },
+    });
+
+    const result = validateCompendia({ root, sourceRoot });
+    const messages = result.issues.map((i) => i.message);
+
+    assert.equal(result.failed, true);
+    assert.ok(messages.some((m) => m.includes("unsupported automation.empower.mode")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.costPerStep")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.formulaPerStep")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.damageTypes")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.performIncreaseEvery")));
+    assert.ok(messages.some((m) => m.includes("automation.empower.performIncreaseAmount")));
   });
 
   it("accepts advanced bloodline feat options when matching feats exist", () => {

@@ -74,6 +74,19 @@ function applyTechniqueAttackAdjustments(actionUse, technique, cleanup) {
   }
 }
 
+function applyEmpowerDamage(actionUse, empower, cleanup) {
+  if (!empower?.steps || !empower.damageFormula) return;
+
+  if (empower.damageTypes?.length) {
+    const parts = (actionUse.shared.action.damage.parts ??= []);
+    const originalLength = parts.length;
+    parts.push({ formula: empower.damageFormula, types: [...empower.damageTypes] });
+    cleanup.push(() => parts.splice(originalLength, 1));
+  } else {
+    actionUse.shared.damageBonus.push(empower.damageFormula);
+  }
+}
+
 /**
  * Read the `system.flags.dictionary.weaponAttack` config in both supported
  * shapes — a nested object (`weaponAttack: { mode, filter, … }`) and dotted
@@ -220,6 +233,7 @@ export async function rollSelectedWeaponAttackWithTechnique({
   actor,
   config,
   event,
+  empower = null,
 }) {
   const selection = await selectTechniqueWeaponAttack(actor, technique, config);
   if (!selection) return null;
@@ -246,6 +260,7 @@ export async function rollSelectedWeaponAttackWithTechnique({
     }
 
     applyTechniqueAttackAdjustments(actionUse, technique, cleanup);
+    applyEmpowerDamage(actionUse, empower, cleanup);
 
     if (config.extraAttacks?.length) {
       const exAtk = actionUse.shared.action.extraAttacks;
