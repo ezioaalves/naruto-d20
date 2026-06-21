@@ -67,6 +67,7 @@ const WEAPON_ATTACK_KEYS = new Set([
   "extraAttacks",
   "held",
   "charge",
+  "suppressedBonuses",
 ]);
 const WEAPON_ATTACK_MODES = new Set(["selected"]);
 const WEAPON_ATTACK_DAMAGE_MODES = new Set(["add", "replace"]);
@@ -76,6 +77,7 @@ const WEAPON_ATTACK_FILTERS = new Set([
   "unarmedOnly",
   "meleeOrUnarmed",
 ]);
+const WEAPON_ATTACK_SUPPRESSED_BONUSES = new Set(["naturalAttack", "abilityDamage"]);
 const TRAINING_WEIGHT_TABLE = Object.freeze({
   1: Object.freeze({ weight: 25, rankPenalty: 1, learnBonus: 1 }),
   2: Object.freeze({ weight: 37.5, rankPenalty: 2, learnBonus: 2 }),
@@ -187,6 +189,7 @@ function validateCommon({ doc, filename, packName, expectedType }) {
   validateActions(packName, filename, doc.system?.actions, {
     technique: doc.type === "naruto-d20.technique",
     range: doc.system?.range,
+    suppressedBonuses: weaponAttackSuppressedBonuses(doc.system?.flags?.dictionary),
   });
   validateChanges(packName, filename, doc.system?.changes);
   validateLinks(packName, filename, doc.system?.links);
@@ -205,7 +208,12 @@ function validateUniqueIds(packName, docs) {
   }
 }
 
-function validateActions(packName, filename, actions, { technique = false, range } = {}) {
+function validateActions(
+  packName,
+  filename,
+  actions,
+  { technique = false, range, suppressedBonuses = new Set() } = {},
+) {
   if (actions === undefined) return;
   if (!Array.isArray(actions)) {
     error(packName, filename, "system.actions must be an array");
@@ -228,7 +236,8 @@ function validateActions(packName, filename, actions, { technique = false, range
       error(packName, filename, `${prefix} duplicates action _id "${action._id}"`);
     else seen.add(action._id);
 
-    if (technique) validateTechniqueAction(packName, filename, prefix, action, range);
+    if (technique)
+      validateTechniqueAction(packName, filename, prefix, action, range, suppressedBonuses);
   });
 }
 
@@ -242,7 +251,7 @@ function isMeleeTouchRange(range) {
   );
 }
 
-function validateTechniqueAction(packName, filename, prefix, action, range) {
+function validateTechniqueAction(packName, filename, prefix, action, range, suppressedBonuses) {
   const type = action.actionType;
   if (type === "msak" || type === "rsak") {
     error(
@@ -267,10 +276,30 @@ function validateTechniqueAction(packName, filename, prefix, action, range) {
       if (hasActionDamage(action) && damage) {
         error(packName, filename, `${prefix} melee touch with damage should use ability.damage=""`);
       }
-    } else if (hasActionDamage(action) && damage !== "str") {
+    } else if (
+      hasActionDamage(action) &&
+      damage !== "str" &&
+      !suppressedBonuses.has("abilityDamage")
+    ) {
       error(packName, filename, `${prefix} ${type} with damage should use ability.damage="str"`);
     }
   }
+}
+
+function weaponAttackSuppressedBonuses(dict) {
+  if (!isPlainObject(dict)) return new Set();
+
+  const nested =
+    dict[WEAPON_ATTACK_PREFIX] &&
+    typeof dict[WEAPON_ATTACK_PREFIX] === "object" &&
+    !Array.isArray(dict[WEAPON_ATTACK_PREFIX])
+      ? dict[WEAPON_ATTACK_PREFIX]
+      : null;
+  const raw = nested?.suppressedBonuses ?? dict[`${WEAPON_ATTACK_PREFIX}.suppressedBonuses`];
+  if (raw === undefined) return new Set();
+
+  const values = Array.isArray(raw) ? raw : String(raw).split(",");
+  return new Set(values.map((value) => String(value).trim()).filter(Boolean));
 }
 
 function hasActionDamage(action) {
@@ -424,6 +453,16 @@ function validateWeaponAttack(doc, filename, packName) {
   const charge = str("charge").toLowerCase();
   if (charge && charge !== "true" && charge !== "false")
     error(packName, filename, `weaponAttack.charge must be "true" or "false"`);
+
+  const suppressedBonuses = str("suppressedBonuses");
+  if (suppressedBonuses) {
+    for (const token of suppressedBonuses.split(",")) {
+      const value = token.trim();
+      if (value && !WEAPON_ATTACK_SUPPRESSED_BONUSES.has(value)) {
+        error(packName, filename, `unsupported weaponAttack.suppressedBonuses token "${value}"`);
+      }
+    }
+  }
 }
 
 function validateEmpower(packName, filename, empower, hasComponent) {

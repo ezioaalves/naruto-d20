@@ -71,7 +71,7 @@
         },
         "ability": {
           "attack": "dex",
-          "damage": "str",
+          "damage": "",
           "critRange": 20,
           "critMult": 2
         }
@@ -104,7 +104,12 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.damageMode": "replace",
+        "weaponAttack.suppressedBonuses": "naturalAttack,abilityDamage"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false,

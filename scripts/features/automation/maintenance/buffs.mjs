@@ -1,7 +1,9 @@
-import { MODULE_ID } from "../../../core/constants.mjs";
+import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../../../core/constants.mjs";
 
 export const MAINTENANCE_BUFF_FLAG = "maintenanceBuff";
 export const MAINTENANCE_BUFF_FLAG_PATH = `flags.${MODULE_ID}.${MAINTENANCE_BUFF_FLAG}`;
+export const STANCE_SOURCE_TECHNIQUE_ID_FLAG = "stanceSourceTechniqueId";
+export const STANCE_SOURCE_TECHNIQUE_ID_FLAG_PATH = `flags.${MODULE_ID}.${STANCE_SOURCE_TECHNIQUE_ID_FLAG}`;
 
 export const MAINTENANCE_MODES = [
   { id: "dex", suffix: "Dexterity", labelKey: "NarutoD20.Maintenance.Dexterity" },
@@ -124,6 +126,7 @@ export function maintenanceFacets(item) {
     waiverStep: Number(m.waiverStep ?? 2) || 0,
     freeRounds: Math.max(1, Number(m.freeRounds) || 5),
     choice: m.choice ?? "",
+    allowStanceStacking: m.allowStanceStacking === true,
     heal: m.heal ?? "",
     clearConditions: String(m.clearConditions ?? "")
       .split(",")
@@ -173,6 +176,64 @@ export function maintenanceBuffFlagData({
 
 export function getMaintenanceBuffFlag(item) {
   return item?.flags?.[MODULE_ID]?.[MAINTENANCE_BUFF_FLAG] ?? null;
+}
+
+export function isStanceTechnique(item) {
+  return String(item?.system?.subtype ?? "")
+    .toLowerCase()
+    .split(/\s*,\s*/)
+    .includes("stance");
+}
+
+export function allowsStanceStacking(item) {
+  return (
+    isStanceTechnique(item) && item?.system?.automation?.maintenance?.allowStanceStacking === true
+  );
+}
+
+function actorItems(actor) {
+  return Array.from(actor?.items ?? []);
+}
+
+function itemId(item) {
+  return item?.id ?? item?._id ?? null;
+}
+
+function findActorItemById(actor, id) {
+  if (!actor || !id) return null;
+  return actor.items?.get?.(id) ?? actorItems(actor).find((item) => itemId(item) === id) ?? null;
+}
+
+export function getTrackedStanceSourceTechnique(actor, item) {
+  const maintenanceSourceId = getMaintenanceBuffFlag(item)?.sourceTechniqueId;
+  if (maintenanceSourceId) return findActorItemById(actor, maintenanceSourceId);
+
+  const stanceSourceId = item?.flags?.[MODULE_ID]?.[STANCE_SOURCE_TECHNIQUE_ID_FLAG];
+  if (stanceSourceId) return findActorItemById(actor, stanceSourceId);
+
+  if (item?.type !== "buff") return null;
+  const name = item?.name;
+  if (!name) return null;
+  return (
+    actorItems(actor).find(
+      (candidate) =>
+        candidate.type === TECHNIQUE_ITEM_TYPE &&
+        candidate.name === name &&
+        isStanceTechnique(candidate),
+    ) ?? null
+  );
+}
+
+export function findConflictingStanceBuffs(actor, technique) {
+  if (!actor || !isStanceTechnique(technique) || allowsStanceStacking(technique)) return [];
+
+  const activatingTechniqueId = itemId(technique);
+  return actorItems(actor).filter((item) => {
+    const sourceTechnique = getTrackedStanceSourceTechnique(actor, item);
+    if (!sourceTechnique) return false;
+    if (itemId(sourceTechnique) === activatingTechniqueId) return false;
+    return !allowsStanceStacking(sourceTechnique);
+  });
 }
 
 export function findMaintenanceBuffForTechnique(actor, techniqueId) {

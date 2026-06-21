@@ -680,6 +680,12 @@
           {{selectOptions maintenanceChoiceChoices selected=system.automation.maintenance.choice}}
         </select>
       </div>
+      {{#if maintenanceFields.showAllowStanceStacking}}
+      <label class="checkbox">
+        <input type="checkbox" name="system.automation.maintenance.allowStanceStacking" {{checked system.automation.maintenance.allowStanceStacking}}>
+        {{localize "NarutoD20.Automation.Maintenance.AllowStanceStacking.Label"}}
+      </label>
+      {{/if}}
       <label class="checkbox">
         <input type="checkbox" name="system.automation.maintenance.element" {{checked system.automation.maintenance.element}}>
         {{localize "NarutoD20.Automation.Maintenance.Element.Label"}}

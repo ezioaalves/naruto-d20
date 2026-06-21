@@ -177,6 +177,10 @@ export function createTechniqueItemSheet() {
         hasCost: Boolean(maintenance.resource),
         showWaiverStep: maintenance.waiver === "step",
         showFreeRounds: maintenance.waiver === "freeUse",
+        showAllowStanceStacking: String(system.subtype ?? "")
+          .toLowerCase()
+          .split(/\s*,\s*/)
+          .includes("stance"),
         showElementDoubleStep: maintenance.element === true,
       };
       context.empowerModeChoices = {

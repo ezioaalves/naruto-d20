@@ -73,6 +73,13 @@
       "boolean": {},
       "dictionary": {}
     },
+    "automation": {
+      "enabled": true,
+      "targetMode": "auto",
+      "maintenance": {
+        "allowStanceStacking": true
+      }
+    },
     "showInQuickbar": false,
     "showInCombat": false,
     "sources": [

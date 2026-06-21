@@ -1,5 +1,6 @@
 import { getTechniqueCasterLevel } from "./rolldata.mjs";
 import { setTechniqueSaveDCContext } from "./save-dc.mjs";
+import { getActiveElements } from "../automation/maintenance/element-damage.mjs";
 
 const CONFIG_PREFIX = "weaponAttack";
 const DEFAULT_FILTER = "meleeWeapon";
@@ -17,10 +18,14 @@ const KNOWN_KEYS = new Set([
   "extraAttacks",
   "held",
   "charge",
+  "suppressedBonuses",
 ]);
+const SUPPORTED_SUPPRESSED_BONUSES = new Set(["naturalAttack", "abilityDamage"]);
 const ISSUE_TEMPLATES = {
   Malformed: '"{prefix}" must be an object or use dotted "{prefix}.*" keys',
   UnknownField: 'unknown field "{field}"',
+  UnsupportedSuppressedBonus:
+    'unsupported "{field}" token "{value}" (expected one of "{expected}")',
   MissingMode: 'missing "{field}" (expected "{expected}")',
   UnsupportedMode: 'unsupported "{field}" = "{value}" (expected "{expected}")',
   UnsupportedFilter: 'unsupported "{field}" = "{value}"; using "{fallback}"',
@@ -36,6 +41,11 @@ function formatWeaponAttackIssue(key, data = {}) {
   const i18nKey = `NarutoD20.WeaponAttackIssues.${key}`;
   if (globalThis.game?.i18n?.format) return globalThis.game.i18n.format(i18nKey, data);
   return formatIssueTemplate(ISSUE_TEMPLATES[key] ?? key, data);
+}
+
+function deepClone(value) {
+  if (globalThis.foundry?.utils?.deepClone) return foundry.utils.deepClone(value);
+  return structuredClone(value);
 }
 
 function getTechniqueAttackAdjustments(technique) {
@@ -193,6 +203,26 @@ export function parseWeaponAttackConfig({ values, keys, malformed }) {
         .filter((e) => e.formula)
     : [];
 
+  const suppressedBonuses = [];
+  const rawSuppressions = str("suppressedBonuses");
+  if (rawSuppressions) {
+    for (const token of rawSuppressions.split(",")) {
+      const value = token.trim();
+      if (!value) continue;
+      if (SUPPORTED_SUPPRESSED_BONUSES.has(value)) {
+        suppressedBonuses.push(value);
+        continue;
+      }
+      warnings.push(
+        issue("UnsupportedSuppressedBonus", {
+          field: `${CONFIG_PREFIX}.suppressedBonuses`,
+          value,
+          expected: Array.from(SUPPORTED_SUPPRESSED_BONUSES).join(", "),
+        }),
+      );
+    }
+  }
+
   return {
     config: {
       mode,
@@ -204,6 +234,7 @@ export function parseWeaponAttackConfig({ values, keys, malformed }) {
       extraAttacks,
       held: str("held"),
       charge: chargeRaw === "true",
+      suppressedBonuses,
     },
     warnings,
   };
@@ -249,7 +280,9 @@ export async function rollSelectedWeaponAttackWithTechnique({
     applyTechniqueSave(actionUse, technique, techniqueAction, cleanup);
     if (config.damageMode === "replace") {
       replaceActionDetails(actionUse, techniqueAction, cleanup);
+      applyTechniqueElementDamageToActionUse(actionUse, getActiveElements(actor, technique), cleanup);
     }
+    applyTechniqueBonusSuppressions(actionUse, config.suppressedBonuses, cleanup);
     if (config.attackBonus) actionUse.shared.attackBonus.push(config.attackBonus);
     if (config.damageBonus) actionUse.shared.damageBonus.push(config.damageBonus);
     if (config.nonCritDamageBonus) {
@@ -294,6 +327,95 @@ export async function rollSelectedWeaponAttackWithTechnique({
     Hooks.off("pf1CreateActionUse", hook);
     for (const restore of cleanup.reverse()) restore();
   }
+}
+
+export function applyTechniqueBonusSuppressions(actionUse, suppressions = [], cleanup = []) {
+  if (!suppressions?.length) return;
+
+  const actions = [actionUse.shared?.action, actionUse.shared?.rollData?.action].filter(Boolean);
+  const uniqueActions = Array.from(new Set(actions));
+  if (suppressions.includes("abilityDamage")) {
+    for (const action of uniqueActions) suppressAbilityDamage(action, cleanup);
+  }
+  if (suppressions.includes("naturalAttack")) {
+    for (const action of uniqueActions) suppressNaturalAttackBonuses(action, cleanup);
+  }
+}
+
+function suppressAbilityDamage(action, cleanup) {
+  action.ability ??= {};
+  const previous = action.ability.damage;
+  action.ability.damage = "";
+  cleanup.push(() => {
+    action.ability.damage = previous;
+  });
+}
+
+function suppressNaturalAttackBonuses(action, cleanup) {
+  const previousAttackBonus = action.attackBonus;
+  action.attackBonus = "";
+  cleanup.push(() => {
+    action.attackBonus = previousAttackBonus;
+  });
+
+  suppressNaturalAttackContexts(action, cleanup);
+
+  const secondary = action.naturalAttack?.secondary;
+  if (!secondary) return;
+
+  const previousSecondaryAttackBonus = secondary.attackBonus;
+  secondary.attackBonus = "0";
+  cleanup.push(() => {
+    secondary.attackBonus = previousSecondaryAttackBonus;
+  });
+}
+
+function suppressNaturalAttackContexts(action, cleanup) {
+  const item = action.item;
+  if (typeof item?.getContextChanges !== "function") return;
+
+  const previousGetContextChanges = item.getContextChanges;
+  item.getContextChanges = function narutoTechniqueGetContextChanges(contexts, ...args) {
+    if (Array.isArray(contexts)) {
+      return previousGetContextChanges.call(
+        this,
+        contexts.filter((context) => context !== "nattack"),
+        ...args,
+      );
+    }
+    return previousGetContextChanges.call(this, contexts, ...args);
+  };
+  cleanup.push(() => {
+    item.getContextChanges = previousGetContextChanges;
+  });
+}
+
+export function applyTechniqueElementDamageToActionUse(actionUse, elements, cleanup = []) {
+  if (!Array.isArray(elements) || !elements.length) return;
+
+  const actions = [actionUse.shared?.action, actionUse.shared?.rollData?.action].filter(Boolean);
+  const uniqueActions = Array.from(new Set(actions));
+  for (const action of uniqueActions) applyTechniqueElementDamageToAction(action, elements, cleanup);
+}
+
+function applyTechniqueElementDamageToAction(action, elements, cleanup) {
+  action.damage ??= {};
+  const parts = (action.damage.parts ??= []);
+  if (!parts.length) return;
+
+  const snapshot = deepClone(parts);
+  const first = parts[0];
+  if (elements.length >= 2) {
+    first.formula = "1d6";
+    first.types = [elements[0]];
+    parts.splice(1, 0, { formula: "1d6", types: [elements[1]] });
+  } else {
+    first.types = [elements[0]];
+  }
+
+  cleanup.push(() => {
+    action.damage.parts = deepClone(snapshot);
+  });
 }
 
 function decorateActionUseChatData(actionUse, technique, techniqueAction) {

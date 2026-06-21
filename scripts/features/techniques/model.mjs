@@ -11,10 +11,7 @@
  */
 
 import { createActionId, isValidActionId } from "./action-ids.mjs";
-import {
-  applyTechniqueSystemDefaults,
-  legacyAutomationToMaintenance,
-} from "./defaults.mjs";
+import { applyTechniqueSystemDefaults, legacyAutomationToMaintenance } from "./defaults.mjs";
 
 /** Complexity lookup — Appendix B, Table B-1. */
 export const COMPLEXITY_TABLE = {
@@ -459,6 +456,7 @@ export function createTechniqueDataModel() {
                   initial: "",
                   choices: ["", "mode"],
                 }),
+                allowStanceStacking: new fields.BooleanField({ ...opt, initial: false }),
                 heal: new fields.StringField({ ...opt, blank: true, initial: "" }),
                 clearConditions: new fields.StringField({ ...opt, blank: true, initial: "" }),
                 // Entry-time element selection (chosen once on entry, reused while active).

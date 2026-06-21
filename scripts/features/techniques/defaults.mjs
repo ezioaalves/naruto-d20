@@ -105,6 +105,7 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   m.waiverStep ??= 2;
   m.freeRounds ??= 5;
   m.choice ??= "";
+  m.allowStanceStacking ??= false;
   m.heal ??= "";
   m.clearConditions ??= "";
   m.element ??= false;

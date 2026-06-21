@@ -347,6 +347,9 @@
         "WaiverStep": { "Label": "Mastery step for the waiver" },
         "FreeRounds": { "Label": "Free rounds granted by a free-use waiver" },
         "Choice": { "Label": "Per-turn choice", "None": "None", "Mode": "Mode swap (Dex/Str)" },
+        "AllowStanceStacking": {
+          "Label": "Can remain active alongside other stances"
+        },
         "Element": { "Label": "Choose damage element(s) on entry" },
         "ElementDoubleStep": { "Label": "Mastery step that allows two elements" }
       },

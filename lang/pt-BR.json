@@ -351,6 +351,9 @@
           "None": "Nenhuma",
           "Mode": "Troca de modo (Des/For)"
         },
+        "AllowStanceStacking": {
+          "Label": "Pode permanecer ativa junto com outras stances"
+        },
         "Element": { "Label": "Escolher elemento(s) de dano na entrada" },
         "ElementDoubleStep": { "Label": "Degrau de maestria que permite dois elementos" }
       },

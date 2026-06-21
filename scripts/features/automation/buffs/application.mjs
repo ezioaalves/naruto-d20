@@ -5,7 +5,12 @@ import {
   MAINTENANCE_BUFF_FLAG,
   MAINTENANCE_BUFF_FLAG_PATH,
   MAINTENANCE_MODES,
+  STANCE_SOURCE_TECHNIQUE_ID_FLAG,
+  STANCE_SOURCE_TECHNIQUE_ID_FLAG_PATH,
+  allowsStanceStacking,
+  findConflictingStanceBuffs,
   findMaintenanceBuffForTechnique,
+  isStanceTechnique,
   maintenanceBuffDuration,
   maintenanceBuffFlagData,
   maintenanceFacets,
@@ -76,10 +81,12 @@ export async function applyTechniqueBuff(item, actor, action) {
   const duration = context.duration ?? resolveBuffDurationFromAction(action);
 
   for (const targetActor of applyTargets) {
+    await removeConflictingExclusiveStances(targetActor, item);
     await applyBuffToTarget(buffDoc, targetActor, {
       duration,
       level: context.level,
       maintenanceBuff: context.maintenanceBuff,
+      stanceSourceTechniqueId: isStanceTechnique(item) ? item.id : null,
     });
   }
 }
@@ -117,6 +124,8 @@ export async function applyModeBuff(item, actor, modeId = null, interval = 1) {
   const buffDoc = await resolveBuffDocument(buffEntry);
   if (!buffDoc) return;
 
+  await removeConflictingExclusiveStances(actor, item);
+
   // Drop any previously applied mode buff for this technique before applying the new one.
   const existing = findMaintenanceBuffForTechnique(actor, item.id);
   if (existing && existing.flags?.[SOURCE_FLAG]?.sourceId !== buffDoc.uuid) {
@@ -132,6 +141,7 @@ export async function applyModeBuff(item, actor, modeId = null, interval = 1) {
       startRound: game.combat?.round ?? null,
       interval,
     }),
+    stanceSourceTechniqueId: isStanceTechnique(item) ? item.id : null,
   });
 }
 
@@ -159,6 +169,8 @@ export async function applyUpkeepBuff(item, actor, interval = 1, duration = null
   const buffDoc = await resolveBuffDocument(buffEntry);
   if (!buffDoc) return;
 
+  await removeConflictingExclusiveStances(actor, item);
+
   const facets = maintenanceFacets(item);
   const model = resolveMaintenanceModel(facets, duration);
 
@@ -176,6 +188,7 @@ export async function applyUpkeepBuff(item, actor, interval = 1, duration = null
         startRound,
         interval,
       }),
+      stanceSourceTechniqueId: isStanceTechnique(item) ? item.id : null,
     });
     await applyConditionBenefits(actor, facets);
     return;
@@ -191,8 +204,18 @@ export async function applyUpkeepBuff(item, actor, interval = 1, duration = null
       startRound: game.combat?.round ?? null,
       interval,
     }),
+    stanceSourceTechniqueId: isStanceTechnique(item) ? item.id : null,
   });
   await applyConditionBenefits(actor, facets);
+}
+
+async function removeConflictingExclusiveStances(actor, technique) {
+  if (!actor?.isOwner || !isStanceTechnique(technique) || allowsStanceStacking(technique)) return;
+  const ids = findConflictingStanceBuffs(actor, technique)
+    .map((item) => item.id)
+    .filter(Boolean);
+  if (!ids.length) return;
+  await actor.deleteEmbeddedDocuments("Item", ids);
 }
 
 async function removeMaintenanceBuff(actor, itemId) {
@@ -477,17 +500,24 @@ export async function applyBuffToTarget(buffDoc, targetActor, options = null) {
     return;
   }
 
-  const { duration, level, maintenanceBuff } = normalizeBuffApplyOptions(options);
+  const { duration, level, maintenanceBuff, stanceSourceTechniqueId } =
+    normalizeBuffApplyOptions(options);
   const sourceId = buffDoc.uuid;
   const existing = findExistingAppliedBuff(targetActor, sourceId);
 
   if (existing) {
-    await refreshExistingBuff(existing, { duration, level, maintenanceBuff });
+    await refreshExistingBuff(existing, {
+      duration,
+      level,
+      maintenanceBuff,
+      stanceSourceTechniqueId,
+    });
   } else {
     await createBuffOnTarget(buffDoc, targetActor, sourceId, {
       duration,
       level,
       maintenanceBuff,
+      stanceSourceTechniqueId,
     });
   }
 }
@@ -497,14 +527,21 @@ function normalizeBuffApplyOptions(options) {
     !options ||
     (!("duration" in Object(options)) &&
       !("level" in Object(options)) &&
-      !("maintenanceBuff" in Object(options)))
+      !("maintenanceBuff" in Object(options)) &&
+      !("stanceSourceTechniqueId" in Object(options)))
   ) {
-    return { duration: options ?? null, level: null, maintenanceBuff: null };
+    return {
+      duration: options ?? null,
+      level: null,
+      maintenanceBuff: null,
+      stanceSourceTechniqueId: null,
+    };
   }
   return {
     duration: options.duration ?? null,
     level: Number.isInteger(options.level) ? options.level : null,
     maintenanceBuff: options.maintenanceBuff ?? null,
+    stanceSourceTechniqueId: options.stanceSourceTechniqueId ?? null,
   };
 }
 
@@ -512,7 +549,10 @@ function findExistingAppliedBuff(targetActor, sourceId) {
   return targetActor.items.find((i) => i.flags?.[SOURCE_FLAG]?.sourceId === sourceId);
 }
 
-async function refreshExistingBuff(existing, { duration, level, maintenanceBuff }) {
+async function refreshExistingBuff(
+  existing,
+  { duration, level, maintenanceBuff, stanceSourceTechniqueId },
+) {
   const updates = { "system.active": true };
   if (duration) {
     updates["system.duration.units"] = duration.units;
@@ -526,6 +566,9 @@ async function refreshExistingBuff(existing, { duration, level, maintenanceBuff 
   if (maintenanceBuff) {
     updates[MAINTENANCE_BUFF_FLAG_PATH] = maintenanceBuff;
   }
+  if (stanceSourceTechniqueId) {
+    updates[STANCE_SOURCE_TECHNIQUE_ID_FLAG_PATH] = stanceSourceTechniqueId;
+  }
   await existing.update(updates);
 }
 
@@ -533,7 +576,7 @@ async function createBuffOnTarget(
   buffDoc,
   targetActor,
   sourceId,
-  { duration, level, maintenanceBuff },
+  { duration, level, maintenanceBuff, stanceSourceTechniqueId },
 ) {
   const itemData = buffDoc.toObject();
   delete itemData._id;
@@ -543,6 +586,9 @@ async function createBuffOnTarget(
   itemData.flags[SOURCE_FLAG] ??= {};
   itemData.flags[SOURCE_FLAG].sourceId = sourceId;
   if (maintenanceBuff) itemData.flags[SOURCE_FLAG][MAINTENANCE_BUFF_FLAG] = maintenanceBuff;
+  if (stanceSourceTechniqueId) {
+    itemData.flags[SOURCE_FLAG][STANCE_SOURCE_TECHNIQUE_ID_FLAG] = stanceSourceTechniqueId;
+  }
   if (temporaryChakraGrant > 0) {
     itemData.flags[SOURCE_FLAG].temporaryChakra = { remaining: temporaryChakraGrant };
   }
