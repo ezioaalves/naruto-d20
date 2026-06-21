@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Adicionar dano base (3d6 do elemento correto) e automação de empower nos 6 variantes de GODAI TAIGEKI: NIDAN JUTSU.
+**Goal:** Adicionar dano base (3d6 do elemento correto), automação de empower, e cone area com measureTemplate dinâmico nos 6 variantes de GODAI TAIGEKI: NIDAN JUTSU.
 
 **Architecture:** Edições diretas nos 6 arquivos JSON do compêndio em `packs/_source/techniques/`. Sem build step de código — só JSON + `npm run pack` ao final.
 
@@ -15,6 +15,8 @@
 - `maxStepsFormula` usa `@cl` (Character Level, injetado em `technique-rolldata.mjs`)
 - Tipos de dano: `"electric"`, `"earth"`, `"fire"`, `"wind"`, `"cold"`, `"water"` (PF1 standard + naruto-d20 custom)
 - `damage.parts[0].formula` = `"3d6"` em todos (base igual para toda a família NIDAN)
+- Todos os variantes têm area = Cone: adicionar `system.area: "Cone"` (campo de exibição) e dentro da action `"area": "Cone"` + `"measureTemplate": { "type": "cone", "size": "floor(@cl / 2) * 5 + 20" }`
+- O tamanho do cone é dinâmico baseado em `@cl`: fórmula `floor(@cl / 2) * 5 + 20` (= 20ft base + 5ft a cada 2 níveis, refletindo o alcance Medium da família)
 - `npm run pack` recompila só o compêndio `techniques` (não usar `pack:all`)
 - Sempre criar feature branch antes de commitar — nunca commitar diretamente na `master`
 
@@ -64,6 +66,13 @@ Em `system.actions[0]`, adicionar o campo `"damage"` entre `"range"` e `"save"`:
 },
 ```
 
+- [ ] **Setar `system.area` para exibição**
+
+No objeto `system` (nível raiz, campo de exibição), alterar:
+```json
+"area": "Cone",
+```
+
 O objeto `system.actions[0]` completo após edição:
 ```json
 {
@@ -76,6 +85,11 @@ O objeto `system.actions[0]` completo após edição:
   },
   "duration": { "units": "inst" },
   "range": { "units": "medium" },
+  "area": "Cone",
+  "measureTemplate": {
+    "type": "cone",
+    "size": "floor(@cl / 2) * 5 + 20"
+  },
   "damage": {
     "parts": [
       { "formula": "3d6", "types": ["electric"] }
@@ -135,6 +149,13 @@ Em `system.actions[0]`, adicionar o campo `"damage"` entre `"range"` e `"save"`:
 },
 ```
 
+- [ ] **Setar `system.area` para exibição**
+
+No objeto `system` (nível raiz), alterar:
+```json
+"area": "Cone",
+```
+
 O objeto `system.actions[0]` completo após edição:
 ```json
 {
@@ -147,6 +168,11 @@ O objeto `system.actions[0]` completo após edição:
   },
   "duration": { "units": "inst" },
   "range": { "units": "medium" },
+  "area": "Cone",
+  "measureTemplate": {
+    "type": "cone",
+    "size": "floor(@cl / 2) * 5 + 20"
+  },
   "damage": {
     "parts": [
       { "formula": "3d6", "types": ["earth"] }
@@ -206,6 +232,13 @@ Em `system.actions[0]`, adicionar o campo `"damage"` entre `"range"` e `"save"`:
 },
 ```
 
+- [ ] **Setar `system.area` para exibição**
+
+No objeto `system` (nível raiz), alterar:
+```json
+"area": "Cone",
+```
+
 O objeto `system.actions[0]` completo após edição:
 ```json
 {
@@ -218,6 +251,11 @@ O objeto `system.actions[0]` completo após edição:
   },
   "duration": { "units": "inst" },
   "range": { "units": "medium" },
+  "area": "Cone",
+  "measureTemplate": {
+    "type": "cone",
+    "size": "floor(@cl / 2) * 5 + 20"
+  },
   "damage": {
     "parts": [
       { "formula": "3d6", "types": ["fire"] }
@@ -277,6 +315,13 @@ Em `system.actions[0]`, adicionar o campo `"damage"` entre `"range"` e `"save"`:
 },
 ```
 
+- [ ] **Setar `system.area` para exibição**
+
+No objeto `system` (nível raiz), alterar:
+```json
+"area": "Cone",
+```
+
 O objeto `system.actions[0]` completo após edição:
 ```json
 {
@@ -289,6 +334,11 @@ O objeto `system.actions[0]` completo após edição:
   },
   "duration": { "units": "inst" },
   "range": { "units": "medium" },
+  "area": "Cone",
+  "measureTemplate": {
+    "type": "cone",
+    "size": "floor(@cl / 2) * 5 + 20"
+  },
   "damage": {
     "parts": [
       { "formula": "3d6", "types": ["wind"] }
@@ -348,6 +398,13 @@ Em `system.actions[0]`, adicionar o campo `"damage"` entre `"range"` e `"save"`:
 },
 ```
 
+- [ ] **Setar `system.area` para exibição**
+
+No objeto `system` (nível raiz), alterar:
+```json
+"area": "Cone",
+```
+
 O objeto `system.actions[0]` completo após edição:
 ```json
 {
@@ -360,6 +417,11 @@ O objeto `system.actions[0]` completo após edição:
   },
   "duration": { "units": "inst" },
   "range": { "units": "medium" },
+  "area": "Cone",
+  "measureTemplate": {
+    "type": "cone",
+    "size": "floor(@cl / 2) * 5 + 20"
+  },
   "damage": {
     "parts": [
       { "formula": "3d6", "types": ["cold"] }
@@ -419,6 +481,13 @@ Em `system.actions[0]`, adicionar o campo `"damage"` entre `"range"` e `"save"`:
 },
 ```
 
+- [ ] **Setar `system.area` para exibição**
+
+No objeto `system` (nível raiz), alterar:
+```json
+"area": "Cone",
+```
+
 O objeto `system.actions[0]` completo após edição:
 ```json
 {
@@ -431,6 +500,11 @@ O objeto `system.actions[0]` completo após edição:
   },
   "duration": { "units": "inst" },
   "range": { "units": "medium" },
+  "area": "Cone",
+  "measureTemplate": {
+    "type": "cone",
+    "size": "floor(@cl / 2) * 5 + 20"
+  },
   "damage": {
     "parts": [
       { "formula": "3d6", "types": ["water"] }
