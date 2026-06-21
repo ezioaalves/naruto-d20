@@ -15,6 +15,7 @@
  */
 
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "./constants.mjs";
+import { buildPublicApi } from "./public-api.mjs";
 import { BUFF_TARGETS, HERO_STAT_DEFAULTS, moduleFlagsPath } from "./flag-paths.mjs";
 import { createTechniqueDataModel } from "./data/technique-model.mjs";
 import { createTechniqueItemSheet } from "./ui/technique-sheet.mjs";
@@ -264,6 +265,11 @@ Hooks.once("setup", () => {
   registerTrainingWeightCarryPatch(); // subtract ignored Training Weight mass from encumbrance
   registerRankGrantConfig(); // "Naruto Rank" grant section on PF1e buff sheets
   registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog
+});
+
+Hooks.once("setup", () => {
+  const mod = game.modules.get(MODULE_ID);
+  if (mod) mod.api = buildPublicApi();
 });
 
 // ── [8] preCreateActor ────────────────────────────────────────────────────
