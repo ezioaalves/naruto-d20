@@ -69,12 +69,34 @@
           "type": "cone",
           "size": "30"
         },
+        "damage": {
+          "parts": [
+            {
+              "formula": "2d6",
+              "types": ["fire"]
+            }
+          ]
+        },
         "save": {
           "type": "ref",
           "description": "Reflex half"
         }
       }
     ],
+    "automation": {
+      "enabled": false,
+      "targetMode": "auto",
+      "empower": {
+        "enabled": true,
+        "mode": "damageBonus",
+        "costPerStep": 1,
+        "formulaPerStep": "1d6",
+        "damageTypes": ["fire"],
+        "maxStepsFormula": "min(@cl, 10) - 2",
+        "performIncreaseEvery": 0,
+        "performIncreaseAmount": 0
+      }
+    },
     "scriptCalls": [],
     "links": {
       "prerequisites": [],
