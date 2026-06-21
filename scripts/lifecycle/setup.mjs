@@ -1,0 +1,61 @@
+import { MODULE_ID } from "../constants.mjs";
+import { buildPublicApi } from "../public-api.mjs";
+import {
+  installChakraTabPatch,
+  installSynckitHeaderButton,
+  installTechniqueGetChatDataPatch,
+  installTechniqueGetDescriptionPatch,
+} from "../ui/render-patch.mjs";
+import { registerLearnCheckListeners } from "../ui/learn-checks.mjs";
+import { registerLearnCardContextMenu } from "../learn-technique.mjs";
+import { registerMasterCardContextMenu } from "../master-technique.mjs";
+import { registerNarutoRollContextMenu } from "../chat-rerolls.mjs";
+import { registerTechniqueListListeners } from "../ui/technique-list.mjs";
+import { registerSummaryStats, registerActorSettings } from "../ui/summary-stats.mjs";
+import { registerFeatListListeners } from "../ui/feat-list.mjs";
+import { registerFeatGrantDeletion } from "../automation/feat-grants.mjs";
+import {
+  registerOccupationAutoApply,
+  registerOccupationAutoRevert,
+} from "../automation/occupation-grants.mjs";
+import { registerChargeDefensePenalty } from "../automation/charge-defense.mjs";
+import { registerTurnMaintenance } from "../automation/turn-maintenance.mjs";
+import { registerElementDamage } from "../automation/maintenance-element-damage.mjs";
+import { registerRankRollData } from "../automation/rank-rolldata.mjs";
+import { registerTrainingWeightCarryPatch } from "../automation/training-weight-carry.mjs";
+import { registerRankGrantConfig } from "../ui/rank-grant-config.mjs";
+import { registerTapReservesListener } from "../ui/tap-reserves.mjs";
+import { registerChakraConditionCombatHooks } from "../data/chakra-conditions.mjs";
+
+export function registerSetupHook() {
+  Hooks.once("setup", () => {
+    registerChakraConditionCombatHooks(); // combat end -> apply delayed Low Reserve fatigue
+    installChakraTabPatch(); // _renderInner wrap — must run before first render
+    installSynckitHeaderButton(); // _getHeaderButtons wrap — "Sync Techniques" title-bar button
+    installTechniqueGetChatDataPatch(); // inject "Chakra Resistance" into item summary properties
+    installTechniqueGetDescriptionPatch(); // prepend technique stat-block header into chat card / item summary
+    registerLearnCheckListeners(); // .shinobi-roll + learn-check tooltips + chakra max tooltips
+    registerLearnCardContextMenu(); // learn chat card → right-click "Add Action Point"
+    registerMasterCardContextMenu(); // mastery chat card → right-click "Add Action Point"
+    registerNarutoRollContextMenu(); // Naruto d20 cards → AP / reroll context menu
+    registerTechniqueListListeners(); // chakra tab: filter, drop zone, CRUD
+    registerSummaryStats(); // Hero Statistics block on the Summary tab
+    registerActorSettings(); // Has Chakra toggle in the Settings tab
+    registerFeatListListeners(); // Naruto Browse button on the Features tab
+    registerFeatGrantDeletion(); // cascade-delete feat supplements on feat removal
+    registerOccupationAutoApply(); // occupation drop → prompt + apply grants
+    registerOccupationAutoRevert(); // occupation delete → reverse wealth/reputation
+    registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn
+    registerTurnMaintenance(); // start-of-turn maintenance + spent-buff cleanup
+    registerElementDamage(); // type configured maintenance-element attack damage at roll time
+    registerRankRollData(); // KOUSOKU/JOURYOKU effective rank (paid/temp/bonus + armor/condition penalties)
+    registerTrainingWeightCarryPatch(); // subtract ignored Training Weight mass from encumbrance
+    registerRankGrantConfig(); // "Naruto Rank" grant section on PF1e buff sheets
+    registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog
+  });
+
+  // Publish stable public API for downstream modules after all internal hooks are wired.
+  Hooks.once("setup", () => {
+    game.modules.get(MODULE_ID).api = buildPublicApi();
+  });
+}
