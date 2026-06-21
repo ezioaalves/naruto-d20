@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.0 - 2026-06-20
+
+- Added **Empower automation** (#149): techniques can now be configured to let players spend extra chakra before performing to scale damage. Each empower step costs a fixed chakra amount and adds a configurable damage formula (e.g. `1d6`) with optional typed damage. A prompt fires before the Perform check when Empower raises the DC, or after for pure damage scaling. Maximum steps can be capped by a formula (e.g. `@cl`). Exposed on the technique sheet's Automation tab; three compendium techniques (RASENGAN, FIRE DRAGON BLAST, RANK ONE TECHNIQUE) ship with empower pre-configured.
+
 ## v1.0.40 - 2026-06-20
 
 - Fixed **hero statistics pre-paint injection** (#146): the sheet now seeds hero statistics before the first paint so the actor sheet no longer flashes from empty state to populated state during render.
