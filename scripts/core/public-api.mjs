@@ -3,9 +3,9 @@ import {
   attemptLearnTechnique,
   buildLearningView,
   isTechniqueEffectivelyLearned,
-} from "../learn-technique.mjs";
-import { attemptMasterTechnique, buildMasteryView } from "../master-technique.mjs";
-import { listLearnable, listMasterable } from "../technique-queries.mjs";
+} from "../features/techniques/learn.mjs";
+import { attemptMasterTechnique, buildMasteryView } from "../features/techniques/master.mjs";
+import { listLearnable, listMasterable } from "../features/techniques/queries.mjs";
 
 /**
  * The stable public API other modules (e.g. naruto-d20-kaihou) may use.

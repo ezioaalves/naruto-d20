@@ -1,8 +1,8 @@
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
 import { BUFF_TARGETS } from "../flag-paths.mjs";
 import { registerNarutoSkills } from "../data/skills.mjs";
-import { installTechniqueSaveDCPatch } from "../data/technique-save-dc.mjs";
-import { installTechniqueRollDataPatch } from "../data/technique-rolldata.mjs";
+import { installTechniqueSaveDCPatch } from "../features/techniques/save-dc.mjs";
+import { installTechniqueRollDataPatch } from "../features/techniques/rolldata.mjs";
 import { registerStrengthRankCombat } from "../automation/strength-rank-combat.mjs";
 import { registerSpeedRankAttack } from "../automation/speed-rank-attack.mjs";
 import { registerAttackNoManeuver } from "../automation/attack-no-maneuver.mjs";

@@ -7,10 +7,10 @@ import {
   installTechniqueGetDescriptionPatch,
 } from "../ui/render-patch.mjs";
 import { registerLearnCheckListeners } from "../ui/learn-checks.mjs";
-import { registerLearnCardContextMenu } from "../learn-technique.mjs";
-import { registerMasterCardContextMenu } from "../master-technique.mjs";
+import { registerLearnCardContextMenu } from "../features/techniques/learn.mjs";
+import { registerMasterCardContextMenu } from "../features/techniques/master.mjs";
 import { registerNarutoRollContextMenu } from "../chat-rerolls.mjs";
-import { registerTechniqueListListeners } from "../ui/technique-list.mjs";
+import { registerTechniqueListListeners } from "../features/techniques/list.mjs";
 import { registerSummaryStats, registerActorSettings } from "../ui/summary-stats.mjs";
 import { registerFeatListListeners } from "../ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "../automation/feat-grants.mjs";
