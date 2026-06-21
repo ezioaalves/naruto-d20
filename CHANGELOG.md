@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.2 - 2026-06-21
+
+- Added **downtime public API** (#154): `game.modules.get("naruto-d20").api` now exposes a stable surface for external adapters (e.g. Kaihou). New helpers `listLearnable(actor)` and `listMasterable(actor)` return the filtered technique lists used by the learn/mastery flows; `TECHNIQUE_ITEM_TYPE` is also exported. Existing `attemptLearnTechnique`, `attemptMasterTechnique`, `buildLearningView`, `buildMasteryView`, and `isTechniqueEffectivelyLearned` remain available. Additive only — no existing behaviour changed.
+- Refactored **scripts directory by feature domain** (#155): internal reorganisation with no behaviour change. `scripts/` is now structured as `core/` (constants, flag-paths, public API), `lifecycle/` (one file per Foundry hook group), and `features/` (code grouped by domain: techniques, chakra, actor-stats, automation, chat). Adds `npm run validate:imports` to catch broken relative ESM imports at development time.
+
 ## v1.1.1 - 2026-06-21
 
 - Added **GODAI TAIGEKI variant automation** (#151, #152, #153): the SHODAN, NIDAN, and SANDAN elemental variants now ship fully configured with typed damage, empower scaling, and dynamic template sizing where applicable. SHODAN variants now roll their base elemental damage with a level-capped empower prompt and use a dynamic cone formula instead of a fixed size; NIDAN variants add matching damage/empower setup plus cone area and dynamic `measureTemplate`; SANDAN variants now include the same configured damage and empower automation.
