@@ -46,6 +46,20 @@
     "performMiscBonus": 0,
     "active": false,
     "changes": [],
+    "automation": {
+      "enabled": false,
+      "targetMode": "auto",
+      "empower": {
+        "enabled": true,
+        "mode": "damageBonus",
+        "costPerStep": 1,
+        "formulaPerStep": "1d6",
+        "damageTypes": ["water"],
+        "maxStepsFormula": "min(@cl, 10) - 4",
+        "performIncreaseEvery": 0,
+        "performIncreaseAmount": 0
+      }
+    },
     "actions": [
       {
         "_id": "kqsf0wqrQGNsIju6",
@@ -68,6 +82,14 @@
         "measureTemplate": {
           "type": "circle",
           "size": "10"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "4d6",
+              "types": ["water"]
+            }
+          ]
         },
         "save": {
           "type": "ref",

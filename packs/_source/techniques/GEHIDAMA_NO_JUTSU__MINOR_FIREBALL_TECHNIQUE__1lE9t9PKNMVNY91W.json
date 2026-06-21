@@ -46,6 +46,20 @@
     "performMiscBonus": 0,
     "active": false,
     "changes": [],
+    "automation": {
+      "enabled": false,
+      "targetMode": "auto",
+      "empower": {
+        "enabled": true,
+        "mode": "damageBonus",
+        "costPerStep": 1,
+        "formulaPerStep": "1d6",
+        "damageTypes": ["fire"],
+        "maxStepsFormula": "min(@cl, 12) - 4",
+        "performIncreaseEvery": 0,
+        "performIncreaseAmount": 0
+      }
+    },
     "actions": [
       {
         "_id": "35a2d9069743baf7",
@@ -68,6 +82,14 @@
         "measureTemplate": {
           "type": "circle",
           "size": "10"
+        },
+        "damage": {
+          "parts": [
+            {
+              "formula": "4d6",
+              "types": ["fire"]
+            }
+          ]
         },
         "save": {
           "type": "ref",
