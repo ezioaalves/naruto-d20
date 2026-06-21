@@ -1,5 +1,5 @@
-import { MODULE_ID } from "../constants.mjs";
-import { buildPublicApi } from "../public-api.mjs";
+import { MODULE_ID } from "../core/constants.mjs";
+import { buildPublicApi } from "../core/public-api.mjs";
 import {
   installChakraTabPatch,
   installSynckitHeaderButton,

@@ -1,4 +1,4 @@
-import { MODULE_ID } from "../../constants.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
 import { LEARN_KEYS, resolveSkillAbility } from "./skills.mjs";
 
 /**

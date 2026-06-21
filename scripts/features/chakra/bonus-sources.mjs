@@ -1,10 +1,10 @@
-import { MODULE_ID } from "../../constants.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
 import {
   learnBuffPath,
   chakraTapReservesBuffPath,
   chakraPoolMaxBonusPath,
   chakraReserveMaxBonusPath,
-} from "../../flag-paths.mjs";
+} from "../../core/flag-paths.mjs";
 import { getTrainingWeightLearnBonus } from "../../data/training-weights.mjs";
 
 const AFFINITY_DESCRIPTOR_ALIASES = {

@@ -1,4 +1,4 @@
-import { MODULE_ID } from "../../../constants.mjs";
+import { MODULE_ID } from "../../../core/constants.mjs";
 
 const CHARGE_PENALTY_SOURCE_ID = `${MODULE_ID}.chargeDefensePenalty`;
 

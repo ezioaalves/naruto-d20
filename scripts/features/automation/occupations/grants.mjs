@@ -8,8 +8,8 @@
  * Revert (deleteItem): reverse wealth/reputation and delete only embedded items
  * that this occupation created, identified by flags.naruto-d20.occupationGrant.
  */
-import { MODULE_ID } from "../../../constants.mjs";
-import { wealthPath, reputationPath } from "../../../flag-paths.mjs";
+import { MODULE_ID } from "../../../core/constants.mjs";
+import { wealthPath, reputationPath } from "../../../core/flag-paths.mjs";
 import {
   FEAT_PACK_IDS,
   TECHNIQUE_PACK_IDS,

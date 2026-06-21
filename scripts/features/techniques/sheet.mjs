@@ -7,8 +7,8 @@
  * (grid: sidebar + sheet-navigation + primary-body).
  */
 
-import { MODULE_ID } from "../../constants.mjs";
-import { DISCIPLINE_SKILL_MAP } from "../../data/skills.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
+import { DISCIPLINE_SKILL_MAP } from "../actor-stats/skills.mjs";
 import { COMPLEXITY_TABLE, TECHNIQUE_DESCRIPTORS } from "./model.mjs";
 import { attemptLearnTechnique, buildLearningView } from "./learn.mjs";
 import { attemptMasterTechnique, buildMasteryView } from "./master.mjs";

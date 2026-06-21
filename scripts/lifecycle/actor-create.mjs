@@ -1,5 +1,5 @@
-import { MODULE_ID } from "../constants.mjs";
-import { HERO_STAT_DEFAULTS, moduleFlagsPath } from "../flag-paths.mjs";
+import { MODULE_ID } from "../core/constants.mjs";
+import { HERO_STAT_DEFAULTS, moduleFlagsPath } from "../core/flag-paths.mjs";
 
 export function registerActorCreateHook() {
   Hooks.on("preCreateActor", (doc, data) => {

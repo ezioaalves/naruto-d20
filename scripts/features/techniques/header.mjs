@@ -8,8 +8,8 @@
  * PF1e's `ItemSpellPF.getDescription` prepends `spell-header.hbs`.
  */
 
-import { MODULE_ID } from "../../constants.mjs";
-import { DISCIPLINE_SKILL_MAP } from "../../data/skills.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
+import { DISCIPLINE_SKILL_MAP } from "../actor-stats/skills.mjs";
 
 // Component flag → abbreviation label. Order matters for the rendered string.
 const COMPONENT_FIELDS = [

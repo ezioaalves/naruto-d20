@@ -1,8 +1,8 @@
-import { MODULE_ID } from "../../constants.mjs";
-import { chakraPoolTempPath, chakraReserveValuePath } from "../../flag-paths.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
+import { chakraPoolTempPath, chakraReserveValuePath } from "../../core/flag-paths.mjs";
 import { buildTapReservesRollBreakdown } from "./bonus-sources.mjs";
 import { checkAndUpdateConditions } from "./conditions.mjs";
-import { buildNarutoRerollMessageData } from "../../chat-rerolls.mjs";
+import { buildNarutoRerollMessageData } from "../chat/rerolls.mjs";
 
 const SEAL_BONUS = { none: 0, half: 2, hand: 5 };
 const SEAL_LABEL = { none: "no seal", half: "half-seal", hand: "hand seal" };

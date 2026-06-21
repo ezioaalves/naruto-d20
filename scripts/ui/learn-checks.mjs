@@ -2,7 +2,7 @@ import {
   buildLearnCheckBreakdown,
   buildChakraPoolBreakdown,
   buildChakraReserveBreakdown,
-} from "../data/bonus-sources.mjs";
+} from "../features/chakra/bonus-sources.mjs";
 import { buildNarutoRerollMessageData } from "../features/chat/rerolls.mjs";
 
 const LEARN_LABELS = {

@@ -1,15 +1,15 @@
-import { TECHNIQUE_ITEM_TYPE } from "../../constants.mjs";
-import { actionPointsPath, epsPath, learningCurrentTechniqueIdPath } from "../../flag-paths.mjs";
-import { chatVisibilityFrom } from "../../chat-visibility.mjs";
-import { markNarutoRollRerollable } from "../../chat-rerolls.mjs";
+import { TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
+import { actionPointsPath, epsPath, learningCurrentTechniqueIdPath } from "../../core/flag-paths.mjs";
+import { chatVisibilityFrom } from "../chat/visibility.mjs";
+import { markNarutoRollRerollable } from "../chat/rerolls.mjs";
 import { normalizeActionIds } from "./action-ids.mjs";
-import { buildLearnCheckBreakdown } from "../../data/bonus-sources.mjs";
+import { buildLearnCheckBreakdown } from "../chakra/bonus-sources.mjs";
 import {
   canonicalizeDisciplineName,
   DISCIPLINE_LABEL_KEYS,
   DISCIPLINE_SKILL_MAP,
   LEARN_DISCIPLINES,
-} from "../../data/skills.mjs";
+} from "../actor-stats/skills.mjs";
 import {
   PROGRESSION_MODES,
   applyTrainingChakraDeduction,

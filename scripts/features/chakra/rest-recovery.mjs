@@ -1,5 +1,5 @@
-import { MODULE_ID, CHAKRA_DEPLETION_CONDITION_ID } from "../../constants.mjs";
-import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from "../../flag-paths.mjs";
+import { MODULE_ID, CHAKRA_DEPLETION_CONDITION_ID } from "../../core/constants.mjs";
+import { chakraPoolValuePath, chakraPoolTempPath, chakraReserveValuePath } from "../../core/flag-paths.mjs";
 import { checkAndUpdateConditions } from "./conditions.mjs";
 
 /**

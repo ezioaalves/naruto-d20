@@ -103,46 +103,58 @@ The numbered comments in `scripts/main.mjs` are authoritative. The sequence matt
 ```
 scripts/
   main.mjs                    # Hook orchestrator
-  constants.mjs               # MODULE_ID, TECHNIQUE_ITEM_TYPE, MAIN_DISCIPLINES
-  flag-paths.mjs              # Flag-path builders + BUFF_TARGETS (single source of truth
+  core/
+    constants.mjs             # MODULE_ID, TECHNIQUE_ITEM_TYPE, MAIN_DISCIPLINES
+    flag-paths.mjs            # Flag-path builders + BUFF_TARGETS (single source of truth
                               # for pf1GetChangeFlat / CONFIG.PF1.buffTargets)
-  use-technique.mjs           # Technique use orchestration, perform checks, chakra spend
-  learn-technique.mjs         # Learning progression, training costs, Action Point flow
-  data/
-    action-ids.mjs            # PF1e action id normalization/migration helpers
-    skills.mjs                # NARUTO_SKILLS (canonical), LEARN_KEYS, DISCIPLINE_SKILL_MAP
-    derived-data.mjs          # prepareBase/Derived actor data
-    rest-recovery.mjs         # Chakra recovery on pf1ActorRest
-    chakra-conditions.mjs     # Low Reserves / Chakra Depletion registration + updates
-    technique-defaults.mjs    # Shared Technique system defaults for model + sync
-    technique-model.mjs       # TypeDataModel + COMPLEXITY_TABLE
-    technique-rolldata.mjs    # @cl injection for technique actions
-    technique-save-dc.mjs     # Technique action DC patch
-    damage-types.mjs          # Earth/Water/Wind/Holy registration
-    bonus-sources.mjs         # buildLearnCheckBreakdown — shared by roll + tooltip
+    public-api.mjs            # buildPublicApi — exposed on game.modules.get(MODULE_ID).api
+  lifecycle/
+    init.mjs                  # Hook [1]: TechniqueDataModel, ItemSheet, templates, settings
+    pf1-post-init.mjs         # Hook [2]: skills, buff targets, DC/cl patches, conditions
+    actor-data.mjs            # Hooks [3–5]: prepareBase/Derived + pf1GetChangeFlat
+    setup.mjs                 # Hook [7]: sheet patches, tabs, browsers, automation hooks
+    actor-create.mjs          # Hook [8]: seed default flags on new actors
+    ready.mjs                 # Hook [9]: GM-only migrations
+    rest.mjs                  # Hook [10]: chakra recovery on pf1ActorRest
+  features/
+    techniques/               # 16 files: use, learn, master, model, sheet, browser,
+                              # list, header, save-dc, rolldata, sync, sync-app,
+                              # weapon-attack, action-ids, defaults, queries
+    chakra/                   # spend, damage, conditions, rest-recovery, tap-reserves,
+                              # bonus-sources (buildLearnCheckBreakdown)
+    actor-stats/              # derived-data, skills (NARUTO_SKILLS canonical), summary-stats
+    automation/
+      buffs/                  # application (compendium lookup + apply/refresh),
+                              # condition-benefits
+      combat/                 # attack-no-maneuver, charge-defense, speed-rank-attack,
+                              # strength-rank-combat
+      maintenance/            # buffs, element-damage, turn-maintenance
+      occupations/            # grants (auto-apply / auto-revert occupation feats)
+      ranks/                  # buffs, effective-level, roll-injection, rolldata
+      training/               # weight-carry
+    chat/                     # rerolls, visibility
   ui/
     browser-shared.mjs        # Shared listener helpers for custom browsers
     feat-browser.mjs          # Naruto feat browser (Application V1)
     feat-list.mjs             # Browse button on PF1e Features tab
     render-patch.mjs          # _renderInner wrap that injects the Chakra tab
     learn-checks.mjs          # .shinobi-roll + learn-tooltip listeners
-    tap-reserves.mjs          # Tap Reserves dialog/listener
-    technique-list.mjs        # Chakra-tab filter/drop-zone/CRUD listeners
-    technique-browser.mjs     # Technique compendium browser (Application V1)
-    technique-synckit-app.mjs # Per-actor technique sync/diagnostics UI
-    technique-sheet.mjs       # Custom ItemSheet for technique items
-    technique-weapon-attack.mjs # Selected weapon/attack item integration
-    summary-stats.mjs         # Hero Statistics block on Summary tab
+    rank-grant-config.mjs     # "Naruto Rank" section injected into PF1e buff sheets
+    occupation-selector.mjs   # Occupation feat selection dialog
+  data/
+    damage-types.mjs          # Earth/Water/Wind/Holy registration
+    training-progression.mjs  # Shared learn/mastery progression engine
+    training-weights.mjs      # Training weight item helpers
+    maintenance-migration.mjs # One-time migration for maintenance buff flags
+    hp-cost.mjs               # HP-cost helpers for technique actions
+    item-grants.mjs           # Item grant resolution helpers
   automation/
-    buff-application.mjs      # Compendium lookup + buff create/refresh on perform success
-    buff-expiry.mjs           # Delete module-created automation buffs on PF1e expiry; dispatch rank/stance maintenance
-    stance-buffs.mjs          # Mode-choice stance (Champuru Dex/Str) helpers + flag schema
-    stance-buff-maintenance.mjs # Turn-start prompt to keep/switch mode or break a stance (free upkeep)
-    charge-defense.mjs        # Charge AC penalty buff for PF1e charge attacks
     feat-grants.mjs           # Cascade-delete granted feat supplements
-    technique-sync.mjs        # Synckit sync/diff helpers
+    technique-empower.mjs     # Empower step resolution
   utils/
     drag-drop.mjs             # resolveDroppedItem — v12/v13 TextEditor shim
+  dev/
+    check-imports.mjs         # validate:imports script
 templates/
   actor/{chakra-tab,summary-stats,tap-reserves-dialog,technique-synckit}.hbs
   apps/{technique-browser,feat-browser}.hbs
@@ -153,9 +165,9 @@ styles/
 ```
 
 Anchor invariants:
-- `NARUTO_SKILLS` (in `data/skills.mjs`) is the canonical map of discipline keys → `{label, ability, discipline}`. `LEARN_KEYS`, the Skills-tab fallback abilities, and the Buff Target labels all derive from it.
-- `BUFF_TARGETS` (in `flag-paths.mjs`) is the canonical mapping `targetName → {label, path, sort}`. Adding a new buff-targetable resource means adding one entry there.
-- Flag-path strings are only built in `flag-paths.mjs` — call sites import the builders/constants, never concatenate `"naruto-d20"` themselves.
+- `NARUTO_SKILLS` (in `features/actor-stats/skills.mjs`) is the canonical map of discipline keys → `{label, ability, discipline}`. `LEARN_KEYS`, the Skills-tab fallback abilities, and the Buff Target labels all derive from it.
+- `BUFF_TARGETS` (in `core/flag-paths.mjs`) is the canonical mapping `targetName → {label, path, sort}`. Adding a new buff-targetable resource means adding one entry there.
+- Flag-path strings are only built in `core/flag-paths.mjs` — call sites import the builders/constants, never concatenate `"naruto-d20"` themselves.
 
 ### Data storage
 
@@ -175,20 +187,20 @@ flags["naruto-d20"].{actionPoints, reputation, wealth}
 
 ### Technique item (`TechniqueDataModel`)
 
-Defined in `scripts/data/technique-model.mjs`. Extends `foundry.abstract.TypeDataModel`. All stored fields are in `item.system.*`. Derived stats (`learnDC`, `performDC`, `successes`, `skillThreshold`) are computed via the `derived` getter from `rank + complexity` — never stored.
+Defined in `scripts/features/techniques/model.mjs`. Extends `foundry.abstract.TypeDataModel`. All stored fields are in `item.system.*`. Derived stats (`learnDC`, `performDC`, `successes`, `skillThreshold`) are computed via the `derived` getter from `rank + complexity` — never stored.
 
 The item sheet (`TechniqueItemSheet`) extends Foundry's base `ItemSheet` directly, **not** `pf1.applications.item.ItemSheetPF`, because PF1e's sheet calls `item.getLabels()` which requires PF1e's full action machinery that technique items don't have.
 
 ### Chakra tab UI injection
 
-The tab is injected by patching `ActorSheetPF.prototype._renderInner` (in `scripts/ui/render-patch.mjs`). This is intentional: if the nav `<a>` is injected via the later `renderActorSheetPF` hook, Foundry's V1 Tabs system has already bound and activated tabs, causing it to fall back to the Summary tab and corrupt `_tabs[0].active`. The patch runs before `_activateCoreListeners`, guaranteeing the chakra tab is present when tabs are bound.
+The tab is injected by patching `ActorSheetPF.prototype._renderInner` (in `scripts/ui/render-patch.mjs`). Technique-specific UI helpers (header, synckit app, list, browser, sheet, weapon-attack) now live under `scripts/features/techniques/`; chakra-specific helpers (tap-reserves) under `scripts/features/chakra/`; actor-stats injection (summary-stats) under `scripts/features/actor-stats/`. This is intentional: if the nav `<a>` is injected via the later `renderActorSheetPF` hook, Foundry's V1 Tabs system has already bound and activated tabs, causing it to fall back to the Summary tab and corrupt `_tabs[0].active`. The patch runs before `_activateCoreListeners`, guaranteeing the chakra tab is present when tabs are bound.
 
 Listeners are wired separately because they depend on the live DOM:
 - `scripts/ui/learn-checks.mjs` — `.shinobi-roll` click + `[data-naruto-tooltip="learn.X"]` hover
-- `scripts/ui/technique-list.mjs` — discipline filter chips, drop zone, synckit search, browse, open/use/learn/duplicate/delete
-- `scripts/ui/tap-reserves.mjs` — Reserve header click opens the Tap Reserves dialog
+- `scripts/features/techniques/list.mjs` — discipline filter chips, drop zone, synckit search, browse, open/use/learn/duplicate/delete
+- `scripts/features/chakra/tap-reserves.mjs` — Reserve header click opens the Tap Reserves dialog
 
-Both consume `buildLearnCheckBreakdown` (from `data/bonus-sources.mjs`) so a single edit changes what the chat card and the tooltip show.
+Both consume `buildLearnCheckBreakdown` (from `features/chakra/bonus-sources.mjs`) so a single edit changes what the chat card and the tooltip show.
 
 **Learn check rolls** use `pf1.dice.d20Roll()` (not a bare `Roll`) so the native PF1e skill check dialog appears (situational bonus, DC, roll mode, Take 10/20). Parts are labeled strings — `"5[Character Level]"`, `"3[Wis]"`, `"2[Iron Will Buff]"` — which produce the PF1e-style chat card breakdown. Buff source names come from `actor.sourceInfo[flagPath].positive`, falling back to a generic `"Buff Bonus"` label if sourceInfo has no entries for that path.
 
@@ -198,9 +210,9 @@ Both consume `buildLearnCheckBreakdown` (from `data/bonus-sources.mjs`) so a sin
 
 Rendered via `renderActorSheetPF`. Inserts the `#naruto-hero-statistics` block before PF1e's quick-actions section (or prepends to `.tab.summary` as a fallback).
 
-### Buff automation (`automation/buff-application.mjs`)
+### Buff automation (`features/automation/buffs/application.mjs`)
 
-Triggered at the tail of `performTechnique()` (`scripts/use-technique.mjs`) **only after** the perform check succeeds and chakra has been deducted — failures and cancellations never trigger a buff. The flow is:
+Triggered at the tail of `performTechnique()` (`scripts/features/techniques/use.mjs`) **only after** the perform check succeeds and chakra has been deducted — failures and cancellations never trigger a buff. The flow is:
 
 1. Gate: skip unless the world setting `automaticBuffs` is on **and** the technique's `item.system.automation.enabled` flag is true. The `buffTargetFiltering = "off"` setting also short-circuits the whole pipeline.
 2. Lookup: `findBuffByName(item.name)` scans `naruto-d20.technique-buffs` plus any pack IDs listed in the `customBuffCompendia` setting (comma-separated). It returns `{ exact, variants }` — exact name matches win; otherwise the first `"Name (..."` variant is used. If nothing matches, it logs a warning and exits silently.

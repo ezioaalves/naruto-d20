@@ -1,5 +1,5 @@
-import { MODULE_ID } from "../../../constants.mjs";
-import { chakraPoolTempPath } from "../../../flag-paths.mjs";
+import { MODULE_ID } from "../../../core/constants.mjs";
+import { chakraPoolTempPath } from "../../../core/flag-paths.mjs";
 import { rollHpCost, commitHpCost, applyHpCost } from "../../../data/hp-cost.mjs";
 import {
   getMaintenanceBuffFlag,
@@ -9,13 +9,13 @@ import {
   shouldChargeUpkeep,
 } from "./buffs.mjs";
 import { applyModeBuff, applyUpkeepBuff, promptModeChoice } from "../buffs/application.mjs";
-import { availableChakra, canPayChakra, payChakra } from "../../../data/chakra-spend.mjs";
+import { availableChakra, canPayChakra, payChakra } from "../../chakra/spend.mjs";
 import {
   consumeRankMasteryFreeUse,
   ensureRankMasteryDailyUse,
   hasRankMasteryFreeUseAvailable,
 } from "../ranks/buffs.mjs";
-import { calculateChakraDamage, commitChakraDamage } from "../../../data/chakra-damage.mjs";
+import { calculateChakraDamage, commitChakraDamage } from "../../chakra/damage.mjs";
 import { applyConditionBenefits } from "../buffs/condition-benefits.mjs";
 
 const pending = new Set();

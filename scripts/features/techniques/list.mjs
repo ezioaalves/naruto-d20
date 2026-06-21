@@ -1,4 +1,4 @@
-import { MAIN_DISCIPLINES, TECHNIQUE_ITEM_TYPE } from "../../constants.mjs";
+import { MAIN_DISCIPLINES, TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
 import { normalizeActionIds } from "./action-ids.mjs";
 import { attemptLearnTechnique } from "./learn.mjs";
 import { performTechnique } from "./use.mjs";

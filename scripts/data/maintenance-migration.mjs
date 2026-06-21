@@ -1,6 +1,6 @@
-import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
-import { maintenanceBuffFlagData } from "../automation/maintenance-buffs.mjs";
-import { resolveRankTechnique } from "../automation/rank-buffs.mjs";
+import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../core/constants.mjs";
+import { maintenanceBuffFlagData } from "../features/automation/maintenance/buffs.mjs";
+import { resolveRankTechnique } from "../features/automation/ranks/buffs.mjs";
 
 export const MAINTENANCE_MIGRATION_SETTING = "maintenanceMigrationVersion";
 export const MAINTENANCE_MIGRATION_VERSION = 2;

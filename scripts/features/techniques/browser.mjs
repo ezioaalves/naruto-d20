@@ -1,4 +1,4 @@
-import { MAIN_DISCIPLINES, MODULE_ID } from "../../constants.mjs";
+import { MAIN_DISCIPLINES, MODULE_ID } from "../../core/constants.mjs";
 import { COMPLEXITY_TABLE, computeTechniqueDerived } from "./model.mjs";
 import { learnTechniqueViaEmpathy } from "./learn.mjs";
 import {

@@ -1,4 +1,4 @@
-import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
+import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../core/constants.mjs";
 import { createTechniqueDataModel } from "../features/techniques/model.mjs";
 import { createTechniqueItemSheet } from "../features/techniques/sheet.mjs";
 import {

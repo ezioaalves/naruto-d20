@@ -1,8 +1,8 @@
-import { MAIN_DISCIPLINES, MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
-import { TechniqueSynckitApp } from "./technique-synckit-app.mjs";
-import { renderTechniqueHeader } from "./technique-header.mjs";
-import { buildLearningView } from "../learn-technique.mjs";
-import { injectHeroStatistics } from "./summary-stats.mjs";
+import { MAIN_DISCIPLINES, MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../core/constants.mjs";
+import { TechniqueSynckitApp } from "../features/techniques/sync-app.mjs";
+import { renderTechniqueHeader } from "../features/techniques/header.mjs";
+import { buildLearningView } from "../features/techniques/learn.mjs";
+import { injectHeroStatistics } from "../features/actor-stats/summary-stats.mjs";
 
 // pf1 11.11 uses V1 ApplicationV1. Its render flow is (foundry.mjs:37369–37406):
 //   1. _renderInner(data) → returns the full new inner HTML

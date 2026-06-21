@@ -1,5 +1,5 @@
-import { MODULE_ID } from "../../../constants.mjs";
-import { chakraPoolTempPath } from "../../../flag-paths.mjs";
+import { MODULE_ID } from "../../../core/constants.mjs";
+import { chakraPoolTempPath } from "../../../core/flag-paths.mjs";
 import { resolveRankTechnique } from "../ranks/buffs.mjs";
 import {
   MAINTENANCE_BUFF_FLAG,

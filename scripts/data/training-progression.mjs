@@ -12,15 +12,15 @@
  * orchestration (gating, persistence, chat-card wording).
  */
 
-import { MODULE_ID } from "../constants.mjs";
-import { chakraPoolTempPath, chakraPoolValuePath } from "../flag-paths.mjs";
+import { MODULE_ID } from "../core/constants.mjs";
+import { chakraPoolTempPath, chakraPoolValuePath } from "../core/flag-paths.mjs";
 import { applyChatVisibility } from "../features/chat/visibility.mjs";
 import {
   buildActionPointContent,
   buildActionPointFlags,
   registerNarutoRerollHandler,
 } from "../features/chat/rerolls.mjs";
-import { resolveSkillAbility } from "./skills.mjs";
+import { resolveSkillAbility } from "../features/actor-stats/skills.mjs";
 
 export const PROGRESSION_MODES = Object.freeze({
   STANDARD: "standard",

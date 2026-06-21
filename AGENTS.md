@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This is a Foundry VTT module for Pathfinder 1e. Runtime code lives in `scripts/` as ESM loaded directly by Foundry. Core hook wiring is in `scripts/main.mjs`; data models and calculations are in `scripts/data/`; UI listeners and sheet patches are in `scripts/ui/`; automation helpers are in `scripts/automation/`. Handlebars templates are under `templates/`, styles are split by UI area under `styles/`, localization in `lang/`, and icons in `icons/`.
+This is a Foundry VTT module for Pathfinder 1e. Runtime code lives in `scripts/`. `scripts/main.mjs` is the Foundry entrypoint; lifecycle hook registration lives in `scripts/lifecycle/`; shared constants, flags, settings, templates, and public API live in `scripts/core/`; feature-owned code lives under `scripts/features/`; cross-feature UI helpers remain in `scripts/ui/`. Handlebars templates are under `templates/`, styles are split by UI area under `styles/`, localization in `lang/`, and icons in `icons/`.
 
 Compendium source JSON is under `packs/_source/{techniques,feats,technique-buffs}/`. Packed LevelDB data under `packs/` is runtime output; do not hand-edit it. `README.md` is product-facing (features, install, no code paths). Contributor reference (manual QA, compendium packing, buff-changes reference) lives in `docs/`, architectural invariants in `CLAUDE.md`. Per-feature implementation/refactor notes live in the gitignored, local-only `dev-notes/` directory.
 
@@ -19,7 +19,7 @@ There is no build step. Edit `.mjs`, `.hbs`, `.css`, or JSON source files, then 
 
 ## Coding Style & Naming Conventions
 
-Use JavaScript ESM with two-space indentation and semicolons. Prefer named exports and small modules grouped by responsibility. Keep constants in `scripts/constants.mjs`; build actor flag paths only through `scripts/flag-paths.mjs`. Do not concatenate `"naruto-d20"` flag paths at call sites.
+Use JavaScript ESM with two-space indentation and semicolons. Prefer named exports and small modules grouped by responsibility. Keep constants in `scripts/core/constants.mjs`; build actor flag paths only through `scripts/core/flag-paths.mjs`. Do not concatenate `"naruto-d20"` flag paths at call sites.
 
 Technique item data belongs in `item.system.*`. Actor module state belongs in `flags["naruto-d20"].*`, except deliberate PF1e integrations documented in `README.md` or `CLAUDE.md`.
 

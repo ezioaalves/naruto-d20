@@ -1,4 +1,4 @@
-import { TECHNIQUE_ITEM_TYPE } from "../../constants.mjs";
+import { TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
 
 const PATCH_KEY = Symbol.for("naruto-d20.techniqueRollDataPatched");
 

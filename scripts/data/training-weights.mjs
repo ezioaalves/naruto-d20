@@ -1,4 +1,4 @@
-import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
+import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../core/constants.mjs";
 
 export const TRAINING_WEIGHT_ITEM_FLAG = "trainingWeightItem";
 export const TRAINING_WEIGHT_TECHNIQUE_FLAG = "trainingWeightTechnique";

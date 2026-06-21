@@ -1,5 +1,5 @@
-import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../../constants.mjs";
-import { DISCIPLINE_SKILL_MAP, resolveSkillAbility } from "../../data/skills.mjs";
+import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
+import { DISCIPLINE_SKILL_MAP, resolveSkillAbility } from "../actor-stats/skills.mjs";
 
 const PATCH_KEY = Symbol.for("naruto-d20.techniqueDCPatched");
 const techniqueDCContexts = new WeakMap();

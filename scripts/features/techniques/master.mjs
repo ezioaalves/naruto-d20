@@ -14,11 +14,11 @@
  *     modifiers; then mode-scaled exactly like learning.
  */
 
-import { MAX_MASTERY_STEP } from "../../constants.mjs";
-import { actionPointsPath, masteryCurrentTechniqueIdPath } from "../../flag-paths.mjs";
-import { chatVisibilityFrom } from "../../chat-visibility.mjs";
-import { markNarutoRollRerollable } from "../../chat-rerolls.mjs";
-import { buildLearnCheckBreakdown } from "../../data/bonus-sources.mjs";
+import { MAX_MASTERY_STEP } from "../../core/constants.mjs";
+import { actionPointsPath, masteryCurrentTechniqueIdPath } from "../../core/flag-paths.mjs";
+import { chatVisibilityFrom } from "../chat/visibility.mjs";
+import { markNarutoRollRerollable } from "../chat/rerolls.mjs";
+import { buildLearnCheckBreakdown } from "../chakra/bonus-sources.mjs";
 import { MASTERY_SUCCESSES } from "./model.mjs";
 import {
   getTechniqueLearningResolution,

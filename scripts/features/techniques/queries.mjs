@@ -1,4 +1,4 @@
-import { MAX_MASTERY_STEP, TECHNIQUE_ITEM_TYPE } from "../../constants.mjs";
+import { MAX_MASTERY_STEP, TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
 import { isTechniqueEffectivelyLearned } from "./learn.mjs";
 
 function techniqueItems(actor) {

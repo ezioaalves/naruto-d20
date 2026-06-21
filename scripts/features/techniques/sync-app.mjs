@@ -1,4 +1,4 @@
-import { MODULE_ID } from "../../constants.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
 import { analyzeActor, syncSelected, STATUS } from "./sync.mjs";
 
 /** Per-status display metadata. `sync: true` means the row gets a (checked) checkbox. */

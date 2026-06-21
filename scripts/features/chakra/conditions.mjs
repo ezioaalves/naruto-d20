@@ -2,13 +2,13 @@ import {
   MODULE_ID,
   LOW_RESERVES_CONDITION_ID,
   CHAKRA_DEPLETION_CONDITION_ID,
-} from "../../constants.mjs";
+} from "../../core/constants.mjs";
 import {
   conditionAppliedExhaustedPath,
   conditionAppliedFatiguedPath,
   conditionDepletionActivePath,
   conditionLowReserveFatiguePendingPath,
-} from "../../flag-paths.mjs";
+} from "../../core/flag-paths.mjs";
 
 const MODULE_CONDITION_OWNER_FLAG = "conditionOwner";
 const MODULE_CONDITION_STATUS_FLAG = "conditionStatus";

@@ -1,13 +1,13 @@
-import { MODULE_ID } from "../../constants.mjs";
-import { DISCIPLINE_SKILL_MAP } from "../../data/skills.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
+import { DISCIPLINE_SKILL_MAP } from "../actor-stats/skills.mjs";
 import {
   applyChakraSpend,
   availableChakra,
   calculateChakraSpend,
   canPayChakra,
-} from "../../data/chakra-spend.mjs";
-import { applyChatVisibility, chatVisibilityFrom } from "../../chat-visibility.mjs";
-import { markNarutoRollRerollable } from "../../chat-rerolls.mjs";
+} from "../chakra/spend.mjs";
+import { applyChatVisibility, chatVisibilityFrom } from "../chat/visibility.mjs";
+import { markNarutoRollRerollable } from "../chat/rerolls.mjs";
 import {
   getTechniqueWeaponAttackConfig,
   rollSelectedWeaponAttackWithTechnique,
@@ -19,18 +19,18 @@ import {
   hasRankMasteryFreeUseAvailable,
   isRankMasteryFreeUseEligible,
   RANK_MASTERY_FREE_ROUNDS,
-} from "../../automation/rank-buffs.mjs";
+} from "../automation/ranks/buffs.mjs";
 import {
   findMaintenanceBuffForTechnique,
   maintenanceFacets,
-} from "../../automation/maintenance-buffs.mjs";
+} from "../automation/maintenance/buffs.mjs";
 import {
   clearPendingCastElements,
   elementCount,
   getActiveElements,
   promptElements,
   setPendingCastElements,
-} from "../../automation/maintenance-element-damage.mjs";
+} from "../automation/maintenance/element-damage.mjs";
 import {
   normalizeEmpowerConfig,
   resolveEmpowerStepLimit,

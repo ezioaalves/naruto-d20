@@ -1,9 +1,9 @@
-import { MODULE_ID } from "../constants.mjs";
-import { getRankGrantType } from "../automation/rank-buffs.mjs";
+import { MODULE_ID } from "../core/constants.mjs";
+import { getRankGrantType } from "../features/automation/ranks/buffs.mjs";
 import {
   MAINTENANCE_BUFF_FLAG_PATH,
   getRankMaintenanceFlag,
-} from "../automation/maintenance-buffs.mjs";
+} from "../features/automation/maintenance/buffs.mjs";
 
 const TEMPLATE = `modules/${MODULE_ID}/templates/item/rank-grant-config.hbs`;
 

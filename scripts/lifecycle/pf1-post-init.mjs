@@ -1,5 +1,5 @@
-import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../constants.mjs";
-import { BUFF_TARGETS } from "../flag-paths.mjs";
+import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../core/constants.mjs";
+import { BUFF_TARGETS } from "../core/flag-paths.mjs";
 import { registerNarutoSkills } from "../features/actor-stats/skills.mjs";
 import { installTechniqueSaveDCPatch } from "../features/techniques/save-dc.mjs";
 import { installTechniqueRollDataPatch } from "../features/techniques/rolldata.mjs";

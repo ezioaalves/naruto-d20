@@ -1,5 +1,5 @@
-import { MODULE_ID } from "../../constants.mjs";
-import { chakraPoolTempPath, chakraPoolValuePath } from "../../flag-paths.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
+import { chakraPoolTempPath, chakraPoolValuePath } from "../../core/flag-paths.mjs";
 import { allocateTemporaryChakraGrantSpend } from "./spend.mjs";
 import { checkAndUpdateConditions } from "./conditions.mjs";
 

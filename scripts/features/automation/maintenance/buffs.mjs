@@ -1,4 +1,4 @@
-import { MODULE_ID } from "../../../constants.mjs";
+import { MODULE_ID } from "../../../core/constants.mjs";
 
 export const MAINTENANCE_BUFF_FLAG = "maintenanceBuff";
 export const MAINTENANCE_BUFF_FLAG_PATH = `flags.${MODULE_ID}.${MAINTENANCE_BUFF_FLAG}`;

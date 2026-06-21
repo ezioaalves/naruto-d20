@@ -1,5 +1,5 @@
-import { MODULE_ID } from "../../constants.mjs";
-import { actionPointsPath } from "../../flag-paths.mjs";
+import { MODULE_ID } from "../../core/constants.mjs";
+import { actionPointsPath } from "../../core/flag-paths.mjs";
 
 /**
  * Render the Hero Statistics block (Action Points / Reputation / Wealth) into the
