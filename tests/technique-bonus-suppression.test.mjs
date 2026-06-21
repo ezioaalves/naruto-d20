@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 
 import {
+  applyTechniqueElementDamageToActionUse,
   applyTechniqueBonusSuppressions,
   parseWeaponAttackConfig,
 } from "../scripts/features/techniques/weapon-attack.mjs";
@@ -138,6 +139,39 @@ describe("technique bonus suppression", () => {
       { context: "nattack" },
     ]);
     assert.deepEqual(calls[1], ["~attackCore", "mattack", "nattack"]);
+  });
+});
+
+describe("delegated technique element damage", () => {
+  it("applies and restores one selected element to replaced delegated damage", () => {
+    const action = { damage: { parts: [{ formula: "2d6", types: [] }] } };
+    const actionUse = { shared: { action, rollData: { action } } };
+    const cleanup = [];
+
+    applyTechniqueElementDamageToActionUse(actionUse, ["fire"], cleanup);
+
+    assert.deepEqual(action.damage.parts, [{ formula: "2d6", types: ["fire"] }]);
+
+    for (const restore of cleanup.reverse()) restore();
+
+    assert.deepEqual(action.damage.parts, [{ formula: "2d6", types: [] }]);
+  });
+
+  it("splits and restores two selected elements for replaced delegated damage", () => {
+    const action = { damage: { parts: [{ formula: "2d6", types: [] }] } };
+    const actionUse = { shared: { action, rollData: { action } } };
+    const cleanup = [];
+
+    applyTechniqueElementDamageToActionUse(actionUse, ["fire", "cold"], cleanup);
+
+    assert.deepEqual(action.damage.parts, [
+      { formula: "1d6", types: ["fire"] },
+      { formula: "1d6", types: ["cold"] },
+    ]);
+
+    for (const restore of cleanup.reverse()) restore();
+
+    assert.deepEqual(action.damage.parts, [{ formula: "2d6", types: [] }]);
   });
 });
 

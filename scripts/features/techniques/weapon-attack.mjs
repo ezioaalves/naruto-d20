@@ -1,5 +1,6 @@
 import { getTechniqueCasterLevel } from "./rolldata.mjs";
 import { setTechniqueSaveDCContext } from "./save-dc.mjs";
+import { getActiveElements } from "../automation/maintenance/element-damage.mjs";
 
 const CONFIG_PREFIX = "weaponAttack";
 const DEFAULT_FILTER = "meleeWeapon";
@@ -40,6 +41,11 @@ function formatWeaponAttackIssue(key, data = {}) {
   const i18nKey = `NarutoD20.WeaponAttackIssues.${key}`;
   if (globalThis.game?.i18n?.format) return globalThis.game.i18n.format(i18nKey, data);
   return formatIssueTemplate(ISSUE_TEMPLATES[key] ?? key, data);
+}
+
+function deepClone(value) {
+  if (globalThis.foundry?.utils?.deepClone) return foundry.utils.deepClone(value);
+  return structuredClone(value);
 }
 
 function getTechniqueAttackAdjustments(technique) {
@@ -274,6 +280,7 @@ export async function rollSelectedWeaponAttackWithTechnique({
     applyTechniqueSave(actionUse, technique, techniqueAction, cleanup);
     if (config.damageMode === "replace") {
       replaceActionDetails(actionUse, techniqueAction, cleanup);
+      applyTechniqueElementDamageToActionUse(actionUse, getActiveElements(actor, technique), cleanup);
     }
     applyTechniqueBonusSuppressions(actionUse, config.suppressedBonuses, cleanup);
     if (config.attackBonus) actionUse.shared.attackBonus.push(config.attackBonus);
@@ -380,6 +387,34 @@ function suppressNaturalAttackContexts(action, cleanup) {
   };
   cleanup.push(() => {
     item.getContextChanges = previousGetContextChanges;
+  });
+}
+
+export function applyTechniqueElementDamageToActionUse(actionUse, elements, cleanup = []) {
+  if (!Array.isArray(elements) || !elements.length) return;
+
+  const actions = [actionUse.shared?.action, actionUse.shared?.rollData?.action].filter(Boolean);
+  const uniqueActions = Array.from(new Set(actions));
+  for (const action of uniqueActions) applyTechniqueElementDamageToAction(action, elements, cleanup);
+}
+
+function applyTechniqueElementDamageToAction(action, elements, cleanup) {
+  action.damage ??= {};
+  const parts = (action.damage.parts ??= []);
+  if (!parts.length) return;
+
+  const snapshot = deepClone(parts);
+  const first = parts[0];
+  if (elements.length >= 2) {
+    first.formula = "1d6";
+    first.types = [elements[0]];
+    parts.splice(1, 0, { formula: "1d6", types: [elements[1]] });
+  } else {
+    first.types = [elements[0]];
+  }
+
+  cleanup.push(() => {
+    action.damage.parts = deepClone(snapshot);
   });
 }
 
