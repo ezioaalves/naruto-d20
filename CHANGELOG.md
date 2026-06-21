@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1 - 2026-06-21
+
+- Added **GODAI TAIGEKI variant automation** (#151, #152, #153): the SHODAN, NIDAN, and SANDAN elemental variants now ship fully configured with typed damage, empower scaling, and dynamic template sizing where applicable. SHODAN variants now roll their base elemental damage with a level-capped empower prompt and use a dynamic cone formula instead of a fixed size; NIDAN variants add matching damage/empower setup plus cone area and dynamic `measureTemplate`; SANDAN variants now include the same configured damage and empower automation.
+
 ## v1.1.0 - 2026-06-20
 
 - Added **Empower automation** (#149): techniques can now be configured to let players spend extra chakra before performing to scale damage. Each empower step costs a fixed chakra amount and adds a configurable damage formula (e.g. `1d6`) with optional typed damage. A prompt fires before the Perform check when Empower raises the DC, or after for pure damage scaling. Maximum steps can be capped by a formula (e.g. `@cl`). Exposed on the technique sheet's Automation tab; three compendium techniques (RASENGAN, FIRE DRAGON BLAST, RANK ONE TECHNIQUE) ship with empower pre-configured.
