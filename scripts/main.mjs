@@ -267,9 +267,9 @@ Hooks.once("setup", () => {
   registerTapReservesListener(); // Chakra Reserve header → Tap Reserves dialog
 });
 
+// Publish stable public API for downstream modules after all internal hooks are wired.
 Hooks.once("setup", () => {
-  const mod = game.modules.get(MODULE_ID);
-  if (mod) mod.api = buildPublicApi();
+  game.modules.get(MODULE_ID).api = buildPublicApi();
 });
 
 // ── [8] preCreateActor ────────────────────────────────────────────────────
