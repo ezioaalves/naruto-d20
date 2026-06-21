@@ -3,7 +3,7 @@ import {
   buildChakraPoolBreakdown,
   buildChakraReserveBreakdown,
 } from "../data/bonus-sources.mjs";
-import { buildNarutoRerollMessageData } from "../chat-rerolls.mjs";
+import { buildNarutoRerollMessageData } from "../features/chat/rerolls.mjs";
 
 const LEARN_LABELS = {
   ckc: "NarutoD20.Skills.ckc",

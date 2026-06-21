@@ -14,12 +14,12 @@
 
 import { MODULE_ID } from "../constants.mjs";
 import { chakraPoolTempPath, chakraPoolValuePath } from "../flag-paths.mjs";
-import { applyChatVisibility } from "../chat-visibility.mjs";
+import { applyChatVisibility } from "../features/chat/visibility.mjs";
 import {
   buildActionPointContent,
   buildActionPointFlags,
   registerNarutoRerollHandler,
-} from "../chat-rerolls.mjs";
+} from "../features/chat/rerolls.mjs";
 import { resolveSkillAbility } from "./skills.mjs";
 
 export const PROGRESSION_MODES = Object.freeze({

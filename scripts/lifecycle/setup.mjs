@@ -9,7 +9,7 @@ import {
 import { registerLearnCheckListeners } from "../ui/learn-checks.mjs";
 import { registerLearnCardContextMenu } from "../features/techniques/learn.mjs";
 import { registerMasterCardContextMenu } from "../features/techniques/master.mjs";
-import { registerNarutoRollContextMenu } from "../chat-rerolls.mjs";
+import { registerNarutoRollContextMenu } from "../features/chat/rerolls.mjs";
 import { registerTechniqueListListeners } from "../features/techniques/list.mjs";
 import { registerSummaryStats, registerActorSettings } from "../features/actor-stats/summary-stats.mjs";
 import { registerFeatListListeners } from "../ui/feat-list.mjs";
