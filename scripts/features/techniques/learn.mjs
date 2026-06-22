@@ -1,5 +1,9 @@
 import { TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
-import { actionPointsPath, epsPath, learningCurrentTechniqueIdPath } from "../../core/flag-paths.mjs";
+import {
+  actionPointsPath,
+  epsPath,
+  learningCurrentTechniqueIdPath,
+} from "../../core/flag-paths.mjs";
 import { chatVisibilityFrom } from "../chat/visibility.mjs";
 import { markNarutoRollRerollable } from "../chat/rerolls.mjs";
 import { normalizeActionIds } from "./action-ids.mjs";

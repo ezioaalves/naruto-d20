@@ -60,7 +60,10 @@ export function techniqueDamageTransformRepeatCount(config) {
  * @param {boolean} [opts.alreadyRepeating] - Whether this call is itself a repeat.
  * @returns {boolean}
  */
-export function shouldRepeatDamageRolls(config, { critical = false, alreadyRepeating = false } = {}) {
+export function shouldRepeatDamageRolls(
+  config,
+  { critical = false, alreadyRepeating = false } = {},
+) {
   if (critical || alreadyRepeating) return false;
   return techniqueDamageTransformRepeatCount(config) > 0;
 }

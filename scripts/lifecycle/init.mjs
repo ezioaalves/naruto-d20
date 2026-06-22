@@ -1,9 +1,7 @@
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../core/constants.mjs";
 import { createTechniqueDataModel } from "../features/techniques/model.mjs";
 import { createTechniqueItemSheet } from "../features/techniques/sheet.mjs";
-import {
-  MAINTENANCE_MIGRATION_SETTING,
-} from "../data/maintenance-migration.mjs";
+import { MAINTENANCE_MIGRATION_SETTING } from "../data/maintenance-migration.mjs";
 
 export function registerInitHook() {
   Hooks.once("init", () => {

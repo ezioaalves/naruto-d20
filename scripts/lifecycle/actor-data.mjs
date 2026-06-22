@@ -1,5 +1,8 @@
 import { BUFF_TARGETS } from "../core/flag-paths.mjs";
-import { prepareBaseActorData, prepareDerivedActorData } from "../features/actor-stats/derived-data.mjs";
+import {
+  prepareBaseActorData,
+  prepareDerivedActorData,
+} from "../features/actor-stats/derived-data.mjs";
 import { ensureActorSkillEntries } from "../features/actor-stats/skills.mjs";
 
 export function registerActorDataHooks() {

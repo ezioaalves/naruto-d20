@@ -24,11 +24,7 @@ for (const file of files) {
 
   for (const specifier of imports) {
     const resolved = path.resolve(path.dirname(file), specifier);
-    const candidates = [
-      resolved,
-      `${resolved}.mjs`,
-      path.join(resolved, "index.mjs"),
-    ];
+    const candidates = [resolved, `${resolved}.mjs`, path.join(resolved, "index.mjs")];
     if (!candidates.some((candidate) => fs.existsSync(candidate))) {
       missing.push(`${path.relative(ROOT, file)} -> ${specifier}`);
     }
