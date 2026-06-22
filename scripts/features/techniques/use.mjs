@@ -197,7 +197,7 @@ export async function performTechnique(item, actionId, event = null) {
     );
     if (!current) return;
 
-    if (!delegatedWeaponAttack && !chakraFree && empowerConfig.enabled && !empower) {
+    if (!chakraFree && empowerConfig.enabled && !empower) {
       empower = await resolveEmpowerChoice(current.item, actor, cost);
       if (empower === "cancel") return;
     }
