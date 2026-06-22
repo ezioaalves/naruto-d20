@@ -88,7 +88,8 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon"
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.charge": "true"
       }
     },
     "showInQuickbar": false,
