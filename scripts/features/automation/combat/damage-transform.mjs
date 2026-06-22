@@ -40,6 +40,29 @@ export function techniqueDamageTransformRepeatCount(config) {
   return Math.max(0, multiplier - 1);
 }
 
+/**
+ * Decide whether the transform should roll additional full damage instances for
+ * a given rollDamage call.
+ *
+ * Critical damage is deliberately excluded: PF1e already rolls `(critMult - 1)`
+ * extra instances for a confirmed critical. Repeating the technique multiplier on
+ * those rolls would stack the two multipliers multiplicatively (e.g. ×2 technique
+ * × ×2 crit = ×4). The d20 multiplier rule stacks them additively instead
+ * (×2 + ×2 → ×3), which is what leaving PF1e's crit rolls untouched produces:
+ * normal damage already carries the technique multiplier (M_t instances) and the
+ * native crit adds (M_c - 1) instances, for a total of M_t + M_c - 1.
+ *
+ * @param {object|null} config - Normalized damage-transform config.
+ * @param {object} [opts]
+ * @param {boolean} [opts.critical] - Whether this is a critical damage roll.
+ * @param {boolean} [opts.alreadyRepeating] - Whether this call is itself a repeat.
+ * @returns {boolean}
+ */
+export function shouldRepeatDamageRolls(config, { critical = false, alreadyRepeating = false } = {}) {
+  if (critical || alreadyRepeating) return false;
+  return techniqueDamageTransformRepeatCount(config) > 0;
+}
+
 export function applyTechniqueDamageTransformToParts(
   parts,
   config,
@@ -100,10 +123,17 @@ function installDamageRollMultiplierPatch() {
 
 async function rollDamageWithTransform(action, wrapped, options) {
   const config = action?.[TRANSFORM_PROPERTY];
-  const repeatCount = techniqueDamageTransformRepeatCount(config);
   const rolls = await wrapped.call(action, options);
-  if (!repeatCount || action?.[REPEAT_PROPERTY]) return rolls;
+  if (
+    !shouldRepeatDamageRolls(config, {
+      critical: options?.critical === true,
+      alreadyRepeating: action?.[REPEAT_PROPERTY] === true,
+    })
+  ) {
+    return rolls;
+  }
 
+  const repeatCount = techniqueDamageTransformRepeatCount(config);
   const repeated = [...rolls];
   const previous = action[REPEAT_PROPERTY];
   action[REPEAT_PROPERTY] = true;

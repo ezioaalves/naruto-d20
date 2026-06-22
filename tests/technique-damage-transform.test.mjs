@@ -5,6 +5,7 @@ import { describe, it } from "node:test";
 import {
   applyTechniqueDamageTransformToParts,
   registerTechniqueDamageTransforms,
+  shouldRepeatDamageRolls,
   techniqueDamageTransformRepeatCount,
   normalizeTechniqueDamageTransform,
 } from "../scripts/features/automation/combat/damage-transform.mjs";
@@ -62,6 +63,37 @@ describe("technique damage transforms", () => {
     assert.equal(techniqueDamageTransformRepeatCount({ multiplier: 1 }), 0);
     assert.equal(techniqueDamageTransformRepeatCount({ multiplier: 2 }), 1);
     assert.equal(techniqueDamageTransformRepeatCount({ multiplier: 3 }), 2);
+  });
+
+  it("repeats only non-critical damage so technique and crit multipliers stack additively (d20 rule)", () => {
+    const config = normalizeTechniqueDamageTransform({
+      enabled: true,
+      multiplier: 2,
+      damageType: "piercing",
+    });
+
+    // Normal hit: the technique multiplier applies to the base damage → repeat.
+    assert.equal(shouldRepeatDamageRolls(config, { critical: false }), true);
+
+    // Critical hit: PF1e already rolls (critMult - 1) extra instances, so repeating
+    // here would multiply the multipliers (×2 × ×2 = ×4). The d20 rule wants additive
+    // stacking (×2 + ×2 → ×3), achieved by leaving PF1e's crit rolls untouched.
+    assert.equal(shouldRepeatDamageRolls(config, { critical: true }), false);
+
+    // Recursion guard: a repeated roll must not repeat again.
+    assert.equal(
+      shouldRepeatDamageRolls(config, { critical: false, alreadyRepeating: true }),
+      false,
+    );
+
+    // No multiplier (type-only transform) never repeats.
+    assert.equal(
+      shouldRepeatDamageRolls(
+        normalizeTechniqueDamageTransform({ enabled: true, multiplier: 1, damageType: "piercing" }),
+        { critical: false },
+      ),
+      false,
+    );
   });
 
   it("registers rollDamage through libWrapper when available", () => {
