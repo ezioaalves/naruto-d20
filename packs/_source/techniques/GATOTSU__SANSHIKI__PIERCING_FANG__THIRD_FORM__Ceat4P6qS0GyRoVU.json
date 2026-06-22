@@ -13,7 +13,7 @@
   },
   "system": {
     "description": {
-      "value": "<p>If the target was falling (uncontrollably), it takes additional d6 damage.</p>\n\n\n\n",
+      "value": "<p>You make a melee attack with your held weapon, which deals an additional 2d6 damage (not multiplied on critical hits). If hit, the target must make a save to avoid losing its Dexterity bonus to Defense for 1 round. Damage dealt by this technique is piercing damage.</p>\n<p>If the target was falling (uncontrollably), it takes additional d6 damage.</p>\n",
       "summary": "",
       "instructions": ""
     },
@@ -91,11 +91,19 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon"
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.nonCritDamageBonus": "2d6[Sanshiki]"
       }
     },
     "showInQuickbar": false,
     "showInCombat": false,
+    "automation": {
+      "damageTransform": {
+        "enabled": true,
+        "multiplier": 1,
+        "damageType": "piercing"
+      }
+    },
     "sources": [
       {
         "title": "NarutoD20 Redux v1.3",

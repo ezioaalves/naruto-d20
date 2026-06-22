@@ -25,7 +25,7 @@
     "rank": 5,
     "complexity": "B-Class",
     "chakraCost": 7,
-    "activation": "standard",
+    "activation": "full",
     "range": "",
     "target": "One creature *",
     "area": "",
@@ -34,10 +34,10 @@
     "compHandSeals": false,
     "compHalfSeals": false,
     "compConcentration": false,
-    "compMobility": false,
-    "compFocus": false,
+    "compMobility": true,
+    "compFocus": true,
     "compEmpower": false,
-    "compMastery": false,
+    "compMastery": true,
     "compPhysical": false,
     "compXpCost": false,
     "isHijutsu": false,
@@ -52,10 +52,10 @@
         "name": "Use",
         "actionType": "mwak",
         "activation": {
-          "type": "standard",
+          "type": "full",
           "unchained": {
             "type": "action",
-            "cost": 2
+            "cost": 3
           }
         },
         "duration": {
@@ -88,11 +88,19 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon"
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.charge": "true"
       }
     },
     "showInQuickbar": false,
     "showInCombat": false,
+    "automation": {
+      "damageTransform": {
+        "enabled": true,
+        "multiplier": 2,
+        "damageType": "piercing"
+      }
+    },
     "sources": [
       {
         "title": "NarutoD20 Redux v1.3",
