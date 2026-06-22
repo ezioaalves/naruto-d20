@@ -1,6 +1,10 @@
 import { getTechniqueCasterLevel } from "./rolldata.mjs";
 import { setTechniqueSaveDCContext } from "./save-dc.mjs";
 import { getActiveElements } from "../automation/maintenance/element-damage.mjs";
+import {
+  getTechniqueDamageTransformConfig,
+  markTechniqueDamageTransform,
+} from "../automation/combat/damage-transform.mjs";
 
 const CONFIG_PREFIX = "weaponAttack";
 const DEFAULT_FILTER = "meleeWeapon";
@@ -278,9 +282,14 @@ export async function rollSelectedWeaponAttackWithTechnique({
 
     actionUse.shared.rollData.cl = getTechniqueCasterLevel(technique, actor);
     applyTechniqueSave(actionUse, technique, techniqueAction, cleanup);
+    markTechniqueDamageTransform(actionUse, getTechniqueDamageTransformConfig(technique), cleanup);
     if (config.damageMode === "replace") {
       replaceActionDetails(actionUse, techniqueAction, cleanup);
-      applyTechniqueElementDamageToActionUse(actionUse, getActiveElements(actor, technique), cleanup);
+      applyTechniqueElementDamageToActionUse(
+        actionUse,
+        getActiveElements(actor, technique),
+        cleanup,
+      );
     }
     applyTechniqueBonusSuppressions(actionUse, config.suppressedBonuses, cleanup);
     if (config.attackBonus) actionUse.shared.attackBonus.push(config.attackBonus);
@@ -395,7 +404,8 @@ export function applyTechniqueElementDamageToActionUse(actionUse, elements, clea
 
   const actions = [actionUse.shared?.action, actionUse.shared?.rollData?.action].filter(Boolean);
   const uniqueActions = Array.from(new Set(actions));
-  for (const action of uniqueActions) applyTechniqueElementDamageToAction(action, elements, cleanup);
+  for (const action of uniqueActions)
+    applyTechniqueElementDamageToAction(action, elements, cleanup);
 }
 
 function applyTechniqueElementDamageToAction(action, elements, cleanup) {

@@ -38,6 +38,10 @@ import {
   shouldPromptEmpowerBeforePerform,
 } from "../../automation/technique-empower.mjs";
 import { getTechniqueCasterLevel } from "./rolldata.mjs";
+import {
+  getTechniqueDamageTransformConfig,
+  markTechniqueDamageTransform,
+} from "../automation/combat/damage-transform.mjs";
 
 export function canAffordTechnique(actor, item) {
   return canPayChakra(actor, item.system.chakraCost ?? 0);
@@ -66,7 +70,14 @@ function applyEmpowerDamage(actionUse, empower, cleanup) {
 
 function installTechniqueActionUseHook(item, actor, action, cleanup, empower = null) {
   const adjustments = getTechniqueAttackAdjustments(item);
-  if (!adjustments.sizeBonus && !adjustments.critConfirmBonus && !empower?.steps) return null;
+  const damageTransform = getTechniqueDamageTransformConfig(item);
+  if (
+    !adjustments.sizeBonus &&
+    !adjustments.critConfirmBonus &&
+    !empower?.steps &&
+    !damageTransform
+  )
+    return null;
 
   const hook = (actionUse) => {
     if (actionUse.actor?.id !== actor.id) return;
@@ -74,6 +85,7 @@ function installTechniqueActionUseHook(item, actor, action, cleanup, empower = n
     if (actionUse.action?.id !== action.id) return;
 
     applyEmpowerDamage(actionUse, empower, cleanup);
+    markTechniqueDamageTransform(actionUse, damageTransform, cleanup);
 
     if (adjustments.critConfirmBonus) {
       const previous = actionUse.shared.action.critConfirmBonus;

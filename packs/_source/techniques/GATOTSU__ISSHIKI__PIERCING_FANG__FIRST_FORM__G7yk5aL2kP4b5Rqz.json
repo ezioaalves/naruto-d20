@@ -87,11 +87,20 @@
       "boolean": {},
       "dictionary": {
         "weaponAttack.mode": "selected",
-        "weaponAttack.filter": "meleeWeapon"
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.charge": "true"
       }
     },
     "showInQuickbar": false,
     "showInCombat": false,
+    "automation": {
+      "damageTransform": {
+        "enabled": true,
+        "multiplier": 2,
+        "damageType": "piercing",
+        "label": "Gatotsu"
+      }
+    },
     "sources": [
       {
         "title": "NarutoD20 Redux v1.3",

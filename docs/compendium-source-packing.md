@@ -91,6 +91,27 @@ rolling the technique action directly. Configure this with
 If the technique action defines `save.type`, the selected attack inherits that
 save and uses the Technique DC formula even when `damageMode` remains `add`.
 
+### Damage transforms
+
+Techniques can apply a generic roll-time damage transform through
+`system.automation.damageTransform`. This works for direct technique actions and
+for delegated `weaponAttack` rolls:
+
+```json
+"automation": {
+  "damageTransform": {
+    "enabled": true,
+    "multiplier": 2,
+    "damageType": "piercing",
+    "label": "Gatotsu"
+  }
+}
+```
+
+`multiplier` duplicates only PF1e damage parts that are normally multiplied on
+critical hits (`normal` and `crit` parts). `nonCrit` damage is converted to the
+configured `damageType`, but is not duplicated.
+
 ## Transform scripts (`tools/`)
 
 | Script | npm alias | Purpose |

@@ -56,6 +56,24 @@ const COMPLEXITIES = new Set([
 
 const AUTOMATION_TARGET_MODES = new Set(["auto", "self", "selected"]);
 const EMPOWER_MODES = new Set(["damageBonus"]);
+const DAMAGE_TYPES = new Set([
+  "acid",
+  "bludgeoning",
+  "cold",
+  "electric",
+  "fire",
+  "force",
+  "holy",
+  "negative",
+  "piercing",
+  "positive",
+  "slashing",
+  "sonic",
+  "untyped",
+  "earth",
+  "water",
+  "wind",
+]);
 const WEAPON_ATTACK_PREFIX = "weaponAttack";
 const WEAPON_ATTACK_KEYS = new Set([
   "mode",
@@ -391,7 +409,36 @@ function validateTechnique({ doc, filename, packName }) {
   }
 
   validateEmpower(packName, filename, system.automation?.empower, system.compEmpower === true);
+  validateDamageTransform(packName, filename, system.automation?.damageTransform);
   validateWeaponAttack(doc, filename, packName);
+}
+
+function validateDamageTransform(packName, filename, damageTransform) {
+  if (damageTransform === undefined) return;
+  if (!isPlainObject(damageTransform)) {
+    error(packName, filename, "automation.damageTransform must be an object");
+    return;
+  }
+
+  if (damageTransform.enabled !== undefined && typeof damageTransform.enabled !== "boolean") {
+    error(packName, filename, "automation.damageTransform.enabled must be boolean");
+  }
+
+  if (
+    damageTransform.multiplier !== undefined &&
+    (!Number.isInteger(damageTransform.multiplier) || damageTransform.multiplier < 1)
+  ) {
+    error(packName, filename, "automation.damageTransform.multiplier must be an integer >= 1");
+  }
+
+  const damageType = String(damageTransform.damageType ?? "").trim();
+  if (damageType && !DAMAGE_TYPES.has(damageType)) {
+    error(packName, filename, `unknown automation.damageTransform.damageType "${damageType}"`);
+  }
+
+  if (damageTransform.label !== undefined && typeof damageTransform.label !== "string") {
+    error(packName, filename, "automation.damageTransform.label must be a string");
+  }
 }
 
 function validateWeaponAttack(doc, filename, packName) {

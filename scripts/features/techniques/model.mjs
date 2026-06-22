@@ -384,6 +384,15 @@ export function createTechniqueDataModel() {
               initial: "auto",
               choices: ["auto", "self", "selected"],
             }),
+            damageTransform: new fields.SchemaField(
+              {
+                enabled: new fields.BooleanField({ ...opt, initial: false }),
+                multiplier: new fields.NumberField({ ...opt, integer: true, initial: 1, min: 1 }),
+                damageType: new fields.StringField({ ...opt, blank: true, initial: "" }),
+                label: new fields.StringField({ ...opt, blank: true, initial: "" }),
+              },
+              opt,
+            ),
             empower: new fields.SchemaField(
               {
                 enabled: new fields.BooleanField({ ...opt, initial: false }),

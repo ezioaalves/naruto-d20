@@ -11,7 +11,10 @@ import { registerLearnCardContextMenu } from "../features/techniques/learn.mjs";
 import { registerMasterCardContextMenu } from "../features/techniques/master.mjs";
 import { registerNarutoRollContextMenu } from "../features/chat/rerolls.mjs";
 import { registerTechniqueListListeners } from "../features/techniques/list.mjs";
-import { registerSummaryStats, registerActorSettings } from "../features/actor-stats/summary-stats.mjs";
+import {
+  registerSummaryStats,
+  registerActorSettings,
+} from "../features/actor-stats/summary-stats.mjs";
 import { registerFeatListListeners } from "../ui/feat-list.mjs";
 import { registerFeatGrantDeletion } from "../automation/feat-grants.mjs";
 import {
@@ -19,6 +22,7 @@ import {
   registerOccupationAutoRevert,
 } from "../features/automation/occupations/grants.mjs";
 import { registerChargeDefensePenalty } from "../features/automation/combat/charge-defense.mjs";
+import { registerTechniqueDamageTransforms } from "../features/automation/combat/damage-transform.mjs";
 import { registerTurnMaintenance } from "../features/automation/maintenance/turn-maintenance.mjs";
 import { registerElementDamage } from "../features/automation/maintenance/element-damage.mjs";
 import { registerRankRollData } from "../features/automation/ranks/rolldata.mjs";
@@ -46,6 +50,7 @@ export function registerSetupHook() {
     registerOccupationAutoApply(); // occupation drop → prompt + apply grants
     registerOccupationAutoRevert(); // occupation delete → reverse wealth/reputation
     registerChargeDefensePenalty(); // PF1e charge attack AC penalty until next turn
+    registerTechniqueDamageTransforms(); // generic technique damage multiplication/type conversion
     registerTurnMaintenance(); // start-of-turn maintenance + spent-buff cleanup
     registerElementDamage(); // type configured maintenance-element attack damage at roll time
     registerRankRollData(); // KOUSOKU/JOURYOKU effective rank (paid/temp/bonus + armor/condition penalties)
