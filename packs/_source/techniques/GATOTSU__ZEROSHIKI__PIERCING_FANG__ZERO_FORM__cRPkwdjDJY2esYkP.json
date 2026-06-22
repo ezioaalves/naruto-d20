@@ -68,18 +68,6 @@
         "target": {
           "value": "One creature"
         },
-        "damage": {
-          "parts": [
-            {
-              "formula": "3d6",
-              "types": []
-            },
-            {
-              "formula": "1d6",
-              "types": []
-            }
-          ]
-        },
         "save": {
           "type": "fort",
           "description": "Fortitude partial"
@@ -102,10 +90,26 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "meleeWeapon",
+        "weaponAttack.damageBonus": "3d6[Zeroshiki]"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false,
+    "automation": {
+      "empower": {
+        "enabled": true,
+        "mode": "damageBonus",
+        "costPerStep": 2,
+        "formulaPerStep": "1d6",
+        "damageTypes": [],
+        "maxStepsFormula": "7",
+        "performIncreaseEvery": 0,
+        "performIncreaseAmount": 0
+      }
+    },
     "sources": [
       {
         "title": "NarutoD20 Redux v1.3",
