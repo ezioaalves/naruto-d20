@@ -89,7 +89,6 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   dt.enabled ??= false;
   dt.multiplier ??= 1;
   dt.damageType ??= "";
-  dt.label ??= "";
   system.automation.empower ??= {};
   const e = system.automation.empower;
   e.enabled ??= false;

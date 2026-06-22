@@ -389,7 +389,6 @@ export function createTechniqueDataModel() {
                 enabled: new fields.BooleanField({ ...opt, initial: false }),
                 multiplier: new fields.NumberField({ ...opt, integer: true, initial: 1, min: 1 }),
                 damageType: new fields.StringField({ ...opt, blank: true, initial: "" }),
-                label: new fields.StringField({ ...opt, blank: true, initial: "" }),
               },
               opt,
             ),

@@ -97,8 +97,7 @@
       "damageTransform": {
         "enabled": true,
         "multiplier": 2,
-        "damageType": "piercing",
-        "label": "Gatotsu"
+        "damageType": "piercing"
       }
     },
     "sources": [

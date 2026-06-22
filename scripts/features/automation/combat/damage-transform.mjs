@@ -2,7 +2,10 @@ import { MODULE_ID } from "../../../core/constants.mjs";
 
 const TRANSFORM_PROPERTY = "__narutoD20DamageTransform";
 const REPEAT_PROPERTY = "__narutoD20DamageTransformRepeat";
-const MULTIPLIED_PART_TYPES = new Set(["normal", "crit"]);
+// Part types the technique multiplier repeats. Repeats only happen on non-critical
+// rolls (see shouldRepeatDamageRolls), where PF1e adds "normal" + "nonCrit" parts —
+// "nonCrit" (precision/sneak) must NOT be duplicated, so only "normal" repeats.
+const MULTIPLIED_PART_TYPES = new Set(["normal"]);
 const ROLL_DAMAGE_TARGET = "pf1.components.ItemAction.prototype.rollDamage";
 let rollDamagePatchInstalled = false;
 
@@ -11,10 +14,9 @@ export function normalizeTechniqueDamageTransform(raw) {
 
   const multiplier = Math.max(1, Math.floor(Number(raw.multiplier ?? 1) || 1));
   const damageType = String(raw.damageType ?? "").trim();
-  const label = String(raw.label ?? "").trim();
   if (multiplier <= 1 && !damageType) return null;
 
-  return { enabled: true, multiplier, damageType, label };
+  return { enabled: true, multiplier, damageType };
 }
 
 export function getTechniqueDamageTransformConfig(item) {
@@ -70,9 +72,7 @@ export function applyTechniqueDamageTransformToParts(
 ) {
   if (!Array.isArray(parts) || !config) return;
 
-  const multiplier = Math.max(1, Math.floor(Number(config.multiplier ?? 1) || 1));
   const damageType = String(config.damageType ?? "").trim();
-  if (multiplier <= 1 && !damageType) return;
 
   const transformed = [];
   for (const part of parts) {

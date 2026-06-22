@@ -435,10 +435,6 @@ function validateDamageTransform(packName, filename, damageTransform) {
   if (damageType && !DAMAGE_TYPES.has(damageType)) {
     error(packName, filename, `unknown automation.damageTransform.damageType "${damageType}"`);
   }
-
-  if (damageTransform.label !== undefined && typeof damageTransform.label !== "string") {
-    error(packName, filename, "automation.damageTransform.label must be a string");
-  }
 }
 
 function validateWeaponAttack(doc, filename, packName) {

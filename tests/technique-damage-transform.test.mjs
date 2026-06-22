@@ -25,7 +25,6 @@ describe("technique damage transforms", () => {
       enabled: true,
       multiplier: 2,
       damageType: "piercing",
-      label: "Gatotsu",
     });
 
     applyTechniqueDamageTransformToParts(parts, config);
@@ -137,7 +136,6 @@ describe("technique damage transforms", () => {
       enabled: true,
       multiplier: 3,
       damageType: "piercing",
-      label: "Triple",
     });
 
     applyTechniqueDamageTransformToParts(parts, config);
@@ -195,7 +193,6 @@ describe("Gatotsu Isshiki source data", () => {
       enabled: true,
       multiplier: 2,
       damageType: "piercing",
-      label: "Gatotsu",
     });
   });
 });
