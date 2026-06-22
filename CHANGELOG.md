@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.3.0 - 2026-06-22
+
+- Added **generic damage transforms** (#159): techniques can now configure `automation.damageTransform` to multiply base weapon damage by a factor and/or retype it to a specific damage type (e.g. piercing). Used by the Gatotsu series to convert all weapon damage to piercing without touching the attack action directly.
+- Added **Gatotsu series automation** (#161): Isshiki and Nishiki now ship with `damageTransform` (2× piercing) and the charge flag; Nishiki's activation is corrected to Full-round action; Sanshiki's full description is restored with a piercing `damageTransform` (multiplier 1) and a non-crit `2d6` extra-damage bonus; Zeroshiki switches from inline damage to the weapon-attack pattern with a `3d6` damage bonus and full empower automation (2 chakra/step, +1d6/step, maximum 7 steps → 10d6 total).
+- Fixed **empower prompt skipped for weapon-attack techniques** (#162): the post-perform empower dialog was gated by a `!delegatedWeaponAttack` guard that prevented it from firing for techniques that delegate to a weapon selection (e.g. Zeroshiki). The guard is removed from the post-perform position; the pre-perform guard (which affects the perform DC) is kept.
+- Fixed **delegated attack bonus duplication** (#158): techniques that delegate to a weapon attack no longer double-count the attack bonus that PF1e's action machinery already applies.
+
 ## v1.2.0 - 2026-06-21
 
 - **Repository transferred** to `joel-fmjr/naruto-d20`: updated all manifest, download, readme, and issues URLs in `module.json` to point to the new canonical location. The old `ezioaalves/naruto-d20` URL redirects automatically.
