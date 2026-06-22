@@ -4,6 +4,7 @@ import { describe, it } from "node:test";
 
 import {
   applyTechniqueDamageTransformToParts,
+  registerTechniqueDamageTransforms,
   techniqueDamageTransformRepeatCount,
   normalizeTechniqueDamageTransform,
 } from "../scripts/features/automation/combat/damage-transform.mjs";
@@ -61,6 +62,37 @@ describe("technique damage transforms", () => {
     assert.equal(techniqueDamageTransformRepeatCount({ multiplier: 1 }), 0);
     assert.equal(techniqueDamageTransformRepeatCount({ multiplier: 2 }), 1);
     assert.equal(techniqueDamageTransformRepeatCount({ multiplier: 3 }), 2);
+  });
+
+  it("registers rollDamage through libWrapper when available", () => {
+    const originalPf1 = globalThis.pf1;
+    const originalHooks = globalThis.Hooks;
+    const originalLibWrapper = globalThis.libWrapper;
+    const originalRollDamage = async () => ["base"];
+    class ItemAction {}
+    const calls = [];
+
+    ItemAction.prototype.rollDamage = originalRollDamage;
+    globalThis.pf1 = { components: { ItemAction } };
+    globalThis.Hooks = { on: () => {} };
+    globalThis.libWrapper = {
+      MIXED: "MIXED",
+      register: (...args) => calls.push(args),
+    };
+
+    try {
+      registerTechniqueDamageTransforms();
+    } finally {
+      globalThis.pf1 = originalPf1;
+      globalThis.Hooks = originalHooks;
+      globalThis.libWrapper = originalLibWrapper;
+    }
+
+    assert.equal(ItemAction.prototype.rollDamage, originalRollDamage);
+    assert.equal(calls.length, 1);
+    assert.equal(calls[0][0], "naruto-d20");
+    assert.equal(calls[0][1], "pf1.components.ItemAction.prototype.rollDamage");
+    assert.equal(calls[0][3], "MIXED");
   });
 
   it("keeps part order while converting normal critical and non-critical parts", () => {

@@ -1,6 +1,9 @@
+import { MODULE_ID } from "../../../core/constants.mjs";
+
 const TRANSFORM_PROPERTY = "__narutoD20DamageTransform";
 const REPEAT_PROPERTY = "__narutoD20DamageTransformRepeat";
 const MULTIPLIED_PART_TYPES = new Set(["normal", "crit"]);
+const ROLL_DAMAGE_TARGET = "pf1.components.ItemAction.prototype.rollDamage";
 let rollDamagePatchInstalled = false;
 
 export function normalizeTechniqueDamageTransform(raw) {
@@ -72,31 +75,48 @@ export function registerTechniqueDamageTransforms() {
 
 function installDamageRollMultiplierPatch() {
   if (rollDamagePatchInstalled) return;
+  if (globalThis.libWrapper?.register) {
+    globalThis.libWrapper.register(
+      MODULE_ID,
+      ROLL_DAMAGE_TARGET,
+      async function narutoD20RollDamageWithTransform(wrapped, options = {}) {
+        return rollDamageWithTransform(this, wrapped, options);
+      },
+      globalThis.libWrapper.MIXED ?? "MIXED",
+    );
+    rollDamagePatchInstalled = true;
+    return;
+  }
+
   const ItemAction = globalThis.pf1?.components?.ItemAction;
   const original = ItemAction?.prototype?.rollDamage;
   if (typeof original !== "function") return;
 
   rollDamagePatchInstalled = true;
   ItemAction.prototype.rollDamage = async function narutoD20RollDamageWithTransform(options = {}) {
-    const config = this?.[TRANSFORM_PROPERTY];
-    const repeatCount = techniqueDamageTransformRepeatCount(config);
-    const rolls = await original.call(this, options);
-    if (!repeatCount || this?.[REPEAT_PROPERTY]) return rolls;
-
-    const repeated = [...rolls];
-    const previous = this[REPEAT_PROPERTY];
-    this[REPEAT_PROPERTY] = true;
-    try {
-      for (let i = 0; i < repeatCount; i++) {
-        repeated.push(...(await original.call(this, options)));
-      }
-    } finally {
-      if (previous === undefined) delete this[REPEAT_PROPERTY];
-      else this[REPEAT_PROPERTY] = previous;
-    }
-
-    return repeated;
+    return rollDamageWithTransform(this, original, options);
   };
+}
+
+async function rollDamageWithTransform(action, wrapped, options) {
+  const config = action?.[TRANSFORM_PROPERTY];
+  const repeatCount = techniqueDamageTransformRepeatCount(config);
+  const rolls = await wrapped.call(action, options);
+  if (!repeatCount || action?.[REPEAT_PROPERTY]) return rolls;
+
+  const repeated = [...rolls];
+  const previous = action[REPEAT_PROPERTY];
+  action[REPEAT_PROPERTY] = true;
+  try {
+    for (let i = 0; i < repeatCount; i++) {
+      repeated.push(...(await wrapped.call(action, options)));
+    }
+  } finally {
+    if (previous === undefined) delete action[REPEAT_PROPERTY];
+    else action[REPEAT_PROPERTY] = previous;
+  }
+
+  return repeated;
 }
 
 function cloneDamageRollPart(part) {
