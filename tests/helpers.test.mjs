@@ -950,7 +950,11 @@ describe("learning calculations", () => {
         includeConditional: true,
         hachimonTonkou: true,
       }).parts,
-      ["8[NarutoD20.Breakdown.CharacterLevel]", "4[Str]"],
+      [
+        "8[NarutoD20.Breakdown.CharacterLevel]",
+        "4[Str]",
+        "1[NarutoD20.Breakdown.MiscBonus]",
+      ],
     );
     assert.equal(buildLearningView(item, null, LEARNING_MODES.STANDARD).effectivelyLearned, false);
   });

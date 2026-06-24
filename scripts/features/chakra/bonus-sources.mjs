@@ -67,7 +67,13 @@ export function buildLearnCheckBreakdown(
     sources.push({ name: data.abilityLabel, value: data.abilityMod, builtIn: true });
   }
 
-  if (baseOnly) return { parts, sources };
+  if (baseOnly) {
+    if (data.miscBonus) {
+      parts.push(`${data.miscBonus}[${miscBonusLabel}]`);
+      sources.push({ name: miscBonusLabel, value: data.miscBonus, builtIn: false });
+    }
+    return { parts, sources };
+  }
 
   const buffSources = getChangeSources(actor, learnBuffPath(key));
   if (buffSources.length > 0) {
