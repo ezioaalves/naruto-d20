@@ -73,7 +73,10 @@ import {
   getTrainingWeightLearnBonus,
   getTrainingWeightState,
 } from "../scripts/data/training-weights.mjs";
-import { buildLearnCheckBreakdown } from "../scripts/features/chakra/bonus-sources.mjs";
+import {
+  buildLearnCheckBreakdown,
+  buildMasteryCheckBreakdown,
+} from "../scripts/features/chakra/bonus-sources.mjs";
 import { validateCompendia } from "../tools/validate-compendia.mjs";
 import { calculateChakraDamage } from "../scripts/features/chakra/damage.mjs";
 import {
@@ -2701,6 +2704,166 @@ describe("training weight learn breakdown", () => {
       }).parts.at(-1),
       "3[Str]",
     );
+  });
+});
+
+describe("mastery check breakdown", () => {
+  it("limits Hachimon mastery to base, ability, misc, and Knowledge (arcana) synergy", () => {
+    globalThis.game.i18n = {
+      localize: (key) => key,
+      format: (key, data) => `${key}:${JSON.stringify(data)}`,
+    };
+
+    const actor = {
+      flags: {
+        "naruto-d20": {
+          learn: {
+            tai: {
+              base: 8,
+              abilityMod: 4,
+              abilityLabel: "Str",
+              buffBonus: 6,
+              synergyBonus: 2,
+              miscBonus: 1,
+              conditional: 3,
+            },
+          },
+        },
+      },
+      sourceInfo: {},
+      system: {
+        skills: {
+          kar: { rank: 2 },
+          tai: { rank: 4 },
+        },
+      },
+      items: [],
+    };
+    const item = {
+      system: {
+        discipline: "Hachimon Tonkou",
+      },
+      flags: {
+        "naruto-d20": {
+          trainingWeightTechnique: {
+            eligibleRankKey: "",
+            learnedStrengthRank: 0,
+          },
+        },
+      },
+    };
+
+    assert.deepEqual(buildMasteryCheckBreakdown(actor, "tai", { item }).parts, [
+      "8[NarutoD20.Breakdown.CharacterLevel]",
+      "4[Str]",
+      "1[NarutoD20.Breakdown.MiscBonus]",
+      "2[NarutoD20.Breakdown.SkillSynergy]",
+    ]);
+  });
+
+  it("adds training weight to eligible rank mastery checks only", () => {
+    globalThis.game.i18n = {
+      localize: (key) => key,
+      format: (key, data) => `${key}:${JSON.stringify(data)}`,
+    };
+
+    const actor = {
+      flags: {
+        "naruto-d20": {
+          learn: {
+            tai: {
+              base: 7,
+              abilityMod: 3,
+              abilityLabel: "Str",
+              buffBonus: 5,
+              synergyBonus: 2,
+              miscBonus: 1,
+            },
+          },
+        },
+      },
+      sourceInfo: {},
+      system: {
+        skills: {
+          kar: { rank: 0 },
+          tai: { rank: 4 },
+        },
+      },
+      items: [
+        {
+          id: "w3",
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 50 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "wrist", type: 3, rankPenalty: 3, learnBonus: 3 },
+            },
+          },
+        },
+        {
+          id: "a2",
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 37.5 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "ankle", type: 2, rankPenalty: 2, learnBonus: 2 },
+            },
+          },
+        },
+      ],
+    };
+
+    const eligible = {
+      flags: {
+        "naruto-d20": {
+          trainingWeightTechnique: {
+            eligibleRankKey: "KOUSOKU",
+            learnedStrengthRank: 0,
+          },
+        },
+      },
+    };
+
+    const ineligible = {
+      flags: {
+        "naruto-d20": {
+          trainingWeightTechnique: {
+            eligibleRankKey: "",
+            learnedStrengthRank: 0,
+          },
+        },
+      },
+    };
+
+    assert.deepEqual(buildMasteryCheckBreakdown(actor, "tai", { item: eligible }).parts, [
+      "7[NarutoD20.Breakdown.CharacterLevel]",
+      "3[Str]",
+      "1[NarutoD20.Breakdown.MiscBonus]",
+      "2[NarutoD20.Breakdown.TrainingWeight]",
+    ]);
+    assert.deepEqual(buildMasteryCheckBreakdown(actor, "tai", { item: ineligible }).parts, [
+      "7[NarutoD20.Breakdown.CharacterLevel]",
+      "3[Str]",
+      "1[NarutoD20.Breakdown.MiscBonus]",
+    ]);
   });
 });
 

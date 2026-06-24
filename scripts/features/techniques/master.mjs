@@ -18,7 +18,7 @@ import { MAX_MASTERY_STEP } from "../../core/constants.mjs";
 import { actionPointsPath, masteryCurrentTechniqueIdPath } from "../../core/flag-paths.mjs";
 import { chatVisibilityFrom } from "../chat/visibility.mjs";
 import { markNarutoRollRerollable } from "../chat/rerolls.mjs";
-import { buildLearnCheckBreakdown } from "../chakra/bonus-sources.mjs";
+import { buildMasteryCheckBreakdown } from "../chakra/bonus-sources.mjs";
 import { MASTERY_SUCCESSES } from "./model.mjs";
 import {
   getTechniqueLearningResolution,
@@ -302,11 +302,7 @@ async function rollMasteryCheck(item, actor, learningSkill, activeState) {
   const { skillKey } = learningSkill;
   const failureInsight = Math.min(5, Math.max(0, Number(activeState.failureInsight ?? 0) || 0));
   const apBonus = Math.max(0, Number(activeState.actionPointBonus ?? 0) || 0);
-  const breakdown = buildLearnCheckBreakdown(actor, skillKey, {
-    item,
-    includeConditional: true,
-    hachimonTonkou: learningSkill.hachimonTonkou === true,
-  });
+  const breakdown = buildMasteryCheckBreakdown(actor, skillKey, { item });
   if (!breakdown) {
     ui.notifications.warn(
       game.i18n.format("NarutoD20.Notifications.LearnDataNotReady", {
