@@ -10,9 +10,10 @@ import { applyTechniqueSystemDefaults } from "./defaults.mjs";
  * it matches each embedded technique to its compendium counterpart and reports
  * whether the stored data still matches.
  *
- * Detection strategy: CONTENT DIFF (deep-equal of normalized `system` data).
- * No version field is required on the technique, so any edit you make in the
- * compendium is detected automatically with zero per-technique maintenance.
+ * Detection strategy: CONTENT DIFF (deep-equal of normalized `system` data plus
+ * top-level `img`). No version field is required on the technique, so any edit
+ * you make in the compendium is detected automatically with zero per-technique
+ * maintenance.
  * See dev-notes/technique-synckit.md for the alternatives (version flag / indexed hash)
  * and how to migrate to them later.
  *
@@ -154,9 +155,33 @@ export function normalizeSystem(system) {
   return stripIds(out);
 }
 
+function isTechniqueData(value) {
+  return Boolean(value && typeof value === "object" && !Array.isArray(value) && "system" in value);
+}
+
+function systemForDiff(value) {
+  return isTechniqueData(value) ? value.system : value;
+}
+
+function imageForDiff(value) {
+  return isTechniqueData(value) ? (value.img ?? "") : null;
+}
+
 /** True when the embedded technique's stored data already matches the source. */
-export function diffTechnique(embeddedSystem, sourceSystem) {
-  return deepEqual(normalizeSystem(embeddedSystem), normalizeSystem(sourceSystem));
+export function diffTechnique(embeddedData, sourceData) {
+  if (
+    !deepEqual(
+      normalizeSystem(systemForDiff(embeddedData)),
+      normalizeSystem(systemForDiff(sourceData)),
+    )
+  ) {
+    return false;
+  }
+
+  const embeddedImage = imageForDiff(embeddedData);
+  const sourceImage = imageForDiff(sourceData);
+  if (embeddedImage === null && sourceImage === null) return true;
+  return embeddedImage === sourceImage;
 }
 
 function hasLimitedUseConfig(uses) {
@@ -202,7 +227,7 @@ export async function analyzeActor(actor) {
   return techniques.map((item) => {
     const sourceDoc = docById.get(matches.get(item.id));
     if (!sourceDoc) return describe(item, STATUS.ORPHAN);
-    const same = diffTechnique(item.toObject().system, sourceDoc.toObject().system);
+    const same = diffTechnique(item.toObject(), sourceDoc.toObject());
     return describe(item, same ? STATUS.UP_TO_DATE : STATUS.OUT_OF_DATE);
   });
 }

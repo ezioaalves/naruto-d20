@@ -2,7 +2,7 @@
   "_id": "LLGKMuVkIeFXcT22",
   "name": "SHURIKENJUTSU: RENKEN (SHURIKEN SKILL: BARRAGE)",
   "type": "naruto-d20.technique",
-  "img": "systems/pf1/icons/skills/weapon_01.jpg",
+  "img": "icons/weapons/thrown/shuriken-blue.webp",
   "_stats": {
     "coreVersion": "13.350",
     "systemId": "pf1",

@@ -409,7 +409,10 @@ describe("technique empower helpers", () => {
     assert.equal(buildEmpowerDamageFormula({ steps: 0, formulaPerStep: "1d6" }), "");
     assert.equal(buildEmpowerDamageFormula({ steps: 3, formulaPerStep: "1d6" }), "3d6[Empower]");
     assert.equal(buildEmpowerDamageFormula({ steps: 2, formulaPerStep: "1d8" }), "2d8[Empower]");
-    assert.equal(buildEmpowerDamageFormula({ steps: 2, formulaPerStep: "1d6+1" }), "2 * (1d6+1)[Empower]");
+    assert.equal(
+      buildEmpowerDamageFormula({ steps: 2, formulaPerStep: "1d6+1" }),
+      "2 * (1d6+1)[Empower]",
+    );
   });
 
   it("computes perform DC increases by complete groups", () => {
@@ -1558,6 +1561,34 @@ describe("synckit normalization", () => {
     };
 
     assert.equal(diffTechnique(embedded, source), false);
+  });
+
+  it("detects icon changes when comparing full technique item data without treating actor progress as source drift", () => {
+    const embeddedSystem = {
+      description: { value: "" },
+      descriptors: [],
+      learning: { learned: true, progress: 2 },
+      mastery: 3,
+    };
+    const sourceSystem = {
+      description: { value: "" },
+      descriptors: [],
+    };
+
+    assert.equal(
+      diffTechnique(
+        { img: "icons/magic/water/orb-water-transparent.webp", system: embeddedSystem },
+        { img: "icons/magic/water/orb-water-transparent.webp", system: sourceSystem },
+      ),
+      true,
+    );
+    assert.equal(
+      diffTechnique(
+        { img: "systems/pf1/icons/spells/fireball-red-3.jpg", system: embeddedSystem },
+        { img: "icons/magic/water/orb-water-transparent.webp", system: sourceSystem },
+      ),
+      false,
+    );
   });
 });
 
