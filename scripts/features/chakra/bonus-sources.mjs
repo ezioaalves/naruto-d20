@@ -40,15 +40,17 @@ const AFFINITY_SUBTYPE_ALIASES = {
  * @param {Item}   [options.item] Technique being learned. When provided,
  * conditional affinity bonuses can be resolved against its descriptors.
  * @param {boolean} [options.includeConditional=false]
+ * @param {boolean} [options.hachimonTonkou=false]
  * @returns {{parts: string[], sources: object[]}|null}
  */
 export function buildLearnCheckBreakdown(
   actor,
   key,
-  { item = null, includeConditional = false } = {},
+  { item = null, includeConditional = false, hachimonTonkou = false } = {},
 ) {
   const data = actor.flags?.[MODULE_ID]?.learn?.[key];
   if (!data) return null;
+  const baseOnly = hachimonTonkou || item?.system?.discipline === "Hachimon Tonkou";
 
   const parts = []; // labeled formula parts for pf1.dice.d20Roll
   const sources = []; // {name, value, builtIn} rows for extended-tooltip.hbs
@@ -64,6 +66,8 @@ export function buildLearnCheckBreakdown(
     parts.push(`${data.abilityMod}[${data.abilityLabel}]`);
     sources.push({ name: data.abilityLabel, value: data.abilityMod, builtIn: true });
   }
+
+  if (baseOnly) return { parts, sources };
 
   const buffSources = getChangeSources(actor, learnBuffPath(key));
   if (buffSources.length > 0) {

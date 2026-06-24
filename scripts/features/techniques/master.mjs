@@ -118,7 +118,7 @@ export function buildMasteryView(item, actor, mode = getTrainingMode()) {
   const learned = isTechniqueEffectivelyLearned(item);
   // Skill for display only — resolved without prompting (null for an
   // unconfigured Training technique).
-  const skillKey = getTechniqueLearningResolution(item).skillKey;
+  const skillKey = getTechniqueLearningResolution(item, actor).skillKey;
 
   return {
     step,
@@ -152,7 +152,7 @@ export async function attemptMasterTechnique(item) {
 
   if (!validateMasteryState(item)) return;
 
-  const learningSkill = await resolveTechniqueLearningSkill(item);
+  const learningSkill = await resolveTechniqueLearningSkill(item, actor);
   if (!learningSkill) return;
 
   const { skillKey } = learningSkill;
@@ -170,7 +170,7 @@ export async function attemptMasterTechnique(item) {
   if (!validateMasterySkillAndChakra(item, actor, skillKey, mode)) return;
 
   const activeState = await prepareActiveMastery(actor, item);
-  const roll = await rollMasteryCheck(item, actor, skillKey, activeState);
+  const roll = await rollMasteryCheck(item, actor, learningSkill, activeState);
   if (!roll) return;
 
   await resolveMasterAttempt(item, actor, {
@@ -298,10 +298,15 @@ async function expireInterruptedMastery(item, state) {
   };
 }
 
-async function rollMasteryCheck(item, actor, skillKey, activeState) {
+async function rollMasteryCheck(item, actor, learningSkill, activeState) {
+  const { skillKey } = learningSkill;
   const failureInsight = Math.min(5, Math.max(0, Number(activeState.failureInsight ?? 0) || 0));
   const apBonus = Math.max(0, Number(activeState.actionPointBonus ?? 0) || 0);
-  const breakdown = buildLearnCheckBreakdown(actor, skillKey, { item, includeConditional: true });
+  const breakdown = buildLearnCheckBreakdown(actor, skillKey, {
+    item,
+    includeConditional: true,
+    hachimonTonkou: learningSkill.hachimonTonkou === true,
+  });
   if (!breakdown) {
     ui.notifications.warn(
       game.i18n.format("NarutoD20.Notifications.LearnDataNotReady", {

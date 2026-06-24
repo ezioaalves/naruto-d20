@@ -1,4 +1,4 @@
-import { TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
+import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
 import {
   actionPointsPath,
   epsPath,
@@ -12,6 +12,7 @@ import {
   canonicalizeDisciplineName,
   DISCIPLINE_LABEL_KEYS,
   DISCIPLINE_SKILL_MAP,
+  LEARN_KEYS,
   LEARN_DISCIPLINES,
 } from "../actor-stats/skills.mjs";
 import {
@@ -41,6 +42,7 @@ export { getMaxAttempts as getLearningMaxAttempts };
 export const LEARNING_MODES = PROGRESSION_MODES;
 
 const TRAINING_SUBTYPE_SEPARATOR_RE = /\s*(?:,|\/|\bor\b)\s*/i;
+const HACHIMON_TONKOU_DISCIPLINE = "Hachimon Tonkou";
 
 /** Learn-flow Action-Point card config for the shared progression engine. */
 const LEARN_CARD_CONFIG = {
@@ -106,8 +108,51 @@ function getTrainingDisciplineOptions(item) {
   return options.length ? options : [...LEARN_DISCIPLINES];
 }
 
-export function getTechniqueLearningResolution(item) {
+function baseLearnCheckTotal(actor, skillKey) {
+  const data = actor?.flags?.[MODULE_ID]?.learn?.[skillKey];
+  if (!data) return null;
+  return (Number(data.base ?? 0) || 0) + (Number(data.abilityMod ?? 0) || 0);
+}
+
+function resolveBestHachimonLearnSkill(actor) {
+  if (!actor) return null;
+
+  let best = null;
+  for (const skillKey of LEARN_KEYS) {
+    const total = baseLearnCheckTotal(actor, skillKey);
+    if (total === null) continue;
+
+    const rank = Number(actor.system?.skills?.[skillKey]?.rank ?? 0) || 0;
+    const attempts = getMaxAttempts(actor, skillKey) ?? 0;
+    const candidate = { skillKey, total, attempts, trained: rank >= 1 };
+    if (
+      !best ||
+      (candidate.trained && !best.trained) ||
+      (candidate.trained === best.trained && candidate.total > best.total) ||
+      (candidate.trained === best.trained &&
+        candidate.total === best.total &&
+        candidate.attempts > best.attempts)
+    ) {
+      best = candidate;
+    }
+  }
+
+  return best?.skillKey ?? null;
+}
+
+export function getTechniqueLearningResolution(item, actor = null) {
   const discipline = item.system?.discipline ?? "";
+  if (discipline === HACHIMON_TONKOU_DISCIPLINE) {
+    return {
+      discipline,
+      skillKey: resolveBestHachimonLearnSkill(actor),
+      options: [...LEARN_DISCIPLINES],
+      requiresChoice: false,
+      requiresSkill: true,
+      hachimonTonkou: true,
+    };
+  }
+
   if (discipline !== "Training") {
     const skillKey = DISCIPLINE_SKILL_MAP[discipline];
     return {
@@ -115,6 +160,7 @@ export function getTechniqueLearningResolution(item) {
       skillKey,
       options: skillKey ? [discipline] : [],
       requiresChoice: false,
+      requiresSkill: false,
     };
   }
 
@@ -126,6 +172,7 @@ export function getTechniqueLearningResolution(item) {
       skillKey: DISCIPLINE_SKILL_MAP[stored],
       options,
       requiresChoice: false,
+      requiresSkill: true,
     };
   }
 
@@ -136,6 +183,7 @@ export function getTechniqueLearningResolution(item) {
       skillKey: DISCIPLINE_SKILL_MAP[resolved],
       options,
       requiresChoice: false,
+      requiresSkill: true,
     };
   }
 
@@ -144,6 +192,7 @@ export function getTechniqueLearningResolution(item) {
     skillKey: null,
     options,
     requiresChoice: true,
+    requiresSkill: true,
   };
 }
 
@@ -196,8 +245,8 @@ async function promptTrainingDisciplineChoice(item, options) {
   });
 }
 
-export async function resolveTechniqueLearningSkill(item) {
-  const resolution = getTechniqueLearningResolution(item);
+export async function resolveTechniqueLearningSkill(item, actor = null) {
+  const resolution = getTechniqueLearningResolution(item, actor);
   if (!resolution.requiresChoice) return resolution;
 
   const chosen = await promptTrainingDisciplineChoice(item, resolution.options);
@@ -209,18 +258,22 @@ export async function resolveTechniqueLearningSkill(item) {
     skillKey: DISCIPLINE_SKILL_MAP[chosen],
     options: resolution.options,
     requiresChoice: false,
+    requiresSkill: true,
   };
 }
 
 export function isTechniqueEffectivelyLearned(item) {
   const learning = item.system.learning ?? {};
   const resolution = getTechniqueLearningResolution(item);
-  return learning.learned === true || (!resolution.requiresChoice && !resolution.skillKey);
+  return (
+    learning.learned === true ||
+    (!resolution.requiresChoice && !resolution.requiresSkill && !resolution.skillKey)
+  );
 }
 
 export function buildLearningView(item, actor, mode = getTrainingMode()) {
   const learning = item.system.learning ?? {};
-  const resolution = getTechniqueLearningResolution(item);
+  const resolution = getTechniqueLearningResolution(item, actor);
   const skillKey = resolution.skillKey;
   const targetProgress = getLearningTargetProgress(item, mode);
   const progress = Math.min(Number(learning.progress ?? 0) || 0, targetProgress);
@@ -233,7 +286,9 @@ export function buildLearningView(item, actor, mode = getTrainingMode()) {
   return {
     learned: learning.learned === true,
     learnedViaEmpathy: learning.learnedViaEmpathy === true,
-    effectivelyLearned: learning.learned === true || (!resolution.requiresChoice && !skillKey),
+    effectivelyLearned:
+      learning.learned === true ||
+      (!resolution.requiresChoice && !resolution.requiresSkill && !skillKey),
     progress,
     attemptsUsed,
     failureInsight,
@@ -252,7 +307,7 @@ export function buildLearningView(item, actor, mode = getTrainingMode()) {
     maxAttempts: getMaxAttempts(actor, skillKey),
     mode,
     isFourHourBlocks: mode === PROGRESSION_MODES.FOUR_HOUR_BLOCKS,
-    hasSkill: !!skillKey || resolution.requiresChoice,
+    hasSkill: !!skillKey || resolution.requiresChoice || resolution.requiresSkill,
   };
 }
 
@@ -316,7 +371,7 @@ export async function attemptLearnTechnique(item) {
   const learning = item.system.learning ?? {};
   if (!validateLearningState(item, actor, learning)) return;
 
-  const learningSkill = await resolveTechniqueLearningSkill(item);
+  const learningSkill = await resolveTechniqueLearningSkill(item, actor);
   if (!learningSkill) return;
 
   const { skillKey } = learningSkill;
@@ -329,7 +384,7 @@ export async function attemptLearnTechnique(item) {
   if (!validateLearningSkillAndChakra(item, actor, skillKey, mode)) return;
 
   const activeLearning = await prepareActiveLearning(actor, item, learning);
-  const roll = await rollLearnCheck(item, actor, skillKey, activeLearning);
+  const roll = await rollLearnCheck(item, actor, learningSkill, activeLearning);
   if (!roll) return;
 
   await resolveLearnAttempt(item, actor, {
@@ -497,10 +552,15 @@ async function prepareActiveLearning(actor, item, learning) {
   return expireInterruptedTraining(item, switchedLearning);
 }
 
-async function rollLearnCheck(item, actor, skillKey, activeLearning) {
+async function rollLearnCheck(item, actor, learningSkill, activeLearning) {
+  const { skillKey } = learningSkill;
   const failureInsight = Math.min(5, Math.max(0, Number(activeLearning.failureInsight ?? 0) || 0));
   const apBonus = Math.max(0, Number(activeLearning.actionPointBonus ?? 0) || 0);
-  const breakdown = buildLearnCheckBreakdown(actor, skillKey, { item, includeConditional: true });
+  const breakdown = buildLearnCheckBreakdown(actor, skillKey, {
+    item,
+    includeConditional: true,
+    hachimonTonkou: learningSkill.hachimonTonkou === true,
+  });
   if (!breakdown) {
     ui.notifications.warn(
       game.i18n.format("NarutoD20.Notifications.LearnDataNotReady", {

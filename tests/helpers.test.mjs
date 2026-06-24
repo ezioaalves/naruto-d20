@@ -56,7 +56,9 @@ import { elementCount } from "../scripts/features/automation/maintenance/element
 import { diffTechnique, normalizeSystem } from "../scripts/features/techniques/sync.mjs";
 import {
   LEARNING_MODES,
+  buildLearningView,
   buildLearnAttemptResult,
+  getTechniqueLearningResolution,
   getLearningMaxAttempts,
   getLearningTargetProgress,
 } from "../scripts/features/techniques/learn.mjs";
@@ -844,6 +846,113 @@ describe("learning calculations", () => {
     assert.equal(getLearningTargetProgress(item, LEARNING_MODES.STANDARD), 2);
     assert.equal(getLearningTargetProgress(item, LEARNING_MODES.FOUR_HOUR_BLOCKS), 12);
     assert.equal(getLearningMaxAttempts(actor, "nin"), 5);
+  });
+
+  it("uses the best base discipline skill for Hachimon Tonkou learning", () => {
+    globalThis.game.i18n = {
+      localize: (key) => key,
+      format: (key, data) => `${key}:${JSON.stringify(data)}`,
+    };
+
+    const actor = {
+      flags: {
+        "naruto-d20": {
+          learn: {
+            ckc: {
+              base: 8,
+              abilityMod: 1,
+              abilityLabel: "Wis",
+              buffBonus: 9,
+              synergyBonus: 2,
+              miscBonus: 3,
+            },
+            fui: { base: 8, abilityMod: 2, abilityLabel: "Int" },
+            gnj: { base: 8, abilityMod: 0, abilityLabel: "Cha" },
+            nin: {
+              base: 8,
+              abilityMod: 2,
+              abilityLabel: "Int",
+              conditional: 3,
+            },
+            tai: {
+              base: 8,
+              abilityMod: 4,
+              abilityLabel: "Str",
+              buffBonus: 4,
+              synergyBonus: 2,
+              miscBonus: 1,
+            },
+          },
+        },
+      },
+      sourceInfo: {},
+      system: {
+        abilities: {
+          cha: { mod: 0 },
+          int: { mod: 2 },
+          str: { mod: 4 },
+          wis: { mod: 1 },
+        },
+        skills: {
+          ckc: { ability: "wis", rank: 9 },
+          fui: { ability: "int", rank: 4 },
+          gnj: { ability: "cha", rank: 4 },
+          nin: { ability: "int", rank: 4 },
+          tai: { ability: "str", rank: 4 },
+        },
+      },
+      items: [
+        {
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 50 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "wrist", type: 3, rankPenalty: 3, learnBonus: 3 },
+            },
+          },
+        },
+      ],
+    };
+    const item = {
+      system: {
+        discipline: "Hachimon Tonkou",
+        flags: {
+          dictionary: {},
+        },
+      },
+      flags: {
+        "naruto-d20": {
+          trainingWeightTechnique: {
+            eligibleRankKey: "KOUSOKU",
+            learnedStrengthRank: 0,
+          },
+        },
+      },
+    };
+
+    const resolution = getTechniqueLearningResolution(item, actor);
+
+    assert.equal(resolution.discipline, "Hachimon Tonkou");
+    assert.equal(resolution.skillKey, "tai");
+    assert.equal(resolution.hachimonTonkou, true);
+    assert.deepEqual(
+      buildLearnCheckBreakdown(actor, resolution.skillKey, {
+        item,
+        includeConditional: true,
+        hachimonTonkou: true,
+      }).parts,
+      ["8[NarutoD20.Breakdown.CharacterLevel]", "4[Str]"],
+    );
+    assert.equal(buildLearningView(item, null, LEARNING_MODES.STANDARD).effectivelyLearned, false);
   });
 
   it("resolves a four-hour-block success without Foundry documents", () => {
