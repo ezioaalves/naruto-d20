@@ -192,6 +192,50 @@ function normalizeStringCollection(value) {
   );
 }
 
+function getKnowledgeArcanaSynergyBonus(actor) {
+  const ranks = Number(actor?.system?.skills?.kar?.rank ?? 0) || 0;
+  return ranks >= 2 ? 2 : 0;
+}
+
+export function buildMasteryCheckBreakdown(actor, key, { item = null } = {}) {
+  const data = actor.flags?.[MODULE_ID]?.learn?.[key];
+  if (!data) return null;
+
+  const parts = [];
+  const sources = [];
+  const characterLevelLabel = game.i18n.localize("NarutoD20.Breakdown.CharacterLevel");
+  const skillSynergyLabel = game.i18n.localize("NarutoD20.Breakdown.SkillSynergy");
+  const miscBonusLabel = game.i18n.localize("NarutoD20.Breakdown.MiscBonus");
+
+  parts.push(`${data.base}[${characterLevelLabel}]`);
+  sources.push({ name: characterLevelLabel, value: data.base, builtIn: true });
+
+  if (data.abilityMod) {
+    parts.push(`${data.abilityMod}[${data.abilityLabel}]`);
+    sources.push({ name: data.abilityLabel, value: data.abilityMod, builtIn: true });
+  }
+
+  if (data.miscBonus) {
+    parts.push(`${data.miscBonus}[${miscBonusLabel}]`);
+    sources.push({ name: miscBonusLabel, value: data.miscBonus, builtIn: false });
+  }
+
+  const knowledgeArcanaSynergy = getKnowledgeArcanaSynergyBonus(actor);
+  if (knowledgeArcanaSynergy) {
+    parts.push(`${knowledgeArcanaSynergy}[${skillSynergyLabel}]`);
+    sources.push({ name: skillSynergyLabel, value: knowledgeArcanaSynergy, builtIn: true });
+  }
+
+  const trainingWeight = item ? getTrainingWeightLearnBonus(actor, item) : null;
+  if (trainingWeight) {
+    const label = game.i18n.localize("NarutoD20.Breakdown.TrainingWeight");
+    parts.push(`${trainingWeight.value}[${label}]`);
+    sources.push({ name: label, value: trainingWeight.value, builtIn: false });
+  }
+
+  return { parts, sources };
+}
+
 /**
  * Build the "from sources" breakdown for Chakra Pool Max.
  * Used only for tooltips (no roll parts needed).
