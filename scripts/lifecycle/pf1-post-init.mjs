@@ -7,6 +7,7 @@ import { registerStrengthRankCombat } from "../features/automation/combat/streng
 import { registerSpeedRankAttack } from "../features/automation/combat/speed-rank-attack.mjs";
 import { registerAttackNoManeuver } from "../features/automation/combat/attack-no-maneuver.mjs";
 import { registerChakraConditions } from "../features/chakra/conditions.mjs";
+import { registerTrainingWeightCarryPatch } from "../features/automation/training/weight-carry.mjs";
 
 function _registerScriptCallCategories() {
   if (!pf1.registry?.scriptCalls) return;
@@ -66,5 +67,6 @@ export function registerPf1PostInitHook() {
     registerSpeedRankAttack();
     registerAttackNoManeuver();
     registerChakraConditions();
+    registerTrainingWeightCarryPatch();
   });
 }
