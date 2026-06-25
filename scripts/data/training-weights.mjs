@@ -14,6 +14,19 @@ export const TRAINING_WEIGHT_TABLE = Object.freeze({
   8: Object.freeze({ weight: 500, rankPenalty: 10, learnBonus: 5, learnedStrengthRank: 10 }),
 });
 
+const RANK_WORDS = Object.freeze({
+  ONE: 1,
+  TWO: 2,
+  THREE: 3,
+  FOUR: 4,
+  FIVE: 5,
+  SHODAN: 1,
+  NIDAN: 2,
+  SANDAN: 3,
+  YONDAN: 4,
+  GODAN: 5,
+});
+
 export function getTrainingWeightItemFlag(item) {
   const flag = item?.flags?.[MODULE_ID]?.[TRAINING_WEIGHT_ITEM_FLAG];
   if (!flag) return null;
@@ -29,12 +42,36 @@ export function getTrainingWeightItemFlag(item) {
 
 export function getTrainingWeightTechniqueFlag(item) {
   const flag = item?.flags?.[MODULE_ID]?.[TRAINING_WEIGHT_TECHNIQUE_FLAG];
-  if (!flag) return null;
+  if (!flag) return inferTrainingWeightTechniqueFlag(item);
   return {
     eligibleRankKey: ["KOUSOKU", "JOURYOKU"].includes(flag.eligibleRankKey)
       ? flag.eligibleRankKey
       : "",
     learnedStrengthRank: Math.max(0, Number(flag.learnedStrengthRank) || 0),
+  };
+}
+
+function inferTrainingWeightTechniqueFlag(item) {
+  const name = String(item?.name ?? "").toUpperCase();
+  const nameMatch = name.match(/\b(SHODAN|NIDAN|SANDAN|YONDAN|GODAN)\s+(KOUSOKU|JOURYOKU)\b/);
+  if (nameMatch) {
+    const eligibleRankKey = nameMatch[2];
+    return {
+      eligibleRankKey,
+      learnedStrengthRank: eligibleRankKey === "JOURYOKU" ? RANK_WORDS[nameMatch[1]] : 0,
+    };
+  }
+
+  const rankNameMatch = name.match(
+    /\bRANK\s+(ONE|TWO|THREE|FOUR|FIVE|[1-5])\s+(SPEED|STRENGTH)\b/,
+  );
+  if (!rankNameMatch) return null;
+
+  const rank = Number(rankNameMatch[1]) || RANK_WORDS[rankNameMatch[1]];
+  const eligibleRankKey = rankNameMatch[2] === "SPEED" ? "KOUSOKU" : "JOURYOKU";
+  return {
+    eligibleRankKey,
+    learnedStrengthRank: eligibleRankKey === "JOURYOKU" ? rank : 0,
   };
 }
 

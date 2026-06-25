@@ -2423,6 +2423,27 @@ describe("training weight state", () => {
     assert.equal(getHighestLearnedStrengthRank(actor), 3);
   });
 
+  it("infers learned strength rank from legacy JOURYOKU techniques without metadata", () => {
+    const actor = {
+      items: [
+        {
+          name: "SHODAN JOURYOKU (RANK ONE STRENGTH)",
+          type: "naruto-d20.technique",
+          system: { learning: { learned: true } },
+          flags: {},
+        },
+        {
+          name: "SANDAN JOURYOKU (RANK THREE STRENGTH)",
+          type: "naruto-d20.technique",
+          system: { learning: { learned: true } },
+          flags: {},
+        },
+      ],
+    };
+
+    assert.equal(getHighestLearnedStrengthRank(actor), 3);
+  });
+
   it("ignores carried weight for both halves when their type is at or below learned JOURYOKU rank", () => {
     const actor = {
       items: [
@@ -2864,6 +2885,91 @@ describe("mastery check breakdown", () => {
       "3[Str]",
       "1[NarutoD20.Breakdown.MiscBonus]",
     ]);
+  });
+
+  it("adds training weight to legacy rank mastery checks without technique metadata", () => {
+    globalThis.game.i18n = {
+      localize: (key) => key,
+      format: (key, data) => `${key}:${JSON.stringify(data)}`,
+    };
+
+    const actor = {
+      flags: {
+        "naruto-d20": {
+          learn: {
+            tai: {
+              base: 7,
+              abilityMod: 3,
+              abilityLabel: "Str",
+              buffBonus: 0,
+              synergyBonus: 0,
+              miscBonus: 0,
+            },
+          },
+        },
+      },
+      sourceInfo: {},
+      system: {
+        skills: {
+          kar: { rank: 0 },
+          tai: { rank: 4 },
+        },
+      },
+      items: [
+        {
+          id: "w3",
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 50 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "wrist", type: 3, rankPenalty: 3, learnBonus: 3 },
+            },
+          },
+        },
+        {
+          id: "a2",
+          type: "loot",
+          system: {
+            subType: "gear",
+            quantity: 1,
+            carried: true,
+            equipped: true,
+            weight: { total: 37.5 },
+          },
+          isPhysical: true,
+          isActive: true,
+          inContainer: false,
+          flags: {
+            "naruto-d20": {
+              trainingWeightItem: { slot: "ankle", type: 2, rankPenalty: 2, learnBonus: 2 },
+            },
+          },
+        },
+      ],
+    };
+
+    const legacyRankTechnique = {
+      name: "SHODAN KOUSOKU (RANK ONE SPEED)",
+      flags: {},
+    };
+
+    assert.deepEqual(
+      buildMasteryCheckBreakdown(actor, "tai", { item: legacyRankTechnique }).parts,
+      [
+        "7[NarutoD20.Breakdown.CharacterLevel]",
+        "3[Str]",
+        "2[NarutoD20.Breakdown.TrainingWeight]",
+      ],
+    );
   });
 });
 
