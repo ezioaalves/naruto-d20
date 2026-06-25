@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.1 - 2026-06-25
+
+- Added **Hachimon Tonkou learn-check handling** (#164): Hachimon Tonkou learning now rolls against the actor's best base learn discipline instead of using an unmapped discipline. The special check keeps character level, the chosen ability modifier, and manual misc bonuses, while excluding normal learn-only bonuses such as synergy, affinity conditionals, buffs, and training weights.
+- Fixed **mastery check bonus scope** (#165): mastery checks now use only bonuses that apply outside learn rolls. Misc bonuses, Knowledge (arcana) synergy, and eligible training-weight bonuses still apply, while regular learn-check synergy and learn-only bonuses such as Genius Ninja are excluded.
+- Fixed **training weight carry timing and legacy rank metadata** (#166): legacy KOUSOKU/JOURYOKU techniques without explicit training-weight flags now infer their rank metadata from their names, and eligible Training Weight mass is ignored during the first PF1e actor preparation on world load instead of only after an equipment update.
+
 ## v1.3.0 - 2026-06-22
 
 - Added **generic damage transforms** (#159): techniques can now configure `automation.damageTransform` to multiply base weapon damage by a factor and/or retype it to a specific damage type (e.g. piercing). Used by the Gatotsu series to convert all weapon damage to piercing without touching the attack action directly.
