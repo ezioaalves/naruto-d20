@@ -3,6 +3,7 @@ import { BUFF_TARGETS } from "../core/flag-paths.mjs";
 import { registerNarutoSkills } from "../features/actor-stats/skills.mjs";
 import { installTechniqueSaveDCPatch } from "../features/techniques/save-dc.mjs";
 import { installTechniqueRollDataPatch } from "../features/techniques/rolldata.mjs";
+import { installTechniqueRangePatch } from "../features/techniques/range.mjs";
 import { registerStrengthRankCombat } from "../features/automation/combat/strength-rank-combat.mjs";
 import { registerSpeedRankAttack } from "../features/automation/combat/speed-rank-attack.mjs";
 import { registerAttackNoManeuver } from "../features/automation/combat/attack-no-maneuver.mjs";
@@ -77,6 +78,7 @@ export function registerPf1PostInitHook() {
     _registerScriptCallCategories();
     installTechniqueSaveDCPatch();
     installTechniqueRollDataPatch();
+    installTechniqueRangePatch();
     registerStrengthRankCombat();
     registerSpeedRankAttack();
     registerAttackNoManeuver();
