@@ -788,6 +788,7 @@ describe("weaponAttack parsing", () => {
       extraAttacks: [],
       held: "",
       charge: true,
+      iteratives: true,
       suppressedBonuses: [],
     });
   });

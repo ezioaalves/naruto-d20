@@ -62,9 +62,7 @@ function inferTrainingWeightTechniqueFlag(item) {
     };
   }
 
-  const rankNameMatch = name.match(
-    /\bRANK\s+(ONE|TWO|THREE|FOUR|FIVE|[1-5])\s+(SPEED|STRENGTH)\b/,
-  );
+  const rankNameMatch = name.match(/\bRANK\s+(ONE|TWO|THREE|FOUR|FIVE|[1-5])\s+(SPEED|STRENGTH)\b/);
   if (!rankNameMatch) return null;
 
   const rank = Number(rankNameMatch[1]) || RANK_WORDS[rankNameMatch[1]];

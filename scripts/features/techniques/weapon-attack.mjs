@@ -22,6 +22,7 @@ const KNOWN_KEYS = new Set([
   "extraAttacks",
   "held",
   "charge",
+  "iteratives",
   "suppressedBonuses",
 ]);
 const SUPPORTED_SUPPRESSED_BONUSES = new Set(["naturalAttack", "abilityDamage"]);
@@ -196,6 +197,16 @@ export function parseWeaponAttackConfig({ values, keys, malformed }) {
     );
   }
 
+  const iterativesRaw = str("iteratives").toLowerCase();
+  if (iterativesRaw && iterativesRaw !== "true" && iterativesRaw !== "false") {
+    warnings.push(
+      issue("InvalidBoolean", {
+        field: `${CONFIG_PREFIX}.iteratives`,
+        value: iterativesRaw,
+      }),
+    );
+  }
+
   const rawExtra = str("extraAttacks");
   const extraAttacks = rawExtra
     ? rawExtra
@@ -238,6 +249,7 @@ export function parseWeaponAttackConfig({ values, keys, malformed }) {
       extraAttacks,
       held: str("held"),
       charge: chargeRaw === "true",
+      iteratives: iterativesRaw === "false" ? false : true,
       suppressedBonuses,
     },
     warnings,
@@ -251,6 +263,18 @@ function reportWeaponAttackWarnings(item, warnings) {
   ui.notifications.warn(
     game.i18n.format("NarutoD20.Notifications.WeaponAttackConfig", { name: item.name, issues }),
   );
+}
+
+/**
+ * Pick the pf1 extraAttacks type for a technique that declares manual extra attacks.
+ * `iteratives === false` forces "custom" (manual attacks, no BAB iteratives). Otherwise keep a
+ * manual-capable original type, falling back to "advanced" when the original type can't hold
+ * manual extras.
+ */
+export function chooseExtraAttacksType({ originalType, originalSupportsManual, iteratives }) {
+  if (iteratives === false) return "custom";
+  if (!originalSupportsManual) return "advanced";
+  return originalType;
 }
 
 export function getTechniqueWeaponAttackConfig(item) {
@@ -307,9 +331,13 @@ export async function rollSelectedWeaponAttackWithTechnique({
 
     if (config.extraAttacks?.length) {
       const exAtk = actionUse.shared.action.extraAttacks;
-      const supportsManual = pf1.config.extraAttacks[exAtk?.type]?.manual === true;
       const originalType = exAtk?.type;
-      if (!supportsManual) exAtk.type = "advanced";
+      const originalSupportsManual = pf1.config.extraAttacks[originalType]?.manual === true;
+      exAtk.type = chooseExtraAttacksType({
+        originalType,
+        originalSupportsManual,
+        iteratives: config.iteratives,
+      });
       const manual = (exAtk.manual ??= []);
       const originalLength = manual.length;
       for (const atk of config.extraAttacks) manual.push(atk);

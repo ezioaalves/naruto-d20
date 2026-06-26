@@ -62,7 +62,7 @@
           "units": "inst"
         },
         "range": {
-          "units": "touch"
+          "units": "melee"
         },
         "target": {
           "value": "One creature"
@@ -71,7 +71,7 @@
           "parts": [
             {
               "formula": "2d6",
-              "types": []
+              "types": ["bludgeoning"]
             }
           ]
         },
@@ -97,7 +97,14 @@
     "tags": [],
     "flags": {
       "boolean": {},
-      "dictionary": {}
+      "dictionary": {
+        "weaponAttack.mode": "selected",
+        "weaponAttack.filter": "unarmedOnly",
+        "weaponAttack.damageMode": "replace",
+        "weaponAttack.attackBonus": "-5",
+        "weaponAttack.extraAttacks": "0|Second Attack;0|Third Attack",
+        "weaponAttack.iteratives": "false"
+      }
     },
     "showInQuickbar": false,
     "showInCombat": false,

@@ -86,6 +86,7 @@ const WEAPON_ATTACK_KEYS = new Set([
   "held",
   "charge",
   "suppressedBonuses",
+  "iteratives",
 ]);
 const WEAPON_ATTACK_MODES = new Set(["selected"]);
 const WEAPON_ATTACK_DAMAGE_MODES = new Set(["add", "replace"]);
