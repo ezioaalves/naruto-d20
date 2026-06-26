@@ -310,11 +310,11 @@ Changes de buffs PF1.
 | `chakraPool` | Chakra | Chakra Pool Max | `flags.naruto-d20.chakra.pool.maxBonus` |
 | `chakraReserve` | Chakra | Chakra Reserve Max | `flags.naruto-d20.chakra.reserve.maxBonus` |
 | `tapReserves` | Chakra | Tap Reserves | `flags.naruto-d20.chakra.tapReserves.buffBonus` |
-| `learnCkc` | Chakra | Learn: Chakra Control | `flags.naruto-d20.learn.ckc.buffBonus` |
-| `learnGnj` | Chakra | Learn: Genjutsu | `flags.naruto-d20.learn.gnj.buffBonus` |
-| `learnNin` | Chakra | Learn: Ninjutsu | `flags.naruto-d20.learn.nin.buffBonus` |
-| `learnTai` | Chakra | Learn: Taijutsu | `flags.naruto-d20.learn.tai.buffBonus` |
-| `learnFui` | Chakra | Learn: Fuinjutsu | `flags.naruto-d20.learn.fui.buffBonus` |
+| `learnCkc` | Technique | Learn: Chakra Control | `flags.naruto-d20.learn.ckc.buffBonus` |
+| `learnGnj` | Technique | Learn: Genjutsu | `flags.naruto-d20.learn.gnj.buffBonus` |
+| `learnNin` | Technique | Learn: Ninjutsu | `flags.naruto-d20.learn.nin.buffBonus` |
+| `learnTai` | Technique | Learn: Taijutsu | `flags.naruto-d20.learn.tai.buffBonus` |
+| `learnFui` | Technique | Learn: Fuinjutsu | `flags.naruto-d20.learn.fui.buffBonus` |
 | `techDcAll` | Technique | Technique DC (All) | `flags.naruto-d20.techniqueDC.all.buffBonus` |
 | `techDcCkc` | Technique | Technique DC: Chakra Control | `flags.naruto-d20.techniqueDC.ckc.buffBonus` |
 | `techDcFui` | Technique | Technique DC: Fuinjutsu | `flags.naruto-d20.techniqueDC.fui.buffBonus` |

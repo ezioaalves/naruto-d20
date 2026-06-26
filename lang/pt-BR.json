@@ -76,7 +76,7 @@
       "EmptyTechniques": "Arraste e solte itens de Técnica aqui para adicioná-los."
     },
     "BuffTargets": {
-      "Category": "Técnica",
+      "Category": "Técnicas",
       "ChakraPool": "Máximo de Chakra",
       "ChakraReserve": "Máximo de Reserva de Chakra",
       "TemporaryChakra": "Chakra Temporário",
