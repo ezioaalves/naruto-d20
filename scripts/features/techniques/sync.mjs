@@ -1,6 +1,7 @@
 import { MODULE_ID, TECHNIQUE_ITEM_TYPE } from "../../core/constants.mjs";
 import { normalizeActionIds } from "./action-ids.mjs";
 import { applyTechniqueSystemDefaults } from "./defaults.mjs";
+import { migrateLegacyWeaponAttack } from "./weapon-attack-migrate.mjs";
 
 /**
  * Technique synckit core — detection & sync (no UI).
@@ -140,9 +141,9 @@ function canonicalizeHtml(s) {
  * Real content edits (cost, rank, description text, …) still survive and diff.
  */
 export function normalizeSystem(system) {
-  const out = applyTechniqueSystemDefaults(foundry.utils.deepClone(system), {
-    collectionType: "array",
-  });
+  const cloned = foundry.utils.deepClone(system);
+  migrateLegacyWeaponAttack(cloned);
+  const out = applyTechniqueSystemDefaults(cloned, { collectionType: "array" });
   delete out.tag;
   delete out.learning;
   delete out.mastery;

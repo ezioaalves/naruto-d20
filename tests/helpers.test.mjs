@@ -1675,6 +1675,21 @@ describe("synckit normalization", () => {
     assert.equal(diffTechnique(embedded, source), true);
   });
 
+  it("treats a legacy-dictionary technique as up-to-date against its migrated source", () => {
+    const legacyEmbedded = {
+      flags: { dictionary: { "weaponAttack.mode": "selected", "weaponAttack.filter": "unarmedOnly" } },
+    };
+    const migratedSource = {
+      weaponAttack: {
+        enabled: true, filter: "unarmedOnly", damageMode: "add", held: "", charge: false,
+        iteratives: true, attackBonus: "", damageBonus: "", nonCritDamageBonus: "",
+        extraAttacks: [], suppressNaturalAttack: false, suppressAbilityDamage: false,
+      },
+    };
+    assert.equal(diffTechnique(legacyEmbedded, migratedSource), true);
+  });
+
+
   it("treats a no-op sheet open/close as up-to-date for techniques without maintenance automation", () => {
     // Opening a technique sheet submits the whole form on close: the DataModel
     // cleans `system.automation` and persists every schema field. A technique's
