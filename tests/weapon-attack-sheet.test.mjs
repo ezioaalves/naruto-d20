@@ -120,6 +120,7 @@ describe("weapon attack sheet normalization", () => {
         suppressAbilityDamage: true,
       },
       {
+        weaponAttack: { mode: "selected", filter: "meleeWeapon" },
         "weaponAttack.damageBonus": "old",
         "weaponAttack.charge": "true",
         unrelated: "kept",
@@ -127,6 +128,7 @@ describe("weapon attack sheet normalization", () => {
     );
 
     assert.deepEqual(updates, {
+      "system.flags.dictionary.-=weaponAttack": null,
       "system.flags.dictionary.weaponAttack.mode": "selected",
       "system.flags.dictionary.weaponAttack.filter": "unarmedOnly",
       "system.flags.dictionary.weaponAttack.damageMode": "replace",
@@ -143,6 +145,7 @@ describe("weapon attack sheet normalization", () => {
     const updates = buildWeaponAttackDictionaryUpdates(
       { enabled: false },
       {
+        weaponAttack: { mode: "selected", filter: "unarmedOnly" },
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "unarmedOnly",
         "weaponAttack.damageMode": "replace",
@@ -151,6 +154,7 @@ describe("weapon attack sheet normalization", () => {
     );
 
     assert.deepEqual(updates, {
+      "system.flags.dictionary.-=weaponAttack": null,
       "system.flags.dictionary.-=weaponAttack.mode": null,
       "system.flags.dictionary.-=weaponAttack.filter": null,
       "system.flags.dictionary.-=weaponAttack.damageMode": null,

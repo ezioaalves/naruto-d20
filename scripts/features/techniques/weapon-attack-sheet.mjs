@@ -57,11 +57,6 @@ const DEFAULT_FORM_DATA = Object.freeze({
   warnings: [],
 });
 
-const SUPPRESSION_TOKENS = Object.freeze({
-  naturalAttack: "suppressNaturalAttack",
-  abilityDamage: "suppressAbilityDamage",
-});
-
 export function buildWeaponAttackFormData(item) {
   const raw = readWeaponAttackRaw(item);
   if (!raw.present) return { ...DEFAULT_FORM_DATA };
@@ -142,6 +137,9 @@ export function normalizeExtraAttacksText(value) {
 
 export function buildWeaponAttackDictionaryUpdates(formData, currentDictionary = {}) {
   const updates = {};
+  if (Object.hasOwn(currentDictionary, "weaponAttack")) {
+    updates["system.flags.dictionary.-=weaponAttack"] = null;
+  }
   for (const key of WEAPON_ATTACK_FIELD_KEYS) {
     updates[`system.flags.dictionary.-=weaponAttack.${key}`] = null;
   }
