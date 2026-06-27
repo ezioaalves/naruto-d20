@@ -88,7 +88,8 @@
         "weaponAttack.mode": "selected",
         "weaponAttack.filter": "meleeOrUnarmed",
         "weaponAttack.nonCritDamageBonus": "1d4[Igeki] + (1d6+1)[Nigeki]",
-        "weaponAttack.extraAttacks": "-5|Second Attack"
+        "weaponAttack.extraAttacks": "-5|Second Attack",
+        "weaponAttack.iteratives": "false"
       }
     },
     "showInQuickbar": false,
