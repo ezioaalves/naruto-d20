@@ -116,6 +116,21 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   m.element ??= false;
   m.elementDoubleStep ??= 5;
 
+  system.weaponAttack ??= {};
+  const wa = system.weaponAttack;
+  wa.enabled ??= false;
+  wa.filter ??= "meleeWeapon";
+  wa.damageMode ??= "add";
+  wa.held ??= "";
+  wa.charge ??= false;
+  wa.iteratives ??= true;
+  wa.attackBonus ??= "";
+  wa.damageBonus ??= "";
+  wa.nonCritDamageBonus ??= "";
+  wa.extraAttacks ??= [];
+  wa.suppressNaturalAttack ??= false;
+  wa.suppressAbilityDamage ??= false;
+
   return system;
 }
 

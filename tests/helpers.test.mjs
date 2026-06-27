@@ -408,6 +408,36 @@ describe("technique defaults", () => {
       "filter", "held", "iteratives", "nonCritDamageBonus", "suppressAbilityDamage", "suppressNaturalAttack",
     ]);
   });
+
+  it("backfills every weaponAttack field declared in the schema", () => {
+    const leaf = class {};
+    const prevData = globalThis.foundry.data;
+    const prevAbstract = globalThis.foundry.abstract;
+    globalThis.foundry.abstract = { TypeDataModel: class {} };
+    globalThis.foundry.data = {
+      fields: {
+        SchemaField: class { constructor(schema) { this.fields = schema; } },
+        ArrayField: class { constructor(element) { this.element = element; } },
+        SetField: class { constructor(element) { this.element = element; } },
+        StringField: leaf, NumberField: leaf, BooleanField: leaf, HTMLField: leaf, ObjectField: leaf,
+      },
+    };
+    let schemaKeys;
+    try {
+      const schema = createTechniqueDataModel().defineSchema();
+      schemaKeys = Object.keys(schema.weaponAttack.fields).sort();
+    } finally {
+      globalThis.foundry.data = prevData;
+      globalThis.foundry.abstract = prevAbstract;
+    }
+    const normalizerKeys = Object.keys(applyTechniqueSystemDefaults({}).weaponAttack).sort();
+    assert.deepEqual(
+      normalizerKeys,
+      schemaKeys,
+      "applyTechniqueSystemDefaults must default every weaponAttack schema field " +
+        "(see scripts/features/techniques/defaults.mjs) or synckit will flag unedited techniques out-of-date",
+    );
+  });
 });
 
 describe("technique empower helpers", () => {
