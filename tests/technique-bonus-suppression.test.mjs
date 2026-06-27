@@ -5,38 +5,25 @@ import { describe, it } from "node:test";
 import {
   applyTechniqueElementDamageToActionUse,
   applyTechniqueBonusSuppressions,
-  parseWeaponAttackConfig,
 } from "../scripts/features/techniques/weapon-attack.mjs";
+import { migrateLegacyWeaponAttack } from "../scripts/features/techniques/weapon-attack-migrate.mjs";
 
-describe("weaponAttack suppressed bonuses parsing", () => {
-  it("parses known suppressed bonus tokens", () => {
-    const { config, warnings } = parseWeaponAttackConfig({
-      malformed: false,
-      keys: new Set(["mode", "suppressedBonuses"]),
-      values: {
-        mode: "selected",
-        suppressedBonuses: "naturalAttack, abilityDamage",
-      },
-    });
-
-    assert.deepEqual(config.suppressedBonuses, ["naturalAttack", "abilityDamage"]);
-    assert.deepEqual(warnings, []);
+describe("weaponAttack suppressed bonuses migration", () => {
+  it("splits the legacy csv into the two boolean fields", () => {
+    const source = {
+      flags: { dictionary: { "weaponAttack.mode": "selected", "weaponAttack.suppressedBonuses": "naturalAttack, abilityDamage" } },
+    };
+    migrateLegacyWeaponAttack(source);
+    assert.equal(source.weaponAttack.suppressNaturalAttack, true);
+    assert.equal(source.weaponAttack.suppressAbilityDamage, true);
   });
-
-  it("warns about unknown suppressed bonus tokens while keeping known tokens", () => {
-    const { config, warnings } = parseWeaponAttackConfig({
-      malformed: false,
-      keys: new Set(["mode", "suppressedBonuses"]),
-      values: {
-        mode: "selected",
-        suppressedBonuses: "naturalAttack, bogus",
-      },
-    });
-
-    assert.deepEqual(config.suppressedBonuses, ["naturalAttack"]);
-    assert.equal(warnings.length, 1);
-    assert.match(warnings[0], /weaponAttack\.suppressedBonuses/);
-    assert.match(warnings[0], /bogus/);
+  it("ignores unknown suppression tokens", () => {
+    const source = {
+      flags: { dictionary: { "weaponAttack.mode": "selected", "weaponAttack.suppressedBonuses": "naturalAttack, bogus" } },
+    };
+    migrateLegacyWeaponAttack(source);
+    assert.equal(source.weaponAttack.suppressNaturalAttack, true);
+    assert.equal(source.weaponAttack.suppressAbilityDamage, false);
   });
 });
 

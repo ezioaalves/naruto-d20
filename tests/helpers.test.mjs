@@ -64,8 +64,7 @@ import {
 } from "../scripts/features/techniques/learn.mjs";
 import {
   deriveAttackCategories,
-  parseWeaponAttackConfig,
-  readWeaponAttackRaw,
+  getTechniqueWeaponAttackConfig,
 } from "../scripts/features/techniques/weapon-attack.mjs";
 import {
   getHighestLearnedStrengthRank,
@@ -812,57 +811,40 @@ describe("technique derived calculations", () => {
   });
 });
 
-describe("weaponAttack parsing", () => {
-  it("reads nested and dotted forms with nested values taking precedence", () => {
-    const raw = readWeaponAttackRaw({
+describe("getTechniqueWeaponAttackConfig", () => {
+  it("returns null when weaponAttack is absent or disabled", () => {
+    assert.equal(getTechniqueWeaponAttackConfig({ system: {} }), null);
+    assert.equal(getTechniqueWeaponAttackConfig({ system: { weaponAttack: { enabled: false } } }), null);
+  });
+
+  it("maps the typed field to the runtime config", () => {
+    const config = getTechniqueWeaponAttackConfig({
       system: {
-        flags: {
-          dictionary: {
-            weaponAttack: { mode: "selected", filter: "rangedWeapon", charge: "true" },
-            "weaponAttack.filter": "unarmedOnly",
-            "weaponAttack.attackBonus": "@cl",
-          },
+        weaponAttack: {
+          enabled: true,
+          filter: "rangedWeapon",
+          damageMode: "replace",
+          attackBonus: "@cl",
+          charge: true,
+          iteratives: false,
+          extraAttacks: [{ formula: "-5", name: "Second" }, { formula: "", name: "skip" }],
+          suppressNaturalAttack: true,
+          suppressAbilityDamage: false,
         },
       },
     });
-
-    assert.equal(raw.present, true);
-    assert.deepEqual(raw.values, {
-      mode: "selected",
-      filter: "rangedWeapon",
-      charge: "true",
-      attackBonus: "@cl",
-    });
-
-    const { config, warnings } = parseWeaponAttackConfig(raw);
-    assert.deepEqual(warnings, []);
     assert.deepEqual(config, {
-      mode: "selected",
       filter: "rangedWeapon",
+      damageMode: "replace",
       attackBonus: "@cl",
       damageBonus: "",
       nonCritDamageBonus: "",
-      damageMode: "add",
-      extraAttacks: [],
+      extraAttacks: [{ formula: "-5", name: "Second" }],
       held: "",
       charge: true,
-      iteratives: true,
-      suppressedBonuses: [],
+      iteratives: false,
+      suppressedBonuses: ["naturalAttack"],
     });
-  });
-
-  it("reports invalid fields while returning a usable fallback config", () => {
-    const { config, warnings } = parseWeaponAttackConfig({
-      values: { mode: "selected", filter: "badFilter", charge: "sometimes" },
-      keys: new Set(["mode", "filter", "charge", "extra"]),
-      malformed: false,
-    });
-
-    assert.equal(config.filter, "meleeWeapon");
-    assert.equal(config.charge, false);
-    assert.ok(warnings.some((w) => w.includes("unknown field")));
-    assert.ok(warnings.some((w) => w.includes("unsupported")));
-    assert.ok(warnings.some((w) => w.includes("should be")));
   });
 });
 

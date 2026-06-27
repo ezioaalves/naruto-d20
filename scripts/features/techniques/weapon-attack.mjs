@@ -6,48 +6,6 @@ import {
   markTechniqueDamageTransform,
 } from "../automation/combat/damage-transform.mjs";
 
-const CONFIG_PREFIX = "weaponAttack";
-const DEFAULT_FILTER = "meleeWeapon";
-const DEFAULT_DAMAGE_MODE = "add";
-const SUPPORTED_MODES = new Set(["selected"]);
-const SUPPORTED_FILTERS = new Set(["meleeWeapon", "rangedWeapon", "unarmedOnly", "meleeOrUnarmed"]);
-const SUPPORTED_DAMAGE_MODES = new Set(["add", "replace"]);
-const KNOWN_KEYS = new Set([
-  "mode",
-  "filter",
-  "damageMode",
-  "attackBonus",
-  "damageBonus",
-  "nonCritDamageBonus",
-  "extraAttacks",
-  "held",
-  "charge",
-  "iteratives",
-  "suppressedBonuses",
-]);
-const SUPPORTED_SUPPRESSED_BONUSES = new Set(["naturalAttack", "abilityDamage"]);
-const ISSUE_TEMPLATES = {
-  Malformed: '"{prefix}" must be an object or use dotted "{prefix}.*" keys',
-  UnknownField: 'unknown field "{field}"',
-  UnsupportedSuppressedBonus:
-    'unsupported "{field}" token "{value}" (expected one of "{expected}")',
-  MissingMode: 'missing "{field}" (expected "{expected}")',
-  UnsupportedMode: 'unsupported "{field}" = "{value}" (expected "{expected}")',
-  UnsupportedFilter: 'unsupported "{field}" = "{value}"; using "{fallback}"',
-  UnsupportedDamageMode: 'unsupported "{field}" = "{value}"; using "{fallback}"',
-  InvalidBoolean: '"{field}" should be "true" or "false" (got "{value}")',
-};
-
-function formatIssueTemplate(template, data) {
-  return template.replace(/\{(\w+)\}/g, (_, key) => String(data[key] ?? `{${key}}`));
-}
-
-function formatWeaponAttackIssue(key, data = {}) {
-  const i18nKey = `NarutoD20.WeaponAttackIssues.${key}`;
-  if (globalThis.game?.i18n?.format) return globalThis.game.i18n.format(i18nKey, data);
-  return formatIssueTemplate(ISSUE_TEMPLATES[key] ?? key, data);
-}
-
 function deepClone(value) {
   if (globalThis.foundry?.utils?.deepClone) return foundry.utils.deepClone(value);
   return structuredClone(value);
@@ -103,169 +61,6 @@ function applyEmpowerDamage(actionUse, empower, cleanup) {
 }
 
 /**
- * Read the `system.flags.dictionary.weaponAttack` config in both supported
- * shapes — a nested object (`weaponAttack: { mode, filter, … }`) and dotted
- * keys (`"weaponAttack.mode"`, …) — with the nested object taking precedence.
- * Returns `{ present, values, keys, malformed }` so callers can validate.
- */
-export function readWeaponAttackRaw(item) {
-  const dict = item.system?.flags?.dictionary ?? {};
-  const rawNested = dict[CONFIG_PREFIX];
-  const nested = rawNested && typeof rawNested === "object" ? rawNested : null;
-  const malformed = rawNested !== undefined && nested === null;
-
-  const dottedKeys = Object.keys(dict).filter((k) => k.startsWith(`${CONFIG_PREFIX}.`));
-  const present = malformed || nested !== null || dottedKeys.length > 0;
-
-  const keys = new Set();
-  const values = {};
-  if (nested) {
-    for (const k of Object.keys(nested)) {
-      keys.add(k);
-      values[k] = nested[k];
-    }
-  }
-  for (const dk of dottedKeys) {
-    const k = dk.slice(CONFIG_PREFIX.length + 1);
-    keys.add(k);
-    values[k] ??= dict[dk]; // nested wins (matches the original read() precedence)
-  }
-  return { present, values, keys, malformed };
-}
-
-/** Validate raw weaponAttack values, returning a usable config (or null) plus
- *  human-readable warnings naming the offending field. */
-export function parseWeaponAttackConfig({ values, keys, malformed }) {
-  const warnings = [];
-  const str = (key) => String(values[key] ?? "").trim();
-  const issue = (key, data = {}) => formatWeaponAttackIssue(key, data);
-
-  if (malformed) warnings.push(issue("Malformed", { prefix: CONFIG_PREFIX }));
-  for (const k of keys) {
-    if (!KNOWN_KEYS.has(k))
-      warnings.push(issue("UnknownField", { field: `${CONFIG_PREFIX}.${k}` }));
-  }
-
-  const mode = str("mode");
-  if (!mode) {
-    if (!malformed)
-      warnings.push(issue("MissingMode", { field: `${CONFIG_PREFIX}.mode`, expected: "selected" }));
-    return { config: null, warnings };
-  }
-  if (!SUPPORTED_MODES.has(mode)) {
-    warnings.push(
-      issue("UnsupportedMode", {
-        field: `${CONFIG_PREFIX}.mode`,
-        value: mode,
-        expected: "selected",
-      }),
-    );
-    return { config: null, warnings };
-  }
-
-  let filter = str("filter") || DEFAULT_FILTER;
-  if (!SUPPORTED_FILTERS.has(filter)) {
-    warnings.push(
-      issue("UnsupportedFilter", {
-        field: `${CONFIG_PREFIX}.filter`,
-        value: filter,
-        fallback: DEFAULT_FILTER,
-      }),
-    );
-    filter = DEFAULT_FILTER;
-  }
-
-  let damageMode = str("damageMode") || DEFAULT_DAMAGE_MODE;
-  if (!SUPPORTED_DAMAGE_MODES.has(damageMode)) {
-    warnings.push(
-      issue("UnsupportedDamageMode", {
-        field: `${CONFIG_PREFIX}.damageMode`,
-        value: damageMode,
-        fallback: DEFAULT_DAMAGE_MODE,
-      }),
-    );
-    damageMode = DEFAULT_DAMAGE_MODE;
-  }
-
-  const chargeRaw = str("charge").toLowerCase();
-  if (chargeRaw && chargeRaw !== "true" && chargeRaw !== "false") {
-    warnings.push(
-      issue("InvalidBoolean", {
-        field: `${CONFIG_PREFIX}.charge`,
-        value: chargeRaw,
-      }),
-    );
-  }
-
-  const iterativesRaw = str("iteratives").toLowerCase();
-  if (iterativesRaw && iterativesRaw !== "true" && iterativesRaw !== "false") {
-    warnings.push(
-      issue("InvalidBoolean", {
-        field: `${CONFIG_PREFIX}.iteratives`,
-        value: iterativesRaw,
-      }),
-    );
-  }
-
-  const rawExtra = str("extraAttacks");
-  const extraAttacks = rawExtra
-    ? rawExtra
-        .split(";")
-        .map((entry) => {
-          const [formula, name] = entry.split("|").map((s) => s.trim());
-          return { formula, name: name ?? "" };
-        })
-        .filter((e) => e.formula)
-    : [];
-
-  const suppressedBonuses = [];
-  const rawSuppressions = str("suppressedBonuses");
-  if (rawSuppressions) {
-    for (const token of rawSuppressions.split(",")) {
-      const value = token.trim();
-      if (!value) continue;
-      if (SUPPORTED_SUPPRESSED_BONUSES.has(value)) {
-        suppressedBonuses.push(value);
-        continue;
-      }
-      warnings.push(
-        issue("UnsupportedSuppressedBonus", {
-          field: `${CONFIG_PREFIX}.suppressedBonuses`,
-          value,
-          expected: Array.from(SUPPORTED_SUPPRESSED_BONUSES).join(", "),
-        }),
-      );
-    }
-  }
-
-  return {
-    config: {
-      mode,
-      filter,
-      damageMode,
-      attackBonus: str("attackBonus"),
-      damageBonus: str("damageBonus"),
-      nonCritDamageBonus: str("nonCritDamageBonus"),
-      extraAttacks,
-      held: str("held"),
-      charge: chargeRaw === "true",
-      iteratives: iterativesRaw === "false" ? false : true,
-      suppressedBonuses,
-    },
-    warnings,
-  };
-}
-
-function reportWeaponAttackWarnings(item, warnings) {
-  if (!warnings.length) return;
-  const issues = warnings.join("; ");
-  console.warn(`naruto-d20 | weaponAttack config on "${item.name}": ${issues}`);
-  ui.notifications.warn(
-    game.i18n.format("NarutoD20.Notifications.WeaponAttackConfig", { name: item.name, issues }),
-  );
-}
-
-/**
  * Pick the pf1 extraAttacks type for a technique that declares manual extra attacks.
  * `iteratives === false` forces "custom" (manual attacks, no BAB iteratives). Otherwise keep a
  * manual-capable original type, falling back to "advanced" when the original type can't hold
@@ -278,12 +73,25 @@ export function chooseExtraAttacksType({ originalType, originalSupportsManual, i
 }
 
 export function getTechniqueWeaponAttackConfig(item) {
-  const raw = readWeaponAttackRaw(item);
-  if (!raw.present) return null; // no weaponAttack config → normal technique flow
+  const wa = item.system?.weaponAttack;
+  if (!wa?.enabled) return null;
 
-  const { config, warnings } = parseWeaponAttackConfig(raw);
-  reportWeaponAttackWarnings(item, warnings);
-  return config;
+  const suppressions = [];
+  if (wa.suppressNaturalAttack) suppressions.push("naturalAttack");
+  if (wa.suppressAbilityDamage) suppressions.push("abilityDamage");
+
+  return {
+    filter: wa.filter,
+    damageMode: wa.damageMode,
+    attackBonus: String(wa.attackBonus ?? ""),
+    damageBonus: String(wa.damageBonus ?? ""),
+    nonCritDamageBonus: String(wa.nonCritDamageBonus ?? ""),
+    extraAttacks: (wa.extraAttacks ?? []).filter((e) => e.formula),
+    held: wa.held ?? "",
+    charge: wa.charge === true,
+    iteratives: wa.iteratives !== false,
+    suppressedBonuses: suppressions,
+  };
 }
 
 export async function rollSelectedWeaponAttackWithTechnique({

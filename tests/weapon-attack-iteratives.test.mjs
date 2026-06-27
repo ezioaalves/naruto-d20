@@ -2,45 +2,28 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
 import {
-  parseWeaponAttackConfig,
   chooseExtraAttacksType,
 } from "../scripts/features/techniques/weapon-attack.mjs";
+import { migrateLegacyWeaponAttack } from "../scripts/features/techniques/weapon-attack-migrate.mjs";
 
-describe("weaponAttack iteratives parsing", () => {
-  const parse = (values) =>
-    parseWeaponAttackConfig({
-      malformed: false,
-      keys: new Set(Object.keys(values)),
-      values,
-    });
+describe("weaponAttack iteratives migration", () => {
+  const migrate = (extra) => {
+    const source = { flags: { dictionary: { "weaponAttack.mode": "selected", ...extra } } };
+    migrateLegacyWeaponAttack(source);
+    return source.weaponAttack;
+  };
 
   it("defaults iteratives to true when the key is absent", () => {
-    const { config, warnings } = parse({ mode: "selected" });
-    assert.equal(config.iteratives, true);
-    assert.deepEqual(warnings, []);
+    assert.equal(migrate({}).iteratives, true);
   });
-
   it('parses iteratives = "false"', () => {
-    const { config, warnings } = parse({ mode: "selected", iteratives: "false" });
-    assert.equal(config.iteratives, false);
-    assert.deepEqual(warnings, []);
+    assert.equal(migrate({ "weaponAttack.iteratives": "false" }).iteratives, false);
   });
-
   it('parses iteratives = "true"', () => {
-    const { config } = parse({ mode: "selected", iteratives: "true" });
-    assert.equal(config.iteratives, true);
+    assert.equal(migrate({ "weaponAttack.iteratives": "true" }).iteratives, true);
   });
-
-  it("warns on a non-boolean iteratives value and keeps the default", () => {
-    const { config, warnings } = parse({ mode: "selected", iteratives: "maybe" });
-    assert.equal(config.iteratives, true);
-    assert.equal(warnings.length, 1);
-    assert.match(warnings[0], /weaponAttack\.iteratives/);
-  });
-
-  it("does not flag iteratives as an unknown field", () => {
-    const { warnings } = parse({ mode: "selected", iteratives: "false" });
-    assert.deepEqual(warnings, []);
+  it("treats a non-boolean iteratives value as true", () => {
+    assert.equal(migrate({ "weaponAttack.iteratives": "maybe" }).iteratives, true);
   });
 });
 
