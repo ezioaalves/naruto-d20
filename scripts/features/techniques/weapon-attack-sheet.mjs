@@ -1,19 +1,3 @@
-import { parseWeaponAttackConfig, readWeaponAttackRaw } from "./weapon-attack.mjs";
-
-export const WEAPON_ATTACK_FIELD_KEYS = [
-  "mode",
-  "filter",
-  "damageMode",
-  "attackBonus",
-  "damageBonus",
-  "nonCritDamageBonus",
-  "extraAttacks",
-  "held",
-  "charge",
-  "iteratives",
-  "suppressedBonuses",
-];
-
 export const WEAPON_ATTACK_FILTER_CHOICES = {
   meleeWeapon: "NarutoD20.WeaponAttack.Filter.MeleeWeapon",
   rangedWeapon: "NarutoD20.WeaponAttack.Filter.RangedWeapon",
@@ -54,32 +38,25 @@ const DEFAULT_FORM_DATA = Object.freeze({
   iteratives: true,
   suppressNaturalAttack: false,
   suppressAbilityDamage: false,
-  warnings: [],
 });
 
 export function buildWeaponAttackFormData(item) {
-  const raw = readWeaponAttackRaw(item);
-  if (!raw.present) return { ...DEFAULT_FORM_DATA };
-
-  const { config, warnings } = parseWeaponAttackConfig(raw);
-  if (!config) return { ...DEFAULT_FORM_DATA, warnings };
-
-  const suppressions = new Set(config.suppressedBonuses ?? []);
+  const wa = item.system?.weaponAttack;
+  if (!wa?.enabled) return { ...DEFAULT_FORM_DATA };
   return {
     ...DEFAULT_FORM_DATA,
     enabled: true,
-    filter: config.filter,
-    damageMode: config.damageMode,
-    attackBonus: config.attackBonus,
-    damageBonus: config.damageBonus,
-    nonCritDamageBonus: config.nonCritDamageBonus,
-    extraAttacksText: extraAttacksToText(config.extraAttacks),
-    held: config.held,
-    charge: config.charge === true,
-    iteratives: config.iteratives !== false,
-    suppressNaturalAttack: suppressions.has("naturalAttack"),
-    suppressAbilityDamage: suppressions.has("abilityDamage"),
-    warnings,
+    filter: wa.filter || "meleeWeapon",
+    damageMode: wa.damageMode || "add",
+    attackBonus: String(wa.attackBonus ?? ""),
+    damageBonus: String(wa.damageBonus ?? ""),
+    nonCritDamageBonus: String(wa.nonCritDamageBonus ?? ""),
+    extraAttacksText: extraAttacksTextFromArray(wa.extraAttacks),
+    held: wa.held ?? "",
+    charge: wa.charge === true,
+    iteratives: wa.iteratives !== false,
+    suppressNaturalAttack: wa.suppressNaturalAttack === true,
+    suppressAbilityDamage: wa.suppressAbilityDamage === true,
   };
 }
 
@@ -135,52 +112,21 @@ export function normalizeExtraAttacksText(value) {
     .join(";");
 }
 
-export function buildWeaponAttackDictionaryUpdates(formData, currentDictionary = {}) {
-  const updates = {};
-  if (Object.hasOwn(currentDictionary, "weaponAttack")) {
-    updates["system.flags.dictionary.-=weaponAttack"] = null;
-  }
-  for (const key of WEAPON_ATTACK_FIELD_KEYS) {
-    updates[`system.flags.dictionary.-=weaponAttack.${key}`] = null;
-  }
+export function extraAttacksTextFromArray(extraAttacks) {
+  return (extraAttacks ?? [])
+    .map(({ formula, name }) => [String(formula ?? "").trim(), String(name ?? "").trim()].filter(Boolean).join("|"))
+    .filter(Boolean)
+    .join("\n");
+}
 
-  if (formData.enabled !== true) return updates;
-
-  const put = (key, value) => {
-    const stringValue = String(value ?? "").trim();
-    if (stringValue) {
-      updates[`system.flags.dictionary.weaponAttack.${key}`] = stringValue;
-      delete updates[`system.flags.dictionary.-=weaponAttack.${key}`];
-    }
-  };
-
-  put("mode", "selected");
-  put("filter", formData.filter || "meleeWeapon");
-  put("damageMode", formData.damageMode || "add");
-  put("attackBonus", formData.attackBonus);
-  put("damageBonus", formData.damageBonus);
-  put("nonCritDamageBonus", formData.nonCritDamageBonus);
-  put("held", formData.held);
-
-  if (formData.charge === true) put("charge", "true");
-  if (formData.iteratives === false) put("iteratives", "false");
-
-  const extraAttacks = normalizeExtraAttacksText(formData.extraAttacksText);
-  put("extraAttacks", extraAttacks);
-
-  const suppressions = [];
-  if (formData.suppressNaturalAttack === true) suppressions.push("naturalAttack");
-  if (formData.suppressAbilityDamage === true) suppressions.push("abilityDamage");
-  put("suppressedBonuses", suppressions.join(","));
-
-  for (const key of Object.keys(updates)) {
-    if (!key.includes(".-=")) continue;
-    const field = key.slice("system.flags.dictionary.-=".length);
-    if (Object.hasOwn(currentDictionary, field)) continue;
-    delete updates[key];
-  }
-
-  return updates;
+export function extraAttacksArrayFromText(text) {
+  return String(text ?? "")
+    .split(/[;\n]/)
+    .map((entry) => {
+      const [formula, name] = entry.split("|").map((s) => s.trim());
+      return { formula: formula ?? "", name: name ?? "" };
+    })
+    .filter((e) => e.formula);
 }
 
 export function buildWeaponAttackSummary(formData, localize = defaultLocalize) {
@@ -209,36 +155,6 @@ export function buildWeaponAttackSummary(formData, localize = defaultLocalize) {
     parts,
     label: parts.join(" · "),
   };
-}
-
-export function weaponAttackFormDataFromForm(formData) {
-  return {
-    enabled: formData["system.weaponAttack.enabled"] === true,
-    preset: String(formData["system.weaponAttack.preset"] ?? "custom"),
-    filter: String(formData["system.weaponAttack.filter"] ?? "meleeWeapon"),
-    damageMode: String(formData["system.weaponAttack.damageMode"] ?? "add"),
-    attackBonus: String(formData["system.weaponAttack.attackBonus"] ?? ""),
-    damageBonus: String(formData["system.weaponAttack.damageBonus"] ?? ""),
-    nonCritDamageBonus: String(formData["system.weaponAttack.nonCritDamageBonus"] ?? ""),
-    extraAttacksText: String(formData["system.weaponAttack.extraAttacksText"] ?? ""),
-    held: String(formData["system.weaponAttack.held"] ?? ""),
-    charge: formData["system.weaponAttack.charge"] === true,
-    iteratives: formData["system.weaponAttack.iteratives"] !== false,
-    suppressNaturalAttack: formData["system.weaponAttack.suppressNaturalAttack"] === true,
-    suppressAbilityDamage: formData["system.weaponAttack.suppressAbilityDamage"] === true,
-  };
-}
-
-export function removeSyntheticWeaponAttackFormFields(formData) {
-  for (const key of Object.keys(formData)) {
-    if (key.startsWith("system.weaponAttack.")) delete formData[key];
-  }
-}
-
-function extraAttacksToText(extraAttacks) {
-  return (extraAttacks ?? [])
-    .map(({ formula, name }) => [formula, name].filter(Boolean).join("|"))
-    .join("\n");
 }
 
 function countExtraAttacks(extraAttacksText) {
