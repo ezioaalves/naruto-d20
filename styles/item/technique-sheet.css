@@ -165,10 +165,20 @@
   margin-bottom: 2px;
 }
 
+/* Foundry gives form-group controls `flex: 1 1 0%`, so a <select>'s size is
+   driven by its (small) content and Blink (Chrome/Brave) ignores `height` on it
+   — leaving the BASIC selects (~16px) shorter than the MODIFIERS inputs (~20px)
+   and the two columns drifting out of alignment. WebKit (Safari) honors the
+   height, hence the engine split. `min-height` IS honored by both engines on
+   native selects and flex items, so pin both controls to the same floor; with
+   no extra grow space they both settle at exactly that height. */
 .pf1.sheet.item .weapon-attack-grid .form-group > input,
 .pf1.sheet.item .weapon-attack-grid .form-group > select {
   width: 100%;
   min-width: 0;
+  box-sizing: border-box;
+  min-height: 20px;
+  font-size: 13px;
 }
 
 .pf1.sheet.item .weapon-attack-subsection {
