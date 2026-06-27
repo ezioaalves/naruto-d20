@@ -406,6 +406,91 @@
       "NoTargets": "Nenhum alvo selecionado para aplicação de buff.",
       "NoPermission": "Sem permissão para modificar {name}. Buff não aplicado."
     },
+    "WeaponAttack": {
+      "Header": "Automação de Ataque com Arma",
+      "Enabled": {
+        "Label": "Usar ataque selecionado do ator",
+        "Hint": "Rola por uma arma ou ataque desarmado do ator e depois aplica os detalhes da ação desta técnica."
+      },
+      "Preset": {
+        "Label": "Modelo rápido",
+        "Hint": "Modelos preenchem os campos abaixo. A execução usa os campos explícitos, não o nome do modelo.",
+        "Custom": "Customizado",
+        "Raite": "Como Raite: desarmado selecionado, substituir dano",
+        "JikiUchi": "Como Jiki-Uchi: melee/desarmado, somar bônus",
+        "Ryuutsuki": "Como Ryuutsuki: melee/desarmado, charge",
+        "FixedCombo": "Combo fixo: ataque selecionado, ataques extras fixos"
+      },
+      "Basic": {
+        "Header": "Básico"
+      },
+      "Filter": {
+        "Label": "Filtro de ataque",
+        "MeleeWeapon": "Arma melee",
+        "RangedWeapon": "Arma ranged",
+        "UnarmedOnly": "Apenas desarmado",
+        "MeleeOrUnarmed": "Melee ou desarmado"
+      },
+      "DamageMode": {
+        "Label": "Modo de dano",
+        "Add": "Somar bônus da técnica ao dano do ataque selecionado",
+        "Replace": "Substituir dano do ataque selecionado pelo dano da ação da técnica"
+      },
+      "Held": {
+        "Label": "Empunhadura",
+        "Unchanged": "Sem alteração",
+        "OneHanded": "Uma mão",
+        "TwoHanded": "Duas mãos"
+      },
+      "Charge": {
+        "Label": "Tratar uso como charge"
+      },
+      "Modifiers": {
+        "Header": "Modificadores"
+      },
+      "AttackBonus": {
+        "Label": "Bônus de ataque"
+      },
+      "DamageBonus": {
+        "Label": "Bônus de dano"
+      },
+      "NonCritDamageBonus": {
+        "Label": "Bônus de dano não-crítico"
+      },
+      "Combo": {
+        "Header": "Combo"
+      },
+      "ExtraAttacks": {
+        "Label": "Ataques extras",
+        "Hint": "Um ataque por linha usando formula|nome, por exemplo: 0|Second Attack."
+      },
+      "Iteratives": {
+        "Label": "Incluir ataques iterativos normais por BAB"
+      },
+      "Suppression": {
+        "Header": "Supressões raras"
+      },
+      "SuppressNaturalAttack": {
+        "Label": "Suprimir bônus do ataque natural selecionado"
+      },
+      "SuppressAbilityDamage": {
+        "Label": "Suprimir dano por habilidade do ataque selecionado"
+      },
+      "Warnings": {
+        "Label": "Avisos de configuração"
+      },
+      "Summary": {
+        "SelectedUnarmed": "Desarmado Selecionado",
+        "SelectedRanged": "Ranged Selecionado",
+        "SelectedMeleeOrUnarmed": "Melee/Desarmado Selecionado",
+        "SelectedMelee": "Melee Selecionado",
+        "ReplaceDamage": "Substitui dano",
+        "AddDamage": "Soma dano",
+        "Charge": "charge",
+        "Attacks": "{count} ataques",
+        "NoIteratives": "sem iterativos"
+      }
+    },
     "Empower": {
       "Header": "Empower",
       "Title": "Empower {name}",

@@ -402,6 +402,91 @@
       "NoTargets": "No targets selected for buff application.",
       "NoPermission": "No permission to modify {name}. Buff not applied."
     },
+    "WeaponAttack": {
+      "Header": "Weapon Attack Automation",
+      "Enabled": {
+        "Label": "Use selected actor attack",
+        "Hint": "Roll through one of the actor's weapon or unarmed attacks, then apply this technique's action details."
+      },
+      "Preset": {
+        "Label": "Quick model",
+        "Hint": "Presets fill the fields below. Runtime uses the explicit field values, not the preset name.",
+        "Custom": "Custom",
+        "Raite": "Raite-like: selected unarmed, replace damage",
+        "JikiUchi": "Jiki-Uchi-like: selected melee/unarmed, add bonuses",
+        "Ryuutsuki": "Ryuutsuki-like: selected melee/unarmed, charge",
+        "FixedCombo": "Fixed combo: selected attack, fixed extra attacks"
+      },
+      "Basic": {
+        "Header": "Basic"
+      },
+      "Filter": {
+        "Label": "Attack filter",
+        "MeleeWeapon": "Melee weapon",
+        "RangedWeapon": "Ranged weapon",
+        "UnarmedOnly": "Unarmed only",
+        "MeleeOrUnarmed": "Melee or unarmed"
+      },
+      "DamageMode": {
+        "Label": "Damage mode",
+        "Add": "Add technique bonuses to selected attack damage",
+        "Replace": "Replace selected attack damage with technique action damage"
+      },
+      "Held": {
+        "Label": "Held as",
+        "Unchanged": "Unchanged",
+        "OneHanded": "One-handed",
+        "TwoHanded": "Two-handed"
+      },
+      "Charge": {
+        "Label": "Treat use as a charge"
+      },
+      "Modifiers": {
+        "Header": "Modifiers"
+      },
+      "AttackBonus": {
+        "Label": "Attack bonus"
+      },
+      "DamageBonus": {
+        "Label": "Damage bonus"
+      },
+      "NonCritDamageBonus": {
+        "Label": "Non-critical damage bonus"
+      },
+      "Combo": {
+        "Header": "Combo"
+      },
+      "ExtraAttacks": {
+        "Label": "Extra attacks",
+        "Hint": "One attack per line using formula|name, for example: 0|Second Attack."
+      },
+      "Iteratives": {
+        "Label": "Include normal BAB iterative attacks"
+      },
+      "Suppression": {
+        "Header": "Rare suppressions"
+      },
+      "SuppressNaturalAttack": {
+        "Label": "Suppress selected natural attack bonuses"
+      },
+      "SuppressAbilityDamage": {
+        "Label": "Suppress selected attack ability damage"
+      },
+      "Warnings": {
+        "Label": "Configuration warnings"
+      },
+      "Summary": {
+        "SelectedUnarmed": "Selected Unarmed",
+        "SelectedRanged": "Selected Ranged",
+        "SelectedMeleeOrUnarmed": "Selected Melee/Unarmed",
+        "SelectedMelee": "Selected Melee",
+        "ReplaceDamage": "Replace damage",
+        "AddDamage": "Add damage",
+        "Charge": "charge",
+        "Attacks": "{count} attacks",
+        "NoIteratives": "no iteratives"
+      }
+    },
     "Empower": {
       "Header": "Empower",
       "Title": "Empower {name}",
