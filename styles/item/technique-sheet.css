@@ -137,6 +137,40 @@
   padding-bottom: 2px;
 }
 
+/* The sheet framework lays the active tab out as a fixed-height flex column
+   (height:100% + overflow-y:scroll). That hands `.weapon-attack-config` a
+   *definite* height, which lets its nested `.weapon-attack-subsection`s resolve
+   their own height against it and stretch to ~100% of the config box; two
+   stretched subsections (~562px each from ~46px of real content) then overflow
+   the 580px config and paint over the Empower/maintenance fields below it.
+   Putting the active automation tab into normal block flow removes the
+   definite-height context: config and its subsections fall back to natural
+   content height and the tab scrolls normally. Scoped to `.active` so inactive
+   tabs stay hidden by the framework's display:none. */
+.pf1.sheet.item .tab.automation.active {
+  display: block;
+}
+
+/* In the narrow 2-column grid, stack each label over its control so long
+   labels (e.g. "Non-critical damage bonus") don't squeeze the input to a
+   sliver — every field gets the full column width. */
+.pf1.sheet.item .weapon-attack-grid .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.pf1.sheet.item .weapon-attack-grid .form-group > label {
+  flex: 0 0 auto;
+  margin-bottom: 2px;
+}
+
+.pf1.sheet.item .weapon-attack-grid .form-group > input,
+.pf1.sheet.item .weapon-attack-grid .form-group > select {
+  width: 100%;
+  min-width: 0;
+}
+
 .pf1.sheet.item .weapon-attack-subsection {
   margin-top: 8px;
 }
