@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.0.0 - 2026-06-27
+
+- Added **weapon-attack automation UI + typed model migration** (#176): techniques that delegate to one of the actor's weapon or unarmed attacks now have a first-class editor on the technique sheet's Automation tab — attack filter, damage mode, held-as, attack/damage/non-crit bonuses, an extra-attacks combo list, a BAB iteratives toggle, rare bonus suppressions, plus quick-model presets and a compact summary tag. Under the hood the configuration moves out of PF1e's generic `system.flags.dictionary` into a typed `system.weaponAttack` schema field on `TechniqueDataModel`, eliminating the dotted-key write fragility behind the "changing one field resets the sheet" bug. A single dependency-free transform migrates legacy data on document load, through the GM `ready` actor migration (maintenance version 3), inside the synckit normalizer, and across all 139 shipped compendium techniques (repacked).
+- Added **quickbar use routing** (#173): technique uses can now route through the macro hotbar flow, preserving explicit action ids and bypassing the internal native-roll path where appropriate.
+- Added **Juuroku Rendan weapon-selected 3-hit combo** (#174): Juuroku Rendan now behaves like Raite no Jutsu for weapon selection (unarmed-attack picker) and damage replacement, then rolls exactly 3 attacks at −5 with 2d6+Str bludgeoning in a single chat card regardless of BAB. Introduces an opt-in iteratives toggle that suppresses PF1e's BAB iterative attacks for fixed-count combos; Raite and Sangeki (iteratives left on) are unaffected.
+- Fixed **Naruto range formulas** (#171): close, medium, and long ranges on Naruto techniques now resolve with Naruto's distance progression (e.g. 20 ft at level 5 instead of PF1e's 35 ft), while leaving PF1e's global spell ranges untouched.
+- Fixed **combo starter and second strike automation** (#175): the combo starter now uses touch range and replace damage mode for its selected weapon attack, and Nigeki's second strike is locked to fixed extra attacks with iteratives disabled.
+
 ## v1.3.2 - 2026-06-26
 
 - Added **buff change target category reorganization** (#168): the technique-buff automation UI and underlying data now group change targets by functional category, making large buff definitions easier to scan and configure without changing runtime behavior.
