@@ -223,7 +223,7 @@ export function weaponAttackFormDataFromForm(formData) {
     extraAttacksText: String(formData["system.weaponAttack.extraAttacksText"] ?? ""),
     held: String(formData["system.weaponAttack.held"] ?? ""),
     charge: formData["system.weaponAttack.charge"] === true,
-    iteratives: formData["system.weaponAttack.iteratives"] === true,
+    iteratives: formData["system.weaponAttack.iteratives"] !== false,
     suppressNaturalAttack: formData["system.weaponAttack.suppressNaturalAttack"] === true,
     suppressAbilityDamage: formData["system.weaponAttack.suppressAbilityDamage"] === true,
   };

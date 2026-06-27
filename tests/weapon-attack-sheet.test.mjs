@@ -7,6 +7,7 @@ import {
   buildWeaponAttackFormData,
   buildWeaponAttackSummary,
   normalizeExtraAttacksText,
+  weaponAttackFormDataFromForm,
 } from "../scripts/features/techniques/weapon-attack-sheet.mjs";
 
 function itemWithDictionary(dictionary) {
@@ -167,6 +168,19 @@ describe("weapon attack sheet normalization", () => {
       "system.flags.dictionary.-=weaponAttack.iteratives": null,
       "system.flags.dictionary.-=weaponAttack.suppressedBonuses": null,
     });
+  });
+});
+
+describe("weapon attack sheet synthetic form parsing", () => {
+  it("defaults iteratives to true when partial submits omit the control", () => {
+    const data = weaponAttackFormDataFromForm({
+      "system.weaponAttack.enabled": true,
+      "system.weaponAttack.filter": "unarmedOnly",
+    });
+
+    assert.equal(data.enabled, true);
+    assert.equal(data.filter, "unarmedOnly");
+    assert.equal(data.iteratives, true);
   });
 });
 
