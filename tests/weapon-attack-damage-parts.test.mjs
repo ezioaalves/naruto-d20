@@ -37,6 +37,13 @@ describe("weapon attack damage part helpers", () => {
     assert.equal(typeArrayToCsv(["cold", "electricity"]), "cold, electric");
   });
 
+  it("normalizes PF1e damage type sets", () => {
+    assert.deepEqual(typeCsvToArray(new Set(["slashing", "electricity", ""])), [
+      "slashing",
+      "electric",
+    ]);
+  });
+
   it("treats PF1e's undefined damage label as no damage type", () => {
     assert.deepEqual(typeCsvToArray("Undefined"), []);
     assert.deepEqual(normalizeDamagePartRows([{ formula: "2[Jiki-Uchi]", types: "Undefined" }]), [

@@ -5,7 +5,7 @@ import {
   getTechniqueDamageTransformConfig,
   markTechniqueDamageTransform,
 } from "../automation/combat/damage-transform.mjs";
-import { normalizeDamagePartRows } from "./weapon-attack-damage-parts.mjs";
+import { normalizeDamagePartRows, typeCsvToArray } from "./weapon-attack-damage-parts.mjs";
 
 function deepClone(value) {
   if (globalThis.foundry?.utils?.deepClone) return foundry.utils.deepClone(value);
@@ -204,10 +204,7 @@ export function applyTechniqueWeaponAttackDamageParts(actionUse, config, cleanup
 }
 
 function getPrimaryWeaponDamageTypes(action) {
-  const firstTypes = action?.damage?.parts?.[0]?.types;
-  if (Array.isArray(firstTypes)) return firstTypes.filter(Boolean);
-  if (firstTypes instanceof Set) return [...firstTypes].filter(Boolean);
-  return [];
+  return typeCsvToArray(action?.damage?.parts?.[0]?.types);
 }
 
 function inheritUntypedDamagePartTypes(rows, fallbackTypes, { enabled }) {

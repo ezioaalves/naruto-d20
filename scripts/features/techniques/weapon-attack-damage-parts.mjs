@@ -16,6 +16,7 @@ function canonicalDamageType(value) {
 
 export function typeCsvToArray(value) {
   if (Array.isArray(value)) return value.map(canonicalDamageType).filter(Boolean);
+  if (value instanceof Set) return [...value].map(canonicalDamageType).filter(Boolean);
   return String(value ?? "")
     .split(/[,;]/)
     .map(canonicalDamageType)
