@@ -1,3 +1,10 @@
+import {
+  damagePartRowsFromForm,
+  damagePartRowsToForm,
+} from "./weapon-attack-damage-parts.mjs";
+
+export { damagePartRowsFromForm, damagePartRowsToForm };
+
 export const WEAPON_ATTACK_FILTER_CHOICES = {
   meleeWeapon: "NarutoD20.WeaponAttack.Filter.MeleeWeapon",
   rangedWeapon: "NarutoD20.WeaponAttack.Filter.RangedWeapon",
@@ -30,8 +37,8 @@ const DEFAULT_FORM_DATA = Object.freeze({
   filter: "meleeWeapon",
   damageMode: "add",
   attackBonus: "",
-  damageBonus: "",
-  nonCritDamageBonus: "",
+  damageParts: [],
+  nonCritDamageParts: [],
   extraAttacksText: "",
   held: "",
   charge: false,
@@ -49,8 +56,8 @@ export function buildWeaponAttackFormData(item) {
     filter: wa.filter || "meleeWeapon",
     damageMode: wa.damageMode || "add",
     attackBonus: String(wa.attackBonus ?? ""),
-    damageBonus: String(wa.damageBonus ?? ""),
-    nonCritDamageBonus: String(wa.nonCritDamageBonus ?? ""),
+    damageParts: damagePartRowsToForm(wa.damageParts),
+    nonCritDamageParts: damagePartRowsToForm(wa.nonCritDamageParts),
     extraAttacksText: extraAttacksTextFromArray(wa.extraAttacks),
     held: wa.held ?? "",
     charge: wa.charge === true,

@@ -18,6 +18,7 @@ import {
   applyWeaponAttackPreset,
   buildWeaponAttackFormData,
   buildWeaponAttackSummary,
+  damagePartRowsFromForm,
   extraAttacksArrayFromText,
   WEAPON_ATTACK_DAMAGE_MODE_CHOICES,
   WEAPON_ATTACK_FILTER_CHOICES,
@@ -36,6 +37,21 @@ function localizeChoices(choices) {
   return Object.fromEntries(
     Object.entries(choices).map(([key, label]) => [key, game.i18n.localize(label)]),
   );
+}
+
+function extractIndexedRows(formData, prefix) {
+  const rows = [];
+  const match = new RegExp(`^${prefix.replaceAll(".", "\\.")}\\.(\\d+)\\.(formula|typesText)$`);
+  for (const key of Object.keys(formData)) {
+    const found = key.match(match);
+    if (!found) continue;
+    const index = Number(found[1]);
+    const field = found[2];
+    rows[index] ??= {};
+    rows[index][field] = formData[key];
+    delete formData[key];
+  }
+  return rows.filter(Boolean);
 }
 
 export function createTechniqueItemSheet() {
@@ -308,6 +324,8 @@ export function createTechniqueItemSheet() {
         "select[name='weaponAttack-preset']",
         this._onWeaponAttackPreset.bind(this),
       );
+      html.on("click", ".weapon-attack-damage-add", this._onWeaponAttackDamageAdd.bind(this));
+      html.on("click", ".weapon-attack-damage-delete", this._onWeaponAttackDamageDelete.bind(this));
 
       // Content source editor
       html.on("click", ".content-source .control a.edit", () =>
@@ -346,6 +364,12 @@ export function createTechniqueItemSheet() {
         );
         delete formData["weaponAttack-extraAttacksText"];
       }
+      formData["system.weaponAttack.damageParts"] = damagePartRowsFromForm(
+        extractIndexedRows(formData, "system.weaponAttack.damageParts"),
+      );
+      formData["system.weaponAttack.nonCritDamageParts"] = damagePartRowsFromForm(
+        extractIndexedRows(formData, "system.weaponAttack.nonCritDamageParts"),
+      );
       delete formData["weaponAttack-preset"];
 
       return super._updateObject(event, formData);
@@ -507,8 +531,6 @@ export function createTechniqueItemSheet() {
         "system.weaponAttack.charge",
         "system.weaponAttack.iteratives",
         "system.weaponAttack.attackBonus",
-        "system.weaponAttack.damageBonus",
-        "system.weaponAttack.nonCritDamageBonus",
         "system.weaponAttack.suppressNaturalAttack",
         "system.weaponAttack.suppressAbilityDamage",
         "weaponAttack-extraAttacksText",
@@ -521,8 +543,6 @@ export function createTechniqueItemSheet() {
         filter: get("system.weaponAttack.filter").value,
         damageMode: get("system.weaponAttack.damageMode").value,
         attackBonus: get("system.weaponAttack.attackBonus").value,
-        damageBonus: get("system.weaponAttack.damageBonus").value,
-        nonCritDamageBonus: get("system.weaponAttack.nonCritDamageBonus").value,
         extraAttacksText: get("weaponAttack-extraAttacksText").value,
         held: get("system.weaponAttack.held").value,
         charge: get("system.weaponAttack.charge").checked === true,
@@ -539,13 +559,37 @@ export function createTechniqueItemSheet() {
       get("system.weaponAttack.charge").checked = next.charge === true;
       get("system.weaponAttack.iteratives").checked = next.iteratives !== false;
       get("system.weaponAttack.attackBonus").value = next.attackBonus ?? "";
-      get("system.weaponAttack.damageBonus").value = next.damageBonus ?? "";
-      get("system.weaponAttack.nonCritDamageBonus").value = next.nonCritDamageBonus ?? "";
       get("weaponAttack-extraAttacksText").value = next.extraAttacksText ?? "";
       get("system.weaponAttack.suppressNaturalAttack").checked =
         next.suppressNaturalAttack === true;
       get("system.weaponAttack.suppressAbilityDamage").checked =
         next.suppressAbilityDamage === true;
+    }
+
+    _onWeaponAttackDamageAdd(event) {
+      event.preventDefault();
+      const button = event.currentTarget;
+      const list = button.closest("[data-weapon-attack-damage-list]");
+      const prefix = list?.dataset.weaponAttackDamageList;
+      const rows = list?.querySelector(".weapon-attack-damage-rows");
+      if (!prefix || !rows) return;
+
+      const index = rows.querySelectorAll(".weapon-attack-damage-row").length;
+      const row = document.createElement("div");
+      row.className = "weapon-attack-damage-row";
+      row.innerHTML = `
+        <input type="text" name="${prefix}.${index}.formula" value="" placeholder="${game.i18n.localize("NarutoD20.WeaponAttack.DamageParts.FormulaPlaceholder")}">
+        <input type="text" name="${prefix}.${index}.typesText" value="" placeholder="${game.i18n.localize("NarutoD20.WeaponAttack.DamageParts.TypesPlaceholder")}">
+        <button type="button" class="weapon-attack-damage-delete" data-tooltip="${game.i18n.localize("PF1.DeleteItem")}">
+          <i class="fa-solid fa-trash" inert></i>
+        </button>
+      `;
+      rows.append(row);
+    }
+
+    _onWeaponAttackDamageDelete(event) {
+      event.preventDefault();
+      event.currentTarget.closest(".weapon-attack-damage-row")?.remove();
     }
 
     // ─────────────────────────────────────────────────────────────

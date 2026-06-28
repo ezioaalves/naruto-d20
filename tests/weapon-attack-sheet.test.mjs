@@ -5,6 +5,8 @@ import {
   applyWeaponAttackPreset,
   buildWeaponAttackFormData,
   buildWeaponAttackSummary,
+  damagePartRowsFromForm,
+  damagePartRowsToForm,
   extraAttacksArrayFromText,
   extraAttacksTextFromArray,
   normalizeExtraAttacksText,
@@ -29,6 +31,8 @@ describe("weapon attack sheet form data (typed field)", () => {
         iteratives: false,
         suppressNaturalAttack: true,
         suppressAbilityDamage: true,
+        damageParts: [{ formula: "2", types: ["cold"] }],
+        nonCritDamageParts: [{ formula: "1d4", types: ["electricity"] }],
       }),
     );
 
@@ -40,6 +44,8 @@ describe("weapon attack sheet form data (typed field)", () => {
     assert.equal(data.iteratives, false);
     assert.equal(data.suppressNaturalAttack, true);
     assert.equal(data.suppressAbilityDamage, true);
+    assert.deepEqual(data.damageParts, [{ formula: "2", typesText: "cold" }]);
+    assert.deepEqual(data.nonCritDamageParts, [{ formula: "1d4", typesText: "electricity" }]);
   });
 
   it("returns disabled defaults when weaponAttack is absent or disabled", () => {
@@ -109,5 +115,18 @@ describe("normalizeExtraAttacksText", () => {
       normalizeExtraAttacksText("0|Second Attack\n0|Third Attack; -5|Fourth Attack"),
       "0|Second Attack;0|Third Attack;-5|Fourth Attack",
     );
+  });
+});
+
+describe("weapon attack damage part form rows", () => {
+  it("round-trips formula and damage type CSV rows", () => {
+    const rows = damagePartRowsFromForm([
+      { formula: " 2 ", typesText: "cold, electricity" },
+      { formula: "", typesText: "fire" },
+    ]);
+    assert.deepEqual(rows, [{ formula: "2", types: ["cold", "electricity"] }]);
+    assert.deepEqual(damagePartRowsToForm(rows), [
+      { formula: "2", typesText: "cold, electricity" },
+    ]);
   });
 });
