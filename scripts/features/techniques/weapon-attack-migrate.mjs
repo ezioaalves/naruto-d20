@@ -9,6 +9,11 @@
  * NOT import any Foundry/pf1 globals.
  */
 
+import {
+  legacyFormulaToDamageParts,
+  normalizeDamagePartRows,
+} from "./weapon-attack-damage-parts.mjs";
+
 const FILTERS = new Set(["meleeWeapon", "rangedWeapon", "unarmedOnly", "meleeOrUnarmed"]);
 const DAMAGE_MODES = new Set(["add", "replace"]);
 const HELD = new Set(["", "onehanded", "twohanded"]);
@@ -43,45 +48,72 @@ function parseExtraAttacks(raw) {
 
 /**
  * Mutate `source` in place: build typed `source.weaponAttack` from legacy
- * dictionary keys and strip those keys. No-op when no legacy keys are present.
+ * dictionary keys and strip those keys. Also normalizes any typed
+ * `source.weaponAttack` that still carries legacy string damage fields.
+ * No-op when no legacy keys or legacy damage fields are present.
  * Returns `source`.
  */
 export function migrateLegacyWeaponAttack(source) {
   if (!source || typeof source !== "object") return source;
-  if (!hasLegacyWeaponAttack(source)) return source;
 
-  const dict = source.flags.dictionary;
-  const alreadyTyped =
-    source.weaponAttack &&
-    typeof source.weaponAttack === "object" &&
-    source.weaponAttack.enabled !== undefined;
+  const hasLegacyDict = hasLegacyWeaponAttack(source);
+  const wa0 = source.weaponAttack;
+  const hasLegacyDamageStrings =
+    wa0 &&
+    typeof wa0 === "object" &&
+    ("damageBonus" in wa0 || "nonCritDamageBonus" in wa0);
 
-  if (!alreadyTyped) {
-    const values = readLegacyValues(dict);
-    const str = (k) => String(values[k] ?? "").trim();
-    const suppressions = str("suppressedBonuses")
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean);
+  if (!hasLegacyDict && !hasLegacyDamageStrings) return source;
 
-    source.weaponAttack = {
-      enabled: str("mode") === "selected",
-      filter: FILTERS.has(str("filter")) ? str("filter") : "meleeWeapon",
-      damageMode: DAMAGE_MODES.has(str("damageMode")) ? str("damageMode") : "add",
-      held: HELD.has(str("held")) ? str("held") : "",
-      charge: str("charge").toLowerCase() === "true",
-      iteratives: str("iteratives").toLowerCase() !== "false",
-      attackBonus: str("attackBonus"),
-      damageBonus: str("damageBonus"),
-      nonCritDamageBonus: str("nonCritDamageBonus"),
-      extraAttacks: parseExtraAttacks(values.extraAttacks),
-      suppressNaturalAttack: suppressions.includes("naturalAttack"),
-      suppressAbilityDamage: suppressions.includes("abilityDamage"),
-    };
+  if (hasLegacyDict) {
+    const dict = source.flags.dictionary;
+    const alreadyTyped =
+      source.weaponAttack &&
+      typeof source.weaponAttack === "object" &&
+      source.weaponAttack.enabled !== undefined;
+
+    if (!alreadyTyped) {
+      const values = readLegacyValues(dict);
+      const str = (k) => String(values[k] ?? "").trim();
+      const suppressions = str("suppressedBonuses")
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+
+      source.weaponAttack = {
+        enabled: str("mode") === "selected",
+        filter: FILTERS.has(str("filter")) ? str("filter") : "meleeWeapon",
+        damageMode: DAMAGE_MODES.has(str("damageMode")) ? str("damageMode") : "add",
+        held: HELD.has(str("held")) ? str("held") : "",
+        charge: str("charge").toLowerCase() === "true",
+        iteratives: str("iteratives").toLowerCase() !== "false",
+        attackBonus: str("attackBonus"),
+        damageParts: legacyFormulaToDamageParts(values.damageBonus),
+        nonCritDamageParts: legacyFormulaToDamageParts(values.nonCritDamageBonus),
+        extraAttacks: parseExtraAttacks(values.extraAttacks),
+        suppressNaturalAttack: suppressions.includes("naturalAttack"),
+        suppressAbilityDamage: suppressions.includes("abilityDamage"),
+      };
+    }
+
+    for (const key of Object.keys(dict)) {
+      if (key === "weaponAttack" || key.startsWith("weaponAttack.")) delete dict[key];
+    }
   }
 
-  for (const key of Object.keys(dict)) {
-    if (key === "weaponAttack" || key.startsWith("weaponAttack.")) delete dict[key];
+  const wa = source.weaponAttack;
+  if (wa && typeof wa === "object") {
+    wa.damageParts = normalizeDamagePartRows(
+      wa.damageParts?.length ? wa.damageParts : legacyFormulaToDamageParts(wa.damageBonus),
+    );
+    wa.nonCritDamageParts = normalizeDamagePartRows(
+      wa.nonCritDamageParts?.length
+        ? wa.nonCritDamageParts
+        : legacyFormulaToDamageParts(wa.nonCritDamageBonus),
+    );
+    delete wa.damageBonus;
+    delete wa.nonCritDamageBonus;
   }
+
   return source;
 }

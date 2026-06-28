@@ -403,8 +403,8 @@ describe("technique defaults", () => {
       globalThis.foundry.abstract = prevAbstract;
     }
     assert.deepEqual(keys, [
-      "attackBonus", "charge", "damageBonus", "damageMode", "enabled", "extraAttacks",
-      "filter", "held", "iteratives", "nonCritDamageBonus", "suppressAbilityDamage", "suppressNaturalAttack",
+      "attackBonus", "charge", "damageMode", "damageParts", "enabled", "extraAttacks",
+      "filter", "held", "iteratives", "nonCritDamageParts", "suppressAbilityDamage", "suppressNaturalAttack",
     ]);
   });
 

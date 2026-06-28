@@ -144,6 +144,15 @@ export function createTechniqueDataModel() {
           img: new fields.StringField({ ...opt, blank: true, initial: "" }),
         });
 
+      const damagePartRow = () =>
+        new fields.SchemaField({
+          formula: new fields.StringField({ ...opt, blank: true, initial: "" }),
+          types: new fields.ArrayField(
+            new fields.StringField({ blank: false, required: true }),
+            { ...opt, initial: [] },
+          ),
+        });
+
       return {
         // ── Description block ──────────────────────────────────
         description: new fields.SchemaField(
@@ -381,8 +390,8 @@ export function createTechniqueDataModel() {
             charge: new fields.BooleanField({ ...opt, initial: false }),
             iteratives: new fields.BooleanField({ ...opt, initial: true }),
             attackBonus: new fields.StringField({ ...opt, blank: true, initial: "" }),
-            damageBonus: new fields.StringField({ ...opt, blank: true, initial: "" }),
-            nonCritDamageBonus: new fields.StringField({ ...opt, blank: true, initial: "" }),
+            damageParts: new fields.ArrayField(damagePartRow(), { ...opt, initial: [] }),
+            nonCritDamageParts: new fields.ArrayField(damagePartRow(), { ...opt, initial: [] }),
             extraAttacks: new fields.ArrayField(
               new fields.SchemaField({
                 formula: new fields.StringField({ ...opt, blank: true, initial: "" }),
