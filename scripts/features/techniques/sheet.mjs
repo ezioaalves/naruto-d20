@@ -18,7 +18,10 @@ import {
   applyWeaponAttackPreset,
   buildWeaponAttackFormData,
   buildWeaponAttackSummary,
+  damagePartRowsFromForm,
+  extractIndexedRows,
   extraAttacksArrayFromText,
+  replaceDamagePartTypes,
   WEAPON_ATTACK_DAMAGE_MODE_CHOICES,
   WEAPON_ATTACK_FILTER_CHOICES,
   WEAPON_ATTACK_HELD_CHOICES,
@@ -37,6 +40,7 @@ function localizeChoices(choices) {
     Object.entries(choices).map(([key, label]) => [key, game.i18n.localize(label)]),
   );
 }
+
 
 export function createTechniqueItemSheet() {
   class TechniqueItemSheet extends ItemSheet {
@@ -209,7 +213,9 @@ export function createTechniqueItemSheet() {
       };
       const localizeOrFormat = (key, data = {}) =>
         Object.keys(data).length ? game.i18n.format(key, data) : game.i18n.localize(key);
-      context.weaponAttack = buildWeaponAttackFormData(item);
+      context.weaponAttack = buildWeaponAttackFormData(item, {
+        damageTypeRegistry: pf1.registry?.damageTypes,
+      });
       context.weaponAttackSummary = buildWeaponAttackSummary(
         context.weaponAttack,
         localizeOrFormat,
@@ -308,6 +314,13 @@ export function createTechniqueItemSheet() {
         "select[name='weaponAttack-preset']",
         this._onWeaponAttackPreset.bind(this),
       );
+      html.on("click", ".weapon-attack-damage-add", this._onWeaponAttackDamageAdd.bind(this));
+      html.on("click", ".weapon-attack-damage-delete", this._onWeaponAttackDamageDelete.bind(this));
+      html.on(
+        "click",
+        ".weapon-attack-damage-row .damage-type-visual",
+        this._onWeaponAttackDamageType.bind(this),
+      );
 
       // Content source editor
       html.on("click", ".content-source .control a.edit", () =>
@@ -346,6 +359,12 @@ export function createTechniqueItemSheet() {
         );
         delete formData["weaponAttack-extraAttacksText"];
       }
+      formData["system.weaponAttack.damageParts"] = damagePartRowsFromForm(
+        extractIndexedRows(formData, "system.weaponAttack.damageParts"),
+      );
+      formData["system.weaponAttack.nonCritDamageParts"] = damagePartRowsFromForm(
+        extractIndexedRows(formData, "system.weaponAttack.nonCritDamageParts"),
+      );
       delete formData["weaponAttack-preset"];
 
       return super._updateObject(event, formData);
@@ -507,8 +526,6 @@ export function createTechniqueItemSheet() {
         "system.weaponAttack.charge",
         "system.weaponAttack.iteratives",
         "system.weaponAttack.attackBonus",
-        "system.weaponAttack.damageBonus",
-        "system.weaponAttack.nonCritDamageBonus",
         "system.weaponAttack.suppressNaturalAttack",
         "system.weaponAttack.suppressAbilityDamage",
         "weaponAttack-extraAttacksText",
@@ -521,8 +538,6 @@ export function createTechniqueItemSheet() {
         filter: get("system.weaponAttack.filter").value,
         damageMode: get("system.weaponAttack.damageMode").value,
         attackBonus: get("system.weaponAttack.attackBonus").value,
-        damageBonus: get("system.weaponAttack.damageBonus").value,
-        nonCritDamageBonus: get("system.weaponAttack.nonCritDamageBonus").value,
         extraAttacksText: get("weaponAttack-extraAttacksText").value,
         held: get("system.weaponAttack.held").value,
         charge: get("system.weaponAttack.charge").checked === true,
@@ -539,13 +554,75 @@ export function createTechniqueItemSheet() {
       get("system.weaponAttack.charge").checked = next.charge === true;
       get("system.weaponAttack.iteratives").checked = next.iteratives !== false;
       get("system.weaponAttack.attackBonus").value = next.attackBonus ?? "";
-      get("system.weaponAttack.damageBonus").value = next.damageBonus ?? "";
-      get("system.weaponAttack.nonCritDamageBonus").value = next.nonCritDamageBonus ?? "";
       get("weaponAttack-extraAttacksText").value = next.extraAttacksText ?? "";
       get("system.weaponAttack.suppressNaturalAttack").checked =
         next.suppressNaturalAttack === true;
       get("system.weaponAttack.suppressAbilityDamage").checked =
         next.suppressAbilityDamage === true;
+    }
+
+    _onWeaponAttackDamageAdd(event) {
+      event.preventDefault();
+      const list = event.currentTarget.closest("[data-weapon-attack-damage-list]");
+      const prefix = list?.dataset.weaponAttackDamageList;
+      const rowsContainer = list?.querySelector(".weapon-attack-damage-rows");
+      if (!prefix || !rowsContainer) return;
+
+      const escapedPrefix = prefix.replaceAll(".", "\\.");
+      const existingInputs = rowsContainer.querySelectorAll(`input[name^="${escapedPrefix}."]`);
+      let maxIndex = -1;
+      for (const input of existingInputs) {
+        const match = input.name.match(new RegExp(`^${escapedPrefix}\\.(\\d+)\\.`));
+        if (match) maxIndex = Math.max(maxIndex, Number(match[1]));
+      }
+      const index = maxIndex + 1;
+
+      const row = document.createElement("div");
+      row.className = "weapon-attack-damage-row";
+      row.dataset.damagePart = String(index);
+      row.innerHTML = `
+        <input type="text" name="${prefix}.${index}.formula" value="" placeholder="${game.i18n.localize("NarutoD20.WeaponAttack.DamageParts.FormulaPlaceholder")}">
+        <input type="hidden" name="${prefix}.${index}.types" value="">
+        <div class="damage-type-visual empty" data-name="${prefix}.${index}.types">
+          <span>${game.i18n.localize("PF1.Undefined")}</span>
+        </div>
+        <button type="button" class="weapon-attack-damage-delete" data-tooltip="${game.i18n.localize("PF1.DeleteItem")}">
+          <i class="fa-solid fa-trash" inert></i>
+        </button>
+      `;
+      rowsContainer.append(row);
+    }
+
+    _onWeaponAttackDamageDelete(event) {
+      event.preventDefault();
+      event.currentTarget.closest(".weapon-attack-damage-row")?.remove();
+    }
+
+    async _onWeaponAttackDamageType(event) {
+      event.preventDefault();
+      const elem = event.currentTarget;
+      const row = elem.closest(".weapon-attack-damage-row");
+      const list = elem.closest("[data-weapon-attack-damage-list]");
+      const prefix = list?.dataset.weaponAttackDamageList;
+      const index = Number(row?.dataset.damagePart);
+      if (!prefix || index < 0) return;
+
+      await this._onSubmit(event, { preventRender: true });
+
+      const currentRows = foundry.utils.getProperty(this.item, prefix) ?? [];
+      const currentTypes = currentRows[index]?.types ?? [];
+      const app = new pf1.applications.DamageTypeSelector(
+        this.item,
+        `${prefix}.${index}.types`,
+        new Set(currentTypes),
+        {
+          updateCallback: async (update) => {
+            await this.item.update({ [prefix]: replaceDamagePartTypes(currentRows, index, update) });
+            this.render(false);
+          },
+        },
+      );
+      return app.render(true);
     }
 
     // ─────────────────────────────────────────────────────────────

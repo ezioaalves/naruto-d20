@@ -97,11 +97,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "2[Iaido]",
-      "damageBonus": "2[Iaido]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "2[Iaido]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

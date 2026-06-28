@@ -103,11 +103,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "1[Shamen Uchi]",
-      "damageBonus": "-1[Shamen Uchi]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "-1[Shamen Uchi]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

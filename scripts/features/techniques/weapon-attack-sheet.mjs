@@ -1,3 +1,11 @@
+import {
+  damagePartRowsFromForm,
+  normalizeDamagePartRows,
+  typeArrayToCsv,
+} from "./weapon-attack-damage-parts.mjs";
+
+export { damagePartRowsFromForm };
+
 export const WEAPON_ATTACK_FILTER_CHOICES = {
   meleeWeapon: "NarutoD20.WeaponAttack.Filter.MeleeWeapon",
   rangedWeapon: "NarutoD20.WeaponAttack.Filter.RangedWeapon",
@@ -30,8 +38,8 @@ const DEFAULT_FORM_DATA = Object.freeze({
   filter: "meleeWeapon",
   damageMode: "add",
   attackBonus: "",
-  damageBonus: "",
-  nonCritDamageBonus: "",
+  damageParts: [],
+  nonCritDamageParts: [],
   extraAttacksText: "",
   held: "",
   charge: false,
@@ -40,17 +48,52 @@ const DEFAULT_FORM_DATA = Object.freeze({
   suppressAbilityDamage: false,
 });
 
-export function buildWeaponAttackFormData(item) {
+export function buildDamageTypeVisualData(types, damageTypeRegistry = null) {
+  const normalized = normalizeDamagePartRows([{ formula: "1", types }])[0]?.types ?? [];
+  const standard = [];
+  const custom = new Set();
+
+  for (const type of normalized) {
+    const damageType = damageTypeRegistry?.get?.(type);
+    if (damageType) standard.push({ ...damageType, id: damageType.id ?? type });
+    else custom.add(type);
+  }
+
+  return {
+    types: new Set(normalized),
+    standard,
+    custom,
+  };
+}
+
+export function damagePartRowsToForm(rows, damageTypeRegistry = null) {
+  return normalizeDamagePartRows(rows).map((row) => ({
+    formula: row.formula,
+    typesText: typeArrayToCsv(row.types),
+    damage: buildDamageTypeVisualData(row.types, damageTypeRegistry),
+  }));
+}
+
+export function replaceDamagePartTypes(rows, index, types) {
+  const normalized = normalizeDamagePartRows(rows);
+  if (index < 0 || index >= normalized.length) return normalized;
+  return normalized.map((row, i) =>
+    i === index ? normalizeDamagePartRows([{ ...row, types }])[0] : row,
+  );
+}
+
+export function buildWeaponAttackFormData(item, options = {}) {
   const wa = item.system?.weaponAttack;
   if (!wa?.enabled) return { ...DEFAULT_FORM_DATA };
+  const damageTypeRegistry = options.damageTypeRegistry ?? null;
   return {
     ...DEFAULT_FORM_DATA,
     enabled: true,
     filter: wa.filter || "meleeWeapon",
     damageMode: wa.damageMode || "add",
     attackBonus: String(wa.attackBonus ?? ""),
-    damageBonus: String(wa.damageBonus ?? ""),
-    nonCritDamageBonus: String(wa.nonCritDamageBonus ?? ""),
+    damageParts: damagePartRowsToForm(wa.damageParts, damageTypeRegistry),
+    nonCritDamageParts: damagePartRowsToForm(wa.nonCritDamageParts, damageTypeRegistry),
     extraAttacksText: extraAttacksTextFromArray(wa.extraAttacks),
     held: wa.held ?? "",
     charge: wa.charge === true,
@@ -191,4 +234,31 @@ function defaultLocalize(key, data = {}) {
   };
   if (key === "NarutoD20.WeaponAttack.Summary.Attacks") return `${data.count} attacks`;
   return dictionary[key] ?? key;
+}
+
+/**
+ * Collect sparse indexed form keys (e.g. `prefix.0.formula`, `prefix.2.types`) into a
+ * dense array of row objects.  Keys consumed here are deleted from `formData` so the caller
+ * does not accidentally persist them as raw strings.
+ *
+ * The returned array is dense (no holes) and preserves the original numeric order of indices,
+ * which means a row set like {0, 2} collapses into two consecutive rows [{…}, {…}].
+ *
+ * @param {Record<string, unknown>} formData - Flat form data object (mutated in place).
+ * @param {string} prefix - Dot-separated field prefix, e.g. "system.weaponAttack.damageParts".
+ * @returns {{ formula?: string, types?: string, typesText?: string }[]}
+ */
+export function extractIndexedRows(formData, prefix) {
+  const rows = [];
+  const match = new RegExp(`^${prefix.replaceAll(".", "\\.")}\\.(\\d+)\\.(formula|types|typesText)$`);
+  for (const key of Object.keys(formData)) {
+    const found = key.match(match);
+    if (!found) continue;
+    const index = Number(found[1]);
+    const field = found[2];
+    rows[index] ??= {};
+    rows[index][field] = formData[key];
+    delete formData[key];
+  }
+  return rows.filter(Boolean);
 }

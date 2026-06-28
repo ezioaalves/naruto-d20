@@ -1,3 +1,8 @@
+import {
+  legacyFormulaToDamageParts,
+  normalizeDamagePartRows,
+} from "./weapon-attack-damage-parts.mjs";
+
 const LEGACY_MAINTENANCE_KEYS = [
   "stanceMode",
   "stanceUpkeep",
@@ -125,8 +130,16 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   wa.charge ??= false;
   wa.iteratives ??= true;
   wa.attackBonus ??= "";
-  wa.damageBonus ??= "";
-  wa.nonCritDamageBonus ??= "";
+  wa.damageParts = normalizeDamagePartRows(
+    wa.damageParts?.length ? wa.damageParts : legacyFormulaToDamageParts(wa.damageBonus),
+  );
+  wa.nonCritDamageParts = normalizeDamagePartRows(
+    wa.nonCritDamageParts?.length
+      ? wa.nonCritDamageParts
+      : legacyFormulaToDamageParts(wa.nonCritDamageBonus),
+  );
+  delete wa.damageBonus;
+  delete wa.nonCritDamageBonus;
   wa.extraAttacks ??= [];
   wa.suppressNaturalAttack ??= false;
   wa.suppressAbilityDamage ??= false;

@@ -122,11 +122,11 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "",
-      "damageBonus": "",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": true,
-      "suppressAbilityDamage": true
+      "suppressAbilityDamage": true,
+      "damageParts": [],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

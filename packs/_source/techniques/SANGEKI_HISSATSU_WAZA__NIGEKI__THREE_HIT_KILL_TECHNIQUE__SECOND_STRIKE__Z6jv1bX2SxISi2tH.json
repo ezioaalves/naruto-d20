@@ -102,8 +102,6 @@
       "charge": false,
       "iteratives": false,
       "attackBonus": "",
-      "damageBonus": "",
-      "nonCritDamageBonus": "1d4[Igeki] + (1d6+1)[Nigeki]",
       "extraAttacks": [
         {
           "formula": "-5",
@@ -111,7 +109,14 @@
         }
       ],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [],
+      "nonCritDamageParts": [
+        {
+          "formula": "1d4[Igeki] + (1d6+1)[Nigeki]",
+          "types": []
+        }
+      ]
     }
   },
   "effects": [],

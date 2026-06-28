@@ -103,11 +103,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "-4[Ryu Kan Sen]",
-      "damageBonus": "-4[Ryu Kan Sen]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "-4[Ryu Kan Sen]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

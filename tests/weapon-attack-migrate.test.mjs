@@ -49,8 +49,8 @@ describe("migrateLegacyWeaponAttack", () => {
       charge: false,
       iteratives: false,
       attackBonus: "-5",
-      damageBonus: "",
-      nonCritDamageBonus: "",
+      damageParts: [],
+      nonCritDamageParts: [],
       extraAttacks: [
         { formula: "0", name: "Second Attack" },
         { formula: "0", name: "Third Attack" },
@@ -83,6 +83,48 @@ describe("migrateLegacyWeaponAttack", () => {
     const source = { flags: { dictionary: { "weaponAttack.mode": "selected", "weaponAttack.filter": "bogus" } } };
     migrateLegacyWeaponAttack(source);
     assert.equal(source.weaponAttack.filter, "meleeWeapon");
+  });
+
+  it("converts legacy damage bonus strings into untyped structured rows", () => {
+    const source = {
+      flags: {
+        dictionary: {
+          "weaponAttack.mode": "selected",
+          "weaponAttack.damageBonus": "2[Iaiken]",
+          "weaponAttack.nonCritDamageBonus": "(min(floor(@cl / 3), 4))d4[Iaiken]",
+        },
+      },
+    };
+
+    migrateLegacyWeaponAttack(source);
+
+    assert.deepEqual(source.weaponAttack.damageParts, [{ formula: "2[Iaiken]", types: [] }]);
+    assert.deepEqual(source.weaponAttack.nonCritDamageParts, [
+      { formula: "(min(floor(@cl / 3), 4))d4[Iaiken]", types: [] },
+    ]);
+    assert.equal(source.weaponAttack.damageBonus, undefined);
+    assert.equal(source.weaponAttack.nonCritDamageBonus, undefined);
+  });
+
+  it("normalizes already-typed damage rows without replacing them", () => {
+    const typed = {
+      weaponAttack: {
+        enabled: true,
+        damageBonus: "legacy should be ignored",
+        damageParts: [{ formula: " 2 ", types: [" cold "] }],
+        nonCritDamageParts: [{ formula: "1d4", types: "electricity" }],
+      },
+      flags: { dictionary: {} },
+    };
+
+    migrateLegacyWeaponAttack(typed);
+
+    assert.deepEqual(typed.weaponAttack.damageParts, [{ formula: "2", types: ["cold"] }]);
+    assert.deepEqual(typed.weaponAttack.nonCritDamageParts, [
+      { formula: "1d4", types: ["electric"] },
+    ]);
+    assert.equal(typed.weaponAttack.damageBonus, undefined);
+    assert.equal(typed.weaponAttack.nonCritDamageBonus, undefined);
   });
 
   it("is a no-op on a clean or already-typed system", () => {

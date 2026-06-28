@@ -442,11 +442,16 @@
       "AttackBonus": {
         "Label": "Bônus de ataque"
       },
-      "DamageBonus": {
-        "Label": "Bônus de dano"
+      "DamageParts": {
+        "Label": "Instancias de bonus de dano",
+        "Add": "Adicionar instancia de dano",
+        "FormulaPlaceholder": "Formula",
+        "TypesPlaceholder": "Tipos, ex.: cold, electricity",
+        "Hint": "Cada linha nao vazia vira uma instancia de dano tipada separada."
       },
-      "NonCritDamageBonus": {
-        "Label": "Bônus de dano não-crítico"
+      "NonCritDamageParts": {
+        "Label": "Instancias de bonus de dano nao-multiplicavel",
+        "Hint": "Estas linhas rolam apenas em dano nao critico e nao multiplicam em acertos criticos."
       },
       "Combo": {
         "Header": "Combo"

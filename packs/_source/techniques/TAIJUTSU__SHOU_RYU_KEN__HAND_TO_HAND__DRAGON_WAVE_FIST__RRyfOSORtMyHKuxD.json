@@ -107,11 +107,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "",
-      "damageBonus": "4d4[Shou Ryu Ken]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "4d4[Shou Ryu Ken]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

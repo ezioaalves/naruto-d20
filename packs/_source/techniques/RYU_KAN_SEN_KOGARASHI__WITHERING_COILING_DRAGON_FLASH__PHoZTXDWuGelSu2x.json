@@ -97,11 +97,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "-2[Kogarashi]",
-      "damageBonus": "1d6[Kogarashi]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "1d6[Kogarashi]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

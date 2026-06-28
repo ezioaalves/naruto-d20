@@ -103,11 +103,11 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "-5[Gatotsugyaku]",
-      "damageBonus": "",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

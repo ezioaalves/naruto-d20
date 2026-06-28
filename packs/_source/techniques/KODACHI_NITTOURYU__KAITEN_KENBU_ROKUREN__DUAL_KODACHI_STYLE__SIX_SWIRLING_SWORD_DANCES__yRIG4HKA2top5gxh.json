@@ -102,11 +102,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "3[Kaiten Kenbu Rokuren]",
-      "damageBonus": "3[Kaiten Kenbu Rokuren]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "3[Kaiten Kenbu Rokuren]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

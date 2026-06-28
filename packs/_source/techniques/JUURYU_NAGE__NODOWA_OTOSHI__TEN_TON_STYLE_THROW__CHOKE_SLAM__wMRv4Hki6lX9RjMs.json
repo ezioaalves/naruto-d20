@@ -107,11 +107,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "",
-      "damageBonus": "3d6[Nodowa Otoshi]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "3d6[Nodowa Otoshi]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

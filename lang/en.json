@@ -438,11 +438,16 @@
       "AttackBonus": {
         "Label": "Attack bonus"
       },
-      "DamageBonus": {
-        "Label": "Damage bonus"
+      "DamageParts": {
+        "Label": "Damage bonus instances",
+        "Add": "Add damage instance",
+        "FormulaPlaceholder": "Formula",
+        "TypesPlaceholder": "Types, e.g. cold, electricity",
+        "Hint": "Each non-empty row becomes a separate typed damage instance."
       },
-      "NonCritDamageBonus": {
-        "Label": "Non-critical damage bonus"
+      "NonCritDamageParts": {
+        "Label": "Non-multiplying damage bonus instances",
+        "Hint": "These rows roll only on non-critical damage and do not multiply on critical hits."
       },
       "Combo": {
         "Header": "Combo"

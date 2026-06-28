@@ -101,11 +101,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "2[Jiki-Uchi]",
-      "damageBonus": "2[Jiki-Uchi]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "2[Jiki-Uchi]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

@@ -403,8 +403,8 @@ describe("technique defaults", () => {
       globalThis.foundry.abstract = prevAbstract;
     }
     assert.deepEqual(keys, [
-      "attackBonus", "charge", "damageBonus", "damageMode", "enabled", "extraAttacks",
-      "filter", "held", "iteratives", "nonCritDamageBonus", "suppressAbilityDamage", "suppressNaturalAttack",
+      "attackBonus", "charge", "damageMode", "damageParts", "enabled", "extraAttacks",
+      "filter", "held", "iteratives", "nonCritDamageParts", "suppressAbilityDamage", "suppressNaturalAttack",
     ]);
   });
 
@@ -825,6 +825,8 @@ describe("getTechniqueWeaponAttackConfig", () => {
           filter: "rangedWeapon",
           damageMode: "replace",
           attackBonus: "@cl",
+          damageParts: [{ formula: "2", types: ["cold"] }],
+          nonCritDamageParts: [{ formula: "1d4", types: ["electricity"] }],
           charge: true,
           iteratives: false,
           extraAttacks: [{ formula: "-5", name: "Second" }, { formula: "", name: "skip" }],
@@ -837,8 +839,8 @@ describe("getTechniqueWeaponAttackConfig", () => {
       filter: "rangedWeapon",
       damageMode: "replace",
       attackBonus: "@cl",
-      damageBonus: "",
-      nonCritDamageBonus: "",
+      damageParts: [{ formula: "2", types: ["cold"] }],
+      nonCritDamageParts: [{ formula: "1d4", types: ["electric"] }],
       extraAttacks: [{ formula: "-5", name: "Second" }],
       held: "",
       charge: true,

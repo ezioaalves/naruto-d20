@@ -207,3 +207,55 @@
   margin: 4px 0 0 18px;
   padding: 0;
 }
+
+.naruto-d20.sheet.item.technique .weapon-attack-damage-parts {
+  margin-top: 0.5rem;
+}
+
+.naruto-d20.sheet.item.technique .weapon-attack-damage-parts h5 {
+  margin: 0 0 0.25rem;
+  font-size: var(--font-size-13);
+}
+
+.naruto-d20.sheet.item.technique .weapon-attack-damage-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(8rem, 0.8fr) auto;
+  gap: 0.25rem;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.naruto-d20.sheet.item.technique .weapon-attack-damage-row input {
+  width: 100%;
+}
+
+.naruto-d20.sheet.item.technique .weapon-attack-damage-row .damage-type-visual {
+  align-items: center;
+  border: 1px solid var(--pf1-tan, #7a7971);
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  min-height: 26px;
+  overflow: hidden;
+  padding: 0 0.35rem;
+}
+
+.naruto-d20.sheet.item.technique .weapon-attack-damage-row .damage-type-visual .damage-type {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.naruto-d20.sheet.item.technique .weapon-attack-damage-row .damage-type-visual .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.naruto-d20.sheet.item.technique .weapon-attack-damage-add,
+.naruto-d20.sheet.item.technique .weapon-attack-damage-delete {
+  line-height: 1;
+}

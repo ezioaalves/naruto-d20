@@ -107,11 +107,11 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "-4[Gouku Juuji]",
-      "damageBonus": "",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

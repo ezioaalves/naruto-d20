@@ -5,6 +5,7 @@ import {
   getTechniqueDamageTransformConfig,
   markTechniqueDamageTransform,
 } from "../automation/combat/damage-transform.mjs";
+import { normalizeDamagePartRows, typeCsvToArray } from "./weapon-attack-damage-parts.mjs";
 
 function deepClone(value) {
   if (globalThis.foundry?.utils?.deepClone) return foundry.utils.deepClone(value);
@@ -84,8 +85,8 @@ export function getTechniqueWeaponAttackConfig(item) {
     filter: wa.filter,
     damageMode: wa.damageMode,
     attackBonus: String(wa.attackBonus ?? ""),
-    damageBonus: String(wa.damageBonus ?? ""),
-    nonCritDamageBonus: String(wa.nonCritDamageBonus ?? ""),
+    damageParts: normalizeDamagePartRows(wa.damageParts),
+    nonCritDamageParts: normalizeDamagePartRows(wa.nonCritDamageParts),
     extraAttacks: (wa.extraAttacks ?? []).filter((e) => e.formula),
     held: wa.held ?? "",
     charge: wa.charge === true,
@@ -126,13 +127,7 @@ export async function rollSelectedWeaponAttackWithTechnique({
     }
     applyTechniqueBonusSuppressions(actionUse, config.suppressedBonuses, cleanup);
     if (config.attackBonus) actionUse.shared.attackBonus.push(config.attackBonus);
-    if (config.damageBonus) actionUse.shared.damageBonus.push(config.damageBonus);
-    if (config.nonCritDamageBonus) {
-      const nonCritParts = (actionUse.shared.action.damage.nonCritParts ??= []);
-      const originalLength = nonCritParts.length;
-      nonCritParts.push({ formula: config.nonCritDamageBonus, types: [] });
-      cleanup.push(() => nonCritParts.splice(originalLength, 1));
-    }
+    applyTechniqueWeaponAttackDamageParts(actionUse, config, cleanup);
 
     applyTechniqueAttackAdjustments(actionUse, technique, cleanup);
     applyEmpowerDamage(actionUse, empower, cleanup);
@@ -174,6 +169,50 @@ export async function rollSelectedWeaponAttackWithTechnique({
     Hooks.off("pf1CreateActionUse", hook);
     for (const restore of cleanup.reverse()) restore();
   }
+}
+
+export function applyTechniqueWeaponAttackDamageParts(actionUse, config, cleanup = []) {
+  const action = actionUse?.shared?.action;
+  if (!action) return;
+
+  action.damage ??= {};
+  const normalParts = (action.damage.parts ??= []);
+  const nonCritParts = (action.damage.nonCritParts ??= []);
+  const normalOriginalLength = normalParts.length;
+  const nonCritOriginalLength = nonCritParts.length;
+
+  const fallbackTypes = getPrimaryWeaponDamageTypes(action);
+  const inheritTypes = config?.damageMode === "add";
+  const damageParts = inheritUntypedDamagePartTypes(
+    normalizeDamagePartRows(config?.damageParts),
+    fallbackTypes,
+    { enabled: inheritTypes },
+  );
+  const nonCritDamageParts = inheritUntypedDamagePartTypes(
+    normalizeDamagePartRows(config?.nonCritDamageParts),
+    fallbackTypes,
+    { enabled: inheritTypes },
+  );
+  if (!damageParts.length && !nonCritDamageParts.length) return;
+
+  normalParts.push(...damageParts);
+  nonCritParts.push(...nonCritDamageParts);
+  cleanup.push(() => {
+    normalParts.splice(normalOriginalLength);
+    nonCritParts.splice(nonCritOriginalLength);
+  });
+}
+
+function getPrimaryWeaponDamageTypes(action) {
+  return typeCsvToArray(action?.damage?.parts?.[0]?.types);
+}
+
+function inheritUntypedDamagePartTypes(rows, fallbackTypes, { enabled }) {
+  if (!enabled || !fallbackTypes.length) return rows.map((row) => ({ ...row }));
+  return rows.map((row) => ({
+    ...row,
+    types: row.types?.length ? [...row.types] : [...fallbackTypes],
+  }));
 }
 
 export function applyTechniqueBonusSuppressions(actionUse, suppressions = [], cleanup = []) {

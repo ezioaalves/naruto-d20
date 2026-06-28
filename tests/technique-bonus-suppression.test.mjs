@@ -5,6 +5,7 @@ import { describe, it } from "node:test";
 import {
   applyTechniqueElementDamageToActionUse,
   applyTechniqueBonusSuppressions,
+  applyTechniqueWeaponAttackDamageParts,
 } from "../scripts/features/techniques/weapon-attack.mjs";
 import { migrateLegacyWeaponAttack } from "../scripts/features/techniques/weapon-attack-migrate.mjs";
 
@@ -126,6 +127,72 @@ describe("technique bonus suppression", () => {
       { context: "nattack" },
     ]);
     assert.deepEqual(calls[1], ["~attackCore", "mattack", "nattack"]);
+  });
+});
+
+describe("technique weapon attack typed damage parts", () => {
+  it("appends typed normal and non-critical parts and restores them", () => {
+    const action = {
+      damage: {
+        parts: [{ formula: "1d6", types: ["bludgeoning"] }],
+        nonCritParts: [],
+      },
+    };
+    const actionUse = { shared: { action, rollData: { action }, damageBonus: [] } };
+    const cleanup = [];
+
+    applyTechniqueWeaponAttackDamageParts(
+      actionUse,
+      {
+        damageParts: [{ formula: "2", types: ["cold"] }],
+        nonCritDamageParts: [{ formula: "1d4", types: ["electricity"] }],
+      },
+      cleanup,
+    );
+
+    assert.deepEqual(action.damage.parts, [
+      { formula: "1d6", types: ["bludgeoning"] },
+      { formula: "2", types: ["cold"] },
+    ]);
+    assert.deepEqual(action.damage.nonCritParts, [{ formula: "1d4", types: ["electric"] }]);
+    assert.deepEqual(actionUse.shared.damageBonus, []);
+
+    for (const restore of cleanup.reverse()) restore();
+
+    assert.deepEqual(action.damage.parts, [{ formula: "1d6", types: ["bludgeoning"] }]);
+    assert.deepEqual(action.damage.nonCritParts, []);
+  });
+
+  it("inherits the selected weapon damage type for untyped additive parts", () => {
+    const action = {
+      damage: {
+        parts: [{ formula: "1d8", types: new Set(["slashing"]) }],
+        nonCritParts: [],
+      },
+    };
+    const actionUse = { shared: { action, rollData: { action }, damageBonus: [] } };
+    const cleanup = [];
+
+    applyTechniqueWeaponAttackDamageParts(
+      actionUse,
+      {
+        damageMode: "add",
+        damageParts: [{ formula: "2d6", types: "Undefined" }],
+        nonCritDamageParts: [{ formula: "1", types: "Undefined" }],
+      },
+      cleanup,
+    );
+
+    assert.deepEqual(action.damage.parts, [
+      { formula: "1d8", types: new Set(["slashing"]) },
+      { formula: "2d6", types: ["slashing"] },
+    ]);
+    assert.deepEqual(action.damage.nonCritParts, [{ formula: "1", types: ["slashing"] }]);
+
+    for (const restore of cleanup.reverse()) restore();
+
+    assert.deepEqual(action.damage.parts, [{ formula: "1d8", types: new Set(["slashing"]) }]);
+    assert.deepEqual(action.damage.nonCritParts, []);
   });
 });
 
