@@ -656,7 +656,7 @@
 
             <div class="damage weapon-attack-damage-parts" data-weapon-attack-damage-list="system.weaponAttack.damageParts">
               <h4 class="damage-header">{{localize "NarutoD20.WeaponAttack.DamageParts.Label"}}</h4>
-              <ol class="damage-parts form-group tooltip weapon-attack-damage-rows">
+              <ol class="damage-parts tooltip weapon-attack-damage-rows">
               {{#each weaponAttack.damageParts as |part i|}}
               <li class="damage-part flexrow weapon-attack-damage-row" data-damage-part="{{i}}">
                 <input class="damage-formula formula"
@@ -687,7 +687,7 @@
 
             <div class="damage weapon-attack-damage-parts" data-weapon-attack-damage-list="system.weaponAttack.nonCritDamageParts">
               <h4 class="damage-header">{{localize "NarutoD20.WeaponAttack.NonCritDamageParts.Label"}}</h4>
-              <ol class="damage-parts form-group weapon-attack-damage-rows">
+              <ol class="damage-parts weapon-attack-damage-rows">
               {{#each weaponAttack.nonCritDamageParts as |part i|}}
               <li class="damage-part flexrow weapon-attack-damage-row" data-damage-part="{{i}}">
                 <input class="damage-formula formula"
