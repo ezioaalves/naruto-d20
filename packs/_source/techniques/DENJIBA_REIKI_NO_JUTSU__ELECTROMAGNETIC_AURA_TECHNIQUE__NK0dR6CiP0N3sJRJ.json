@@ -82,7 +82,10 @@
       "dictionary": {}
     },
     "showInQuickbar": false,
-    "showInCombat": false
+    "showInCombat": false,
+    "automation": {
+      "enabled": false
+    }
   },
   "effects": [],
   "folder": "4sSSMumaSWg4I2km",

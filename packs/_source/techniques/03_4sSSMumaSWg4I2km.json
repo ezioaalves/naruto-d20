@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!4sSSMumaSWg4I2km"
+  "_key": "!folders!4sSSMumaSWg4I2km",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

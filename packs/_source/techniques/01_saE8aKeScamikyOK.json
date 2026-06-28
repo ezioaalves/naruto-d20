@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!saE8aKeScamikyOK"
+  "_key": "!folders!saE8aKeScamikyOK",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

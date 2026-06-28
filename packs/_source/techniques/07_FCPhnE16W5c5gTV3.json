@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!FCPhnE16W5c5gTV3"
+  "_key": "!folders!FCPhnE16W5c5gTV3",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

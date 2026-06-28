@@ -103,7 +103,10 @@
         "title": "Community Compendium",
         "pages": "133"
       }
-    ]
+    ],
+    "automation": {
+      "enabled": false
+    }
   },
   "effects": [],
   "folder": "CMIuQWwkWKYiScwa",

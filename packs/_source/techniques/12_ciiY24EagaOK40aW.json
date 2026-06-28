@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!ciiY24EagaOK40aW"
+  "_key": "!folders!ciiY24EagaOK40aW",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

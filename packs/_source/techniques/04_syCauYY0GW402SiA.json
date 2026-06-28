@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!syCauYY0GW402SiA"
+  "_key": "!folders!syCauYY0GW402SiA",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

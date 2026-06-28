@@ -98,7 +98,8 @@
         "enabled": true,
         "multiplier": 1,
         "damageType": "piercing"
-      }
+      },
+      "enabled": false
     },
     "sources": [
       {

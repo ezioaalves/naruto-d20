@@ -97,7 +97,10 @@
         "title": "Community Compendium",
         "pages": "199"
       }
-    ]
+    ],
+    "automation": {
+      "enabled": false
+    }
   },
   "effects": [],
   "folder": "oMc6oOOISUkEMAUa",

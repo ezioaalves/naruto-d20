@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!KOGcsICUMosmguaY"
+  "_key": "!folders!KOGcsICUMosmguaY",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

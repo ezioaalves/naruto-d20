@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!gHDRPR6OpvaUkgvD"
+  "_key": "!folders!gHDRPR6OpvaUkgvD",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

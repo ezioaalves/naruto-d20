@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!w2kSceCuioUWMekI"
+  "_key": "!folders!w2kSceCuioUWMekI",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

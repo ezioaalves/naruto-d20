@@ -121,7 +121,10 @@
         "title": "Community Compendium",
         "pages": "177"
       }
-    ]
+    ],
+    "automation": {
+      "enabled": false
+    }
   },
   "effects": [],
   "folder": "Qima0h1TRZYbdfqX",

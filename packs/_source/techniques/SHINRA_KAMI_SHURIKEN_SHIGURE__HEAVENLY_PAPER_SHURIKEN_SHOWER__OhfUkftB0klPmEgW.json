@@ -106,7 +106,10 @@
         "title": "Community Compendium",
         "pages": "182"
       }
-    ]
+    ],
+    "automation": {
+      "enabled": false
+    }
   },
   "effects": [],
   "folder": "FCPhnE16W5c5gTV3",

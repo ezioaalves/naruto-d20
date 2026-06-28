@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!4Piof4fIPi2kIP2N"
+  "_key": "!folders!4Piof4fIPi2kIP2N",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

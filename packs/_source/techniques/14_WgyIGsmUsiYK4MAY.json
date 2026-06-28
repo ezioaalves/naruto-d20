@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!WgyIGsmUsiYK4MAY"
+  "_key": "!folders!WgyIGsmUsiYK4MAY",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

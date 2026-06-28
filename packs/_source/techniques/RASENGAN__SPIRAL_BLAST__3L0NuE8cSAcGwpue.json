@@ -91,14 +91,16 @@
     "showInCombat": false,
     "chakraResistance": true,
     "automation": {
-      "enabled": true,
+      "enabled": false,
       "targetMode": "auto",
       "empower": {
         "enabled": true,
         "mode": "damageBonus",
         "costPerStep": 1,
         "formulaPerStep": "1d8",
-        "damageTypes": ["untyped"],
+        "damageTypes": [
+          "untyped"
+        ],
         "maxStepsFormula": "min(@cl, 18) - 7",
         "performIncreaseEvery": 2,
         "performIncreaseAmount": 1

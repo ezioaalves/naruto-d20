@@ -118,6 +118,9 @@
           "types": []
         }
       ]
+    },
+    "automation": {
+      "enabled": false
     }
   },
   "effects": [],

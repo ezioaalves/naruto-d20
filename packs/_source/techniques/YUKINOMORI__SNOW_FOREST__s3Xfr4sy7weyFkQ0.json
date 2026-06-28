@@ -92,7 +92,10 @@
         "title": "NarutoD20 Redux v1.3",
         "pages": "206"
       }
-    ]
+    ],
+    "automation": {
+      "enabled": false
+    }
   },
   "effects": [],
   "folder": "WmE80mI06MCQQ4oC",

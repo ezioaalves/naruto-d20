@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!GcomKyAwYGGeAoem"
+  "_key": "!folders!GcomKyAwYGGeAoem",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

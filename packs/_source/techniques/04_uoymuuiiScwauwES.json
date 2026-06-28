@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!uoymuuiiScwauwES"
+  "_key": "!folders!uoymuuiiScwauwES",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

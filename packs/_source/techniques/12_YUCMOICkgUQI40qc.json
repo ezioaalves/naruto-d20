@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!YUCMOICkgUQI40qc"
+  "_key": "!folders!YUCMOICkgUQI40qc",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

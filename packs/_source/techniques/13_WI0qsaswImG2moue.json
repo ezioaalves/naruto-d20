@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!WI0qsaswImG2moue"
+  "_key": "!folders!WI0qsaswImG2moue",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!OMOCyo6MSC8acMK8"
+  "_key": "!folders!OMOCyo6MSC8acMK8",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

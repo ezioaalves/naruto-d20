@@ -112,6 +112,9 @@
       "suppressAbilityDamage": false,
       "damageParts": [],
       "nonCritDamageParts": []
+    },
+    "automation": {
+      "enabled": false
     }
   },
   "effects": [],

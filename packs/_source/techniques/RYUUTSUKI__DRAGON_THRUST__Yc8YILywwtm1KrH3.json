@@ -88,7 +88,8 @@
     "showInQuickbar": false,
     "showInCombat": false,
     "automation": {
-      "targetMode": "self"
+      "targetMode": "self",
+      "enabled": false
     },
     "sources": [
       {

@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!gamAI4Uc4KKGGoeS"
+  "_key": "!folders!gamAI4Uc4KKGGoeS",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

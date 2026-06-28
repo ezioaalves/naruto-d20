@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!SSQiYK2eMCSGagGI"
+  "_key": "!folders!SSQiYK2eMCSGagGI",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

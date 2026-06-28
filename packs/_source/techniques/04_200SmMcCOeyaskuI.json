@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!200SmMcCOeyaskuI"
+  "_key": "!folders!200SmMcCOeyaskuI",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!f0aG2roAzOArlalS"
+  "_key": "!folders!f0aG2roAzOArlalS",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

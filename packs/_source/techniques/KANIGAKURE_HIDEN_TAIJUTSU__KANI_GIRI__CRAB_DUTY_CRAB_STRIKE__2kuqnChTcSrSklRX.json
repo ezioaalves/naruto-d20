@@ -90,7 +90,10 @@
     },
     "showInQuickbar": false,
     "showInCombat": false,
-    "sources": []
+    "sources": [],
+    "automation": {
+      "enabled": false
+    }
   },
   "effects": [],
   "folder": "58aPZ0XGYDCo63Q5",

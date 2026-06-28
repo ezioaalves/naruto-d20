@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!a4W0c4GqAYQWAi60"
+  "_key": "!folders!a4W0c4GqAYQWAi60",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

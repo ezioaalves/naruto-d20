@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!w1JUB5HdAVI65xTK"
+  "_key": "!folders!w1JUB5HdAVI65xTK",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

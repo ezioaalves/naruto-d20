@@ -104,7 +104,8 @@
         "maxStepsFormula": "7",
         "performIncreaseEvery": 0,
         "performIncreaseAmount": 0
-      }
+      },
+      "enabled": false
     },
     "sources": [
       {

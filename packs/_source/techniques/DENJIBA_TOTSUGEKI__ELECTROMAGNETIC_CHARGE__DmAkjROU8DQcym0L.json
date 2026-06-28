@@ -110,10 +110,15 @@
       "damageParts": [
         {
           "formula": "(min(floor(@cl / 2), 5))d6[Denjiba Totsugeki]",
-          "types": ["electric"]
+          "types": [
+            "electric"
+          ]
         }
       ],
       "nonCritDamageParts": []
+    },
+    "automation": {
+      "enabled": false
     }
   },
   "effects": [],

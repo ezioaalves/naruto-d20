@@ -46,7 +46,7 @@
     "performMiscBonus": 0,
     "active": false,
     "automation": {
-      "enabled": true,
+      "enabled": false,
       "targetMode": "auto",
       "maintenance": {
         "enabled": true,

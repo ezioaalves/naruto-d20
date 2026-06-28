@@ -110,6 +110,9 @@
         }
       ],
       "nonCritDamageParts": []
+    },
+    "automation": {
+      "enabled": false
     }
   },
   "effects": [],

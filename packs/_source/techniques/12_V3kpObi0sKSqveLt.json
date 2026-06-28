@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!V3kpObi0sKSqveLt"
+  "_key": "!folders!V3kpObi0sKSqveLt",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }

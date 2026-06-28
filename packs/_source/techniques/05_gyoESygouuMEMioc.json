@@ -15,5 +15,10 @@
     "modifiedTime": null,
     "lastModifiedBy": null
   },
-  "_key": "!folders!gyoESygouuMEMioc"
+  "_key": "!folders!gyoESygouuMEMioc",
+  "system": {
+    "automation": {
+      "enabled": false
+    }
+  }
 }
