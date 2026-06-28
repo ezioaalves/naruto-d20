@@ -104,11 +104,11 @@
       "charge": true,
       "iteratives": true,
       "attackBonus": "1[Ryuutsuki]",
-      "damageBonus": "",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

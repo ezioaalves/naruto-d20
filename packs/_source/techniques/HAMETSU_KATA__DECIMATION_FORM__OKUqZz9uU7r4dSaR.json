@@ -100,11 +100,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "",
-      "damageBonus": "12d6[Hametsu Kata]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "12d6[Hametsu Kata]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

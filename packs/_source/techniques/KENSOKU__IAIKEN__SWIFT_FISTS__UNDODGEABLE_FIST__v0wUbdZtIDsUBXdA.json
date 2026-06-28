@@ -107,11 +107,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "2[Iaiken]",
-      "damageBonus": "",
-      "nonCritDamageBonus": "(min(floor(@cl / 3), 4))d4[Iaiken]",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [],
+      "nonCritDamageParts": [
+        {
+          "formula": "(min(floor(@cl / 3), 4))d4[Iaiken]",
+          "types": []
+        }
+      ]
     }
   },
   "effects": [],

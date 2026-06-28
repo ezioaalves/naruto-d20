@@ -97,11 +97,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "2[Iainuki]",
-      "damageBonus": "2[Iainuki]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "2[Iainuki]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

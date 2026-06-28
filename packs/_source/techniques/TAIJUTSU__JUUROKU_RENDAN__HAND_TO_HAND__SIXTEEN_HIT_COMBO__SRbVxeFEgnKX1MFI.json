@@ -117,8 +117,6 @@
       "charge": false,
       "iteratives": false,
       "attackBonus": "-5",
-      "damageBonus": "",
-      "nonCritDamageBonus": "",
       "extraAttacks": [
         {
           "formula": "0",
@@ -130,7 +128,9 @@
         }
       ],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

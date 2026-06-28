@@ -104,11 +104,16 @@
       "charge": true,
       "iteratives": true,
       "attackBonus": "",
-      "damageBonus": "(min(floor(@cl / 2), 5))d6[Denjiba Totsugeki]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "(min(floor(@cl / 2), 5))d6[Denjiba Totsugeki]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],

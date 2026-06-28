@@ -114,11 +114,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "",
-      "damageBonus": "",
-      "nonCritDamageBonus": "2d6[Sanshiki]",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [],
+      "nonCritDamageParts": [
+        {
+          "formula": "2d6[Sanshiki]",
+          "types": []
+        }
+      ]
     }
   },
   "effects": [],

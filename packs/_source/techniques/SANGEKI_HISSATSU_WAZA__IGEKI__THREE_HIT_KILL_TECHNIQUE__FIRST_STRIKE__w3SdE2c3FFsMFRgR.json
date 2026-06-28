@@ -108,11 +108,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "",
-      "damageBonus": "",
-      "nonCritDamageBonus": "1d4[Igeki]",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [],
+      "nonCritDamageParts": [
+        {
+          "formula": "1d4[Igeki]",
+          "types": []
+        }
+      ]
     }
   },
   "effects": [],

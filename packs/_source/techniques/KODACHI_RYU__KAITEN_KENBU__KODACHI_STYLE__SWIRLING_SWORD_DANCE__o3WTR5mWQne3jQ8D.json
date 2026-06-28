@@ -105,11 +105,16 @@
       "charge": false,
       "iteratives": true,
       "attackBonus": "2[Kaiten Kenbu]",
-      "damageBonus": "2[Kaiten Kenbu]",
-      "nonCritDamageBonus": "",
       "extraAttacks": [],
       "suppressNaturalAttack": false,
-      "suppressAbilityDamage": false
+      "suppressAbilityDamage": false,
+      "damageParts": [
+        {
+          "formula": "2[Kaiten Kenbu]",
+          "types": []
+        }
+      ],
+      "nonCritDamageParts": []
     }
   },
   "effects": [],
