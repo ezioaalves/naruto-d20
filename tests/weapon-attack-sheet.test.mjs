@@ -7,6 +7,7 @@ import {
   buildWeaponAttackSummary,
   damagePartRowsFromForm,
   damagePartRowsToForm,
+  extractIndexedRows,
   extraAttacksArrayFromText,
   extraAttacksTextFromArray,
   normalizeExtraAttacksText,
@@ -128,5 +129,30 @@ describe("weapon attack damage part form rows", () => {
     assert.deepEqual(damagePartRowsToForm(rows), [
       { formula: "2", typesText: "cold, electricity" },
     ]);
+  });
+});
+
+describe("extractIndexedRows", () => {
+  it("collects sparse indexed form keys into rows", () => {
+    const formData = {
+      "system.weaponAttack.damageParts.0.formula": "1d6",
+      "system.weaponAttack.damageParts.0.typesText": "cold",
+      "system.weaponAttack.damageParts.2.formula": "2d4",
+      "system.weaponAttack.damageParts.2.typesText": "fire",
+      "system.weaponAttack.attackBonus": "+2",
+    };
+    const rows = extractIndexedRows(formData, "system.weaponAttack.damageParts");
+    assert.deepEqual(rows, [
+      { formula: "1d6", typesText: "cold" },
+      { formula: "2d4", typesText: "fire" },
+    ]);
+    // consumed keys must be removed from formData
+    assert.equal(formData["system.weaponAttack.damageParts.0.formula"], undefined);
+    assert.equal(formData["system.weaponAttack.attackBonus"], "+2");
+  });
+
+  it("returns empty array when no matching keys", () => {
+    const formData = { "system.weaponAttack.attackBonus": "+2" };
+    assert.deepEqual(extractIndexedRows(formData, "system.weaponAttack.damageParts"), []);
   });
 });

@@ -1,7 +1,4 @@
-import {
-  damagePartRowsFromForm,
-  damagePartRowsToForm,
-} from "./weapon-attack-damage-parts.mjs";
+import { damagePartRowsFromForm, damagePartRowsToForm } from "./weapon-attack-damage-parts.mjs";
 
 export { damagePartRowsFromForm, damagePartRowsToForm };
 
@@ -198,4 +195,31 @@ function defaultLocalize(key, data = {}) {
   };
   if (key === "NarutoD20.WeaponAttack.Summary.Attacks") return `${data.count} attacks`;
   return dictionary[key] ?? key;
+}
+
+/**
+ * Collect sparse indexed form keys (e.g. `prefix.0.formula`, `prefix.2.typesText`) into a
+ * dense array of row objects.  Keys consumed here are deleted from `formData` so the caller
+ * does not accidentally persist them as raw strings.
+ *
+ * The returned array is dense (no holes) and preserves the original numeric order of indices,
+ * which means a row set like {0, 2} collapses into two consecutive rows [{…}, {…}].
+ *
+ * @param {Record<string, unknown>} formData - Flat form data object (mutated in place).
+ * @param {string} prefix - Dot-separated field prefix, e.g. "system.weaponAttack.damageParts".
+ * @returns {{ formula?: string, typesText?: string }[]}
+ */
+export function extractIndexedRows(formData, prefix) {
+  const rows = [];
+  const match = new RegExp(`^${prefix.replaceAll(".", "\\.")}\\.(\\d+)\\.(formula|typesText)$`);
+  for (const key of Object.keys(formData)) {
+    const found = key.match(match);
+    if (!found) continue;
+    const index = Number(found[1]);
+    const field = found[2];
+    rows[index] ??= {};
+    rows[index][field] = formData[key];
+    delete formData[key];
+  }
+  return rows.filter(Boolean);
 }

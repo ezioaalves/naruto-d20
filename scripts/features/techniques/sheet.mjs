@@ -19,6 +19,7 @@ import {
   buildWeaponAttackFormData,
   buildWeaponAttackSummary,
   damagePartRowsFromForm,
+  extractIndexedRows,
   extraAttacksArrayFromText,
   WEAPON_ATTACK_DAMAGE_MODE_CHOICES,
   WEAPON_ATTACK_FILTER_CHOICES,
@@ -39,20 +40,6 @@ function localizeChoices(choices) {
   );
 }
 
-function extractIndexedRows(formData, prefix) {
-  const rows = [];
-  const match = new RegExp(`^${prefix.replaceAll(".", "\\.")}\\.(\\d+)\\.(formula|typesText)$`);
-  for (const key of Object.keys(formData)) {
-    const found = key.match(match);
-    if (!found) continue;
-    const index = Number(found[1]);
-    const field = found[2];
-    rows[index] ??= {};
-    rows[index][field] = formData[key];
-    delete formData[key];
-  }
-  return rows.filter(Boolean);
-}
 
 export function createTechniqueItemSheet() {
   class TechniqueItemSheet extends ItemSheet {
@@ -568,13 +555,20 @@ export function createTechniqueItemSheet() {
 
     _onWeaponAttackDamageAdd(event) {
       event.preventDefault();
-      const button = event.currentTarget;
-      const list = button.closest("[data-weapon-attack-damage-list]");
+      const list = event.currentTarget.closest("[data-weapon-attack-damage-list]");
       const prefix = list?.dataset.weaponAttackDamageList;
-      const rows = list?.querySelector(".weapon-attack-damage-rows");
-      if (!prefix || !rows) return;
+      const rowsContainer = list?.querySelector(".weapon-attack-damage-rows");
+      if (!prefix || !rowsContainer) return;
 
-      const index = rows.querySelectorAll(".weapon-attack-damage-row").length;
+      const escapedPrefix = prefix.replaceAll(".", "\\.");
+      const existingInputs = rowsContainer.querySelectorAll(`input[name^="${escapedPrefix}."]`);
+      let maxIndex = -1;
+      for (const input of existingInputs) {
+        const match = input.name.match(new RegExp(`^${escapedPrefix}\\.(\\d+)\\.`));
+        if (match) maxIndex = Math.max(maxIndex, Number(match[1]));
+      }
+      const index = maxIndex + 1;
+
       const row = document.createElement("div");
       row.className = "weapon-attack-damage-row";
       row.innerHTML = `
@@ -584,7 +578,7 @@ export function createTechniqueItemSheet() {
           <i class="fa-solid fa-trash" inert></i>
         </button>
       `;
-      rows.append(row);
+      rowsContainer.append(row);
     }
 
     _onWeaponAttackDamageDelete(event) {
