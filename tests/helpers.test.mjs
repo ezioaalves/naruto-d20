@@ -233,6 +233,31 @@ describe("technique defaults", () => {
     assert.deepEqual(system.descriptors, ["Fire", "Hijutsu", "Combination"]);
   });
 
+  it("preserves draft weapon attack damage rows that have types but no formula", () => {
+    const system = applyTechniqueSystemDefaults({
+      weaponAttack: {
+        enabled: true,
+        damageParts: [
+          { formula: "2", types: ["cold"] },
+          { formula: "", types: ["slashing"] },
+          { formula: "", types: [] },
+        ],
+        nonCritDamageParts: [
+          { formula: "", types: "electricity" },
+          { formula: "", types: "" },
+        ],
+      },
+    });
+
+    assert.deepEqual(system.weaponAttack.damageParts, [
+      { formula: "2", types: ["cold"] },
+      { formula: "", types: ["slashing"] },
+    ]);
+    assert.deepEqual(system.weaponAttack.nonCritDamageParts, [
+      { formula: "", types: ["electric"] },
+    ]);
+  });
+
   it("can normalize collections to sets for the TypeDataModel path", () => {
     const system = applyTechniqueSystemDefaults(
       { descriptors: ["Kinjutsu"], isKinjutsu: true },

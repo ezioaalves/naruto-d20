@@ -1,4 +1,5 @@
 import {
+  normalizeDamagePartDraftRows,
   normalizeDamagePartRows,
   typeCsvToArray,
   typeArrayToCsv,
@@ -96,13 +97,7 @@ export function replaceDamagePartTypes(rows, index, types) {
 }
 
 function normalizeDamagePartFormRows(rows) {
-  if (!Array.isArray(rows)) return [];
-  return rows
-    .map((row) => ({
-      formula: String(row?.formula ?? "").trim(),
-      types: typeCsvToArray(row?.types ?? row?.typesText),
-    }))
-    .filter((row) => row.formula || row.types.length);
+  return normalizeDamagePartDraftRows(rows);
 }
 
 export function buildWeaponAttackFormData(item, options = {}) {

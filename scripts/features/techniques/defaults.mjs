@@ -1,6 +1,6 @@
 import {
   legacyFormulaToDamageParts,
-  normalizeDamagePartRows,
+  normalizeDamagePartDraftRows,
 } from "./weapon-attack-damage-parts.mjs";
 
 const LEGACY_MAINTENANCE_KEYS = [
@@ -130,10 +130,10 @@ export function applyTechniqueSystemDefaults(system, { collectionType = "array" 
   wa.charge ??= false;
   wa.iteratives ??= true;
   wa.attackBonus ??= "";
-  wa.damageParts = normalizeDamagePartRows(
+  wa.damageParts = normalizeDamagePartDraftRows(
     wa.damageParts?.length ? wa.damageParts : legacyFormulaToDamageParts(wa.damageBonus),
   );
-  wa.nonCritDamageParts = normalizeDamagePartRows(
+  wa.nonCritDamageParts = normalizeDamagePartDraftRows(
     wa.nonCritDamageParts?.length
       ? wa.nonCritDamageParts
       : legacyFormulaToDamageParts(wa.nonCritDamageBonus),
