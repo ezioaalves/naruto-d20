@@ -37,6 +37,16 @@ export function normalizeDamagePartRows(rows) {
     .filter((row) => row.formula);
 }
 
+export function normalizeDamagePartDraftRows(rows) {
+  if (!Array.isArray(rows)) return [];
+  return rows
+    .map((row) => ({
+      formula: trimString(row?.formula),
+      types: typeCsvToArray(row?.types ?? row?.typesText),
+    }))
+    .filter((row) => row.formula || row.types.length);
+}
+
 export function legacyFormulaToDamageParts(formula) {
   const text = trimString(formula);
   return text ? [{ formula: text, types: [] }] : [];

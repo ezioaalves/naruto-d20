@@ -615,23 +615,29 @@
         <div class="weapon-attack-grid">
           <section>
             <h4>{{localize "NarutoD20.WeaponAttack.Basic.Header"}}</h4>
-            <div class="form-group">
+            <div class="form-group select">
               <label>{{localize "NarutoD20.WeaponAttack.Filter.Label"}}</label>
-              <select name="system.weaponAttack.filter">
-                {{selectOptions weaponAttackFilterChoices selected=weaponAttack.filter}}
-              </select>
+              <div class="form-fields">
+                <select name="system.weaponAttack.filter">
+                  {{selectOptions weaponAttackFilterChoices selected=weaponAttack.filter}}
+                </select>
+              </div>
             </div>
-            <div class="form-group">
+            <div class="form-group select">
               <label>{{localize "NarutoD20.WeaponAttack.DamageMode.Label"}}</label>
-              <select name="system.weaponAttack.damageMode">
-                {{selectOptions weaponAttackDamageModeChoices selected=weaponAttack.damageMode}}
-              </select>
+              <div class="form-fields">
+                <select name="system.weaponAttack.damageMode">
+                  {{selectOptions weaponAttackDamageModeChoices selected=weaponAttack.damageMode}}
+                </select>
+              </div>
             </div>
-            <div class="form-group">
+            <div class="form-group select">
               <label>{{localize "NarutoD20.WeaponAttack.Held.Label"}}</label>
-              <select name="system.weaponAttack.held">
-                {{selectOptions weaponAttackHeldChoices selected=weaponAttack.held}}
-              </select>
+              <div class="form-fields">
+                <select name="system.weaponAttack.held">
+                  {{selectOptions weaponAttackHeldChoices selected=weaponAttack.held}}
+                </select>
+              </div>
             </div>
             <label class="checkbox">
               <input type="checkbox" name="system.weaponAttack.charge" {{checked weaponAttack.charge}}>
@@ -643,15 +649,18 @@
             <h4>{{localize "NarutoD20.WeaponAttack.Modifiers.Header"}}</h4>
             <div class="form-group">
               <label>{{localize "NarutoD20.WeaponAttack.AttackBonus.Label"}}</label>
-              <input type="text" name="system.weaponAttack.attackBonus" value="{{weaponAttack.attackBonus}}">
+              <div class="form-fields">
+                <input type="text" name="system.weaponAttack.attackBonus" value="{{weaponAttack.attackBonus}}">
+              </div>
             </div>
 
-            <div class="weapon-attack-damage-parts" data-weapon-attack-damage-list="system.weaponAttack.damageParts">
-              <h5>{{localize "NarutoD20.WeaponAttack.DamageParts.Label"}}</h5>
-              <div class="weapon-attack-damage-rows">
+            <div class="damage weapon-attack-damage-parts" data-weapon-attack-damage-list="system.weaponAttack.damageParts">
+              <h4 class="damage-header">{{localize "NarutoD20.WeaponAttack.DamageParts.Label"}}</h4>
+              <ol class="damage-parts tooltip weapon-attack-damage-rows">
               {{#each weaponAttack.damageParts as |part i|}}
-              <div class="weapon-attack-damage-row" data-damage-part="{{i}}">
-                <input type="text"
+              <li class="damage-part flexrow weapon-attack-damage-row" data-damage-part="{{i}}">
+                <input class="damage-formula formula"
+                       type="text"
                        name="system.weaponAttack.damageParts.{{i}}.formula"
                        value="{{part.formula}}"
                        placeholder="{{localize 'NarutoD20.WeaponAttack.DamageParts.FormulaPlaceholder'}}">
@@ -659,25 +668,30 @@
                        name="system.weaponAttack.damageParts.{{i}}.types"
                        value="{{part.typesText}}">
                 {{> "systems/pf1/templates/internal/damage-type-visual.hbs" damage=part.damage name=(concat "system.weaponAttack.damageParts." i ".types")}}
-                <button type="button" class="weapon-attack-damage-delete" data-tooltip="{{localize 'PF1.DeleteItem'}}">
+                <a class="damage-control delete-damage weapon-attack-damage-delete" data-tooltip="{{localize 'PF1.DeleteItem'}}">
                   <i class="fa-solid fa-trash" inert></i>
-                </button>
-              </div>
+                </a>
+              </li>
               {{/each}}
-              </div>
-              <button type="button" class="weapon-attack-damage-add">
-                <i class="fa-solid fa-plus" inert></i>
-                {{localize "NarutoD20.WeaponAttack.DamageParts.Add"}}
-              </button>
+                <li class="damage-part flexrow">
+                  <a class="damage-control add-damage weapon-attack-damage-add">
+                    <i class="fa-solid fa-plus" inert></i>
+                    {{localize "NarutoD20.WeaponAttack.DamageParts.Add"}}
+                  </a>
+                </li>
+              </ol>
               <p class="hint">{{localize "NarutoD20.WeaponAttack.DamageParts.Hint"}}</p>
             </div>
 
-            <div class="weapon-attack-damage-parts" data-weapon-attack-damage-list="system.weaponAttack.nonCritDamageParts">
-              <h5>{{localize "NarutoD20.WeaponAttack.NonCritDamageParts.Label"}}</h5>
-              <div class="weapon-attack-damage-rows">
+            <hr>
+
+            <div class="damage weapon-attack-damage-parts" data-weapon-attack-damage-list="system.weaponAttack.nonCritDamageParts">
+              <h4 class="damage-header">{{localize "NarutoD20.WeaponAttack.NonCritDamageParts.Label"}}</h4>
+              <ol class="damage-parts weapon-attack-damage-rows">
               {{#each weaponAttack.nonCritDamageParts as |part i|}}
-              <div class="weapon-attack-damage-row" data-damage-part="{{i}}">
-                <input type="text"
+              <li class="damage-part flexrow weapon-attack-damage-row" data-damage-part="{{i}}">
+                <input class="damage-formula formula"
+                       type="text"
                        name="system.weaponAttack.nonCritDamageParts.{{i}}.formula"
                        value="{{part.formula}}"
                        placeholder="{{localize 'NarutoD20.WeaponAttack.DamageParts.FormulaPlaceholder'}}">
@@ -685,16 +699,18 @@
                        name="system.weaponAttack.nonCritDamageParts.{{i}}.types"
                        value="{{part.typesText}}">
                 {{> "systems/pf1/templates/internal/damage-type-visual.hbs" damage=part.damage name=(concat "system.weaponAttack.nonCritDamageParts." i ".types")}}
-                <button type="button" class="weapon-attack-damage-delete" data-tooltip="{{localize 'PF1.DeleteItem'}}">
+                <a class="damage-control delete-damage weapon-attack-damage-delete" data-tooltip="{{localize 'PF1.DeleteItem'}}">
                   <i class="fa-solid fa-trash" inert></i>
-                </button>
-              </div>
+                </a>
+              </li>
               {{/each}}
-              </div>
-              <button type="button" class="weapon-attack-damage-add">
-                <i class="fa-solid fa-plus" inert></i>
-                {{localize "NarutoD20.WeaponAttack.DamageParts.Add"}}
-              </button>
+                <li class="damage-part flexrow">
+                  <a class="damage-control add-damage weapon-attack-damage-add">
+                    <i class="fa-solid fa-plus" inert></i>
+                    {{localize "NarutoD20.WeaponAttack.DamageParts.Add"}}
+                  </a>
+                </li>
+              </ol>
               <p class="hint">{{localize "NarutoD20.WeaponAttack.NonCritDamageParts.Hint"}}</p>
             </div>
           </section>

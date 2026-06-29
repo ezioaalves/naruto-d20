@@ -1,10 +1,9 @@
 import {
-  damagePartRowsFromForm,
+  normalizeDamagePartDraftRows,
   normalizeDamagePartRows,
+  typeCsvToArray,
   typeArrayToCsv,
 } from "./weapon-attack-damage-parts.mjs";
-
-export { damagePartRowsFromForm };
 
 export const WEAPON_ATTACK_FILTER_CHOICES = {
   meleeWeapon: "NarutoD20.WeaponAttack.Filter.MeleeWeapon",
@@ -67,19 +66,51 @@ export function buildDamageTypeVisualData(types, damageTypeRegistry = null) {
 }
 
 export function damagePartRowsToForm(rows, damageTypeRegistry = null) {
-  return normalizeDamagePartRows(rows).map((row) => ({
+  return normalizeDamagePartFormRows(rows).map((row) => ({
     formula: row.formula,
     typesText: typeArrayToCsv(row.types),
     damage: buildDamageTypeVisualData(row.types, damageTypeRegistry),
   }));
 }
 
-export function replaceDamagePartTypes(rows, index, types) {
-  const normalized = normalizeDamagePartRows(rows);
-  if (index < 0 || index >= normalized.length) return normalized;
-  return normalized.map((row, i) =>
-    i === index ? normalizeDamagePartRows([{ ...row, types }])[0] : row,
+export function damagePartRowsFromForm(rows) {
+  return normalizeDamagePartFormRows(
+    Array.isArray(rows)
+      ? rows.map((row) => ({
+          formula: row?.formula,
+          types: row?.types ?? row?.typesText,
+        }))
+      : [],
   );
+}
+
+/**
+ * Set the damage types on a single row, capturing every other row's formula verbatim.
+ *
+ * `rows` are raw, DOM-captured rows (dense by index, formula + types as typed) — they are
+ * NOT pre-normalized, so a still-blank target row survives and keeps its position. The
+ * array is padded up to `index` when needed (the row the user is editing may not have been
+ * persisted yet) and the input is never mutated. Drop empty rows by passing the result
+ * through `damagePartRowsFromForm` at persist time.
+ *
+ * @param {{ formula?: string, types?: string|string[] }[]} rows
+ * @param {number} index
+ * @param {string|string[]} types
+ * @returns {{ formula: string, types: string[] }[]}
+ */
+export function setDamagePartTypesAt(rows, index, types) {
+  const next = (Array.isArray(rows) ? rows : []).map((row) => ({
+    formula: String(row?.formula ?? ""),
+    types: row?.types ?? row?.typesText ?? [],
+  }));
+  if (index < 0) return next;
+  while (next.length <= index) next.push({ formula: "", types: [] });
+  next[index] = { formula: next[index].formula, types: typeCsvToArray(types) };
+  return next;
+}
+
+function normalizeDamagePartFormRows(rows) {
+  return normalizeDamagePartDraftRows(rows);
 }
 
 export function buildWeaponAttackFormData(item, options = {}) {
@@ -250,7 +281,9 @@ function defaultLocalize(key, data = {}) {
  */
 export function extractIndexedRows(formData, prefix) {
   const rows = [];
-  const match = new RegExp(`^${prefix.replaceAll(".", "\\.")}\\.(\\d+)\\.(formula|types|typesText)$`);
+  const match = new RegExp(
+    `^${prefix.replaceAll(".", "\\.")}\\.(\\d+)\\.(formula|types|typesText)$`,
+  );
   for (const key of Object.keys(formData)) {
     const found = key.match(match);
     if (!found) continue;
