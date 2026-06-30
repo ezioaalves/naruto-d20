@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.0 - 2026-06-30
+
+- Added **Denjiba Totsugeki** (#179): new technique with a charge-attack setup, encounter-use text, and mastery-based extra uses.
+- Added **typed weapon-attack damage parts** (#180, #182): technique weapon-attack damage bonuses move off free-form strings onto structured typed damage rows backed by PF1e's own damage-type selector, with the sheet UI realigned to match PF1e's attack/damage row layout. Selecting a damage type on one row no longer clobbers that row's formula or any sibling rows, and a freshly added row keeps its selected type even before a formula is typed in.
+- Changed **buff automation defaults for techniques without a buff counterpart** (#181): automation is now off by default on the 1612 techniques with no matching entry in the `technique-buffs` compendium, avoiding a compendium lookup on every perform for techniques that could never apply a buff. Rank techniques and the Champuru stance, which resolve their buff through runtime special-case matching (JOURYOKU/KOUSOKU rank carriers, Dexterity/Strength stance variants) instead of an exact name match, keep automation enabled.
+
 ## v2.0.0 - 2026-06-27
 
 - Added **weapon-attack automation UI + typed model migration** (#176): techniques that delegate to one of the actor's weapon or unarmed attacks now have a first-class editor on the technique sheet's Automation tab — attack filter, damage mode, held-as, attack/damage/non-crit bonuses, an extra-attacks combo list, a BAB iteratives toggle, rare bonus suppressions, plus quick-model presets and a compact summary tag. Under the hood the configuration moves out of PF1e's generic `system.flags.dictionary` into a typed `system.weaponAttack` schema field on `TechniqueDataModel`, eliminating the dotted-key write fragility behind the "changing one field resets the sheet" bug. A single dependency-free transform migrates legacy data on document load, through the GM `ready` actor migration (maintenance version 3), inside the synckit normalizer, and across all 139 shipped compendium techniques (repacked).
